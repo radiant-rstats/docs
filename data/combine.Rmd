@@ -1,0 +1,8 @@
+---
+title: Data > Combine
+---
+
+***
+
+```{r child='app/combine.md'}
+```

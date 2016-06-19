@@ -1,0 +1,13 @@
+---
+title: Radiant -- Business analytics using R and Shiny
+---
+
+***
+
+```{r child='sub/tutorials_editable.md'}
+```
+
+### License
+
+```{r child='sub/license.md'}
+```

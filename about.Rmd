@@ -1,0 +1,39 @@
+---
+title: Radiant -- Business analytics using R and Shiny
+---
+
+***
+
+## Radiant code
+
+<!-- [![Travis-CI Build Status](https://travis-ci.org/vnijs/radiant.png?branch=master)](https://travis-ci.org/vnijs/radiant) -->
+`r sprintf("Version: %s, Date: %s", packageVersion("radiant"), packageDescription("radiant", fields = "Date"))`
+
+Built using <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> by <a href="http://www.rstudio.com/" target="_blank">Rstudio</a>. Code available on <a href="https://github.com/vnijs/radiant" target="_blank">GitHub</a>
+
+## Package dependencies
+
+```{r echo=FALSE, comment=NA}
+	suppressMessages(
+		devtools::source_url("https://raw.githubusercontent.com/vnijs/radiant_miniCRAN/gh-pages/pkgs.R")
+	)
+```
+
+`r sprintf("Package dependencies: %s", paste0(pkgs, collapse = ", "))`
+
+<details>
+<summary>Citing packages</summary>
+```{r echo=FALSE, comment=NA}
+  suppressMessages(library(dplyr))
+  for(i in c("radiant",pkgs)) citation(i) %>% print
+```
+</details>
+
+## Google analytics
+
+This site uses Google Analytics to track user behavior while on the site. These data will be used for educational purposes only.
+
+## License
+
+```{r child='sub/license.md'}
+```

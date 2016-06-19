@@ -1,0 +1,5 @@
+price; $10; $13; $16
+sight; Staggered; Not Staggered
+comfort; Average seat without cupholder; Average seat with cupholder; Large seat with cupholder
+audio.visual; Small screen with plain sound; Large screen with plain sound; Large screen with digital sound
+food; No food; Hot dogs and popcorn; Gourmet food
