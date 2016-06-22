@@ -14,7 +14,7 @@ As can be seen in the output from _Factor > Pre-factor_ below, Bartlett's test s
 
 To replicate the results shown in the screenshot make sure you have the `toothpaste` data loaded. Then select variables `v1` through `v6` and press the `Estimate` button.
 
-![Summary and Plot](figures_marketing/pre_factor_summary_plot.png)
+![Summary and Plot](figures_multivariate/pre_factor_summary_plot.png)
 
 The next step is to determine the number of factors needed to capture the structure underlying the data. Factors that do not capture even as much variance as could be expected by chance are generally omitted from further consideration. These factors have eigenvalues < 1 in the output.
 

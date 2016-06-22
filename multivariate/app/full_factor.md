@@ -10,7 +10,7 @@ Once we have determined the number of factors we can extract and rotate them. Th
 
 To replicate the results shown in the screenshot below make sure you have the `toothpaste` data loaded. Then select variables `v1` through `v6`, set `Nr. of factors` to 2, and press the `Estimate` button.
 
-![Summary](figures_marketing/full_factor_summary.png)
+![Summary](figures_multivariate/full_factor_summary.png)
 
 The numbers in the `Factor loadings` table are the correlations of the six variables with the two factors. For example, variable v1 has a correlation of .96 with Factor 1 and a correlation of -.03 with Factor 2. As such v1 will play a big role in naming Factor 1 but an insignificant role in naming Factor 2.
 
@@ -34,7 +34,7 @@ Together, the variables shown in each column (i.e., for each factor) help us to 
 
 The best way to see what rotation does is to toggle the `Rotation` radio buttons between `Varimax` and `None` and inspect what changes in the output. Click on the _Plots_ tab, set the radio button to None, and press the `Estimate` button to see updated results. The image shown below depicts the loadings of the variables on the two factors. Variable v5 falls somewhat in between the axes for factor 1 and factor 2. When we select Varimax rotation, however, the label for v5 lines up nicely with the horizontal axis (i.e., factor 2). This change in alignment is also reflected in the factor loadings. The unrotated factor loadings for v5 are -0.87 for factor 1 and -0.35 for factor 2. The rotated factor loadings for v5 are -0.93 for factor 1 and -0.08 for factor 2.
 
-![Plot](figures_marketing/full_factor_plot.png) ![Plot - rotation](figures_marketing/full_factor_plot_rotation.png)
+![Plot](figures_multivariate/full_factor_plot.png) ![Plot - rotation](figures_multivariate/full_factor_plot_rotation.png)
 
 The final step is to generate the factor scores. You can think of these scores as a weighted average of the variables that are linked to a factor. They approximate the scores that a respondent would have provided if we could have asked about the factor in a single question, i.e., the respondents inferred ratings on the factors. By clicking on the `Store` button two new variables will be added to the toothpaste data file (i.e., factor1 and factor2). You can see them by going to the _Data > View_ tab. We can use factor scores in other analyses (e.g., cluster analysis or regression). You can rename the new variables, e.g., to `health` and `social` through the _Data > Transform_ tab by selecting `Rename` from the `Transformation type` dropdown.
 
@@ -52,4 +52,4 @@ To download the factor loadings to a csv-file click the download button on the t
 
 If you want more practice open the `shopping` data set and see if you can reproduce the results shown in the screen capture of the _Summary_ tab below. Use _Factor > Pre-factor_ to determine if the correct number of factors were selected. Do you agree? Why (not)?
 
-![Summary - shopping](figures_marketing/full_factor_summary_shopping.png)
+![Summary - shopping](figures_multivariate/full_factor_summary_shopping.png)

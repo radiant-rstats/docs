@@ -20,13 +20,13 @@ Here we will enter the factors of interest. For example, enter `price` as the va
 
 After entering the required information your screen should look as follows:
 
-![factors](figures_marketing/doe_factors.png)
+![factors](figures_multivariate/doe_factors.png)
 
 ## Create
 
 You are now ready to create an experimental design by clicking on the `Create` button. This will generate the following output.
 
-![output](figures_marketing/doe_output.png)
+![output](figures_multivariate/doe_output.png)
 
 For our example, the ideal design has 18 trials. However, this implies that the partial and the full factorial are the same size. We'd like to find out if it is possible to reduce the number of trials. See `# trials` below.
 

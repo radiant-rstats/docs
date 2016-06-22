@@ -284,7 +284,7 @@ $(document).ready(function () {
 <p>Once we have determined the number of factors we can extract and rotate them. The factors are rotated to generate a solution where, to the extent possible, a variable has a high loading on only one factor. This is an important benefit because it makes it easier to interpret what the factor represents. While there are numerous algorithms to rotate a factor loadings matrix the most commonly used is Varimax rotation.</p>
 <p>To replicate the results shown in the screenshot below make sure you have the <code>toothpaste</code> data loaded. Then select variables <code>v1</code> through <code>v6</code>, set <code>Nr. of factors</code> to 2, and press the <code>Estimate</code> button.</p>
 <div class="figure">
-<img src="figures_marketing/full_factor_summary.png" alt="Summary" />
+<img src="figures_multivariate/full_factor_summary.png" alt="Summary" />
 <p class="caption">Summary</p>
 </div>
 <p>The numbers in the <code>Factor loadings</code> table are the correlations of the six variables with the two factors. For example, variable v1 has a correlation of .96 with Factor 1 and a correlation of -.03 with Factor 2. As such v1 will play a big role in naming Factor 1 but an insignificant role in naming Factor 2.</p>
@@ -303,7 +303,7 @@ v2        0.85</code></pre>
 <li><strong>Factor 2:</strong> Social benefits</li>
 </ul>
 <p>The best way to see what rotation does is to toggle the <code>Rotation</code> radio buttons between <code>Varimax</code> and <code>None</code> and inspect what changes in the output. Click on the <em>Plots</em> tab, set the radio button to None, and press the <code>Estimate</code> button to see updated results. The image shown below depicts the loadings of the variables on the two factors. Variable v5 falls somewhat in between the axes for factor 1 and factor 2. When we select Varimax rotation, however, the label for v5 lines up nicely with the horizontal axis (i.e., factor 2). This change in alignment is also reflected in the factor loadings. The unrotated factor loadings for v5 are -0.87 for factor 1 and -0.35 for factor 2. The rotated factor loadings for v5 are -0.93 for factor 1 and -0.08 for factor 2.</p>
-<p><img src="figures_marketing/full_factor_plot.png" alt="Plot" /> <img src="figures_marketing/full_factor_plot_rotation.png" alt="Plot - rotation" /></p>
+<p><img src="figures_multivariate/full_factor_plot.png" alt="Plot" /> <img src="figures_multivariate/full_factor_plot_rotation.png" alt="Plot - rotation" /></p>
 <p>The final step is to generate the factor scores. You can think of these scores as a weighted average of the variables that are linked to a factor. They approximate the scores that a respondent would have provided if we could have asked about the factor in a single question, i.e., the respondents inferred ratings on the factors. By clicking on the <code>Store</code> button two new variables will be added to the toothpaste data file (i.e., factor1 and factor2). You can see them by going to the <em>Data &gt; View</em> tab. We can use factor scores in other analyses (e.g., cluster analysis or regression). You can rename the new variables, e.g., to <code>health</code> and <code>social</code> through the <em>Data &gt; Transform</em> tab by selecting <code>Rename</code> from the <code>Transformation type</code> dropdown.</p>
 <p>To download the factor loadings to a csv-file click the download button on the top-right of the screen.</p>
 </div>
@@ -322,7 +322,7 @@ v2        0.85</code></pre>
 </ol>
 <p>If you want more practice open the <code>shopping</code> data set and see if you can reproduce the results shown in the screen capture of the <em>Summary</em> tab below. Use <em>Factor &gt; Pre-factor</em> to determine if the correct number of factors were selected. Do you agree? Why (not)?</p>
 <div class="figure">
-<img src="figures_marketing/full_factor_summary_shopping.png" alt="Summary - shopping" />
+<img src="figures_multivariate/full_factor_summary_shopping.png" alt="Summary - shopping" />
 <p class="caption">Summary - shopping</p>
 </div>
 </div>

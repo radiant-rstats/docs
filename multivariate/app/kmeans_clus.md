@@ -12,11 +12,11 @@ To apply K-means to the toothpaste data select variables v1 through v6 in the `V
 
 In the _Summary_ tab we use the `Cluster means` table to describe the individuals assigned to a segment. Each number in the table shows the average score on a variable for people in that segment. For example, segment 3 has an average score of 5.750 out of 7 on question v2. We are looking for either very high or very low mean values to help distinguish segments because we want to establish how one segment differs from the others. If there are no substantial differences in the mean value of a variable across different segments that variable is not very useful for interpretation. By highlighting the variables that most clearly distinguish the different segments we can generate a name or label that describes consumers in each segment and illustrates how the segments differ from one another.
 
-![Summary](figures_marketing/kmeans_clus_summary.png)
+![Summary](figures_multivariate/kmeans_clus_summary.png)
 
 It can be useful to visualize how well the segments are separated by plotting the data for each segment and variable. The figures shown below are density plots. For variable v1 the clusters are nicely separated. The average response to the question 'It is important to buy a toothpaste that prevents cavities' for segment 2 (green) seems lower than for both segment 3 (blue) and segment 1 (pink). Segment 1, in turn stands out with a higher score on this question compared to the other two segments. For question v4 we see a different pattern. The average response to the question 'I prefer a toothpaste that freshens breath' for segments 1 (green) and 2 (pink) is very similar and the plots overlap. Segment 3 (blue), in turn, stands out with a higher score on this question compared to the other two segments.
 
-![Plot](figures_marketing/kmeans_clus_plot.png)
+![Plot](figures_multivariate/kmeans_clus_plot.png)
 
 By reviewing the Cluster means table in the _Summary_ tab and the density plots in the _Plots_ tab we can derive the following labels: Segment 3 stands out with higher scores on questions v2, v4, and v6. We could call them the 'Cosmetic brushers'. Segment 1 stands out with higher scores on questions v1 and v3 and a lower score on v5. They seem to care most about the health benefits of toothpaste so we might call them the 'Therapeutic brushers'. Segment 2 scores lower in v1 and v3 and higher on v5, i.e., they seem to care little about the health benefits of toothpaste. Since their scores for the cosmetics benefits are middle-of-the-road we could label them the 'Uninvolved brushers'. To save the table of cluster means to a csv file press the download button on the top-right of your screen.
 
@@ -28,7 +28,7 @@ Once we categorize the segments we can create a segment (or cluster) membership 
 
 This should produce the output shown below. After verifying the results are as expected, click the `Store` button to add the recoded variable to the toothpaste dataset.
 
-![Recode](figures_marketing/kmeans_clus_transform_recode.png)
+![Recode](figures_multivariate/kmeans_clus_transform_recode.png)
 
 We can profile these segments with demographic data using cross-tabs (e.g., gender vs segment membership). Go to _Base > Cross-tabs_. Our null hypothesis and alternative hypothesis are:
 
@@ -39,8 +39,8 @@ Ha: There is a relationship between gender and segment membership
 
 In the _Summary_ tab we see there is a significant association between these two variables. The p.value is .001 and there are no cells with expected values below 5 (see the help file for _Base > Cross-tabs_ for a detailed discussion).
 
-![Summary, cross-tabs](figures_marketing/kmeans_clus_cross_tabs_summary.png)
+![Summary, cross-tabs](figures_multivariate/kmeans_clus_cross_tabs_summary.png)
 
 For a graphical depiction of the association go to the _Plot_ tab. If we select `Deviation std.` we see that the `Uninvolved` segment has significantly more men than we would expect under the null of no-association. We could also argue that there are more women in the `Cosmetic` segment than we would expect under the null of no-association, although the significance level is marginal (i.e., < .1 but not < .05). In sum, in these data men seem more likely to belong to the `Uninvolved brushers` segment and women seem (marginally) more likely to be in the `Cosmetic brushers` segment.
 
-![Plot, cross-tabs](figures_marketing/kmeans_clus_cross_tabs_plot.png)
+![Plot, cross-tabs](figures_multivariate/kmeans_clus_cross_tabs_plot.png)
