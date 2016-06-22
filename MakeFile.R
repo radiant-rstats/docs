@@ -11,8 +11,6 @@ knit_docs <- function(x) {
 	setwd(file.path("../..",x)); system("make")
 }
 
-sapply("basics", knit_docs)
-
 sapply(c("data","design","basics","model","multivariate"), knit_docs)
 
 ## making the README.md file after clean-up

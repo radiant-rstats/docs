@@ -221,12 +221,10 @@ $(document).ready(function () {
              <li class="dropdown-header">Evaluate</li>
              <li><a href="/docs/model/evalreg.html">Evaluate regression</a></li>
              <li><a href="/docs/model/evalbin.html">Evaluate classification</a></li>
-             <!-- <li class="divider"></li> -->
-             <!-- <li class="dropdown-header">Recommend</li> -->
-             <!-- <li><a href="/docs/model/crs.html">Collaborative Filtering</a></li> -->
+             <li class="divider"></li>
              <li class="dropdown-header">Decide</li>
-             <li><a href="/docs/quant/dtree.html">Decision analysis</a></li>
-             <li><a href="/docs/quant/simulater.html">Simulate</a></li>
+             <li><a href="/docs/model/dtree.html">Decision analysis</a></li>
+             <li><a href="/docs/model/simulater.html">Simulate</a></li>
           </ul>
         </li>
 
@@ -253,8 +251,8 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="/docs/R/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-             <li><a href="/docs/base/report.html">Report</a></li>
-             <li><a href="/docs/base/code.html">Code</a></li>
+             <li><a href="/docs/data/report.html">Report</a></li>
+             <li><a href="/docs/data/code.html">Code</a></li>
              <li><a href="/docs/programming.html">Programming</a></li>
              <li><a href="/docs/resources.html">Resources</a></li>
           </ul>
@@ -279,19 +277,19 @@ $(document).ready(function () {
 <div id="radiant-code" class="section level2">
 <h2>Radiant code</h2>
 <!-- [![Travis-CI Build Status](https://travis-ci.org/vnijs/radiant.png?branch=master)](https://travis-ci.org/vnijs/radiant) -->
-<p>Version: 0.4.71, Date: 2016-5-12</p>
-<p>Built using <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> by <a href="http://www.rstudio.com/" target="_blank">Rstudio</a>. Code available on <a href="https://github.com/vnijs/radiant" target="_blank">GitHub</a></p>
+<p>Version: 0.1.0, Date: 2016-6-20</p>
+<p>Built using <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> by <a href="http://www.rstudio.com/" target="_blank">Rstudio</a>. The full source code is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a></p>
 </div>
 <div id="package-dependencies" class="section level2">
 <h2>Package dependencies</h2>
-<p>Package dependencies: car, gridExtra, GPArotation, psych, wordcloud, AlgDesign, knitr, ggdendro, lubridate, ggplot2, pryr, shiny, magrittr, tidyr, dplyr, broom, shiny, rmarkdown, shinyAce, DT, radiant</p>
+<p>Package dependencies: car, miniCRAN, gridExtra, GPArotation, psych, wordcloud, AlgDesign, knitr, ggdendro, lubridate, ggplot2, pryr, shiny, magrittr, tidyr, dplyr, broom, shiny, rmarkdown, shiny, NeuralNetTools, data.tree, nnet, DT</p>
 <p><details> <summary>Citing packages</summary></p>
 <pre><code>
 To cite package &#39;radiant&#39; in publications use:
 
   Vincent Nijs (2016). radiant: Business Analytics using R and
-  Shiny. https://github.com/vnijs/radiant,
-  http://vnijs.github.io/radiant/.
+  Shiny. R package version 0.1.0.
+  https://github.com/radiant-rstats/radiant
 
 A BibTeX entry for LaTeX users is
 
@@ -299,7 +297,8 @@ A BibTeX entry for LaTeX users is
     title = {radiant: Business Analytics using R and Shiny},
     author = {Vincent Nijs},
     year = {2016},
-    note = {https://github.com/vnijs/radiant, http://vnijs.github.io/radiant/},
+    note = {R package version 0.1.0},
+    url = {https://github.com/radiant-rstats/radiant},
   }
 
 
@@ -319,6 +318,25 @@ A BibTeX entry for LaTeX users is
     publisher = {Sage},
     address = {Thousand Oaks {CA}},
     url = {http://socserv.socsci.mcmaster.ca/jfox/Books/Companion},
+  }
+
+
+To cite package &#39;miniCRAN&#39; in publications use:
+
+  Revolution Analytics and Andrie de Vries (2016). miniCRAN:
+  Create a Mini Version of CRAN Containing Only Selected Packages.
+  R package version 0.2.5.
+  https://CRAN.R-project.org/package=miniCRAN
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {miniCRAN: Create a Mini Version of CRAN Containing Only Selected Packages},
+    author = {{Revolution Analytics} and Andrie {de
+    Vries}},
+    year = {2016},
+    note = {R package version 0.2.5},
+    url = {https://CRAN.R-project.org/package=miniCRAN},
   }
 
 
@@ -630,20 +648,75 @@ A BibTeX entry for LaTeX users is
   }
 
 
-To cite package &#39;shinyAce&#39; in publications use:
+To cite package &#39;shiny&#39; in publications use:
 
-  Trestle Technology, LLC (2016). shinyAce: Ace Editor Bindings
-  for Shiny. R package version 0.2.1.
-  https://CRAN.R-project.org/package=shinyAce
+  Winston Chang, Joe Cheng, JJ Allaire, Yihui Xie and Jonathan
+  McPherson (2016). shiny: Web Application Framework for R. R
+  package version 0.13.2.9004. http://shiny.rstudio.com
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {shinyAce: Ace Editor Bindings for Shiny},
-    author = {{Trestle Technology, LLC}},
+    title = {shiny: Web Application Framework for R},
+    author = {Winston Chang and Joe Cheng and JJ Allaire and Yihui Xie and Jonathan McPherson},
     year = {2016},
-    note = {R package version 0.2.1},
-    url = {https://CRAN.R-project.org/package=shinyAce},
+    note = {R package version 0.13.2.9004},
+    url = {http://shiny.rstudio.com},
+  }
+
+
+Beck M (2016). _NeuralNetTools: Visualization and Analysis Tools
+for Neural Networks_. R package version 1.4.0, &lt;URL:
+http://CRAN.R-project.org/package=NeuralNetTools&gt;.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {{NeuralNetTools: Visualization and Analysis Tools for Neural Networks}},
+    author = {Marcus Beck},
+    year = {2016},
+    note = {R package version 1.4.0},
+    url = {http://CRAN.R-project.org/package=NeuralNetTools},
+  }
+
+
+To cite package &#39;data.tree&#39; in publications use:
+
+  Christoph Glur (2016). data.tree: General Purpose Hierarchical
+  Data Structure. R package version 0.3.5.
+  https://CRAN.R-project.org/package=data.tree
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {data.tree: General Purpose Hierarchical Data Structure},
+    author = {Christoph Glur},
+    year = {2016},
+    note = {R package version 0.3.5},
+    url = {https://CRAN.R-project.org/package=data.tree},
+  }
+
+ATTENTION: This citation information has been auto-generated from
+the package DESCRIPTION file and may need manual editing, see
+&#39;help(&quot;citation&quot;)&#39;.
+
+
+To cite the nnet package in publications use:
+
+  Venables, W. N. &amp; Ripley, B. D. (2002) Modern Applied Statistics
+  with S. Fourth Edition. Springer, New York. ISBN 0-387-95457-0
+
+A BibTeX entry for LaTeX users is
+
+  @Book{,
+    title = {Modern Applied Statistics with S},
+    author = {W. N. Venables and B. D. Ripley},
+    publisher = {Springer},
+    edition = {Fourth},
+    address = {New York},
+    year = {2002},
+    note = {ISBN 0-387-95457-0},
+    url = {http://www.stats.ox.ac.uk/pub/MASS4},
   }
 
 
@@ -661,22 +734,6 @@ A BibTeX entry for LaTeX users is
     year = {2015},
     note = {R package version 0.1.56},
     url = {http://rstudio.github.io/DT},
-  }
-
-
-To cite package &#39;radiant&#39; in publications use:
-
-  Vincent Nijs (2016). radiant: Business Analytics using R and
-  Shiny. https://github.com/vnijs/radiant,
-  http://vnijs.github.io/radiant/.
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {radiant: Business Analytics using R and Shiny},
-    author = {Vincent Nijs},
-    year = {2016},
-    note = {https://github.com/vnijs/radiant, http://vnijs.github.io/radiant/},
   }</code></pre>
 <p></details></p>
 </div>
@@ -686,7 +743,7 @@ A BibTeX entry for LaTeX users is
 </div>
 <div id="license" class="section level2">
 <h2>License</h2>
-<p>Radiant is licensed under the <a href="http://www.tldrlegal.com/l/AGPL3" target="\_blank">AGPLv3</a>. The documentation and videos on this site and the radiant help files are licensed under the creative commons attribution, non-commercial, share-alike license <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-NC-SA</a>.</p>
+<p>Radiant is licensed under the <a href="http://www.tldrlegal.com/l/AGPL3" target="\_blank">AGPLv3</a>. The documentation and videos on this site as well as the Radiant help files are licensed under the creative commons attribution, non-commercial, share-alike license <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC-NC-SA</a>.</p>
 <p>As a summary, the AGPLv3 license requires, attribution, including copyright and license information in copies of the software, stating changes if the code is modified, and disclosure of all source code. Details are in the COPYING file.</p>
 <p>If you are interested in using Radiant please email me at <a href="mailto:radiant@rady.ucsd.edu">radiant@rady.ucsd.edu</a></p>
 </div>

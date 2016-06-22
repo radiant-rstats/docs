@@ -30,7 +30,7 @@ title: R resources
 
 ## Radiant
 
-<http://vnijs.github.io/radiant>
+<http://radiant-rstats.github.io/docs>
 
 In R(studio) enter: `help(package = "radiant")`
 

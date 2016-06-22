@@ -11,7 +11,7 @@
 
 
 
-<title>Basics &gt; Tables &gt; Cross-tabs</title>
+<title>State</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -268,53 +268,16 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Basics &gt; Tables &gt; Cross-tabs</h1>
+<h1 class="title toc-ignore">State</h1>
 
 </div>
 
 
 <hr />
 <blockquote>
-<p>Cross-tab analysis is used to evaluate if categorical variables are associated. This tool is also known as chi-square or contingency table analysis</p>
+<p>Save, share, or view state</p>
 </blockquote>
-<div id="example" class="section level3">
-<h3>Example</h3>
-<p>The data are from a sample of 580 newspaper readers that indicated (1) which newspaper they read most frequently (USA today or Wall Street Journal) and (2) their level of income (Low income vs. High income). The data has three variables: A respondent identifier (id), respondent income (High or Low), and the primary newspaper the respondent reads (USA today or Wall Street Journal).</p>
-<p>We will examine if there is a relationship between income level and choice of newspaper. In particular, we test the following null and alternative hypotheses:</p>
-<ul>
-<li>H0: There is no relationship between income level and newspaper choice</li>
-<li>Ha: There is a relationship between income level and newspaper choice</li>
-</ul>
-<p>If the null-hypothesis is rejected we can investigate which cell(s) contribute to the hypothesized association. In Radiant (Base &gt; Cross-tab) choose Income as the first factor and Newspaper as the second factor. First, compare the observed and expected frequencies. The expected frequencies are calculated using H0 (i.e., no association) as (Row total x Column Total) / Overall Total.</p>
-<div class="figure">
-<img src="figures_basics/cross_tabs_summary.png" alt="Summary" />
-<p class="caption">Summary</p>
-</div>
-<p>The (Pearson) chi-squared test evaluates if we can reject the null-hypothesis that the two variables are independent. It does so by comparing the observed frequencies (i.e., what we actually see in the data) to the expected frequencies (i.e., what we would expect to see if the two variables were independent). If there are big differences between the table of expected and observed frequencies the chi-square value will be <em>large</em>. The chi-square value for each cell is calculated as <code>(o - e)^2 / e</code>, where <code>o</code> is the observed frequency in a cell and <code>e</code> is the expected frequency in that cell if the null hypothesis holds. These values can be shown by clicking the <code>Chi-squared</code> check box. The overall chi-square value is obtained by summing across all cells, i.e., it is the sum of the values shown in the <em>Contribution to chi-square</em> table.</p>
-<p>In order to determine if the chi-square value can be considered <em>large</em> we first determine the degrees of freedom (df). In particular: df = (# rows - 1) x (# columns - 1). In a 2x2 table, we have (2-1) x (2-1) = 1 df. The output in the <em>Summary</em> tab shows the value of the chi-square statistic, the associated df, and the p.value associated with the test. We also see the contribution from each cells to the overall chi-square statistic.</p>
-<p>Remember to check the expected values: All expected frequencies are larger than 5 therefore the p.value for the chi-square statistic is unlikely to be biased. As usual we reject the null-hypothesis when the p.value is smaller 0.05. Since our p.value is very small (&lt; .001) we can reject the null-hypothesis (i.e., the data suggest there is an association between newspaper readership and income).</p>
-<p>We can use the provided p.value associated with the Chi-squared value of 187.783 to evaluate the null hypothesis. However, we can also calculate the critical Chi-squared value using the probability calculator. As we can see from the output below that value is 3.841 if we choose a 95% confidence level. Because the calculated Chi-square value is larger than the critical value (187.783 &gt; 3.841) we reject null hypothesis that <code>Income</code> and <code>Newspaper</code> are independent.</p>
-<div class="figure">
-<img src="figures_basics/cross_tabs_chi_critical.png" alt="Critical value" />
-<p class="caption">Critical value</p>
-</div>
-<p>We can also use the probability calculator to determine the p.value associated with the calculated Chi-square value. Consistent with the output from the <em>Cross-tabs &gt; Summary</em> tab this <code>p.value</code> is <code>&lt; .001</code>.</p>
-<div class="figure">
-<img src="figures_basics/cross_tabs_chi_pvalue.png" alt="Critical value" />
-<p class="caption">Critical value</p>
-</div>
-<p>In addition to the numerical output provided in the <em>Summary</em> tab we can evaluate the hypothesis visually (see the <em>Plot</em> tab). We choose the same variables as before. However, we will plot the standardized deviations. This measure is calculated as (o-e)/sqrt(e), i.e., a score of how different the observed and expected frequencies in one cell in our table are. When a cell’s standardized deviation is greater than 1.96 (in absolute value) the cell has a significant deviation from the model of independence (or no association).</p>
-<div class="figure">
-<img src="figures_basics/cross_tabs_plot.png" alt="Plot" />
-<p class="caption">Plot</p>
-</div>
-<p>In the plot we see that all cells contribute to the association between income and readership as all standardized deviations are larger than 1.96 in absolute value (i.e., the bars extend beyond the outer dotted line in the plot).</p>
-<p>In other words, there seem to be fewer low income respondents that read WSJ and more high income respondents that read WSJ than would be expected if the null hypothesis of no-association were true. Furthermore, there are more low income respondents that read USA today and fewer high income respondents that read USA Today than would be expected if the null hypothesis of no-association were true.</p>
-</div>
-<div id="technical-note" class="section level3">
-<h3>Technical note</h3>
-<p>When one or more expected values are small (e.g., 5 or less) the p.value for the Chi-squared test is calculated using simulation methods. If some cells have an expected count below 1 it may be necessary to <em>collapse</em> rows and/or columns. <!--The description for the `goals2` dataset that is part of the `examples` bundled with Radiant has instructions on how rows or columns in a cross-tab can be collapsed when some of the expected values are low.--></p>
-</div>
+<p>Save the state of the app to disk. See the help file for the <a href="/docs/data/manage.html" target="_blank"><em>Data &gt; Manage</em></a> tab for details.</p>
 
 
 &copy; Vincent Nijs (2016) <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/80x15.png" /></a>

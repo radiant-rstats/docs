@@ -221,12 +221,10 @@ $(document).ready(function () {
              <li class="dropdown-header">Evaluate</li>
              <li><a href="/docs/model/evalreg.html">Evaluate regression</a></li>
              <li><a href="/docs/model/evalbin.html">Evaluate classification</a></li>
-             <!-- <li class="divider"></li> -->
-             <!-- <li class="dropdown-header">Recommend</li> -->
-             <!-- <li><a href="/docs/model/crs.html">Collaborative Filtering</a></li> -->
+             <li class="divider"></li>
              <li class="dropdown-header">Decide</li>
-             <li><a href="/docs/quant/dtree.html">Decision analysis</a></li>
-             <li><a href="/docs/quant/simulater.html">Simulate</a></li>
+             <li><a href="/docs/model/dtree.html">Decision analysis</a></li>
+             <li><a href="/docs/model/simulater.html">Simulate</a></li>
           </ul>
         </li>
 
@@ -253,8 +251,8 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="/docs/R/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-             <li><a href="/docs/base/report.html">Report</a></li>
-             <li><a href="/docs/base/code.html">Code</a></li>
+             <li><a href="/docs/data/report.html">Report</a></li>
+             <li><a href="/docs/data/code.html">Code</a></li>
              <li><a href="/docs/programming.html">Programming</a></li>
              <li><a href="/docs/resources.html">Resources</a></li>
           </ul>
@@ -279,21 +277,21 @@ $(document).ready(function () {
 <blockquote>
 <p>Create pivot tables to explore your data</p>
 </blockquote>
-<p>If you have used pivot-tables in Excel the functionality provided in the Pivot tab should be familiar to you. Similar to the <em>Data &gt; Explore</em> tab, you can generate summary statistics for variables in your data. You can also generate frequency tables. Perhaps the most powerful feature in Pivot is that you can easily describe the data <em>by</em> one or more other variables.</p>
-<p>For example, with the <code>diamonds</code> data select <code>clarity</code> and <code>cut</code> from the Categorical variables drop-down. You can drag-and-drop the selected variables to change their order. The categories for the first variable will be the column headers. After selecting these two variables a frequency table of diamonds with different levels of clarity and quality of cut. Choose <code>Row</code>, <code>Column</code>, or <code>Total</code> from the Normalize drop-down to normalize the frequencies by row, column, or overall total. If a normalize option is selected it can be convenient to check the <code>Percentage</code> box to express the numbers as percentages. Choose <code>Color bar</code> or <code>Heat map</code> from the Conditional formatting drop-down to emphasize the highest frequency counts.</p>
-<p>It is also possible to summarize numerical variables. Select <code>price</code> from the Numerical variables drop-down. This will create the table shown below. Just as in the View tab you can sort the table by clicking on the column headers. You can also use sliders (e.g., click in the input box below <code>I1</code>) to limit the view to values in a specified range. To view only information for diamonds with <code>Fair</code> or <code>Good</code> cut quality click in the input box below the <code>cut</code> header.</p>
+<p>If you have used pivot-tables in Excel the functionality provided in the <em>Data &gt; Pivot</em> tab should be familiar to you. Similar to the <a href="/docs/data/explore.html" target="_blank"><em>Data &gt; Explore</em></a> tab, you can generate summary statistics for variables in your data. You can also generate frequency tables. Perhaps the most powerful feature in <em>Data &gt; Pivot</em> is that you can easily describe the data <em>by</em> one or more other variables.</p>
+<p>For example, with the <code>diamonds</code> data loaded, select <code>clarity</code> and <code>cut</code> from the <code>Categorical variables</code> drop-down. The categories for the first variable will be the column headers but you can drag-and-drop the selected variables to change their ordering. After selecting these two variables a frequency table of diamonds with different levels of clarity and quality of cut is shown. Choose <code>Row</code>, <code>Column</code>, or <code>Total</code> from the <code>Normalize by</code> drop-down to normalize the frequencies by the row, column, or overall total. If a normalize option is selected it can be convenient to check the <code>Percentage</code> box to express the numbers as percentages. Choose <code>Color bar</code> or <code>Heat map</code> from the <code>Conditional formatting</code> drop-down to emphasize the highest frequency counts.</p>
+<p>It is also possible to summarize numerical variables. Select <code>price</code> from the <code>Numerical variables</code> drop-down. This will create the table shown below. Just as in the <a href="/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> tab you can sort the table by clicking on the column headers. You can also use sliders (e.g., click in the input box below <code>I1</code>) to limit the view to values in a specified range. To view only information for diamonds with <code>Fair</code> or <code>Good</code> cut quality click in the input box below the <code>cut</code> header.</p>
 <div class="figure">
 <img src="figures/pivotr.png" alt="pivotr table" />
 <p class="caption">pivotr table</p>
 </div>
-<p>You can also create a bar chart based on the generated table (see image above). To download the table to <em>csv</em> format or the plot to a <em>png</em> format click the download icon on the right.</p>
+<p>You can also create a bar chart based on the generated table (see image above). To download the table in <em>csv</em> format or the plot in <em>png</em> format click the appropriate download icon on the right.</p>
 <div id="filter" class="section level3">
 <h3>Filter</h3>
-<p>Use the <code>Filter</code> box to select (or omit) specific sets of rows from the data. See the help file for <em>Data &gt; View</em> for details.</p>
+<p>Use the <code>Filter</code> box to select (or omit) specific sets of rows from the data to tabulate. See the help file for <a href="/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> for details.</p>
 </div>
 <div id="pause-pivot" class="section level3">
 <h3>Pause pivot</h3>
-<p>For larger datasets it can useful to click <code>Pause pivot</code> before selecting categorical and numerical variables, entering filters, etc. When you are ready to generate the pivot table make sure that <code>Pause pivot</code> is not checked. When <code>Pause pivot</code> is not checked, any changes to the inputs will automatically result in a new table.</p>
+<p>For large datasets it can useful to click <code>Pause pivot</code> before selecting categorical and numerical variables, entering filters, etc. When you are ready to generate the pivot table make sure that <code>Pause pivot</code> is no longer checked. When <code>Pause pivot</code> is not checked, any input changes will automatically result in a new table.</p>
 </div>
 
 

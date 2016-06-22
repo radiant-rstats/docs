@@ -221,12 +221,10 @@ $(document).ready(function () {
              <li class="dropdown-header">Evaluate</li>
              <li><a href="/docs/model/evalreg.html">Evaluate regression</a></li>
              <li><a href="/docs/model/evalbin.html">Evaluate classification</a></li>
-             <!-- <li class="divider"></li> -->
-             <!-- <li class="dropdown-header">Recommend</li> -->
-             <!-- <li><a href="/docs/model/crs.html">Collaborative Filtering</a></li> -->
+             <li class="divider"></li>
              <li class="dropdown-header">Decide</li>
-             <li><a href="/docs/quant/dtree.html">Decision analysis</a></li>
-             <li><a href="/docs/quant/simulater.html">Simulate</a></li>
+             <li><a href="/docs/model/dtree.html">Decision analysis</a></li>
+             <li><a href="/docs/model/simulater.html">Simulate</a></li>
           </ul>
         </li>
 
@@ -253,8 +251,8 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="/docs/R/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-             <li><a href="/docs/base/report.html">Report</a></li>
-             <li><a href="/docs/base/code.html">Code</a></li>
+             <li><a href="/docs/data/report.html">Report</a></li>
+             <li><a href="/docs/data/code.html">Code</a></li>
              <li><a href="/docs/programming.html">Programming</a></li>
              <li><a href="/docs/resources.html">Resources</a></li>
           </ul>
@@ -275,7 +273,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>Radiant’s goal is to provide access to the power of R for business analytics. Although Radiant’s web-interface can handle quite a few data and analysis tasks, at times you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an <a href="http://rmarkdown.rstudio.com/">Rmarkdown</a> document. Most pages in the app have an icon you can click (e.g., the book icon on the bottom left on the <code>Base &gt; Single mean</code> page) to start working on your report. Press the <code>Knit report</code> button on the <code>R &gt; Report</code> page to render the report to HTML. See <a href="/radiant/base/report.html">Report</a> page for details. The full function manual is available at <a href="http://vnijs.github.io/radiant/radiant.pdf" target="_blank">http://vnijs.github.io/radiant/radiant.pdf</a>.</p>
+<p>Radiant’s goal is to provide access to the power of R for business analytics. Although Radiant’s web-interface can handle quite a few data and analysis tasks, at times you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an <a href="http://rmarkdown.rstudio.com/">Rmarkdown</a> document. Most pages in the app have an icon you can click (e.g., the book icon on the bottom left on the <em>Basics &gt; Single mean</em> page) to start working on your report. Press the <code>Knit report</code> button on the <em>R &gt; Report</em> page to render the report to HTML. See <a href="/radiant/data/report.html">Report</a> page for details. The full function manual is available at <a href="http://radiant-rstats.github.io/docs/radiant.pdf" target="_blank">http://radiant-rstats.github.io/docs/radiant.pdf</a>.</p>
 <p>You can also use Rstudio to render and edit Rmarkdown documents generated in Radiant. When you install and load Radiant it exports functions that can be called from R-code and/or an Rmarkdown document.</p>
 <p>If you close Radiant by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code> after launching it from R(studio) you can paste the commands below into the command console to get the same output as in the browser interface.</p>
 <pre class="r"><code>result &lt;- single_mean(&quot;diamonds&quot;, &quot;price&quot;)
@@ -300,12 +298,12 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, xvar = &quot;carat&quot;, yvar = &quot;price&quot;,
           type = &quot;scatter&quot;, facet_row = &quot;clarity&quot;, color = &quot;clarity&quot;)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>As an example, you can render the <a href="https://vnijs.github.io/radiant/examples/single_mean.Rmd"><code>single_mean.Rmd</code></a> file into html (or pdf or word if you prefer) in Rstudio. Try the code in <a href="https://vnijs.github.io/radiant/examples/radiant_rcode.R"><code>radiant_rcode.R</code></a> for a more extensive example.</p>
-<p>An older version of Radiant is available on <a href="http://cran.r-project.org/web/packages/radiant/index.html">CRAN</a>. To install the latest version with complete documentation for offline access, open R(studio) and copy-and-paste the commands below:</p>
-<pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;http://vnijs.github.io/radiant_miniCRAN/&quot;)
+<p>As an example, you can render the <a href="https://radiant-rstats.github.io/docs/examples/single_mean.Rmd"><code>single_mean.Rmd</code></a> file into html (or PDF or Word if you prefer) in Rstudio. Try the code in <a href="https://radiant-rstats.github.io/docs/examples/radiant_rcode.R"><code>radiant_rcode.R</code></a> for a more extensive example.</p>
+<p>To install the latest version with complete documentation for offline access, open R(studio) and copy-and-paste the commands below:</p>
+<pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;http://radiant-rstats.github.io/minicran/&quot;)
 library(radiant)</code></pre>
 <p>This will load the library and the required packages. To see the index of functions currently available in the Radiant package using the <code>help(package = &quot;radiant&quot;)</code> command</p>
-<p>Lets start by comparing the mean of a variable to a (population) value using the built-in <code>mtcars</code> dataset. This functionality is in the Radiant menu <code>Base &gt; Single mean</code>. The analysis is conducted in function <code>single_mean</code>. Calling the <code>summary</code> method on the result object will show tabular output. Calling <code>plot</code> on the same result will produce plots to help evaluate the hypothesis.</p>
+<p>Lets start by comparing the mean of a variable to a (population) value using the built-in <code>mtcars</code> dataset. This functionality is in the Radiant menu <code>Basics &gt; Single mean</code>. The analysis is conducted in function <code>single_mean</code>. Calling the <code>summary</code> method on the result object will show tabular output. Calling <code>plot</code> on the same result will produce plots to help evaluate the hypothesis.</p>
 <pre class="r"><code>result &lt;- single_mean(&quot;mtcars&quot;, &quot;mpg&quot;, comp_value = 20, alternative = &quot;greater&quot;)
 summary(result)</code></pre>
 <pre><code>Single mean test
@@ -378,7 +376,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code>plot(result, plots = c(&quot;bar&quot;,&quot;density&quot;))</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>These datasets are available after loading the radiant library. We can also load data through Radiant’s web interface and then access the data from the console after closing the app. Start radiant using the command below and then click <code>examples &gt; Load examples</code> in the <code>Data &gt; Manage</code> tab. Then close the app using <code>Quit &gt; Quit</code>.</p>
-<pre class="r"><code>## start radiant, load the example data, then Quit &gt; Quit
+<pre class="r"><code>## start radiant, load the example data, then click the power icon and Stop
 radiant()</code></pre>
 <p>We can now use the <code>compare_means</code> function to evaluate salary data for professors of different ranks using:</p>
 <pre class="r"><code>result &lt;- compare_means(&quot;salary&quot;, &quot;rank&quot;, &quot;salary&quot;)
@@ -403,7 +401,7 @@ Adjustment: None
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>An alternative way to write this code is to use <code>piping</code> (see <a href="http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html">dplyr</a> and <a href="http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a> vignettes):</p>
+<p>An alternative way to write this code is to use <code>piping</code> (see <a href="http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html">dplyr</a> and <a href="http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a> vignettes)):</p>
 <pre class="r"><code>salary %&gt;% compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;%
   {summary(.); plot(.)}</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
@@ -425,8 +423,8 @@ Adjustment: None
  AssocProf = Prof       AssocProf not equal to Prof       -32895.67 &lt; .001  ***
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>We can also run regressions and get output that would require writting many lines of code to produce from scratch:</p>
-<pre class="r"><code>result &lt;- regression(&quot;diamonds&quot;, &quot;price&quot;, c(&quot;carat&quot;,&quot;clarity&quot;))
+<p>We can also run regressions and get output in a format that would require many lines of code to produce from scratch:</p>
+<pre class="r"><code>result &lt;- regress(&quot;diamonds&quot;, &quot;price&quot;, c(&quot;carat&quot;,&quot;clarity&quot;))
 summary(result, sum_check = &quot;confint&quot;)</code></pre>
 <pre><code>Linear regression (OLS)
 Data     : diamonds 
@@ -464,11 +462,11 @@ clarity|VVS1    5027.669  4607.574  5447.764 420.095
 clarity|IF      5265.170  4807.024  5723.317 458.147</code></pre>
 <pre class="r"><code>predict(result, pred_cmd = &quot;carat = 1:10&quot;)</code></pre>
 <pre><code>Linear regression (OLS)
-Data       : diamonds 
+Data                 : diamonds 
 Response variable    : price 
 Explanatory variables: carat, clarity 
+Prediction command   : carat  =  1:10 
 
-Predicted values for:
  clarity carat Prediction      2.5%     97.5%      +/-
      SI1     1   5265.569  2859.633  7671.505 2405.936
      SI1     2  13703.599 11294.952 16112.246 2408.647
@@ -480,27 +478,16 @@ Predicted values for:
      SI1     8  64331.781 61821.491 66842.072 2510.291
      SI1     9  72769.811 70229.110 75310.513 2540.701
      SI1    10  81207.842 78633.187 83782.496 2574.655</code></pre>
-<pre><code>   clarity carat Prediction      2.5%     97.5%      +/-
-1      SI1     1   5265.569  2859.633  7671.505 2405.936
-2      SI1     2  13703.599 11294.952 16112.246 2408.647
-3      SI1     3  22141.629 19726.114 24557.145 2415.515
-4      SI1     4  30579.660 28153.155 33006.165 2426.505
-5      SI1     5  39017.690 36576.130 41459.250 2441.560
-6      SI1     6  47455.720 44995.114 49916.327 2460.607
-7      SI1     7  55893.751 53410.198 58377.303 2483.552
-8      SI1     8  64331.781 61821.491 66842.072 2510.291
-9      SI1     9  72769.811 70229.110 75310.513 2540.701
-10     SI1    10  81207.842 78633.187 83782.496 2574.655</code></pre>
 <pre class="r"><code>plot(result, plots = &quot;coef&quot;)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre class="r"><code>plot(result, plots = &quot;dashboard&quot;)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p>As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use <code>?hier_clus</code>, <code>?plot.hier_clus</code>, and <code>?kmeans_clus</code>. See also the <a href="http://vnijs.github.io/radiant/radiant.pdf" target="_blank">radiant function manual</a>.</p>
+<p>As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use <code>?hier_clus</code>, <code>?plot.hier_clus</code>, and <code>?kmeans_clus</code>. See also the <a href="http://radiant-rstats.github.io/docs/radiant.pdf" target="_blank">radiant function manual</a>.</p>
 <pre class="r"><code>## load the radiant library (not needed if run in Radiant&#39;s R &gt; Code tab)
 library(radiant)
 
 ## load the data directly from a url
-shopping &lt;- loadrda_url(&quot;https://github.com/vnijs/radiant/blob/master/inst/marketing/data/shopping.rda?raw=true&quot;)
+shopping &lt;- loadrda_url(&quot;https://github.com/radiant-rstats/radiant.multivariate/blob/master/data/shopping.rda?raw=true&quot;)
 
 ## start with hierarchical clustering, view help
 ## run hierarchical cluster analysis on the shopping data, variables v1 through v6
@@ -562,7 +549,7 @@ getdata(&quot;shopping&quot;) %&gt;% head</code></pre>
 4  4  4  6  4  5  3  6      3
 5  5  1  3  2  2  6  4      2
 6  6  6  4  6  3  3  4      1</code></pre>
-<p>See if you can reproduce this output in the radiant web-interface. Start <code>Radiant - Marketing</code> from the <code>Addins</code> dropdown in Rstudio. Apart from the graphical user interface you can also run code inside the Radiant app in the <em>R &gt; Code</em> tab. See <a href="/radiant/base/code.html">Code</a> page for details.</p>
+<p>See if you can reproduce this output in the radiant web-interface. Start <code>Radiant</code> from the <code>Addins</code> dropdown in Rstudio. You can also run code inside the Radiant app in the <em>R &gt; Code</em> tab. See <a href="/radiant/data/code.html" target="_blank">Code</a> page for details.</p>
 
 
 &copy; Vincent Nijs (2016) <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/80x15.png" /></a>

@@ -11,7 +11,7 @@
 
 
 
-<title>Basics &gt; Tables &gt; Cross-tabs</title>
+<title>Model &gt; Evaluate &gt; Evaluate regression</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -268,52 +268,50 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Basics &gt; Tables &gt; Cross-tabs</h1>
+<h1 class="title toc-ignore">Model &gt; Evaluate &gt; Evaluate regression</h1>
 
 </div>
 
 
 <hr />
 <blockquote>
-<p>Cross-tab analysis is used to evaluate if categorical variables are associated. This tool is also known as chi-square or contingency table analysis</p>
+<p>Evaluate regression model performance</p>
 </blockquote>
-<div id="example" class="section level3">
-<h3>Example</h3>
-<p>The data are from a sample of 580 newspaper readers that indicated (1) which newspaper they read most frequently (USA today or Wall Street Journal) and (2) their level of income (Low income vs. High income). The data has three variables: A respondent identifier (id), respondent income (High or Low), and the primary newspaper the respondent reads (USA today or Wall Street Journal).</p>
-<p>We will examine if there is a relationship between income level and choice of newspaper. In particular, we test the following null and alternative hypotheses:</p>
-<ul>
-<li>H0: There is no relationship between income level and newspaper choice</li>
-<li>Ha: There is a relationship between income level and newspaper choice</li>
-</ul>
-<p>If the null-hypothesis is rejected we can investigate which cell(s) contribute to the hypothesized association. In Radiant (Base &gt; Cross-tab) choose Income as the first factor and Newspaper as the second factor. First, compare the observed and expected frequencies. The expected frequencies are calculated using H0 (i.e., no association) as (Row total x Column Total) / Overall Total.</p>
+<p>To download the table as a csv-files click the top download button on the right of your screen. To download the plots at a png file click the lower download icon on the right of your screen.</p>
+<div id="response-variable" class="section level4">
+<h4>Response variable</h4>
+<p>The outcome, or response, variable of interest. This should be binary variable, either a factor or an integer with two value (i.e., 0 and 1).</p>
+</div>
+<div id="predictor" class="section level4">
+<h4>Predictor</h4>
+<p>Select one or more variables that can be used to <em>predict</em> the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using <em>Regression &gt; Linear regression (OLS)</em> or a Neural Network estimated using <em>Model &gt; Neural Network (ANN)</em>).</p>
+</div>
+<div id="margin-cost-of-over--vs-under-predicting" class="section level4">
+<h4>Margin &amp; Cost of over- vs under-predicting</h4>
+<p>To use the <code>Profit</code> and <code>ROME</code> (Return on Marketing Expenditures) charts, enter the <code>Margin</code> for each sale and the estimated <code>Cost</code> per contact (e.g., mailing costs or opportunity cost of email or text). For example, if the margin on a sale is $10 (excluding the contact cost) and the contact cost is $1 enter 10 and 1 in the <code>Margin</code> and <code>Cost</code> input windows.</p>
+<p>(e.g., think of production, inventory, etc. ala Rady-Tasty-Pastry)</p>
+</div>
+<div id="show-results-for" class="section level4">
+<h4>Show results for</h4>
+<p>If a <code>filter</code> is active (e.g., set in the <em>Data &gt; View</em> tab) generate results for <code>All</code> data, <code>Training</code> data, <code>Validation</code> data, or <code>Both</code> training and validation data. If no filter is active calculations are applied to all data.</p>
+</div>
+<div id="plots" class="section level4">
+<h4>Plots</h4>
+<p>Generate … Profit, and/or ROME charts. The profit chart displays a profit index useful to compare performance across predictors/models</p>
+<p>Generate diagnostic plots for each models (combine or facet grid) ..</p>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p>The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 72% of customers would maximize profits.</p>
 <div class="figure">
-<img src="figures_basics/cross_tabs_summary.png" alt="Summary" />
-<p class="caption">Summary</p>
+<img src="figures_model/evalbin_profit_gain.png" alt="profit and gains" />
+<p class="caption">profit and gains</p>
 </div>
-<p>The (Pearson) chi-squared test evaluates if we can reject the null-hypothesis that the two variables are independent. It does so by comparing the observed frequencies (i.e., what we actually see in the data) to the expected frequencies (i.e., what we would expect to see if the two variables were independent). If there are big differences between the table of expected and observed frequencies the chi-square value will be <em>large</em>. The chi-square value for each cell is calculated as <code>(o - e)^2 / e</code>, where <code>o</code> is the observed frequency in a cell and <code>e</code> is the expected frequency in that cell if the null hypothesis holds. These values can be shown by clicking the <code>Chi-squared</code> check box. The overall chi-square value is obtained by summing across all cells, i.e., it is the sum of the values shown in the <em>Contribution to chi-square</em> table.</p>
-<p>In order to determine if the chi-square value can be considered <em>large</em> we first determine the degrees of freedom (df). In particular: df = (# rows - 1) x (# columns - 1). In a 2x2 table, we have (2-1) x (2-1) = 1 df. The output in the <em>Summary</em> tab shows the value of the chi-square statistic, the associated df, and the p.value associated with the test. We also see the contribution from each cells to the overall chi-square statistic.</p>
-<p>Remember to check the expected values: All expected frequencies are larger than 5 therefore the p.value for the chi-square statistic is unlikely to be biased. As usual we reject the null-hypothesis when the p.value is smaller 0.05. Since our p.value is very small (&lt; .001) we can reject the null-hypothesis (i.e., the data suggest there is an association between newspaper readership and income).</p>
-<p>We can use the provided p.value associated with the Chi-squared value of 187.783 to evaluate the null hypothesis. However, we can also calculate the critical Chi-squared value using the probability calculator. As we can see from the output below that value is 3.841 if we choose a 95% confidence level. Because the calculated Chi-square value is larger than the critical value (187.783 &gt; 3.841) we reject null hypothesis that <code>Income</code> and <code>Newspaper</code> are independent.</p>
+<p>The prediction used in the screen shot above was derived from a logistic regression on the <code>dvd</code> data. The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load examples</code>). The model was estimated using <em>Regression &gt; Logistic regression (GLM)</em>. The predictions shown below were generated in the <em>Predict</em> tab.</p>
 <div class="figure">
-<img src="figures_basics/cross_tabs_chi_critical.png" alt="Critical value" />
-<p class="caption">Critical value</p>
+<img src="figures_model/evalbin_logistic.png" alt="logistic" />
+<p class="caption">logistic</p>
 </div>
-<p>We can also use the probability calculator to determine the p.value associated with the calculated Chi-square value. Consistent with the output from the <em>Cross-tabs &gt; Summary</em> tab this <code>p.value</code> is <code>&lt; .001</code>.</p>
-<div class="figure">
-<img src="figures_basics/cross_tabs_chi_pvalue.png" alt="Critical value" />
-<p class="caption">Critical value</p>
-</div>
-<p>In addition to the numerical output provided in the <em>Summary</em> tab we can evaluate the hypothesis visually (see the <em>Plot</em> tab). We choose the same variables as before. However, we will plot the standardized deviations. This measure is calculated as (o-e)/sqrt(e), i.e., a score of how different the observed and expected frequencies in one cell in our table are. When a cell’s standardized deviation is greater than 1.96 (in absolute value) the cell has a significant deviation from the model of independence (or no association).</p>
-<div class="figure">
-<img src="figures_basics/cross_tabs_plot.png" alt="Plot" />
-<p class="caption">Plot</p>
-</div>
-<p>In the plot we see that all cells contribute to the association between income and readership as all standardized deviations are larger than 1.96 in absolute value (i.e., the bars extend beyond the outer dotted line in the plot).</p>
-<p>In other words, there seem to be fewer low income respondents that read WSJ and more high income respondents that read WSJ than would be expected if the null hypothesis of no-association were true. Furthermore, there are more low income respondents that read USA today and fewer high income respondents that read USA Today than would be expected if the null hypothesis of no-association were true.</p>
-</div>
-<div id="technical-note" class="section level3">
-<h3>Technical note</h3>
-<p>When one or more expected values are small (e.g., 5 or less) the p.value for the Chi-squared test is calculated using simulation methods. If some cells have an expected count below 1 it may be necessary to <em>collapse</em> rows and/or columns. <!--The description for the `goals2` dataset that is part of the `examples` bundled with Radiant has instructions on how rows or columns in a cross-tab can be collapsed when some of the expected values are low.--></p>
 </div>
 
 

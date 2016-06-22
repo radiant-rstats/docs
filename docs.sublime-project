@@ -3,6 +3,15 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/vnijs/Desktop/GitHub/radiant.model"
+		},
+		{
+			"path": "/Users/vnijs/Desktop/GitHub/radiant.data"
+		},
+		{
+			"path": "/Users/vnijs/Desktop/GitHub/radiant"
 		}
 	]
 }
