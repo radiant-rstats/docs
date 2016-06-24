@@ -49,7 +49,7 @@ Radiant focuses on business data and decisions. It offers tools, examples, and d
 If you use Rstudio (version 0.99.893 or later) you can start and update Radiant through the `Addins` menu at the top of the screen. To install the latest version of Radiant for Windows or Mac, with complete documentation for off-line access, open R(studio) and copy-and-paste the command below:
 
 ```r
-install.packages("radiant", repos = "http://radiant-rstats.github.io/minicran/", type = 'binary')
+install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/", type = 'binary')
 ```
 
 Once all packages are installed select `Radiant` from the `Addins` menu in Rstudio or use the command below to launch the app:
@@ -101,7 +101,7 @@ To run your own server instance copy/fork the repo from github and [deploy to sh
 You can also host Radiant using [shiny-server](http://www.rstudio.com/products/rstudio/download-server/). First, install radiant on the server using the command below:
 
 ```r
-install.packages("radiant", repos = "http://radiant-rstats.github.io/minicran/")
+install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/")
 ```
 
 Then clone the radiant repo and point shiny-server to the inst/app/ directory. As a courtesy, please let me know if you intend to use Radiant on a server.

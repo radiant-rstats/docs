@@ -51,7 +51,7 @@ To install Radiant open Rstudio and copy-and-paste the command below into the **
 > **Note:** On Windows you may need to start Rstudio by right-clicking on the desktop shortcut and choosing `run as administrator`.
 
 ```r
-install.packages("radiant", repos = "http://radiant-rstats.github.io/minicran/", type = "binary")
+install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/", type = "binary")
 ```
 
 > **Important:** If you use Windows and are asked where to install Radiant (i.e., "Would you like to use a personal library instead?") you most likely did **not** install R in directory C:\\R\\R-`r rv` as stated above. You should uninstall and reinstall R in the suggested directory before proceeding.
@@ -80,7 +80,7 @@ you should reinstall R into C:\\R\\R-`r rv` as mentioned above. You should also 
 On rare occasions R(studio) may complain that a package is not yet installed. If so, install the package mentioned using the command below but replace 'package-that-is-not-yet-installed' with the package name mentioned in the error message
 
 ```{r eval = FALSE}
-install.packages("package-that-is-not-yet-installed", repos = "http://radiant-rstats.github.io/minicran/", type = "binary")
+install.packages("package-that-is-not-yet-installed", repos = "https://radiant-rstats.github.io/minicran/", type = "binary")
 ```
 
 ## Reporting issues
