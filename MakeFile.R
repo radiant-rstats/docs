@@ -37,3 +37,18 @@ system("rm -rf .Rd2pdf*")
 setwd("~/gh/docs/")
 file.copy("~/radiant.data.pdf","radiant.data.pdf",overwrite = TRUE)
 system("rm -rf .Rd2pdf*")
+
+create_manuals <- function(x) {
+	app <- paste0("radiant.",x)
+	man <- paste0(app,".pdf")
+	unlink(man)
+	setwd("~")
+	unlink(man)
+	system(paste0("R CMD Rd2pdf gh/",app," --no-preview"))
+	system("rm -rf .Rd2pdf*")
+	setwd("~/gh/docs/")
+	file.copy(paste0("~/",man), man, overwrite = TRUE)
+	system("rm -rf .Rd2pdf*")
+}
+
+sapply(c("data","design","basics","model","multivariate"), create_manuals)

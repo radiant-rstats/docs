@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -275,7 +286,7 @@ $(document).ready(function () {
 
 <hr />
 <blockquote>
-<p>A goodness-of-fit test is used to evaluate if</p>
+<p>A goodness-of-fit test is used to determine if data from a sample are consistent with a hypothesized distribution</p>
 </blockquote>
 <div id="example" class="section level3">
 <h3>Example</h3>
@@ -285,24 +296,21 @@ $(document).ready(function () {
 <li>H0: Readership shares for USA today and Wall Street Journal are 55% and 45% respectively</li>
 <li>Ha: Readership shares for USA today and Wall Street Journal are not equal to the stated values</li>
 </ul>
-<p>If we cannot reject the null hypothesis based on the available sample there is a “good fit” between the observed data and the assumed population shares or probabilities. In Radiant (<em>Basic &gt; Goodness</em>) choose Newspaper as the categorical variable. If we leave the <code>Probabilities</code> input field empty (or enter 1/2) we would be testing if the shares are equal. However, to test H0 and Ha we need to enter <code>0.45 and 0.55</code> and then press <code>Enter</code>. First, compare the observed and expected frequencies. The expected frequencies are calculated using H0 (i.e., no deviation from the stated shares) total <span class="math inline">\(\times\)</span> <span class="math inline">\(p\)</span> where <span class="math inline">\(p\)</span> is the share (or probility) assumed for a cell.</p>
-<div class="figure">
-<img src="figures_basics/goodness_summary.png" alt="Summary" />
-<p class="caption">Summary</p>
-</div>
+<p>If we cannot reject the null hypothesis based on the available sample there is a “good fit” between the observed data and the assumed population shares or probabilities. In Radiant (<em>Basics &gt; Goodness</em>) choose Newspaper as the categorical variable. If we leave the <code>Probabilities</code> input field empty (or enter 1/2) we would be testing if the shares are equal. However, to test H0 and Ha we need to enter <code>0.45 and 0.55</code> and then press <code>Enter</code>. First, compare the observed and expected frequencies. The expected frequencies are calculated using H0 (i.e., no deviation from the stated shares) total <span class="math inline">\(\times\)</span> <span class="math inline">\(p\)</span> where <span class="math inline">\(p\)</span> is the share (or probility) assumed for a cell.</p>
+<p align="center">
+<img src="figures_basics/goodness_summary.png">
+</p>
 <p>The (Pearson) chi-squared test evaluates if we can reject the null-hypothesis that the observed and expected values are the same. It does so by comparing the observed frequencies (i.e., what we actually see in the data) to the expected frequencies (i.e., what we would expect to see if distribution of shares is as we assumed). If there are big differences between the table of expected and observed frequencies the chi-square value will be <em>large</em>. The chi-square value for each cell is calculated as <code>(o - e)^2 / e</code>, where <code>o</code> is the observed frequency in a cell and <code>e</code> is the expected frequency in that cell if the null hypothesis holds. These values can be shown by clicking the <code>Chi-squared</code> check box. The overall chi-square value is obtained by summing across all cells, i.e., it is the sum of the values shown in the <em>Contribution to chi-square</em> table.</p>
 <p>In order to determine if the chi-square value can be considered <em>large</em> we first determine the degrees of freedom (df). In particular: df = # cells - 1. In a table with two cells we have (2-1) = 1 df. The output in the <em>Summary</em> tab shows the value of the chi-square statistic, the associated df, and the p.value associated with the test. We also see the contribution from each cells to the overall chi-square statistic.</p>
 <p>Remember to check the expected values: All expected frequencies are larger than 5 therefore the p.value for the chi-square statistic is unlikely to be biased. As usual we reject the null-hypothesis when the p.value is smaller 0.05. Since our p.value is very large (&gt; .8) we cannot reject the null-hypothesis (i.e., the distribution of shares in the observed data is consistent with those we assumed).</p>
 <p>We can use the provided p.value associated with the Chi-squared value of 0.028 to evaluate the null hypothesis. However, we can also calculate the critical Chi-squared value using the probability calculator. As we can see from the output below that value is 3.841 if we choose a 95% confidence level. Because the calculated Chi-square value is smaller than the critical value (0.028 &lt; 3.841) we cannot reject null hypothesis stated above.</p>
-<div class="figure">
-<img src="figures_basics/cross_tabs_chi_critical.png" alt="Critical value" />
-<p class="caption">Critical value</p>
-</div>
+<p align="center">
+<img src="figures_basics/compare_props_prob_calc.png">
+</p>
 <p>We can also use the probability calculator to determine the p.value associated with the calculated Chi-square value. Consistent with the output from the <em>Summary</em> tab this <code>p.value</code> is <code>&lt; .001</code>.</p>
-<div class="figure">
-<img src="figures_basics/goodness_chi_pvalue.png" alt="Critical value" />
-<p class="caption">Critical value</p>
-</div>
+<p align="center">
+<img src="figures_basics/goodness_chi_pvalue.png">
+</p>
 <p>In addition to the numerical output provided in the <em>Summary</em> tab we can evaluate the hypothesis visually (see the <em>Plot</em> tab).</p>
 </div>
 <div id="technical-note" class="section level3">

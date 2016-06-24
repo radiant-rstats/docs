@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -447,10 +458,9 @@ r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log
 <div id="expand-grid" class="section level4">
 <h4>Expand grid</h4>
 <p>Create a dataset with all combinations of values for a selection of variables. This is useful to generate datasets for prediction in, for example, <a href="/docs/model/regress.html" target="_blank"><em>Model &gt; Linear regression (OLS)</em></a> or <a href="/docs/model/logistic.html" target="_blank"><em>Model &gt; Logistic regression (GLM)</em></a>. Suppose you want to create a dataset with all possible combinations of values for <code>cut</code> and <code>color</code> of a diamond. By selecting <code>Expand grid</code> from the <code>Transformation type</code> dropdown and <code>cut</code> and <code>color</code> in the <code>Select variable(s)</code> box we can see in the screenshot below that there are 35 possible combinations (i.e., <code>cut</code> has 5 unique values and <code>color</code> has 7 unique values so 5 x 7 combinations are possible). Choose a name for the new dataset (e.g., diamonds_expand) and click the <code>Store</code> button to add it to the <code>Datasets</code> dropdown.</p>
-<div class="figure">
-<img src="figures/expand_grid.png" alt="" />
-
-</div>
+<p align="center">
+<img src="figures/expand_grid.png">
+</p>
 </div>
 <div id="table-to-data" class="section level4">
 <h4>Table-to-data</h4>

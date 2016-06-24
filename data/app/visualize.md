@@ -22,7 +22,7 @@ In sum:
 
 where Q1 is the 25th percentile and Q3 is the 75th percentile. You may have to read the two bullets above a few times before it sinks in. The plot below should help to explain the structure of the box plot.
 
-![Box-plot](figures/boxplot.png)
+<p align="center"><img src="figures/boxplot.png"></p>
 [Source](http://en.wikipedia.org/wiki/File:Boxplot_vs_PDF.svg)
 
 ### Sub-plots and heat-maps

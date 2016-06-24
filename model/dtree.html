@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -278,8 +289,8 @@ $(document).ready(function () {
 <p>Create and evaluate a decision tree for decision analysis</p>
 </blockquote>
 <p>To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the <em>Model &gt; Decision analysis</em> tab you will see an example tree structure. This structure is based on an <a href="https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml">example</a> by Christop Glur, the developer of the <a href="https://github.com/gluc/data.tree">data.tree</a> library.</p>
-<p>To enter a new structure, start by providing a name for the tree. In the example below the name for the decision tree is entered as follow: <code>name: Sign contract</code>. The next step is to indicate the <strong>type</strong> of the first <strong>node</strong>. Options are <code>type: decision</code> or <code>type: chance</code>.</p>
-<p>In the provided example, the first node is a <strong>decision node</strong>. The decision maker has to decide to <code>Sign with Movie Company</code> or <code>Sign with TV Network</code>. The first option leads to a <strong>chance</strong> node with probabilities and payoffs. The second has a certain payoff.</p>
+<p>To enter a new structure, start by providing a name for the tree and enter a label in the input box next to the <code>Calculate</code> button. In the example below the name for the decision tree is entered as follow: <code>name: Sign contract</code>. The next step is to indicate the <strong>type</strong> of the first <strong>node</strong>. Options are <code>type: decision</code> or <code>type: chance</code>. Note that we are skipping <code>variables</code> for now but will return to this section below.</p>
+<p>In the provided example, the first node is a <strong>decision node</strong>. The decision maker has to decide to <code>Sign with Movie Company</code> or <code>Sign with TV Network</code>. The first option leads to a <strong>chance</strong> node with probabilities and payoffs. The second has a fixed payoff.</p>
 <blockquote>
 <p><strong>Note:</strong> Indentation is critically important when defining a tree structure. Use tabs to create branches as shown in the example. Names for branches <strong>must</strong> be followed by a <code>:</code> and information about the branch <strong>must</strong> be indented using the <code>tab</code> key.</p>
 </blockquote>
@@ -287,43 +298,41 @@ $(document).ready(function () {
 <blockquote>
 <p><strong>Note:</strong> Probabilities for a chance node should sum to 1 and all probabilities must be smaller than 1.</p>
 </blockquote>
-<p>A decision can also be assigned a <code>cost</code>. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. However, the contract with the TV network may be simpler and would not reguire legal assistance. Note that using <code>costs</code> is optional. In the example we could also subtract the $5,000 from the payoff from each of the possible box-office payoffs.</p>
+<p>A decision can also be assigned a <code>cost</code>. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not reguire legal assistance. Note that using <code>costs</code> is optional. In the example we could also subtract $5,000 from each of the possible box-office payoffs.</p>
+<p>If some values in the tree are relate or repeated it can be useful to use a <code>variables</code> section. Here you can assign labels to values and formulas. In the <code>Sign contract</code> example only one variable is created (i.e., <code>legal fees</code>). The <em>Sensitivity</em> tab requires that a variables section is included in the tree structure.</p>
 <div id="rules-for-decision-tree-input" class="section level2">
 <h2>Rules for decision tree input</h2>
 <ol style="list-style-type: decimal">
-<li>Always start with a tree name (e.g., “name: My tree”)</li>
-<li>The second line always defines a node type (i.e., “type: chance” or “type: decision”)</li>
-<li>All lines must have a ‘:’. For node names the ‘:’ ends the line. For all other lines it assigns a value. Specically, it assigns a name (e.g., “name: My tree”), a node type (e.g., “type: decision”), or a number (e.g., “payoff: 100”, “p: 0.1”, “cost: 10”)</li>
-<li>A node type must be followed on the next line by a node name (e.g., “Cancel orders:”)</li>
+<li>Always start with a tree name (e.g., <code>name: My tree</code>)</li>
+<li>The second line should start a <code>variables</code> section or a node defintion (i.e., type: chance or type: decision)</li>
+<li>All lines must have a <code>:</code>. For node names the <code>:</code> ends the line. For all other lines it assigns a value. Specically, it assigns a name (e.g., <code>name: My tree</code>), a node type (e.g., <code>type: decision</code>), a variable (e.g., <code>legal fees: 5000</code>), or a number (e.g., <code>payoff: 100</code>, <code>p: 0.1</code>, <code>cost: 10</code>)</li>
+<li>A node type must be followed on the next line by a node name (e.g., <code>Cancel orders:</code>)</li>
 <li>Use only letters and spaces in node names (i.e., no symbols)</li>
-<li>The line after a node name must always be indented</li>
-<li>End (or terminal or leave) nodes must have a payoff (e.g., “payoff: 100”)</li>
-<li>If linked to a chance node, a terminal node must have a probability (e.g, “p: 0.4”) and a payoff</li>
+<li>The line after a node name must <strong>always</strong> be indented</li>
+<li>End (or terminal or leave) nodes must have a payoff (e.g., <code>payoff: 100</code>)</li>
+<li>If linked to a chance node, terminal nodes must have a probability (e.g, <code>p: 0.4</code>) and a payoff</li>
 </ol>
-<p>After specifying the tree structure in the editor, press the <code>Calculate</code> button to see the <code>Initial</code> and <code>Final</code> decision tree in text format on the right-side of the screen (see screen shot below). The initial tree simply shows the tree structure that was specified, together with the node types, probabilities, costs, and payoffs. The final tree shows the optimal decision strategy determined by <code>folding-back</code> the tree. In this case, the optimal decision is to <code>Sign with Movie Company</code> because this decision has a higher <strong>Expected Monetary Value (EMV)</strong>.</p>
-<div class="figure">
-<img src="figures_model/dtree_model.png" alt="dtree model" />
-<p class="caption">dtree model</p>
-</div>
+<p>After specifying the tree structure in the editor, press the <code>Calculate</code> button to see the <code>Initial</code> and <code>Final</code> decision tree in text format on the right side of the screen (see screen shot below). The initial tree simply shows the tree structure that was specified, together with the node types, probabilities, costs, and payoffs. The final tree shows the optimal decision strategy determined by <code>folding-back</code> the tree. In this case, the optimal decision is to <code>Sign with Movie Company</code> because this decision has a higher <strong>Expected Monetary Value (EMV)</strong>.</p>
+<p align="center">
+<img src="figures_model/dtree_model.png">
+</p>
 <p>For a visual representation of the decision tree open the <em>Plot</em> tab. If you already clicked the <code>Calculate</code> button in the <em>Model</em> tab you will see a graph of the <code>Initial</code> decision tree (see screen shot below). Decision nodes are shown in green and chance nodes in orange. If the tree does not look as you intended/expected, return to the <em>Model</em> tab and edit the tree structure.</p>
-<div class="figure">
-<img src="figures_model/dtree_plot_initial.png" alt="dtree plot initial" />
-<p class="caption">dtree plot initial</p>
-</div>
-<p>The <code>Final</code> decision graph shows the optimal decision determined by <code>folding-back</code> the tree. The optimal decision is to <code>Sign with Movie Company</code> because this decision has a higher <strong>Expected Monetary Value</strong>. Note that the optimal decision at each decision node is shown by a thicker line connecting to the nodes.</p>
-<div class="figure">
-<img src="figures_model/dtree_plot_final.png" alt="dtree plot final" />
-<p class="caption">dtree plot final</p>
-</div>
-<p>The EMV for the <code>Sign with TV Network</code> is:</p>
-<p><span class="math display">\[
-    0.3 \times 900,000 + 0.6 \times 900,000 + 0.1 \times 900,000 = 900,000
-\]</span></p>
-<p>The expected box office revenue following a decision to <code>Sign with Movie Company</code> is:</p>
+<p align="center">
+<img src="figures_model/dtree_plot_initial.png">
+</p>
+<p>The <code>Final</code> graph shows the optimal decision determined by <code>folding-back</code> the tree. The optimal decision is to <code>Sign with Movie Company</code> because this decision has a higher <strong>Expected Monetary Value</strong>. Note that the optimal decision at each decision node is shown by a thicker line connecting to the nodes.</p>
+<p align="center">
+<img src="figures_model/dtree_plot_final.png">
+</p>
+<p>The EMV for the <code>Sign with TV Network</code> is $900,000. The expected box office revenue following a decision to <code>Sign with Movie Company</code> is:</p>
 <p><span class="math display">\[
     0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 - 5,000 = 955,000
 \]</span></p>
-<p>The EMV from signing with the movie company is however <span class="math inline">\(960,000 - 5,000 = 955,000\)</span>. Hover the cursor over the chance node shown on screen to see a <code>tooltip</code> that shows the calculation. To highlight that a <code>cost</code> was specified explicitly the chance node in the figure has a dashed outer line.</p>
+<p>The EMV from signing with the movie company is however <span class="math inline">\(960,000 - 5,000 = 955,000\)</span>. Hover the cursor over the chance node shown on screen to see a <code>tooltip</code> that shows the calculation. To highlight that a <code>cost</code> was specified the chance node in the figure has a dashed outer line.</p>
+<p>In the <code>Sign contract</code> example it is clear that <code>Sign with Movie Company</code> is the prefered option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the <em>Sensitivity</em> tab is useful. Here we can evaluate how decisions (e.g., <code>Sign with Movie Company</code> and <code>Sign with TV Network</code>) would chance if the legal fee changes. Enter 0 as the <code>Min</code> value, 80000 as the <code>Max value, 10000 as the</code>Step<code>size, and then press the &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt; icon. After pressing</code>Evaluate sensitivty<code>a graph will be show that illustrate how payoffs for the decision change. Notice that if the legal fee was higher than \$60,000,</code>Sign with TV Network` would produce the highest EMV.</p>
+<p align="center">
+<img src="figures_model/dtree_sensitivity.png">
+</p>
 </div>
 <div id="buttons" class="section level2">
 <h2>Buttons</h2>
@@ -333,12 +342,31 @@ $(document).ready(function () {
 <li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon</li>
 <li>Choose to maximize (<code>Max</code>) or minimize (<code>Min</code>) payoffs. Note that payoffs can be negative</li>
 <li>Click the <code>Calculate</code> button to generate or update results</li>
-<li>Specify a name for your decision tree in the text input. Click <code>Store</code> to ensure settings are saved. If multiple tree structures are available there will also be a dropdown where you can select which structure to use</li>
+<li>Specify a name for your decision tree in the text input next to the <code>Calculate</code> button. Clicking on the <code>Calculate</code> button will store your settings. If multiple tree structures are available there will also be a dropdown where you can select which structure to use and a <code>Remove</code> button to delete tree structures</li>
 <li>To save the tree structure entered into the editor window to disk press the <code>Save input</code> button</li>
 <li>To save the text representation of the initial and final tree to a file click the <code>Save output</code> button</li>
 <li>To load a tree structure from a file in <code>yaml</code> format click the <code>Choose File</code> button</li>
 </ul>
-<p>In the <em>Plot</em> tab: * To see this help file click the <i class="fa fa-question" ></i> icon * To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon * Show either the <code>Initial</code> or <code>Final</code> decision tree * Click the <code>Calculate</code> button to generate or update results * Enter the number of decimal places to show in the plot (default is 2) * Provide a symbol to use for the payoffs (e.g., $ or RMB) * Click the download icon in the top right of your browser to <em>print</em> either the initial or final plot to a pdf-file</p>
+<p>In the <em>Plot</em> tab:</p>
+<ul>
+<li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
+<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon</li>
+<li>Show either the <code>Initial</code> or <code>Final</code> decision tree</li>
+<li>Click the <code>Calculate</code> button to generate or update results</li>
+<li>Enter the number of decimal places to show in the plot (default is 2 for payoffs and 4 for probabilities)</li>
+<li>Provide a symbol to use for the payoffs (e.g., $ or RMB)</li>
+<li>Click the download icon in the top right of your browser to <em>print</em> either the initial or final plot to a pdf-file</li>
+</ul>
+<p>In the <em>Sensitivity</em> tab:</p>
+<ul>
+<li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
+<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon</li>
+<li>Select <code>Decisions to evaluate</code></li>
+<li>Select variables in <code>Sensitivity to changes in</code>. These variables must be defined in the decision tree structure in the <em>Model</em> tab</li>
+<li>Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon</li>
+<li>Press <code>Evaluate sensitity</code> to generate results and the plot</li>
+<li>Click the download icon in the top right of your browser to <em>print</em> either the initial or final plot to a pdf-file</li>
+</ul>
 </div>
 <div id="the-decision-tree-editor" class="section level2">
 <h2>The decision tree editor</h2>

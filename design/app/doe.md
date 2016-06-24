@@ -8,7 +8,6 @@ Suppose we want to test alternative movie theater designs using three factors.
 * **Sight** to determine if theater setting should be staggered or not staggered
 * **Food** to determine if we should offer hot dogs and popcorn, gourmet food, or no food at all
 
-
 ## Max levels
 
 The factors to include in the analysis have 3, 2, and 3 levels so we enter `3` in the `Max levels` input.
@@ -19,13 +18,13 @@ Here we will enter the factors of interest. For example, enter `price` as the va
 
 After entering the required information your screen should look as follows:
 
-![factors](figures_design/doe_factors.png)
+<p align="center"><img src="figures_design/doe_factors.png"></p>
 
 ## Create
 
 You are now ready to create an experimental design by clicking on the `Create` button. This will generate the following output.
 
-![output](figures_design/doe_output.png)
+<p align="center"><img src="figures_design/doe_output.png"></p>
 
 For our example, the ideal design has 18 trials. However, this implies that the partial and the full factorial are the same size. We'd like to find out if it is possible to reduce the number of trials. See `# trials` below.
 
@@ -52,13 +51,3 @@ These buttons can be used to `Create` the full and partial factorial designs. To
 ## Upload and Download
 
 You can download the list of factors you entered by clicking the `Download` button. To upload a previously entered set of factors click the `Upload` button.
-
-
-
-
-
-
-
-
-
-

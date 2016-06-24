@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -283,10 +294,9 @@ $(document).ready(function () {
 <h2>Example</h2>
 <p>We have access to data from a random sample of grocery stores in the UK. Management will consider entering this market if consumer demand for the product category exceeds 100M units, or, approximately, 1750 units per store. The average demand per store in the sample is equal to 1953. While this number is larger than 1750 we need to determine if the difference could be attributed to sampling error.</p>
 <p>You can find the information on unit sales in each of the sample stores in the <strong>demand_uk.rda</strong> data set. The data set contains two variables, <code>store_id</code> and <code>demand_uk</code>. Our null-hypothesis is that the average store demand in the UK is equal to 1750 unit so we enter that number into the <code>Comparison value</code> box. We choose the <code>Greater than</code> option from the <code>Alternative hypothesis</code> drop-down because we want to determine if the available data provides sufficient evidence to reject the null-hypothesis favor of the alternative that average store demand in the UK is <strong>larger than 1750</strong>.</p>
-<div class="figure">
-<img src="figures_basics/single_mean_summary.png" alt="Summary" />
-<p class="caption">Summary</p>
-</div>
+<p align="center">
+<img src="figures_basics/single_mean_summary.png">
+</p>
 <p>The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., mean, standard deviation). The final row of output shows the following:</p>
 <ul>
 <li><code>diff</code> is the difference between the sample mean (1953.393) and the comparison value (1750)</li>
@@ -309,16 +319,14 @@ $(document).ready(function () {
 </div>
 <div id="t.value" class="section level4">
 <h4>t.value</h4>
-<p>Because the calculated t.value (5.967) is <strong>larger</strong> than the <em>critical</em> t.value we reject the null hypothesis and suggest that management should enter the UK market. We can obtain the critical t.value by using the probability calculator in the <em>Base</em> menu. For a t-distribution with 571 degrees of freedom (see <code>df</code>) the critical t.value is 1.648. We have to enter 0.95 as the upper probability bound (i.e., 1 - 0.05) because the alternative hypothesis is <code>Greater than</code>.<sup>2</sup></p>
-<div class="figure">
-<img src="figures_basics/single_mean_prob_calc.png" alt="prob_calc" />
-<p class="caption">prob_calc</p>
-</div>
+<p>Because the calculated t.value (5.967) is <strong>larger</strong> than the <em>critical</em> t.value we reject the null hypothesis and suggest that management should enter the UK market. We can obtain the critical t.value by using the probability calculator in the <em>Basics</em> menu. For a t-distribution with 571 degrees of freedom (see <code>df</code>) the critical t.value is 1.648. We have to enter 0.95 as the upper probability bound (i.e., 1 - 0.05) because the alternative hypothesis is <code>Greater than</code>.<sup>2</sup></p>
+<p align="center">
+<img src="figures_basics/single_mean_prob_calc.png">
+</p>
 <p>In addition to the numerical output provided in the <em>Summary</em> tab we can visualize the data in the <em>Plot</em> tab. The settings in the side-panel are the same as before. The black lines in the histogram show the sample mean (solid) and the confidence interval around the sample mean (dashed). The red line shows the comparison value (i.e., unit sales under the null-hypothesis). Because the red line does <strong>not</strong> fall within the confidence interval (1897 to Inf.) we reject the null-hypothesis in favor of the alternative.</p>
-<div class="figure">
-<img src="figures_basics/single_mean_plot.png" alt="Plot" />
-<p class="caption">Plot</p>
-</div>
+<p align="center">
+<img src="figures_basics/single_mean_plot.png">
+</p>
 </div>
 </div>
 <div id="stats-speak" class="section level3">

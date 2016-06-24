@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -292,10 +303,9 @@ $(document).ready(function () {
 </ul>
 <p>The data are part of the CAR package and are linked to the book: Fox J. and Weisberg, S. (2011) An R Companion to Applied Regression, Second Edition Sage.</p>
 <p>Suppose we want to test if professors of lower rank earn lower salaries compared to those of higher rank. To test this hypothesis we first select professor <code>rank</code> and select <code>salary</code> as the numerical variable to compare across ranks. In the <code>Choose combinations</code> box select all available entries to conduct pair-wise comparisons across the three levels. Note that removing all entries will automatically select all combinations. We are interested in a one-sided hypothesis (i.e., <code>less than</code>).</p>
-<div class="figure">
-<img src="figures_basics/compare_means_summary.png" alt="summary" />
-<p class="caption">summary</p>
-</div>
+<p align="center">
+<img src="figures_basics/compare_means_summary.png">
+</p>
 <p>The first two blocks of output show basic information about the test (e.g.,. selected variables and confidence levels) and summary statistics (e.g., mean, standard deviation, etc. per group). The final block of output shows the following:</p>
 <ul>
 <li><code>Null hyp.</code> is the null hypothesis and <code>Alt. hyp.</code> the alternative hypothesis</li>
@@ -303,10 +313,9 @@ $(document).ready(function () {
 <li><code>p.value</code> is the probability of finding a value as extreme or more extreme than <code>diff</code> if the null hypothesis is true</li>
 </ul>
 <p>If we check <code>Show additional statistics</code> the following output is added:</p>
-<div class="figure">
-<img src="figures_basics/compare_means_summary_additional.png" alt="summary additional" />
-<p class="caption">summary additional</p>
-</div>
+<p align="center">
+<img src="figures_basics/compare_means_summary_additional.png">
+</p>
 <ul>
 <li><code>se</code> is the standard error (i.e., the standard deviation of the sampling distribution of <code>diff</code>)</li>
 <li><code>t.value</code> is the <em>t</em> statistic associated with <code>diff</code> that we can compare to a t-distribution (i.e., <code>diff</code> / <code>se</code>)</li>
@@ -327,16 +336,14 @@ $(document).ready(function () {
 </div>
 <div id="t.value" class="section level4">
 <h4>t.value</h4>
-<p>Because the calculated t.values (-6.561, -23.334, and -13.569) are <strong>smaller</strong> than the corresponding <em>critical</em> t.value we reject the null hypothesis for each evaluated combination of ranks. We can obtain the critical t.value by using the probability calculator in the <em>Base</em> menu. Using the test for assistant versus associate professors as an example, we find that for a t-distribution with 101.286 degrees of freedom (see <code>df</code>) the critical t.value is 1.66. We choose 0.05 as the lower probability bound because the alternative hypothesis is <code>Less than</code>.</p>
-<div class="figure">
-<img src="figures_basics/compare_means_prob_calc.png" alt="prob_calc" />
-<p class="caption">prob_calc</p>
-</div>
+<p>Because the calculated t.values (-6.561, -23.334, and -13.569) are <strong>smaller</strong> than the corresponding <em>critical</em> t.value we reject the null hypothesis for each evaluated combination of ranks. We can obtain the critical t.value by using the probability calculator in the <em>Basics</em> menu. Using the test for assistant versus associate professors as an example, we find that for a t-distribution with 101.286 degrees of freedom (see <code>df</code>) the critical t.value is 1.66. We choose 0.05 as the lower probability bound because the alternative hypothesis is <code>Less than</code>.</p>
+<p align="center">
+<img src="figures_basics/compare_means_prob_calc.png">
+</p>
 <p>In addition to the numerical output provided in the <em>Summary</em> tab we can also investigate the association between <code>rank</code> and <code>salary</code> visually (see the <em>Plot</em> tab). The screen shot below shows a scatter plot of professor salaries and a bar chart with confidence interval (black) and standard error (blue) bars. Consistent with the results shown in the <em>Summary</em> tab there is clear separation between the salaries across ranks. We could also choose to plot the sample data as a box plot or as a set of density curves.</p>
-<div class="figure">
-<img src="figures_basics/compare_means_plot.png" alt="plot" />
-<p class="caption">plot</p>
-</div>
+<p align="center">
+<img src="figures_basics/compare_means_plot.png">
+</p>
 </div>
 </div>
 <div id="multiple-comparison-adjustment" class="section level3">

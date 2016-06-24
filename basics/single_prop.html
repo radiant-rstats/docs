@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -286,10 +297,9 @@ $(document).ready(function () {
 <p>You can find information on the responses by survey participants in the <strong>consider.rda</strong> data set. The data set contains two variables, <code>id</code> and <code>consider</code>.</p>
 <p>Our null-hypothesis is that the proportion of consumers that would consider the car brand for a future purchase is equal to 10%. Select the <code>consider</code> variable from the <code>Variable</code> dropdown. To evaluate the proportion of <code>yes</code> responses in the sample select <code>yes</code> from the <code>Choose level</code> dropdown.</p>
 <p>Choose the <code>Less than</code> option from the <code>Alternative hypothesis</code> drop-down to determine if the available data provides sufficient evidence to reject the null-hypothesis in favor of the alternative that the proportion of consumers that will consider the brand is <strong>less than 10%</strong>.</p>
-<div class="figure">
-<img src="figures_basics/single_prop_summary.png" alt="Summary" />
-<p class="caption">Summary</p>
-</div>
+<p align="center">
+<img src="figures_basics/single_prop_summary.png">
+</p>
 <p>The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., the proportion of “yes” responses). The final row of output shows the following:</p>
 <ul>
 <li><code>diff</code> is the difference between the sample proportion (0.093) and the comparison value (0.1)</li>
@@ -303,11 +313,10 @@ $(document).ready(function () {
 <div id="p.value" class="section level4">
 <h4>p.value</h4>
 <p>Because the p.value is <strong>larger</strong> than the conventional significance level (<span class="math inline">\(0.249 &gt; 0.05\)</span>) we <strong>cannot</strong> reject the null hypothesis and <strong>do not suggest</strong> that management should commit resources to increase brand awareness.</p>
-<p>We can also obtain the p.value by using the probability calculator in the <em>Base</em> menu. Enter the number of successes in the data (93) as the lower bound (value) for a binomial-distribution with <span class="math inline">\(n = 1000\)</span> and <span class="math inline">\(p = 0.1\)</span>. The p.value is the probability of observing a number of successes as or more extreme than the 93 we got in our sample. We see that <span class="math inline">\(P(X &lt;= 93) = 0.249\)</span> which is the same value we got from <em>Base &gt; Single proportion</em>.</p>
-<div class="figure">
-<img src="figures_basics/single_prop_prob_calc_v.png" alt="prob_calc" />
-<p class="caption">prob_calc</p>
-</div>
+<p>We can also obtain the p.value by using the probability calculator in the <em>Basics</em> menu. Enter the number of successes in the data (93) as the lower bound (value) for a binomial-distribution with <span class="math inline">\(n = 1000\)</span> and <span class="math inline">\(p = 0.1\)</span>. The p.value is the probability of observing a number of successes as or more extreme than the 93 we got in our sample. We see that <span class="math inline">\(P(X &lt;= 93) = 0.249\)</span> which is the same value we got from <em>Basics &gt; Single proportion</em>.</p>
+<p align="center">
+<img src="figures_basics/single_prop_prob_calc_v.png">
+</p>
 </div>
 <div id="confidence-interval" class="section level4">
 <h4>confidence interval</h4>
@@ -315,16 +324,15 @@ $(document).ready(function () {
 </div>
 <div id="number-of-successes" class="section level4">
 <h4>number of successes</h4>
-<p>We can obtain the critical value by using the probability calculator in the <em>Base</em> menu. For a binomial-distribution with <span class="math inline">\(n = 1000\)</span> and <span class="math inline">\(p = 0.1\)</span> the critical value is 85. We have to enter 0.05 as the lower probability bound because the alternative hypothesis is <code>Less than</code>.<sup>2</sup></p>
-<div class="figure">
-<img src="figures_basics/single_prop_prob_calc_p.png" alt="prob_calc" />
-<p class="caption">prob_calc</p>
-</div>
+<p>We can obtain the critical value by using the probability calculator in the <em>Basics</em> menu. For a binomial-distribution with <span class="math inline">\(n = 1000\)</span> and <span class="math inline">\(p = 0.1\)</span> the critical value is 85. We have to enter 0.05 as the lower probability bound because the alternative hypothesis is <code>Less than</code>.<sup>2</sup></p>
+<p align="center">
+<img src="figures_basics/single_prop_prob_calc_p.png">
+</p>
 <p>Because the number of successes (i.e., the number of “yes” responses) <strong>is</strong> larger than the critical value (93 vs 85) we <strong>cannot</strong> reject the null hypothesis and <strong>do not suggest</strong> that management should commit resources to increase brand awareness.</p>
 <!--
 In addition to the numerical output provided in the _Summary_ tab we can visualize the data in the _Plot_ tab. The settings in the side-panel are the same as before. The black lines in the histogram show the sample mean (solid) and the confidence interval around the sample mean (dashed). The red line shows the comparison value (i.e., unit sales under the null-hypothesis). Because the red line does **not** fall within the confidence interval (1897 to Inf.) we reject the null-hypothesis in favor of the alternative.
 
-![Plot](figures_basics/single_proportion_plot.png)
+<p align="center"><img src="figures_basics/single_proportion_plot.png"></p>
 -->
 </div>
 </div>

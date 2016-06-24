@@ -19,7 +19,7 @@ The data are part of the CAR package and are linked to the book:  Fox J. and Wei
 
 Suppose we want to test if professors of lower rank earn lower salaries compared to those of higher rank. To test this hypothesis we first select professor `rank` and select `salary` as the numerical variable to compare across ranks. In the `Choose combinations` box select all available entries to conduct pair-wise comparisons across the three levels. Note that removing all entries will automatically select all combinations. We are interested in a one-sided hypothesis (i.e., `less than`).
 
-![summary](figures_basics/compare_means_summary.png)
+<p align="center"><img src="figures_basics/compare_means_summary.png"></p>
 
 The first two blocks of output show basic information about the test (e.g.,. selected variables and confidence levels) and summary statistics (e.g., mean, standard deviation, etc. per group). The final block of output shows the following:
 
@@ -29,7 +29,7 @@ The first two blocks of output show basic information about the test (e.g.,. sel
 
 If we check `Show additional statistics` the following output is added:
 
-![summary additional](figures_basics/compare_means_summary_additional.png)
+<p align="center"><img src="figures_basics/compare_means_summary_additional.png"></p>
 
 * `se` is the standard error (i.e., the standard deviation of the sampling distribution of `diff`)
 * `t.value` is the _t_ statistic associated with `diff` that we can compare to a t-distribution (i.e., `diff` / `se`)
@@ -50,13 +50,13 @@ Because zero is **not** contained in any of the confidence intervals we reject t
 
 #### t.value
 
-Because the calculated t.values (-6.561, -23.334, and -13.569) are **smaller** than the corresponding _critical_ t.value we reject the null hypothesis for each evaluated combination of ranks. We can obtain the critical t.value by using the probability calculator in the _Base_ menu. Using the test for assistant versus associate professors as an example, we find that for a t-distribution with 101.286 degrees of freedom (see `df`) the critical t.value is 1.66. We choose 0.05 as the lower probability bound because the alternative hypothesis is `Less than`.
+Because the calculated t.values (-6.561, -23.334, and -13.569) are **smaller** than the corresponding _critical_ t.value we reject the null hypothesis for each evaluated combination of ranks. We can obtain the critical t.value by using the probability calculator in the _Basics_ menu. Using the test for assistant versus associate professors as an example, we find that for a t-distribution with 101.286 degrees of freedom (see `df`) the critical t.value is 1.66. We choose 0.05 as the lower probability bound because the alternative hypothesis is `Less than`.
 
-![prob_calc](figures_basics/compare_means_prob_calc.png)
+<p align="center"><img src="figures_basics/compare_means_prob_calc.png"></p>
 
 In addition to the numerical output provided in the _Summary_ tab we can also investigate the association between `rank` and `salary` visually (see the _Plot_ tab). The screen shot below shows a scatter plot of professor salaries and a bar chart with confidence interval (black) and standard error (blue) bars. Consistent with the results shown in the _Summary_ tab there is clear separation between the salaries across ranks. We could also choose to plot the sample data as a box plot or as a set of density curves.
 
-![plot](figures_basics/compare_means_plot.png)
+<p align="center"><img src="figures_basics/compare_means_plot.png"></p>
 
 ### Multiple comparison adjustment
 

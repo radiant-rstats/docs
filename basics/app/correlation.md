@@ -1,19 +1,19 @@
 > How correlated are the variables in the data?
 
-Create a correlation matrix of the selected variables. Correlations and p-values are provided for each variable pair. To show only those correlations above a certain (absolute) level, use the correlation cutoff box.
+Create a correlation matrix of the selected variables. Correlations and p.values are provided for each variable pair. To show only those correlations above a certain (absolute) level, use the correlation cutoff box.
 
-![Summary](figures_basics/correlation_summary.png)
+<p align="center"><img src="figures_basics/correlation_summary.png"></p>
 
-A visual representation of the correlation matrix is provided in the Plot tab.
+A visual representation of the correlation matrix is provided in the _Plot_ tab.
 
-Stars shown in the Plot tab are interpreted as:
+Stars shown in the _Plot_ tab are interpreted as:
 
 - p.value between 0 and 0.001:  ***
 - p.value between 0.001 and 0.01: **
 - p.value between 0.01 and 0.05: *
 - p.value between 0.05 and 0.1: .
 
-![Plot](figures_basics/correlation_plot.png)
+<p align="center"><img src="figures_basics/correlation_plot.png"></p>
 
 The font-size used in the plot is proportional to the size and significance of the correlation between two variables.
 
@@ -35,4 +35,4 @@ For larger datasets it can useful to click `Pause estimation` before selecting v
 
 ### Khan on correlation
 
-<iframe width="640" height="375" src="https://www.youtube.com/embed/-Y-M9aD_ccQ" frameborder="0" allowfullscreen></iframe>
+<p align="center"><iframe width="640" height="375" src="https://www.youtube.com/embed/-Y-M9aD_ccQ" frameborder="0" allowfullscreen></iframe></p>

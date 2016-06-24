@@ -15,7 +15,7 @@ Suppose we want to test if the proportion of people that survived the sinking of
 
 In the `Choose combinations` box select all available entries to conduct pair-wise comparisons across the three passenger class levels. Note that removing all entries will automatically select all combinations. Unless we have an explicit hypothesis for the direction of the effect we should use a two-sided test (i.e., `two.sided`). Our first alternative hypothesis would be 'The proportion of survivors amongst 1st class passengers was different compared to 2nd class passengers'.
 
-![summary](figures_basics/compare_props_summary.png)
+<p align="center"><img src="figures_basics/compare_props_summary.png"></p>
 
 The first two blocks of output show basic information about the test (e.g.,. selected variables and confidence levels) and summary statistics (e.g., proportions, standard errors, etc. per group). The final block of output shows the following:
 
@@ -25,9 +25,9 @@ The first two blocks of output show basic information about the test (e.g.,. sel
 
 If we check `Show additional statistics` the following output is added:
 
-![summary additional](figures_basics/compare_props_summary_additional.png)
+<p align="center"><img src="figures_basics/compare_props_summary_additional.png"></p>
 
-* `chisq.value` is the chi-squared statistic associated with `diff` that we can compare to a chi-squared distribution. For additional discussion on how this metric is calculated see the help file in _Base > Cross-tabs_. For each combination the equivalent of a 2X2 cross-tab is calculated.
+* `chisq.value` is the chi-squared statistic associated with `diff` that we can compare to a chi-squared distribution. For additional discussion on how this metric is calculated see the help file in _Basics > Cross-tabs_. For each combination the equivalent of a 2X2 cross-tab is calculated.
 * `df` is the degrees of freedom associated with each statistical test (1).
 * `2.5% 97.5%` show the 95% confidence interval around the difference in sample proportions. These numbers provide a range within which the true population difference is likely to fall
 
@@ -39,23 +39,23 @@ There are three approaches we can use to evaluate the null hypothesis. We will c
 
 Because the p.values are **smaller** than the significance level for each pair-wise comparison we can reject the null hypothesis that the proportions are equal based on the available sample of data. The results suggest that 1st class passengers were more likely to survive the sinking than either 2nd or 3rd class passengers. In turn, the 2nd class passengers were more likely to survive than those in 3rd class.
 
-#### confidence interval
+#### Confidence interval
 
 Because zero is **not** contained in any of the confidence intervals we reject the null hypothesis for each evaluated combination of passenger class levels.
 
 #### t.value
 
-Because the calculated chi-squared values (20.576, 104.704, and 25.008) are **larger** than the corresponding _critical_ chi-squared value we reject the null hypothesis for each evaluated combination of passenger class levels. We can obtain the critical chi-squared value by using the probability calculator in the _Base_ menu. Using the test for 1st versus 2nd class passengers as an example, we find that for a chi-squared distribution with 1 degree of freedom (see `df`) and a confidence level of 0.95 the critical chi-squared value is 3.841.
+Because the calculated chi-squared values (20.576, 104.704, and 25.008) are **larger** than the corresponding _critical_ chi-squared value we reject the null hypothesis for each evaluated combination of passenger class levels. We can obtain the critical chi-squared value by using the probability calculator in the _Basics_ menu. Using the test for 1st versus 2nd class passengers as an example, we find that for a chi-squared distribution with 1 degree of freedom (see `df`) and a confidence level of 0.95 the critical chi-squared value is 3.841.
 
-![prob_calc](figures_basics/compare_props_prob_calc.png)
+<p align="center"><img src="figures_basics/compare_props_prob_calc.png"></p>
 
 In addition to the numerical output provided in the _Summary_ tab we can also investigate the association between `pclass` and `survived` visually (see the _Plot_ tab). The screen shot below shows two bar charts. The first chart has confidence interval (black) and standard error (blue) bars for the proportion of `yes` entries for `survived` in the sample. Consistent with the results shown in the _Summary_ tab there are clear differences in the survival rate across passenger classes. The `Dodge` chart shows the proportions of `yes` and `no` in `survived` side-by-side for each passenger class. While 1st class passengers had a higher proportion of `yes` than `no` the opposite holds for the 3rd class passengers.
 
-![plot](figures_basics/compare_props_plot.png)
+<p align="center"><img src="figures_basics/compare_props_plot.png"></p>
 
 ### Technical notes
 
-* Radiant uses R's `prop.test` function to compare proportions. When one or more expected values are small (e.g., 5 or less) the p.value for this test is calculated using simulation methods. When this occurs it is recommended to rerun the test using _Base > Cross-tab_ and evaluate if some cells may have an expected value below 1.
+* Radiant uses R's `prop.test` function to compare proportions. When one or more expected values are small (e.g., 5 or less) the p.value for this test is calculated using simulation methods. When this occurs it is recommended to rerun the test using _Basics > Cross-tab_ and evaluate if some cells may have an expected value below 1.
 * For one-sided tests (i.e., `Less than` or `Greater than`) critical values must be obtained by using the normal distribution in the probability calculator and squaring the corresponding Z-statistic.
 
 ### Multiple comparison adjustment

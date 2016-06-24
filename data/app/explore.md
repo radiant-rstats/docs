@@ -8,7 +8,7 @@ The created summary table can be stored in Radiant by clicking the `Store` butto
 
 You can select options from `Column header` dropdown to switch between different column headers. Select either `Function` (e.g., mean, median, etc), `Variable` (e.g., price, carat, etc), or the levels of the (first) `Group by` variable (e.g., Fair-Ideal).
 
-![explore table](figures/explore.png)
+<p align="center"><img src="figures/explore.png"></p>
 
 ## Functions
 

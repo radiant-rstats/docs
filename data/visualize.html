@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -294,7 +305,10 @@ $(document).ready(function () {
 <p>The upper and lower “hinges” of the box correspond to the first and third quartiles (the 25th and 75th percentiles) in the data. The middle hinge is the median value of the data. The upper whisker extends from the upper hinge (i.e., the top of the box) to the highest value in the data that is within 1.5 x IQR of the upper hinge. IQR is the inter-quartile range, or distance, between the 25th and 75th percentile. The lower whisker extends from the lower hinge to the lowest value in the data within 1.5 x IQR of the lower hinge. Data beyond the end of the whiskers could be outliers and are plotted as points (as suggested by Tukey).</p>
 <p>In sum: 1. The lower whisker extends from Q1 to max(min(data), Q1 - 1.5 x IQR) 2. The upper whisker extends from Q3 to min(max(data), Q3 + 1.5 x IQR)</p>
 <p>where Q1 is the 25th percentile and Q3 is the 75th percentile. You may have to read the two bullets above a few times before it sinks in. The plot below should help to explain the structure of the box plot.</p>
-<p><img src="figures/boxplot.png" alt="Box-plot" /> <a href="http://en.wikipedia.org/wiki/File:Boxplot_vs_PDF.svg">Source</a></p>
+<p align="center">
+<img src="figures/boxplot.png">
+</p>
+<p><a href="http://en.wikipedia.org/wiki/File:Boxplot_vs_PDF.svg">Source</a></p>
 </div>
 <div id="sub-plots-and-heat-maps" class="section level3">
 <h3>Sub-plots and heat-maps</h3>

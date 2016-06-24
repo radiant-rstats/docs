@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -281,10 +292,9 @@ $(document).ready(function () {
 <p>For example, if we select <code>price</code> from the <code>diamonds</code> dataset we can see the number of observations (n), the mean, the median, etc. However, the mean price for each clarity level of the diamond can also be easily provided by choosing <code>clarity</code> as the <code>Group by</code> variable.</p>
 <p>The created summary table can be stored in Radiant by clicking the <code>Store</code> button. This can be useful if you want to create plots of the summarized data in <a href="/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a>. To download the table to <em>csv</em> format click the download icon on the top-right.</p>
 <p>You can select options from <code>Column header</code> dropdown to switch between different column headers. Select either <code>Function</code> (e.g., mean, median, etc), <code>Variable</code> (e.g., price, carat, etc), or the levels of the (first) <code>Group by</code> variable (e.g., Fair-Ideal).</p>
-<div class="figure">
-<img src="figures/explore.png" alt="explore table" />
-<p class="caption">explore table</p>
-</div>
+<p align="center">
+<img src="figures/explore.png">
+</p>
 <div id="functions" class="section level2">
 <h2>Functions</h2>
 <p>Below you will find a brief description of several functions. Most functions, however, will be self-explanatory. * <code>n</code> calculates the number of observations, or rows, in the data or in a group if a <code>Group by</code> variable has been selected (<code>n</code> uses the <code>length</code> function in R) * <code>n_distinct</code> calculates the number of distinct values * <code>n_missing</code> calculates the number of missing values * <code>cv</code> is the coefficient of variation (i.e., mean(x) / sd(x)) * <code>sd</code> and <code>var</code> calculate the sample standard deviation and variance * <code>sdp</code> and <code>varp</code> calculate the population standard deviation and variance</p>

@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -277,11 +288,11 @@ $(document).ready(function () {
 <blockquote>
 <p>Analyze responses from a conjoint survey</p>
 </blockquote>
-<p>To setup a conjoint study from scratch we need to determine the attributes and attributes levels that should be included. Once that has been done we would typically need to generate a fractional factorial design of conjoint profiles. This is a subset of all possible profiles that could be generated for the set of attributes and levels that were selected.</p>
+<p>To setup a conjoint study from scratch we need to determine the attributes and attributes levels that should be included. Once that has been done we would typically need to generate a fractional factorial design of conjoint profiles. This is a subset of all possible profiles that could be generated for the set of attributes and levels that were selected (see <a href="/docs/design/doe.html" target="_blank"><em>Design &gt; DOE &gt; Design of Experiments</em></a>).</p>
 <p>Once data is available from respondents their evaluations are analyzed to determine Part Worths (PW) and Importance Weights (IW).</p>
 <div id="example-carpet-cleaner" class="section level3">
 <h3>Example: Carpet cleaner</h3>
-<p>A respondent was presented 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study (dataset: carpet.rda is part of the example datasets). The attributes are:</p>
+<p>A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study (dataset: carpet.rda is part of the example datasets). The attributes are:</p>
 <ul>
 <li>design = Package Design (A, B, C)</li>
 <li>brand = Brand Name (K2R, Glory, Bissell)</li>
@@ -291,25 +302,28 @@ $(document).ready(function () {
 <li>ranking = Respondent ranking of 18 attributes</li>
 </ul>
 <p>Design characteristics:</p>
-<div class="figure">
-<img src="figures_multivariate/conjoint_carpet_design.png" alt="conjoint design" />
-<p class="caption">conjoint design</p>
-</div>
+<p align="center">
+<img src="figures_multivariate/conjoint_carpet_design.png">
+</p>
 <p>Based on the attributes, 108 possible profiles could be created (i.e., 3x3x3x2x2 = 108). The respondent was given a select set of 18 and was asked to rank the profiles from most preferred (rank 1) to least preferred (rank 18). The first five columns represent the five attributes and the last column is the respondent’s ranking.</p>
 <ol style="list-style-type: lower-alpha">
-<li>Compute the correlation matrix for the attribute variables. Display the correlation matrix. What do you notice in the correlation matrix? What does this say about the particular set of 18 profiles that was presented to the respondent?</li>
+<li>Compute the correlation matrix for the attribute variables (see <a href="/docs/basics/correlation.html" target="_blank"><em>Basics &gt; Tables &gt; Correlation</em></a>). Display the correlation matrix. What do you notice in the correlation matrix? What does this say about the particular set of 18 profiles that was presented to the respondent?</li>
 </ol>
 <ul>
 <li>The correlation matrix is displayed below. Note that the correlations for any two attributes are zero. In the fractional factorial design profiles are deliberately selected such that all attributes are uncorrelated (i.e., orthogonal).</li>
 </ul>
-<div class="figure">
-<img src="figures_multivariate/conjoint_corr_mat.png" alt="conjoint correlations" />
-<p class="caption">conjoint correlations</p>
-</div>
+<p align="center">
+<img src="figures_multivariate/conjoint_corr_mat.png">
+</p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Estimate a conjoint regression using the respondent’s evaluations as the dependent variable and the attributes as the predictors. Show the complete list of part-worths and importance weights.</li>
+<li>Estimate a conjoint model using the respondent’s evaluations as the dependent variable and the attributes as the predictors. Show the complete list of part-worths and importance weights.</li>
 </ol>
-<p><img src="figures_multivariate/conjoint_summary.png" alt="conjoint summary" /> <img src="figures_multivariate/conjoint_plot.png" alt="conjoint plot" /></p>
+<p align="center">
+<img src="figures_multivariate/conjoint_summary.png">
+</p>
+<p align="center">
+<img src="figures_multivariate/conjoint_plot.png">
+</p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Calculate the predicted utilities for the following options:</li>
 </ol>

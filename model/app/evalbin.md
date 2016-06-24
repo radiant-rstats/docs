@@ -1,10 +1,10 @@
-> Evaluate model performance using Lift and Gains charts
+> Evaluate model performance for (binary) classification
 
-To download the table as a csv-files click the top download button on the right of your screen. To download the plots at a png file click the lower download icon on the right of your screen.
+To download the table as a csv-files click the download button on the top-right of your screen. To download plots as png files click the download icon on the middle-right of your screen.
 
 #### Response variable
 
-The outcome, or response, variable of interest. This should be binary variable, either a factor or an integer with two value (i.e., 0 and 1).
+Select the outcome, or response, variable of interest. This should be a binary variable, either a factor or an integer with two value (i.e., 0 and 1).
 
 #### Choose level
 
@@ -12,11 +12,11 @@ The level in the response variable that is considered a _success_. For example, 
 
 #### Predictor
 
-Select one or more variables that can be used to _predict_ the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using _Regression > Logistic regression (GLM)_ or a Neural Network estimated using _Model > Neural Network (ANN)_).
+Select one or more variables that can be used to _predict_ the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using _Model > Logistic regression (GLM)_ or a Neural Network estimated using _Model > Neural Network (ANN)_).
 
 #### # quantiles
 
-The number of buckets to create.
+The number of bins to create.
 
 #### Margin & Cost
 
@@ -32,10 +32,14 @@ Generate Lift, Gains, Profit, and/or ROME charts. The profit chart displays a pr
 
 ## Example
 
-The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 72% of customers would maximize profits.
+The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.
 
-![profit and gains](figures_model/evalbin_profit_gain.png)
+<p align="center"><img src="figures_model/evalbin_profit_gain.png"></p>
 
-The prediction used in the screen shot above was derived from a logistic regression on the `dvd` data. The data is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load examples`). The model was estimated using _Regression > Logistic regression (GLM)_. The predictions shown below were generated in the _Predict_ tab.
+This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and validation sample are 94.0% and 93.4% respectively.
 
-![logistic](figures_model/evalbin_logistic.png)
+<p align="center"><img src="figures_model/evalbin_confusion.png"></p>
+
+The prediction used in the screen shots above was derived from a logistic regression on the `dvd` data. The data is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load examples`). The model was estimated using _Model > Logistic regression (GLM)_. The predictions shown below were generated in the _Predict_ tab.
+
+<p align="center"><img src="figures_model/evalbin_logistic.png"></p>

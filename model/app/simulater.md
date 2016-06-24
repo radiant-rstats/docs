@@ -111,7 +111,7 @@ A few additional examples of formulas are shown below:
 
 8. To find the value for `price` that maximizes `profit` use the `find_max` command. In this example `price` could be a random or `Sequence variable`. There is also a `find_min` command.
 
-	optimal_price = find_max(profit, price)
+	optimal\_price = find\_max(profit, price)
 
 9. To determine the minimum (maximum) value for each pair of values across two variables (e.g., x and y) use the functions `pmin` and `pmax`. In the example below, z will take on the value of x when x is larger than y and take on the value of y otherwise
 
@@ -176,17 +176,17 @@ When all required inputs have been specified press the `Simulate` button to run 
 
 In the screen shot below `var_cost` and `fixed_cost` are specified as constants. `E` is normally distributed with a mean of 0 and a standard deviation of 100. `price` is a discrete random variable that is set to \$6 (30% probability) or $8 (70% probability). There are three formulas in the `Simulation formulas` text-input. The first establishes the dependence of `demand` on the simulated variable `price`. The second formula specifies the profit function. The final formula is used to determine the number (and proportion) of cases where profit is below 100. The result is assigned to a new variable `profit_small`.
 
-![sim output](figures_model/simulater_sim.png)
+<p align="center"><img src="figures_model/simulater_sim.png"></p>
 
-In the output under `Simulation summary` we first see details on the specification of the simulation (e.g., the number of simulations). The section `Constants` lists the value of variables that do not vary across simulations. The sections `Random variables` and `Logicals` list the outcomes of the simulation. We see that average `demand` in the simulation is 627.940 with a standard deviation of 109.323. Other characteristics of the simulated data are also provided (e.g., the maximum profit is 1758.770). Finally, we see that the probability of `profits` below 100 is equal 0.315 (i.e., profits were below 100 in 315 out of the 1000 simulations).
+In the output under `Simulation summary` we first see details on the specification of the simulation (e.g., the number of simulations). The section `Constants` lists the value of variables that do not vary across simulations. The sections `Random variables` and `Logicals` list the outcomes of the simulation. We see that average `demand` in the simulation is 627.94 with a standard deviation of 109.32. Other characteristics of the simulated data are also provided (e.g., the maximum profit is 1758.77). Finally, we see that the probability of `profits` below 100 is equal 0.32 (i.e., profits were below \$100 in 315 out of the 1,000 simulations).
 
-Histograms of of the random variables as well as the variables created using `Simulation formulas` are shown in the _Plot (simulate)_ tab under `Simulation plots`.
+To view histograms of the random variables as well as the variables created using `Simulation formulas` ensure `Show plots` is checked.
 
-![sim output](figures_model/simulater_sim_plot.png)
+<p align="center"><img src="figures_model/simulater_sim_plot.png"></p>
 
 Because we specified a name in the `Simulated data` box the data are available as `simdat` within Radiant (see screen shots below). To use the data in Excel click the download icon on the top-right of the screen in the _Data > View_ tab or go to the _Data > Manage_ tab and save the data to a csv file (or use the clipboard feature). For more information see the help file for the _Data > Manage_ tab.
 
-![sim output](figures_model/simulater_view.png)
+<p align="center"><img src="figures_model/simulater_view.png"></p>
 
 ## Repeating the simulation
 
@@ -198,20 +198,20 @@ To determine, the probability that annual profits are below \$36,500 we enter th
 
 `profit_365 = profit < 36500`
 
-When you are done with the input values click the `Repeat` button. Because we specified a name for `Repeat data` two data sets will be created. "simdat_repeat" will have all elements from the repeated simulation (i.e., 1,000 x 365 rows) and "simdat_repeat_sum" will have the summarized data grouped per simulation (i.e., 1,000 rows). Note that the extension "_sum" was used because we selected `sum` from the `Apply function` dropdown.
+When you are done with the input values click the `Repeat` button. Because we specified a name for `Repeat data` a new data set will be created. "repdat" will have will contain the summarized data grouped per simulation (i.e., 1,000 rows). To store all 365 x 1,000 simulations/repetitions select `none` from the `Apply function` dropdown.
 
-Descriptive statistics for the repeated simulation are shown in the main panel under `Repeated simulation summary`. We see that the annual expected profit (i.e., the mean of `sum of profit`) for the company is 172,311.836 with a standard deviation of 10,772.291. Although we found above that daily profits can be below 100, the chance that profits are below $365 \times 100$ for the entire year are slim to none (i.e., the proportion of repeated simulations with annual profits below \$36,500 is equal to 0).
+Descriptive statistics for the repeated simulation are shown in the main panel under `Repeated simulation summary`. We see that the annual expected profit (i.e., the mean of `sum of profit`) for the company is 172,311.84 with a standard deviation of 10,772.29. Although we found above that daily profits can be below \$100, the chance that profits are below $365 \times 100$ for the entire year are slim to none (i.e., the proportion of repeated simulations with annual profits below \$36,500 is equal to 0).
 
-![sim output](figures_model/simulater_repeat.png)
+<p align="center"><img src="figures_model/simulater_repeat.png"></p>
 
-A histogram of annual profits (`sum of profit`) is shown in the _Plot (repeat)_ under `Repeated simulation plots`. There is no plot for `profit_365` because it only has one value (i.e., FALSE).
+If `Show plots` is checked a histogram of annual profits (`sum of profit`) is shown under `Repeated simulation plots`. There is no plot for `profit_365` because it has only one value (i.e., FALSE).
 
-![sim output](figures_model/simulater_repeat_plot.png)
+<p align="center"><img src="figures_model/simulater_repeat_plot.png"></p>
 
-The state-file for the example in the screenshots above is available for download <a href="https://radiant-rstats.github.io/docs/examples/sim_help_state.rda">here</a>
+The state-file for the example in the screenshots above is available for download <a href="https://radiant-rstats.github.io/docs/examples/sim-help-state.rda">here</a>
 
 For a simple example of how the simulate tool could be used to find the price that maximizes profits see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/iceskimo_optimal_price_state.rda">here</a>
 
 ### Using Grid Search in the Repeat tab
 
-Note that the _Repeat_ tab also has the option to use a `Grid search` input to repeat a simulation by replacing one or more `Constants` specified in the `Simulation` tab in an iterative fashion. Provide the minimum and maximum values as well as the step-size in the `Grid search` inputs. For example, enter a `Name` ("price"), the `Min` (4), `Max` (10), and `Step` (0.01) value. If multiple variables are specified in `Grid search` all possible value combinations will be created and evaluated in the simulation. Note that if `Grid search` has been selected the number of values generated will override the number of repetitions specified `# reps`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., "price 4 10 0.01").
+Note that the _Repeat_ tab also has the option to use a `Grid search` input to repeat a simulation by replacing one or more `Constants` specified in the `Simulation` tab in an iterative fashion. This input option is shown only when `Group by` is set to `Repeat`. Provide the minimum and maximum values as well as the step-size in the `Grid search` inputs. For example, enter a `Name` ("price"), the `Min` (4), `Max` (10), and `Step` (0.01) value. If multiple variables are specified in `Grid search` all possible value combinations will be created and evaluated in the simulation. Note that if `Grid search` has been selected the number of values generated will override the number of repetitions specified `# reps`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., "price 4 10 0.01").

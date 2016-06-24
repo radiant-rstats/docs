@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -275,12 +286,12 @@ $(document).ready(function () {
 
 <hr />
 <blockquote>
-<p>Evaluate model performance using Lift and Gains charts</p>
+<p>Evaluate model performance for (binary) classification</p>
 </blockquote>
-<p>To download the table as a csv-files click the top download button on the right of your screen. To download the plots at a png file click the lower download icon on the right of your screen.</p>
+<p>To download the table as a csv-files click the download button on the top-right of your screen. To download plots as png files click the download icon on the middle-right of your screen.</p>
 <div id="response-variable" class="section level4">
 <h4>Response variable</h4>
-<p>The outcome, or response, variable of interest. This should be binary variable, either a factor or an integer with two value (i.e., 0 and 1).</p>
+<p>Select the outcome, or response, variable of interest. This should be a binary variable, either a factor or an integer with two value (i.e., 0 and 1).</p>
 </div>
 <div id="choose-level" class="section level4">
 <h4>Choose level</h4>
@@ -288,11 +299,11 @@ $(document).ready(function () {
 </div>
 <div id="predictor" class="section level4">
 <h4>Predictor</h4>
-<p>Select one or more variables that can be used to <em>predict</em> the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using <em>Regression &gt; Logistic regression (GLM)</em> or a Neural Network estimated using <em>Model &gt; Neural Network (ANN)</em>).</p>
+<p>Select one or more variables that can be used to <em>predict</em> the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using <em>Model &gt; Logistic regression (GLM)</em> or a Neural Network estimated using <em>Model &gt; Neural Network (ANN)</em>).</p>
 </div>
 <div id="quantiles" class="section level4">
 <h4># quantiles</h4>
-<p>The number of buckets to create.</p>
+<p>The number of bins to create.</p>
 </div>
 <div id="margin-cost" class="section level4">
 <h4>Margin &amp; Cost</h4>
@@ -308,16 +319,18 @@ $(document).ready(function () {
 </div>
 <div id="example" class="section level2">
 <h2>Example</h2>
-<p>The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 72% of customers would maximize profits.</p>
-<div class="figure">
-<img src="figures_model/evalbin_profit_gain.png" alt="profit and gains" />
-<p class="caption">profit and gains</p>
-</div>
-<p>The prediction used in the screen shot above was derived from a logistic regression on the <code>dvd</code> data. The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load examples</code>). The model was estimated using <em>Regression &gt; Logistic regression (GLM)</em>. The predictions shown below were generated in the <em>Predict</em> tab.</p>
-<div class="figure">
-<img src="figures_model/evalbin_logistic.png" alt="logistic" />
-<p class="caption">logistic</p>
-</div>
+<p>The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.</p>
+<p align="center">
+<img src="figures_model/evalbin_profit_gain.png">
+</p>
+<p>This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and validation sample are 94.0% and 93.4% respectively.</p>
+<p align="center">
+<img src="figures_model/evalbin_confusion.png">
+</p>
+<p>The prediction used in the screen shots above was derived from a logistic regression on the <code>dvd</code> data. The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load examples</code>). The model was estimated using <em>Model &gt; Logistic regression (GLM)</em>. The predictions shown below were generated in the <em>Predict</em> tab.</p>
+<p align="center">
+<img src="figures_model/evalbin_logistic.png">
+</p>
 </div>
 
 

@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -280,38 +291,26 @@ $(document).ready(function () {
 <p>To download the table as a csv-files click the top download button on the right of your screen. To download the plots at a png file click the lower download icon on the right of your screen.</p>
 <div id="response-variable" class="section level4">
 <h4>Response variable</h4>
-<p>The outcome, or response, variable of interest. This should be binary variable, either a factor or an integer with two value (i.e., 0 and 1).</p>
+<p>The numeric outcome, or response, variable of interest.</p>
 </div>
 <div id="predictor" class="section level4">
 <h4>Predictor</h4>
-<p>Select one or more variables that can be used to <em>predict</em> the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using <em>Regression &gt; Linear regression (OLS)</em> or a Neural Network estimated using <em>Model &gt; Neural Network (ANN)</em>).</p>
-</div>
-<div id="margin-cost-of-over--vs-under-predicting" class="section level4">
-<h4>Margin &amp; Cost of over- vs under-predicting</h4>
-<p>To use the <code>Profit</code> and <code>ROME</code> (Return on Marketing Expenditures) charts, enter the <code>Margin</code> for each sale and the estimated <code>Cost</code> per contact (e.g., mailing costs or opportunity cost of email or text). For example, if the margin on a sale is $10 (excluding the contact cost) and the contact cost is $1 enter 10 and 1 in the <code>Margin</code> and <code>Cost</code> input windows.</p>
-<p>(e.g., think of production, inventory, etc. ala Rady-Tasty-Pastry)</p>
+<p>Select one or more variables that can be used to <em>predict</em> the value of the response variable. This could be a variable or predicted values from a model (e.g., from a regression estimated using <em>Model &gt; Linear regression (OLS)</em> or a Neural Network estimated using <em>Model &gt; Neural Network (ANN)</em>).</p>
 </div>
 <div id="show-results-for" class="section level4">
 <h4>Show results for</h4>
 <p>If a <code>filter</code> is active (e.g., set in the <em>Data &gt; View</em> tab) generate results for <code>All</code> data, <code>Training</code> data, <code>Validation</code> data, or <code>Both</code> training and validation data. If no filter is active calculations are applied to all data.</p>
 </div>
-<div id="plots" class="section level4">
-<h4>Plots</h4>
-<p>Generate … Profit, and/or ROME charts. The profit chart displays a profit index useful to compare performance across predictors/models</p>
-<p>Generate diagnostic plots for each models (combine or facet grid) ..</p>
-</div>
 <div id="example" class="section level2">
 <h2>Example</h2>
-<p>The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 72% of customers would maximize profits.</p>
-<div class="figure">
-<img src="figures_model/evalbin_profit_gain.png" alt="profit and gains" />
-<p class="caption">profit and gains</p>
-</div>
-<p>The prediction used in the screen shot above was derived from a logistic regression on the <code>dvd</code> data. The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load examples</code>). The model was estimated using <em>Regression &gt; Logistic regression (GLM)</em>. The predictions shown below were generated in the <em>Predict</em> tab.</p>
-<div class="figure">
-<img src="figures_model/evalbin_logistic.png" alt="logistic" />
-<p class="caption">logistic</p>
-</div>
+<p>Predictions were derived from a linear regression and an neural network with two nodes in the hidden layer on the <code>diamonds</code> data. The variables <code>price</code> and <code>carat</code> were log-transformed prior to estimation.The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load examples</code>). The predictions shown below were generated in the <em>Predict</em> tab.</p>
+<p align="center">
+<img src="figures_model/evalreg_ann_predict.png">
+</p>
+<p>The test statistics show a small, but consistent, advantage for the ANN.</p>
+<p align="center">
+<img src="figures_model/evalreg_summary_plot.png">
+</p>
 </div>
 
 

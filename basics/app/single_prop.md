@@ -16,7 +16,7 @@ Our null-hypothesis is that the proportion of consumers that would consider the 
 
 Choose the `Less than` option from the `Alternative hypothesis` drop-down to determine if the available data provides sufficient evidence to reject the null-hypothesis in favor of the alternative that the proportion of consumers that will consider the brand is **less than 10%**.
 
-![Summary](figures_basics/single_prop_summary.png)
+<p align="center"><img src="figures_basics/single_prop_summary.png"></p>
 
 The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., the proportion of "yes" responses). The final row of output shows the following:
 
@@ -33,9 +33,9 @@ There are three approaches we can use to evaluate the null hypothesis. We will c
 
 Because the p.value is **larger** than the conventional significance level ($0.249 > 0.05$) we **cannot** reject the null hypothesis and **do not suggest** that management should commit resources to increase brand awareness.
 
-We can also obtain the p.value by using the probability calculator in the _Base_ menu. Enter the number of successes in the data (93) as the lower bound (value) for a binomial-distribution with $n = 1000$ and $p = 0.1$. The p.value is the probability of observing a number of successes as or more extreme than the 93 we got in our sample. We see that $P(X <= 93) = 0.249$ which is the same value we got from _Base > Single proportion_.
+We can also obtain the p.value by using the probability calculator in the _Basics_ menu. Enter the number of successes in the data (93) as the lower bound (value) for a binomial-distribution with $n = 1000$ and $p = 0.1$. The p.value is the probability of observing a number of successes as or more extreme than the 93 we got in our sample. We see that $P(X <= 93) = 0.249$ which is the same value we got from _Basics > Single proportion_.
 
-![prob_calc](figures_basics/single_prop_prob_calc_v.png)
+<p align="center"><img src="figures_basics/single_prop_prob_calc_v.png"></p>
 
 #### confidence interval
 
@@ -43,16 +43,16 @@ Because the `comparison value` **is** contained in the confidence interval (i.e.
 
 #### number of successes
 
-We can obtain the critical value by using the probability calculator in the _Base_ menu. For a binomial-distribution with $n = 1000$ and $p = 0.1$ the critical value is 85. We have to enter 0.05 as the lower probability bound because the alternative hypothesis is `Less than`.<sup>2</sup>
+We can obtain the critical value by using the probability calculator in the _Basics_ menu. For a binomial-distribution with $n = 1000$ and $p = 0.1$ the critical value is 85. We have to enter 0.05 as the lower probability bound because the alternative hypothesis is `Less than`.<sup>2</sup>
 
-![prob_calc](figures_basics/single_prop_prob_calc_p.png)
+<p align="center"><img src="figures_basics/single_prop_prob_calc_p.png"></p>
 
 Because the number of successes (i.e., the number of "yes" responses) **is** larger than the critical value (93 vs 85) we **cannot** reject the null hypothesis and **do not suggest** that management should commit resources to increase brand awareness.
 
 <!--
 In addition to the numerical output provided in the _Summary_ tab we can visualize the data in the _Plot_ tab. The settings in the side-panel are the same as before. The black lines in the histogram show the sample mean (solid) and the confidence interval around the sample mean (dashed). The red line shows the comparison value (i.e., unit sales under the null-hypothesis). Because the red line does **not** fall within the confidence interval (1897 to Inf.) we reject the null-hypothesis in favor of the alternative.
 
-![Plot](figures_basics/single_proportion_plot.png)
+<p align="center"><img src="figures_basics/single_proportion_plot.png"></p>
 -->
 
 ### _Stats speak_

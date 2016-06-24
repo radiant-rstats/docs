@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -288,10 +299,9 @@ $(document).ready(function () {
 </ul>
 <p>Suppose we want to test if the proportion of people that survived the sinking of the Titanic differs across passenger classes. To test this hypothesis we select <code>pclass</code> as the grouping variable and calculate proportions of <code>yes</code> (see <code>Choose level</code>) for <code>survived</code> (see <code>Variable (select one)</code>).</p>
 <p>In the <code>Choose combinations</code> box select all available entries to conduct pair-wise comparisons across the three passenger class levels. Note that removing all entries will automatically select all combinations. Unless we have an explicit hypothesis for the direction of the effect we should use a two-sided test (i.e., <code>two.sided</code>). Our first alternative hypothesis would be ‘The proportion of survivors amongst 1st class passengers was different compared to 2nd class passengers’.</p>
-<div class="figure">
-<img src="figures_basics/compare_props_summary.png" alt="summary" />
-<p class="caption">summary</p>
-</div>
+<p align="center">
+<img src="figures_basics/compare_props_summary.png">
+</p>
 <p>The first two blocks of output show basic information about the test (e.g.,. selected variables and confidence levels) and summary statistics (e.g., proportions, standard errors, etc. per group). The final block of output shows the following:</p>
 <ul>
 <li><code>Null hyp.</code> is the null hypothesis and <code>Alt. hyp.</code> the alternative hypothesis</li>
@@ -299,12 +309,11 @@ $(document).ready(function () {
 <li><code>p.value</code> is the probability of finding a value as extreme or more extreme than <code>diff</code> if the null hypothesis is true</li>
 </ul>
 <p>If we check <code>Show additional statistics</code> the following output is added:</p>
-<div class="figure">
-<img src="figures_basics/compare_props_summary_additional.png" alt="summary additional" />
-<p class="caption">summary additional</p>
-</div>
+<p align="center">
+<img src="figures_basics/compare_props_summary_additional.png">
+</p>
 <ul>
-<li><code>chisq.value</code> is the chi-squared statistic associated with <code>diff</code> that we can compare to a chi-squared distribution. For additional discussion on how this metric is calculated see the help file in <em>Base &gt; Cross-tabs</em>. For each combination the equivalent of a 2X2 cross-tab is calculated.</li>
+<li><code>chisq.value</code> is the chi-squared statistic associated with <code>diff</code> that we can compare to a chi-squared distribution. For additional discussion on how this metric is calculated see the help file in <em>Basics &gt; Cross-tabs</em>. For each combination the equivalent of a 2X2 cross-tab is calculated.</li>
 <li><code>df</code> is the degrees of freedom associated with each statistical test (1).</li>
 <li><code>2.5% 97.5%</code> show the 95% confidence interval around the difference in sample proportions. These numbers provide a range within which the true population difference is likely to fall</li>
 </ul>
@@ -317,27 +326,25 @@ $(document).ready(function () {
 <p>Because the p.values are <strong>smaller</strong> than the significance level for each pair-wise comparison we can reject the null hypothesis that the proportions are equal based on the available sample of data. The results suggest that 1st class passengers were more likely to survive the sinking than either 2nd or 3rd class passengers. In turn, the 2nd class passengers were more likely to survive than those in 3rd class.</p>
 </div>
 <div id="confidence-interval" class="section level4">
-<h4>confidence interval</h4>
+<h4>Confidence interval</h4>
 <p>Because zero is <strong>not</strong> contained in any of the confidence intervals we reject the null hypothesis for each evaluated combination of passenger class levels.</p>
 </div>
 <div id="t.value" class="section level4">
 <h4>t.value</h4>
-<p>Because the calculated chi-squared values (20.576, 104.704, and 25.008) are <strong>larger</strong> than the corresponding <em>critical</em> chi-squared value we reject the null hypothesis for each evaluated combination of passenger class levels. We can obtain the critical chi-squared value by using the probability calculator in the <em>Base</em> menu. Using the test for 1st versus 2nd class passengers as an example, we find that for a chi-squared distribution with 1 degree of freedom (see <code>df</code>) and a confidence level of 0.95 the critical chi-squared value is 3.841.</p>
-<div class="figure">
-<img src="figures_basics/compare_props_prob_calc.png" alt="prob_calc" />
-<p class="caption">prob_calc</p>
-</div>
+<p>Because the calculated chi-squared values (20.576, 104.704, and 25.008) are <strong>larger</strong> than the corresponding <em>critical</em> chi-squared value we reject the null hypothesis for each evaluated combination of passenger class levels. We can obtain the critical chi-squared value by using the probability calculator in the <em>Basics</em> menu. Using the test for 1st versus 2nd class passengers as an example, we find that for a chi-squared distribution with 1 degree of freedom (see <code>df</code>) and a confidence level of 0.95 the critical chi-squared value is 3.841.</p>
+<p align="center">
+<img src="figures_basics/compare_props_prob_calc.png">
+</p>
 <p>In addition to the numerical output provided in the <em>Summary</em> tab we can also investigate the association between <code>pclass</code> and <code>survived</code> visually (see the <em>Plot</em> tab). The screen shot below shows two bar charts. The first chart has confidence interval (black) and standard error (blue) bars for the proportion of <code>yes</code> entries for <code>survived</code> in the sample. Consistent with the results shown in the <em>Summary</em> tab there are clear differences in the survival rate across passenger classes. The <code>Dodge</code> chart shows the proportions of <code>yes</code> and <code>no</code> in <code>survived</code> side-by-side for each passenger class. While 1st class passengers had a higher proportion of <code>yes</code> than <code>no</code> the opposite holds for the 3rd class passengers.</p>
-<div class="figure">
-<img src="figures_basics/compare_props_plot.png" alt="plot" />
-<p class="caption">plot</p>
-</div>
+<p align="center">
+<img src="figures_basics/compare_props_plot.png">
+</p>
 </div>
 </div>
 <div id="technical-notes" class="section level3">
 <h3>Technical notes</h3>
 <ul>
-<li>Radiant uses R’s <code>prop.test</code> function to compare proportions. When one or more expected values are small (e.g., 5 or less) the p.value for this test is calculated using simulation methods. When this occurs it is recommended to rerun the test using <em>Base &gt; Cross-tab</em> and evaluate if some cells may have an expected value below 1.</li>
+<li>Radiant uses R’s <code>prop.test</code> function to compare proportions. When one or more expected values are small (e.g., 5 or less) the p.value for this test is calculated using simulation methods. When this occurs it is recommended to rerun the test using <em>Basics &gt; Cross-tab</em> and evaluate if some cells may have an expected value below 1.</li>
 <li>For one-sided tests (i.e., <code>Less than</code> or <code>Greater than</code>) critical values must be obtained by using the normal distribution in the probability calculator and squaring the corresponding Z-statistic.</li>
 </ul>
 </div>

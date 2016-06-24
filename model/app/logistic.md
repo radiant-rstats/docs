@@ -1,4 +1,4 @@
-> Estimate a Logistic regression (or a Probit model)
+> Estimate a Logistic regression for classification
 
 ### Functionality
 
@@ -26,7 +26,7 @@ We can use the _Predict_ tab to predict probabilities for different values of th
 * To predict the survival probability for passengers aged between 0 and 90 at 10 year intervals type `age = seq(0, 90, 10)` and press enter
 * To predict the survival probability for passengers per class and gender type `pclass = levels(pclass), sex = c("male","female")` and press enter
 
-As an example of how to use data as input for prediction (e.g., predict the survival probabilities for 30 year old men and women in each of the passenger classes) you can use `titanic_pred`. Select `titanic` as the dataset for analysis and specify a model in _Regression > Logistic regression (GLM)_ with `pclass`, `sex`, and `age` as explanatory variables. Choose `Data` from the `Prediction input` dropdown and select `titanic_pred` from the `Predict for profiles` dropdown to generate the predictions. Note that the variables in the datafile and in the model must be the same.
+As an example of how to use data as input for prediction (e.g., predict the survival probabilities for 30 year old men and women in each of the passenger classes) you can use `titanic_pred`. Select `titanic` as the dataset for analysis and specify a model in _Model > Logistic regression (GLM)_ with `pclass`, `sex`, and `age` as explanatory variables. Choose `Data` from the `Prediction input` dropdown and select `titanic_pred` from the `Predict for profiles` dropdown to generate the predictions. Note that the variables in the datafile and in the model must be the same.
 
 To generate predicted values for all cases in, for example, the `titanic` dataset select `Data` from the `Prediction input` dropdown then select the `titanic` dataset. You can also create a dataset for input in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab. You can also load csv data as input. For example, paste the following link `https://radiant-rstats.github.io/docs/examples/glm_pred.csv` file into Radiant through the _Data > Manage_ tab and try to generate the same predictions. Hint: Use `csv (url)` to load the data link above.
 
@@ -41,7 +41,7 @@ As an example we will use a dataset that describes the survival status of indivi
 - sex = Sex (female, male)
 - age = Age in years
 
-Select `survived` as the response variable and `Yes` in **Choose level**. Select `pclass`, `sex` and `age` as the explanatory variables. In the screenshot below we see that each of the coefficients is statistically significant (p.value < .05) and that the model has some predictive power (Chi-squared statistic < .05). The `VIF` measures suggest that multi-collinearity is not a concern in this model. Unfortunately the coefficients from a logit (or probit) model are difficult to interpret. The `OR` column provides estimated odds-ratios. We see that the odds of survival were significantly lower for 2nd and 3rd class passengers compared to 1st class passenger. The odds of survival for males were also lower than for females. While the effect of age is statically significant, for each extra year in age the odds of survival are not as strongly affected (see also the standardized coefficient).
+Select `survived` as the response variable and `Yes` in **Choose level**. Select `pclass`, `sex` and `age` as the explanatory variables. In the screenshot below we see that each of the coefficients is statistically significant (p.value < .05) and that the model has some predictive power (Chi-squared statistic < .05). Unfortunately the coefficients from a logit model are difficult to interpret. The `OR` column provides estimated odds-ratios. We see that the odds of survival were significantly lower for 2nd and 3rd class passengers compared to 1st class passenger. The odds of survival for males were also lower than for females. While the effect of age is statically significant, for each extra year in age the odds of survival are not as strongly affected (see also the standardized coefficient).
 
 For each of the explanatory variables the following null and alternate hypotheses can be formulated for the odds ratios:
 
@@ -55,15 +55,15 @@ The odds-ratios from the logistic regression can be interpreted as follows:
 - Compared to female passengers, the odds of survival for male passengers was 91.7% lower, keeping all other variables in the model constant.
 - For an increase in passenger age of 1 year the odds of survival decreased by 0.34%, keeping all other variables in the model constant.
 
-![Summary](figures_model/logistic_summary.png)
+<p align="center"><img src="figures_model/logistic_summary.png"></p>
 
 In addition to the numerical output provided in the _Summary_ tab we can also evaluate the link between `survival`, `class`, `sex`, and `age` visually (see _Plot_ tab). The settings in the side-panel are the same as before. In the screenshot below we see a coefficient (or rather an odds-ratio) plot with confidence intervals. The relative importance of gender and class compared to age clearly stands out. Note: click the check box for standardized coefficients (i.e., `standardize`) in the _Summary_ tab and see if your conclusion changes.
 
-![Plot](figures_model/logistic_plot.png)
+<p align="center"><img src="figures_model/logistic_plot.png"></p>
 
-Probabilities, are more convenient for interpretation than either the coefficients from a logit (probit) model or the odds. To see how survival probabilities change across passenger classes select `Command` from the `Prediction input` dropdown in the _Predict_ tab, type `pclass = levels(pclass)` in the **Prediction command** box, and press return.
+Probabilities, are more convenient for interpretation than coefficients or odds from a logit model. To see how survival probabilities change across passenger classes select `Command` from the `Prediction input` dropdown in the _Predict_ tab, type `pclass = levels(pclass)` in the **Prediction command** box, and press return.
 
-![Plot](figures_model/logistic_predict.png)
+<p align="center"><img src="figures_model/logistic_predict.png"></p>
 
 The figure above shows that the probabilities drop sharply for 2nd and 3rd class passengers compared to 1st class passengers. For males of average age (approx. 30 yo in the sample) the survival probability was close to 50%. For 30 yo, male, 3rd class passengers this probability was closer to 9%.
 
@@ -96,4 +96,4 @@ To see the effects for age type `age = seq(0, 100, 20)` in the **Prediction comm
 
 For a more comprehensive overview of the influence of gender, age, and passenger class on the chances of survival we can generate a full table of probabilities by selecting `Command` from the `Prediction input` dropdown in the _Predict_ tab and selecting `Titanic` from the `Predict for profiles`. There are too many numbers to easily interpret in table form but the figure gives a clear overview of how survival probabilities change with `age`, `gender`, and `pclass`:
 
-![Probability](figures_model/logistic_predict_data.png)
+<p align="center"><img src="figures_model/logistic_predict_data.png"></p>

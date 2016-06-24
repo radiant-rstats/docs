@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -294,18 +305,16 @@ $(document).ready(function () {
 <h2>Variable name, Level 1, Level 2, and Level 3</h2>
 <p>Here we will enter the factors of interest. For example, enter <code>price</code> as the variable name, $10 as level 1, $13, as level 2, and $16 as level 3. Then click the <i title='Add factor' class='fa fa-plus-circle'></i> icon. This will enter the specification details required into the <code>Design factors</code> window in the format Radiant needs for the analysis. To remove a line click the <i title='Add factor' class='fa fa-minus-circle'></i> icon.</p>
 <p>After entering the required information your screen should look as follows:</p>
-<div class="figure">
-<img src="figures_design/doe_factors.png" alt="factors" />
-<p class="caption">factors</p>
-</div>
+<p align="center">
+<img src="figures_design/doe_factors.png">
+</p>
 </div>
 <div id="create" class="section level2">
 <h2>Create</h2>
 <p>You are now ready to create an experimental design by clicking on the <code>Create</code> button. This will generate the following output.</p>
-<div class="figure">
-<img src="figures_design/doe_output.png" alt="output" />
-<p class="caption">output</p>
-</div>
+<p align="center">
+<img src="figures_design/doe_output.png">
+</p>
 <p>For our example, the ideal design has 18 trials. However, this implies that the partial and the full factorial are the same size. We’d like to find out if it is possible to reduce the number of trials. See <code># trials</code> below.</p>
 </div>
 <div id="trials" class="section level2">

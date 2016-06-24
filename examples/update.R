@@ -1,6 +1,0 @@
-unloadNamespace("radiant")
-unloadNamespace("knitr")
-remove.packages("knitr")
-install.packages("knitr", repos = "http://radiant-rstats.github.io/minicran/", type = 'binary')
-install.packages("radiant", repos = "http://radiant-rstats.github.io/minicran/", type = 'binary')
-ret <- .rs.restartR()

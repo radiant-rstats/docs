@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -276,7 +287,7 @@ $(document).ready(function () {
 <hr />
 <div id="how-to-install-radiant" class="section level2">
 <h2>How to install Radiant</h2>
-<p>Radiant is a platform-independent browser-based interface for business analytics in <a href="http://www.r-project.org/">R</a>, based on the <a href="http://www.rstudio.com/shiny/">Shiny</a> package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="\_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant.data/issues" _target="_blank">https://github.com/radiant-rstats/radiant.data/issues</a>. For other questions and comments please use <a href="mailto:radiant@rady.ucsd.edu">radiant@rady.ucsd.edu</a>.</p>
+<p>Radiant is a platform-independent browser-based interface for business analytics in <a href="http://www.r-project.org/">R</a>, based on the <a href="http://www.rstudio.com/shiny/">Shiny</a> package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="\_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use <a href="mailto:radiant@rady.ucsd.edu">radiant@rady.ucsd.edu</a>.</p>
 <blockquote>
 <p><strong>Note:</strong> User profiles (or usernames or logins) containing non-ASCII characters will likely cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-E, a-e) letters only. For example, c:\users\myprofilename</p>
 </blockquote>
@@ -300,8 +311,12 @@ $(document).ready(function () {
 <h4>3. Use a modern browser</h4>
 <p>For example, <a href="https://www.google.com/intl/en/chrome/browser/desktop/">Chrome</a> or Safari. Internet Explorer (version 11 or higher) should work as well. Chrome, however, is the recommended browser.</p>
 </div>
+<div id="install-tex-required-to-generate-reports-in-pdf-format" class="section level4">
+<h4>4. Install Tex (required to generate reports in PDF format)</h4>
+<p>For Mac download and install: <a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg" class="uri">http://tug.org/cgi-bin/mactex-download/MacTeX.pkg</a> For Windows download and install: <a href="http://miktex.org/download" class="uri">http://miktex.org/download</a></p>
+</div>
 <div id="install-radiant" class="section level4">
-<h4>4. Install Radiant</h4>
+<h4>5. Install Radiant</h4>
 <p>To install Radiant open Rstudio and copy-and-paste the command below into the <strong>Console</strong> window on the bottom left of the application. Then press return. R(studio) will now install Radiant and several dependencies. This may take a few minutes depending on the speed of your internet connection.</p>
 <blockquote>
 <p><strong>Note:</strong> On Windows you may need to start Rstudio by right-clicking on the desktop shortcut and choosing <code>run as administrator</code>.</p>
@@ -312,7 +327,7 @@ $(document).ready(function () {
 </blockquote>
 </div>
 <div id="starting-radiant" class="section level4">
-<h4>5. Starting Radiant</h4>
+<h4>6. Starting Radiant</h4>
 <p>When you open Rstudio (version 0.99.893 or later) by double-clicking the icon on your Desktop you can start and update Radiant through the <code>Addins</code> menu at the top of the screen. Note that when you first install Radiant you must use the <code>install.packages</code> command shown above.</p>
 <p>When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code>. The Radiant process will stop and the browser window will close (Chrome) or gray-out. If you get stuck, take a look at the <code>Installing Radiant</code> video:</p>
 <iframe width="640" height="375" src="https://www.youtube.com/embed/XLR9cquIMAg" frameborder="0" allowfullscreen>
@@ -333,7 +348,7 @@ $(document).ready(function () {
 </div>
 <div id="reporting-issues" class="section level2">
 <h2>Reporting issues</h2>
-<p>Rady students can report any issues they might have with Radiant on Piazza. Otherwise, please use the GitHub issue tracker at <a href="https://github.com/radiant-rstats/radiant.data/issues" target="_blank">github.com/radiant-rstats/radiant.data/issues</a> if you have any problems with Radiant.</p>
+<p>Rady students can report any issues they might have with Radiant on Piazza. Otherwise, please use the GitHub issue tracker at <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">github.com/radiant-rstats/radiant/issues</a> if you have any problems with Radiant.</p>
 </div>
 
 

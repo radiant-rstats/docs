@@ -1,5 +1,5 @@
 ---
-title: "Design > Sample > Sample size"
+title: "Design > Sample > Sample size (single)"
 ---
 ***
 

@@ -10,7 +10,7 @@ We have access to data from a random sample of grocery stores in the UK. Managem
 
 You can find the information on unit sales in each of the sample stores in the **demand\_uk.rda** data set. The data set contains two variables, `store_id` and `demand_uk`. Our null-hypothesis is that the average store demand in the UK is equal to 1750 unit so we enter that number into the `Comparison value` box. We choose the `Greater than` option from the `Alternative hypothesis` drop-down because we want to determine if the available data provides sufficient evidence to reject the null-hypothesis favor of the alternative that average store demand in the UK is **larger than 1750**.
 
-![Summary](figures_basics/single_mean_summary.png)
+<p align="center"><img src="figures_basics/single_mean_summary.png"></p>
 
 The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., mean, standard deviation). The final row of output shows the following:
 
@@ -35,13 +35,13 @@ Because the `comparison value` is **not** contained in the confidence interval w
 
 #### t.value
 
-Because the calculated t.value (5.967) is **larger** than the _critical_ t.value we reject the null hypothesis and suggest that management should enter the UK market. We can obtain the critical t.value by using the probability calculator in the _Base_ menu. For a t-distribution with 571 degrees of freedom (see `df`) the critical t.value is 1.648. We have to enter 0.95 as the upper probability bound (i.e., 1 - 0.05) because the alternative hypothesis is `Greater than`.<sup>2</sup>
+Because the calculated t.value (5.967) is **larger** than the _critical_ t.value we reject the null hypothesis and suggest that management should enter the UK market. We can obtain the critical t.value by using the probability calculator in the _Basics_ menu. For a t-distribution with 571 degrees of freedom (see `df`) the critical t.value is 1.648. We have to enter 0.95 as the upper probability bound (i.e., 1 - 0.05) because the alternative hypothesis is `Greater than`.<sup>2</sup>
 
-![prob_calc](figures_basics/single_mean_prob_calc.png)
+<p align="center"><img src="figures_basics/single_mean_prob_calc.png"></p>
 
 In addition to the numerical output provided in the _Summary_ tab we can visualize the data in the _Plot_ tab. The settings in the side-panel are the same as before. The black lines in the histogram show the sample mean (solid) and the confidence interval around the sample mean (dashed). The red line shows the comparison value (i.e., unit sales under the null-hypothesis). Because the red line does **not** fall within the confidence interval (1897 to Inf.) we reject the null-hypothesis in favor of the alternative.
 
-![Plot](figures_basics/single_mean_plot.png)
+<p align="center"><img src="figures_basics/single_mean_plot.png"></p>
 
 ### _Stats speak_
 

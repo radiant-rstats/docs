@@ -51,6 +51,17 @@ body {
 	margin-bottom: 2px;
 }
 
+img {
+  max-width: 85% !important;
+}
+
+/*
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+*/
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
@@ -277,24 +288,22 @@ $(document).ready(function () {
 <blockquote>
 <p>Probability calculator</p>
 </blockquote>
-<p>Calculate probabilities or values based on the <em>Binomial</em>, <em>Chi-squared</em>, <em>Discrete</em>, <em>F</em>, <em>Normal</em>, <em>t</em>, or <em>Uniform</em> distribution.</p>
+<p>Calculate probabilities or values based on the <em>Binomial</em>, <em>Chi-squared</em>, <em>Discrete</em>, <em>F</em>, <em>Exponential</em>, <em>Normal</em>, <em>Poisson</em>, <em>t</em>, or <em>Uniform</em> distribution.</p>
 <div id="testing-batteries" class="section level2">
 <h2>Testing batteries</h2>
 <p>Suppose a consumer reports (CR) wants to test manufacturer claims about battery life. The manufacturer claims that more than 90% of their batteries will power a laptop for at least 12 hours of continues use. CR sets up 20 identical laptops with the manufacturer’s batteries. If the manufacturer’s claims are accurate, what is the probability that 15 or more laptops are still running after 12 hours?</p>
 <p>The description of the problem suggests we should select <code>Binomial</code> from the <code>Distribution</code> dropdown. To find the probability, select <code>Values</code> as the <code>Input type</code> and enter <code>15</code> as the <code>Upper bound</code>. In the output below we can see that the probability is 0.989. The probability that exactly 15 laptops are still running after 12 hours is 0.032.</p>
-<div class="figure">
-<img src="figures_basics/prob_calc_batteries.png" alt="Prob-calc - batteries" />
-<p class="caption">Prob-calc - batteries</p>
-</div>
+<p align="center">
+<img src="figures_basics/prob_calc_batteries.png">
+</p>
 </div>
 <div id="demand-for-headphones" class="section level2">
 <h2>Demand for headphones</h2>
 <p>A manufacturer wants to determine the appropriate inventory level for headphones required to achieve a 95% <a href="https://en.wikipedia.org/wiki/Service_level" target="_blank">service level</a>. Demand for the headphones obeys a normal distribution with a mean of 3000 and a standard deviation of 800.</p>
 <p>First select <code>Normal</code> from the <code>Distribution</code> dropdown. To find the required number of headphones to hold in inventory choose <code>Normal</code> from the <code>Distribution</code> dropdown and then select <code>Probability</code> as the <code>Input type</code>. Finally, enter <code>.95</code> as the <code>Upper bound</code>. In the output below we see the number of units to stock is 4316.</p>
-<div class="figure">
-<img src="figures_basics/prob_calc_headphones.png" alt="Prob-calc - headphones" />
-<p class="caption">Prob-calc - headphones</p>
-</div>
+<p align="center">
+<img src="figures_basics/prob_calc_headphones.png">
+</p>
 </div>
 <div id="cups-of-ice-cream" class="section level2">
 <h2>Cups of ice cream</h2>
@@ -314,14 +323,13 @@ $(document).ready(function () {
   Var(C) = (1 - 2)^2 \times 0.4 + (2 - 2)^2 \times 0.3 + (3 - 2)^2 \times 0.2 + (4 - 2)^2 \times 0.1 = 1\,.
 \]</span></p>
 <p>To get the mean and standard deviation of the discrete probability distribution above, as well as the probability a customer will buy 2 or more cups (0.6), specify the following in the probability calculator.</p>
-<div class="figure">
-<img src="figures_basics/prob_calc_icecream.png" alt="Prob-calc - icecream" />
-<p class="caption">Prob-calc - icecream</p>
-</div>
+<p align="center">
+<img src="figures_basics/prob_calc_icecream.png">
+</p>
 </div>
 <div id="hypothesis-testing" class="section level2">
 <h2>Hypothesis testing</h2>
-<p>You can also use the probability calculator to determine a <code>p.value</code> or a <code>critical value</code> for a statistical test. See the helpfiles for <code>Single mean</code>, <code>Single proportion</code>, <code>Compare means</code>, <code>Compare proportions</code>, <code>Cross-tabs</code> in the <code>Base</code> menu and <code>Linear regression (OLS)</code> in the <em>Regression</em> menu for details.</p>
+<p>You can also use the probability calculator to determine a <code>p.value</code> or a <code>critical value</code> for a statistical test. See the helpfiles for <code>Single mean</code>, <code>Single proportion</code>, <code>Compare means</code>, <code>Compare proportions</code>, <code>Cross-tabs</code> in the <code>Basics</code> menu and <code>Linear regression (OLS)</code> in the <em>Model</em> menu for details.</p>
 </div>
 
 

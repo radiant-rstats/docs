@@ -11,7 +11,7 @@ title: Radiant -- Business analytics using R and Shiny
 
 ## How to install Radiant
 
-Radiant is a platform-independent browser-based interface for business analytics in [R](http://www.r-project.org/), based on the [Shiny](http://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="\_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant.data/issues" _target="_blank">https://github.com/radiant-rstats/radiant.data/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
+Radiant is a platform-independent browser-based interface for business analytics in [R](http://www.r-project.org/), based on the [Shiny](http://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="\_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
 
 > **Note:** User profiles (or usernames or logins) containing non-ASCII characters will likely cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-E, a-e) letters only. For example, c:\\users\\myprofilename
 
@@ -39,7 +39,12 @@ Although not required, I recommend that Windows users install <a href="https://c
 
 For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should work as well. Chrome, however, is the recommended browser.
 
-#### 4. Install Radiant
+#### 4. Install Tex (required to generate reports in PDF format)
+
+For Mac download and install: http://tug.org/cgi-bin/mactex-download/MacTeX.pkg
+For Windows download and install: http://miktex.org/download
+
+#### 5. Install Radiant
 
 To install Radiant open Rstudio and copy-and-paste the command below into the **Console** window on the bottom left of the application. Then press return. R(studio) will now install Radiant and several dependencies. This may take a few minutes depending on the speed of your internet connection.
 
@@ -51,7 +56,7 @@ install.packages("radiant", repos = "http://radiant-rstats.github.io/minicran/",
 
 > **Important:** If you use Windows and are asked where to install Radiant (i.e., "Would you like to use a personal library instead?") you most likely did **not** install R in directory C:\\R\\R-`r rv` as stated above. You should uninstall and reinstall R in the suggested directory before proceeding.
 
-#### 5. Starting Radiant
+#### 6. Starting Radiant
 
 When you open Rstudio (version 0.99.893 or later) by double-clicking the icon on your Desktop you can start and update Radiant through the `Addins` menu at the top of the screen. Note that when you first install Radiant you must use the `install.packages` command shown above.
 
@@ -80,5 +85,5 @@ install.packages("package-that-is-not-yet-installed", repos = "http://radiant-rs
 
 ## Reporting issues
 
-Rady students can report any issues they might have with Radiant on Piazza. Otherwise, please use the GitHub issue tracker at <a href="https://github.com/radiant-rstats/radiant.data/issues" target="_blank">github.com/radiant-rstats/radiant.data/issues</a> if you have any problems with Radiant.
+Rady students can report any issues they might have with Radiant on Piazza. Otherwise, please use the GitHub issue tracker at <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">github.com/radiant-rstats/radiant/issues</a> if you have any problems with Radiant.
 
