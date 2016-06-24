@@ -10,11 +10,11 @@ The basic measure of (lack of) fit for MDS is called `Stress`. If MDS cannot cre
 
 <p align="center"><img src="figures_multivariate/mds_summary.png"></p>
 
-In the graph from the screen grab of the _Plot_ tab shown below the relative locations of Los Angeles, Boston, etc. look wrong. This is due to the fact the MDS program has no information on North, South, East and West. We can ‘flip’ the plot in Radiant to see if map becomes easier to recognize and interpret.
+In the graph from the screen grab of the _Plot_ tab shown below the relative locations of Los Angeles, Boston, etc. look wrong. This is due to the fact the MDS program has no information on North, South, East and West. We can _flip_ the plot in Radiant to see if map becomes easier to recognize and interpret.
 
 <p align="center"><img src="figures_multivariate/mds_plot.png"></p>
 
-To create the plot below we clicked the check-boxes for `dimension 1` and `dimension 2`. After ‘flipping’ the plot along both the horizontal and vertical axis we see that the relative locations of the cities look quite good. Note that this map is _flat_, i.e., there is no correction for the curvature of the earth.
+To create the plot below we clicked the check-boxes for `dimension 1` and `dimension 2`. After _flipping_ the plot along both the horizontal and vertical axis we see that the relative locations of the cities look quite good. Note that this map is _flat_, i.e., there is no correction for the curvature of the earth.
 
 <p align="center"><img src="figures_multivariate/mds_plot_flip.png"></p>
 
@@ -26,6 +26,6 @@ The following plot is based on similarity data for a set of toothpaste brands (`
 
 The coordinates shown in the _Summary_ tab are used to plot the brands in two dimensions in the _Plot_ tab. In the plot we see that Aqua Fresh and Colgate as well as Ultra Brite and Pepsodent are located very close together. This is consistent with the original data. Sensodyne and Crest, however, are positioned at opposite ends of the plot. Again, this is consistent with the original data and provides visual confirmation that MDS was able to create a plot that fits the data well.
 
-From the plot a manager might conclude that the brands that are closest together in the map are perceived by consumers as close substitutes and, hence, close competitors in the minds of consumers in this market segment. A manager for Aqua Fresh or Macleans, in contrast, might focus less on Sensodyne when developing a competitive positioning plan for her brand. An important limitation of brand maps based on (dis)similarity data is that the axes are difficult to interpret. For example, why are Close-up and Crest located at opposite ends along the horizontal axes? The researcher could ask respondents to explain the meaning of the axes or else obtain additional attribute information for the brands and correlate/overlay these on the plot to facilitate interpretation. Such attribute data could, however, also be used to create a brand map without the need for (dis)similarity ratings (see _Multivariate > Maps > Attribute_.
+From the plot a manager might conclude that the brands that are closest together in the map are perceived by consumers as close substitutes and, hence, close competitors in the minds of consumers in this market segment. A manager for Aqua Fresh or Macleans, in contrast, might focus less on Sensodyne when developing a competitive positioning plan for her brand. An important limitation of brand maps based on (dis)similarity data is that the axes are difficult to interpret. For example, why are Close-up and Crest located at opposite ends along the horizontal axes? The researcher could ask respondents to explain the meaning of the axes or else obtain additional attribute information for the brands and correlate/overlay these on the plot to facilitate interpretation. Such attribute data could, however, also be used to create a brand map without the need for (dis)similarity ratings (see _Multivariate > Maps > Attribute_).
 
 <p align="center"><img src="figures_multivariate/mds_plot_tpbrands.png"></p>

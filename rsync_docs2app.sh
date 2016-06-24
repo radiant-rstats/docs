@@ -1,5 +1,5 @@
 # rsync -nav ~/gh/docs/data/app/  ~/gh/radiant.data/inst/app/tools/help/
-# rsync -nav ~/gh/docs/data/figures/*  ~/gh/radiant.data/app/data/tools/help/figures/
+# rsync -nav ~/gh/docs/data/figures/  ~/gh/radiant.data/app/data/tools/help/figures/
 #
 # rsync -nav ~/gh/docs/design/app/  ~/gh/radiant.design/inst/app/tools/help/
 # rsync -nav ~/gh/docs/design/figures_design/  ~/gh/radiant.design/inst/app/tools/help/figures/
@@ -14,7 +14,7 @@
 # rsync -nav ~/gh/docs/multivariate/figures_multivariate/  ~/gh/radiant.multivariate/inst/app/tools/help/figures/
 
 rsync -av ~/gh/docs/data/app/  ~/gh/radiant.data/inst/app/tools/help/
-rsync -av ~/gh/docs/data/figures/*  ~/gh/radiant.data/app/data/tools/help/figures/
+rsync -av ~/gh/docs/data/figures/  ~/gh/radiant.data/inst/app/tools/help/figures/
 
 rsync -av ~/gh/docs/design/app/  ~/gh/radiant.design/inst/app/tools/help/
 rsync -av ~/gh/docs/design/figures_design/  ~/gh/radiant.design/inst/app/tools/help/figures/

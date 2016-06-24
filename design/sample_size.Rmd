@@ -3,5 +3,5 @@ title: "Design > Sample > Sample size (single)"
 ---
 ***
 
-```{r child='app/sample_size.Rmd'}
+```{r child='app/sample_size.md'}
 ```

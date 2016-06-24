@@ -3,5 +3,5 @@ title: "Design > Sample > Sample size (compare)"
 ---
 ***
 
-```{r child='app/sample_size_comp.Rmd'}
+```{r child='app/sample_size_comp.md'}
 ```
