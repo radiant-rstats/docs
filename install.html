@@ -298,7 +298,11 @@ $(document).ready(function () {
 <blockquote>
 <p><strong>Important:</strong> Windows users <strong>must</strong> install R in directory C:\R\R-3.3.0</p>
 </blockquote>
-<p>On Mac you can accept all the defaults. Installing R should create 2 shortcuts on your Desktop. Because we will be using Rstudio to start Radiant you can delete these shortcuts.</p>
+<p>On Mac you can accept all the defaults. Installing R should create 2 shortcuts on your Desktop. Because we will be using Rstudio to start Radiant you can delete these shortcuts after completing step 6 below.</p>
+<blockquote>
+<p>To automate steps 2-5 open R and copy-and-paste the command below and accept all default settings:</p>
+</blockquote>
+<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R&quot;)</code></pre>
 </div>
 <div id="install-rstudio" class="section level4">
 <h4>2. Install Rstudio</h4>
@@ -311,9 +315,9 @@ $(document).ready(function () {
 <h4>3. Use a modern browser</h4>
 <p>For example, <a href="https://www.google.com/intl/en/chrome/browser/desktop/">Chrome</a> or Safari. Internet Explorer (version 11 or higher) should work as well. Chrome, however, is the recommended browser.</p>
 </div>
-<div id="install-tex-required-to-generate-reports-in-pdf-format" class="section level4">
-<h4>4. Install Tex (required to generate reports in PDF format)</h4>
-<p>For Mac download and install: <a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg" class="uri">http://tug.org/cgi-bin/mactex-download/MacTeX.pkg</a> For Windows download and install: <a href="http://miktex.org/download" class="uri">http://miktex.org/download</a></p>
+<div id="install-tex" class="section level4">
+<h4>4. Install Tex</h4>
+<p>To generate PDF reports in Radiant you will need LaTex installed. For Mac download and install <a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg">MacTex</a>. For Windows download and install <a href="http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.5997-x64.exe">MikTex</a>.</p>
 </div>
 <div id="install-radiant" class="section level4">
 <h4>5. Install Radiant</h4>

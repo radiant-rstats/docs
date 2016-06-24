@@ -18,13 +18,20 @@ setwd("~/gh/docs/")
 knit("README.Rmd")
 setwd("~/gh/docs/sub")
 knit("README_dev.Rmd")
-file.copy("README_dev.md","../../radiant/README.md",overwrite = TRUE)
-file.copy("README_dev.md","../../radiant.data/inst/app/tools/app/about.md",overwrite = TRUE)
+# file.copy("README_dev.md","../../radiant/README.md",overwrite = TRUE)
+# file.copy("README_dev.md","../../radiant.data/inst/app/tools/app/about.md",overwrite = TRUE)
 knit("tutorials_dev.Rmd")
-file.copy("tutorials_dev.md","../../radiant.data/inst/app/tools/app/tutorials.md",overwrite = TRUE)
-setwd("~/gh/docs")
+# file.copy("tutorials_dev.md","../../radiant.data/inst/app/tools/app/tutorials.md",overwrite = TRUE)s
+
+file.copy("README_dev.md",file.path("../../radiant.data/inst/app/tools/app/about.md"),overwrite = TRUE)
+file.copy("tutorials_dev.md",file.path("../../radiant.data/inst/app/tools/app/tutorials.md"),overwrite = TRUE)
+
+copy_docs <- function(app) file.copy("README_dev.md",file.path("../..",app,"README.md"),overwrite = TRUE)
+sapply(c("radiant","radiant.data","radiant.design","radiant.basics","radiant.model","radiant.multivariate"), copy_docs)
+
 
 ## sync (R)md files to gh/radiant
+setwd("~/gh/docs")
 system('sh rsync_docs2app.sh')
 
 ## create documentation pdf
