@@ -25,7 +25,7 @@ For windows you can get the latest release here: <a href="https://cran.rstudio.c
 
 On Mac you can accept all the defaults. Installing R should create 2 shortcuts on your Desktop. Because we will be using Rstudio to start Radiant you can delete these shortcuts after completing step 6 below.
 
-> To automate steps 2-5 open R and copy-and-paste the command below and accept all default settings:
+> To automate steps 2-5 open R and copy-and-paste the command below, press return, and accept all default settings during the install process:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
@@ -63,7 +63,7 @@ install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/"
 
 #### 6. Starting Radiant
 
-When you open Rstudio (version 0.99.893 or later) by double-clicking the icon on your Desktop you can start and update Radiant through the `Addins` menu at the top of the screen. Note that when you first install Radiant you must use the `install.packages` command shown above.
+When you open Rstudio (version 0.99.900 or later) you can start and update Radiant through the `Addins` menu at the top of the screen. Note that when you first install Radiant you must use the install script or the `install.packages` command shown above.
 
 When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out. If you get stuck, take a look at the `Installing Radiant` video:
 
