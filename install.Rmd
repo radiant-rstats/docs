@@ -16,9 +16,11 @@ Radiant is a platform-independent browser-based interface for business analytics
 Take a look at the `Install Radiant on Windows` or `Install Radiant on Mac` video:
 
 **Install Radiant on Windows**
-<iframe width="640" height="375" src="https://www.youtube.com/embed/XLR9cquIMAg" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="375" src="https://www.youtube.com/embed/DEHfYBWtUjY" frameborder="0" allowfullscreen></iframe>
 
 **Install Radiant on Mac**
+
 <iframe width="640" height="375" src="https://www.youtube.com/embed/WheqHpobMZg" frameborder="0" allowfullscreen></iframe>
 
 > **Note:** User profiles (or usernames or logins) containing non-ASCII characters will likely cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters only. For example, c:\\users\\myprofilename
