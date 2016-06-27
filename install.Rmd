@@ -13,6 +13,14 @@ title: Radiant -- Business analytics using R and Shiny
 
 Radiant is a platform-independent browser-based interface for business analytics in [R](http://www.r-project.org/), based on the [Shiny](http://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="\_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
 
+Take a look at the `Install Radiant on Windows` or `Install Radiant on Mac` video:
+
+**Install Radiant on Windows**
+<iframe width="640" height="375" src="https://www.youtube.com/embed/XLR9cquIMAg" frameborder="0" allowfullscreen></iframe>
+
+**Install Radiant on Mac**
+<iframe width="640" height="375" src="https://www.youtube.com/embed/WheqHpobMZg" frameborder="0" allowfullscreen></iframe>
+
 > **Note:** User profiles (or usernames or logins) containing non-ASCII characters will likely cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters only. For example, c:\\users\\myprofilename
 
 #### 1. Install R for your system
@@ -65,9 +73,7 @@ install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/"
 
 When you open Rstudio (version 0.99.900 or later) you can start and update Radiant through the `Addins` menu at the top of the screen. Note that when you first install Radiant you must use the install script or the `install.packages` command shown above.
 
-When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out. If you get stuck, take a look at the `Installing Radiant` video:
-
-<iframe width="640" height="375" src="https://www.youtube.com/embed/XLR9cquIMAg" frameborder="0" allowfullscreen></iframe>
+When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out. 
 
 ## Documentation
 
