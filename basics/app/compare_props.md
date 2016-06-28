@@ -27,7 +27,7 @@ If we check `Show additional statistics` the following output is added:
 
 <p align="center"><img src="figures_basics/compare_props_summary_additional.png"></p>
 
-* `chisq.value` is the chi-squared statistic associated with `diff` that we can compare to a chi-squared distribution. For additional discussion on how this metric is calculated see the help file in _Basics > Cross-tabs_. For each combination the equivalent of a 2X2 cross-tab is calculated.
+* `chisq.value` is the chi-squared statistic associated with `diff` that we can compare to a chi-squared distribution. For additional discussion on how this metric is calculated see the help file in _Basics > Tables > Cross-tabs_. For each combination the equivalent of a 2X2 cross-tab is calculated.
 * `df` is the degrees of freedom associated with each statistical test (1).
 * `2.5% 97.5%` show the 95% confidence interval around the difference in sample proportions. These numbers provide a range within which the true population difference is likely to fall
 
@@ -55,7 +55,7 @@ In addition to the numerical output provided in the _Summary_ tab we can also in
 
 ### Technical notes
 
-* Radiant uses R's `prop.test` function to compare proportions. When one or more expected values are small (e.g., 5 or less) the p.value for this test is calculated using simulation methods. When this occurs it is recommended to rerun the test using _Basics > Cross-tab_ and evaluate if some cells may have an expected value below 1.
+* Radiant uses R's `prop.test` function to compare proportions. When one or more expected values are small (e.g., 5 or less) the p.value for this test is calculated using simulation methods. When this occurs it is recommended to rerun the test using _Basics > Tables > Cross-tabs_ and evaluate if some cells may have an expected value below 1.
 * For one-sided tests (i.e., `Less than` or `Greater than`) critical values must be obtained by using the normal distribution in the probability calculator and squaring the corresponding Z-statistic.
 
 ### Multiple comparison adjustment

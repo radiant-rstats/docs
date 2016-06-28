@@ -291,12 +291,10 @@ $(document).ready(function () {
 <div id="transform-command-log" class="section level3">
 <h3>Transform command log</h3>
 <p>All transformations applied in the <em>Data &gt; Transform</em> tab can be logged. If, for example, you apply a <code>log</code> transformation to numeric variables the following code is generated and put in the <code>Transform command log</code> window at the bottom of your screen when you click the <code>Store</code> button.</p>
-<pre>
-## transform variable
-r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log", price, carat)
-</pre>
+<pre class="r"><code>## transform variable
+r_data[[&#39;diamonds&#39;]] &lt;- mutate_each(r_data[[&#39;diamonds&#39;]], funs(log), ext = &#39;_log&#39;, price, carat)</code></pre>
 <p>This is an important feature if you want to re-run a report with new, but similar, data. Even more important is that there is a record of the steps taken to transform the data and to generate results, i.e., your work is now reproducible.</p>
-<p>To add commands contained in the command log window to a report in <a href="/docs/data/report.html" target="_blank"><em>R Report</em></a> click the <i title='Report results' class='fa fa-edit'></i> icon.</p>
+<p>To add commands contained in the command log window to a report in <a href="/docs/data/report.html" target="_blank"><em>R Report</em></a> click the <i title="report results" class="fa fa-edit"></i> icon.</p>
 </div>
 <div id="filter" class="section level3">
 <h3>Filter</h3>
@@ -310,7 +308,7 @@ r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log
 <h3>Change variables</h3>
 <div id="bin" class="section level4">
 <h4>Bin</h4>
-<p>The <code>Bin</code> command is a convenience function for the <code>xtile</code> command discussed below when you want to create multiple quitile/decile/… variables. To calculate quintiles enter “5” as the <code>Nr bins</code>. The <code>reverse</code> option replaces 1 by 5, 2 by 4, …, 5 by 1. Choose an appropriate extension for the new variable(s).</p>
+<p>The <code>Bin</code> command is a convenience function for the <code>xtile</code> command discussed below when you want to create multiple quitile/decile/… variables. To calculate quintiles enter <code>5</code> as the <code>Nr bins</code>. The <code>reverse</code> option replaces 1 by 5, 2 by 4, …, 5 by 1. Choose an appropriate extension for the new variable(s).</p>
 </div>
 <div id="change-type" class="section level4">
 <h4>Change type</h4>
@@ -339,20 +337,30 @@ r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log
 <h4>Recode</h4>
 <p>To use the recode feature select the variable you want to change and choose <code>Recode</code> from the <code>Transformation type</code> drop-down. Provide one or more recode commands, separated by a <code>;</code>, and press return to see information about the changed variable. Note that you can specify a name for the recoded variable in the <code>Recoded variable name</code> input box (press return to submit changes). Finally, click <code>Store</code> to add the recoded variable to the data. Some examples are given below.</p>
 <ol style="list-style-type: decimal">
-<li><p>Set values below 20 to ‘Low’ and all others to ‘High’</p>
-<p>lo:20 = ‘Low’; else = ‘High’</p></li>
-<li><p>Set above 20 to ‘High’ and all others to ‘Low’</p>
-<p>20:hi = ‘High’; else = ‘Low’</p></li>
-<li><p>Set values 1 through 12 to ‘A’, 13:24 to ‘B’, and the remainder to ‘C’</p>
-<p>1:12 = ‘A’; 13:24 = ‘B’; else = ‘C’</p></li>
-<li><p>Collapse age categories for a <a href="/docs/basics/cross_tabs.html" target="_blank"><em>Basics &gt; Cross-tabs</em></a>cross-tab analysis. In the example below ‘&lt;25’ and ‘25-34’ are recoded to ‘&lt;35’, ‘35-44’ and ‘35-44’ are recoded to ‘35-54’, and ‘55-64’ and ‘&gt;64’ are recoded to ‘&gt;54’</p>
-<p>‘&lt;25’ = ‘&lt;35’; ‘25-34’ = ‘&lt;35’; ‘35-44’ = ‘35-54’; ‘45-54’ = ‘35-54’; ‘55-64’ = ‘&gt;54’; ‘&gt;64’ = ‘&gt;54’</p></li>
-<li><p>To exclude a particular value (e.g., an outlier in the data) for subsequent analyses we can recode it to a missing value. For example, if we want to remove the maximum value from a variable called <code>sales</code> that is equal to 400 we would (1) select the variable <code>sales</code> in the <code>Select variable(s)</code> box and enter the command below in the <code>Recode</code> box. Press <code>return</code> and <code>Store</code> to add the recoded variable to the data</p>
-<p>400 = NA</p></li>
-<li><p>To recode specific numeric values (e.g., carat) to a new value (1) select the variable <code>carat</code> in the <code>Select variable(s)</code> box and enter the command below in the <code>Recode</code> box to set the value for carat to 2 in all rows where carat is currently larger than or equal to 2. Press <code>return</code> and <code>Store</code> to add the recoded variable to the data</p>
-<p>2:hi = 2</p></li>
+<li>Set values below 20 to <code>Low</code> and all others to <code>High</code></li>
 </ol>
-<p><strong>Note:</strong> Do not use <code>=</code> in a variable label when using the recode function (e.g., 50:hi = ‘&gt;= 50’) as this will cause an error.</p>
+<pre class="r"><code>lo:20 = &#39;Low&#39;; else = &#39;High&#39;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Set above 20 to <code>High</code> and all others to <code>Low</code></li>
+</ol>
+<pre class="r"><code>20:hi = &#39;High&#39;; else = &#39;Low&#39;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Set values 1 through 12 to <code>A</code>, 13:24 to <code>B</code>, and the remainder to <code>C</code></li>
+</ol>
+<pre class="r"><code>1:12 = &#39;A&#39;; 13:24 = &#39;B&#39;; else = &#39;C&#39;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Collapse age categories for a <a href="/docs/basics/cross_tabs.html" target="_blank"><em>Basics &gt; Tables &gt; Cross-tabs</em></a> cross-tab analysis. In the example below <code>&lt;25</code> and <code>25-34</code> are recoded to <code>&lt;35</code>, <code>35-44</code> and <code>35-44</code> are recoded to <code>35-54</code>, and <code>55-64</code> and <code>&gt;64</code> are recoded to <code>&gt;54</code></li>
+</ol>
+<pre class="r"><code>&#39;&lt;25&#39; = &#39;&lt;35&#39;; &#39;25-34&#39; = &#39;&lt;35&#39;; &#39;35-44&#39; = &#39;35-54&#39;; &#39;45-54&#39; = &#39;35-54&#39;; &#39;55-64&#39; = &#39;&gt;54&#39;; &#39;&gt;64&#39; = &#39;&gt;54&#39;</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>To exclude a particular value (e.g., an outlier in the data) for subsequent analyses we can recode it to a missing value. For example, if we want to remove the maximum value from a variable called <code>sales</code> that is equal to 400 we would (1) select the variable <code>sales</code> in the <code>Select variable(s)</code> box and enter the command below in the <code>Recode</code> box. Press <code>return</code> and <code>Store</code> to add the recoded variable to the data</li>
+</ol>
+<pre class="r"><code>400 = NA</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>To recode specific numeric values (e.g., carat) to a new value (1) select the variable <code>carat</code> in the <code>Select variable(s)</code> box and enter the command below in the <code>Recode</code> box to set the value for carat to 2 in all rows where carat is currently larger than or equal to 2. Press <code>return</code> and <code>Store</code> to add the recoded variable to the data</li>
+</ol>
+<pre class="r"><code>2:hi = 2</code></pre>
+<p><strong>Note:</strong> Do not use <code>=</code> in a variable label when using the recode function (e.g., <code>50:hi = '&gt;= 50'</code>) as this will cause an error.</p>
 </div>
 <div id="reorder-or-remove-levels" class="section level4">
 <h4>Reorder or remove levels</h4>
@@ -368,7 +376,7 @@ r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log
 </div>
 <div id="transform" class="section level4">
 <h4>Transform</h4>
-<p>When you select <code>Transform</code> from the <code>Transformation type</code> drop-down another drop-down menu is shown you can use to apply common transformations to one or more variables in the data. For example, to take the (natural) log of a variable select the variable(s) you want to transform and choose <code>Ln (natural log)</code> from the <code>Apply function</code> drop-down. The transformed variable will have the extension specified in the ’Variable name extension<code>input (e.g,.</code>_ln<code>). Make sure to press</code>return<code>after changing the extension. Click the</code>Store` button to add the (changed) variable(s) to the data set. A description of the transformation functions included in Radiant is provided below.</p>
+<p>When you select <code>Transform</code> from the <code>Transformation type</code> drop-down another drop-down menu is shown you can use to apply common transformations to one or more variables in the data. For example, to take the (natural) log of a variable select the variable(s) you want to transform and choose <code>Ln (natural log)</code> from the <code>Apply function</code> drop-down. The transformed variable will have the extension specified in the <code>Variable name extension</code> input (e.g,. <code>_ln</code>). Make sure to press <code>return</code> after changing the extension. Click the <code>Store</code> button to add the (changed) variable(s) to the data set. A description of the transformation functions included in Radiant is provided below.</p>
 <ol style="list-style-type: decimal">
 <li>Ln: create a natural log-transformed version of the selected variable (i.e., log(x) or ln(x))</li>
 <li>Square: multiply a variable by itself (i.e., x^2 or square(x))</li>
@@ -396,41 +404,73 @@ r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log
 <p><strong>Note:</strong> If one or more variables is selected from the <code>Select variables</code> list they will be used to <em>group</em> the data before creating the new variable (see example 1. below). If this is not the intended result make sure that no variables are selected when creating new variables</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li><p>Create a new variable <code>z</code> that is equal to the mean of price. To calculate the mean of price per group (e.g., per level of clarity) select <code>clarity</code> from the <code>Select variables</code> list before creating <code>z</code></p>
-<p>z = mean(price)</p></li>
-<li><p>Create a new variable <code>z</code> that is the difference between variables x and y</p>
-<p>z = x - y</p></li>
-<li><p>Create a new variable <code>z</code> that is a transformation of variable <code>x</code> with mean equal to zero (see also <code>Transform &gt; Center</code>):</p>
-<p>z = x - mean(x)</p></li>
-<li><p>Create a new _logical) variable <code>z</code> that takes on the value TRUE when <code>x &gt; y</code> and FALSE otherwise</p>
-<p>z = x &gt; y</p></li>
-<li><p>Create a new <em>logical</em> <code>z</code> that takes on the value TRUE when <code>x</code> is equal to <code>y</code> and FALSE otherwise</p>
-<p>z = x == y</p></li>
-<li><p>Create a variable <code>z</code> that is equal to <code>x</code> lagged by 3 periods</p>
-<p>z = lag(x,3)</p></li>
-<li><p>Create a categorical variable with two levels (i.e., ‘smaller’ and ‘bigger’)</p>
-<p>z = ifelse(x &lt; y, ‘smaller’, ‘bigger’)</p></li>
-<li><p>Create a categorical variable with three levels. An alternative approach would be to use the <code>Recode</code> function described below</p>
-<p>z = ifelse(x &lt; 60, ‘&lt; 60’, ifelse(x &gt; 65, ‘&gt; 65’, ‘60-65’))</p></li>
-<li><p>Convert an outlier to a missing value. For example, if we want to remove the maximum value from a variable called <code>sales</code> that is equal to 400 we could use an <code>ifelse</code> statement and enter the command below in the <code>Create</code> box. Press <code>return</code> and <code>Store</code> to add the <code>sales_rc</code> to the data. Note that if we had entered <code>sales</code> on the left-hand side of the <code>=</code> sign the original variable would have been overwritten</p>
-<p>sales_rc = ifelse(sales &gt; 400, NA, sales)</p></li>
-<li><p>If a respondent with ID 3 provided information on the wrong scale in a survey (e.g., income in $1s rather than in $1000s) we could use an <code>ifelse</code> statement and enter the command below in the <code>Create</code> box. As before, press <code>return</code> and <code>Store</code> to add <code>sales_rc</code> to the data</p>
-<p>income_rc = ifelse(ID == 3, income/1000, income)</p></li>
-<li><p>If multiple respondents made the same scaling mistake (e.g., those with ID 1, 3, and 15) we again use <code>Create</code> and enter:</p>
-<p>income_rc = ifelse(ID %in% c(1, 3, 15), income/1000, income)</p></li>
-<li><p>If a date variable is in a format not available through the <code>Type</code> menu you can use the <code>parse_date_time</code> function. For a date formated as “2-1-14” you would specify the command below (note that this format will also be parsed correctly by the <code>mdy</code> function in the <code>Type</code> menu)</p>
-<p>date = parse_date_time(x, “%m%d%y”)</p></li>
-<li><p>Determine the time difference between two dates/times in seconds</p>
-<p>tdiff = as_duration(time2 - time1)</p></li>
-<li><p>Extract the month from a date variable</p>
-<p>m = month(date)</p></li>
-<li><p>Other attributes that can be extracted from a date or date-time variable are <code>minute</code>, <code>hour</code>, <code>day</code>, <code>week</code>, <code>quarter</code>, <code>year</code>, <code>wday</code> (for weekday). For <code>wday</code> and <code>month</code> it can be convenient to add <code>label = TRUE</code> to the call. For example, to extract the weekday from a date variable and use a label rather than a number</p>
-<p>wd = wday(date, label = TRUE)</p></li>
-<li><p>Calculate the distance between two locations using lat-long information</p>
-<p>dist = as_distance(lat1, long1, lat2, long2)</p></li>
-<li><p>Calculate quintiles for a variable <code>recency</code> by using the <code>xtile</code> command. To create deciles replace <code>5</code> by <code>10</code>.</p>
-<p>rec_iq = xtile(recency, 5)</p></li>
+<li>Create a new variable <code>z</code> that is equal to the mean of price. To calculate the mean of price per group (e.g., per level of clarity) select <code>clarity</code> from the <code>Select variables</code> list before creating <code>z</code></li>
 </ol>
+<pre class="r"><code>z = mean(price)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Create a new variable <code>z</code> that is the difference between variables x and y</li>
+</ol>
+<pre class="r"><code>z = x - y</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Create a new variable <code>z</code> that is a transformation of variable <code>x</code> with mean equal to zero (see also <code>Transform &gt; Center</code>):</li>
+</ol>
+<pre class="r"><code>z = x - mean(x)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Create a new _logical) variable <code>z</code> that takes on the value TRUE when <code>x &gt; y</code> and FALSE otherwise</li>
+</ol>
+<pre class="r"><code>z = x &gt; y</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Create a new <em>logical</em> <code>z</code> that takes on the value TRUE when <code>x</code> is equal to <code>y</code> and FALSE otherwise</li>
+</ol>
+<pre class="r"><code>z = x == y</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Create a variable <code>z</code> that is equal to <code>x</code> lagged by 3 periods</li>
+</ol>
+<pre class="r"><code>z = lag(x,3)</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Create a categorical variable with two levels (i.e., <code>smaller</code> and <code>bigger</code>)</li>
+</ol>
+<pre class="r"><code>z = ifelse(x &lt; y, &#39;smaller&#39;, &#39;bigger&#39;)</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>Create a categorical variable with three levels. An alternative approach would be to use the <code>Recode</code> function described below</li>
+</ol>
+<pre class="r"><code>z = ifelse(x &lt; 60, &#39;&lt; 60&#39;, ifelse(x &gt; 65, &#39;&gt; 65&#39;, &#39;60-65&#39;))</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>Convert an outlier to a missing value. For example, if we want to remove the maximum value from a variable called <code>sales</code> that is equal to 400 we could use an <code>ifelse</code> statement and enter the command below in the <code>Create</code> box. Press <code>return</code> and <code>Store</code> to add the <code>sales_rc</code> to the data. Note that if we had entered <code>sales</code> on the left-hand side of the <code>=</code> sign the original variable would have been overwritten</li>
+</ol>
+<pre class="r"><code>sales_rc = ifelse(sales &gt; 400, NA, sales)</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>If a respondent with ID 3 provided information on the wrong scale in a survey (e.g., income in $1s rather than in $1000s) we could use an <code>ifelse</code> statement and enter the command below in the <code>Create</code> box. As before, press <code>return</code> and <code>Store</code> to add <code>sales_rc</code> to the data</li>
+</ol>
+<pre class="r"><code>income_rc = ifelse(ID == 3, income/1000, income)</code></pre>
+<ol start="11" style="list-style-type: decimal">
+<li>If multiple respondents made the same scaling mistake (e.g., those with ID 1, 3, and 15) we again use <code>Create</code> and enter:</li>
+</ol>
+<pre class="r"><code>income_rc = ifelse(ID %in% c(1, 3, 15), income/1000, income)</code></pre>
+<ol start="12" style="list-style-type: decimal">
+<li>If a date variable is in a format not available through the <code>Type</code> menu you can use the <code>parse_date_time</code> function. For a date formated as <code>2-1-14</code> you would specify the command below (note that this format will also be parsed correctly by the <code>mdy</code> function in the <code>Type</code> menu)</li>
+</ol>
+<pre class="r"><code>date = parse_date_time(x, &#39;%m%d%y&#39;)</code></pre>
+<ol start="13" style="list-style-type: decimal">
+<li>Determine the time difference between two dates/times in seconds</li>
+</ol>
+<pre class="r"><code>tdiff = as_duration(time2 - time1)</code></pre>
+<ol start="14" style="list-style-type: decimal">
+<li>Extract the month from a date variable</li>
+</ol>
+<pre class="r"><code>m = month(date)</code></pre>
+<ol start="15" style="list-style-type: decimal">
+<li>Other attributes that can be extracted from a date or date-time variable are <code>minute</code>, <code>hour</code>, <code>day</code>, <code>week</code>, <code>quarter</code>, <code>year</code>, <code>wday</code> (for weekday). For <code>wday</code> and <code>month</code> it can be convenient to add <code>label = TRUE</code> to the call. For example, to extract the weekday from a date variable and use a label rather than a number</li>
+</ol>
+<pre class="r"><code>wd = wday(date, label = TRUE)</code></pre>
+<ol start="16" style="list-style-type: decimal">
+<li>Calculate the distance between two locations using lat-long information</li>
+</ol>
+<pre class="r"><code>dist = as_distance(lat1, long1, lat2, long2)</code></pre>
+<ol start="17" style="list-style-type: decimal">
+<li>Calculate quintiles for a variable <code>recency</code> by using the <code>xtile</code> command. To create deciles replace <code>5</code> by <code>10</code>.</li>
+</ol>
+<pre class="r"><code>rec_iq = xtile(recency, 5)</code></pre>
 <p>Note: For examples 7, 8, and 15 above you may need to change the new variable to type <code>factor</code> before using it for further analysis (see also <code>Type</code> above)</p>
 </div>
 </div>
@@ -446,7 +486,7 @@ r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log
 </div>
 <div id="remove-duplicates" class="section level4">
 <h4>Remove duplicates</h4>
-<p>It is common to have one or more variables in a dataset that <strong>should</strong> have only unique values (i.e., no duplicates). Customers id’s, for example, should be unique unless the dataset contains multiple orders for the same customer. To remove duplicates select one or more variables to determine <em>uniqueness</em>. Choose <code>Remove duplicates</code> from the <code>Transformation type</code> drop-down and check how the summary statistics change. Press <code>Store</code> to change the data. If there are duplicate rows you will see the number of observations in the data summary change (i.e., the value of <em>n</em> and <em>n_distinct</em> will change).</p>
+<p>It is common to have one or more variables in a dataset that <strong>should</strong> have only unique values (i.e., no duplicates). Customers IDs, for example, should be unique unless the dataset contains multiple orders for the same customer. To remove duplicates select one or more variables to determine <em>uniqueness</em>. Choose <code>Remove duplicates</code> from the <code>Transformation type</code> drop-down and check how the summary statistics change. Press <code>Store</code> to change the data. If there are duplicate rows you will see the number of observations in the data summary change (i.e., the value of <em>n</em> and <em>n_distinct</em> will change).</p>
 </div>
 <div id="show-duplicates" class="section level4">
 <h4>Show duplicates</h4>
@@ -471,11 +511,11 @@ r_data[["diamonds"]] <- mutate_each(r_data[["diamonds"]], funs(log), ext = "_log
 <h3>Split data</h3>
 <div id="holdout-sample" class="section level4">
 <h4>Holdout sample</h4>
-<p>To create a holdout sample based on a filter, select <code>Holdout sample</code> from the <code>Transformation type</code> dropdown. By default the <em>opposite</em> of the active filter is used. For example, if analysis is conducted on observations with <code>date &lt; &quot;2014-12-13&quot;</code> then the holdout sample will contain rows with <code>date &gt;= &quot;2014-12-13&quot;</code> if the <code>Reverse filter</code> box is checked.</p>
+<p>To create a holdout sample based on a filter, select <code>Holdout sample</code> from the <code>Transformation type</code> dropdown. By default the <em>opposite</em> of the active filter is used. For example, if analysis is conducted on observations with <code>date &lt; '2014-12-13'</code> then the holdout sample will contain rows with <code>date &gt;= '2014-12-13'</code> if the <code>Reverse filter</code> box is checked.</p>
 </div>
 <div id="training-variable" class="section level4">
 <h4>Training variable</h4>
-<p>To create a variable that can be used to (randomly) filter a dataset for training and validation, select <code>Training variable</code> from the <code>Transformation type</code> dropdown. Specify either the number of observations to use for training (e.g., set <code>Size</code> to 2000) or a proportion of observations to select (e.g., set <code>Size</code> to .7). The new variable will have a value “1” for training and “0” holdout.</p>
+<p>To create a variable that can be used to (randomly) filter a dataset for training and validation, select <code>Training variable</code> from the <code>Transformation type</code> dropdown. Specify either the number of observations to use for training (e.g., set <code>Size</code> to 2000) or a proportion of observations to select (e.g., set <code>Size</code> to .7). The new variable will have a value <code>1</code> for training and <code>0</code> holdout.</p>
 </div>
 </div>
 <div id="tidy-data" class="section level3">

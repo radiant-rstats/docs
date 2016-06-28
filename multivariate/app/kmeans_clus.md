@@ -37,7 +37,7 @@ H0: There is no relationship between gender and segment membership
 Ha: There is a relationship between gender and segment membership
 ```
 
-In the _Summary_ tab we see there is a significant association between these two variables. The p.value is .001 and there are no cells with expected values below 5 (see the help file for _Basics > Cross-tabs_ for a detailed discussion).
+In the _Summary_ tab we see there is a significant association between these two variables. The p.value is .001 and there are no cells with expected values below 5 (see the help file for _Basics > Tables > Cross-tabs_ for a detailed discussion).
 
 <p align="center"><img src="figures_multivariate/kmeans_clus_cross_tabs_summary.png"></p>
 

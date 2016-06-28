@@ -13,7 +13,7 @@ load("~/gh/radiant.basics/data/salary.rda")
 load("~/gh/radiant.multivariate/data/shopping.rda")
 ```
 
-Radiant's goal is to provide access to the power of R for business analytics. Although Radiant's web-interface can handle quite a few data and analysis tasks, at times you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an [Rmarkdown](http://rmarkdown.rstudio.com/) document. Most pages in the app have an icon you can click (e.g., the book icon on the bottom left on the _Basics > Single mean_ page) to start working on your report. Press the `Knit report` button on the _R > Report_ page to render the report to HTML. See <a href="/radiant/data/report.html">Report</a> page for details. The function manuals are available linked below:
+Radiant's goal is to provide access to the power of R for business analytics. Although Radiant's web-interface can handle quite a few data and analysis tasks, at times you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an [Rmarkdown](http://rmarkdown.rstudio.com/) document. Most pages in the app have an icon you can click (e.g., the book icon on the bottom left on the _Basics > Means > Single mean_ page) to start working on your report. Press the `Knit report` button on the _R > Report_ page to render the report to HTML. See <a href="/radiant/data/report.html">Report</a> page for details. The function manuals are available linked below:
 
 * <a href="http://radiant-rstats.github.io/docs/radiant.data.pdf" target="_blank">radiant.data</a>
 * <a href="http://radiant-rstats.github.io/docs/radiant.design.pdf" target="_blank">radiant.design</a>
@@ -49,7 +49,7 @@ library(radiant)
 
 This will load the library and the required packages. To see the index of functions currently available in the Radiant package using the `help(package = "radiant")` command
 
-Lets start by comparing the mean of a variable to a (population) value using R's built-in `mtcars` dataset. This functionality is in the Radiant menu `Basics > Single mean`. The analysis is conducted in function `single_mean`. Calling the `summary` method on the result object will show tabular output. Calling `plot` on the same result object will produce plots to help evaluate the hypothesis.
+Lets start by comparing the mean of a variable to a (population) value using R's built-in `mtcars` dataset. This functionality is in the Radiant menu _Basics > Means > Single mean_. The analysis is conducted in function `single_mean`. Calling the `summary` method on the result object will show tabular output. Calling `plot` on the same result object will produce plots to help evaluate the hypothesis.
 
 ```{r}
 result <- single_mean(mtcars, "mpg", comp_value = 20, alternative = "greater")
@@ -65,7 +65,7 @@ summary(result)
 plot(result, plots = c("bar","density"))
 ```
 
-These datasets are available after loading the radiant library. We can also load data through Radiant's web interface and then access the data from the console after closing the app. Start radiant using the command below and then click `Examples > Load examples` in the _Data > Manage_ tab. Then close the app by clicking the power icon and then clicking `Stop`.
+These datasets are available after loading the radiant library. We can also load data through Radiant's web interface and then access the data from the console after closing the app. Start radiant using the command below and then click select `Examples` from the `Load data of type` dropdown in the _Data > Manage_ tab. Then close the app by clicking the power icon and then clicking `Stop`.
 
 ```r
 ## start radiant in Rstudio, load the example data, then click the power icon and Stop
@@ -98,7 +98,7 @@ plot(result, plots = "coef")
 plot(result, plots = "dashboard")
 ```
 
-As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use `?hier_clus`, `?plot.hier_clus`, and `?kmeans_clus`. See also the <a href="http://radiant-rstats.github.io/docs/radiant.pdf" target="_blank">radiant function manual</a>.
+As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use `?hier_clus`, `?plot.hier_clus`, and `?kmeans_clus`. See also the Radiant function manuals linked above.
 
 ```{r fig.height=8}
 ## load the radiant library (not needed if run in Radiant's R > Code tab)

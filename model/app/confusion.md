@@ -8,7 +8,7 @@ The outcome, or response, variable of interest. This should be binary variable, 
 
 #### Choose level
 
-The level in the response variable that is considered a _success_. For example, purchase or buyer is equal to "yes".
+The level in the response variable that is considered a _success_. For example, purchase or buyer is equal to `yes`.
 
 #### Predictor
 

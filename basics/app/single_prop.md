@@ -33,7 +33,7 @@ There are three approaches we can use to evaluate the null hypothesis. We will c
 
 Because the p.value is **larger** than the conventional significance level ($0.249 > 0.05$) we **cannot** reject the null hypothesis and **do not suggest** that management should commit resources to increase brand awareness.
 
-We can also obtain the p.value by using the probability calculator in the _Basics_ menu. Enter the number of successes in the data (93) as the lower bound (value) for a binomial-distribution with $n = 1000$ and $p = 0.1$. The p.value is the probability of observing a number of successes as or more extreme than the 93 we got in our sample. We see that $P(X <= 93) = 0.249$ which is the same value we got from _Basics > Single proportion_.
+We can also obtain the p.value by using the probability calculator in the _Basics_ menu. Enter the number of successes in the data (93) as the lower bound (value) for a binomial-distribution with $n = 1000$ and $p = 0.1$. The p.value is the probability of observing a number of successes as or more extreme than the 93 we got in our sample. We see that $P(X <= 93) = 0.249$ which is the same value we got from _Basics > Proportions > Single proportion_.
 
 <p align="center"><img src="figures_basics/single_prop_prob_calc_v.png"></p>
 

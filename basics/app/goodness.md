@@ -10,7 +10,7 @@ The data were collected to examine if there is a relationship between income lev
 * H0: Readership shares for USA today and Wall Street Journal are 55% and 45% respectively
 * Ha: Readership shares for USA today and Wall Street Journal are not equal to the stated values
 
-If we cannot reject the null hypothesis based on the available sample there is a "good fit" between the observed data and the assumed population shares or probabilities. In Radiant (_Basics > Goodness_) choose Newspaper as the categorical variable. If we leave the `Probabilities` input field empty (or enter 1/2) we would be testing if the shares are equal. However, to test H0 and Ha we need to enter `0.45 and 0.55` and then press `Enter`. First, compare the observed and expected frequencies. The expected frequencies are calculated using H0 (i.e., no deviation from the stated shares) total $\times$ $p$ where $p$ is the share (or probility) assumed for a cell.
+If we cannot reject the null hypothesis based on the available sample there is a "good fit" between the observed data and the assumed population shares or probabilities. In Radiant (_Basics > Tables > Goodness of fit_) choose Newspaper as the categorical variable. If we leave the `Probabilities` input field empty (or enter 1/2) we would be testing if the shares are equal. However, to test H0 and Ha we need to enter `0.45 and 0.55` and then press `Enter`. First, compare the observed and expected frequencies. The expected frequencies are calculated using H0 (i.e., no deviation from the stated shares) total $\times$ $p$ where $p$ is the share (or probility) assumed for a cell.
 
 <p align="center"><img src="figures_basics/goodness_summary.png"></p>
 
