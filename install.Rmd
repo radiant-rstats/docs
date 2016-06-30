@@ -48,13 +48,11 @@ Get the latest release of Rstudio for your system from:
 
 <a href="https://www.rstudio.com/products/rstudio/download/" target="_blank">https://www.rstudio.com/products/rstudio/download/</a>
 
-Install Rstudio and accept all default settings. Make sure to put a shortcut to Rstudio on your Desktop.
-
-Although not required, I recommend that Windows users install <a href="https://cran.rstudio.com/bin/windows/Rtools/Rtools33.exe" target="_blank">Rtools</a>.
+Install Rstudio and accept all default settings. Make sure to put a shortcut to Rstudio on your Desktop or _pin_ it to the taskbar.
 
 #### 3. Use a modern browser
 
-For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should work as well. Chrome, however, is the recommended browser.
+For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should work as well. Chrome, however, is the recommended browser. Most browser will, by default, save to the downloads folder. However, it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check "Ask where to save each file before downloading".
 
 #### 4. Install LaTex
 
