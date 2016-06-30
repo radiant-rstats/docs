@@ -18,7 +18,7 @@ For a step-by-step tutorial see the `Install Radiant on Windows` or `Install Rad
 
 **Install Radiant on Windows**
 
-<iframe width="640" height="375" src="https://www.youtube.com/embed/TqcrhAYJ4UE" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="375" src="https://www.youtube.com/embed/efQM6WqrHG0" frameborder="0" allowfullscreen></iframe>
 
 **Install Radiant on Mac**
 
