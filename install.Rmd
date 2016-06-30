@@ -58,7 +58,7 @@ For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or
 
 #### 4. Install LaTex 
 
-To generate PDF reports in Radiant you will need LaTex installed. For Mac download and install <a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg">MacTex</a>. For Windows download and install <a href="http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.5997-x64.exe">MikTex</a>.
+To generate PDF reports in Radiant you will need LaTex installed. For Mac download and install <a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg">MacTex</a>. For Windows download and install <a href="http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.6022-x64.exe">MikTex</a>.
 
 #### 5. Install Radiant
 
