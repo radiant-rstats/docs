@@ -36,7 +36,7 @@ For a step-by-step tutorial see the `Install Radiant on Windows` or `Install Rad
 
 **Install Radiant on Windows**
 
-<iframe width="640" height="375" src="https://www.youtube.com/embed/DEHfYBWtUjY" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="375" src="https://www.youtube.com/embed/TqcrhAYJ4UE" frameborder="0" allowfullscreen></iframe>
 
 **Install Radiant on Mac**
 
@@ -56,7 +56,7 @@ Although not required, I recommend that Windows users install <a href="https://c
 
 For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should work as well. Chrome, however, is the recommended browser.
 
-#### 4. Install LaTex 
+#### 4. Install LaTex
 
 To generate PDF reports in Radiant you will need LaTex installed. For Mac download and install <a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg">MacTex</a>. For Windows download and install <a href="http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.6022-x64.exe">MikTex</a>.
 
@@ -76,7 +76,7 @@ install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/"
 
 When you open Rstudio (version 0.99.900 or later) you can start and update Radiant through the `Addins` menu at the top of the screen. Note that when you first install Radiant you must use the install script or the `install.packages` command shown above.
 
-When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out. 
+When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out.
 
 ## Documentation
 
