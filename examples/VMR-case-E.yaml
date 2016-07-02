@@ -6,16 +6,16 @@ variables:
     research cost: 0
     ## use mathematical notation for probabilities
     P(S): 0.6
-    P(F): 0.4 
+    P(F): 0.4
     ## Research is not perfect
     P(Pos|S): 0.8
     P(Neg|S): 1 - P(Pos|S)
     P(Neg|F): 0.65
     P(Pos|F): 1 - P(Neg|F)
     ## Derived probabilities
-    P(Pos and S): P(Pos|S) * P(S) 
+    P(Pos and S): P(Pos|S) * P(S)
     P(Pos and F): P(Pos|F) * P(F)
-    P(Neg and S): P(Neg|S) * P(S) 
+    P(Neg and S): P(Neg|S) * P(S)
     P(Neg and F): P(Neg|F) * P(F)
     P(Pos): P(Pos and S) + P(Pos and F)
     P(Neg): P(Neg and S) + P(Neg and F)
@@ -43,7 +43,7 @@ Research:
     type: chance
     Positive recommendation:
         p: P(Pos)
-        type: decision 
+        type: decision
         Introduce:
             type: chance
             Success:
@@ -56,7 +56,7 @@ Research:
             payoff: 0
     Negative recommendation:
         p: P(Neg)
-        type: decision 
+        type: decision
         Introduce:
             type: chance
             Success:
@@ -67,3 +67,4 @@ Research:
                 payoff: failure payoff
         Don't introduce:
             payoff: 0
+
