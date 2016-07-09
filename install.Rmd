@@ -11,7 +11,7 @@ title: Radiant -- Business analytics using R and Shiny
 
 ## How to install Radiant
 
-Radiant is a platform-independent browser-based interface for business analytics in [R](http://www.r-project.org/), based on the [Shiny](http://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="\_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
+Radiant is a platform-independent browser-based interface for business analytics in [R](http://www.r-project.org/), based on the [Shiny](http://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
 
 
 > **Note:** User profiles (or usernames or logins) containing non-ASCII characters will likely cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters only. For example, c:\\users\\myprofilename
@@ -32,7 +32,7 @@ On Mac you can accept the default settings. On Windows the R-installer should cr
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
 ```
 
-For a step-by-step tutorial see the `Install Radiant on Windows` or `Install Radiant on Mac` video:
+For a step-by-step video tutorial see the `Install Radiant on Windows` or `Install Radiant on Mac` below:
 
 **Install Radiant on Windows**
 
@@ -41,6 +41,8 @@ For a step-by-step tutorial see the `Install Radiant on Windows` or `Install Rad
 **Install Radiant on Mac**
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/WheqHpobMZg" frameborder="0" allowfullscreen></iframe>
+
+If you used the `source(...)` command shown above successfully you can now skip to step 6. Otherwise follow steps 2-5 below first.
 
 #### 2. Install Rstudio
 
