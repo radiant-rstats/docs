@@ -39,13 +39,13 @@ The `Final` graph shows the optimal decision determined by `folding-back` the tr
 
 <p align="center"><img src="figures_model/dtree_plot_final.png"></p>
 
-The EMV for the `Sign with TV Network` is \$900,000. The expected box office revenue following a decision to `Sign with Movie Company` is:
+The EMV for `Sign with TV Network` is \$900,000. If we ignore costs the expected payoff from `Sign with Movie Company` is:
 
 $$
-	0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 - 5,000 = 955,000
+	0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 = 960,000
 $$
 
-The EMV from signing with the movie company is however $960,000 - 5,000 = 955,000$. Hover the cursor over the chance node shown on screen to see a `tooltip` that shows the calculation. To highlight that a `cost` was specified the chance node in the figure has a dashed outer line.
+The EMV from signing with the movie company is however $960,000 - 5,000 = 955,000$ because we do incur a cost of \$5,000 in legal fees. Hover the cursor over the chance node shown on screen to see a `tooltip` that shows the calculation. To highlight that a `cost` was specified the chance node in the figure has a dashed outer line.
 
 In the `Sign contract` example it is clear that `Sign with Movie Company` is the prefered option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the _Sensitivity_ tab is useful. Here we can evaluate how decisions (e.g., `Sign with Movie Company` and `Sign with TV Network`) would change if the legal fee changes. Enter 0 as the `Min` value, 80000 as the `Max value`, 10000 as the `Step` size, and then press the <i class="fa fa-plus"></i> icon. After pressing `Evaluate sensitivty` a graph will be shown that illustrates how payoffs for the decisions change. Notice that for legal fees higher than \$60,000 `Sign with TV Network` produces the highest EMV.
 
