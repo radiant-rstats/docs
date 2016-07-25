@@ -54,55 +54,55 @@ Many of the same functions used with `Create` in the _Data > Transform_ tab and 
 
 A few additional examples of formulas are shown below:
 
-1. Create a new variable z that is the difference between variables x and y
+- Create a new variable z that is the difference between variables x and y
 
 ```r
 z = x - y
 ```
 
-2. Create a new `logical` variable z that takes on the value TRUE when x > y and FALSE otherwise
+- Create a new `logical` variable z that takes on the value TRUE when x > y and FALSE otherwise
 
 ```r
 z = x > y
 ```
 
-3. Create a new `logical` z that takes on the value TRUE when x is equal to y and FALSE otherwise
+- Create a new `logical` z that takes on the value TRUE when x is equal to y and FALSE otherwise
 
 ```r
 z = x == y
 ```
 
-4. The command above is equivalent to the one below using `ifelse`. Note the similarity to `if` statements in Excel
+- The command above is equivalent to the one below using `ifelse`. Note the similarity to `if` statements in Excel
 
 ```r
 z = ifelse(x < y, TRUE, FALSE)
 ```
 
-5. `ifelse` statements can be used to create more complex (numeric) variables as well. In the example below, z will take on the value 0 if x is smaller than 60. If x is larger than 100, z is set equal to 1. Finally, when x is 60, 100, or between 60 and 100, z is set to 2. **Note:** make sure to include the appropriate number of opening `(` and closing `)` brackets!
+- `ifelse` statements can be used to create more complex (numeric) variables as well. In the example below, z will take on the value 0 if x is smaller than 60. If x is larger than 100, z is set equal to 1. Finally, when x is 60, 100, or between 60 and 100, z is set to 2. **Note:** make sure to include the appropriate number of opening `(` and closing `)` brackets!
 
 ```r
 z = ifelse(x < 60, 0, ifelse(x > 100, 1, 2))
 ```
 
-6. To create a new variable z that is a transformation of variable x but with mean equal to zero:
+- To create a new variable z that is a transformation of variable x but with mean equal to zero:
 
 ```r
 z = x - mean(x)
 ```
 
-7. To create a new variable z that shows the absolute values of x:
+- To create a new variable z that shows the absolute values of x:
 
 ```r
 z = abs(x)
 ```
 
-8. To find the value for `price` that maximizes `profit` use the `find_max` command. In this example `price` could be a random or `Sequence variable`. There is also a `find_min` command.
+- To find the value for `price` that maximizes `profit` use the `find_max` command. In this example `price` could be a random or `Sequence variable`. There is also a `find_min` command.
 
 ```r
 optimal_price = find_max(profit, price)
 ```
 
-9. To determine the minimum (maximum) value for each pair of values across two variables (e.g., x and y) use the functions `pmin` and `pmax`. In the example below, z will take on the value of x when x is larger than y and take on the value of y otherwise
+- To determine the minimum (maximum) value for each pair of values across two variables (e.g., x and y) use the functions `pmin` and `pmax`. In the example below, z will take on the value of x when x is larger than y and take on the value of y otherwise
 
 ```r
 z = pmax(x, y)
@@ -127,7 +127,7 @@ Other commonly used functions are `ln` for the natural logaritm (e.g., ln(x)), `
 
 To return a single value from a calculation use functions such as `min`, `max`, `mean`, `sd`, etc.
 
-10. A special function useful for portfolio optimization is `sdw`. It takes weights and variables as inputs and returns the standard deviation of the weighted sum of the variables. For example, to calculated the standard deviation for a portfolio of three stocks (e.g., Boeing, GM, and Exxon) you could use the equation below in the `Simulation formulas` input. `f` and `g` could be values (e.g., 0.2 and 0.8) or vectors of different weights specified in a `Grid search` input (see above). `Boeing`, `GM`, and `Exxon` are names of variables in a data-set included in the simulation using a `Data` input (see above).
+- A special function useful for portfolio optimization is `sdw`. It takes weights and variables as inputs and returns the standard deviation of the weighted sum of the variables. For example, to calculated the standard deviation for a portfolio of three stocks (e.g., Boeing, GM, and Exxon) you could use the equation below in the `Simulation formulas` input. `f` and `g` could be values (e.g., 0.2 and 0.8) or vectors of different weights specified in a `Grid search` input (see above). `Boeing`, `GM`, and `Exxon` are names of variables in a data-set included in the simulation using a `Data` input (see above).
 
 ```r
 Pstdev = sdw(f, g, 1-f-g, Boeing, GM, Exxon)
@@ -185,4 +185,4 @@ For a simple example of how the simulate tool could be used to find the price th
 
 ### Using Grid Search in the Repeat tab
 
-Note that the _Repeat_ tab also has the option to use a `Grid search` input to repeat a simulation by replacing one or more `Constants` specified in the `Simulation` tab in an iterative fashion. This input option is shown only when `Group by` is set to `Repeat`. Provide the minimum and maximum values as well as the step-size in the `Grid search` inputs. For example, enter a `Name` (`price`), the `Min` (4), `Max` (10), and `Step` (0.01) value. If multiple variables are specified in `Grid search` all possible value combinations will be created and evaluated in the simulation. Note that if `Grid search` has been selected the number of values generated will override the number of repetitions specified `# reps`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., `price 4 10 0.01`).
+Note that the _Repeat_ tab also has the option to use a `Grid search` input to repeat a simulation by replacing one or more `Constants` specified in the `Simulation` tab in an iterative fashion. This input option is shown only when `Group by` is set to `Repeat`. Provide the minimum and maximum values as well as the step-size in the `Grid search` inputs. For example, enter a `Name` (`price`), the `Min` (4), `Max` (10), and `Step` (0.01) value. If multiple variables are specified in `Grid search` all possible value combinations will be created and evaluated in the simulation. Note that if `Grid search` has been selected the number of values generated will override the number of repetitions specified in `# reps`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text area (e.g., `price 4 10 0.01`).
