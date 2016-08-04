@@ -36,7 +36,7 @@ Lets review the output in `Design efficiency`. The goal is to find a design with
 
 The smallest number of trials with a balanced design is 6. This design is `balanced` simply because 6 is divisible by 3 and 2 (i.e., the number of levels in our factors). However, the D-efficiency score is rather low (.513). The next smallest balanced design has 12 trials and has a much higher D-efficiency. This design is reasonable if we want to be able to estimate the main-effects of each factor level on movie-theater choice or preference.
 
-Note that the off-diagonal elements of the (polychoric) correlation matrix for a partial factorial design will all be equal to 0 only when the D-efficiency is equal to 1. The [https://cran.r-project.org/web/packages/polycor/index.html](polycor) package is used to the estimate the correlations between the factors.
+Note that the off-diagonal elements of the (polychoric) correlation matrix for a partial factorial design will all be equal to 0 only when the D-efficiency is equal to 1. The [polycor](https://cran.r-project.org/web/packages/polycor/index.html) package is used to the estimate the correlations between the factors.
 
 ## Rnd. seed:
 
