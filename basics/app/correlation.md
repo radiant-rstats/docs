@@ -27,11 +27,11 @@ To show only correlations above a certain value choose a non-zero value in the n
 
 ### Covariance matrix
 
-Although we generally prefer to see the correlation matrix, you can also see the covariance matrix by checking the `Show covariance matrix` box.
+Although we generally use the correlation matrix, you can also show the covariance matrix by checking the `Show covariance matrix` box.
 
 ### Pause estimation
 
-For larger datasets it can useful to click `Pause estimation` before selecting variables, entering filters, correlation cutoffs, etc. When you are ready to generate the correlation matrix or correlation plot make sure that `Pause estimation` is not checked. When `Pause estimation` is not checked, any changes to the inputs will automatically result in a new matrix and/or plot.
+For larger datasets it can useful to click `Pause estimation` before selecting variables, setting correlation cutoffs, etc. When you are ready to generate the correlation matrix or correlation plot make sure that `Pause estimation` is not checked. When `Pause estimation` is not checked, any changes to the inputs will automatically result in a new matrix and/or plot.
 
 ### Khan on correlation
 
