@@ -23,7 +23,14 @@ knit("tutorials_dev.Rmd")
 file.copy("README_dev.md",file.path("../../radiant.data/inst/app/tools/app/about.md"),overwrite = TRUE)
 file.copy("tutorials_dev.md",file.path("../../radiant.data/inst/app/tools/app/tutorials.md"),overwrite = TRUE)
 
-copy_docs <- function(app) file.copy("README_dev.md",file.path("../..",app,"README.md"),overwrite = TRUE)
+copy_docs <- function(app) {
+	readLines("README_dev.md") %>% paste0(., collapse = "\n") %>%
+		sub("radiant.png",paste0(app,".png"), . ) %>%
+		sub("radiant-rstats/radiant)",paste0("radiant-rstats/",app,")"), ., fixed = TRUE) %>%
+		cat(file = file.path("../..",app,"README.md"))
+	# file.copy("README_dev.md",file.path("../..",app,"README.md"),overwrite = TRUE)
+}
+
 sapply(c("radiant","radiant.data","radiant.design","radiant.basics","radiant.model","radiant.multivariate"), copy_docs)
 
 ## sync (R)md files to gh/radiant
