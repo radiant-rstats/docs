@@ -88,8 +88,14 @@ Want more help getting started? Watch the tutorials on the [documentation site](
 
 Windows users may need to start R and Rstudio `as administrator`. On rare occasions R(studio) may complain that a package is not yet installed. If so, install the package mentioned using the command below but replace 'package-that-is-not-yet-installed' with the package name mentioned in the error message
 
-```{r eval = FALSE}
+```r
 install.packages("package-that-is-not-yet-installed", repos = "https://cran.rstudio.com", type = "binary")
+```
+
+or copy-and-paste the command below into R to check if any required packages have not yet been installed
+
+```r
+source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/build.R")
 ```
 
 ## Reporting issues
