@@ -4,7 +4,7 @@ Start by selecting the types of variables to use in the simulation from the `Sel
 
 ### Binomial
 
-Add random variables with a binomial distribution using the `Binomial variables` inputs. Start by specifying a `Name` (`crash`), the number of trials (n) (e.g., 20) and the probability (p) of a `success` (.01). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., crash 20 .01).
+Add random variables with a binomial distribution using the `Binomial variables` inputs. Start by specifying a `Name` (`crash`), the number of trials (n) (e.g., 20) and the probability (p) of a `success` (.01). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., crash 20 .01).
 
 ### Constant
 
@@ -12,15 +12,20 @@ List the constants to include in the analysis in the `Constant variables` input.
 
 ### Discrete
 
-Define random variables with a discrete distribution using the `Discrete variables` inputs. Start by specifying a `Name` (`price`), the values (6 8), and their associated probabilities (.3 .7). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., price 6 8 .3 .7). Note that the probabilities must sum to 1. If not, a message will be displayed and the simulation cannot be run.
+Define random variables with a discrete distribution using the `Discrete variables` inputs. Start by specifying a `Name` (`price`), the values (6 8), and their associated probabilities (.3 .7). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., price 6 8 .3 .7). Note that the probabilities must sum to 1. If not, a message will be displayed and the simulation cannot be run.
 
-### (Log) Normal
+### Log Normal
 
-To include (log) normally distributed random variables in the analysis select `Normal` from the `Select types` dropdown and use `Normal variables` inputs. For example, enter a `Name` (`demand`), the `Mean` (1000) and the standard deviation (`St.dev.`, 100). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., `demand 1000 100`).
+To include log normally distributed random variables in the analysis select `Log Normal` from the `Select types` dropdown and use `Log-normal variables`) inputs. See the section `Normal` below for additional information.
+
+### Normal
+
+To include normally distributed random variables in the analysis select `Normal` from the `Select types` dropdown and use `Normal variables` inputs. For example, enter a `Name` (`demand`), the `Mean` (1000) and the standard deviation (`St.dev.`, 100). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `demand 1000 100`).
+
 
 ### Uniform
 
-To include uniformly distributed random variables in the analysis select `Uniform` from the `Select types` dropdown. Provide parameters in the `Uniform variables` inputs. For example, enter a `Name` (`cost`), the `Min` (10) and the `Max` (15) value. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., `cost 10 15`).
+To include uniformly distributed random variables in the analysis select `Uniform` from the `Select types` dropdown. Provide parameters in the `Uniform variables` inputs. For example, enter a `Name` (`cost`), the `Min` (10) and the `Max` (15) value. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `cost 10 15`).
 
 ### Data
 
@@ -40,11 +45,11 @@ expand.grid(x,y) %>% set_names(c("x","y")) %>%
 knitr::kable(align = 'l', format = 'html', escape = FALSE, table.attr = tab_large)
 ```
 
-Note that if `Grid search` has been selected the number of values generated will override the number of simulations or repetitions specified in `# sims` or `# reps`. If this is not what you want use `Sequence`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., `price 4 10 0.01`).
+Note that if `Grid search` has been selected the number of values generated will override the number of simulations or repetitions specified in `# sims` or `# reps`. If this is not what you want use `Sequence`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `price 4 10 0.01`).
 
 ### Sequence
 
-To include a sequence of values select `Sequence` from the `Select types` dropdown. Provide the minimum and maximum values in the `Sequence variables` inputs. For example, enter a `Name` (`trend`), the `Min` (1) and the `Max` (1000) value. Note that the number of 'steps' is determined by the number of simulations. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in text area (e.g., `trend 1 1000`).
+To include a sequence of values select `Sequence` from the `Select types` dropdown. Provide the minimum and maximum values in the `Sequence variables` inputs. For example, enter a `Name` (`trend`), the `Min` (1) and the `Max` (1000) value. Note that the number of 'steps' is determined by the number of simulations. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `trend 1 1000`).
 
 ### Formulas
 

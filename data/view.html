@@ -423,6 +423,10 @@ x is one of y
 <h3>Select variables to show</h3>
 <p>By default all columns in the data are shown. Click on any variable to focus on it alone. To select several variables use the SHIFT and ARROW keys on your keyboard. On a mac the CMD key can also be used to select multiple variables. The same effect is achieved on windows using the CTRL key. To select all variable use CTRL-A (or CMD-A on mac).</p>
 </div>
+<div id="browse-the-data" class="section level3">
+<h3>Browse the data</h3>
+<p>By default only 10 rows of data are shown at a time. You can change this setting through the <code>Show ... entries</code> dropdown. Press the <code>Next</code> and <code>Previous</code> buttons at the bottom-right of the screen to page through the data.</p>
+</div>
 <div id="sort" class="section level3">
 <h3>Sort</h3>
 <p>Click on a column header in the table to sort the data. Clicking again will toggle between sorting in ascending and descending order. To sort on multiple columns at once press shift and then click on the 2nd, 3rd, etc. column to sort by.</p>
@@ -432,11 +436,12 @@ x is one of y
 <p>For variables that have a limited number of different values (i.e., a factor) you can select the levels to keep from the column filter below the variable name. For example, to filter on rows with ideal cut click in the box below the <code>cut</code> column header and select <code>Ideal</code> from the dropdown menu shown. You can also type a string into these column filters and then press return. Note that matching is case-insensitive. In fact, typing <code>eal</code> would produce the same result because the search will match any part of a string. Similarly, you can type a string to select rows based on character variables (e.g., street names).</p>
 <p>For numeric variables the column filter boxes have some special features that make them almost as powerful as the <code>Filter</code> box. For numeric and integer variables you can use <code>...</code> to indicate a range. For example, to select <code>price</code> values between $500 and $2000 type <code>500 ... 2000</code> and press return. The range is inclusive of the values typed. Furthermore, if we want to filter on <code>carat</code> <code>0.32 ...</code> will show only diamonds with carat values larger than or equal to 0.32. Numeric variables also have a slider that you can use to define the range of values to keep.</p>
 <p>If you want to get <em>really</em> fancy you can use the search box on the top right to search across all columns in the data using <strong>regular expressions</strong>. For example, to find all rows that have an entry in <em>any</em> column ending with the number 72 type <code>72$</code> (i.e., the <code>$</code> sign is used to indicate the end of an entry). For all rows with entries that start with 60 use <code>^60</code> (i.e., the <code>^</code> is used to indicate the first character in an entry). Regular expressions are incredibly powerful for search but this is a <em>big</em> topic area. To learn more about regular expressions see this <a href="http://www.regular-expressions.info/tutorial.html" target="_blank">tutorial</a>.</p>
-<p>It is important to note that column sorting, column filters, and search are <strong>not</strong> persistent. To store these settings for use in other parts of Radiant press the <code>Store</code> button. You can store the data and settings under a different dataset name by changing the value in the text input to the left of the <code>Store</code> button. This feature can also be used to select a subset of variables to keep. Just select the ones you want to keep and press the <code>Store</code> button. For more control over the variables you want to keep or remove and to specify their order in the dataset use the <em>Data &gt; Transform</em> tab.</p>
 </div>
-<div id="browse-the-data" class="section level3">
-<h3>Browse the data</h3>
-<p>By default only 10 rows of data are shown at a time. You can change this setting through the <code>Show ... entries</code> dropdown. Press the <code>Next</code> and <code>Previous</code> buttons at the bottom-right of the screen to page through the data.</p>
+<div id="store-filters" class="section level3">
+<h3>Store filters</h3>
+<p>It is important to note that column sorting, column filters, and search are <strong>not</strong> persistent. To store these settings for use in other parts of Radiant press the <code>Store</code> button. You can store the data and settings under a different dataset name by changing the value in the text input to the left of the <code>Store</code> button. This feature can also be used to select a subset of variables to keep. Just select the ones you want to keep and press the <code>Store</code> button. For more control over the variables you want to keep or remove and to specify their order in the dataset use the <em>Data &gt; Transform</em> tab.</p>
+<p>To download the data in <em>csv</em> format click the <i title='Download' class='fa fa-download'></i> icon on the top right of your screen.</p>
+<p>Click the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen to add the filter and sort commands used by Radiant to a (reproducible) report in <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a>.</p>
 </div>
 
 
