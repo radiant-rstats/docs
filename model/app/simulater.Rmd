@@ -174,7 +174,7 @@ To determine, the probability that annual profits are below \$36,500 we enter th
 profit_365 = profit < 36500
 ```
 
-When you are done with the input values click the `Repeat` button. Because we specified a name for `Repeat data` a new data set will be created. `repdat" will have will contain the summarized data grouped per simulation (i.e., 1,000 rows). To store all 365 x 1,000 simulations/repetitions select `none` from the `Apply function` dropdown.
+When you are done with the input values click the `Repeat` button. Because we specified a name for `Repeat data` a new data set will be created. `repdat` will contain the summarized data grouped per simulation (i.e., 1,000 rows). To store all 365 x 1,000 simulations/repetitions select `none` from the `Apply function` dropdown.
 
 Descriptive statistics for the repeated simulation are shown in the main panel under `Repeated simulation summary`. We see that the annual expected profit (i.e., the mean of `sum of profit`) for the company is 172,311.84 with a standard deviation of 10,772.29. Although we found above that daily profits can be below \$100, the chance that profits are below $365 \times 100$ for the entire year are slim to none (i.e., the proportion of repeated simulations with annual profits below \$36,500 is equal to 0).
 
