@@ -28,7 +28,6 @@ copy_docs <- function(app) {
 		sub("radiant.png",paste0(app,".png"), . ) %>%
 		sub("radiant-rstats/radiant)",paste0("radiant-rstats/",app,")"), ., fixed = TRUE) %>%
 		cat(file = file.path("../..",app,"README.md"))
-	# file.copy("README_dev.md",file.path("../..",app,"README.md"),overwrite = TRUE)
 }
 
 sapply(c("radiant","radiant.data","radiant.design","radiant.basics","radiant.model","radiant.multivariate"), copy_docs)
