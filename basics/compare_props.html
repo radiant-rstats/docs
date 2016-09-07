@@ -329,8 +329,8 @@ $(document).ready(function () {
 <h4>Confidence interval</h4>
 <p>Because zero is <strong>not</strong> contained in any of the confidence intervals we reject the null hypothesis for each evaluated combination of passenger class levels.</p>
 </div>
-<div id="t.value" class="section level4">
-<h4>t.value</h4>
+<div id="chi-squared-values" class="section level4">
+<h4>Chi-squared values</h4>
 <p>Because the calculated chi-squared values (20.576, 104.704, and 25.008) are <strong>larger</strong> than the corresponding <em>critical</em> chi-squared value we reject the null hypothesis for each evaluated combination of passenger class levels. We can obtain the critical chi-squared value by using the probability calculator in the <em>Basics</em> menu. Using the test for 1st versus 2nd class passengers as an example, we find that for a chi-squared distribution with 1 degree of freedom (see <code>df</code>) and a confidence level of 0.95 the critical chi-squared value is 3.841.</p>
 <p align="center">
 <img src="figures_basics/compare_props_prob_calc.png">
@@ -356,7 +356,7 @@ $(document).ready(function () {
 <div id="stats-speak" class="section level3">
 <h3><em>Stats speak</em></h3>
 <p>This is a <strong>comparison of proportions</strong> test of the null hypothesis that the true population <strong>difference in proportions</strong> is equal to <strong>0</strong>. Using a significance level of 0.05, we reject the null hypothesis for each pair of passengers classes evaluated, and conclude that the true population <strong>difference in proportions</strong> is <strong>not equal to 0</strong>.</p>
-<p>The p.value for the test of differences in the survival proportion for 1st versus 2nd class passengers is <strong>&lt; .001</strong>. This is the probability of observing a sample <strong>difference in proportions</strong> that is as or more extreme than the sample <strong>difference in proportion</strong> from the data if the null hypothesis is true. In this case, it is the probability of observing a sample <strong>difference in proportions</strong> that is less than <strong>-0.194</strong> or greater than <strong>0.194</strong> if the true population <strong>difference in proportions</strong> is <strong>0</strong>.</p>
+<p>The p.value for the test of differences in the survival proportion for 1st versus 2nd class passengers is <strong>&lt; .001</strong>. This is the probability of observing a sample <strong>difference in proportions</strong> that is as or more extreme than the sample <strong>difference in proportions</strong> from the data if the null hypothesis is true. In this case, it is the probability of observing a sample <strong>difference in proportions</strong> that is less than <strong>-0.194</strong> or greater than <strong>0.194</strong> if the true population <strong>difference in proportions</strong> is <strong>0</strong>.</p>
 <p>The 95% confidence interval is <strong>0.112</strong> to <strong>0.277</strong>. If repeated samples were taken and the 95% confidence interval computed for each one, the true <strong>difference in population proportions</strong> would fall inside the confidence interval in 95% of the samples</p>
 <p><sup>1</sup> The <strong>significance level</strong>, often denoted by <span class="math inline">\(\alpha\)</span>, is the highest probability you are willing to accept of rejecting the null hypothesis when it is actually true. A commonly used significance level is 0.05 (or 5%)</p>
 </div>
