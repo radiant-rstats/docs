@@ -142,6 +142,7 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
@@ -486,11 +487,11 @@ r_data[[&#39;diamonds&#39;]] &lt;- mutate_each(r_data[[&#39;diamonds&#39;]], fun
 </div>
 <div id="remove-duplicates" class="section level4">
 <h4>Remove duplicates</h4>
-<p>It is common to have one or more variables in a dataset that <strong>should</strong> have only unique values (i.e., no duplicates). Customers IDs, for example, should be unique unless the dataset contains multiple orders for the same customer. To remove duplicates select one or more variables to determine <em>uniqueness</em>. Choose <code>Remove duplicates</code> from the <code>Transformation type</code> drop-down and check how the summary statistics change. Press <code>Store</code> to change the data. If there are duplicate rows you will see the number of observations in the data summary change (i.e., the value of <em>n</em> and <em>n_distinct</em> will change).</p>
+<p>It is common to have one or more variables in a dataset that have only unique values (i.e., no duplicates). Customer IDs, for example, should be unique unless the dataset contains multiple orders for the same customer. To remove duplicates select one or more variables to determine <em>uniqueness</em>. Choose <code>Remove duplicates</code> from the <code>Transformation type</code> drop-down and check how the displayed summary statistics change. Press <code>Store</code> to change the data. If there are duplicate rows you will see the number of observations in the data summary change (i.e., the value of <em>n</em> and <em>n_distinct</em> will change).</p>
 </div>
 <div id="show-duplicates" class="section level4">
 <h4>Show duplicates</h4>
-<p>If there are duplicates in the data use <code>Show duplicates</code> to get a better sense for the data points that have the same value in multiple rows. If you want to explore duplicates using the <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> tab make sure to <code>Store</code> them in a different dataset (i.e., make sure <strong>not</strong> to overwrite the data you are working on). If you choose to show duplicates based on all columns in the data only one of the duplicate rows will be shown. These rows are <strong>exactly</strong> the same so showing 2 or 3 isn’t helpful. If, however, we look for duplicates based on a subset of the available variables Radiant will generate a dataset with <strong>all</strong> similar rows.</p>
+<p>If there are duplicates in the data use <code>Show duplicates</code> to get a better sense for the data points that have the same value in multiple rows. If you want to explore duplicates using the <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> tab make sure to <code>Store</code> them in a different dataset (i.e., make sure <strong>not</strong> to overwrite the data you are working on). If you choose to show duplicates based on all columns in the data only one of the duplicate rows will be shown. These rows are <strong>exactly</strong> the same so showing 2 or 3 isn’t helpful. If, however, we are looking for duplicates based on a subset of the available variables Radiant will generate a dataset with <strong>all</strong> relevant rows.</p>
 </div>
 </div>
 <div id="expand-data" class="section level3">
@@ -580,6 +581,7 @@ r_data[[&#39;diamonds&#39;]] &lt;- mutate_each(r_data[[&#39;diamonds&#39;]], fun
 $(document).ready(function () {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
+
 
 </script>
 

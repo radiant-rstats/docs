@@ -142,6 +142,7 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
@@ -325,7 +326,7 @@ $(document).ready(function () {
 <div id="how-to-install-radiant" class="section level2">
 <h2>How to install Radiant</h2>
 <ul>
-<li>Required: <a href="https://cran.rstudio.com/">R</a> version 3.3.0 or later</li>
+<li>Required: <a href="https://cran.r-project.org/">R</a> version 3.3.0 or later</li>
 <li>Required: A modern browser (e.g., <a href="https://www.google.com/intl/en/chrome/browser/desktop/">Chrome</a> or Safari). Internet Explorer (version 11 or higher) should work as well</li>
 <li>Required: <a href="http://www.rstudio.com/products/rstudio/download/">Rstudio</a></li>
 </ul>
@@ -371,7 +372,7 @@ To run your own server instance copy/fork the repo from github and [deploy to sh
 <h2>Running Radiant on shiny-server</h2>
 <p>You can also host Radiant using <a href="http://www.rstudio.com/products/rstudio/download-server/">shiny-server</a>. First, install radiant on the server using the command below:</p>
 <pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)</code></pre>
-<p>Then clone the <a href="https://radiant-rstats.github.io/radiant" target="_blank">radiant</a> repo and point shiny-server to the <code>inst/app/</code> directory. As a courtesy, please let me know if you intend to use Radiant on a server.</p>
+<p>Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and point shiny-server to the <code>inst/app/</code> directory. As a courtesy, please let me know if you intend to use Radiant on a server.</p>
 </div>
 <div id="saving-and-loading-state" class="section level2">
 <h2>Saving and loading state</h2>
@@ -388,7 +389,7 @@ To run your own server instance copy/fork the repo from github and [deploy to sh
 </div>
 <div id="credits" class="section level2">
 <h2>Credits</h2>
-<p>Radiant would not be possible without <a href="https://cran.rstudio.com/">R</a> and <a href="http://shiny.rstudio.com/">Shiny</a>. I would like to thank <a href="https://github.com/jcheng5">Joe Cheng</a>, <a href="https://github.com/wch">Winston Chang</a>, and <a href="https://github.com/yihui">Yihui Xie</a> for answering questions, providing suggestions, and creating amazing tools for the R community. Other key components used in Radiant are ggplot2, dplyr, tidyr, magrittr, broom, shinyAce, rmardown, and DT. For an overview of other packages that Radiant relies on please see the <a href="http://radiant-rstats.github.io/docs/about.html" target="_blank">about</a> page.</p>
+<p>Radiant would not be possible without <a href="https://cran.r-project.org/">R</a> and <a href="http://shiny.rstudio.com/">Shiny</a>. I would like to thank <a href="https://github.com/jcheng5">Joe Cheng</a>, <a href="https://github.com/wch">Winston Chang</a>, and <a href="https://github.com/yihui">Yihui Xie</a> for answering questions, providing suggestions, and creating amazing tools for the R community. Other key components used in Radiant are ggplot2, dplyr, tidyr, magrittr, broom, shinyAce, rmardown, and DT. For an overview of other packages that Radiant relies on please see the <a href="http://radiant-rstats.github.io/docs/about.html" target="_blank">about</a> page.</p>
 </div>
 <div id="license" class="section level2">
 <h2>License</h2>
@@ -447,6 +448,7 @@ To run your own server instance copy/fork the repo from github and [deploy to sh
 $(document).ready(function () {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
+
 
 </script>
 

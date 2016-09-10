@@ -18,9 +18,9 @@ Radiant is a platform-independent browser-based interface for business analytics
 
 #### 1. Install R for your system
 
-For mac go to <a href="https://cran.rstudio.com/bin/macosx/" target="_blank">https://cran.rstudio.com/bin/macosx/</a>
+For mac go to <a href="https://cran.r-project.org/bin/macosx/" target="_blank">https://cran.r-project.org/bin/macosx/</a>
 
-For windows get the latest release from <a href="https://cran.rstudio.com/bin/windows/base/release.htm" target="_blank">https://cran.rstudio.com/bin/windows/base/release.htm</a>
+For windows get the latest release from <a href="https://cran.r-project.org/bin/windows/base/release.htm" target="_blank">https://cran.r-project.org/bin/windows/base/release.htm</a>
 
 > **Important:** Windows users **must** install R in directory C:\\R\\R-`r rv`
 
