@@ -15,11 +15,11 @@ load("~/gh/radiant.multivariate/data/shopping.rda")
 
 Radiant's goal is to provide access to the power of R for business analytics. Although Radiant's web-interface can handle quite a few data and analysis tasks, at times you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an [Rmarkdown](http://rmarkdown.rstudio.com/) document. Most pages in the app have an icon you can click (e.g., the book icon on the bottom left on the _Basics > Means > Single mean_ page) to start working on your report. Press the `Knit report` button on the _R > Report_ page to render the report to HTML. See the <a href="/docs/data/report.html">Report</a> page for details. The function manuals are linked below:
 
-* <a href="http://radiant-rstats.github.io/docs/radiant.data.pdf" target="_blank">radiant.data</a>
-* <a href="http://radiant-rstats.github.io/docs/radiant.design.pdf" target="_blank">radiant.design</a>
-* <a href="http://radiant-rstats.github.io/docs/radiant.basics.pdf" target="_blank">radiant.basic</a>
-* <a href="http://radiant-rstats.github.io/docs/radiant.model.pdf" target="_blank">radiant.model</a>
-* <a href="http://radiant-rstats.github.io/docs/radiant.multivariate.pdf" target="_blank">radiant.multivariate</a>
+* <a href="https://radiant-rstats.github.io/docs/radiant.data.pdf" target="_blank">radiant.data</a>
+* <a href="https://radiant-rstats.github.io/docs/radiant.design.pdf" target="_blank">radiant.design</a>
+* <a href="https://radiant-rstats.github.io/docs/radiant.basics.pdf" target="_blank">radiant.basic</a>
+* <a href="https://radiant-rstats.github.io/docs/radiant.model.pdf" target="_blank">radiant.model</a>
+* <a href="https://radiant-rstats.github.io/docs/radiant.multivariate.pdf" target="_blank">radiant.multivariate</a>
 
 You can also use Rstudio to render and edit Rmarkdown documents generated in Radiant. When you install and load Radiant it exports functions that can be called from R-code and/or an Rmarkdown document.
 
