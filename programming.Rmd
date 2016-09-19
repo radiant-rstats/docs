@@ -47,7 +47,7 @@ install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/"
 library(radiant)
 ```
 
-This will load the library and the required packages. To see the index of functions currently available in the Radiant package using the `help(package = "radiant")` command
+This will load the library and the required packages. To see the index of functions currently available in, for example, Radiant's Model menu use the `help(package = "radiant.model")` command
 
 Lets start by comparing the mean of a variable to a (population) value using R's built-in `mtcars` dataset. This functionality is in the Radiant menu _Basics > Means > Single mean_. The analysis is conducted in function `single_mean`. Calling the `summary` method on the result object will show tabular output. Calling `plot` on the same result object will produce plots to help evaluate the hypothesis.
 

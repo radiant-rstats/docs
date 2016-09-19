@@ -321,7 +321,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <p>To install the latest version of Radiant with complete documentation for offline access, open R(studio) and copy-and-paste the commands below:</p>
 <pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)
 library(radiant)</code></pre>
-<p>This will load the library and the required packages. To see the index of functions currently available in the Radiant package using the <code>help(package = &quot;radiant&quot;)</code> command</p>
+<p>This will load the library and the required packages. To see the index of functions currently available in, for example, Radiant’s Model menu use the <code>help(package = &quot;radiant.model&quot;)</code> command</p>
 <p>Lets start by comparing the mean of a variable to a (population) value using R’s built-in <code>mtcars</code> dataset. This functionality is in the Radiant menu <em>Basics &gt; Means &gt; Single mean</em>. The analysis is conducted in function <code>single_mean</code>. Calling the <code>summary</code> method on the result object will show tabular output. Calling <code>plot</code> on the same result object will produce plots to help evaluate the hypothesis.</p>
 <pre class="r"><code>result &lt;- single_mean(mtcars, &quot;mpg&quot;, comp_value = 20, alternative = &quot;greater&quot;)
 summary(result)</code></pre>
