@@ -289,7 +289,7 @@ $(document).ready(function () {
 <blockquote>
 <p>Create and evaluate a decision tree for decision analysis</p>
 </blockquote>
-<p>To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the <em>Model &gt; Decision analysis</em> tab you will see an example tree structure. This structure is based on an <a href="https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml">example</a> by Christop Glur, the developer of the <a href="https://github.com/gluc/data.tree">data.tree</a> library.</p>
+<p>To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the <em>Model &gt; Decide &gt; Decision analysis</em> tab you will see an example tree structure. This structure is based on an <a href="https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml">example</a> by Christop Glur, the developer of the <a href="https://github.com/gluc/data.tree">data.tree</a> library.</p>
 <p>To enter a new structure, start by providing a name for the tree and enter a label in the input box next to the <code>Calculate</code> button. In the example below the name for the decision tree is entered as follow: <code>name: Sign contract</code>. The next step is to indicate the <strong>type</strong> of the first <strong>node</strong>. Options are <code>type: decision</code> or <code>type: chance</code>. Note that we are skipping <code>variables</code> for now but will return to this section below.</p>
 <p>In the provided example, the first node is a <strong>decision node</strong>. The decision maker has to decide to <code>Sign with Movie Company</code> or <code>Sign with TV Network</code>. The first option leads to a <strong>chance</strong> node with probabilities and payoffs. The second has a fixed payoff.</p>
 <blockquote>
@@ -297,16 +297,37 @@ $(document).ready(function () {
 </blockquote>
 <p>After providing the name for the decision <code>Sign with Movie Company</code>, the next line <strong>must</strong> be indented using the <code>tab</code> key. In the example, the next line starts the description of a chance node (<code>type: chance</code>). There are 3 possibilities in the example: (1) <code>Small Box Office</code>, (2) <code>Medium Box Office</code>, and (3) <code>Large Box Office</code>, each with a probability and a payoff. These are end-points for one branch of the tree and are often referred to as <code>terminal nodes</code> or <code>leaves</code>. All endpoints must have a <code>payoff</code> value.</p>
 <blockquote>
-<p><strong>Note:</strong> Probabilities for a chance node should sum to 1 and all probabilities must be smaller than 1.</p>
+<p><strong>Note:</strong> Probabilities for a chance node should sum to 1 and all probabilities must be between 0 and 1.</p>
 </blockquote>
-<p>A decision can also be assigned a <code>cost</code>. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not reguire legal assistance. Note that using <code>costs</code> is optional. In the example we could also subtract $5,000 from each of the possible box-office payoffs.</p>
-<p>If some values in the tree are relate or repeated it can be useful to use a <code>variables</code> section. Here you can assign labels to values and formulas. In the <code>Sign contract</code> example only one variable is created (i.e., <code>legal fees</code>). The <em>Sensitivity</em> tab requires that a variables section is included in the tree structure.</p>
+<p>A decision can also be assigned a <code>cost</code>. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not require legal assistance. Note that using <code>costs</code> is optional. In the example we could also subtract $5,000 from each of the possible box-office payoffs.</p>
+<p>If some values in the tree are related or repeated it can be useful to use a <code>variables</code> section. Here you can assign labels to values and formulas. Note that formulas can <strong>only</strong> be used in the <code>variables</code> section and nowhere else. In the <code>Sign contract</code> example only one variable is created (i.e., <code>legal fees</code>). The <em>Sensitivity</em> tab requires that a <code>variables</code> section is included in the tree structure. An adapted version of the <code>Sign contract</code> example that uses more variables and a formula is shown below.</p>
+<pre class="yaml"><code>name: Sign contract
+variables:
+    legal fees: 5000
+    P(small): 0.3
+    P(medium): 0.6
+    P(large): 1 - P(small) - P(medium)
+type: decision
+Sign with Movie Company:
+    cost: legal fees
+    type: chance
+    Small Box Office:
+        p: P(small)
+        payoff: 200000
+    Medium Box Office:
+        p: P(medium)
+        payoff: 1000000
+    Large Box Office:
+        p: P(large)
+        payoff: 3000000
+Sign with TV Network:
+    payoff: 900000</code></pre>
 <div id="rules-for-decision-tree-input" class="section level2">
 <h2>Rules for decision tree input</h2>
 <ol style="list-style-type: decimal">
 <li>Always start with a tree name (e.g., <code>name: My tree</code>)</li>
-<li>The second line should start a <code>variables</code> section or a node defintion (i.e., type: chance or type: decision)</li>
-<li>All lines must have a <code>:</code>. For node names the <code>:</code> ends the line. For all other lines it assigns a value. Specically, it assigns a name (e.g., <code>name: My tree</code>), a node type (e.g., <code>type: decision</code>), a variable (e.g., <code>legal fees: 5000</code>), or a number (e.g., <code>payoff: 100</code>, <code>p: 0.1</code>, <code>cost: 10</code>)</li>
+<li>The second line should start a <code>variables</code> section or a node definition (i.e., type: chance or type: decision)</li>
+<li>All lines must have a <code>:</code>. For node names the <code>:</code> ends the line. For all other lines it assigns a value. Specifically, it assigns a name (e.g., <code>name: My tree</code>), a node type (e.g., <code>type: decision</code>), a variable (e.g., <code>legal fees: 5000</code>), or a number (e.g., <code>payoff: 100</code>, <code>p: 0.1</code>, <code>cost: 10</code>)</li>
 <li>A node type must be followed on the next line by a node name (e.g., <code>Cancel orders:</code>)</li>
 <li>Use only letters and spaces in node names (i.e., no symbols)</li>
 <li>The line after a node name must <strong>always</strong> be indented</li>
@@ -330,7 +351,7 @@ $(document).ready(function () {
     0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 = 960,000
 \]</span></p>
 <p>The EMV from signing with the movie company is however <span class="math inline">\(960,000 - 5,000 = 955,000\)</span> because we do incur a cost of $5,000 in legal fees. Hover the cursor over the chance node shown on screen to see a <code>tooltip</code> that shows the calculation. To highlight that a <code>cost</code> was specified the chance node in the figure has a dashed outer line.</p>
-<p>In the <code>Sign contract</code> example it is clear that <code>Sign with Movie Company</code> is the prefered option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the <em>Sensitivity</em> tab is useful. Here we can evaluate how decisions (e.g., <code>Sign with Movie Company</code> and <code>Sign with TV Network</code>) would change if the legal fee changes. Enter 0 as the <code>Min</code> value, 80000 as the <code>Max value</code>, 10000 as the <code>Step</code> size, and then press the <i class="fa fa-plus"></i> icon. After pressing <code>Evaluate sensitivty</code> a graph will be shown that illustrates how payoffs for the decisions change. Notice that for legal fees higher than $60,000 <code>Sign with TV Network</code> produces the highest EMV.</p>
+<p>In the <code>Sign contract</code> example it is clear that <code>Sign with Movie Company</code> is the preferred option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the <em>Sensitivity</em> tab is useful. Here we can evaluate how decisions (e.g., <code>Sign with Movie Company</code> and <code>Sign with TV Network</code>) would change if the legal fee changes. Enter 0 as the <code>Min</code> value, 80000 as the <code>Max value</code>, 10000 as the <code>Step</code> size, and then press the <i class="fa fa-plus"></i> icon. After pressing <code>Evaluate sensitivity</code> a graph will be shown that illustrates how payoffs for the decisions change. Notice that for legal fees higher than $60,000 <code>Sign with TV Network</code> produces the highest EMV.</p>
 <p align="center">
 <img src="figures_model/dtree_sensitivity.png">
 </p>
@@ -362,10 +383,10 @@ $(document).ready(function () {
 <ul>
 <li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
 <li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon</li>
-<li>Select <code>Decisions to evaluate</code></li>
-<li>Select variables in <code>Sensitivity to changes in</code>. These variables must be defined in the decision tree structure in the <em>Model</em> tab</li>
+<li>Select one or more <code>Decisions to evaluate</code></li>
+<li>Select variables in <code>Sensitivity to changes in</code>. These variables must be defined in the <code>variables</code> section of the decision tree structure in the <em>Model</em> tab</li>
 <li>Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon</li>
-<li>Press <code>Evaluate sensitity</code> to generate results and the plot</li>
+<li>Press <code>Evaluate sensitivity</code> to generate results and the plot</li>
 <li>Click the download icon in the top right of your browser to <em>print</em> either the initial or final plot to a pdf-file</li>
 </ul>
 </div>

@@ -1,6 +1,6 @@
 > Create and evaluate a decision tree for decision analysis
 
-To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the _Model > Decision analysis_ tab you will see an example tree structure. This structure is based on an [example](https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml) by Christop Glur, the developer of the [data.tree](https://github.com/gluc/data.tree) library.
+To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the _Model > Decide > Decision analysis_ tab you will see an example tree structure. This structure is based on an [example](https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml) by Christop Glur, the developer of the [data.tree](https://github.com/gluc/data.tree) library.
 
 To enter a new structure, start by providing a name for the tree and enter a label in the input box next to the `Calculate` button. In the example below the name for the decision tree is entered as follow: `name: Sign contract`. The next step is to indicate the **type** of the first **node**. Options are `type: decision` or `type: chance`. Note that we are skipping `variables` for now but will return to this section below.
 
@@ -10,17 +10,41 @@ In the provided example, the first node is a **decision node**. The decision mak
 
 After providing the name for the decision `Sign with Movie Company`, the next line **must** be indented using the `tab` key. In the example, the next line starts the description of a chance node (`type: chance`). There are 3 possibilities in the example: (1) `Small Box Office`, (2) `Medium Box Office`, and (3) `Large Box Office`, each with a probability and a payoff. These are end-points for one branch of the tree and are often referred to as `terminal nodes` or `leaves`. All endpoints must have a `payoff` value.
 
-> **Note:** Probabilities for a chance node should sum to 1 and all probabilities must be smaller than 1.
+> **Note:** Probabilities for a chance node should sum to 1 and all probabilities must be between 0 and 1.
 
-A decision can also be assigned a `cost`. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not reguire legal assistance. Note that using `costs` is optional. In the example we could also subtract \$5,000 from each of the possible box-office payoffs.
+A decision can also be assigned a `cost`. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not require legal assistance. Note that using `costs` is optional. In the example we could also subtract \$5,000 from each of the possible box-office payoffs.
 
-If some values in the tree are relate or repeated it can be useful to use a `variables` section. Here you can assign labels to values and formulas. In the `Sign contract` example only one variable is created (i.e., `legal fees`). The _Sensitivity_ tab requires that a variables section is included in the tree structure.
+If some values in the tree are related or repeated it can be useful to use a `variables` section. Here you can assign labels to values and formulas. Note that formulas can **only** be used in the `variables` section and nowhere else. In the `Sign contract` example only one variable is created (i.e., `legal fees`). The _Sensitivity_ tab requires that a `variables` section is included in the tree structure. An adapted version of the `Sign contract` example that uses more variables and a formula is shown below.
+
+```yaml
+name: Sign contract
+variables:
+    legal fees: 5000
+    P(small): 0.3
+    P(medium): 0.6
+    P(large): 1 - P(small) - P(medium)
+type: decision
+Sign with Movie Company:
+    cost: legal fees
+    type: chance
+    Small Box Office:
+        p: P(small)
+        payoff: 200000
+    Medium Box Office:
+        p: P(medium)
+        payoff: 1000000
+    Large Box Office:
+        p: P(large)
+        payoff: 3000000
+Sign with TV Network:
+    payoff: 900000
+```
 
 ## Rules for decision tree input
 
 1. Always start with a tree name (e.g., `name: My tree`)
-2. The second line should start a `variables` section or a node defintion (i.e., type: chance or type: decision)
-3. All lines must have a `:`. For node names the `:` ends the line. For all other lines it assigns a value.  Specically, it assigns a name (e.g., `name: My tree`), a node type (e.g., `type: decision`), a variable (e.g., `legal fees: 5000`), or a number (e.g., `payoff: 100`, `p: 0.1`, `cost: 10`)
+2. The second line should start a `variables` section or a node definition (i.e., type: chance or type: decision)
+3. All lines must have a `:`. For node names the `:` ends the line. For all other lines it assigns a value.  Specifically, it assigns a name (e.g., `name: My tree`), a node type (e.g., `type: decision`), a variable (e.g., `legal fees: 5000`), or a number (e.g., `payoff: 100`, `p: 0.1`, `cost: 10`)
 4. A node type must be followed on the next line by a node name (e.g., `Cancel orders:`)
 5. Use only letters and spaces in node names (i.e., no symbols)
 6. The line after a node name must **always** be indented
@@ -47,7 +71,7 @@ $$
 
 The EMV from signing with the movie company is however $960,000 - 5,000 = 955,000$ because we do incur a cost of \$5,000 in legal fees. Hover the cursor over the chance node shown on screen to see a `tooltip` that shows the calculation. To highlight that a `cost` was specified the chance node in the figure has a dashed outer line.
 
-In the `Sign contract` example it is clear that `Sign with Movie Company` is the prefered option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the _Sensitivity_ tab is useful. Here we can evaluate how decisions (e.g., `Sign with Movie Company` and `Sign with TV Network`) would change if the legal fee changes. Enter 0 as the `Min` value, 80000 as the `Max value`, 10000 as the `Step` size, and then press the <i class="fa fa-plus"></i> icon. After pressing `Evaluate sensitivty` a graph will be shown that illustrates how payoffs for the decisions change. Notice that for legal fees higher than \$60,000 `Sign with TV Network` produces the highest EMV.
+In the `Sign contract` example it is clear that `Sign with Movie Company` is the preferred option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the _Sensitivity_ tab is useful. Here we can evaluate how decisions (e.g., `Sign with Movie Company` and `Sign with TV Network`) would change if the legal fee changes. Enter 0 as the `Min` value, 80000 as the `Max value`, 10000 as the `Step` size, and then press the <i class="fa fa-plus"></i> icon. After pressing `Evaluate sensitivity` a graph will be shown that illustrates how payoffs for the decisions change. Notice that for legal fees higher than \$60,000 `Sign with TV Network` produces the highest EMV.
 
 <p align="center"><img src="figures_model/dtree_sensitivity.png"></p>
 
@@ -78,10 +102,10 @@ In the _Sensitivity_ tab:
 
 * To see this help file click the <i class="fa fa-question" ></i> icon
 * To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon
-* Select `Decisions to evaluate`
-* Select variables in `Sensitivity to changes in`. These variables must be defined in the decision tree structure in the _Model_ tab
+* Select one or more `Decisions to evaluate`
+* Select variables in `Sensitivity to changes in`. These variables must be defined in the `variables` section of the decision tree structure in the _Model_ tab
 * Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon
-* Press `Evaluate sensitity` to generate results and the plot
+* Press `Evaluate sensitivity` to generate results and the plot
 * Click the download icon in the top right of your browser to _print_ either the initial or final plot to a pdf-file
 
 ## The decision tree editor
