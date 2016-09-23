@@ -29,6 +29,7 @@ copy_docs <- function(app) {
 		sub("radiant-rstats/radiant)",paste0("radiant-rstats/",app,")"), ., fixed = TRUE) %>%
 		sub("badges/version/radiant)",paste0("badges/version/",app,")"), ., fixed = TRUE) %>%
 		sub("package=radiant)",paste0("package=",app,")"), ., fixed = TRUE) %>%
+		sub("radiant/issues",paste0(app,"/issues"), ., fixed = TRUE) %>%
 		cat(file = file.path("../..",app,"README.md"))
 }
 
