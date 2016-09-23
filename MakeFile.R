@@ -27,6 +27,8 @@ copy_docs <- function(app) {
 	readLines("README_dev.md") %>% paste0(., collapse = "\n") %>%
 		sub("radiant.png",paste0(app,".png"), . ) %>%
 		sub("radiant-rstats/radiant)",paste0("radiant-rstats/",app,")"), ., fixed = TRUE) %>%
+		sub("badges/version/radiant)",paste0("badges/version/",app,")"), ., fixed = TRUE) %>%
+		sub("package=radiant)",paste0("package=",app,")"), ., fixed = TRUE) %>%
 		cat(file = file.path("../..",app,"README.md"))
 }
 
