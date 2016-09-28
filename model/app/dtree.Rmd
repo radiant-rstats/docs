@@ -14,7 +14,7 @@ After providing the name for the decision `Sign with Movie Company`, the next li
 
 A decision can also be assigned a `cost`. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not require legal assistance. Note that using `costs` is optional. In the example we could also subtract \$5,000 from each of the possible box-office payoffs.
 
-If some values in the tree are related or repeated it can be useful to use a `variables` section. Here you can assign labels to values and formulas. Note that formulas can **only** be used in the `variables` section and nowhere else. In the `Sign contract` example only one variable is created (i.e., `legal fees`). The _Sensitivity_ tab requires that a `variables` section is included in the tree structure. An adapted version of the `Sign contract` example that uses more variables and a formula is shown below.
+If some values in the tree are related or repeated it can be useful to use a `variables` section. Here you can assign labels to values, formulas, and even other (sub)trees. Note that formulas can **only** be used in the `variables` section and nowhere else. In the `Sign contract` example only one variable is created (i.e., `legal fees`). The _Sensitivity_ tab requires that a `variables` section is included in the tree structure. An adapted version of the `Sign contract` example that uses more variables and a formula is shown below.
 
 ```yaml
 name: Sign contract
@@ -39,6 +39,15 @@ Sign with Movie Company:
 Sign with TV Network:
     payoff: 900000
 ```
+
+To reference another (sub)tree use the `dtree` function in the `variables` section and the name of the (sub)tree. For example, suppose you want to include a tree ("tuesday_tree") that evaluates a pricing decision on Tuesday into a tree that evaluates a pricing decision on Monday. The start of the `variables` section might look as follows:
+
+```yaml
+variables:
+	tuesday_emv: dtree("tuesday_tree")
+```
+
+Then in the Monday tree you would refer to `tuesday_emv` in spots where you need the EMV from Tuesday's pricing decision.
 
 ## Rules for decision tree input
 

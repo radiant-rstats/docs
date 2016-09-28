@@ -252,8 +252,8 @@ $(document).ready(function () {
              <li><a href="/docs/multivariate/full_factor.html">Factor</a></li>
              <li class="divider"></li>
              <li class="dropdown-header">Cluster</li>
-             <li><a href="/docs/multivariate/hier_clus.html">Hierarchical</a></li>
-             <li><a href="/docs/multivariate/kmeans_clus.html">K-means</a></li>
+             <li><a href="/docs/multivariate/hclus.html">Hierarchical</a></li>
+             <li><a href="/docs/multivariate/kclus.html">K-clustering</a></li>
              <li class="divider"></li>
              <li class="dropdown-header">Conjoint</li>
              <li><a href="/docs/multivariate/conjoint.html">Conjoint</a></li>
@@ -500,7 +500,7 @@ Prediction command   : carat  =  1:10
 <p><img src="programming_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre class="r"><code>plot(result, plots = &quot;dashboard&quot;)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p>As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use <code>?hier_clus</code>, <code>?plot.hier_clus</code>, and <code>?kmeans_clus</code>. See also the Radiant function manuals linked above.</p>
+<p>As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use <code>?hclus</code>, <code>?plot.hclus</code>, and <code>?kclus</code>. See also the Radiant function manuals linked above.</p>
 <pre class="r"><code>## load the radiant library (not needed if run in Radiant&#39;s R &gt; Code tab)
 library(radiant.multivariate)
 
@@ -508,7 +508,7 @@ library(radiant.multivariate)
 shopping &lt;- loadrda_url(&quot;https://github.com/radiant-rstats/radiant.multivariate/blob/master/data/shopping.rda?raw=true&quot;)
 
 ## run hierarchical cluster analysis on the shopping data, variables v1 through v6
-result &lt;- hier_clus(shopping, &quot;v1:v6&quot;)
+result &lt;- hclus(shopping, &quot;v1:v6&quot;)
 
 ## summary - not much here - plots are more important
 summary(result)</code></pre>
@@ -527,17 +527,18 @@ plot(result)</code></pre>
 plot(result, plots = &quot;dendro&quot;, cutoff = 0.1)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <pre class="r"><code>## plots created above suggest 3 clusters may be  most appropriate
-## use kmeans to create the clusters
+## use k-clustering to create the clusters
 ## generate output and save clustermembership to the datafile
-result &lt;- kmeans_clus(shopping, vars = &quot;v1:v6&quot;, nr_clus = 3)
+result &lt;- kclus(shopping, vars = &quot;v1:v6&quot;, nr_clus = 3)
 summary(result)</code></pre>
 <pre><code>K-means cluster analysis
-Data        : ----- 
-Variables   : v1:v6 
-Method      : ward.D 
-Distance    : sq.euclidian 
-Observations: 20 
-Generated   : 3 clusters of sizes 8, 6, 6 
+Data         : ----- 
+Variables    : v1:v6 
+Clustering by: K-means
+HC method    : ward.D 
+HC distance  : sq.euclidian 
+Observations : 20 
+Generated    : 3 clusters of sizes 8, 6, 6 
 
 Cluster means:
              v1   v2   v3   v4   v5   v6
@@ -545,14 +546,14 @@ Cluster means:
  Cluster 2 1.67 3.00 1.83 3.50 5.50 3.33
  Cluster 3 3.50 5.83 3.33 6.00 3.50 6.00
 
-Percentage of within cluster variance accounted for by each cluster:
+Percentage of within cluster heterogeneity accounted for by each cluster:
                 
 Cluster 1 40.31%
 Cluster 2 25.98%
 Cluster 3 33.71%
 
-Between cluster variance accounts for 73.93% of the
-total variance in the data (higher is better).</code></pre>
+Between cluster heterogeneity accounts for 73.93% of the
+total heterogeneity in the data (higher is better).</code></pre>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <pre class="r"><code>shopping &lt;- store(result)

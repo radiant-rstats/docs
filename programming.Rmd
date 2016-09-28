@@ -98,7 +98,7 @@ plot(result, plots = "coef")
 plot(result, plots = "dashboard")
 ```
 
-As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use `?hier_clus`, `?plot.hier_clus`, and `?kmeans_clus`. See also the Radiant function manuals linked above.
+As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use `?hclus`, `?plot.hclus`, and `?kclus`. See also the Radiant function manuals linked above.
 
 ```{r fig.height=8}
 ## load the radiant library (not needed if run in Radiant's R > Code tab)
@@ -108,7 +108,7 @@ library(radiant.multivariate)
 shopping <- loadrda_url("https://github.com/radiant-rstats/radiant.multivariate/blob/master/data/shopping.rda?raw=true")
 
 ## run hierarchical cluster analysis on the shopping data, variables v1 through v6
-result <- hier_clus(shopping, "v1:v6")
+result <- hclus(shopping, "v1:v6")
 
 ## summary - not much here - plots are more important
 summary(result)
@@ -126,9 +126,9 @@ plot(result, plots = "dendro", cutoff = 0.1)
 
 ```{r}
 ## plots created above suggest 3 clusters may be  most appropriate
-## use kmeans to create the clusters
+## use k-clustering to create the clusters
 ## generate output and save clustermembership to the datafile
-result <- kmeans_clus(shopping, vars = "v1:v6", nr_clus = 3)
+result <- kclus(shopping, vars = "v1:v6", nr_clus = 3)
 summary(result)
 plot(result)
 shopping <- store(result)

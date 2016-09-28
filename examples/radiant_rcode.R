@@ -32,16 +32,16 @@ setwd(path2desktop)
 shopping <- loadrda_url("https://github.com/radiant-rstats/radiant.multivariate/blob/master/data/shopping.rda?raw=true")
 
 ## start with hierarchical clustering, view help
-?hier_clus
+?hclus
 
 ## run hierarchical cluster analysis on the shopping data, variables v1 through v6
-result <- hier_clus(shopping, "v1:v6")
+result <- hclus(shopping, "v1:v6")
 
 ## summary - not much here - plots are more important
 summary(result)
 
 ## check the help file on how to plot results from hierarchical cluster analysis
-?plot.hier_clus
+?plot.hclus
 
 ## default plots
 plot(result)
@@ -53,7 +53,7 @@ plot(result, plots = "dendro")
 plot(result, plots = "dendro", cutoff = 0)
 
 ## there seems to be three clusters (segments)
-result <- kmeans_clus(shopping, vars = "v1:v6", nr_clus = 3)
+result <- kclus(shopping, vars = "v1:v6", nr_clus = 3)
 summary(result)
 plot(result)
 
@@ -64,10 +64,10 @@ shopping <- store(result)
 head(shopping)
 
 ## to save the average shopping attitude scores for each segment
-write.csv(result$clus_means, file = "kmeans.csv")
+write.csv(result$clus_means, file = "kclus.csv")
 
 ## the following command should open the created csv file in Excel
-browseURL("kmeans.csv")
+browseURL("kclus.csv")
 
 ## see if you can reproduce this output in radiant's web-interface
 ## the shopping data should be loaded from the global environment

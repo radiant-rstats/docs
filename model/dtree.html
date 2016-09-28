@@ -252,8 +252,8 @@ $(document).ready(function () {
              <li><a href="/docs/multivariate/full_factor.html">Factor</a></li>
              <li class="divider"></li>
              <li class="dropdown-header">Cluster</li>
-             <li><a href="/docs/multivariate/hier_clus.html">Hierarchical</a></li>
-             <li><a href="/docs/multivariate/kmeans_clus.html">K-means</a></li>
+             <li><a href="/docs/multivariate/hclus.html">Hierarchical</a></li>
+             <li><a href="/docs/multivariate/kclus.html">K-clustering</a></li>
              <li class="divider"></li>
              <li class="dropdown-header">Conjoint</li>
              <li><a href="/docs/multivariate/conjoint.html">Conjoint</a></li>
@@ -300,7 +300,7 @@ $(document).ready(function () {
 <p><strong>Note:</strong> Probabilities for a chance node should sum to 1 and all probabilities must be between 0 and 1.</p>
 </blockquote>
 <p>A decision can also be assigned a <code>cost</code>. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not require legal assistance. Note that using <code>costs</code> is optional. In the example we could also subtract $5,000 from each of the possible box-office payoffs.</p>
-<p>If some values in the tree are related or repeated it can be useful to use a <code>variables</code> section. Here you can assign labels to values and formulas. Note that formulas can <strong>only</strong> be used in the <code>variables</code> section and nowhere else. In the <code>Sign contract</code> example only one variable is created (i.e., <code>legal fees</code>). The <em>Sensitivity</em> tab requires that a <code>variables</code> section is included in the tree structure. An adapted version of the <code>Sign contract</code> example that uses more variables and a formula is shown below.</p>
+<p>If some values in the tree are related or repeated it can be useful to use a <code>variables</code> section. Here you can assign labels to values, formulas, and even other (sub)trees. Note that formulas can <strong>only</strong> be used in the <code>variables</code> section and nowhere else. In the <code>Sign contract</code> example only one variable is created (i.e., <code>legal fees</code>). The <em>Sensitivity</em> tab requires that a <code>variables</code> section is included in the tree structure. An adapted version of the <code>Sign contract</code> example that uses more variables and a formula is shown below.</p>
 <pre class="yaml"><code>name: Sign contract
 variables:
     legal fees: 5000
@@ -322,6 +322,10 @@ Sign with Movie Company:
         payoff: 3000000
 Sign with TV Network:
     payoff: 900000</code></pre>
+<p>To reference another (sub)tree use the <code>dtree</code> function in the <code>variables</code> section and the name of the (sub)tree. For example, suppose you want to include a tree (“tuesday_tree”) that evaluates a pricing decision on Tuesday into a tree that evaluates a pricing decision on Monday. The start of the <code>variables</code> section might look as follows:</p>
+<pre class="yaml"><code>variables:
+    tuesday_emv: dtree(&quot;tuesday_tree&quot;)</code></pre>
+<p>Then in the Monday tree you would refer to <code>tuesday_emv</code> in spots where you need the EMV from Tuesday’s pricing decision.</p>
 <div id="rules-for-decision-tree-input" class="section level2">
 <h2>Rules for decision tree input</h2>
 <ol style="list-style-type: decimal">
