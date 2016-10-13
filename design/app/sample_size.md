@@ -10,11 +10,11 @@ Since we are interested in estimating the average (or mean) internet usage in th
 
 <p align="center"><img src="figures_design/sample_size_ex1a.png"></p>
 
-As you can see the required sample size is equal to 143, i.e., we need 143 valid responses from our target population to make an inference of the population average with the required Acceptable Error, Confidence level, and Sample standard deviation. This number assumes an Incidence and Response rate of 1 (or 100%). Suppose that only 75% of the household in out market have access to internet at home. In addition, suppose that the anticipated response rate is 20%. What would be the required number of household to contact?
+As you can see the required sample size is equal to 143, i.e., we need 143 valid responses from our target population to make an inference of the population average with the required Acceptable Error, Confidence level, and Sample standard deviation. This number assumes an Incidence and Response rate of 1 (or 100%). Suppose that only 75% of the household in our market have access to internet at home. In addition, suppose that the anticipated response rate is 20%. What would be the required number of households to contact?
 
 <p align="center"><img src="figures_design/sample_size_ex1b.png"></p>
 
-In the screen shot above the incidence rate is set to 75% and response rate to 20%. The required number of valid responses is the same as before (143), however the number of contact requests is now equal to 143 / .75 / .2 = 954.
+In the screen shot above the incidence rate is set to 75% and the response rate to 20%. The required number of valid responses is the same as before (143), however the number of contact requests is now equal to 143 / .75 / .2 = 954.
 
 <a href="http://www.isixsigma.com/tools-templates/sampling-data/how-determine-sample-size-determining-sample-size/" target="_blank">Source</a>
 
