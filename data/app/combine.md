@@ -8,6 +8,11 @@ The examples below are adapted from the [Cheatsheet for dplyr join functions](ht
 * <a href="https://github.com/radiant-rstats/docs/blob/gh-pages/examples/publishers.csv" target = "_blank">publishers.csv</a>
 * <a href="https://github.com/radiant-rstats/docs/blob/gh-pages/examples/avengers.csv" target = "_blank">avengers.csv</a>
 
+
+```
+## Warning: package 'ggplot2' was built under R version 3.3.2
+```
+
 <table class='table table-condensed table-hover' style='width:70%;'>
 <caption>Superheroes</caption>
  <thead>
