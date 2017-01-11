@@ -3,7 +3,7 @@ title: Programming with Radiant
 ---
 
 ```{r echo = FALSE}
-suppressMessages(library(radiant))
+suppressMessages(suppressWarnings(library(radiant)))
 knitr::opts_chunk$set(comment=NA, cache=FALSE, message=FALSE, warning=FALSE)
 
 # change path as needed
