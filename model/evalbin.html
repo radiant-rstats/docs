@@ -289,14 +289,13 @@ $(document).ready(function () {
 <blockquote>
 <p>Evaluate model performance for (binary) classification</p>
 </blockquote>
-<p>To download the table as a csv-files click the download button on the top-right of your screen. To download plots as png files click the download icon on the middle-right of your screen.</p>
 <div id="response-variable" class="section level4">
 <h4>Response variable</h4>
 <p>Select the outcome, or response, variable of interest. This should be a binary variable, either a factor or an integer with two value (i.e., 0 and 1).</p>
 </div>
 <div id="choose-level" class="section level4">
 <h4>Choose level</h4>
-<p>The level in the response variable that is considered a <em>success</em>. For example, purchase or buyer is equal to “yes”.</p>
+<p>The level in the response variable that is considered a <em>success</em>. For example, a purchase or buyer is equal to “yes”.</p>
 </div>
 <div id="predictor" class="section level4">
 <h4>Predictor</h4>
@@ -308,7 +307,7 @@ $(document).ready(function () {
 </div>
 <div id="margin-cost" class="section level4">
 <h4>Margin &amp; Cost</h4>
-<p>To use the <code>Profit</code> and <code>ROME</code> (Return on Marketing Expenditures) charts, enter the <code>Margin</code> for each sale and the estimated <code>Cost</code> per contact (e.g., mailing costs or opportunity cost of email or text). For example, if the margin on a sale is $10 (excluding the contact cost) and the contact cost is $1 enter 10 and 1 in the <code>Margin</code> and <code>Cost</code> input windows.</p>
+<p>To use the <code>Profit</code> and <code>ROME</code> (Return on Marketing Expenditures) charts, enter the <code>Margin</code> for each sale and the estimated <code>Cost</code> per contact (e.g., mailing costs or opportunity cost of email or text message). For example, if the margin on a sale is $10 (excluding the contact cost) and the contact cost is $1 enter 10 and 1 in the <code>Margin</code> and <code>Cost</code> input windows.</p>
 </div>
 <div id="show-results-for" class="section level4">
 <h4>Show results for</h4>
@@ -318,16 +317,96 @@ $(document).ready(function () {
 <h4>Plots</h4>
 <p>Generate Lift, Gains, Profit, and/or ROME charts. The profit chart displays a profit index useful to compare performance across predictors/models</p>
 </div>
+<div id="confusion-matrix" class="section level4">
+<h4>Confusion matrix</h4>
+<p>Predicted probabilities probabilities selected through <code>Predictor</code> are first converted to a class (e.g., a positive or negative outcome) using the values entered in <code>Margin</code> and <code>Cost</code>. It will be profitable to contact a customer if the predicted probability of response exceeds <code>Cost / Margin</code>. For example, if the break-even response rate is 0.1 and the predicted probability of response is 0.25 that customer will be assigned the label <em>Positive</em>. If, on the other hand, the predicted probability does not exceed the break-even response rate a customer will be assigned a <em>Negative</em> label.</p>
+<p>Once each prediction has been converted to a class label (i.e., Positive or Negative) the result is compared to the values of the response variable. The following key measures are shown in the generated table for each predictor.</p>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TP (True Positive)</td>
+<td>Number of cases where the positive prediction matches the positive outcome in the data</td>
+</tr>
+<tr class="even">
+<td>FP (False Positive)</td>
+<td>Number of cases with a positive prediction but a negative outcome in the data</td>
+</tr>
+<tr class="odd">
+<td>TN (True Negative)</td>
+<td>Number of cases where the negative prediction matches the negative outcome in the data</td>
+</tr>
+<tr class="even">
+<td>FN (False Negative)</td>
+<td>Number of cases with a negative prediction but a positive outcome in the data</td>
+</tr>
+<tr class="odd">
+<td>total</td>
+<td>Total number of cases (i.e., TP + FP + TN + FN)</td>
+</tr>
+<tr class="even">
+<td>TPR (True Positive Rate)</td>
+<td>Proportion of positive outcomes in the data that received a positive prediction (i.e., TP / (TP + FN)). Also known as <em>sensitivity</em> or <em>recall</em></td>
+</tr>
+<tr class="odd">
+<td>TNR (True Negative Rate)</td>
+<td>Proportion of negative outcomes in the data that received a negative prediction (i.e., TN / (TN + FP)). Also known as <em>specificity</em></td>
+</tr>
+<tr class="even">
+<td>precision</td>
+<td>Proportion of positive predictions with a positive outcome in the data (i.e., TP / (TP + FP))</td>
+</tr>
+<tr class="odd">
+<td>accuracy</td>
+<td>Proportion of all outcomes that was correctly predicted as either positive or negative (i.e., (TP + TN) / total)</td>
+</tr>
+<tr class="even">
+<td>kappa</td>
+<td>Corrects the accuracy measure for the probability of generating a correct prediction purely by chance</td>
+</tr>
+<tr class="odd">
+<td>profit</td>
+<td>Total profitability achieved by targeting all customers with a predicted probability above the break-even response rate</td>
+</tr>
+<tr class="even">
+<td>index</td>
+<td>Index of relative profitability achieved across the selected <code>Predictor</code> variables (maximum is 1)</td>
+</tr>
+<tr class="odd">
+<td>ROME</td>
+<td>Return on Marketing Expenditures (ROME) achieved by targeting all customers with a predicted probability above the break-even response rate</td>
+</tr>
+<tr class="even">
+<td>AUC</td>
+<td>Area Under the ROC Curve (AUC). ROC stands for Receiver Operating Characteristic.</td>
+</tr>
+</tbody>
+</table>
+<p>Only <code>kappa</code>, <code>index</code>, <code>ROME</code>, and <code>AUC</code> are plotted by default. It is possible to customize the plotted results <em>R &gt; Report</em>. To change the plot use, for example, <code>plot.confusion(result, vars = c(&quot;precision&quot;, &quot;profit&quot;, &quot;AUC&quot;))</code></p>
+</div>
+<div id="download-options" class="section level4">
+<h4>Download options</h4>
+<p>To download a table as a csv-files click the download button on the top-right of your screen. To download plots as png files click the download icon on the middle-right of your screen.</p>
+</div>
 <div id="example" class="section level2">
 <h2>Example</h2>
 <p>The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.</p>
 <p align="center">
 <img src="figures_model/evalbin_profit_gain.png">
 </p>
-<p>This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and validation sample are 94.0% and 93.4% respectively.</p>
-<p align="center">
-<img src="figures_model/evalbin_confusion.png">
-</p>
+<!-- This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and validation sample are 94.0% and 93.4% respectively.
+
+<p align="center"><img src="figures_model/evalbin_confusion.png"></p>
+-->
 <p>The prediction used in the screen shots above was derived from a logistic regression on the <code>dvd</code> data. The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load examples</code>). The model was estimated using <em>Model &gt; Logistic regression (GLM)</em>. The predictions shown below were generated in the <em>Predict</em> tab.</p>
 <p align="center">
 <img src="figures_model/evalbin_logistic.png">
