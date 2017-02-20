@@ -49,6 +49,7 @@ kappa                    | Corrects the accuracy measure for the probability of 
 profit                   | Total profitability achieved by targeting all customers with a predicted probability above the break-even response rate
 index                    | Index of relative profitability achieved across the selected `Predictor` variables (maximum is 1)
 ROME										 | Return on Marketing Expenditures (ROME) achieved by targeting all customers with a predicted probability above the break-even response rate
+contact									 | Proportion of customers to contact, i.e., (TP + FP) / total
 AUC										   | Area Under the ROC Curve (AUC). ROC stands for Receiver Operating Characteristic.
 
 
