@@ -12,11 +12,11 @@ Suppose we want to test alternative movie theater designs using three factors.
 
 The factors to include in the analysis have 3, 2, and 3 levels so we enter `3` in the `Max levels` input.
 
-## Variable name, Level 1, Level 2, and Level 3
+## Variable name and level
 
-Here we will enter the factors of interest. For example, enter `price` as the variable name, \$10 as level 1, \$13, as level 2, and \$16 as level 3. Then click the <i title='Add factor' class='fa fa-plus-circle'></i> icon. This will enter the specification details required into the `Design factors` window in the format Radiant needs for the analysis. To remove a line click the <i title='Add factor' class='fa fa-minus-circle'></i> icon.
+Here we enter the factors of interest. For example, enter `price` as the variable name, \$10 as level 1, \$13, as level 2, and \$16 as level 3. Then click the <i title='Add factor' class='fa fa-plus-circle'></i> icon. This will add the provided information about the factor to the `Design factors` window in the format Radiant needs for analysis. To remove the last line in the `Design factors` window click the <i title='Add factor' class='fa fa-minus-circle'></i> icon.
 
-After entering the required information your screen should look as follows:
+After entering the required information for each of the three factors your screen should look as follows:
 
 <p align="center"><img src="figures_design/doe_factors.png"></p>
 
@@ -30,26 +30,30 @@ For our example, the ideal design has 18 trials. However, this implies that the 
 
 ## # trials
 
-This input can be used to control the number of trials to generate. If left blank Radiant will try to find an appropriate number of trials using the `optFederov` routine in R.
+This input can be used to control the number of trials to generate. If left blank Radiant will try to find an appropriate number of trials using the `optFederov` function in the [AlgDesign](https://cran.r-project.org/web/packages/AlgDesign/index.html) package.
 
-Lets review the output in `Design efficiency`. The goal is to find a design with less than 18 trials that will still allow us to estimate the effects we are interested in (e.g., the main-effects of the different levels of price, sight, and food). Notice that there are several designs that are considered `balanced` (i.e., each level is included in the same number of trials). We are looking for a design that is balanced and has minimal correlation between factors (e.g., D-efficiency score above .8). You can think of the D-efficiency score as a measure of how cleanly we will be able to estimate the effects of interest after running the test/experiment. Again, the ideal D-efficiency score is 1 but a number above .8 is reasonable.
+Lets review the output in `Design efficiency`. For our example, the goal is to find a design with less than 18 trials that will still allow us to estimate the effects we are interested in (e.g., the main-effects of the different levels of price, sight, and food). Notice that there are several designs that are considered `balanced` (i.e., each level is included in the same number of trials). We are looking for a design that is balanced and has minimal correlation between factors (e.g., a D-efficiency score above .8). You can think of the D-efficiency score as a measure of how cleanly we will be able to estimate the effects of interest after running the test/experiment. The ideal D-efficiency score is 1 but a number above .8 is considered reasonable.
 
-The smallest number of trials with a balanced design is 6. This design is `balanced` simply because 6 is divisible by 3 and 2 (i.e., the number of levels in our factors). However, the D-efficiency score is rather low (.513). The next smallest balanced design has 12 trials and has a much higher D-efficiency. This design is reasonable if we want to be able to estimate the main-effects of each factor level on movie-theater choice or preference.
+The smallest number of trials with a balanced design is 6. This design is balanced simply because 6 is divisible by 3 and 2 (i.e., the number of levels in our factors). However, the D-efficiency score is rather low (.513). The next smallest balanced design has 12 trials and has a much higher D-efficiency. This design is a reasonable choice if we want to estimate the main-effects of each factor level on movie-theater choice or preference.
 
-Note that the off-diagonal elements of the (polychoric) correlation matrix for a partial factorial design will all be equal to 0 only when the D-efficiency is equal to 1. The [polycor](https://cran.r-project.org/web/packages/polycor/index.html) package is used to the estimate the correlations between the factors.
+To generate the desired partial factorial design enter `12` in the `# trials` input and press `Create`. This will generate the following output.
+
+<p align="center"><img src="figures_design/doe_output_partial.png"></p>
+
+The `trial` column in the output shows which profiles have been selected from the full factorial design. Note that the off-diagonal elements of the (polychoric) correlation matrix for a partial factorial design will all be equal to 0 *only* when D-efficiency is equal to 1. The [polycor](https://cran.r-project.org/web/packages/polycor/index.html) package is used to the estimate the correlations between the factors.
 
 ## Rnd. seed:
 
-A partial factorial design need not be unique (i.e., there might be multiple combinations of trials or profiles that are equally good). By setting a random seed you ensure you will get the same set of trials each time you press `Create`. However, to see if there are other options, empty the `Rnd. seed` box and press `Create` a few times.
+A partial factorial design may not be unique (i.e., there might be multiple combinations of trials or profiles that are equally good). By setting a random seed you ensure the same set of trials will be generated each time you press `Create`. However, to see alternative partials factorial designs empty the `Rnd. seed` box and press `Create` a few times to see how the set of selected trials changes.
 
 ## Interactions
 
 Note that we will not be able to estimate all possible interactions between `price`, `sight`, and `food` if we use a design with 12 trials. This is the trade-off inherent in partial factorial designs! In fact, if we do want to estimate even one interaction (e.g., select `price:sight`) the appropriate design has 18 trials (i.e., the number in the full factorial design that includes all possible combinations of factor levels).
 
-## Create, Partial, Full
+## Partial and Full factorial design
 
-These buttons can be used to `Create` the full and partial factorial designs. To download the design you want in csv format click on the either the `Partial` or the `Full` button.
+Click on the `Partial` or the `Full` button to download the Partial or Full factorial design in csv format .
 
 ## Upload and Download
 
-You can download the list of factors you entered by clicking the `Download` button. To upload a previously entered set of factors click the `Upload` button.
+To download the list of factors you entered click the `Download` button. To upload a previously created set of factors click the `Upload` button and browse to find the desired file.
