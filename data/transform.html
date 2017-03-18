@@ -309,7 +309,7 @@ r_data[[&#39;diamonds&#39;]] &lt;- mutate_each(r_data[[&#39;diamonds&#39;]], fun
 <h3>Change variables</h3>
 <div id="bin" class="section level4">
 <h4>Bin</h4>
-<p>The <code>Bin</code> command is a convenience function for the <code>xtile</code> command discussed below when you want to create multiple quitile/decile/… variables. To calculate quintiles enter <code>5</code> as the <code>Nr bins</code>. The <code>reverse</code> option replaces 1 by 5, 2 by 4, …, 5 by 1. Choose an appropriate extension for the new variable(s).</p>
+<p>The <code>Bin</code> command is a convenience function for the <code>xtile</code> command discussed below when you want to create multiple quintile/decile/… variables. To calculate quintiles enter <code>5</code> as the <code>Nr bins</code>. The <code>reverse</code> option replaces 1 by 5, 2 by 4, …, 5 by 1. Choose an appropriate extension for the new variable(s).</p>
 </div>
 <div id="change-type" class="section level4">
 <h4>Change type</h4>
@@ -449,7 +449,7 @@ r_data[[&#39;diamonds&#39;]] &lt;- mutate_each(r_data[[&#39;diamonds&#39;]], fun
 </ol>
 <pre class="r"><code>income_rc = ifelse(ID %in% c(1, 3, 15), income/1000, income)</code></pre>
 <ol start="12" style="list-style-type: decimal">
-<li>If a date variable is in a format not available through the <code>Type</code> menu you can use the <code>parse_date_time</code> function. For a date formated as <code>2-1-14</code> you would specify the command below (note that this format will also be parsed correctly by the <code>mdy</code> function in the <code>Type</code> menu)</li>
+<li>If a date variable is in a format not available through the <code>Type</code> menu you can use the <code>parse_date_time</code> function. For a date formatted as <code>2-1-14</code> you would specify the command below (note that this format will also be parsed correctly by the <code>mdy</code> function in the <code>Type</code> menu)</li>
 </ol>
 <pre class="r"><code>date = parse_date_time(x, &#39;%m%d%y&#39;)</code></pre>
 <ol start="13" style="list-style-type: decimal">
@@ -472,7 +472,15 @@ r_data[[&#39;diamonds&#39;]] &lt;- mutate_each(r_data[[&#39;diamonds&#39;]], fun
 <li>Calculate quintiles for a variable <code>recency</code> by using the <code>xtile</code> command. To create deciles replace <code>5</code> by <code>10</code>.</li>
 </ol>
 <pre class="r"><code>rec_iq = xtile(recency, 5)</code></pre>
-<p>Note: For examples 7, 8, and 15 above you may need to change the new variable to type <code>factor</code> before using it for further analysis (see also <code>Type</code> above)</p>
+<ol start="18" style="list-style-type: decimal">
+<li>To reverse the ordering of the quintiles created in 17 above use <code>rev = TRUE</code></li>
+</ol>
+<pre class="r"><code>rec_iq = xtile(recency, 5, rev = TRUE)</code></pre>
+<ol start="18" style="list-style-type: decimal">
+<li>To remove text from entries in a character or factor variable use <code>sub</code> to remove only the first instance or <code>gsub</code> to remove all instances. For example, suppose a each row for a variable <code>bk_score</code> has the letters “ltv” before a number (e.g., “ltv150”). We could replace each occurrence of “ltv” by “” as follows:</li>
+</ol>
+<pre class="r"><code>bk_score = sub(&quot;ltv&quot;, &quot;&quot;, bk_score)</code></pre>
+<p>Note: For examples 7, 8, and 15 above you may need to change the new variable to type <code>factor</code> before using it for further analysis (see also <code>Change type</code> above)</p>
 </div>
 </div>
 <div id="clean-data" class="section level3">
