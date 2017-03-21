@@ -298,7 +298,7 @@ $(document).ready(function () {
 <pre class="r"><code>result &lt;- single_mean(diamonds, &quot;price&quot;)
 summary(result)</code></pre>
 <pre><code>Single mean test
-Data      : ----- 
+Data      : diamonds 
 Variable  : price 
 Confidence: 0.95 
 Null hyp. : the mean of price = 0 
@@ -326,7 +326,7 @@ library(radiant)</code></pre>
 <pre class="r"><code>result &lt;- single_mean(mtcars, &quot;mpg&quot;, comp_value = 20, alternative = &quot;greater&quot;)
 summary(result)</code></pre>
 <pre><code>Single mean test
-Data      : ----- 
+Data      : mtcars 
 Variable  : mpg 
 Confidence: 0.95 
 Null hyp. : the mean of mpg = 20 
@@ -345,7 +345,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code>result &lt;- compare_means(diamonds, &quot;clarity&quot;, &quot;price&quot;)
 summary(result)</code></pre>
 <pre><code>Pairwise mean comparisons (t-test)
-Data      : ----- 
+Data      : diamonds 
 Variables : clarity, price 
 Samples   : independent 
 Confidence: 0.95 
@@ -401,7 +401,7 @@ radiant()</code></pre>
 <pre class="r"><code>result &lt;- compare_means(salary, &quot;rank&quot;, &quot;salary&quot;)
 summary(result)</code></pre>
 <pre><code>Pairwise mean comparisons (t-test)
-Data      : ----- 
+Data      : salary 
 Variables : rank, salary 
 Samples   : independent 
 Confidence: 0.95 
@@ -424,7 +424,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code>salary %&gt;% compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;% {summary(.); plot(.)}</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre><code>Pairwise mean comparisons (t-test)
-Data      : ----- 
+Data      : . 
 Variables : rank, salary 
 Samples   : independent 
 Confidence: 0.95 
@@ -445,7 +445,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code>result &lt;- regress(diamonds, &quot;price&quot;, c(&quot;carat&quot;,&quot;clarity&quot;))
 summary(result, sum_check = &quot;confint&quot;)</code></pre>
 <pre><code>Linear regression (OLS)
-Data     : ----- 
+Data     : diamonds 
 Response variable    : price 
 Explanatory variables: carat, clarity 
 Null hyp.: the effect of x on price is zero
@@ -480,7 +480,7 @@ clarity|VVS1    5027.669  4607.574  5447.764 420.095
 clarity|IF      5265.170  4807.024  5723.317 458.147</code></pre>
 <pre class="r"><code>predict(result, pred_cmd = &quot;carat = 1:10&quot;)</code></pre>
 <pre><code>Linear regression (OLS)
-Data                 : ----- 
+Data                 : diamonds 
 Response variable    : price 
 Explanatory variables: carat, clarity 
 Prediction command   : carat  =  1:10 
@@ -513,7 +513,7 @@ result &lt;- hclus(shopping, &quot;v1:v6&quot;)
 ## summary - not much here - plots are more important
 summary(result)</code></pre>
 <pre><code>Hierarchical cluster analysis
-Data        : ----- 
+Data        : shopping 
 Variables   : v1:v6 
 Method      : ward.D 
 Distance    : sq.euclidian 
@@ -532,7 +532,7 @@ plot(result, plots = &quot;dendro&quot;, cutoff = 0.1)</code></pre>
 result &lt;- kclus(shopping, vars = &quot;v1:v6&quot;, nr_clus = 3)
 summary(result)</code></pre>
 <pre><code>K-means cluster analysis
-Data         : ----- 
+Data         : shopping 
 Variables    : v1:v6 
 Clustering by: K-means
 HC method    : ward.D 
