@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -343,22 +343,27 @@ $(document).ready(function () {
 <div id="customizing-plots-in-r-report" class="section level3">
 <h3>Customizing plots in <em>R &gt; Report</em></h3>
 <p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen. The example below illustrates how to customize a command in the <a href="/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
-<pre class="r"><code>visualize(&quot;diamonds&quot;, yvar = &quot;price&quot;, xvar = &quot;carat&quot;, type = &quot;scatter&quot;, custom = TRUE) +
-  ggtitle(&quot;A scatterplot&quot;) + xlab(&quot;price in $&quot;)</code></pre>
+<pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, yvar = &quot;price&quot;, xvar = &quot;carat&quot;, type = &quot;scatter&quot;, custom = TRUE) +
+  labs(
+    title = &quot;A scatterplot&quot;, 
+    y = &quot;Price in $&quot;,
+    x = &quot;Carats&quot;
+  )</code></pre>
 <p><strong>Some common customization commands:</strong></p>
 <ul>
-<li>Add a title: <code>+ ggtitle(&quot;my title&quot;)</code></li>
-<li>Change label: <code>+ xlab(&quot;my X-axis label&quot;)</code> or <code>+ ylab(&quot;my X-axis label&quot;)</code></li>
+<li>Add a title: <code>+ labs(title = &quot;my title&quot;)</code></li>
+<li>Change label: <code>+ labs(x = &quot;my X-axis label&quot;)</code> or <code>+ labs(y = &quot;my Y-axis label&quot;)</code></li>
 <li>Remove all legends: <code>+ theme(legend.position = &quot;none&quot;)</code></li>
-<li>Change legend title: <code>+ guides(color = guide_legend(title = &quot;New title&quot;))</code> or <code>+ guides(fill = guide_legend(title = &quot;New title&quot;))</code></li>
+<li>Change legend title: <code>+ labs(color = &quot;New legend title&quot;)</code> or <code>+ labs(fill = &quot;New legend title&quot;)</code></li>
 <li>Rotate tick labels: <code>+ theme(axis.text.x = element_text(angle = 90, hjust = 1))</code></li>
-<li>Set plot limits: <code>+ ylim(15, 20)</code> or <code>+ xlim(&quot;VS1&quot;,&quot;VS2&quot;)</code></li>
+<li>Set plot limits: <code>+ ylim(5000, 8000)</code> or <code>+ xlim(&quot;VS1&quot;,&quot;VS2&quot;)</code></li>
 <li>Remove size legend: <code>+ scale_size(guide = &quot;none&quot;)</code></li>
 <li>Change size range: <code>+ scale_size(range=c(1,6))</code></li>
 <li>Draw a horizontal line: <code>+ geom_hline(yintercept = 0.1)</code></li>
 <li>Draw a vertical line: <code>+ geom_vline(xintercept = 8)</code></li>
 </ul>
-<p>See the ggplot2 documentation page for additional options <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.</p>
+<p>For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.</p>
+<p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.</p>
 </div>
 
 

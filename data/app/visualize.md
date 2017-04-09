@@ -60,21 +60,27 @@ The best way to keep/store plots is to generate a `visualize` command by clickin
 To customize a plot first generate the `visualize` command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen. The example below illustrates how to customize a command in the <a href="/docs/data/report.html" target="_blank">_R > Report_</a> tab. Notice that `custom` is set to `TRUE`.
 
 ```r
-visualize("diamonds", yvar = "price", xvar = "carat", type = "scatter", custom = TRUE) +
-  ggtitle("A scatterplot") + xlab("price in $")
+visualize(dataset = "diamonds", yvar = "price", xvar = "carat", type = "scatter", custom = TRUE) +
+  labs(
+    title = "A scatterplot", 
+    y = "Price in $",
+    x = "Carats"
+  )
 ```
 
 **Some common customization commands:**
 
-* Add a title: `+ ggtitle("my title")`
-* Change label: `+ xlab("my X-axis label")` or `+ ylab("my X-axis label")`
+* Add a title: `+ labs(title = "my title")`
+* Change label: `+ labs(x = "my X-axis label")` or `+ labs(y = "my Y-axis label")`
 * Remove all legends: `+ theme(legend.position = "none")`
-* Change legend title: `+ guides(color = guide_legend(title = "New title"))` or `+ guides(fill = guide_legend(title = "New title"))`
+* Change legend title: `+ labs(color = "New legend title")` or `+ labs(fill = "New legend title")`
 * Rotate tick labels: `+ theme(axis.text.x = element_text(angle = 90, hjust = 1))`
-* Set plot limits: `+ ylim(15, 20)` or `+ xlim("VS1","VS2")`
+* Set plot limits: `+ ylim(5000, 8000)` or `+ xlim("VS1","VS2")`
 * Remove size legend: `+ scale_size(guide = "none")`
 * Change size range: `+ scale_size(range=c(1,6))`
 * Draw a horizontal line: `+ geom_hline(yintercept = 0.1)`
 * Draw a vertical line: `+ geom_vline(xintercept = 8)`
 
-See the ggplot2 documentation page for additional options <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.
+For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.
+
+See also the ggplot2 documentation site <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.

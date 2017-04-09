@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -422,7 +422,6 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <p><img src="programming_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>An alternative way to write this code is to use <code>piping</code> (see <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">dplyr</a> and <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a> vignettes):</p>
 <pre class="r"><code>salary %&gt;% compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;% {summary(.); plot(.)}</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre><code>Pairwise mean comparisons (t-test)
 Data      : . 
 Variables : rank, salary 
@@ -441,6 +440,7 @@ Adjustment: None
  AssocProf = Prof       AssocProf not equal to Prof       -32895.67 &lt; .001  ***
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p><img src="programming_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>We can also run regressions and get output in a format that would require many lines of code to produce from scratch:</p>
 <pre class="r"><code>result &lt;- regress(diamonds, &quot;price&quot;, c(&quot;carat&quot;,&quot;clarity&quot;))
 summary(result, sum_check = &quot;confint&quot;)</code></pre>

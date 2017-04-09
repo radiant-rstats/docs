@@ -15,6 +15,7 @@ You can select options from `Column header` dropdown to switch between different
 ## Functions
 
 Below you will find a brief description of several functions. Most functions, however, will be self-explanatory.
+
 * `n` calculates the number of observations, or rows, in the data or in a group if a `Group by` variable has been selected (`n` uses the `length` function in R)
 * `n_distinct` calculates the number of distinct values
 * `n_missing` calculates the number of missing values
