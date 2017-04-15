@@ -31,7 +31,7 @@ summary(aov(breaks~wool*tension, warpbreaks))
 The easiest way to visualize an interaction like this is with an ugly but functional interaction plot:
 
 ```{r}
-with(warpbreaks,interaction.plot(tension,wool,breaks))
+# with(warpbreaks,interaction.plot(tension,wool,breaks))
 ```
 
 (it takes 3 arguments: the first is the factor for the x-axis, then the trace factor for the different lines, then the response variable). And then of course you could instead use a barplot (using something like ggplot to make it prettier).

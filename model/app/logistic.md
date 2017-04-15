@@ -28,11 +28,11 @@ We can use the _Predict_ tab to predict probabilities for different values of th
 
 As an example of how to use data as input for prediction (e.g., predict the survival probabilities for 30 year old men and women in each of the passenger classes) you can use `titanic_pred`. Select `titanic` as the dataset for analysis and specify a model in _Model > Logistic regression (GLM)_ with `pclass`, `sex`, and `age` as explanatory variables. Choose `Data` from the `Prediction input` dropdown and select `titanic_pred` from the `Predict for profiles` dropdown to generate the predictions. Note that the variables in the datafile and in the model must be the same.
 
-To generate predicted values for all cases in, for example, the `titanic` dataset select `Data` from the `Prediction input` dropdown then select the `titanic` dataset. You can also create a dataset for input in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab. You can also load csv data as input. For example, paste the following link `https://radiant-rstats.github.io/docs/examples/glm_pred.csv` file into Radiant through the _Data > Manage_ tab and try to generate the same predictions. Hint: Use `csv (url)` to load the data link above.
+To generate predicted values for all cases in, for example, the `titanic` dataset select `Data` from the `Prediction input` dropdown then select the `titanic` dataset. You can also create a dataset for input in _Data > Transform_ using `Expand grid` or in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab. You can also load csv data as input. For example, paste the following link `https://radiant-rstats.github.io/docs/examples/glm_pred.csv` file into Radiant through the _Data > Manage_ tab and try to generate the same predictions. Hint: Use `csv (url)` to load the data link above.
 
 Once the desired predictions have been generated they can be saved to a csv file by clicking the download button button on the top right of the screen. To add predictions to the dataset, click the `Store` button.
 
-### Example
+### Example 1: Titanic Survival
 
 As an example we will use a dataset that describes the survival status of individual passengers on the Titanic. The principal source for data about Titanic passengers is the Encyclopedia Titanic. One of the original sources is Eaton & Haas (1994) Titanic: Triumph and Tragedy, Patrick Stephens Ltd, which includes a passenger list created by many researchers and edited by Michael A. Findlay. Suppose we want to investigate which factors are most strongly associated with the chance of surviving the sinking of the Titanic. Lets focus on four variables in the database:
 
@@ -97,3 +97,14 @@ To see the effects for age type `age = seq(0, 100, 20)` in the **Prediction comm
 For a more comprehensive overview of the influence of gender, age, and passenger class on the chances of survival we can generate a full table of probabilities by selecting `Command` from the `Prediction input` dropdown in the _Predict_ tab and selecting `Titanic` from the `Predict for profiles`. There are too many numbers to easily interpret in table form but the figure gives a clear overview of how survival probabilities change with `age`, `gender`, and `pclass`:
 
 <p align="center"><img src="figures_model/logistic_predict_data.png"></p>
+
+
+### Example 2: DVD sales
+
+We will use the dataset `dvd.rda`, available for download from <a href="https://radiant-rstats.github.io/docs/examples/dvd.rda" target="_blank">GitHub</a>. The data contain information on a sample of 20,000 customers who received an "instant coupon." The value of the coupon was varied between \$1 and \$5 and randomly assigned to the selected customers. We can use logistic regression to estimate the effect of the coupon on purchase of a newly released DVD. Customers who received the coupon and purchased the DVD are identified in the data by the variable `buy`. Because the variable we want to predict is binary (`buy` = `yes` if the customer purchased the DVD and `buy` = `no` if she did not), logistic regression is appropriate.
+
+To keep the example simple, we use only information on the value of the coupon customers received. Hence, `buy` is our response variable and `coupon` is our explanatory (or predictor) variable.
+
+<p align="center"><img src="figures_model/logistic_dvd.png"></p>
+
+The regression output shows that coupon value is a statistically significant predictor of customer purchase. The coefficient from the logistic regression is 0.701 and the odds ratio is equal to 2.015 (i.e., $e^{0.701}$). Because the odds ratio is larger than 1, a higher coupon value is associated with higher odds of purchase. Also, because the p.value for the coefficient is smaller than 0.05 we conclude that (1) the coefficient is statistically significantly different from 0 and (2) the odds ratio is statistically significantly different from 1. An odds ratio of 1 is equivalent to a coefficient estimate of 0 in a linear regression and implies that the explanatory (or predictor) variable has no effect on the response variable. The estimated odds ratio of 2.016 suggests that the odds of purchase increase by 101.6% for each dollar increase in coupon value.
