@@ -61,7 +61,7 @@ We can confirm this results in three steps: (1) Create a new dataset with all 36
 
 <p align="center"><img src="figures_multivariate/conjoint_predict.png"></p>
 
-#### Step 3: Sort prediction
+#### Step 3: Sort predictions
 
 <p align="center"><img src="figures_multivariate/conjoint_view.png"></p>
 
