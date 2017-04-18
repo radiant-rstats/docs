@@ -242,3 +242,14 @@ For a simple example of how the simulate tool could be used to find the price th
 ### Using Grid Search in the Repeat tab
 
 Note that the _Repeat_ tab also has the option to use a `Grid search` input to repeat a simulation by replacing one or more `Constants` specified in the `Simulation` tab in an iterative fashion. This input option is shown only when `Group by` is set to `Repeat`. Provide the minimum and maximum values as well as the step-size in the `Grid search` inputs. For example, enter a `Name` (`price`), the `Min` (4), `Max` (10), and `Step` (0.01) value. If multiple variables are specified in `Grid search` all possible value combinations will be created and evaluated in the simulation. Note that if `Grid search` has been selected the number of values generated will override the number of repetitions specified in `# reps`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text area (e.g., `price 4 10 0.01`).
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+plot(result, custom = TRUE) %>%
+	gridExtra::grid.arrange(grobs = ., top = "Simulation plots", ncol = 2)
+```

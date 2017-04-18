@@ -8,7 +8,7 @@ First, go to the _Data > Manage_ tab, select **examples** from the `Load data of
 
 After determining the appropriate number of clusters to extract using Hierarchical cluster analysis we use K-clustering to create the final segments. The main advantage of this algorithm is it's flexibility and robustness in finding the most appropriate grouping of respondents. For marketing and business data we often use Hierarchical cluster analysis to select the number of segments and K-clustering to create the final segments.
 
-To apply K-clustering to the toothpaste data select `K-means` as the algorithm and variables v1 through v6 in the `Variables` box. Select 3 as the number of clusters. Because the data has relatively few observations we can use Hierarchical Cluster Analysis (HC) to provide the initial cluster centers. After the settings have been changed press the `Estimate` button to generate results.
+To apply K-clustering to the toothpaste data select `K-means` as the algorithm and variables v1 through v6 in the `Variables` box. Select 3 as the number of clusters. Because the data has relatively few observations we can use Hierarchical Cluster Analysis (HC) to provide the initial cluster centers. After the settings have been changed click the `Estimate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate results.
 
 In the _Summary_ tab we use the `Cluster means` table to describe the individuals assigned to a segment. Each number in the table shows the average score on a variable for people in that segment. For example, segment 3 has an average score of 5.750 out of 7 on question v2. We are looking for either very high or very low mean values to help distinguish segments because we want to establish how one segment differs from the others. If there are no substantial differences in the mean value of a variable across different segments that variable is not very useful for interpretation. By highlighting the variables that most clearly distinguish the different segments we can generate a name or label that describes consumers in each segment and illustrates how the segments differ from one another.
 
@@ -44,3 +44,14 @@ In the _Summary_ tab we see there is a significant association between these two
 For a graphical depiction of the association go to the _Plot_ tab. If we select `Deviation std.` we see that the `Uninvolved` segment has significantly more men than we would expect under the null of no-association. We could also argue that there are more women in the `Cosmetic` segment than we would expect under the null of no-association, although the significance level is marginal (i.e., < .1 but not < .05). In sum, in these data men seem more likely to belong to the `Uninvolved brushers` segment and women seem (marginally) more likely to be in the `Cosmetic brushers` segment.
 
 <p align="center"><img src="figures_multivariate/kclus_cross_tabs_plot.png"></p>
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+plot(result, plots = "bar", custom = TRUE) %>%
+	gridExtra::grid.arrange(grobs = ., top = "K-means Cluster Analysis", ncol = 2)
+```

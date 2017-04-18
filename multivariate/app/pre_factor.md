@@ -12,7 +12,7 @@ The KMO and Bartlett test evaluate all available data together. A KMO value over
 
 As can be seen in the output from _Multivariate > Factor > Pre-factor_ below, Bartlett's test statistic is large and significant (p.value close to 0) as desired. The Kaiser-Meyer-Olkin (KMO) measure is larger than .6 and thus acceptable. The variable collinearity values are all above .4 so all variables can be used in the analysis.
 
-To replicate the results shown in the screenshot make sure you have the `toothpaste` data loaded. Then select variables `v1` through `v6` and press the `Estimate` button.
+To replicate the results shown in the screenshot make sure you have the `toothpaste` data loaded. Then select variables `v1` through `v6` and click the `Estimate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate results.
 
 <p align="center"><img src="figures_multivariate/pre_factor_summary.png"></p>
 
@@ -25,3 +25,17 @@ At first glance the scree-plot of the Eigenvalues shown below seems to suggest t
 <p align="center"><img src="figures_multivariate/pre_factor_plot.png"></p>
 
 The increase in cumulative % explained variance is relatively small going from 2 to 3 factors (i.e., from 82% to 90%). This is confirmed by the fact that the eigenvalue for factor 3 is smaller than 1 (.44). Again, we choose 2 factors. The first 2 factors capture 82% of the variance in the original data which is excellent.
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+plot(result, plots = "scree", custom = TRUE) + 
+  labs(caption = "Data used from ...")
+```
+
+
+

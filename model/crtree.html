@@ -289,6 +289,13 @@ $(document).ready(function () {
 <blockquote>
 <p>Estimate a classification or regression tree</p>
 </blockquote>
+<p>To estimate a model select the model type (i.e., Classification or Regression), Response variable, and one or more Explanatory variables. Press the <code>Estimate</code> button or <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results.</p>
+<div id="r-report" class="section level3">
+<h3>R &gt; Report</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>If either a <code>Prune</code> or <code>Importance</code> plot was created it can be customized using <code>ggplot2</code> commands (e.g., <code>plot(result, plots = &quot;prune&quot;, custom = TRUE) + labs(x = &quot;# nodes&quot;)</code>). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>It is not currently possible to add a title or caption directly to a <code>Tree</code> plot.</p>
+</div>
 
 
 &copy; Vincent Nijs (2016) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/80x15.png" /></a>

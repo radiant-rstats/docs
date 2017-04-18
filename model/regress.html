@@ -332,7 +332,7 @@ $(document).ready(function () {
 <li>Which explanatory variables are significant predictors of customer value (use a 95% confidence level)?</li>
 </ol>
 <p><strong>Answer:</strong></p>
-<p>Select the relevant variables mentioned above and press the <code>Estimate</code> button. Output from <em>Model &gt; Linear regression (OLS)</em> is provided below:</p>
+<p>Select the relevant variables mentioned above and press the <code>Estimate</code> button or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac). Output from <em>Model &gt; Linear regression (OLS)</em> is provided below:</p>
 <p align="center">
 <img src="figures_model/regress_catalog_summary.png">
 </p>
@@ -468,6 +468,15 @@ $(document).ready(function () {
 <p align="center">
 <img src="figures_model/regress_log_diamonds_summary.png">
 </p>
+</div>
+<div id="r-report" class="section level3">
+<h3>R &gt; Report</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<pre class="r"><code>result &lt;- regress(dataset = &quot;diamonds&quot;, rvar = &quot;price&quot;, evar = c(&quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;))
+summary(result)
+plot(result, plots = &quot;scatter&quot;, custom = TRUE) %&gt;%
+    gridExtra::grid.arrange(grobs = ., top = &quot;Scatter plots&quot;, ncol = 2)</code></pre>
 </div>
 <div id="technical-notes" class="section level3">
 <h3>Technical notes</h3>

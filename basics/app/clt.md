@@ -8,7 +8,7 @@ Source: <a href="http://en.wikipedia.org/wiki/Central_limit_theorem" target="_bl
 
 ## Sample
 
-To generate samples select a distribution from the `Distribution` dropdown and accept (or change) the default values. Then press `Sample` to run the simulation and show plots of the simulated data.
+To generate samples select a distribution from the `Distribution` dropdown and accept (or change) the default values. Then press `Sample` or press `CTRL-enter` (`CMD-enter` on mac) to run the simulation and show plots of the simulated data.
 
 ### Khan on the CLT
 

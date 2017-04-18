@@ -1,12 +1,14 @@
 > Analyze responses from a conjoint survey
 
-To setup a conjoint study from scratch we need to determine the attributes and attributes levels that should be included. Once that has been done we would typically need to generate a fractional factorial design of conjoint profiles. This is a subset of all possible profiles that could be generated for the set of attributes and levels that were selected (see <a href="/docs/design/doe.html" target="_blank">_Design > DOE > Design of Experiments_</a>).
+To setup a conjoint study from scratch we need to determine the attributes and attributes levels that should be included. Once that has been done we would typically need to generate a fractional factorial design of conjoint profiles. This is a subset of all possible profiles that could be generated for the set of attributes and levels that were selected (see <a href="https://radiant-rstats.github.io/docs/design/doe.html" target="_blank">_Design > DOE > Design of Experiments_</a>).
 
 Once data is available from respondents their evaluations are analyzed to determine Part Worths (PW) and Importance Weights (IW).
 
+To estimate a model select respondents ratings (or rankings) as the `Profile evaluations` and select the profile `Attributes`. Press the `Estimate` button or `CTRL-enter` (`CMD-enter` on mac) to generate results. 
+
 ### Example: Carpet cleaner
 
-A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study (dataset: carpet.rda is part of the example datasets). The attributes are:
+A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study. To access the `carpet` dataset go to _Data > Manage_, select `Examples` from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `carpet` dataset. 
 
 - design = Package Design (A, B, C)
 - brand = Brand Name (K2R, Glory, Bissell)
@@ -19,13 +21,16 @@ Design characteristics:
 
 <p align="center"><img src="figures_multivariate/conjoint_carpet_design.png"></p>
 
-Based on the attributes, 108 possible profiles could be created (i.e., 3x3x3x2x2 = 108). The respondent was given a select set of 18 and was asked to rank the profiles from most preferred (rank 1) to least preferred (rank 18).  The first five columns represent the five attributes and the last column is the respondent's ranking.
+Based on the attributes, 108 possible profiles could be created (i.e., 3x3x3x2x2 = 108). The respondent was given a set of 18 and was asked to rank the profiles from most preferred (rank 1) to least preferred (rank 18).  The first five columns represent the five attributes and the last column is the respondent's ranking.
 
-a. Compute the correlation matrix for the attribute variables (see <a href="/docs/basics/correlation.html" target="_blank">_Basics > Tables > Correlation_</a>). Display the correlation matrix.  What do you notice in the correlation matrix? What does this say about the particular set of 18 profiles that was presented to the respondent?
+a. Compute the Variance Inflation Factors (VIF) for the attribute variables.  What do you notice? What does this say about the particular set of 18 profiles that was presented to the respondent?
 
-* The correlation matrix is displayed below. Note that the correlations for any two attributes are zero. In the fractional factorial design profiles are deliberately selected such that all attributes are uncorrelated (i.e., orthogonal).
+The VIF scores displayed below indicate that the attributes are perfectly orthogonal. In the fractional factorial design profiles were deliberately selected such that all attributes are uncorrelated.
 
-<p align="center"><img src="figures_multivariate/conjoint_corr_mat.png"></p>
+		Multicollinearity diagnostics:
+		    design brand price seal money_back
+		VIF      1     1     1    1          1
+		Rsq      0     0     0    0          0
 
 b. Estimate a conjoint model using the respondent's evaluations as the dependent variable and the attributes as the predictors. Show the complete list of part-worths and importance weights.
 
@@ -45,3 +50,24 @@ d. What is the highest predicted utility that can be obtained? What are the char
 
 *	The option with the highest (predicted) utility is: Package B, Bissell, $1.19, with GHKS, with MBG
 *	Predicted Utility based on PWs: 6.5 + 8.0 + 1.5 + 0 + 1.5 + 4.5 = 22
+
+We can confirm this results in three steps: (1) Create a new dataset with all 36 profiles in _Data > Transform_ using `Expand grid`, (2) Predict the utility for each of the profiles by selecting the newly created dataset in the _Multivariate > Conjoint > Predict_ tab and storing the prediction in a new variable `predict_ca`, (3) Sort the new dataset on `predict_ca` in the _Data > View_ tab. These three steps are shown in the screen shots below
+
+<p align="center"><img src="figures_multivariate/conjoint_expand.png"></p>
+<p align="center"><img src="figures_multivariate/conjoint_predict.png"></p>
+<p align="center"><img src="figures_multivariate/conjoint_view.png"></p>
+
+## Multiple respondents
+
+If profile evaluations are available for multiple respondents and a respondent id variable is included in the dataset we can estimate conjoint results at the individual level by selecting the respondent id from the `By` dropdown. We can then save the Partworths and/or Importance weights for all respondents to a new dataset in Radiant and use that for segmentation using _Multivariate > K-clustering_.
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+plot(result, plots = c("pw","iw"), custom = TRUE) %>%
+	gridExtra::grid.arrange(grobs = ., top = "Conjoint Analysis", ncol = 2)
+```

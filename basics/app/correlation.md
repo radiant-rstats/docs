@@ -36,3 +36,10 @@ For larger datasets it can useful to click `Pause estimation` before selecting v
 ### Khan on correlation
 
 <p align="center"><iframe width="640" height="375" src="https://www.youtube.com/embed/-Y-M9aD_ccQ" frameborder="0" allowfullscreen></iframe></p>
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+By default the correlation plot samples 1,000 data points. To include all data points use `plot(result, n = -1)`
+To add, for example, a title to the plot use `title(main = "Correlation plot\n\n")`. See the <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-commands" target="_blank">R graphics</a> documentation for additional information.

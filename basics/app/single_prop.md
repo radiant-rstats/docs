@@ -49,12 +49,6 @@ We can obtain the critical value by using the probability calculator in the _Bas
 
 Because the number of successes (i.e., the number of "yes" responses) **is** larger than the critical value (93 vs 85) we **cannot** reject the null hypothesis and **do not suggest** that management should commit resources to increase brand awareness.
 
-<!--
-In addition to the numerical output provided in the _Summary_ tab we can visualize the data in the _Plot_ tab. The settings in the side-panel are the same as before. The black lines in the histogram show the sample mean (solid) and the confidence interval around the sample mean (dashed). The red line shows the comparison value (i.e., unit sales under the null-hypothesis). Because the red line does **not** fall within the confidence interval (1897 to Inf.) we reject the null-hypothesis in favor of the alternative.
-
-<p align="center"><img src="figures_basics/single_proportion_plot.png"></p>
--->
-
 ### _Stats speak_
 
 This is a **single proportion** test of the null hypothesis that the true population **proportion** is equal to **0.1**. Using a significance level of 0.05, we **cannot** reject the null hypothesis, and **cannot** conclude that the true population **proportion** is **less** than **0.1**.
@@ -66,3 +60,10 @@ The 95% confidence bound is **0.11**. If repeated samples were taken and the 95%
 <sup>1</sup> The **significance level**, often denoted by $\alpha$, is the highest probability you are willing to accept of rejecting the null hypothesis when it is actually true. A commonly used significance level is 0.05 (or 5%)
 
 <sup>2</sup> $1 - \alpha$ is called the **confidence level**. A commonly used confidence level is 0.95 (or 95%)
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands (e.g., `plot(result, plots = "bar", custom = TRUE) + labs(y = "Percentage")`). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+

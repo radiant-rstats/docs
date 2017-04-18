@@ -8,7 +8,7 @@ First, go to the _Data > Manage_ tab, select **examples** from the `Load data of
 
 Once we have determined the number of factors we can extract and rotate them. The factors are rotated to generate a solution where, to the extent possible, a variable has a high loading on only one factor. This is an important benefit because it makes it easier to interpret what the factor represents. While there are numerous algorithms to rotate a factor loadings matrix the most commonly used is Varimax rotation.
 
-To replicate the results shown in the screenshot below make sure you have the `toothpaste` data loaded. Then select variables `v1` through `v6`, set `Nr. of factors` to 2, and press the `Estimate` button.
+To replicate the results shown in the screenshot below make sure you have the `toothpaste` data loaded. Then select variables `v1` through `v6`, set `Nr. of factors` to 2, and press the `Estimate` button or `CTRL-enter` (`CMD-enter` on mac) to generate results.
 
 <p align="center"><img src="figures_multivariate/full_factor_summary.png"></p>
 
@@ -53,3 +53,15 @@ To download the factor loadings to a csv-file click the download button on the t
 If you want more practice open the `shopping` data set and see if you can reproduce the results shown in the screen capture of the _Summary_ tab below. Use _Multivariate > Factor > Pre-factor_ to determine if the correct number of factors were selected. Do you agree? Why (not)?
 
 <p align="center"><img src="figures_multivariate/full_factor_summary_shopping.png"></p>
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+plot(result, custom = TRUE) %>%
+	gridExtra::grid.arrange(grobs = ., top = "Factor Analysis", ncol = 2)
+```
+

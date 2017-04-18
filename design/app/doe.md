@@ -57,3 +57,7 @@ Click on the `Partial` or the `Full` button to download the Partial or Full fact
 ## Upload and Download
 
 To download the list of factors you entered click the `Download` button. To upload a previously created set of factors click the `Upload` button and browse to find the desired file.
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the design by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

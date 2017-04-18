@@ -46,3 +46,9 @@ To get the mean and standard deviation of the discrete probability distribution 
 ## Hypothesis testing
 
 You can also use the probability calculator to determine a `p.value` or a `critical value` for a statistical test. See the helpfiles for `Single mean`, `Single proportion`, `Compare means`, `Compare proportions`, `Cross-tabs` in the _Basics_ menu and `Linear regression (OLS)` in the _Model_ menu for details.
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands (e.g., `plot(result) + labs(title = "Normal distribution")`). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.

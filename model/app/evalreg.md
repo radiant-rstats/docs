@@ -24,3 +24,19 @@ The test statistics show a small, but consistent, advantage for the ANN.
 
 <p align="center"><img src="figures_model/evalreg_summary_plot.png"></p>
 
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+`Rsq`, `RSME`, and `MAE` are plotted by default. It is possible to customize the plotted results through _R > Report_. To change the plot use, for example: 
+
+```r
+plot(result, vars = "Rsq")
+```
+
+The plot can be further customized using `ggplot2` commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+plot(result, vars = "Rsq")
+  labs(caption = "Based on data from ...")
+```

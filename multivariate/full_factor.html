@@ -294,7 +294,7 @@ $(document).ready(function () {
 <h3>Example: Toothpaste</h3>
 <p>First, go to the <em>Data &gt; Manage</em> tab, select <strong>examples</strong> from the <code>Load data of type</code> dropdown, and press the <code>Load examples</code> button. Then select the <code>toothpaste</code> dataset. The dataset contains information from 60 consumers who were asked to respond to six questions to determine their attitudes towards toothpaste. The scores shown for variables v1-v6 indicate the level of agreement with statements on a 7-point scale where 1 = strongly disagree and 7 = strongly agree.</p>
 <p>Once we have determined the number of factors we can extract and rotate them. The factors are rotated to generate a solution where, to the extent possible, a variable has a high loading on only one factor. This is an important benefit because it makes it easier to interpret what the factor represents. While there are numerous algorithms to rotate a factor loadings matrix the most commonly used is Varimax rotation.</p>
-<p>To replicate the results shown in the screenshot below make sure you have the <code>toothpaste</code> data loaded. Then select variables <code>v1</code> through <code>v6</code>, set <code>Nr. of factors</code> to 2, and press the <code>Estimate</code> button.</p>
+<p>To replicate the results shown in the screenshot below make sure you have the <code>toothpaste</code> data loaded. Then select variables <code>v1</code> through <code>v6</code>, set <code>Nr. of factors</code> to 2, and press the <code>Estimate</code> button or <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results.</p>
 <p align="center">
 <img src="figures_multivariate/full_factor_summary.png">
 </p>
@@ -337,6 +337,13 @@ v2        0.85</code></pre>
 <p align="center">
 <img src="figures_multivariate/full_factor_summary_shopping.png">
 </p>
+</div>
+<div id="r-report" class="section level3">
+<h3>R &gt; Report</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<pre class="r"><code>plot(result, custom = TRUE) %&gt;%
+    gridExtra::grid.arrange(grobs = ., top = &quot;Factor Analysis&quot;, ncol = 2)</code></pre>
 </div>
 
 

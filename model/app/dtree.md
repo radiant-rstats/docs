@@ -89,9 +89,9 @@ In the `Sign contract` example it is clear that `Sign with Movie Company` is the
 In the _Model_ tab:
 
 * To see this help file click the <i class="fa fa-question" ></i> icon
-* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon
+* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard 
 * Choose to maximize (`Max`) or minimize (`Min`) payoffs. Note that payoffs can be negative
-* Click the `Calculate` button to generate or update results
+* Click the `Calculate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate or update results
 * Specify a name for your decision tree in the text input next to the `Calculate` button. Clicking on the `Calculate` button will store your settings. If multiple tree structures are available there will also be a dropdown where you can select which structure to use and a `Remove` button to delete tree structures
 * To save the tree structure entered into the editor window to disk press the `Save input` button
 * To save the text representation of the initial and final tree to a file click the `Save output` button
@@ -100,22 +100,35 @@ In the _Model_ tab:
 In the _Plot_ tab:
 
 * To see this help file click the <i class="fa fa-question" ></i> icon
-* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon
+* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard
 * Show either the `Initial` or `Final` decision tree
-* Click the `Calculate` button to generate or update results
+* Click the `Calculate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate or update results
 * Enter the number of decimal places to show in the plot (default is 2 for payoffs and 4 for probabilities)
 * Provide a symbol to use for the payoffs (e.g., $ or RMB)
 * Click the download icon in the top right of your browser to _print_ either the initial or final plot to a pdf-file
 
+It is not currently possible to add a title or caption directly to the `Decision Tree` plot.
+
 In the _Sensitivity_ tab:
 
 * To see this help file click the <i class="fa fa-question" ></i> icon
-* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon
+* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard
 * Select one or more `Decisions to evaluate`
 * Select variables in `Sensitivity to changes in`. These variables must be defined in the `variables` section of the decision tree structure in the _Model_ tab
 * Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon
-* Press `Evaluate sensitivity` to generate results and the plot
+* Press `Evaluate sensitivity` or press `CTRL-enter` (`CMD-enter` on mac) to generate results and the plot
 * Click the download icon in the top right of your browser to _print_ either the initial or final plot to a pdf-file
+
+If a sensitivity plot was created it can be customized using `ggplot2` commands (see example below). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+sensitivity(
+  result, 
+  vars = "legal fees 0 100000 1000;", 
+  decs = c("Sign with Movie Company", "Sign with TV Network"), 
+  custom = TRUE
+) + labs(caption = "Based on example created by ...")
+```
 
 ## The decision tree editor
 

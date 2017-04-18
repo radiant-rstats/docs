@@ -296,7 +296,7 @@ $(document).ready(function () {
 <p>The first step in factor analysis is to determine if the data has the required characteristics. Data with limited or no correlation between the variables are not appropriate for factor analysis. We will use three criteria to test if the data are suitable for factor analysis: Bartlett, KMO, and Collinearity for each variable</p>
 <p>The KMO and Bartlett test evaluate all available data together. A KMO value over 0.6 and a significance level for the Bartlett’s test below .05 suggest there is substantial correlation in the data. Variable collinearity indicates how strongly a single variable is correlated with other variables. Values above .4 are considered appropriate.</p>
 <p>As can be seen in the output from <em>Multivariate &gt; Factor &gt; Pre-factor</em> below, Bartlett’s test statistic is large and significant (p.value close to 0) as desired. The Kaiser-Meyer-Olkin (KMO) measure is larger than .6 and thus acceptable. The variable collinearity values are all above .4 so all variables can be used in the analysis.</p>
-<p>To replicate the results shown in the screenshot make sure you have the <code>toothpaste</code> data loaded. Then select variables <code>v1</code> through <code>v6</code> and press the <code>Estimate</code> button.</p>
+<p>To replicate the results shown in the screenshot make sure you have the <code>toothpaste</code> data loaded. Then select variables <code>v1</code> through <code>v6</code> and click the <code>Estimate</code> button or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results.</p>
 <p align="center">
 <img src="figures_multivariate/pre_factor_summary.png">
 </p>
@@ -307,6 +307,13 @@ $(document).ready(function () {
 <img src="figures_multivariate/pre_factor_plot.png">
 </p>
 <p>The increase in cumulative % explained variance is relatively small going from 2 to 3 factors (i.e., from 82% to 90%). This is confirmed by the fact that the eigenvalue for factor 3 is smaller than 1 (.44). Again, we choose 2 factors. The first 2 factors capture 82% of the variance in the original data which is excellent.</p>
+</div>
+<div id="r-report" class="section level3">
+<h3>R &gt; Report</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<pre class="r"><code>plot(result, plots = &quot;scree&quot;, custom = TRUE) + 
+  labs(caption = &quot;Data used from ...&quot;)</code></pre>
 </div>
 
 

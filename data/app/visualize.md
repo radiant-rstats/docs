@@ -2,7 +2,7 @@
 
 ### Filter
 
-Use the `Filter` box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="/docs/data/view.html" target="_blank">_Data > View_</a> for details.
+Use the `Filter` box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank">_Data > View_</a> for details.
 
 ### Pause plotting
 
@@ -39,7 +39,7 @@ To add a linear or non-linear regression line to a scatter plot check the `Line`
 
 ### Axis scale
 
-The relationship between variables depicted in a scatter plot may be non-linear. There are numerous transformations we might apply to the data so this relationship becomes (approximately) linear (see _<a href="/docs/data/transform.html" target="_blank">Data > Transform</a>_) and easier to estimate using, for example, _<a href="/docs/model/regress.html" target="_blank">Model > Estimate > Linear regression (OLS)</a>_. Perhaps the most common data transformation applied to business data is the (natural) logarithm. To see if log transformation(s) may be appropriate for your data check the `Log X` and/or `Log Y` boxes (e.g., for a scatter or bar plot).
+The relationship between variables depicted in a scatter plot may be non-linear. There are numerous transformations we might apply to the data so this relationship becomes (approximately) linear (see _<a href="https://radiant-rstats.github.io/docs/data/transform.html" target="_blank">Data > Transform</a>_) and easier to estimate using, for example, _<a href="https://radiant-rstats.github.io/docs/model/regress.html" target="_blank">Model > Estimate > Linear regression (OLS)</a>_. Perhaps the most common data transformation applied to business data is the (natural) logarithm. To see if log transformation(s) may be appropriate for your data check the `Log X` and/or `Log Y` boxes (e.g., for a scatter or bar plot).
 
 By default the scale of the Y-axis is the same across sub-plots when using `Facet row`. To allow the Y-axis to be specific to each sub-plot click the `Scale-y` check-box.
 
@@ -53,11 +53,11 @@ To make plots bigger or smaller adjust the values in the height and width boxes 
 
 ### Keep plots
 
-The best way to keep/store plots is to generate a `visualize` command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen. Alternatively, click the <i title='Download' class='fa fa-download'></i> icon on the top right of your screen to save a png-file to disk.
+The best way to keep/store plots is to generate a `visualize` command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. Alternatively, click the <i title='Download' class='fa fa-download'></i> icon on the top right of your screen to save a png-file to disk.
 
 ### Customizing plots in _R > Report_
 
-To customize a plot first generate the `visualize` command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen. The example below illustrates how to customize a command in the <a href="/docs/data/report.html" target="_blank">_R > Report_</a> tab. Notice that `custom` is set to `TRUE`.
+To customize a plot first generate the `visualize` command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. The example below illustrates how to customize a command in the <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> tab. Notice that `custom` is set to `TRUE`.
 
 ```r
 visualize(dataset = "diamonds", yvar = "price", xvar = "carat", type = "scatter", custom = TRUE) +
@@ -71,6 +71,8 @@ visualize(dataset = "diamonds", yvar = "price", xvar = "carat", type = "scatter"
 **Some common customization commands:**
 
 * Add a title: `+ labs(title = "my title")`
+* Add a sub-title: `+ labs(subtitle = "my sub-title")`
+* Add a caption below figure: `+ labs(caption = "Based on data from ...")`
 * Change label: `+ labs(x = "my X-axis label")` or `+ labs(y = "my Y-axis label")`
 * Remove all legends: `+ theme(legend.position = "none")`
 * Change legend title: `+ labs(color = "New legend title")` or `+ labs(fill = "New legend title")`
@@ -84,3 +86,18 @@ visualize(dataset = "diamonds", yvar = "price", xvar = "carat", type = "scatter"
 For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.
 
 See also the ggplot2 documentation site <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.
+
+Suppose we create a set of three bar charts in _Data > Visualize_ using the `Diamond` data. To add a title above the group of plots and impose a one-column layout we could use `gridExtra::grid.arrange` as follows:
+
+```r
+plot_list <- visualize(
+  dataset = "diamonds", 
+  xvar = c("clarity", "cut", "color"), 
+  yvar = "price", 
+  type = "bar", 
+  custom = TRUE
+) 
+gridExtra::grid.arrange(grobs = plot_list, top = "Three bar plots", ncol = 1)
+```
+
+See the <a href="https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html">gridExtra vignette</a> for additional information on how to customize groups of plots.

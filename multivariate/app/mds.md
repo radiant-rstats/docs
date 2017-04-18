@@ -4,7 +4,9 @@
 
 The city data (`city`) contains information on distances in miles between 10 major cities in the US. Distances for 45 (10 x 9 / 2) from-to city pairs are provided. These data are used to illustrate that MDS can take simple data on distances (or on brand dissimilarities as we will see) and create a 2-dimensional map that accurately depicts the relative city (or brand) positions.
 
-To load the `city` data go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `city` dataset. In _Multivariate > Maps > (Dis)similarity_ select `from` as ID 1, `to` as ID 2, and `distance` as the Dissimilarity measure. The original distances are shown in (lower triangular) matrix form in the screenshot below. If the analysis is successful we expect cities that are close (e.g., Washington DC and New York) to also be located close together on the map. Cities that are far apart (e.g., Seattle and Miami) should also be positioned far apart in the map.
+To load the `city` data go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `city` dataset. In _Multivariate > Maps > (Dis)similarity_ select `from` as ID 1, `to` as ID 2, and `distance` as the Dissimilarity measure. After the settings have been changed click the `Estimate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate results.
+
+The original distances are shown in (lower triangular) matrix form in the screenshot below. If the analysis is successful we expect cities that are close (e.g., Washington DC and New York) to also be located close together on the map. Cities that are far apart (e.g., Seattle and Miami) should also be positioned far apart in the map.
 
 The basic measure of (lack of) fit for MDS is called `Stress`. If MDS cannot create a map that accurately describes the original data this will result in high stress. Stress values of .1 are generally considered fair, .05 is good, and .01 or lower is excellent. High stress values indicate that a dimensionality of three (or higher) is needed to accurately depict the available data. For the city data the stress value is equal to .02 which is good. In the _Summary_ tab we also see the coordinates that will be used to create the two-dimensional map show in the _Plot_ tab and the recovered distances (i.e., how _far_ the cities are apart in the generated map).
 
@@ -29,3 +31,9 @@ The coordinates shown in the _Summary_ tab are used to plot the brands in two di
 From the plot a manager might conclude that the brands that are closest together in the map are perceived by consumers as close substitutes and, hence, close competitors in the minds of consumers in this market segment. A manager for Aqua Fresh or Macleans, in contrast, might focus less on Sensodyne when developing a competitive positioning plan for her brand. An important limitation of brand maps based on (dis)similarity data is that the axes are difficult to interpret. For example, why are Close-up and Crest located at opposite ends along the horizontal axes? The researcher could ask respondents to explain the meaning of the axes or else obtain additional attribute information for the brands and correlate/overlay these on the plot to facilitate interpretation. Such attribute data could, however, also be used to create a brand map without the need for (dis)similarity ratings (see _Multivariate > Maps > Attribute_).
 
 <p align="center"><img src="figures_multivariate/mds_plot_tpbrands.png"></p>
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+To add, for example, a title to the plot use `title(main = "Multi-dimensional scaling")`. See the <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-command" target="_blank">R graphics</a> documentation for additional information.

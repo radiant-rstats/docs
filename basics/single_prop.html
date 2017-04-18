@@ -330,11 +330,6 @@ $(document).ready(function () {
 <img src="figures_basics/single_prop_prob_calc_p.png">
 </p>
 <p>Because the number of successes (i.e., the number of “yes” responses) <strong>is</strong> larger than the critical value (93 vs 85) we <strong>cannot</strong> reject the null hypothesis and <strong>do not suggest</strong> that management should commit resources to increase brand awareness.</p>
-<!--
-In addition to the numerical output provided in the _Summary_ tab we can visualize the data in the _Plot_ tab. The settings in the side-panel are the same as before. The black lines in the histogram show the sample mean (solid) and the confidence interval around the sample mean (dashed). The red line shows the comparison value (i.e., unit sales under the null-hypothesis). Because the red line does **not** fall within the confidence interval (1897 to Inf.) we reject the null-hypothesis in favor of the alternative.
-
-<p align="center"><img src="figures_basics/single_proportion_plot.png"></p>
--->
 </div>
 </div>
 <div id="stats-speak" class="section level3">
@@ -344,6 +339,11 @@ In addition to the numerical output provided in the _Summary_ tab we can visuali
 <p>The 95% confidence bound is <strong>0.11</strong>. If repeated samples were taken and the 95% confidence bound computed for each one, the true population proportion would be below that bound in 95% of the samples</p>
 <p><sup>1</sup> The <strong>significance level</strong>, often denoted by <span class="math inline">\(\alpha\)</span>, is the highest probability you are willing to accept of rejecting the null hypothesis when it is actually true. A commonly used significance level is 0.05 (or 5%)</p>
 <p><sup>2</sup> <span class="math inline">\(1 - \alpha\)</span> is called the <strong>confidence level</strong>. A commonly used confidence level is 0.95 (or 95%)</p>
+</div>
+<div id="r-report" class="section level3">
+<h3>R &gt; Report</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands (e.g., <code>plot(result, plots = &quot;bar&quot;, custom = TRUE) + labs(y = &quot;Percentage&quot;)</code>). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
 </div>
 </div>
 

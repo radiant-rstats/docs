@@ -11,3 +11,7 @@ How does it work? Each person in the data is assigned a random number between 0 
 The full list of 100 people is the `sampling frame`. Ideally, this is a comprehensive list of _all_ sampling units (e.g., customers or companies) in your target market.
 
 How do you determine the appropriate value for _n_? See the sample size tool in the `Design` menu.
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the sample by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

@@ -26,3 +26,7 @@ Leave one of the inputs blank to determine its value. By default the sample size
 <sup>2</sup> $1 - \alpha$ is called the **confidence level**. A commonly used confidence level is 0.95 (or 95%)
 
 <sup>3</sup> Beta ($\beta$), is the probability of accepting the null hypothesis when it is actually false. The power of a test is calculated as 1 - $\beta$. A commonly used power level is 0.8 (or 80%)
+
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the sample size calculations by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

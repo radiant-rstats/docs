@@ -319,9 +319,14 @@ $(document).ready(function () {
 <p>In the plot we see that all cells contribute to the association between income and readership as all standardized deviations are larger than 1.96 in absolute value (i.e., the bars extend beyond the outer dotted line in the plot).</p>
 <p>In other words, there seem to be fewer low income respondents that read WSJ and more high income respondents that read WSJ than would be expected if the null hypothesis of no-association were true. Furthermore, there are more low income respondents that read USA today and fewer high income respondents that read USA Today than would be expected if the null hypothesis of no-association were true.</p>
 </div>
+<div id="r-report" class="section level3">
+<h3>R &gt; Report</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands (e.g., <code>plot(result, check = &quot;observed&quot;, custom = TRUE) + labs(y = &quot;Percentage&quot;)</code>). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+</div>
 <div id="technical-note" class="section level3">
 <h3>Technical note</h3>
-<p>When one or more expected values are small (e.g., 5 or less) the p.value for the Chi-squared test is calculated using simulation methods. If some cells have an expected count below 1 it may be necessary to <em>collapse</em> rows and/or columns. <!--The description for the `goals2` dataset that is part of the `examples` bundled with Radiant has instructions on how rows or columns in a cross-tab can be collapsed when some of the expected values are low.--></p>
+<p>When one or more expected values are small (e.g., 5 or less) the p.value for the Chi-squared test is calculated using simulation methods. If some cells have an expected count below 1 it may be necessary to <em>collapse</em> rows and/or columns.</p>
 </div>
 
 

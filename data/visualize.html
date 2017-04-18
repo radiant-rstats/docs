@@ -291,7 +291,7 @@ $(document).ready(function () {
 </blockquote>
 <div id="filter" class="section level3">
 <h3>Filter</h3>
-<p>Use the <code>Filter</code> box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> for details.</p>
+<p>Use the <code>Filter</code> box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> for details.</p>
 </div>
 <div id="pause-plotting" class="section level3">
 <h3>Pause plotting</h3>
@@ -325,7 +325,7 @@ $(document).ready(function () {
 </div>
 <div id="axis-scale" class="section level3">
 <h3>Axis scale</h3>
-<p>The relationship between variables depicted in a scatter plot may be non-linear. There are numerous transformations we might apply to the data so this relationship becomes (approximately) linear (see <em><a href="/docs/data/transform.html" target="_blank">Data &gt; Transform</a></em>) and easier to estimate using, for example, <em><a href="/docs/model/regress.html" target="_blank">Model &gt; Estimate &gt; Linear regression (OLS)</a></em>. Perhaps the most common data transformation applied to business data is the (natural) logarithm. To see if log transformation(s) may be appropriate for your data check the <code>Log X</code> and/or <code>Log Y</code> boxes (e.g., for a scatter or bar plot).</p>
+<p>The relationship between variables depicted in a scatter plot may be non-linear. There are numerous transformations we might apply to the data so this relationship becomes (approximately) linear (see <em><a href="https://radiant-rstats.github.io/docs/data/transform.html" target="_blank">Data &gt; Transform</a></em>) and easier to estimate using, for example, <em><a href="https://radiant-rstats.github.io/docs/model/regress.html" target="_blank">Model &gt; Estimate &gt; Linear regression (OLS)</a></em>. Perhaps the most common data transformation applied to business data is the (natural) logarithm. To see if log transformation(s) may be appropriate for your data check the <code>Log X</code> and/or <code>Log Y</code> boxes (e.g., for a scatter or bar plot).</p>
 <p>By default the scale of the Y-axis is the same across sub-plots when using <code>Facet row</code>. To allow the Y-axis to be specific to each sub-plot click the <code>Scale-y</code> check-box.</p>
 </div>
 <div id="flip-axes" class="section level3">
@@ -338,11 +338,11 @@ $(document).ready(function () {
 </div>
 <div id="keep-plots" class="section level3">
 <h3>Keep plots</h3>
-<p>The best way to keep/store plots is to generate a <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen. Alternatively, click the <i title='Download' class='fa fa-download'></i> icon on the top right of your screen to save a png-file to disk.</p>
+<p>The best way to keep/store plots is to generate a <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard. Alternatively, click the <i title='Download' class='fa fa-download'></i> icon on the top right of your screen to save a png-file to disk.</p>
 </div>
 <div id="customizing-plots-in-r-report" class="section level3">
 <h3>Customizing plots in <em>R &gt; Report</em></h3>
-<p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen. The example below illustrates how to customize a command in the <a href="/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
+<p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard. The example below illustrates how to customize a command in the <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
 <pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, yvar = &quot;price&quot;, xvar = &quot;carat&quot;, type = &quot;scatter&quot;, custom = TRUE) +
   labs(
     title = &quot;A scatterplot&quot;, 
@@ -352,6 +352,8 @@ $(document).ready(function () {
 <p><strong>Some common customization commands:</strong></p>
 <ul>
 <li>Add a title: <code>+ labs(title = &quot;my title&quot;)</code></li>
+<li>Add a sub-title: <code>+ labs(subtitle = &quot;my sub-title&quot;)</code></li>
+<li>Add a caption below figure: <code>+ labs(caption = &quot;Based on data from ...&quot;)</code></li>
 <li>Change label: <code>+ labs(x = &quot;my X-axis label&quot;)</code> or <code>+ labs(y = &quot;my Y-axis label&quot;)</code></li>
 <li>Remove all legends: <code>+ theme(legend.position = &quot;none&quot;)</code></li>
 <li>Change legend title: <code>+ labs(color = &quot;New legend title&quot;)</code> or <code>+ labs(fill = &quot;New legend title&quot;)</code></li>
@@ -364,6 +366,16 @@ $(document).ready(function () {
 </ul>
 <p>For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.</p>
 <p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.</p>
+<p>Suppose we create a set of three bar charts in <em>Data &gt; Visualize</em> using the <code>Diamond</code> data. To add a title above the group of plots and impose a one-column layout we could use <code>gridExtra::grid.arrange</code> as follows:</p>
+<pre class="r"><code>plot_list &lt;- visualize(
+  dataset = &quot;diamonds&quot;, 
+  xvar = c(&quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), 
+  yvar = &quot;price&quot;, 
+  type = &quot;bar&quot;, 
+  custom = TRUE
+) 
+gridExtra::grid.arrange(grobs = plot_list, top = &quot;Three bar plots&quot;, ncol = 1)</code></pre>
+<p>See the <a href="https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html">gridExtra vignette</a> for additional information on how to customize groups of plots.</p>
 </div>
 
 

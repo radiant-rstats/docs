@@ -48,7 +48,7 @@ The catalog company is interested in redesigning their Customer Relationship Man
 
 **Answer:**
 
-Select the relevant variables mentioned above and press the `Estimate` button. Output from _Model > Linear regression (OLS)_ is provided below:
+Select the relevant variables mentioned above and press the `Estimate` button or press `CTRL-enter` (`CMD-enter` on mac). Output from _Model > Linear regression (OLS)_ is provided below:
 
 <p align="center"><img src="figures_model/regress_catalog_summary.png"></p>
 
@@ -201,6 +201,18 @@ All coefficients in this regression are highly significant.
 
 <p align="center"><img src="figures_model/regress_log_diamonds_summary.png"></p>
 
+### R > Report
+
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+```r
+result <- regress(dataset = "diamonds", rvar = "price", evar = c("carat", "clarity", "cut", "color"))
+summary(result)
+plot(result, plots = "scatter", custom = TRUE) %>%
+	gridExtra::grid.arrange(grobs = ., top = "Scatter plots", ncol = 2)
+```
 
 ### Technical notes
 

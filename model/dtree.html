@@ -365,9 +365,9 @@ Sign with TV Network:
 <p>In the <em>Model</em> tab:</p>
 <ul>
 <li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
-<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon</li>
+<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon or press <code>ALT-enter</code> on your keyboard</li>
 <li>Choose to maximize (<code>Max</code>) or minimize (<code>Min</code>) payoffs. Note that payoffs can be negative</li>
-<li>Click the <code>Calculate</code> button to generate or update results</li>
+<li>Click the <code>Calculate</code> button or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate or update results</li>
 <li>Specify a name for your decision tree in the text input next to the <code>Calculate</code> button. Clicking on the <code>Calculate</code> button will store your settings. If multiple tree structures are available there will also be a dropdown where you can select which structure to use and a <code>Remove</code> button to delete tree structures</li>
 <li>To save the tree structure entered into the editor window to disk press the <code>Save input</code> button</li>
 <li>To save the text representation of the initial and final tree to a file click the <code>Save output</code> button</li>
@@ -376,23 +376,31 @@ Sign with TV Network:
 <p>In the <em>Plot</em> tab:</p>
 <ul>
 <li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
-<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon</li>
+<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon or press <code>ALT-enter</code> on your keyboard</li>
 <li>Show either the <code>Initial</code> or <code>Final</code> decision tree</li>
-<li>Click the <code>Calculate</code> button to generate or update results</li>
+<li>Click the <code>Calculate</code> button or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate or update results</li>
 <li>Enter the number of decimal places to show in the plot (default is 2 for payoffs and 4 for probabilities)</li>
 <li>Provide a symbol to use for the payoffs (e.g., $ or RMB)</li>
 <li>Click the download icon in the top right of your browser to <em>print</em> either the initial or final plot to a pdf-file</li>
 </ul>
+<p>It is not currently possible to add a title or caption directly to the <code>Decision Tree</code> plot.</p>
 <p>In the <em>Sensitivity</em> tab:</p>
 <ul>
 <li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
-<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon</li>
+<li>To generate a report about the decision tree in the <em>R &gt; Report</em> tab click the <i class="fa fa-edit" ></i> icon or press <code>ALT-enter</code> on your keyboard</li>
 <li>Select one or more <code>Decisions to evaluate</code></li>
 <li>Select variables in <code>Sensitivity to changes in</code>. These variables must be defined in the <code>variables</code> section of the decision tree structure in the <em>Model</em> tab</li>
 <li>Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon</li>
-<li>Press <code>Evaluate sensitivity</code> to generate results and the plot</li>
+<li>Press <code>Evaluate sensitivity</code> or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results and the plot</li>
 <li>Click the download icon in the top right of your browser to <em>print</em> either the initial or final plot to a pdf-file</li>
 </ul>
+<p>If a sensitivity plot was created it can be customized using <code>ggplot2</code> commands (see example below). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<pre class="r"><code>sensitivity(
+  result, 
+  vars = &quot;legal fees 0 100000 1000;&quot;, 
+  decs = c(&quot;Sign with Movie Company&quot;, &quot;Sign with TV Network&quot;), 
+  custom = TRUE
+) + labs(caption = &quot;Based on example created by ...&quot;)</code></pre>
 </div>
 <div id="the-decision-tree-editor" class="section level2">
 <h2>The decision tree editor</h2>

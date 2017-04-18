@@ -289,11 +289,12 @@ $(document).ready(function () {
 <blockquote>
 <p>Analyze responses from a conjoint survey</p>
 </blockquote>
-<p>To setup a conjoint study from scratch we need to determine the attributes and attributes levels that should be included. Once that has been done we would typically need to generate a fractional factorial design of conjoint profiles. This is a subset of all possible profiles that could be generated for the set of attributes and levels that were selected (see <a href="/docs/design/doe.html" target="_blank"><em>Design &gt; DOE &gt; Design of Experiments</em></a>).</p>
+<p>To setup a conjoint study from scratch we need to determine the attributes and attributes levels that should be included. Once that has been done we would typically need to generate a fractional factorial design of conjoint profiles. This is a subset of all possible profiles that could be generated for the set of attributes and levels that were selected (see <a href="https://radiant-rstats.github.io/docs/design/doe.html" target="_blank"><em>Design &gt; DOE &gt; Design of Experiments</em></a>).</p>
 <p>Once data is available from respondents their evaluations are analyzed to determine Part Worths (PW) and Importance Weights (IW).</p>
+<p>To estimate a model select respondents ratings (or rankings) as the <code>Profile evaluations</code> and select the profile <code>Attributes</code>. Press the <code>Estimate</code> button or <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results.</p>
 <div id="example-carpet-cleaner" class="section level3">
 <h3>Example: Carpet cleaner</h3>
-<p>A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study (dataset: carpet.rda is part of the example datasets). The attributes are:</p>
+<p>A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study. To access the <code>carpet</code> dataset go to <em>Data &gt; Manage</em>, select <code>Examples</code> from the <code>Load data of type</code> dropdown, and press the <code>Load examples</code> button. Then select the <code>carpet</code> dataset.</p>
 <ul>
 <li>design = Package Design (A, B, C)</li>
 <li>brand = Brand Name (K2R, Glory, Bissell)</li>
@@ -306,16 +307,15 @@ $(document).ready(function () {
 <p align="center">
 <img src="figures_multivariate/conjoint_carpet_design.png">
 </p>
-<p>Based on the attributes, 108 possible profiles could be created (i.e., 3x3x3x2x2 = 108). The respondent was given a select set of 18 and was asked to rank the profiles from most preferred (rank 1) to least preferred (rank 18). The first five columns represent the five attributes and the last column is the respondent’s ranking.</p>
+<p>Based on the attributes, 108 possible profiles could be created (i.e., 3x3x3x2x2 = 108). The respondent was given a set of 18 and was asked to rank the profiles from most preferred (rank 1) to least preferred (rank 18). The first five columns represent the five attributes and the last column is the respondent’s ranking.</p>
 <ol style="list-style-type: lower-alpha">
-<li>Compute the correlation matrix for the attribute variables (see <a href="/docs/basics/correlation.html" target="_blank"><em>Basics &gt; Tables &gt; Correlation</em></a>). Display the correlation matrix. What do you notice in the correlation matrix? What does this say about the particular set of 18 profiles that was presented to the respondent?</li>
+<li>Compute the Variance Inflation Factors (VIF) for the attribute variables. What do you notice? What does this say about the particular set of 18 profiles that was presented to the respondent?</li>
 </ol>
-<ul>
-<li>The correlation matrix is displayed below. Note that the correlations for any two attributes are zero. In the fractional factorial design profiles are deliberately selected such that all attributes are uncorrelated (i.e., orthogonal).</li>
-</ul>
-<p align="center">
-<img src="figures_multivariate/conjoint_corr_mat.png">
-</p>
+<p>The VIF scores displayed below indicate that the attributes are perfectly orthogonal. In the fractional factorial design profiles were deliberately selected such that all attributes are uncorrelated.</p>
+<pre><code>    Multicollinearity diagnostics:
+        design brand price seal money_back
+    VIF      1     1     1    1          1
+    Rsq      0     0     0    0          0</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Estimate a conjoint model using the respondent’s evaluations as the dependent variable and the attributes as the predictors. Show the complete list of part-worths and importance weights.</li>
 </ol>
@@ -349,6 +349,27 @@ $(document).ready(function () {
 <li>The option with the highest (predicted) utility is: Package B, Bissell, $1.19, with GHKS, with MBG</li>
 <li>Predicted Utility based on PWs: 6.5 + 8.0 + 1.5 + 0 + 1.5 + 4.5 = 22</li>
 </ul>
+<p>We can confirm this results in three steps: (1) Create a new dataset with all 36 profiles in <em>Data &gt; Transform</em> using <code>Expand grid</code>, (2) Predict the utility for each of the profiles by selecting the newly created dataset in the <em>Multivariate &gt; Conjoint &gt; Predict</em> tab and storing the prediction in a new variable <code>predict_ca</code>, (3) Sort the new dataset on <code>predict_ca</code> in the <em>Data &gt; View</em> tab. These three steps are shown in the screen shots below</p>
+<p align="center">
+<img src="figures_multivariate/conjoint_expand.png">
+</p>
+<p align="center">
+<img src="figures_multivariate/conjoint_predict.png">
+</p>
+<p align="center">
+<img src="figures_multivariate/conjoint_view.png">
+</p>
+</div>
+<div id="multiple-respondents" class="section level2">
+<h2>Multiple respondents</h2>
+<p>If profile evaluations are available for multiple respondents and a respondent id variable is included in the dataset we can estimate conjoint results at the individual level by selecting the respondent id from the <code>By</code> dropdown. We can then save the Partworths and/or Importance weights for all respondents to a new dataset in Radiant and use that for segmentation using <em>Multivariate &gt; K-clustering</em>.</p>
+<div id="r-report" class="section level3">
+<h3>R &gt; Report</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<pre class="r"><code>plot(result, plots = c(&quot;pw&quot;,&quot;iw&quot;), custom = TRUE) %&gt;%
+    gridExtra::grid.arrange(grobs = ., top = &quot;Conjoint Analysis&quot;, ncol = 2)</code></pre>
+</div>
 </div>
 
 
