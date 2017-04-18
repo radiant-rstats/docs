@@ -350,15 +350,24 @@ $(document).ready(function () {
 <li>Predicted Utility based on PWs: 6.5 + 8.0 + 1.5 + 0 + 1.5 + 4.5 = 22</li>
 </ul>
 <p>We can confirm this results in three steps: (1) Create a new dataset with all 36 profiles in <em>Data &gt; Transform</em> using <code>Expand grid</code>, (2) Predict the utility for each of the profiles by selecting the newly created dataset in the <em>Multivariate &gt; Conjoint &gt; Predict</em> tab and storing the prediction in a new variable <code>predict_ca</code>, (3) Sort the new dataset on <code>predict_ca</code> in the <em>Data &gt; View</em> tab. These three steps are shown in the screen shots below</p>
+<div id="step-1-create-dataset" class="section level4">
+<h4>Step 1: Create dataset</h4>
 <p align="center">
 <img src="figures_multivariate/conjoint_expand.png">
 </p>
+</div>
+<div id="step-2-predict-utilities" class="section level4">
+<h4>Step 2: Predict utilities</h4>
 <p align="center">
 <img src="figures_multivariate/conjoint_predict.png">
 </p>
+</div>
+<div id="step-3-sort-prediction" class="section level4">
+<h4>Step 3: Sort prediction</h4>
 <p align="center">
 <img src="figures_multivariate/conjoint_view.png">
 </p>
+</div>
 </div>
 <div id="multiple-respondents" class="section level2">
 <h2>Multiple respondents</h2>
@@ -373,7 +382,7 @@ $(document).ready(function () {
 </div>
 
 
-&copy; Vincent Nijs (2016) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/80x15.png" /></a>
+&copy; Vincent Nijs (2017) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/80x15.png" /></a>
 
 <!-- some extra javascript for older browsers -->
 <script type="text/javascript" src="libs/polyfill.js"></script>

@@ -53,8 +53,16 @@ d. What is the highest predicted utility that can be obtained? What are the char
 
 We can confirm this results in three steps: (1) Create a new dataset with all 36 profiles in _Data > Transform_ using `Expand grid`, (2) Predict the utility for each of the profiles by selecting the newly created dataset in the _Multivariate > Conjoint > Predict_ tab and storing the prediction in a new variable `predict_ca`, (3) Sort the new dataset on `predict_ca` in the _Data > View_ tab. These three steps are shown in the screen shots below
 
+#### Step 1: Create dataset
+
 <p align="center"><img src="figures_multivariate/conjoint_expand.png"></p>
+
+#### Step 2: Predict utilities
+
 <p align="center"><img src="figures_multivariate/conjoint_predict.png"></p>
+
+#### Step 3: Sort prediction
+
 <p align="center"><img src="figures_multivariate/conjoint_view.png"></p>
 
 ## Multiple respondents
