@@ -47,14 +47,17 @@ For a step-by-step tutorial see the `Install Radiant on Windows` or `Install Rad
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/o32VNc7EZUM" frameborder="0" allowfullscreen></iframe>
 
+## Using Radiant for Model Evaluation
+
+The state file used in the demo is avaialble for download from [GitHub](https://radiant-rstats.github.io/docs/examples/demo-state2-dvd-rnd.rda) 
+
+<iframe width="640" height="375" src="https://www.youtube.com/embed/9fugq5dXNhk" frameborder="0" allowfullscreen></iframe>
+
 <!--
 ## Visualizing data
 
 <iframe width="640" height="375" src="" frameborder="0" allowfullscreen></iframe>
 
-## Generating predictions from regression and GLM
-
-<iframe width="640" height="375" src="//www.youtube.com/embed/Xp1REGAewGU" frameborder="0" allowfullscreen></iframe>
 -->
 
 ## License
