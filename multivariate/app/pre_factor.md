@@ -36,6 +36,3 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 plot(result, plots = "scree", custom = TRUE) + 
   labs(caption = "Data used from ...")
 ```
-
-
-

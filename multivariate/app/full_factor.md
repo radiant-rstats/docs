@@ -64,4 +64,3 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 plot(result, custom = TRUE) %>%
 	gridExtra::grid.arrange(grobs = ., top = "Factor Analysis", ncol = 2)
 ```
-
