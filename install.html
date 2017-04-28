@@ -297,7 +297,7 @@ $(document).ready(function () {
 <p>For mac go to <a href="https://cran.r-project.org/bin/macosx/" target="_blank">https://cran.r-project.org/bin/macosx/</a></p>
 <p>For windows get the latest release from <a href="https://cran.r-project.org/bin/windows/base/release.htm" target="_blank">https://cran.r-project.org/bin/windows/base/release.htm</a></p>
 <blockquote>
-<p><strong>Important:</strong> Windows users <strong>must</strong> install R in directory C:\R\R-3.3.3</p>
+<p><strong>Important:</strong> Windows users <strong>must</strong> install R in directory C:\R\R-3.4.0</p>
 </blockquote>
 <p>On Mac you can accept the default settings. On Windows the R-installer should create 2 shortcuts on your Desktop. Because we will be using Rstudio to start Radiant you can delete these shortcuts after completing step 6 below.</p>
 <blockquote>
@@ -335,7 +335,7 @@ $(document).ready(function () {
 </blockquote>
 <pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;, type = &quot;binary&quot;)</code></pre>
 <blockquote>
-<p><strong>Important:</strong> If you use Windows and are asked where to install R-packages (i.e., “Would you like to use a personal library instead?”) you most likely did <strong>not</strong> install R in directory C:\R\R-3.3.3 as stated above. You should uninstall and reinstall R in the suggested directory before proceeding. If it already exists, you should also remove the Documents\R directory.</p>
+<p><strong>Important:</strong> If you use Windows and are asked where to install R-packages (i.e., “Would you like to use a personal library instead?”) you most likely did <strong>not</strong> install R in directory C:\R\R-3.4.0 as stated above. You should uninstall and reinstall R in the suggested directory before proceeding. If it already exists, you should also remove the Documents\R directory.</p>
 </blockquote>
 </div>
 <div id="starting-radiant" class="section level4">
@@ -423,7 +423,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
