@@ -9,13 +9,13 @@ head(warpbreaks)
 ```
 
 ```
-  breaks wool tension
-1     26    A       L
-2     30    A       L
-3     54    A       L
-4     25    A       L
-5     70    A       L
-6     52    A       L
+##   breaks wool tension
+## 1     26    A       L
+## 2     30    A       L
+## 3     54    A       L
+## 4     25    A       L
+## 5     70    A       L
+## 6     52    A       L
 ```
 
 Two easy ways to run anova:
@@ -27,16 +27,16 @@ print(tens.aov)
 ```
 
 ```
-Call:
-   aov(formula = breaks ~ tension, data = warpbreaks)
-
-Terms:
-                 tension Residuals
-Sum of Squares  2034.259  7198.556
-Deg. of Freedom        2        51
-
-Residual standard error: 11.88058
-Estimated effects may be unbalanced
+## Call:
+##    aov(formula = breaks ~ tension, data = warpbreaks)
+## 
+## Terms:
+##                  tension Residuals
+## Sum of Squares  2034.259  7198.556
+## Deg. of Freedom        2        51
+## 
+## Residual standard error: 11.88058
+## Estimated effects may be unbalanced
 ```
 
 ```r
@@ -44,11 +44,11 @@ summary(tens.aov)
 ```
 
 ```
-            Df Sum Sq Mean Sq F value  Pr(>F)   
-tension      2   2034  1017.1   7.206 0.00175 **
-Residuals   51   7199   141.1                   
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+##             Df Sum Sq Mean Sq F value  Pr(>F)   
+## tension      2   2034  1017.1   7.206 0.00175 **
+## Residuals   51   7199   141.1                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 Or,
@@ -60,14 +60,14 @@ anova (tens.lm)
 ```
 
 ```
-Analysis of Variance Table
-
-Response: breaks
-          Df Sum Sq Mean Sq F value   Pr(>F)   
-tension    2 2034.3 1017.13  7.2061 0.001753 **
-Residuals 51 7198.6  141.15                    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Analysis of Variance Table
+## 
+## Response: breaks
+##           Df Sum Sq Mean Sq F value   Pr(>F)   
+## tension    2 2034.3 1017.13  7.2061 0.001753 **
+## Residuals 51 7198.6  141.15                    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 Like with regular LM it’s easy to test for interactions between factors:
@@ -78,13 +78,13 @@ summary(aov(breaks~wool*tension, warpbreaks))
 ```
 
 ```
-             Df Sum Sq Mean Sq F value   Pr(>F)    
-wool          1    451   450.7   3.765 0.058213 .  
-tension       2   2034  1017.1   8.498 0.000693 ***
-wool:tension  2   1003   501.4   4.189 0.021044 *  
-Residuals    48   5745   119.7                     
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+##              Df Sum Sq Mean Sq F value   Pr(>F)    
+## wool          1    451   450.7   3.765 0.058213 .  
+## tension       2   2034  1017.1   8.498 0.000693 ***
+## wool:tension  2   1003   501.4   4.189 0.021044 *  
+## Residuals    48   5745   119.7                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 The easiest way to visualize an interaction like this is with an ugly but functional interaction plot:
@@ -104,12 +104,12 @@ summary(aov(breaks ~ tension + wool, warpbreaks))
 ```
 
 ```
-            Df Sum Sq Mean Sq F value  Pr(>F)   
-tension      2   2034  1017.1   7.537 0.00138 **
-wool         1    451   450.7   3.339 0.07361 . 
-Residuals   50   6748   135.0                   
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+##             Df Sum Sq Mean Sq F value  Pr(>F)   
+## tension      2   2034  1017.1   7.537 0.00138 **
+## wool         1    451   450.7   3.339 0.07361 . 
+## Residuals   50   6748   135.0                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 The trick is that the covariate always has to be listed first in the code, because apparently R reads in AOV items stepwise.
@@ -124,16 +124,16 @@ TukeyHSD(tens.aov)
 ```
 
 ```
-  Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = breaks ~ tension, data = warpbreaks)
-
-$tension
-          diff       lwr        upr     p adj
-M-L -10.000000 -19.55982 -0.4401756 0.0384598
-H-L -14.722222 -24.28205 -5.1623978 0.0014315
-H-M  -4.722222 -14.28205  4.8376022 0.4630831
+##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = breaks ~ tension, data = warpbreaks)
+## 
+## $tension
+##           diff       lwr        upr     p adj
+## M-L -10.000000 -19.55982 -0.4401756 0.0384598
+## H-L -14.722222 -24.28205 -5.1623978 0.0014315
+## H-M  -4.722222 -14.28205  4.8376022 0.4630831
 ```
 
 This will output all pairwise comparisons between the groups in your factor.
