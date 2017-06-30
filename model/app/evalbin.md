@@ -62,6 +62,7 @@ total                    | Total number of cases (i.e., TP + FP + TN + FN)
 TPR (True Positive Rate) | Proportion of positive outcomes in the data that received a positive prediction (i.e., TP / (TP + FN)). Also known as _sensitivity_ or _recall_
 TNR (True Negative Rate) | Proportion of negative outcomes in the data that received a negative prediction (i.e., TN / (TN + FP)). Also known as _specificity_
 precision                | Proportion of positive predictions with a positive outcome in the data (i.e., TP / (TP + FP))
+F-score                  | The harmonic mean of _precision_ and TPR (_sensitivity_)
 accuracy                 | Proportion of all outcomes that was correctly predicted as either positive or negative (i.e., (TP + TN) / total)
 kappa                    | Corrects the accuracy measure for the probability of generating a correct prediction purely by chance
 profit                   | Total profitability achieved by targeting all customers with a predicted probability above the break-even response rate

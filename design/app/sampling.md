@@ -10,7 +10,7 @@ How does it work? Each person in the data is assigned a random number between 0 
 
 The full list of 100 people is the `sampling frame`. Ideally, this is a comprehensive list of _all_ sampling units (e.g., customers or companies) in your target market.
 
-How do you determine the appropriate value for _n_? See the sample size tool in the `Design` menu.
+How do you determine the appropriate value for _n_? Use the sample size tools in the _Design_ menu.
 
 ### R > Report
 

@@ -291,14 +291,14 @@ $(document).ready(function () {
 </blockquote>
 <div id="transform-command-log" class="section level3">
 <h3>Transform command log</h3>
-<p>All transformations applied in the <em>Data &gt; Transform</em> tab can be logged. If, for example, you apply a <code>log</code> transformation to numeric variables the following code is generated and put in the <code>Transform command log</code> window at the bottom of your screen when you click the <code>Store</code> button.</p>
+<p>All transformations applied in the <em>Data &gt; Transform</em> tab can be logged. If, for example, you apply a <code>Ln (natural log)</code> transformation to numeric variables the following code is generated and put in the <code>Transform command log</code> window at the bottom of your screen when you click the <code>Store</code> button.</p>
 <pre class="r"><code>## transform variable
-r_data[[&quot;diamonds&quot;]] &lt;- mutate_ext(r_data[[&quot;diamonds&quot;]], funs(log), price, carat, .ext = &quot;_log&quot;)</code></pre>
+r_data[[&quot;diamonds&quot;]] &lt;- mutate_ext(r_data[[&quot;diamonds&quot;]], funs(log), .ext = &quot;_ln&quot;, price, carat)</code></pre>
 <p>This is an important feature if you want to re-run a report with new, but similar, data. Even more important is that there is a record of the steps taken to transform the data and to generate results, i.e., your work is now reproducible.</p>
 <p>To add commands contained in the command log window to a report in <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> click the <i title="report results" class="fa fa-edit"></i> icon.</p>
 </div>
-<div id="filter" class="section level3">
-<h3>Filter</h3>
+<div id="filter-data" class="section level3">
+<h3>Filter data</h3>
 <p>Even if a filter has been specified it will be ignored for (most) functions available in <em>Data &gt; Transform</em>. To create a new dataset based on a filter navigate to the <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> tab and click the <code>Store</code> button. Alternatively, to create a new dataset based on a filter, select <code>Split data &gt; Holdout sample</code> from the <code>Transformation type</code> dropdown.</p>
 </div>
 <div id="hide-summaries" class="section level3">
@@ -365,7 +365,7 @@ r_data[[&quot;diamonds&quot;]] &lt;- mutate_ext(r_data[[&quot;diamonds&quot;]], 
 </div>
 <div id="reorder-or-remove-levels" class="section level4">
 <h4>Reorder or remove levels</h4>
-<p>If a (single) variable of type <code>factor</code> is selected in <code>Select variable(s)</code>, choose <code>Reorder/Remove levels</code> from the <code>Transformation type</code> drop-down to reorder and/or remove levels. Drag-and-drop levels to reorder them or click the <span class="math inline">\(\times\)</span> to remove them. Note that, by default, removing one or more levels will introduce missing values in the data. If you prefer to recode the removed levels into a new level, for example “other”, simply type “other” in the <code>Replacement level name</code> input box and press <code>return</code>. If the resulting factor levels appear as intended, press <code>Store</code> to commit the changes. To temporarily exclude levels from the data use the <code>Filter</code> box (see the help file linked in the <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> tab).</p>
+<p>If a (single) variable of type <code>factor</code> is selected in <code>Select variable(s)</code>, choose <code>Reorder/Remove levels</code> from the <code>Transformation type</code> drop-down to reorder and/or remove levels. Drag-and-drop levels to reorder them or click the <span class="math inline">\(\times\)</span> to remove them. Note that, by default, removing one or more levels will introduce missing values in the data. If you prefer to recode the removed levels into a new level, for example “other”, simply type “other” in the <code>Replacement level name</code> input box and press <code>return</code>. If the resulting factor levels appear as intended, press <code>Store</code> to commit the changes. To temporarily exclude levels from the data use the <code>Filter data</code> box (see the help file linked in the <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> tab).</p>
 </div>
 <div id="rename" class="section level4">
 <h4>Rename</h4>

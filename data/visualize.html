@@ -289,9 +289,9 @@ $(document).ready(function () {
 <blockquote>
 <p>Visualize data</p>
 </blockquote>
-<div id="filter" class="section level3">
-<h3>Filter</h3>
-<p>Use the <code>Filter</code> box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> for details.</p>
+<div id="filter-data" class="section level3">
+<h3>Filter data</h3>
+<p>Use the <code>Filter data</code> box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> for details.</p>
 </div>
 <div id="pause-plotting" class="section level3">
 <h3>Pause plotting</h3>
@@ -376,6 +376,24 @@ $(document).ready(function () {
 ) 
 gridExtra::grid.arrange(grobs = plot_list, top = &quot;Three bar plots&quot;, ncol = 1)</code></pre>
 <p>See the <a href="https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html">gridExtra vignette</a> for additional information on how to customize groups of plots.</p>
+</div>
+<div id="making-plots-interactive-in-r-report" class="section level3">
+<h3>Making plots interactive in <em>R &gt; Report</em></h3>
+<p>It is possible to transform (most) plots generated in Radiant into interactive graphics using the <code>plotly</code> library. After setting <code>custom = TRUE</code> you can use the <code>ggplotly</code> function to convert a single plot. See example below:</p>
+<pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, xvar = c(&quot;price&quot;, &quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;), custom = TRUE) %&gt;%
+  ggplotly %&gt;%
+  render</code></pre>
+<p>If more than one plot is created, you can use the <code>subplot</code> function from the <code>plotly</code> package. Provide a value for the <code>nrows</code> argument to setup the plot layout grid. In the example below four plots are created. Because <code>nrow = 2</code> the plots will be displayed in a 2 X 2 grid.</p>
+<pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, xvar = c(&quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), custom = TRUE) %&gt;%
+  subplot(nrows = 2) %&gt;%
+  render</code></pre>
+<p>For additional information on the <code>plotly</code> library see the links below:</p>
+<ul>
+<li>Getting started: <a href="https://plot.ly/r/getting-started/" class="uri">https://plot.ly/r/getting-started/</a></li>
+<li>Reference: <a href="https://plot.ly/r/reference/" class="uri">https://plot.ly/r/reference/</a></li>
+<li>Book: <a href="https://cpsievert.github.io/plotly_book" class="uri">https://cpsievert.github.io/plotly_book</a></li>
+<li>Code: <a href="https://github.com/ropensci/plotly" class="uri">https://github.com/ropensci/plotly</a></li>
+</ul>
 </div>
 
 
