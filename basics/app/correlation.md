@@ -2,9 +2,11 @@
 
 Create a correlation matrix of the selected variables. Correlations and p.values are provided for each variable pair. To show only those correlations above a certain (absolute) level, use the correlation cutoff box.
 
+> Note: Correlations can be calculated for variables of type `numeric`, `integer`, and `date`. Variables of other types with no more than two unique levels are transformed into 0-1 dummies and can also be selected. For these variable types, the first level is converted to a 1 and the second to a 0.
+
 <p align="center"><img src="figures_basics/correlation_summary.png"></p>
 
-A visual representation of the correlation matrix is provided in the _Plot_ tab.
+A visual representation of the correlation matrix is provided in the _Plot_ tab. Note that scatter plots in the graph at most 1,000 data points by default. To generate scatter plots that use all observations use `plot(result, n = -1)` in _R > Report_.
 
 Stars shown in the _Plot_ tab are interpreted as:
 
