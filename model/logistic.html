@@ -293,12 +293,13 @@ $(document).ready(function () {
 <h3>Functionality</h3>
 <p>To estimate a logistic regression we need a binary response variable and one or more explanatory variables. We also need specify the level of the response variable we will count as as <em>success</em> (i.e., the <code>Choose level:</code> dropdown). In the example data file <code>titanic</code>, success for the variable <code>survived</code> would be the level <code>Yes</code>.</p>
 <p>To access this dataset go to <em>Data &gt; Manage</em>, select <code>examples</code> from the <code>Load data of type</code> dropdown, and press the <code>Load examples</code> button. Then select the <code>titanic</code> dataset.</p>
-<p>In the <em>Summary</em> tab we can test if two or more variables together add significantly to the fit of a model by selecting variables in the <code>Variables to test</code> dropdown. This functionality can be very useful to test if the overall influence of a variable of type <code>factor</code> is significant.</p>
+<p>In the <em>Summary</em> tab we can test if two or more variables together add significantly to the fit of a model by selecting variables in the <code>Variables to test</code> dropdown. This functionality can be very useful to test if the overall influence of a variable of type <code>factor</code> is statistically significant.</p>
 <p>Additional output that requires re-estimation:</p>
 <ul>
 <li>Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the data before estimation we can see which variables move-the-needle most. Note that a one-unit change is now equated to 2 x the standard deviation of the variable.</li>
 <li>Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects.</li>
 <li>Stepwise: A data-mining approach to select the best fitting model</li>
+<li>Robust standard errors: When <code>robust</code> is selected the coefficient estimates are the same as a normal logistic regression standard errors are adjusted. This adjustment is used by default when probability weights are specified in estimation.</li>
 </ul>
 <p>Additional output that does not require re-estimation:</p>
 <ul>
@@ -325,7 +326,7 @@ $(document).ready(function () {
 <li>sex = Sex (female, male)</li>
 <li>age = Age in years</li>
 </ul>
-<p>Select <code>survived</code> as the response variable and <code>Yes</code> in <strong>Choose level</strong>. Select <code>pclass</code>, <code>sex</code> and <code>age</code> as the explanatory variables. In the screenshot below we see that each of the coefficients is statistically significant (p.value &lt; .05) and that the model has some predictive power (Chi-squared statistic &lt; .05). Unfortunately the coefficients from a logit model are difficult to interpret. The <code>OR</code> column provides estimated odds-ratios. We see that the odds of survival were significantly lower for 2nd and 3rd class passengers compared to 1st class passenger. The odds of survival for males were also lower than for females. While the effect of age is statically significant, for each extra year in age the odds of survival are not as strongly affected (see also the standardized coefficient).</p>
+<p>Select <code>survived</code> as the response variable and <code>Yes</code> in <strong>Choose level</strong>. Select <code>pclass</code>, <code>sex</code> and <code>age</code> as the explanatory variables. In the screenshot below we see that each of the coefficients is statistically significant (p.value &lt; .05) and that the model has some predictive power (Chi-squared statistic &lt; .05). Unfortunately the coefficients from a logistic regression model are difficult to interpret. The <code>OR</code> column provides estimated odds-ratios. We see that the odds of survival were significantly lower for 2nd and 3rd class passengers compared to 1st class passenger. The odds of survival for males were also lower than for females. While the effect of age is statically significant, for each extra year in age the odds of survival are not as strongly affected (see also the standardized coefficient).</p>
 <p>For each of the explanatory variables the following null and alternate hypotheses can be formulated for the odds ratios:</p>
 <ul>
 <li>H0: The odds-ratio associated with explanatory variable x is equal to 1</li>
@@ -345,7 +346,7 @@ $(document).ready(function () {
 <p align="center">
 <img src="figures_model/logistic_plot.png">
 </p>
-<p>Probabilities, are more convenient for interpretation than coefficients or odds from a logit model. To see how survival probabilities change across passenger classes select <code>Command</code> from the <code>Prediction input</code> dropdown in the <em>Predict</em> tab, type <code>pclass = levels(pclass)</code> in the <strong>Prediction command</strong> box, and press return.</p>
+<p>Probabilities, are more convenient for interpretation than coefficients or odds from a logistic regression model. To see how survival probabilities change across passenger classes select <code>Command</code> from the <code>Prediction input</code> dropdown in the <em>Predict</em> tab, type <code>pclass = levels(pclass)</code> in the <strong>Prediction command</strong> box, and press return.</p>
 <p align="center">
 <img src="figures_model/logistic_predict.png">
 </p>
