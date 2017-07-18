@@ -2,81 +2,47 @@
 title: Radiant -- Business analytics using R and Shiny
 ---
 
-***
-
-```{r echo = FALSE}
- rv <- R.Version()
- rv <- paste(rv$major, rv$minor, sep = ".")
-```
-
 ## How to install Radiant
 
 Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
 
+> **Note:** User profiles (or user names or logins) containing non-ASCII characters may cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters and numbers only. For example, c:\\users\\myprofilename
 
-> **Note:** User profiles (or usernames or logins) containing non-ASCII characters will likely cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters only. For example, c:\\users\\myprofilename
+#### Installing Radiant on Windows
 
-#### 1. Install R for your system
+For Windows, download and run the all-in-one installer for <a href="http://rady.ucsd.edu/faculty/directory/nijs/pub/docs/radiant/Rady - R Local Installer - 64bit Only.exe">R, Rstudio, and Radiant</a>. For a video tutorial see the `Install Radiant on Windows` video below:
 
-For mac go to <a href="https://cran.r-project.org/bin/macosx/" target="_blank">https://cran.r-project.org/bin/macosx/</a>
+<iframe width="640" height="375" src="https://www.youtube.com/embed/efQM6WqrHG0" frameborder="0" allowfullscreen></iframe>
 
-For windows get the latest release from <a href="https://cran.r-project.org/bin/windows/base/release.htm" target="_blank">https://cran.r-project.org/bin/windows/base/release.htm</a>
+> Credits: Thanks go to Brandon Salas at the Rady School of Management for creating the Windows installer
 
-> **Important:** Windows users **must** install R in directory C:\\R\\R-`r rv`
+#### Installing Radiant on Mac
 
-On Mac you can accept the default settings. On Windows the R-installer should create 2 shortcuts on your Desktop. Because we will be using Rstudio to start Radiant you can delete these shortcuts after completing step 6 below.
-
-> To automate steps 2-5 open R and copy-and-paste the command below, press return, and accept all default settings during the install process:
+For Mac, first download and install R from <a href="https://cran.r-project.org/bin/macosx/" target="_blank">https://cran.r-project.org/bin/macosx/</a>. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
 ```
 
-For a step-by-step video tutorial see the `Install Radiant on Windows` or `Install Radiant on Mac` below:
-
-**Install Radiant on Windows**
-
-<iframe width="640" height="375" src="https://www.youtube.com/embed/efQM6WqrHG0" frameborder="0" allowfullscreen></iframe>
-
-**Install Radiant on Mac**
+For a video tutorial see the `Install Radiant on Mac` video below:
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/WheqHpobMZg" frameborder="0" allowfullscreen></iframe>
 
-If you used the `source(...)` command shown above successfully you can now skip to step 6. Otherwise follow steps 2-5 below first.
+#### Use a modern browser
 
-#### 2. Install Rstudio
+For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check the "Ask where to save each file before downloading" box.
 
-Get the latest release of Rstudio for your system from:
+#### Starting Radiant
 
-<a href="https://www.rstudio.com/products/rstudio/download/" target="_blank">https://www.rstudio.com/products/rstudio/download/</a>
+I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start and update Radiant through the `Addins` menu at the top of the screen. When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out.
 
-Install Rstudio and accept all default settings. Make sure to put a shortcut to Rstudio on your Desktop or _pin_ it to the taskbar.
+### Installing additional R-development tools
 
-#### 3. Use a modern browser
-
-For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should work as well. Chrome, however, is the recommended browser. Most browser will, by default, save to the downloads folder. However, it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check "Ask where to save each file before downloading".
-
-#### 4. Install LaTex
-
-To generate PDF reports in Radiant you will need LaTex installed. For Mac download and install <a href="http://tug.org/cgi-bin/mactex-download/MacTeX.pkg">MacTex</a>. For Windows download and install <a href="http://rady.ucsd.edu/faculty/directory/nijs/pub/docs/radiant/basic-miktex-2.9.6161-x64.exe">MikTex</a>.
-
-#### 5. Install Radiant
-
-To install Radiant open Rstudio and copy-and-paste the command below into the **Console** window on the bottom left of the application. Then press return. R(studio) will now install Radiant and several dependencies. This may take a few minutes depending on the speed of your internet connection.
-
-> **Note:** On Windows you may need to start Rstudio by right-clicking on the desktop shortcut and choosing `run as administrator`.
+To install additional development tools (i.e., Rtools, git, homebrew) copy-and-paste the command below into R or Rstudio and press return. When installing Rtools, Windows users should add Rstools to the system path.
 
 ```r
-install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/", type = "binary")
+source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install_dev.R")
 ```
-
-> **Important:** If you use Windows and are asked where to install R-packages (i.e., "Would you like to use a personal library instead?") you most likely did **not** install R in directory C:\\R\\R-`r rv` as stated above. You should uninstall and reinstall R in the suggested directory before proceeding. If it already exists, you should also remove the Documents\\R directory.
-
-#### 6. Starting Radiant
-
-When you open Rstudio (version 0.99.900 or later) you can start and update Radiant through the `Addins` menu at the top of the screen. Note that when you first install Radiant you must use the install script or the `install.packages` command shown above.
-
-When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out.
 
 ## Documentation
 
@@ -86,7 +52,7 @@ Want more help getting started? Watch the tutorials on the [documentation site](
 
 ## Trouble shooting
 
-Windows users may need to start R and Rstudio `as administrator`. On rare occasions R(studio) may complain that a package is not yet installed. If so, install the package mentioned using the command below but replace 'package-that-is-not-yet-installed' with the package name mentioned in the error message
+Windows users may need to start R and Rstudio `as administrator`. On rare occasions R(studio) may complain that a package is not yet installed when starting Radiant. If so, install the package mentioned using the command below but replace 'package-that-is-not-yet-installed' with the package name mentioned in the error message
 
 ```r
 install.packages("package-that-is-not-yet-installed", repos = "https://cran.rstudio.com", type = "binary")
@@ -101,4 +67,3 @@ source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/build
 ## Reporting issues
 
 Rady students can report any issues they might have with Radiant on Piazza. Otherwise, please use the GitHub issue tracker at <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">github.com/radiant-rstats/radiant/issues</a>.
-

@@ -6,9 +6,9 @@ setwd("~/gh/docs/")
 system('make')
 
 knit_docs <- function(x) {
-	setwd(file.path("~/gh/docs",x,"app"))
-	list.files(pattern = "*.Rmd") %>% sapply(knit)
-	setwd(file.path("../..",x)); system("make")
+  setwd(file.path("~/gh/docs",x,"app"))
+  list.files(pattern = "*.Rmd") %>% sapply(knit)
+  setwd(file.path("../..",x)); system("make")
 }
 
 sapply(c("data","design","basics","model","multivariate"), knit_docs)
@@ -24,13 +24,13 @@ file.copy("README_dev.md",file.path("../../radiant.data/inst/app/tools/app/about
 file.copy("tutorials_dev.md",file.path("../../radiant.data/inst/app/tools/app/tutorials.md"),overwrite = TRUE)
 
 copy_docs <- function(app) {
-	readLines("README_dev.md") %>% paste0(., collapse = "\n") %>%
-		sub("radiant.png",paste0(app,".png"), . ) %>%
-		sub("radiant-rstats/radiant)",paste0("radiant-rstats/",app,")"), ., fixed = TRUE) %>%
-		sub("badges/version/radiant)",paste0("badges/version/",app,")"), ., fixed = TRUE) %>%
-		sub("package=radiant)",paste0("package=",app,")"), ., fixed = TRUE) %>%
-		sub("radiant/issues",paste0(app,"/issues"), ., fixed = TRUE) %>%
-		cat(file = file.path("../..",app,"README.md"))
+  readLines("README_dev.md") %>% paste0(., collapse = "\n") %>%
+    sub("radiant.png",paste0(app,".png"), . ) %>%
+    sub("radiant-rstats/radiant)",paste0("radiant-rstats/",app,")"), ., fixed = TRUE) %>%
+    sub("badges/version/radiant)",paste0("badges/version/",app,")"), ., fixed = TRUE) %>%
+    sub("package=radiant)",paste0("package=",app,")"), ., fixed = TRUE) %>%
+    sub("radiant/issues",paste0(app,"/issues"), ., fixed = TRUE) %>%
+    cat(file = file.path("../..",app,"README.md"))
 }
 
 sapply(c("radiant","radiant.data","radiant.design","radiant.basics","radiant.model","radiant.multivariate"), copy_docs)
@@ -50,16 +50,16 @@ file.copy("~/radiant.data.pdf","radiant.data.pdf",overwrite = TRUE)
 system("rm -rf .Rd2pdf*")
 
 create_manuals <- function(x) {
-	app <- paste0("radiant.",x)
-	man <- paste0(app,".pdf")
-	unlink(man)
-	setwd("~")
-	unlink(man)
-	system(paste0("R CMD Rd2pdf gh/",app," --no-preview"))
-	system("rm -rf .Rd2pdf*")
-	setwd("~/gh/docs/")
-	file.copy(paste0("~/",man), man, overwrite = TRUE)
-	system("rm -rf .Rd2pdf*")
+  app <- paste0("radiant.",x)
+  man <- paste0(app,".pdf")
+  unlink(man)
+  setwd("~")
+  unlink(man)
+  system(paste0("R CMD Rd2pdf gh/",app," --no-preview"))
+  system("rm -rf .Rd2pdf*")
+  setwd("~/gh/docs/")
+  file.copy(paste0("~/",man), man, overwrite = TRUE)
+  system("rm -rf .Rd2pdf*")
 }
 
 sapply(c("data","design","basics","model","multivariate"), create_manuals)

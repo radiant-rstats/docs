@@ -24,8 +24,7 @@ plot(result, plots = "dashboard")
 
 ## set working directory to Desktop - checking two possible locations
 path2desktop <- "~/Desktop/"
-if (!file.exists(path2desktop))
-	path2desktop <- "~/Documents/Desktop"
+if (!file.exists(path2desktop)) path2desktop <- "~/Documents/Desktop"
 setwd(path2desktop)
 
 ## load the data from  url
