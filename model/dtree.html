@@ -324,7 +324,7 @@ Sign with TV Network:
     payoff: 900000</code></pre>
 <p>To reference another (sub)tree use the <code>dtree</code> function in the <code>variables</code> section and the name of the (sub)tree. For example, suppose you want to include a tree (“tuesday_tree”) that evaluates a pricing decision on Tuesday into a tree that evaluates a pricing decision on Monday. The start of the <code>variables</code> section might look as follows:</p>
 <pre class="yaml"><code>variables:
-    tuesday_emv: dtree(&quot;tuesday_tree&quot;)</code></pre>
+  tuesday_emv: dtree(&quot;tuesday_tree&quot;)</code></pre>
 <p>Then in the Monday tree you would refer to <code>tuesday_emv</code> in spots where you need the EMV from Tuesday’s pricing decision.</p>
 <div id="rules-for-decision-tree-input" class="section level2">
 <h2>Rules for decision tree input</h2>
@@ -352,7 +352,7 @@ Sign with TV Network:
 </p>
 <p>The EMV for <code>Sign with TV Network</code> is $900,000. If we ignore costs the expected payoff from <code>Sign with Movie Company</code> is:</p>
 <p><span class="math display">\[
-    0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 = 960,000
+  0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 = 960,000
 \]</span></p>
 <p>The EMV from signing with the movie company is however <span class="math inline">\(960,000 - 5,000 = 955,000\)</span> because we do incur a cost of $5,000 in legal fees. Hover the cursor over the chance node shown on screen to see a <code>tooltip</code> that shows the calculation. To highlight that a <code>cost</code> was specified the chance node in the figure has a dashed outer line.</p>
 <p>In the <code>Sign contract</code> example it is clear that <code>Sign with Movie Company</code> is the preferred option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the <em>Sensitivity</em> tab is useful. Here we can evaluate how decisions (e.g., <code>Sign with Movie Company</code> and <code>Sign with TV Network</code>) would change if the legal fee changes. Enter 0 as the <code>Min</code> value, 80000 as the <code>Max value</code>, 10000 as the <code>Step</code> size, and then press the <i class="fa fa-plus"></i> icon. After pressing <code>Evaluate sensitivity</code> a graph will be shown that illustrates how payoffs for the decisions change. Notice that for legal fees higher than $60,000 <code>Sign with TV Network</code> produces the highest EMV.</p>

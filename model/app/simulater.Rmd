@@ -123,7 +123,7 @@ data.frame(
   x = x,
   y = y,
   `pmax(x,y)` = pmax(x,y),
- 	check.names = FALSE
+  check.names = FALSE
 ) %>%
 knitr::kable(align = 'l', format = 'html', escape = FALSE, table.attr = tab_large)
 ```
@@ -200,5 +200,5 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 
 ```r
 plot(result, custom = TRUE) %>%
-	gridExtra::grid.arrange(grobs = ., top = "Simulation plots", ncol = 2)
+  gridExtra::grid.arrange(grobs = ., top = "Simulation plots", ncol = 2)
 ```

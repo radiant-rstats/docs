@@ -7,7 +7,7 @@ The data are from a sample of 580 newspaper readers that indicated (1) which new
 We will examine if there is a relationship between income level and choice of newspaper. In particular, we test the following null and alternative hypotheses:
 
 * H0: There is no relationship between income level and newspaper choice
-*	Ha: There is a relationship between income level and newspaper choice
+* Ha: There is a relationship between income level and newspaper choice
 
 If the null-hypothesis is rejected we can investigate which cell(s) contribute to the hypothesized association. In Radiant (Basics > Cross-tab) choose Income as the first factor and Newspaper as the second factor. First, compare the observed and expected frequencies. The expected frequencies are calculated using H0 (i.e., no association) as (Row total x Column Total) /  Overall Total.
 

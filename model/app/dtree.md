@@ -44,7 +44,7 @@ To reference another (sub)tree use the `dtree` function in the `variables` secti
 
 ```yaml
 variables:
-	tuesday_emv: dtree("tuesday_tree")
+  tuesday_emv: dtree("tuesday_tree")
 ```
 
 Then in the Monday tree you would refer to `tuesday_emv` in spots where you need the EMV from Tuesday's pricing decision.
@@ -75,7 +75,7 @@ The `Final` graph shows the optimal decision determined by `folding-back` the tr
 The EMV for `Sign with TV Network` is \$900,000. If we ignore costs the expected payoff from `Sign with Movie Company` is:
 
 $$
-	0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 = 960,000
+  0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 = 960,000
 $$
 
 The EMV from signing with the movie company is however $960,000 - 5,000 = 955,000$ because we do incur a cost of \$5,000 in legal fees. Hover the cursor over the chance node shown on screen to see a `tooltip` that shows the calculation. To highlight that a `cost` was specified the chance node in the figure has a dashed outer line.

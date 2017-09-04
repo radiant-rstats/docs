@@ -293,10 +293,12 @@ $(document).ready(function () {
 <h3>Transform command log</h3>
 <p>All transformations applied in the <em>Data &gt; Transform</em> tab can be logged. If, for example, you apply a <code>Ln (natural log)</code> transformation to numeric variables the following code is generated and put in the <code>Transform command log</code> window at the bottom of your screen when you click the <code>Store</code> button.</p>
 <pre class="r"><code>## transform variable
-r_data[[&quot;diamonds&quot;]] &lt;- mutate_ext(r_data[[&quot;diamonds&quot;]], 
-                                                                     .vars = vars(price, carat), 
-                                                                     .funs = funs(log), 
-                                                                     .ext = &quot;_ln&quot;)</code></pre>
+r_data[[&quot;diamonds&quot;]] &lt;- mutate_ext(
+  r_data[[&quot;diamonds&quot;]], 
+  .vars = vars(price, carat), 
+  .funs = funs(log), 
+  .ext = &quot;_ln&quot;
+)</code></pre>
 <p>This is an important feature if you want to re-run a report with new, but similar, data. Even more important is that there is a record of the steps taken to transform the data and to generate results, i.e., your work is now reproducible.</p>
 <p>To add commands contained in the command log window to a report in <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> click the <i title="report results" class="fa fa-edit"></i> icon.</p>
 </div>

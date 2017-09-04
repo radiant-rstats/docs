@@ -49,38 +49,38 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" tar
 #### Sample size for a mean:
 
 $$
-	n = \frac{ z^2 \times s^2 }{ E^2 }
+  n = \frac{ z^2 \times s^2 }{ E^2 }
 $$
 
 where $n$ is the sample size, $z$ is the z-value associated with the desired level of confidence (e.g., 1.96 for 95% confidence), $s$ is the sample standard deviation, and $E$ is the acceptable error. Even if you have not seen the equation above before you may recall the formula for a confidence interval:
 
 $$
-	x \pm z \frac{s}{\sqrt{n}}
+  x \pm z \frac{s}{\sqrt{n}}
 $$
 
 The boundaries around $x$ are equal to $E$, i.e., the acceptable error. Squaring both sides and rearranging terms gives the formula for sample size:
 
 $$
-	E = z \frac{s}{\sqrt{n}} \; \Rightarrow \; n = \frac{ z^2 \times s^2 }{ E^2 }
+  E = z \frac{s}{\sqrt{n}} \; \Rightarrow \; n = \frac{ z^2 \times s^2 }{ E^2 }
 $$
 
 
 #### Sample size for a proportion:
 
 $$
-	n = \frac{ z^2 \times p(1-p) }{ E^2 }
+  n = \frac{ z^2 \times p(1-p) }{ E^2 }
 $$
 
 where $n$ is the sample size, $z$ is the z-value associated with the desired level of confidence (e.g., 1.96 for 95% confidence), $p$ is the sample proportion, and $E$ is the acceptable error. Even if you have not seen the equation above before you may recall the formula for a confidence interval:
 
 $$
-	p \pm z \sqrt{ \frac{p(1-p)}{n} }
+  p \pm z \sqrt{ \frac{p(1-p)}{n} }
 $$
 
 The boundaries around $p$ are equal to $E$, i.e., the acceptable error. Squaring both sides and rearranging terms gives the formula for sample size:
 
 $$
-	E = z \sqrt{ \frac{p(1-p)}{n} } \; \Rightarrow \; n = \frac{ z^2 p(1-p) }{ E^2 }
+  E = z \sqrt{ \frac{p(1-p)}{n} } \; \Rightarrow \; n = \frac{ z^2 p(1-p) }{ E^2 }
 $$
 
 #### Population correction
@@ -88,11 +88,11 @@ $$
 While we can always apply a population correction, the size of the population can have a substantial impact on the required sample size when ($n$) is large compared to the size of the total population ($N$).
 
 $$
-	n^* = \frac{ nN }{ n - 1 + N }
+  n^* = \frac{ nN }{ n - 1 + N }
 $$
 
 As an example, suppose we determine that we need to draw a sample of size 217 from a population of 5000. The the sample size adjusted for population size ($n^*$) would be calculated as follows:
 
 $$
-	n^* = \frac{ 217 \times 5000 }{ 217 - 1 + 5000 } = 208
+  n^* = \frac{ 217 \times 5000 }{ 217 - 1 + 5000 } = 208
 $$

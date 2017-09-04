@@ -251,5 +251,5 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 
 ```r
 plot(result, custom = TRUE) %>%
-	gridExtra::grid.arrange(grobs = ., top = "Simulation plots", ncol = 2)
+  gridExtra::grid.arrange(grobs = ., top = "Simulation plots", ncol = 2)
 ```

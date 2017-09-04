@@ -68,9 +68,9 @@ Note that in this example, "model 1" is a regression without explanatory variabl
 
 $$
 \begin{eqnarray}
-	F & = & \frac{(R^2_2 - R^2_1)/(k_2 - k_1)}{(1 - R^2_2)/(n - k_2 - 1)} \\\\
-	  & = & \frac{(0.331 - 0)/(3 - 0)}{(1 - 0.331)/(200 - 3 - 1)} \\\\
-	  & = & 32.325
+  F & = & \frac{(R^2_2 - R^2_1)/(k_2 - k_1)}{(1 - R^2_2)/(n - k_2 - 1)} \\\\
+    & = & \frac{(0.331 - 0)/(3 - 0)}{(1 - 0.331)/(200 - 3 - 1)} \\\\
+    & = & 32.325
 \end{eqnarray}
 $$
 
@@ -211,8 +211,8 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 ```r
 result <- regress(dataset = "diamonds", rvar = "price", evar = c("carat", "clarity", "cut", "color"))
 summary(result)
-plot(result, plots = "scatter", custom = TRUE) %>%
-	gridExtra::grid.arrange(grobs = ., top = "Scatter plots", ncol = 2)
+plot(result, plots = "scatter", custom = TRUE) %>% 
+  gridExtra::grid.arrange(grobs = ., top = "Scatter plots", ncol = 2)
 ```
 
 ### Technical notes
@@ -258,7 +258,7 @@ $$
 In words, the derivative of the natural logarithm of a variable is the reciprocal of that variable, times the derivative of that variable. From the discussion on the linear model above we know that
 
 $$
-	\frac{ \partial a + b P_t + c D_t}{ \partial P_t } = b
+  \frac{ \partial a + b P_t + c D_t}{ \partial P_t } = b
 $$
 
 Combining these two equations gives

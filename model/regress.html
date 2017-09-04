@@ -348,9 +348,9 @@ $(document).ready(function () {
 <p>Note that in this example, “model 1” is a regression without explanatory variables. As you might expect, the explained variance for model 1 is equal to zero. The F-test compares the <em>fit</em> of model 1 and model 2, adjusted for the difference in the number of coefficients estimated in each model. The test statistic to use is described below. <span class="math inline">\(R^2_2\)</span> is the explained variance for model 2 and <span class="math inline">\(R^2_1\)</span> is the explained variance for model 1. <span class="math inline">\(n\)</span> is equal to the number of rows in the data, and <span class="math inline">\(k_2\)</span> (<span class="math inline">\(k_1\)</span>) is equal to the number of estimated coefficients in model 2 (model 1).</p>
 <p><span class="math display">\[
 \begin{eqnarray}
-    F &amp; = &amp; \frac{(R^2_2 - R^2_1)/(k_2 - k_1)}{(1 - R^2_2)/(n - k_2 - 1)} \\\\
-      &amp; = &amp; \frac{(0.331 - 0)/(3 - 0)}{(1 - 0.331)/(200 - 3 - 1)} \\\\
-      &amp; = &amp; 32.325
+  F &amp; = &amp; \frac{(R^2_2 - R^2_1)/(k_2 - k_1)}{(1 - R^2_2)/(n - k_2 - 1)} \\\\
+    &amp; = &amp; \frac{(0.331 - 0)/(3 - 0)}{(1 - 0.331)/(200 - 3 - 1)} \\\\
+    &amp; = &amp; 32.325
 \end{eqnarray}
 \]</span></p>
 <p>We can use the provided p.value associated with an F-statistic of 32.325 to evaluate the null hypothesis. We can also calculate the critical F-statistic using the probability calculator. As we can see from the output below that value is 2.651. Because the provided p.value is &lt; 0.001 and the calculated F-statistic is larger than the critical value (32.325 &gt; 2.651) we reject null hypothesis that all coefficient are equal to zero.</p>
@@ -476,8 +476,8 @@ $(document).ready(function () {
 <p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
 <pre class="r"><code>result &lt;- regress(dataset = &quot;diamonds&quot;, rvar = &quot;price&quot;, evar = c(&quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;))
 summary(result)
-plot(result, plots = &quot;scatter&quot;, custom = TRUE) %&gt;%
-    gridExtra::grid.arrange(grobs = ., top = &quot;Scatter plots&quot;, ncol = 2)</code></pre>
+plot(result, plots = &quot;scatter&quot;, custom = TRUE) %&gt;% 
+  gridExtra::grid.arrange(grobs = ., top = &quot;Scatter plots&quot;, ncol = 2)</code></pre>
 </div>
 <div id="technical-notes" class="section level3">
 <h3>Technical notes</h3>
@@ -510,7 +510,7 @@ plot(result, plots = &quot;scatter&quot;, custom = TRUE) %&gt;%
 \]</span></p>
 <p>In words, the derivative of the natural logarithm of a variable is the reciprocal of that variable, times the derivative of that variable. From the discussion on the linear model above we know that</p>
 <p><span class="math display">\[
-    \frac{ \partial a + b P_t + c D_t}{ \partial P_t } = b
+  \frac{ \partial a + b P_t + c D_t}{ \partial P_t } = b
 \]</span></p>
 <p>Combining these two equations gives</p>
 <p><span class="math display">\[
