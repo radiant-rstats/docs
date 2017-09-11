@@ -337,7 +337,7 @@ $(document).ready(function () {
 <p>To update Radiant select <code>Update Radiant</code> from the <code>Addins</code> menu in Rstudio or use the command below:</p>
 <pre class="r"><code>radiant::update_radiant()</code></pre>
 <p>Alternatively Radiant can be updated using the command:</p>
-<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/build.R&quot;)</code></pre>
+<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/udate.R&quot;)</code></pre>
 <p>See the <a href="https://radiant-rstats.github.io/docs/install.html">installing radiant</a> page for details.</p>
 <p><strong>Optional:</strong> You can also create a launcher on your Desktop to start Radiant by typing <code>radiant::launcher()</code> in the R(studio) console and pressing return. A file called <code>radiant.bat</code> (windows) or <code>radiant.command</code> (mac) will be created that you can double-click to start Radiant in your default browser. The <code>launcher</code> command will also create a file called <code>update_radiant.bat</code> (windows) or <code>update_radiant.command</code> (mac) that you can double-click to update Radiant to the latest release.</p>
 <p>When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code>. The Radiant process will stop and the browser window will close (Chrome) or gray-out.</p>
@@ -359,7 +359,7 @@ $(document).ready(function () {
 </div>
 <div id="running-radiant-on-shinyapps.io" class="section level2">
 <h2>Running Radiant on shinyapps.io</h2>
-<p>To run your own instance of Radiant on shinyapps.io clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and <a href="http://shiny.rstudio.com/articles/shinyapps.html">deploy</a>.</p>
+<p>To run your own instance of Radiant on shinyapps.io first <a href = "https://radiant-rstats.github.io/docs/install.html" target = "_blank">install Radiant and its dependencies</a>. Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and ensure you have the latest version of the Radiant packages installed by running <code>radiant/inst/app/for.shinyapps.io.R</code>. Finally, open <code>radiant/inst/app/ui.R</code> and <a href="http://shiny.rstudio.com/articles/shinyapps.html">deploy</a> the application.</p>
 </div>
 <div id="running-radiant-on-shiny-server" class="section level2">
 <h2>Running Radiant on shiny-server</h2>
