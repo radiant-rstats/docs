@@ -59,7 +59,7 @@ install.packages("package-that-is-not-yet-installed", repos = "https://cran.rstu
 or copy-and-paste the command below into R to check if any required packages have not yet been installed
 
 ```r
-source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/build.R")
+source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R")
 ```
 
 ## Reporting issues
