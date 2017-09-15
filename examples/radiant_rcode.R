@@ -1,3 +1,4 @@
+## loading the radiant library
 library(radiant)
 
 ## analysis on built-in dataset mtcars
@@ -13,8 +14,17 @@ result <- compare_means(diamonds, "cut", "price")
 summary(result)
 plot(result)
 
+## get help for single_mean and compare_means using
+?single_mean
+?compare_means
+
+## the help linked above also links to summary and plot methods for each class
+## you can also use
+?summary.single_mean
+?plot.compare_means
+
 ## regression
-result <- regress(diamonds, "price", c("carat","clarity"))
+result <- regress(diamonds, rvar = "price", evar = c("carat","clarity"))
 summary(result)
 plot(result, plots = "coef")
 plot(result, plots = "dashboard")
@@ -22,13 +32,11 @@ plot(result, plots = "dashboard")
 ## get help for the regression function
 ?regress
 
-## set working directory to Desktop - checking two possible locations
-path2desktop <- "~/Desktop/"
-if (!file.exists(path2desktop)) path2desktop <- "~/Documents/Desktop"
-setwd(path2desktop)
+## loading shopping data from a remote source
+load(curl::curl("https://github.com/radiant-rstats/radiant.multivariate/blob/master/data/shopping.rda?raw=true"))
 
-## load the data from  url
-shopping <- loadrda_url("https://github.com/radiant-rstats/radiant.multivariate/blob/master/data/shopping.rda?raw=true")
+## to view the shopping data in Rstudio's data viewer uncomment the line below
+# View(shopping)
 
 ## start with hierarchical clustering, view help
 ?hclus
@@ -57,23 +65,27 @@ summary(result)
 plot(result)
 
 ## to add a variable with segment membership information to the shopping dataset
-shopping <- store(result)
+shopping <- store(result, name = "clusters")
 
-## did that work? there should be a column 'kclus3' in the dataset
+## for help on the store function see ...
+?store.kclus
+
+## did that work? there should be a column 'clusters' in the dataset
 head(shopping)
 
 ## to save the average shopping attitude scores for each segment
-write.csv(result$clus_means, file = "kclus.csv")
+readr::write_csv(result$clus_means, "kclus.csv")
 
 ## the following command should open the created csv file in Excel
 browseURL("kclus.csv")
 
 ## see if you can reproduce this output in radiant's web-interface
-## the shopping data should be loaded from the global environment
+## the shopping data can be loaded from the global environment through the
+## Data > Manage tab
+## Choose "from global workspace" from the "Load data of type" dropdown
 radiant()
 
-## if you stop radiant by clicking the power icon and then refresh the app
-## will put the the current state into the global environment
-## if you start radiant again it will read the state and you can continue
-## where you left-off. To reset to a clean state click the power icon and
-## then click refresh
+## if you stop radiant by clicking the power icon this will put the current
+## state into the global environment if you start radiant again it will read
+## the state and you can continue where you left-off
+## To reset to a clean state click the power icon and then click refresh
