@@ -399,16 +399,15 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 radiant::radiant()</code></pre>
 <p>Lets see if the example data is available in <code>r_data</code>, if not, we will load the data using the <code>data</code> function:</p>
 <pre class="r"><code>if (exists(&quot;r_data&quot;)) {
-  message(&quot;Retrieving data from radiant&#39;s r_data list&quot;)
-  salary &lt;- r_data[[&quot;salary&quot;]]
-  shopping &lt;- r_data[[&quot;shopping&quot;]]
+  message(&quot;Attaching data from radiant&#39;s r_data list&quot;)
+  attach(r_data)
 } else {
-  message(&quot;Retrieving data from radiant package&quot;)
-  data(&quot;salary&quot;)
-  data(&quot;shopping&quot;)
+  message(&quot;Retrieving data from radiant packages&quot;)
+  data(&quot;salary&quot;, package = &quot;radiant.basics&quot;)
+  data(&quot;shopping&quot;, package = &quot;radiant.multivariate&quot;)
 }</code></pre>
 <p>We can now use the <code>compare_means</code> function to evaluate salary data for professors of different ranks using:</p>
-<pre class="r"><code>result &lt;- compare_means(&quot;salary&quot;, var1 = &quot;rank&quot;, var2 = &quot;salary&quot;)
+<pre class="r"><code>result &lt;- compare_means(dataset = &quot;salary&quot;, var1 = &quot;rank&quot;, var2 = &quot;salary&quot;)
 summary(result)</code></pre>
 <pre><code>Pairwise mean comparisons (t-test)
 Data      : salary 

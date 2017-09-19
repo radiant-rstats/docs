@@ -74,20 +74,19 @@ Lets see if the example data is available in `r_data`, if not, we will load the 
 
 ```{r}
 if (exists("r_data")) {
-  message("Retrieving data from radiant's r_data list")
-  salary <- r_data[["salary"]]
-  shopping <- r_data[["shopping"]]
+  message("Attaching data from radiant's r_data list")
+  attach(r_data)
 } else {
-  message("Retrieving data from radiant package")
-  data("salary")
-  data("shopping")
+  message("Retrieving data from radiant packages")
+  data("salary", package = "radiant.basics")
+  data("shopping", package = "radiant.multivariate")
 }
 ```
 
 We can now use the `compare_means` function to evaluate salary data for professors of different ranks using:
 
 ```{r}
-result <- compare_means("salary", var1 = "rank", var2 = "salary")
+result <- compare_means(dataset = "salary", var1 = "rank", var2 = "salary")
 summary(result)
 plot(result)
 ```
