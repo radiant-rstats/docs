@@ -1,17 +1,22 @@
 ---
-title: "Radiant - Rmarkdown example"
-author: "Vincent Nijs"
-date: "June 23, 2016"
-output: html_document
+title: Example `rmarkdown` report
 ---
 
-### Example `rmarkdown` report
+```{r setup, include = FALSE}
+library(radiant)
+knitr::opts_chunk$set(
+  comment = NA,
+  cache = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
 
 Below is the output from Radiant used to evaluate if the average price in a sample of diamonds is greater than \$1000.
 
-```{r echo=FALSE, comment=NA, fig.width=7, fig.height=7}
-suppressMessages(library(radiant))
-result <- single_mean(dataset = "diamonds", var = "price", comp_value = 1000,
+```{r fig.width = 7, fig.height = 7}
+data("diamonds")
+result <- single_mean(diamonds, var = "price", comp_value = 1000,
                       alternative = "greater", conf_lev = 0.95)
 summary(result)
 plot(result)

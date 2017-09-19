@@ -291,8 +291,8 @@ help(package = radiant.design)
 help(package = radiant.basics)
 help(package = radiant.model)
 help(package = radiant.multivariate)</code></pre>
-<p>You can also use Rstudio to render and edit Rmarkdown documents generated in Radiant. When you install and load Radiant it exports functions that can be called from R-code and/or an Rmarkdown document.</p>
-<p>If you close Radiant by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code> after launching it from R(studio), you can paste the commands below into the command console to get the same output as in the browser interface.</p>
+<p>You can also use Rstudio to render and edit Rmarkdown documents generated in Radiant. When you install and load Radiant it exports functions that can be called from R-code and/or an Rmarkdown document. To load the Radiant library enter <code>library(radiant)</code> in the R(studio) console.</p>
+<!-- If you close Radiant by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop` after launching it from R(studio), you can paste the commands below into the command console to get the same output as in the browser interface. -->
 <pre class="r"><code>data(&quot;diamonds&quot;) ## getting the diamonds data
 result &lt;- single_mean(diamonds, &quot;price&quot;)
 summary(result)</code></pre>
@@ -394,7 +394,8 @@ Adjustment: Bonferroni
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result, plots = c(&quot;bar&quot;,&quot;density&quot;))</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>These datasets are available after loading the radiant library and using the <code>data</code> function. We can also load data through Radiant’s web interface and then access the data from the console after closing the app. Start radiant using the command below and then click select <code>Examples</code> from the <code>Load data of type</code> dropdown in the <em>Data &gt; Manage</em> tab. Then close the app by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navbar and then clicking <code>Stop</code>. The datasets loaded through the web-interface are now available in the <code>r_data</code> list .</p>
+<p>To get help for the <code>single_mean</code> and <code>compare_means</code> functions use <code>?single_mean</code> and <code>?compare_means</code>. These help files also have links to information about the <code>summary</code> and <code>plot</code> methods for each class. See also <code>?summary.single_mean</code> and <code>?plot.compare_means</code></p>
+<p>The <code>diamonds</code> data is available after loading the radiant library and using the <code>data</code> function. We can also load data through Radiant’s web interface and then access the data from the console after closing the app. Start radiant using the command below and then click select <code>Examples</code> from the <code>Load data of type</code> dropdown in the <em>Data &gt; Manage</em> tab. Then close the app by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navbar and then clicking <code>Stop</code>. The datasets loaded through the web-interface are now available in the <code>r_data</code> list .</p>
 <pre class="r"><code>## start radiant in Rstudio, load the example data, then click the power icon and Stop
 radiant::radiant()</code></pre>
 <p>Lets see if the example data is available in <code>r_data</code>, if not, we will load the data using the <code>data</code> function:</p>
@@ -429,6 +430,10 @@ Adjustment: None
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Or by using the command below if the <code>r_data</code> list is available:</p>
+<pre class="r"><code>result &lt;- compare_means(r_data[[&quot;salary&quot;]], var1 = &quot;rank&quot;, var2 = &quot;salary&quot;)
+summary(result)
+plot(result)</code></pre>
 <p>An alternative way to write this code is to use <code>piping</code> (see <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">dplyr</a> and <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a> vignettes):</p>
 <pre class="r"><code>salary %&gt;% compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;% {summary(.); plot(.)}</code></pre>
 <pre><code>Pairwise mean comparisons (t-test)
