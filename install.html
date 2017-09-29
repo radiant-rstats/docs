@@ -306,6 +306,26 @@ $(document).ready(function () {
 <iframe width="640" height="375" src="https://www.youtube.com/embed/WheqHpobMZg" frameborder="0" allowfullscreen>
 </iframe>
 </div>
+<div id="installing-radiant-on-linux" class="section level2">
+<h2>Installing Radiant on Linux</h2>
+<p>The first step will be to install R and a couple of additional linux tools. The commands required for Ubuntu are shown below:</p>
+<pre class="sh"><code>## From: http://thecoatlessprofessor.com/tutorials/downloading-and-installing-r/#linux-ubuntu
+## Extract OS distribution codename
+DISTRIBUTION_CODENAME=`grep DISTRIB_CODENAME /etc/lsb-release | cut -c 18-`
+
+## Appends the CRAN repository to your sources.list file 
+sudo sh -c &#39;echo &quot;deb https://cloud.r-project.org/bin/linux/ubuntu $DISTRIBUTION_CODENAME&quot; &gt;&gt; /etc/apt/sources.list&#39;
+
+## Add GPG key of Michael Rutter the Ubuntu archives CRAN maintainer 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+sudo apt-get update
+
+## Install R and required linux tools
+sudo apt-get install r-base r-base-dev
+sudo apt-get install libcurl4-openssl-dev libxml2-dev</code></pre>
+<p>Then open R and run the following command:</p>
+<pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)</code></pre>
+</div>
 <div id="use-a-modern-browser" class="section level2">
 <h2>Use a modern browser</h2>
 <p>For example, <a href="https://www.google.com/intl/en/chrome/browser/desktop/">Chrome</a> or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to <em>Preferences &gt; Advanced preferences &gt; Downloads</em> and then check the “Ask where to save each file before downloading” box.</p>

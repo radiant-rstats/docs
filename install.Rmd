@@ -26,6 +26,33 @@ For a video tutorial see the `Install Radiant on Mac` video below:
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/WheqHpobMZg" frameborder="0" allowfullscreen></iframe>
 
+## Installing Radiant on Linux
+
+The first step will be to install R and a couple of additional linux tools. The commands required for Ubuntu are shown below:
+
+```sh
+## From: http://thecoatlessprofessor.com/tutorials/downloading-and-installing-r/#linux-ubuntu
+## Extract OS distribution codename
+DISTRIBUTION_CODENAME=`grep DISTRIB_CODENAME /etc/lsb-release | cut -c 18-`
+
+## Appends the CRAN repository to your sources.list file 
+sudo sh -c 'echo "deb https://cloud.r-project.org/bin/linux/ubuntu $DISTRIBUTION_CODENAME" >> /etc/apt/sources.list'
+
+## Add GPG key of Michael Rutter the Ubuntu archives CRAN maintainer 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+sudo apt-get update
+
+## Install R and required linux tools
+sudo apt-get install r-base r-base-dev
+sudo apt-get install libcurl4-openssl-dev libxml2-dev
+```
+
+Then open R and run the following command:
+
+```r
+install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/")
+```
+
 ## Use a modern browser
 
 For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check the "Ask where to save each file before downloading" box.
