@@ -20,8 +20,8 @@
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="libs/highlightjs-1.1/highlight.js"></script>
+<link href="libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
 
@@ -77,10 +77,12 @@ img.center {
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -366,6 +368,9 @@ $(document).ready(function () {
 <p>You can also host Radiant using <a href="https://www.rstudio.com/products/rstudio/download-server/">shiny-server</a>. First, install radiant on the server using the command below:</p>
 <pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)</code></pre>
 <p>Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and point shiny-server to the <code>inst/app/</code> directory. As a courtesy, please let me know if you intend to use Radiant on a server.</p>
+<p>When running Radiant on a server, by default, file uploads are limited to 10MB and R-code in <em>R &gt; Report</em> and <em>R &gt; Code</em> will not be evaluated for security reasons. If you have <code>sudo</code> access to the server and have appropriate security in place you can change these settings by adding the following lines to <code>.Rprofile</code> for the <code>shiny</code> user on the server.</p>
+<pre class="bash"><code>options(radiant.maxRequestSize = -1)  ## no file size limit
+options(radiant.report = TRUE)</code></pre>
 </div>
 <div id="saving-and-loading-state" class="section level2">
 <h2>Saving and loading state</h2>
