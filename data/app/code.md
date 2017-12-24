@@ -4,7 +4,7 @@ The code feature allows you to run R-code with access to all functions and data 
 
 You can load an R-code file into Radiant by clicking the `Load code` button and selecting an .r or .R file. If you started Radiant from Rstudio you can save a report in HTML, Word, or PDF format by selecting the desired format from the drop-down manu and clicking `Save`. To save just the code choose `R-code` from the dropdown and press the `Save` button.
 
-If you started Radiant from Rstudio, you can also click the `Read data` button to browse for data and generate code to read it into Radiant.
+If you started Radiant from Rstudio, you can also click the `Read` button to browse for files and generate code to read it into Radiant. For example, read rda, rds, xls, yaml, and feather and add them to the `Datasets` dropdown. If the file type you want to load is not currently supported, the path to the file will be returned. If Radiant was started from an Rstudio project, the file paths used will be relative to the project root. Paths to files synced to local Dropbox or Google Drive folder will use the `find_dropbox` and `find_gdrive` functions to enhances reproducibility.
 
 As an example you can copy-and-paste the code below into the editor and press `Run code` to generate results.
 
