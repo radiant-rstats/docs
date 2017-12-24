@@ -7,3 +7,22 @@ title: News
 Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://www.rstudio.com/shiny/) package.
 
 Blog posts about Radiant are available at <a href="http://vnijs.github.io/blog/" target = "_blank">http://vnijs.github.io/blog/</a>
+
+### Radiant updates
+
+For an overview of Radiant updates see:
+
+* https://github.com/radiant-rstats/radiant/blob/master/NEWS.md
+* https://github.com/radiant-rstats/radiant.data/blob/master/NEWS.md
+* https://github.com/radiant-rstats/radiant.design/blob/master/NEWS.md
+* https://github.com/radiant-rstats/radiant.basics/blob/master/NEWS.md
+* https://github.com/radiant-rstats/radiant.model/blob/master/NEWS.md
+* https://github.com/radiant-rstats/radiant.multivariate/blob/master/NEWS.md
+
+To get the latest version of all Radiant components run the command below:
+
+```r
+source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R")
+```
+
+

@@ -238,8 +238,8 @@ $(document).ready(function () {
              <li><a href="/docs/model/evalbin.html">Evaluate classification</a></li>
              <li class="divider"></li>
              <li class="dropdown-header">Recommend</li>
-             <li class="divider"></li>
              <li><a href="/docs/model/crs.html">Collaborative Filtering</a></li>
+             <li class="divider"></li>
              <li class="dropdown-header">Decide</li>
              <li><a href="/docs/model/dtree.html">Decision analysis</a></li>
              <li><a href="/docs/model/simulater.html">Simulate</a></li>
@@ -302,9 +302,9 @@ $(document).ready(function () {
 
 <p>By default Radiant will add the code generated for the analysis you just completed to the bottom of the report. After clicking a <i title='Report results' class='fa fa-edit'></i> icon Radiant will, by default, switch to the <em>R &gt; Report</em> tab. Click inside the editor window on the left and scroll down to see the generated commands. However, you can choose to select <code>Manual paste</code> instead or <code>Auto paste</code> from the appropriate drop-down in the <em>R &gt; Report</em> tab. With <code>Manual paste</code> the code is put into the clipboard when you click <i title='Report results' class='fa fa-edit'></i> and you can paste it where you want in the editor window.</p>
 
-<p>You can also choose not to switch tabs after clicking  a <i title='Report results' class='fa fa-edit'></i> icon by selecting <code>Don&#39;t switch tab</code> from the appropriate drop-down in the <em>R &gt; Report</em> tab.</p>
+<p>If you started Radiant from Rstudio, you can even choose to have commands sent to an R-code or Rmarkdown document open in Rstudio by selecting <code>To R</code> or <code>To Rmd</code> respectively instead of <code>Auto paste</code> or <code>Manual paste</code>. If you choose <code>To Rmd</code> the editor in <em>R &gt; Report</em> will be hidden (i.e., &ldquo;Preview only&rdquo;) and clicking on <code>Knit report</code> will source the text and code directly from Rstudio. </p>
 
-<p>If you started Radiant from Rstudio, you can even choose to have commands sent to an R-code or Rmarkdown document open in Rstudio by selecting <code>To R</code> or <code>To Rmd</code> respectively instead of <code>Auto paste</code> or <code>Manual paste</code>.</p>
+<p>By default, you will be switched to the <em>R &gt; Report</em> tab after clicking the <i title='Report results' class='fa fa-edit'></i> icon. However, if you don&#39;t want to switch tabs after clicking  a <i title='Report results' class='fa fa-edit'></i> icon, choose <code>Don&#39;t switch tab</code> from the appropriate drop-down in the <em>R &gt; Report</em> tab. <code>Don&#39;t switch tab</code> is the default option when you choose <code>To Rmd</code>.</p>
 
 <p>You can add text or additional commands to create an Rmarkdown document. An Rmarkdown file (extension .Rmd) is a plain text file that can be opened in Notepad (Windows), TextEdit (Mac), Rstudio, Sublime Text, or any other text editor. Please do <strong>not</strong> use Word to edit rmarkdown files.</p>
 
@@ -312,9 +312,11 @@ $(document).ready(function () {
 
 <p>You can add text, bullets, headers, etc. around the code chunks to describe and explain the results using <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html" target="_blank">markdown</a>. For an interactive markdown tutorial visit <a href="http://commonmark.org/help/" target="_blank">commonmark.org</a>.</p>
 
-<p>If you started Radiant from Rstudio you can save the report in various formats (i.e., Notebook, HTML, Word, or PDF). To save the Rmarkdown file open in the editor select <code>Rmd</code> (or <code>Rmd &amp; Data</code>) and press <code>Save report</code>. Note that Windows users will need to  install <a href="https://cran.r-project.org/bin/windows/Rtools/Rtools34.exe" target="_blank">Rtools</a> for the <code>Rmd &amp; Data</code> feature to work.</p>
+<p>If you started Radiant from Rstudio you can save the report in various formats (i.e., Notebook, HTML, Word, or PDF). To save the Rmarkdown file open in the editor select <code>Rmd</code> (or <code>Rmd &amp; Data</code>) and press <code>Save report</code>. Previously saved Rmarkdown files can be loaded into Radiant by using the <code>Load report</code> button.</p>
 
-<p>The best way to save your analyses and settings is to save the <code>state</code> of the application to a file by clicking on the <i title='Save' class='fa fa-save'></i> icon in the navbar and then clicking on <code>Save state</code>. The state-file (extension rda) will contain (1) the data loaded in Radiant, (2) settings for the analyses you were working on, (3) and any reports or code from the R-menu. Save the state-file to your hard-disk and, when you are ready to continue, simply load it by selecting <code>state</code> from the <code>Load data of type</code> dropdown in the <a href="https://radiant-rstats.github.io/docs/data/manage.html" target="_blank"><em>Data &gt; Manage</em></a> tab and clicking the <code>Choose file</code> button.</p>
+<p>If you started Radiant from Rstudio, you can also click the <code>Read data</code> button to browse for data and generate code to read it into Radiant.</p>
+
+<p>The best way to save your analyses and settings is to save the <code>state</code> of the application to a file by clicking on the <i title='Save' class='fa fa-save'></i> icon in the navbar and then clicking on <code>Save state</code>. The state-file (extension rda) will contain (1) the data loaded in Radiant, (2) settings for the analyses you were working on, (3) and any reports or code from the R-menu. Save the state-file to your hard-disk and, when you are ready to continue, simply load it by selecting <code>state</code> from the <code>Load data of type</code> dropdown in the <a href="https://radiant-rstats.github.io/docs/data/manage.html" target="_blank"><em>Data &gt; Manage</em></a> tab and clicking the <code>Browse...</code> button.</p>
 
 <p>If you are using Radiant for a class I suggest you use the <em>R &gt; Report</em> feature to complete assignments and cases. When you are done, generate an (HTML) Notebook (or Word or PDF) report by clicking the <code>Save report</code> button. Submit both the report and your state-file.</p>
 
