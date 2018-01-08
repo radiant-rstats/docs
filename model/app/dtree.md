@@ -98,7 +98,7 @@ The state file for the sensitivity analysis example is available <a href = " htt
 In the _Model_ tab:
 
 * To see this help file click the <i class="fa fa-question" ></i> icon
-* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard 
+* To generate a report about the decision tree in the _Report > Rmd_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard 
 * Choose to maximize (`Max`) or minimize (`Min`) payoffs. Note that payoffs can be negative
 * Click the `Calculate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate or update results
 * Specify a name for your decision tree in the text input next to the `Calculate` button. Clicking on the `Calculate` button will store your settings. If multiple tree structures are available there will also be a dropdown where you can select which structure to use and a `Remove` button to delete tree structures
@@ -109,7 +109,7 @@ In the _Model_ tab:
 In the _Plot_ tab:
 
 * To see this help file click the <i class="fa fa-question" ></i> icon
-* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard
+* To generate a report about the decision tree in the _Report > Rmd_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard
 * Show either the `Initial` or `Final` decision tree
 * Click the `Calculate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate or update results
 * Enter the number of decimal places to show in the plot (default is 2 for payoffs and 4 for probabilities)
@@ -121,7 +121,7 @@ It is not currently possible to add a title or caption directly to the `Decision
 In the _Sensitivity_ tab:
 
 * To see this help file click the <i class="fa fa-question" ></i> icon
-* To generate a report about the decision tree in the _R > Report_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard
+* To generate a report about the decision tree in the _Report > Rmd_ tab click the <i class="fa fa-edit" ></i> icon or press `ALT-enter` on your keyboard
 * Select one or more `Decisions to evaluate`
 * Select variables in `Sensitivity to changes in`. These variables must be defined in the `variables` section of the decision tree structure in the _Model_ tab
 * Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon

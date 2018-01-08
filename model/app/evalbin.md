@@ -28,9 +28,9 @@ If a `filter` is active (e.g., set in the _Data > View_ tab) generate results fo
 
 Generate Lift, Gains, Profit, and/or ROME charts. The profit chart displays a profit index useful to compare performance across predictors/models
 
-### R > Report
+### Report > Rmd
 
-Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
 If we create a set of four charts in the _Plots_ tab we can add a title above the group of plots and impose a two-column layout using `gridExtra::grid.arrange` as follows:
 
@@ -71,11 +71,11 @@ ROME										 | Return on Marketing Expenditures (ROME) achieved by targeting a
 contact									 | Proportion of customers to contact, i.e., (TP + FP) / total
 AUC										   | Area Under the ROC Curve (AUC). ROC stands for Receiver Operating Characteristic.
 
-### R > Report (confusion)
+### Report > Rmd (confusion)
 
-Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
-Only `kappa`, `index`, `ROME`, and `AUC` are plotted by default. It is possible to customize the plotted results through _R > Report_. To change the plot use, for example: 
+Only `kappa`, `index`, `ROME`, and `AUC` are plotted by default. It is possible to customize the plotted results through _Report > Rmd_. To change the plot use, for example: 
 
 ```r
 plot(result, vars = c("precision", "profit", "AUC"))

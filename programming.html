@@ -269,8 +269,8 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="/docs/R/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-             <li><a href="/docs/data/report.html">Report</a></li>
-             <li><a href="/docs/data/code.html">Code</a></li>
+             <li><a href="/docs/data/report_rmd.html">Report > Rmd</a></li>
+             <li><a href="/docs/data/report_r.html">Report > R</a></li>
              <li><a href="/docs/programming.html">Programming</a></li>
              <li><a href="/docs/resources.html">Resources</a></li>
           </ul>
@@ -291,14 +291,13 @@ $(document).ready(function () {
 </div>
 
 
-<p>Radiant’s goal is to provide access to the power of R for business analytics. Although Radiant’s web-interface can handle quite a few data and analysis tasks, you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an <a href="http://rmarkdown.rstudio.com/">Rmarkdown</a> document. Most pages in the app have an <i title='Report results' class='fa fa-edit'></i> icon on the bottom left of your screen that you can click to generate a (reproducible) report with your analysis in the <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> tab. As an alternative to clicking the <i title='Report results' class='fa fa-edit'></i> icon you can also press <code>ALT-enter</code> on your keyboard. Click the <code>Knit report</code> button on the <em>R &gt; Report</em> page to render the report to HTML or press the <code>Save report</code> button to produce a Notebook, HTML, PDF, Word, or Rmarkdown file. Radiant’s function manuals can be viewed using the commands below:</p>
+<p>Radiant’s goal is to provide access to the power of R for business analytics. Although Radiant’s web-interface can handle quite a few data and analysis tasks, you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an <a href="http://rmarkdown.rstudio.com/">Rmarkdown</a> document. Most pages in the app have an <i title='Report results' class='fa fa-edit'></i> icon on the bottom left of your screen that you can click to generate a (reproducible) report with your analysis in the <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> tab. As an alternative to clicking the <i title='Report results' class='fa fa-edit'></i> icon you can also press <code>ALT-enter</code> on your keyboard. Click the <code>Knit report</code> button on the <em>Report &gt; Rmd</em> page to render the report to HTML or press the <code>Save report</code> button to produce a Notebook, HTML, PDF, Word, or Rmarkdown file. Radiant’s function manuals can be viewed using the commands below:</p>
 <pre class="r"><code>help(package = radiant.data)
 help(package = radiant.design)
 help(package = radiant.basics)
 help(package = radiant.model)
 help(package = radiant.multivariate)</code></pre>
 <p>You can also use Rstudio to render and edit Rmarkdown documents generated in Radiant. When you install and load Radiant it exports functions that can be called from R-code and/or an Rmarkdown document. To load the Radiant library enter <code>library(radiant)</code> in the R(studio) console.</p>
-<!-- If you close Radiant by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop` after launching it from R(studio), you can paste the commands below into the command console to get the same output as in the browser interface. -->
 <pre class="r"><code>data(&quot;diamonds&quot;) ## getting the diamonds data
 result &lt;- single_mean(diamonds, &quot;price&quot;)
 summary(result)</code></pre>
@@ -319,9 +318,16 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>You can also call functions for visualization (see below) and access help from the console using <code>?visualize</code></p>
-<pre class="r"><code>visualize(diamonds, xvar = &quot;carat&quot;, yvar = &quot;price&quot;, type = &quot;scatter&quot;,
-          facet_row = &quot;clarity&quot;, color = &quot;clarity&quot;, custom = TRUE) +
-  labs(title = &quot;Diamond Prices ($)&quot;)</code></pre>
+<pre class="r"><code>visualize(
+  diamonds, 
+  xvar = &quot;carat&quot;, 
+  yvar = &quot;price&quot;, 
+  type = &quot;scatter&quot;, 
+  facet_row = &quot;clarity&quot;, 
+  color = &quot;clarity&quot;, 
+  custom = TRUE
+) +
+labs(title = &quot;Diamond Prices ($)&quot;)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>As an example, you can render the <a href="https://radiant-rstats.github.io/docs/examples/single_mean.Rmd"><code>single_mean.Rmd</code></a> file into html (or PDF or Word if you prefer) in Rstudio. Try the code in <a href="https://radiant-rstats.github.io/docs/examples/radiant_rcode.R"><code>radiant_rcode.R</code></a> for a more extensive example.</p>
 <p>To install the latest version of Radiant with complete documentation for offline access, open R(studio) and copy-and-paste the commands below:</p>
@@ -405,9 +411,10 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code>## start radiant in Rstudio, load the example data, then click the power icon and Stop
 radiant::radiant()</code></pre>
 <p>Lets see if the example data is available in <code>r_data</code>, if not, we will load the data using the <code>data</code> function:</p>
-<pre class="r"><code>if (exists(&quot;r_data&quot;)) {
-  message(&quot;Attaching data from radiant&#39;s r_data list&quot;)
-  attach(r_data)
+<pre class="r"><code>if (exists(&quot;r_data&quot;) &amp;&amp; !is.null(r_data$salary) &amp;&amp; !is.null(r_data$shopping)) {
+  message(&quot;Retrieving data from radiant&#39;s r_data list&quot;)
+  salary &lt;- r_data$salary
+  shopping &lt;- r_data$shopping
 } else {
   message(&quot;Retrieving data from radiant packages&quot;)
   data(&quot;salary&quot;, package = &quot;radiant.basics&quot;)
@@ -428,20 +435,26 @@ Adjustment: None
  AssocProf  93876.44  64 13831.700 1728.962 3455.056
       Prof 126772.11 266 27718.675 1699.541 3346.322
 
- Null hyp.              Alt. hyp.                         diff      p.value    
- AsstProf = AssocProf   AsstProf not equal to AssocProf   -13100.45 &lt; .001  ***
- AsstProf = Prof        AsstProf not equal to Prof        -45996.12 &lt; .001  ***
- AssocProf = Prof       AssocProf not equal to Prof       -32895.67 &lt; .001  ***
+ Null hyp.              Alt. hyp.                         diff     
+ AsstProf = AssocProf   AsstProf not equal to AssocProf   -13100.45
+ AsstProf = Prof        AsstProf not equal to Prof        -45996.12
+ AssocProf = Prof       AssocProf not equal to Prof       -32895.67
+ p.value    
+ &lt; .001  ***
+ &lt; .001  ***
+ &lt; .001  ***
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Or by using the command below if the <code>r_data</code> list is available:</p>
-<pre class="r"><code>result &lt;- compare_means(r_data[[&quot;salary&quot;]], var1 = &quot;rank&quot;, var2 = &quot;salary&quot;)
+<pre class="r"><code>result &lt;- compare_means(r_data$salary, var1 = &quot;rank&quot;, var2 = &quot;salary&quot;)
 summary(result)
 plot(result)</code></pre>
 <p>An alternative way to write this code is to use <code>piping</code> (see <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">dplyr</a> and <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a> vignettes):</p>
-<pre class="r"><code>salary %&gt;% compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;% {summary(.); plot(.)}</code></pre>
+<pre class="r"><code>salary %&gt;% 
+  compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;% 
+  {summary(.); plot(.)}</code></pre>
 <pre><code>Pairwise mean comparisons (t-test)
 Data      : . 
 Variables : rank, salary 
@@ -454,10 +467,14 @@ Adjustment: None
  AssocProf  93876.44  64 13831.700 1728.962 3455.056
       Prof 126772.11 266 27718.675 1699.541 3346.322
 
- Null hyp.              Alt. hyp.                         diff      p.value    
- AsstProf = AssocProf   AsstProf not equal to AssocProf   -13100.45 &lt; .001  ***
- AsstProf = Prof        AsstProf not equal to Prof        -45996.12 &lt; .001  ***
- AssocProf = Prof       AssocProf not equal to Prof       -32895.67 &lt; .001  ***
+ Null hyp.              Alt. hyp.                         diff     
+ AsstProf = AssocProf   AsstProf not equal to AssocProf   -13100.45
+ AsstProf = Prof        AsstProf not equal to Prof        -45996.12
+ AssocProf = Prof       AssocProf not equal to Prof       -32895.67
+ p.value    
+ &lt; .001  ***
+ &lt; .001  ***
+ &lt; .001  ***
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
@@ -498,7 +515,8 @@ clarity|VS1     4461.956  4060.801  4863.111 401.155
 clarity|VVS2    5109.476  4697.311  5521.640 412.165
 clarity|VVS1    5027.669  4607.574  5447.764 420.095
 clarity|IF      5265.170  4807.024  5723.317 458.147</code></pre>
-<pre class="r"><code>predict(result, pred_cmd = &quot;carat = 1:10&quot;)</code></pre>
+<pre class="r"><code>pred &lt;- predict(result, pred_cmd = &quot;carat = 1:10&quot;)
+print(pred, n = 10)</code></pre>
 <pre><code>Linear regression (OLS)
 Data                 : diamonds 
 Response variable    : price 
@@ -581,7 +599,22 @@ head(shopping)</code></pre>
 4  4  6  4  5  3  6      3
 5  1  3  2  2  6  4      2
 6  6  4  6  3  3  4      1</code></pre>
-<p>See if you can reproduce this output in the radiant web-interface. Start <code>Radiant</code> from the <code>Addins</code> dropdown in Rstudio. You can also run code inside the Radiant app in the <em>R &gt; Code</em> tab. See <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a> page for details.</p>
+<p>See if you can reproduce this output in the radiant web-interface. Start <code>Radiant</code> from the <code>Addins</code> dropdown in Rstudio. You can also run code inside the Radiant app in the <em>Report &gt; R</em> tab. See <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a> page for details.</p>
+<pre class="r"><code>result &lt;- prob_unif(min = 0, max = 1, ub = 0.3)
+summary(result)</code></pre>
+<pre><code>Probability calculator
+Distribution: Uniform
+Min         : 0 
+Max         : 1 
+Mean        : 0.5 
+St. dev     : 0.289 
+Lower bound : 0 
+Upper bound : 0.3 
+
+P(X &lt; 0.3) = 0.3
+P(X &gt; 0.3) = 0.7</code></pre>
+<pre class="r"><code>plot(result)</code></pre>
+<p><img src="programming_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 
 
 &copy; Vincent Nijs (2017) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/80x15.png" /></a>

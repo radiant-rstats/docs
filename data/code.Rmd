@@ -1,8 +1,0 @@
----
-title: R > Code
----
-
-***
-
-```{r child='app/code.md'}
-```

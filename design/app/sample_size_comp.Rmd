@@ -27,6 +27,6 @@ Leave one of the inputs blank to determine its value. By default the sample size
 
 <sup>3</sup> Beta ($\beta$), is the probability of accepting the null hypothesis when it is actually false. The power of a test is calculated as 1 - $\beta$. A commonly used power level is 0.8 (or 80%)
 
-### R > Report
+### Report > Rmd
 
-Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the sample size calculations by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the sample size calculations by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

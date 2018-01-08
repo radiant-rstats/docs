@@ -83,7 +83,7 @@ browseURL("kclus.csv")
 ## the shopping data can be loaded from the global environment through the
 ## Data > Manage tab
 ## Choose "from global workspace" from the "Load data of type" dropdown
-radiant()
+radiant::radiant()
 
 ## if you stop radiant by clicking the power icon this will put the current
 ## state into the global environment if you start radiant again it will read

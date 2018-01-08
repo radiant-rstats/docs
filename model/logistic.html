@@ -269,8 +269,8 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="/docs/R/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-             <li><a href="/docs/data/report.html">Report</a></li>
-             <li><a href="/docs/data/code.html">Code</a></li>
+             <li><a href="/docs/data/report_rmd.html">Report > Rmd</a></li>
+             <li><a href="/docs/data/report_r.html">Report > R</a></li>
              <li><a href="/docs/programming.html">Programming</a></li>
              <li><a href="/docs/resources.html">Resources</a></li>
           </ul>
@@ -387,9 +387,9 @@ $(document).ready(function () {
 </p>
 <p>The regression output shows that coupon value is a statistically significant predictor of customer purchase. The coefficient from the logistic regression is 0.701 and the odds ratio is equal to 2.015 (i.e., <span class="math inline">\(e^{0.701}\)</span>). Because the odds ratio is larger than 1, a higher coupon value is associated with higher odds of purchase. Also, because the p.value for the coefficient is smaller than 0.05 we conclude that (1) the coefficient is statistically significantly different from 0 and (2) the odds ratio is statistically significantly different from 1. An odds ratio of 1 is equivalent to a coefficient estimate of 0 in a linear regression and implies that the explanatory (or predictor) variable has no effect on the response variable. The estimated odds ratio of 2.015 suggests that the odds of purchase increase by 101.6% for each dollar increase in coupon value.</p>
 </div>
-<div id="r-report" class="section level3">
-<h3>R &gt; Report</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<div id="report-rmd" class="section level3">
+<h3>Report &gt; Rmd</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
 <pre class="r"><code>plot(result, plots = &quot;coef&quot;, custom = TRUE) +
   labs(title = &quot;Coefficient plot&quot;)</code></pre>

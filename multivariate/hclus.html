@@ -269,8 +269,8 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="/docs/R/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-             <li><a href="/docs/data/report.html">Report</a></li>
-             <li><a href="/docs/data/code.html">Code</a></li>
+             <li><a href="/docs/data/report_rmd.html">Report > Rmd</a></li>
+             <li><a href="/docs/data/report_r.html">Report > R</a></li>
              <li><a href="/docs/programming.html">Programming</a></li>
              <li><a href="/docs/resources.html">Resources</a></li>
           </ul>
@@ -312,9 +312,9 @@ $(document).ready(function () {
 <p>Reading the plot from left-to-right we see that within-segment heterogeneity increases sharply when we move from 3 to 2 segments. This is also clear from the <code>Change in within-cluster heterogeneity</code> plot (i.e., <code>Change</code>). To avoid creating a heterogeneous segment we, again, choose 3 segments. Now that we have determined the appropriate number of segments to extract we can use <em>Cluster &gt; K-clustering</em> to generate the final cluster solution.</p>
 <p>To download the plots click the download button on the top-right of the screen.</p>
 </div>
-<div id="r-report" class="section level3">
-<h3>R &gt; Report</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<div id="report-rmd" class="section level3">
+<h3>Report &gt; Rmd</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
 <pre class="r"><code>plot(result, plots = &quot;change&quot;, custom = TRUE) + 
   labs(caption = &quot;Data used from ...&quot;)</code></pre>

@@ -269,8 +269,8 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="/docs/R/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-             <li><a href="/docs/data/report.html">Report</a></li>
-             <li><a href="/docs/data/code.html">Code</a></li>
+             <li><a href="/docs/data/report_rmd.html">Report > Rmd</a></li>
+             <li><a href="/docs/data/report_r.html">Report > R</a></li>
              <li><a href="/docs/programming.html">Programming</a></li>
              <li><a href="/docs/resources.html">Resources</a></li>
           </ul>
@@ -302,7 +302,7 @@ $(document).ready(function () {
 <p align="center">
 <img src="figures_basics/correlation_summary.png">
 </p>
-<p>A visual representation of the correlation matrix is provided in the <em>Plot</em> tab. Note that scatter plots in the graph at most 1,000 data points by default. To generate scatter plots that use all observations use <code>plot(result, n = -1)</code> in <em>R &gt; Report</em>.</p>
+<p>A visual representation of the correlation matrix is provided in the <em>Plot</em> tab. Note that scatter plots in the graph at most 1,000 data points by default. To generate scatter plots that use all observations use <code>plot(result, n = -1)</code> in <em>Report &gt; Rmd</em>.</p>
 <p>Stars shown in the <em>Plot</em> tab are interpreted as:</p>
 <ul>
 <li>p.value between 0 and 0.001: ***</li>
@@ -337,9 +337,9 @@ $(document).ready(function () {
 </iframe>
 </p>
 </div>
-<div id="r-report" class="section level3">
-<h3>R &gt; Report</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>R &gt; Report</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<div id="report-rmd" class="section level3">
+<h3>Report &gt; Rmd</h3>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>By default the correlation plot samples 1,000 data points. To include all data points use <code>plot(result, n = -1)</code> To add, for example, a title to the plot use <code>title(main = &quot;Correlation plot\n\n&quot;)</code>. See the <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-commands" target="_blank">R graphics</a> documentation for additional information.</p>
 </div>
 

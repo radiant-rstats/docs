@@ -5,6 +5,7 @@ title: Programming with Radiant
 ```{r setup, include = FALSE}
 library(radiant)
 knitr::opts_chunk$set(
+  echo = TRUE, 
   comment = NA, 
   cache = FALSE, 
   message = FALSE, 
@@ -12,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-Radiant's goal is to provide access to the power of R for business analytics. Although Radiant's web-interface can handle quite a few data and analysis tasks, you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an [Rmarkdown](http://rmarkdown.rstudio.com/) document. Most pages in the app have an <i title='Report results' class='fa fa-edit'></i> icon on the bottom left of your screen that you can click to generate a (reproducible) report with your analysis in the <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> tab. As an alternative to clicking the <i title='Report results' class='fa fa-edit'></i> icon you can also press `ALT-enter` on your keyboard. Click the `Knit report` button on the _R > Report_ page to render the report to HTML or press the `Save report` button to produce a Notebook, HTML, PDF, Word, or Rmarkdown file. Radiant's function manuals can be viewed using the commands below:
+Radiant's goal is to provide access to the power of R for business analytics. Although Radiant's web-interface can handle quite a few data and analysis tasks, you may prefer to write your own code. Radiant provides a bridge to programming in R(studio) by exporting the functions used for analysis. For example, you can run your analyses in Radiant and output the relevant function calls to an [Rmarkdown](http://rmarkdown.rstudio.com/) document. Most pages in the app have an <i title='Report results' class='fa fa-edit'></i> icon on the bottom left of your screen that you can click to generate a (reproducible) report with your analysis in the <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> tab. As an alternative to clicking the <i title='Report results' class='fa fa-edit'></i> icon you can also press `ALT-enter` on your keyboard. Click the `Knit report` button on the _Report > Rmd_ page to render the report to HTML or press the `Save report` button to produce a Notebook, HTML, PDF, Word, or Rmarkdown file. Radiant's function manuals can be viewed using the commands below:
 
 ```r
 help(package = radiant.data)
@@ -24,8 +25,6 @@ help(package = radiant.multivariate)
 
 You can also use Rstudio to render and edit Rmarkdown documents generated in Radiant. When you install and load Radiant it exports functions that can be called from R-code and/or an Rmarkdown document. To load the Radiant library enter `library(radiant)` in the R(studio) console.
 
-<!-- If you close Radiant by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop` after launching it from R(studio), you can paste the commands below into the command console to get the same output as in the browser interface. -->
-
 ```{r}
 data("diamonds") ## getting the diamonds data
 result <- single_mean(diamonds, "price")
@@ -36,9 +35,16 @@ plot(result)
 You can also call functions for visualization (see below) and access help from the console using `?visualize`
 
 ```{r}
-visualize(diamonds, xvar = "carat", yvar = "price", type = "scatter",
-          facet_row = "clarity", color = "clarity", custom = TRUE) +
-  labs(title = "Diamond Prices ($)")
+visualize(
+  diamonds, 
+  xvar = "carat", 
+  yvar = "price", 
+  type = "scatter", 
+  facet_row = "clarity", 
+  color = "clarity", 
+  custom = TRUE
+) +
+labs(title = "Diamond Prices ($)")
 ```
 
 As an example, you can render the [`single_mean.Rmd`](https://radiant-rstats.github.io/docs/examples/single_mean.Rmd) file into html (or PDF or Word if you prefer) in Rstudio. Try the code in [`radiant_rcode.R`](https://radiant-rstats.github.io/docs/examples/radiant_rcode.R) for a more extensive example.
@@ -80,9 +86,10 @@ radiant::radiant()
 Lets see if the example data is available in `r_data`, if not, we will load the data using the `data` function:
 
 ```{r}
-if (exists("r_data")) {
-  message("Attaching data from radiant's r_data list")
-  attach(r_data)
+if (exists("r_data") && !is.null(r_data$salary) && !is.null(r_data$shopping)) {
+  message("Retrieving data from radiant's r_data list")
+  salary <- r_data$salary
+  shopping <- r_data$shopping
 } else {
   message("Retrieving data from radiant packages")
   data("salary", package = "radiant.basics")
@@ -101,7 +108,7 @@ plot(result)
 Or by using the command below if the `r_data` list is available:
 
 ```r
-result <- compare_means(r_data[["salary"]], var1 = "rank", var2 = "salary")
+result <- compare_means(r_data$salary, var1 = "rank", var2 = "salary")
 summary(result)
 plot(result)
 ```
@@ -109,7 +116,9 @@ plot(result)
 An alternative way to write this code is to use `piping` (see [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html) and [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) vignettes):
 
 ```{r}
-salary %>% compare_means("rank", "salary") %>% {summary(.); plot(.)}
+salary %>% 
+  compare_means("rank", "salary") %>% 
+  {summary(.); plot(.)}
 ```
 
 We can also run regressions and get output in a format that would require many lines of code to produce from scratch:
@@ -117,7 +126,8 @@ We can also run regressions and get output in a format that would require many l
 ```{r}
 result <- regress(diamonds, rvar = "price", evar = c("carat","clarity"))
 summary(result, sum_check = "confint")
-predict(result, pred_cmd = "carat = 1:10")
+pred <- predict(result, pred_cmd = "carat = 1:10")
+print(pred, n = 10)
 ```
 
 ```{r fig.width = 6, fig.height = 4}
@@ -161,4 +171,10 @@ shopping <- store(result)
 head(shopping)
 ```
 
-See if you can reproduce this output in the radiant web-interface. Start `Radiant` from the `Addins` dropdown in Rstudio. You can also run code inside the Radiant app in the _R > Code_ tab. See <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a> page for details.
+See if you can reproduce this output in the radiant web-interface. Start `Radiant` from the `Addins` dropdown in Rstudio. You can also run code inside the Radiant app in the _Report > R_ tab. See <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a> page for details.
+
+```{r fig.width = 7, fig.height = 4.31, dpi = 96}
+result <- prob_unif(min = 0, max = 1, ub = 0.3)
+summary(result)
+plot(result)
+```

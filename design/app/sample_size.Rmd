@@ -40,9 +40,9 @@ In general, the size of the population can be influential when the sample size w
 
 <a href="http://bphc.hrsa.gov/policiesregulations/performancemeasures/patientsurvey/calculating.html" target="_blank">Source</a>
 
-### R > Report
+### Report > Rmd
 
-Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_R > Report_</a> to (re)create the sample size calculations by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the sample size calculations by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
 ### Technical notes
 
