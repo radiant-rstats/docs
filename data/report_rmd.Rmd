@@ -4,8 +4,6 @@ title: Report > Rmd
 
 ***
 
-```{r echo = FALSE}
-  library(magrittr); library(shiny)
-  markdown::markdownToHTML('app/report.md', fragment.only = TRUE) %>% HTML
+```{r child='app/report_rmd.md'}
 ```
 
