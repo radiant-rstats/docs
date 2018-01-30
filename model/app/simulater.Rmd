@@ -16,7 +16,7 @@ Define random variables with a discrete distribution using the `Discrete variabl
 
 ### Log Normal
 
-To include log normally distributed random variables in the analysis select `Log Normal` from the `Select types` dropdown and use `Log-normal variables`) inputs. See the section `Normal` below for additional information.
+To include log normally distributed random variables in the analysis select `Log Normal` from the `Select types` dropdown and use `Log-normal variables` inputs. See the section `Normal` below for additional information.
 
 ### Normal
 
