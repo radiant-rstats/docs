@@ -369,6 +369,8 @@ $(document).ready(function () {
 <li>Change size range: <code>+ scale_size(range=c(1,6))</code></li>
 <li>Draw a horizontal line: <code>+ geom_hline(yintercept = 0.1)</code></li>
 <li>Draw a vertical line: <code>+ geom_vline(xintercept = 8)</code></li>
+<li>Scale the y-axis as a percentage: <code>+ scale_y_continuous(labels = scales::percent)</code></li>
+<li>Display y-axis in $’s: <code>+ scale_y_continuous(labels = scales::dollar_format())</code></li>
 </ul>
 <p>For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.</p>
 <p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.</p>

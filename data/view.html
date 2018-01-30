@@ -419,13 +419,20 @@ x is one of y
 <code>cut %in% c('Fair', 'Good')</code>
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+is.na
+</td>
+<td style="text-align:left;">
+is missing
+</td>
+<td style="text-align:left;">
+<code>is.na(price)</code>
+</td>
+</tr>
 </tbody>
 </table>
 <p>Filters can also be used with R-code to quickly view a sample from the selected dataset. For example, <code>runif(nrow(.)) &gt; .9</code> could be used to sample approximately 10% of the rows in the data and <code>1:nrow(.) &lt; 101</code> would select only the first 100 rows in the data. Note: <code>.</code> references the currently selected dataset.</p>
-</div>
-<div id="pause-view" class="section level3">
-<h3>Pause view</h3>
-<p>For very large datasets it can useful to click <code>Pause view</code> before selecting variables, entering filters, etc. When you are ready to generate the table make sure that <code>Pause view</code> is no longer checked. When <code>Pause view</code> is un-checked, any input change will generate a new table.</p>
 </div>
 <div id="select-variables-to-show" class="section level3">
 <h3>Select variables to show</h3>
