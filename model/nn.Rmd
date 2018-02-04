@@ -1,0 +1,8 @@
+---
+title: Model > Estimate > Neural Network
+---
+
+***
+
+```{r child='app/nn.md'}
+```
