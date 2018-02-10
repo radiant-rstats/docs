@@ -37,40 +37,10 @@ To include variables from a separate data-set in the calculations specified in t
 
 To include a sequence of values select `Grid search` from the `Select types` dropdown. Provide the minimum and maximum values as well as the step-size in the `Grid search` inputs. For example, enter a `Name` (`price`), the `Min` (4), `Max` (10), and `Step` (0.01) value. If multiple variables are specified in `Grid search` all possible value combinations will be created and evaluated in the simulation. For example, suppose a first variable is defined as `x 1 3 1` and a second as `y 4 5 1` in the `Grid search` text input then the following data is generated:
 
-<table class='table table-condensed table-hover' style='width:40%;'>
- <thead>
-  <tr>
-   <th style="text-align:left;"> x </th>
-   <th style="text-align:left;"> y </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> 1 </td>
-   <td style="text-align:left;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2 </td>
-   <td style="text-align:left;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 1 </td>
-   <td style="text-align:left;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 2 </td>
-   <td style="text-align:left;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> 5 </td>
-  </tr>
-</tbody>
-</table>
+
+```
+## Error in function_list[[i]](value): could not find function "set_names"
+```
 
 Note that if `Grid search` has been selected the number of values generated will override the number of simulations or repetitions specified in `# sims` or `# reps`. If this is not what you want use `Sequence`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `price 4 10 0.01`).
 
