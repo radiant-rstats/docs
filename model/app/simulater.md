@@ -39,7 +39,7 @@ To include a sequence of values select `Grid search` from the `Select types` dro
 
 
 ```
-## Error in function_list[[i]](value): could not find function "set_names"
+## Error in set_names(., c("x", "y")): could not find function "set_names"
 ```
 
 Note that if `Grid search` has been selected the number of values generated will override the number of simulations or repetitions specified in `# sims` or `# reps`. If this is not what you want use `Sequence`. Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `price 4 10 0.01`).

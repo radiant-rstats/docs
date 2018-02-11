@@ -1,6 +1,13 @@
 library(knitr)
 library(dplyr)
 
+options(
+  width = 250,
+  scipen = 100,
+  max.print = 5000,
+  stringsAsFactors = FALSE
+)
+
 ## generate (updated) html and md files
 setwd("~/gh/docs/")
 system('make')
