@@ -1,5 +1,6 @@
 library(knitr)
 library(dplyr)
+library(magrittr)
 
 options(
   width = 250,
