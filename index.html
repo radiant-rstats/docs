@@ -311,9 +311,6 @@ $(document).ready(function () {
 <div id="cross-platform" class="section level4">
 <h4>Cross-platform</h4>
 <p>Radiant works on Windows, Mac, or Linux. It can run without an Internet connection and no data will leave your computer. You can also run the app as a web application on a server.</p>
-<blockquote>
-<p><strong>Note:</strong> For Windows users with data that contain multibyte characters please make sure your data are in ANSI format so R(adiant) can load characters correctly.</p>
-</blockquote>
 </div>
 <div id="reproducible" class="section level4">
 <h4>Reproducible</h4>
@@ -343,7 +340,7 @@ $(document).ready(function () {
 <p>To launch Radiant in Rstudio’s viewer pane select <code>Start radiant (viewer)</code> from the <code>Addins</code> menu in Rstudio or use the command below:</p>
 <pre class="r"><code>radiant::radiant_viewer()</code></pre>
 <p>To update Radiant select <code>Update radiant</code> from the <code>Addins</code> menu in Rstudio or use the command below:</p>
-<pre class="r"><code>radiant::update_radiant()</code></pre>
+<pre class="r"><code>radiant.update::radiant.update()</code></pre>
 <p>Alternatively Radiant can be updated using the command:</p>
 <pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&quot;)</code></pre>
 <p>See the <a href="https://radiant-rstats.github.io/docs/install.html">installing radiant</a> page for details.</p>
