@@ -4,5 +4,5 @@ title: Multivariate > Maps > Attributes
 
 ***
 
-```{r child='app/pmap.md'}
+```{r child='app/prmap.md'}
 ```

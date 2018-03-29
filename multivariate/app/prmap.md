@@ -14,19 +14,19 @@ The preference correlations indicate how strongly the preference scores provided
 
 The final table shows the attribute communalities. These numbers indicate how much of the variation in the attributes data can be explained by the two factors. The cumulative variance mentioned earlier is an overall measure across attributes. However, we are also interested to see if each of the individual attributes is well represented by the two factors. The numbers in this example are excellent across the board (i.e., all over 90%).
 
-<p align="center"><img src="figures_multivariate/pmap_summary.png"></p>
+<p align="center"><img src="figures_multivariate/prmap_summary.png"></p>
 
 It is useful to start with a map showing only brand locations. Create the map in the _Plot_ tab by checking the ‘Brands’ box. The graph is a scatter plot of the scores for factor 1 (the horizontal axis) and factor 2 (the vertical axis). In other words the scores for a brand on factor 1 and factor 2 are the coordinates for that brand in the map. The retailer names are used to label each point.
 
-<p align="center"><img src="figures_multivariate/pmap_plot_brands.png"></p>
+<p align="center"><img src="figures_multivariate/prmap_plot_brands.png"></p>
 
 We can create a brand map with both the brand locations (again, using the factor scores) and the attribute arrows (using the factor loadings) by checking both the 'Brands' and 'Attributes' boxes. The orientation of the arrows is determined by the degree of correlation between attribute and factors, i.e., the factor loadings. The attribute `Service` has a strong positive loading on factor 1 and so it points, mostly, in the direction in which factor 1 increases in value (i.e., to the right). Since the correlation of `Service` with factor 2 is, slightly, positive the arrow points up rather than down. In contrast, the attribute `Convenience` has a strong positive loading on factor 2 and so it points, mostly, in the direction in which factor 2 increases in value (i.e., up). Since it's correlation with factor 1 is, slightly, positive the arrow points to the right rather than to the left. The length of the arrows is proportional to the communalities reported in the _Summary_ tab. The higher the communality, the longer the arrow. If an attribute is not well summarized in the derived factors it's communality will be low and the arrow in the brand map for that attribute will be short.
 
-<p align="center"><img src="figures_multivariate/pmap_plot_brands_attr.png"></p>
+<p align="center"><img src="figures_multivariate/prmap_plot_brands_attr.png"></p>
 
 Finally, we can add the preference information to the map by checking the 'Preferences' box. The orientation of the segment preference arrows is determined by the correlation between the factor scores and the preference scores. Since the preferences for the retailers expressed by respondents assigned to segment 2 are highly correlated with factor 2 the arrow points almost straight up. The negative correlations of the preference scores for segment 1 with both factor 1 and factor 2 ensure the arrow will point down and to the left.
 
-<p align="center"><img src="figures_multivariate/pmap_plot_all.png"></p>
+<p align="center"><img src="figures_multivariate/prmap_plot_all.png"></p>
 
 In the plot we see that Whole foods and Cub foods are perceived as more comparable on the attributes for which we have data than, for example, Whole foods and Wal-Mart. From the plot a manager might conclude that the brands that are closest together in the map are perceived as close substitutes and, hence, close competitors in the minds of consumers.
 

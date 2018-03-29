@@ -251,7 +251,7 @@ $(document).ready(function () {
           <ul class="dropdown-menu" role="menu">
              <li class="dropdown-header">Maps</li>
              <li><a href="/docs/multivariate/mds.html">(Dis)similarity</a></li>
-             <li><a href="/docs/multivariate/pmap.html">Attributes</a></li>
+             <li><a href="/docs/multivariate/prmap.html">Attributes</a></li>
              <li class="divider"></li>
              <li class="dropdown-header">Factor</li>
              <li><a href="/docs/multivariate/pre_factor.html">Pre-factor</a></li>
@@ -523,17 +523,17 @@ Response variable    : price
 Explanatory variables: carat, clarity 
 Prediction command   : carat = 1:10 
 
- clarity carat Prediction      2.5%     97.5%      +/-
-     SI1     1   5265.569  2859.633  7671.505 2405.936
-     SI1     2  13703.599 11294.952 16112.246 2408.647
-     SI1     3  22141.629 19726.114 24557.145 2415.515
-     SI1     4  30579.660 28153.155 33006.165 2426.505
-     SI1     5  39017.690 36576.130 41459.250 2441.560
-     SI1     6  47455.720 44995.114 49916.327 2460.607
-     SI1     7  55893.751 53410.198 58377.303 2483.552
-     SI1     8  64331.781 61821.491 66842.072 2510.291
-     SI1     9  72769.811 70229.110 75310.513 2540.701
-     SI1    10  81207.842 78633.187 83782.496 2574.655</code></pre>
+ clarity carat Prediction      2.5%     97.5%     +/-
+     SI1     1   5265.569  5174.776  5356.362  90.793
+     SI1     2  13703.599 13557.662 13849.536 145.937
+     SI1     3  22141.629 21908.326 22374.933 233.303
+     SI1     4  30579.660 30251.571 30907.748 328.088
+     SI1     5  39017.690 38592.329 39443.051 425.361
+     SI1     6  47455.720 46931.983 47979.458 523.738
+     SI1     7  55893.751 55271.056 56516.445 622.695
+     SI1     8  64331.781 63609.787 65053.775 721.994
+     SI1     9  72769.811 71948.301 73591.322 821.511
+     SI1    10  81207.842 80286.667 82129.017 921.175</code></pre>
 <pre class="r"><code>plot(result, plots = &quot;coef&quot;)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-10-1.png" width="576" /></p>
 <pre class="r"><code>plot(result, plots = &quot;dashboard&quot;, lines = &quot;line&quot;)</code></pre>
@@ -602,7 +602,7 @@ head(shopping)</code></pre>
 <p>See if you can reproduce this output in the radiant web-interface. Start <code>Radiant</code> from the <code>Addins</code> dropdown in Rstudio. You can also run code inside the Radiant app in the <em>Report &gt; R</em> tab. See <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a> page for details.</p>
 
 
-&copy; Vincent Nijs (2018) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/80x15.png" /></a>
+&copy; Vincent Nijs (2018) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="/docs/images/by-nc-sa.png" /></a>
 
 <!-- some extra javascript for older browsers -->
 <script type="text/javascript" src="libs/polyfill.js"></script>
