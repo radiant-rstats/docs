@@ -305,7 +305,7 @@ $(document).ready(function () {
 </div>
 <div id="predictor" class="section level4">
 <h4>Predictor</h4>
-<p>Select one or more variables that can be used to <em>predict</em> the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using <em>Model &gt; Logistic regression (GLM)</em> or a Neural Network estimated using <em>Model &gt; Neural Network (ANN)</em>).</p>
+<p>Select one or more variables that can be used to <em>predict</em> the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using <em>Model &gt; Logistic regression (GLM)</em> or a Neural Network estimated using <em>Model &gt; Neural Network</em>).</p>
 </div>
 <div id="quantiles" class="section level4">
 <h4># quantiles</h4>
@@ -321,7 +321,7 @@ $(document).ready(function () {
 </div>
 <div id="plots" class="section level4">
 <h4>Plots</h4>
-<p>Generate Lift, Gains, Profit, and/or ROME charts. The profit chart displays a profit index useful to compare performance across predictors/models</p>
+<p>Generate Lift, Gains, Profit, and/or ROME charts.</p>
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
@@ -431,9 +431,9 @@ $(document).ready(function () {
 </div>
 <div id="example" class="section level2">
 <h2>Example</h2>
-<p>The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.</p>
+<p>The Lift and Gains charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.</p>
 <p align="center">
-<img src="figures_model/evalbin_profit_gain.png">
+<img src="figures_model/evalbin_lift_gains.png">
 </p>
 <!-- This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and validation sample are 94.0% and 93.4% respectively.
 

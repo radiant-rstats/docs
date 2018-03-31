@@ -20,9 +20,9 @@ After entering the required information for each of the three factors your scree
 
 <p align="center"><img src="figures_design/doe_factors.png"></p>
 
-## Create
+## Create design
 
-You are now ready to create an experimental design by clicking on the `Create` button. This will generate the following output.
+You are now ready to create an experimental design by clicking on the `Create design` button. This will generate the following output.
 
 <p align="center"><img src="figures_design/doe_output.png"></p>
 
@@ -32,11 +32,11 @@ For our example, the ideal design has 18 trials. However, this implies that the 
 
 This input can be used to control the number of trials to generate. If left blank Radiant will try to find an appropriate number of trials using the `optFederov` function in the [AlgDesign](https://cran.r-project.org/web/packages/AlgDesign/index.html) package.
 
-Lets review the output in `Design efficiency`. For our example, the goal is to find a design with less than 18 trials that will still allow us to estimate the effects we are interested in (e.g., the main-effects of the different levels of price, sight, and food). Notice that there are several designs that are considered `balanced` (i.e., each level is included in the same number of trials). We are looking for a design that is balanced and has minimal correlation between factors (e.g., a D-efficiency score above .8). You can think of the D-efficiency score as a measure of how cleanly we will be able to estimate the effects of interest after running the test/experiment. The ideal D-efficiency score is 1 but a number above .8 is considered reasonable.
+Lets review the output in `Design efficiency`. For our example, the goal is to find a design with less than 18 trials that will still allow us to estimate the effects we are interested in (e.g., the main-effects of the different levels of price, sight, and food). Notice that there are several designs that are considered `balanced` (i.e., each level is included in the same number of trials). We are looking for a design that is balanced and has minimal correlation between factors (e.g., a D-efficiency score above 0.8). You can think of the D-efficiency score as a measure of how cleanly we will be able to estimate the effects of interest after running the test/experiment. The ideal D-efficiency score is 1 but a number above 0.8 is considered reasonable.
 
 The smallest number of trials with a balanced design is 6. This design is balanced simply because 6 is divisible by 3 and 2 (i.e., the number of levels in our factors). However, the D-efficiency score is rather low (.513). The next smallest balanced design has 12 trials and has a much higher D-efficiency. This design is a reasonable choice if we want to estimate the main-effects of each factor level on movie-theater choice or preference.
 
-To generate the desired partial factorial design enter `12` in the `# trials` input and press `Create`. This will generate the following output.
+To generate the desired partial factorial design enter `12` in the `# trials` input and press `Create design`. This will generate the following output.
 
 <p align="center"><img src="figures_design/doe_output_partial.png"></p>
 
@@ -44,7 +44,7 @@ The `trial` column in the output shows which profiles have been selected from th
 
 ## Rnd. seed:
 
-A partial factorial design may not be unique (i.e., there might be multiple combinations of trials or profiles that are equally good). By setting a random seed you ensure the same set of trials will be generated each time you press `Create`. However, to see alternative partials factorial designs empty the `Rnd. seed` box and press `Create` a few times to see how the set of selected trials changes.
+A partial factorial design may not be unique (i.e., there might be multiple combinations of trials or profiles that are equally good). By setting a random seed you ensure the same set of trials will be generated each time you press `Create design`. However, to see alternative partials factorial designs empty the `Rnd. seed` box and press `Create design` a few times to see how the set of selected trials changes.
 
 ## Interactions
 

@@ -10,7 +10,7 @@ The level in the response variable that is considered a _success_. For example, 
 
 #### Predictor
 
-Select one or more variables that can be used to _predict_ the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using _Model > Logistic regression (GLM)_ or a Neural Network estimated using _Model > Neural Network (ANN)_).
+Select one or more variables that can be used to _predict_ the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using _Model > Logistic regression (GLM)_ or a Neural Network estimated using _Model > Neural Network_).
 
 #### # quantiles
 
@@ -26,7 +26,7 @@ If a `filter` is active (e.g., set in the _Data > View_ tab) generate results fo
 
 #### Plots
 
-Generate Lift, Gains, Profit, and/or ROME charts. The profit chart displays a profit index useful to compare performance across predictors/models
+Generate Lift, Gains, Profit, and/or ROME charts. 
 
 ### Report > Rmd
 
@@ -94,9 +94,9 @@ To download a table as a csv-files click the download button on the top-right of
 
 ## Example
 
-The Gains and Profit charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.
+The Lift and Gains charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.
 
-<p align="center"><img src="figures_model/evalbin_profit_gain.png"></p>
+<p align="center"><img src="figures_model/evalbin_lift_gains.png"></p>
 
 <!-- This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and validation sample are 94.0% and 93.4% respectively.
 

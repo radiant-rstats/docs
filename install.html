@@ -293,6 +293,9 @@ $(document).ready(function () {
 
 <p>Radiant is a platform-independent browser-based interface for business analytics in <a href="https://www.r-project.org/">R</a>, based on the <a href="https://www.rstudio.com/shiny/">Shiny</a> package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use <a href="mailto:radiant@rady.ucsd.edu">radiant@rady.ucsd.edu</a>.</p>
 <blockquote>
+<p><strong>Note:</strong> R 3.4 or higher is now required to use the latest version of Radiant. This follows after R dropped support for R 3.3 (on Mac)</p>
+</blockquote>
+<blockquote>
 <p><strong>Note:</strong> User profiles (or user names or logins) containing non-ASCII characters may cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters and numbers only. For example, c:\users\myprofilename</p>
 </blockquote>
 <div id="installing-radiant-on-windows" class="section level2">
@@ -331,14 +334,22 @@ sudo apt-get install r-base r-base-dev
 sudo apt-get install libcurl4-openssl-dev libxml2-dev</code></pre>
 <p>Then open R and run the following command:</p>
 <pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)</code></pre>
+<!-- ## Use a modern browser -->
+<!-- For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check the "Ask where to save each file before downloading" box. -->
 </div>
-<div id="use-a-modern-browser" class="section level2">
-<h2>Use a modern browser</h2>
-<p>For example, <a href="https://www.google.com/intl/en/chrome/browser/desktop/">Chrome</a> or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to <em>Preferences &gt; Advanced preferences &gt; Downloads</em> and then check the “Ask where to save each file before downloading” box.</p>
-</div>
-<div id="starting-radiant" class="section level2">
-<h2>Starting Radiant</h2>
+<div id="starting-updating-and-stopping-radiant" class="section level2">
+<h2>Starting, Updating, and Stopping Radiant</h2>
 <p>I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start and update Radiant through the <code>Addins</code> menu at the top of the screen. When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code>. The Radiant process will stop and the browser window will close (Chrome) or gray-out.</p>
+<p>The recommend approach to start Radiant is <code>Start radiant (window)</code> from the <code>Addins</code> menu. This will start Radiant in an Rstudio window. Closing this window will also (cleanly) stop Radiant. If you are using an Rstudio project, any file opened or saved will default to the project directory. This also makes it possible to use <code>relative</code> paths to load data and images in <code>Report &gt; Rmd</code>.</p>
+<p>To add an option to upgrade Radiant easily, use the commands below to install the <code>radiant.upgrade</code> package. After Radiant has been upgraded you will see a new item in the <code>Addins</code> dropdown that you can use for future upgrades.</p>
+<pre class="r"><code>install.packages(&quot;radiant.update&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)
+radiant.update::radiant.update()</code></pre>
+</div>
+<div id="sharing-rstudio-projects-with-others" class="section level2">
+<h2>Sharing Rstudio projects with others</h2>
+<p>An excellent way to share an Rstudio project hosted online (e.g., on Dropbox) with others is to use the <code>usethis</code> package</p>
+<pre class="r"><code>install.packages(&quot;usethis&quot;)
+?usethis::use_course</code></pre>
 </div>
 <div id="installing-additional-r-development-tools" class="section level2">
 <h2>Installing additional R-development tools</h2>

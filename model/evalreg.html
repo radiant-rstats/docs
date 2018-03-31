@@ -302,7 +302,7 @@ $(document).ready(function () {
 </div>
 <div id="predictor" class="section level4">
 <h4>Predictor</h4>
-<p>Select one or more variables that can be used to <em>predict</em> the value of the response variable. This could be a variable or predicted values from a model (e.g., from a regression estimated using <em>Model &gt; Linear regression (OLS)</em> or a Neural Network estimated using <em>Model &gt; Neural Network (ANN)</em>).</p>
+<p>Select one or more variables that can be used to <em>predict</em> the value of the response variable. This could be a variable or predicted values from a model (e.g., from a regression estimated using <em>Model &gt; Linear regression (OLS)</em> or a Neural Network estimated using <em>Model &gt; Neural Network</em>).</p>
 </div>
 <div id="show-results-for" class="section level4">
 <h4>Show results for</h4>
@@ -312,9 +312,9 @@ $(document).ready(function () {
 <h2>Example</h2>
 <p>Predictions were derived from a linear regression and an neural network with two nodes in the hidden layer on the <code>diamonds</code> data. The variables <code>price</code> and <code>carat</code> were log-transformed prior to estimation.The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load examples</code>). The predictions shown below were generated in the <em>Predict</em> tab.</p>
 <p align="center">
-<img src="figures_model/evalreg_ann_predict.png">
+<img src="figures_model/evalreg_nn.png">
 </p>
-<p>The test statistics show a small, but consistent, advantage for the ANN.</p>
+<p>The test statistics show a small, but consistent, advantage for the NN.</p>
 <p align="center">
 <img src="figures_model/evalreg_summary_plot.png">
 </p>

@@ -4,6 +4,8 @@ title: Radiant -- Business analytics using R and Shiny
 
 Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" _target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
 
+> **Note:** R 3.4 or higher is now required to use the latest version of Radiant. This follows after R dropped support for R 3.3 (on Mac)
+
 > **Note:** User profiles (or user names or logins) containing non-ASCII characters may cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters and numbers only. For example, c:\\users\\myprofilename
 
 ## Installing Radiant on Windows
@@ -53,13 +55,31 @@ Then open R and run the following command:
 install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/")
 ```
 
-## Use a modern browser
+<!-- ## Use a modern browser -->
 
-For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check the "Ask where to save each file before downloading" box.
+<!-- For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check the "Ask where to save each file before downloading" box. -->
 
-## Starting Radiant
+## Starting, Updating, and Stopping Radiant
 
 I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start and update Radiant through the `Addins` menu at the top of the screen. When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out.
+
+The recommend approach to start Radiant is `Start radiant (window)` from the `Addins` menu. This will start Radiant in an Rstudio window. Closing this window will also (cleanly) stop Radiant. If you are using an Rstudio project, any file opened or saved will default to the project directory. This also makes it possible to use `relative` paths to load data and images in `Report > Rmd`.
+
+To add an option to upgrade Radiant easily, use the commands below to install the `radiant.upgrade` package. After Radiant has been upgraded you will see a new item in the `Addins` dropdown that you can use for future upgrades.
+
+```r
+install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")
+radiant.update::radiant.update()
+```
+
+## Sharing Rstudio projects with others
+
+An excellent way to share an Rstudio project hosted online (e.g., on Dropbox) with others is to use the `usethis` package
+
+```r
+install.packages("usethis")
+?usethis::use_course
+```
 
 ## Installing additional R-development tools
 

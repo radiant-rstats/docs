@@ -296,7 +296,7 @@ $(document).ready(function () {
 <p>Summarize and explore your data</p>
 </blockquote>
 <p>Generate summary statistics for one or more variables in your data. The most powerful feature in <em>Data &gt; Explore</em> is that you can easily describe the data <em>by</em> one or more other variables. Where the <a href="https://radiant-rstats.github.io/docs/data/pivot.html" target="_blank"><em>Data &gt; Pivot</em></a> tab works best for frequency tables and to summarize a single numeric variable, the <em>Data &gt; Explore</em> tab allows you to summarize multiple variables at the same time using various statistics.</p>
-<p>For example, if we select <code>price</code> from the <code>diamonds</code> dataset we can see the number of observations (n), the mean, the median, etc. However, the mean price for each clarity level of the diamond can also be easily provided by choosing <code>clarity</code> as the <code>Group by</code> variable.</p>
+<p>For example, if we select <code>price</code> from the <code>diamonds</code> dataset and click the <code>Create table</code> button we can see the number of observations (n), the mean, the variance, etc. However, the mean price for each clarity level of the diamond can also be easily provided by choosing <code>clarity</code> as the <code>Group by</code> variable.</p>
 <blockquote>
 <p>Note that when a categorical variable (<code>factor</code>) is selected in <code>Numeric variable(s)</code> it is converted to a 0-1 (binary) variable where the first level is coded as 1 and all other levels as 0.</p>
 </blockquote>
@@ -321,10 +321,6 @@ $(document).ready(function () {
 <div id="filter-data" class="section level3">
 <h3>Filter data</h3>
 <p>Use the <code>Filter data</code> box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank"><em>Data &gt; View</em></a> for details.</p>
-</div>
-<div id="pause-explore" class="section level3">
-<h3>Pause explore</h3>
-<p>For large datasets it can useful to click <code>Pause explore</code> before selecting categorical and numerical variables, entering filters, etc. When you are ready to generate the explore table make sure that <code>Pause explore</code> is no longer checked. When <code>Pause explore</code> is not checked, any input changes will automatically result in a new table.</p>
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>

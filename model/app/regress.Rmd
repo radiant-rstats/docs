@@ -49,7 +49,7 @@ The catalog company is interested in redesigning their Customer Relationship Man
 
 **Answer:**
 
-Select the relevant variables mentioned above and press the `Estimate` button or press `CTRL-enter` (`CMD-enter` on mac). Output from _Model > Linear regression (OLS)_ is provided below:
+Select the relevant variables mentioned above and press the `Estimate model` button or press `CTRL-enter` (`CMD-enter` on mac). Output from _Model > Linear regression (OLS)_ is provided below:
 
 <p align="center"><img src="figures_model/regress_catalog_summary.png"></p>
 

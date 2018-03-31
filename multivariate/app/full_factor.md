@@ -14,7 +14,7 @@ To replicate the results shown in the screenshot below make sure you have the `t
 
 The numbers in the `Factor loadings` table are the correlations of the six variables with the two factors. For example, variable v1 has a correlation of .96 with Factor 1 and a correlation of -.03 with Factor 2. As such v1 will play a big role in naming Factor 1 but an insignificant role in naming Factor 2.
 
-The rotated factor loadings can be used to determine labels or names for the different factors. We need to identify and highlight the highest factor loading, in absolute value, in each row. This is easily done by setting the `Cut-off` value to .4 and checking the `Sort` box. The output is shown below.
+The rotated factor loadings can be used to determine labels or names for the different factors. We need to identify and highlight the highest factor loading, in absolute value, in each row. This is easily done by setting the `Cut-off` value to .4 and checking the `Sort factor loadings` box. The output is shown below.
 
 ```r
 Loadings:
