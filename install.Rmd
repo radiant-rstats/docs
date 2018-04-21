@@ -23,7 +23,6 @@ For Windows, download and run the all-in-one installer for <a href="https://www.
 
 > Note: Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.
 
-
 > Credits: Thanks go to Brandon Salas at the Rady School of Management for creating the Windows installer
 
 ## Installing Radiant on Mac
@@ -65,9 +64,27 @@ Then open R and run the following command:
 install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/")
 ```
 
-<!-- ## Use a modern browser -->
+## Installing the development version of Radiant
 
-<!-- For example, [Chrome](https://www.google.com/intl/en/chrome/browser/desktop/) or Safari. Internet Explorer (version 11 or higher) should also work but Chrome is the recommended browser. Most browsers will, by default, save downloads to the downloads folder. However, when using Radiant it is more convenient if the browser asks you where to save files. In Chrome got to _Preferences > Advanced preferences > Downloads_ and then check the "Ask where to save each file before downloading" box. -->
+First restart your Rstudio session (e.g., using Session > Restart R) and use the code below to make sure all required packages packages are up to date
+
+```r
+radiant.update::radiant.update()
+```
+
+If all packages are up to date, restart your Rstudio session again and use the code below to install the development version of the Radiant packages
+
+```r
+packages <- c("radiant.data", "radiant.design", "radiant.basics", "radiant.model", "radiant.multivariate", "radiant")
+sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/minicran/dev/")
+```
+
+If you need to revert to the current (stable) release of Radiant use code below 
+
+```r
+packages <- c("radiant.data", "radiant.design", "radiant.basics", "radiant.model", "radiant.multivariate", "radiant")
+sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/minicran/")
+```
 
 ## Starting, Updating, and Stopping Radiant
 

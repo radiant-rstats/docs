@@ -65,7 +65,7 @@ summary(result)
 plot(result)
 
 ## to add a variable with segment membership information to the shopping dataset
-shopping <- store(result, name = "clusters")
+shopping <- store(shopping, result, name = "clusters")
 
 ## for help on the store function see ...
 ?store.kclus
