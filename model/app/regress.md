@@ -209,7 +209,7 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html"
 If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
 
 ```r
-result <- regress(dataset = "diamonds", rvar = "price", evar = c("carat", "clarity", "cut", "color"))
+result <- regress(diamonds, rvar = "price", evar = c("carat", "clarity", "cut", "color"))
 summary(result)
 plot(result, plots = "scatter", custom = TRUE) %>% 
   gridExtra::grid.arrange(grobs = ., top = "Scatter plots", ncol = 2)

@@ -69,7 +69,10 @@ install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/"
 To get the development version of Radiant, restart your Rstudio session and use the code below
 
 ```r
-packages <- c("radiant.data", "radiant.design", "radiant.basics", "radiant.model", "radiant.multivariate", "radiant")
+packages <- c(
+  "radiant.data", "radiant.design", "radiant.basics", 
+  "radiant.model", "radiant.multivariate", "radiant"
+)
 ret <- sapply(
   packages, 
   install.packages, 

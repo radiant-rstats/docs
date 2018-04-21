@@ -349,7 +349,7 @@ $(document).ready(function () {
 <div id="customizing-plots-in-report-rmd" class="section level3">
 <h3>Customizing plots in <em>Report &gt; Rmd</em></h3>
 <p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard. The example below illustrates how to customize a command in the <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>Report &gt; Rmd</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
-<pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, yvar = &quot;price&quot;, xvar = &quot;carat&quot;, type = &quot;scatter&quot;, custom = TRUE) +
+<pre class="r"><code>visualize(diamonds, yvar = &quot;price&quot;, xvar = &quot;carat&quot;, type = &quot;scatter&quot;, custom = TRUE) +
   labs(
     title = &quot;A scatterplot&quot;, 
     y = &quot;Price in $&quot;,
@@ -376,7 +376,7 @@ $(document).ready(function () {
 <p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.</p>
 <p>Suppose we create a set of three bar charts in <em>Data &gt; Visualize</em> using the <code>Diamond</code> data. To add a title above the group of plots and impose a one-column layout we could use <code>gridExtra::grid.arrange</code> as follows:</p>
 <pre class="r"><code>plot_list &lt;- visualize(
-  dataset = &quot;diamonds&quot;, 
+  diamonds, 
   xvar = c(&quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), 
   yvar = &quot;price&quot;, 
   type = &quot;bar&quot;, 
@@ -388,11 +388,11 @@ gridExtra::grid.arrange(grobs = plot_list, top = &quot;Three bar plots&quot;, nc
 <div id="making-plots-interactive-in-report-rmd" class="section level3">
 <h3>Making plots interactive in <em>Report &gt; Rmd</em></h3>
 <p>It is possible to transform (most) plots generated in Radiant into interactive graphics using the <code>plotly</code> library. After setting <code>custom = TRUE</code> you can use the <code>ggplotly</code> function to convert a single plot. See example below:</p>
-<pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, xvar = c(&quot;price&quot;, &quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;), custom = TRUE) %&gt;%
+<pre class="r"><code>visualize(diamonds, xvar = c(&quot;price&quot;, &quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;), custom = TRUE) %&gt;%
   ggplotly() %&gt;%
   render()</code></pre>
 <p>If more than one plot is created, you can use the <code>subplot</code> function from the <code>plotly</code> package. Provide a value for the <code>nrows</code> argument to setup the plot layout grid. In the example below four plots are created. Because <code>nrow = 2</code> the plots will be displayed in a 2 X 2 grid.</p>
-<pre class="r"><code>visualize(dataset = &quot;diamonds&quot;, xvar = c(&quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), custom = TRUE) %&gt;%
+<pre class="r"><code>visualize(diamonds, xvar = c(&quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), custom = TRUE) %&gt;%
   subplot(nrows = 2) %&gt;%
   render()</code></pre>
 <p>For additional information on the <code>plotly</code> library see the links below:</p>
