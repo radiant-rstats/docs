@@ -329,7 +329,7 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
   custom = TRUE
 ) +
 labs(title = &quot;Diamond Prices ($)&quot;)</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-2-1.png" width="1008" /></p>
+<p><img src="programming_files/figure-html/scatter-1.png" width="720" /></p>
 <p>As an example, you can render the <a href="https://radiant-rstats.github.io/docs/examples/single_mean.Rmd"><code>single_mean.Rmd</code></a> file into html (or PDF or Word if you prefer) in Rstudio. Try the code in <a href="https://radiant-rstats.github.io/docs/examples/radiant_rcode.R"><code>radiant_rcode.R</code></a> for a more extensive example.</p>
 <p>To install Radiant with complete documentation for offline access, open R(studio) and copy-and-paste the commands below:</p>
 <pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)
@@ -358,7 +358,7 @@ Alt. hyp. : the mean of mpg is &gt; 20
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result, plots = c(&quot;hist&quot;, &quot;simulate&quot;))</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-3-1.png" width="1008" /></p>
+<p><img src="programming_files/figure-html/single_mean_mpg-1.png" width="720" /></p>
 <p>To compare the mean price of diamonds across different levels of clarity we can call the <code>compare_means</code> function:</p>
 <pre class="r"><code>result &lt;- compare_means(
   diamonds, 
@@ -416,7 +416,7 @@ Adjustment: Bonferroni
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result, plots = c(&quot;bar&quot;, &quot;density&quot;))</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-4-1.png" width="1008" /></p>
+<p><img src="programming_files/figure-html/compare_means_diamonds-1.png" width="576" /></p>
 <p>To get help for the <code>single_mean</code> and <code>compare_means</code> functions use <code>?single_mean</code> and <code>?compare_means</code>. These help files also have links to information about the <code>summary</code> and <code>plot</code> methods for each class. See also <code>?summary.single_mean</code> and <code>?plot.compare_means</code></p>
 <p>These datasets are available after loading the radiant library by using the <code>data</code> function. We can also load data through Radiant’s browser interface and then access the data from the console after closing the app. Start radiant using the command below and then click select <code>Examples</code> from the <code>Load data of type</code> dropdown in the <em>Data &gt; Manage</em> tab. Then close the app by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navbar and then clicking <code>Stop</code>. The datasets loaded through the web-interface are now available in the <code>r_data</code> environment as well. To use them directly in your code use <code>attach(r_data)</code>.</p>
 <pre class="r"><code>## start radiant in Rstudio, load the example data, then click the power icon and Stop
@@ -447,7 +447,7 @@ Adjustment: None
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result)</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-6-1.png" width="1008" /></p>
+<p><img src="programming_files/figure-html/compare_means_salary-1.png" width="576" /></p>
 <p>An alternative way to write this code is to use <code>piping</code> (see <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">dplyr</a> and <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a> vignettes):</p>
 <pre class="r"><code>salary %&gt;% 
   compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;% 
@@ -474,7 +474,7 @@ Adjustment: None
  &lt; .001 
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-7-1.png" width="1008" /></p>
+<p><img src="programming_files/figure-html/compare_means_salary_piped-1.png" width="576" /></p>
 <p>We can also run regressions and get output in a format that would require many lines of code to produce from scratch:</p>
 <pre class="r"><code>result &lt;- regress(diamonds, rvar = &quot;price&quot;, evar = c(&quot;carat&quot;, &quot;clarity&quot;))
 summary(result, sum_check = &quot;confint&quot;)</code></pre>
@@ -533,9 +533,9 @@ Prediction command   : carat = 1:10
      SI1     9  72769.811 71948.301 73591.322 821.511
      SI1    10  81207.842 80286.667 82129.017 921.175</code></pre>
 <pre class="r"><code>plot(result, plots = &quot;coef&quot;)</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-9-1.png" width="864" /></p>
+<p><img src="programming_files/figure-html/regress_coeff-1.png" width="864" /></p>
 <pre class="r"><code>plot(result, plots = &quot;dashboard&quot;, lines = &quot;line&quot;)</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-10-1.png" width="720" /></p>
+<p><img src="programming_files/figure-html/regress_dashboard-1.png" width="720" /></p>
 <p>As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use <code>?hclus</code>, <code>?plot.hclus</code>, and <code>?klus</code>. See also the Radiant function manuals linked above.</p>
 <pre class="r"><code>## run hierarchical cluster analysis on the shopping data, variables v1 through v6
 result &lt;- hclus(shopping, &quot;v1:v6&quot;)
@@ -553,10 +553,10 @@ Observations: 20 </code></pre>
 ## it looks like there is a big jump in overall within-cluster
 ## heterogeneity in the step from 3 to 2 segments
 plot(result)</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-11-1.png" width="576" /></p>
+<p><img src="programming_files/figure-html/hclus-1.png" width="576" /></p>
 <pre class="r"><code>## show the dendrogram with cutoff at 0.05
 plot(result, plots = &quot;dendro&quot;, cutoff = 0.05)</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-12-1.png" width="1008" /></p>
+<p><img src="programming_files/figure-html/dendro-1.png" width="576" /></p>
 <pre class="r"><code>## plots created above suggest 3 clusters may be  most appropriate
 ## use kclus to create the clusters
 ## generate output and store cluster membership
@@ -586,7 +586,7 @@ Cluster 3 33.71%
 Between cluster heterogeneity accounts for 73.93% of the
 total heterogeneity in the data (higher is better).</code></pre>
 <pre class="r"><code>plot(result, plots = c(&quot;density&quot;,&quot;bar&quot;))</code></pre>
-<p><img src="programming_files/figure-html/unnamed-chunk-13-1.png" width="720" /></p>
+<p><img src="programming_files/figure-html/kclus-1.png" width="720" /></p>
 <pre class="r"><code>shopping &lt;- store(shopping, result, name = &quot;clus&quot;)
 
 ## was the data really changed?

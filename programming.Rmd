@@ -36,7 +36,7 @@ plot(result)
 
 You can also call functions for visualization (see below) and access help from the console using `?visualize`
 
-```{r}
+```{r scatter, fig.height = 4, fig.width = 5}
 visualize(
   diamonds, 
   xvar = "carat", 
@@ -62,7 +62,7 @@ This will install and load the library and the required packages. To see the ind
 
 Lets start by comparing the mean of a variable to a (population) value using R's built-in `mtcars` dataset. This functionality is in the Radiant menu _Basics > Means > Single mean_. The analysis is conducted in function `single_mean`. Calling the `summary` method on the result object will show tabular output. Calling `plot` on the same result object will produce relevant plots.
 
-```{r}
+```{r single_mean_mpg, fig.height = 6, fig.width = 5}
 result <- single_mean(
   mtcars, 
   var = "mpg", 
@@ -75,7 +75,7 @@ plot(result, plots = c("hist", "simulate"))
 
 To compare the mean price of diamonds across different levels of clarity we can call the `compare_means` function:
 
-```{r}
+```{r compare_means_diamonds, fig.height = 5, fig.width = 4}
 result <- compare_means(
   diamonds, 
   var1 = "clarity", 
@@ -97,7 +97,7 @@ radiant::radiant()
 
 Because we already loaded the radiant library we already have access to all the data we need here. Lets use the `compare_means` function to evaluate salary data for professors of different ranks using:
 
-```{r}
+```{r compare_means_salary, fig.height = 3, fig.width = 4}
 result <- compare_means(salary, var1 = "rank", var2 = "salary")
 summary(result)
 plot(result)
@@ -105,7 +105,7 @@ plot(result)
 
 An alternative way to write this code is to use `piping` (see [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html) and [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) vignettes):
 
-```{r}
+```{r compare_means_salary_piped, fig.height = 3, fig.width = 4}
 salary %>% 
   compare_means("rank", "salary") %>% 
   {summary(.); plot(.)}
@@ -120,17 +120,17 @@ pred <- predict(result, pred_cmd = "carat = 1:10")
 print(pred, n = 10)
 ```
 
-```{r fig.width = 6, fig.height = 4}
+```{r regress_coeff, fig.width = 6, fig.height = 4}
 plot(result, plots = "coef")
 ```
 
-```{r fig.width = 5, fig.height = 7}
+```{r regress_dashboard, fig.width = 5, fig.height = 7}
 plot(result, plots = "dashboard", lines = "line")
 ```
 
 As another example, imagine that you want to segment a sample of respondents based on their toothpaste attitudes. Below is the required code to produce results using functions from the Radiant package. For help on the commands and options for cluster analysis use `?hclus`, `?plot.hclus`, and `?klus`. See also the Radiant function manuals linked above.
 
-```{r fig.width = 4, fig.height = 5}
+```{r hclus, fig.width = 4, fig.height = 5}
 ## run hierarchical cluster analysis on the shopping data, variables v1 through v6
 result <- hclus(shopping, "v1:v6")
 
@@ -144,12 +144,12 @@ summary(result)
 plot(result)
 ```
 
-```{r}
+```{r dendro, fig.width = 4, fig.height = 5}
 ## show the dendrogram with cutoff at 0.05
 plot(result, plots = "dendro", cutoff = 0.05)
 ```
 
-```{r fig.width = 5, fig.height = 6}
+```{r kclus, fig.width = 5, fig.height = 6}
 ## plots created above suggest 3 clusters may be  most appropriate
 ## use kclus to create the clusters
 ## generate output and store cluster membership
