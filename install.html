@@ -346,12 +346,17 @@ sudo apt-get install libcurl4-openssl-dev libxml2-dev</code></pre>
 </div>
 <div id="installing-the-development-version-of-radiant" class="section level2">
 <h2>Installing the development version of Radiant</h2>
-<p>First restart your Rstudio session (e.g., using Session &gt; Restart R) and use the code below to make sure all required packages packages are up to date</p>
-<pre class="r"><code>radiant.update::radiant.update()</code></pre>
-<p>If all packages are up to date, restart your Rstudio session again and use the code below to install the development version of the Radiant packages</p>
+<p>To get the development version of Radiant, restart your Rstudio session and use the code below</p>
 <pre class="r"><code>packages &lt;- c(&quot;radiant.data&quot;, &quot;radiant.design&quot;, &quot;radiant.basics&quot;, &quot;radiant.model&quot;, &quot;radiant.multivariate&quot;, &quot;radiant&quot;)
-sapply(packages, install.packages, repos = &quot;https://radiant-rstats.github.io/minicran/dev/&quot;)</code></pre>
-<p>If you need to revert to the current (stable) release of Radiant use code below</p>
+ret &lt;- sapply(
+  packages, 
+  install.packages, 
+  repos = c(
+    &quot;https://radiant-rstats.github.io/minicran/dev/&quot;, 
+    &quot;https://radiant-rstats.github.io/minicran/&quot;
+  )
+)</code></pre>
+<p>If you want to revert to the current release version of Radiant, restart your Rstudio session and use the code below</p>
 <pre class="r"><code>packages &lt;- c(&quot;radiant.data&quot;, &quot;radiant.design&quot;, &quot;radiant.basics&quot;, &quot;radiant.model&quot;, &quot;radiant.multivariate&quot;, &quot;radiant&quot;)
 sapply(packages, install.packages, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)</code></pre>
 </div>
