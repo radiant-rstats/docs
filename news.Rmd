@@ -4,6 +4,66 @@ title: News
 
 ***
 
+## Breaking changes in version 0.9.3
+
+The upcoming release of Radiant (0.9.3) has some changes that may break existing code. Code generated for _Report > Rmd_ (and _Report > R_) will no longer use an `r_data` list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through _Data > Transform_ will now look like this:
+ 
+```r
+diamonds <- mutate(diamonds, carat_ln = log(carat))
+```
+ 
+instead of this:
+ 
+```r
+r_data[["diamonds"]] <- mutate(r_data[["diamonds"]], carat_ln = log(carat))
+```
+ 
+You can add also any data.frame (or tibble) you create in _Report > Rmd_, e.g., by loading from disk, to the `Datasets` dropdown by adding a line with:
+ 
+```r
+register("my_data")
+```
+ 
+The updates also effect code for adding residuals and predictions to a dataset. The `store` command below is now similar in structure to dplyr's mutate (i.e., pass a data.frame and add a column). The advantage of using the `store` function in the example below is that it will automatically assign values to the correct index in the dataset, even if a filter is used or there are missing values.
+ 
+```r
+result <- logistic(
+  titanic,
+  rvar = "survived",
+  evar = c("pclass", "sex", "age", "sibsp"),
+  lev = "Yes"
+)
+summary(result)
+pred <- predict(result, pred_data = titanic)
+titanic <- store(titanic, pred, name = "pred_logit")
+```
+ 
+If you open an _old_ state file in Radiant and try to knit a report in _Report > Rmd_ you will likely see a pop-up that will ask if you want to _clean_ the code. If you click the _Clean report_ button, Radiant will try to update your existing code to the new format. I expect that this will automatically handle about 90-95% of cases.
+
+To install the development version of Radiant you can use the code below:
+
+```r
+packages <- c(
+  "radiant.data", "radiant.design", "radiant.basics", 
+  "radiant.model", "radiant.multivariate", "radiant"
+)
+
+ret <- sapply(
+  packages,
+  install.packages,
+  repos = c(
+    "https://radiant-rstats.github.io/minicran/dev/", 
+    "https://radiant-rstats.github.io/minicran/"
+  )
+)
+```
+ 
+In sum, please try out the new version and let me now if you run into any problems. If you see any errors or messages in R(studio) please post an issue on GitHub through the link below.
+ 
+https://github.com/radiant-rstats/radiant/issues
+ 
+***
+
 Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://www.rstudio.com/shiny/) package.
 
 Blog posts about Radiant are available at <a href="http://vnijs.github.io/blog/" target = "_blank">http://vnijs.github.io/blog/</a>
