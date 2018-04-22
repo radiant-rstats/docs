@@ -2,7 +2,7 @@
 
 ### Example
 
-To load the `city` data go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `retailers` dataset. The data set contains information on consumer evaluations for a set of retailers in the Chicago area on 7 attributes. In addition to attribute evaluations the dataset contains preference ratings on a scale from 1-9 for each retailer from two predefined consumer segments.
+To load the `retailers` data go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load` button. Then select the `retailers` dataset. The data set contains information on consumer evaluations for a set of retailers in the Chicago area on 7 attributes. In addition to attribute evaluations the dataset contains preference ratings on a scale from 1-9 for each retailer from two predefined consumer segments.
 
 Select the `retailer` variable as the `Brand` attribute. This is simply a list of retailer names/labels. Then select the variables `good_value` through `cluttered` in the `Attributes` box. Choose the `segment1` and `segment2` variables in the `Preferences` box. After the settings have been changed click the `Estimate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate results.
 
@@ -30,10 +30,10 @@ Finally, we can add the preference information to the map by checking the 'Prefe
 
 In the plot we see that Whole foods and Cub foods are perceived as more comparable on the attributes for which we have data than, for example, Whole foods and Wal-Mart. From the plot a manager might conclude that the brands that are closest together in the map are perceived as close substitutes and, hence, close competitors in the minds of consumers.
 
-An important limitation of a map without attribute information, e.g., based on (dis)similarity data, is that it is difficult to interpret why brands are located close together or far apart. By adding the attribute arrows to the map as shown above our understanding of the brand positions in the maps is significantly enhanced. For example, Jewel and Dominick's are positioned higher in the map because they are perceived to offer consumers higher levels of convenience. Similarly, Cub foods, and particularly Whole foods offer higher levels of customer service and quality products. We can also infer which available attributes are  most strongly linked to consumer preferences. Segment 2 if primarily concerned with Convenience which may explain the higher preference scores for Jewel and Dominick's. Similarly Segment 2 cares most for Good value and very little for Assortment. This segment prefers to shop at Treasure Island and Wal-Mart.
+An important limitation of a map without attribute information, e.g., based on (dis)similarity data, is that it is difficult to interpret why brands are located close together or far apart. By adding the attribute arrows to the map, as shown above, our understanding of the brand positions in the maps is significantly enhanced. For example, Jewel and Dominick's are positioned higher in the map because they are perceived to offer consumers higher levels of convenience. Similarly, Cub foods, and particularly Whole foods, offer higher levels of customer service and quality products. We can also infer which available attributes are most strongly linked to consumer preferences. Segment 2 is primarily concerned with Convenience which may explain the higher preference scores for Jewel and Dominick's. Similarly, Segment 2 cares most about Good value and very little for Assortment. This segment prefers to shop at Treasure Island and Wal-Mart.
 
 ### Report > Rmd
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
-To add, for example, a title to the plot use `title(main = "Attribute-based perceptual map")`. See the <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-command" target="_blank">R graphics</a> documentation for additional information.
+

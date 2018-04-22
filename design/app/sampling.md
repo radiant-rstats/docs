@@ -1,6 +1,6 @@
 > Use simple random sampling to select respondents from a list
 
-To use the sampling tool you will need a data set with a variable of type character. Entries should be unique (i.e., no duplicates). A dataset that fits these requirements is bundled with Radiant and is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load examples`). Select `rndnames` from the `Datasets` dropdown.
+To use the sampling tool you will need a data set with a variable of type character. Entries should be unique (i.e., no duplicates). A dataset that fits these requirements is bundled with Radiant and is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load`). Select `rndnames` from the `Datasets` dropdown.
 
 `Names` is the relevant column in this dataset and it will automatically be used as the base for sampling. Now simply choose the sample size you want and a list of names of the desired length will be created.
 

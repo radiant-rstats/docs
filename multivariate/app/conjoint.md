@@ -8,7 +8,7 @@ To estimate a model select respondents ratings (or rankings) as the `Profile eva
 
 ### Example: Carpet cleaner
 
-A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study. To access the `carpet` dataset go to _Data > Manage_, select `Examples` from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `carpet` dataset. 
+A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study. To access the `carpet` dataset go to _Data > Manage_, select `Examples` from the `Load data of type` dropdown, and press the `Load` button. Then select the `carpet` dataset. 
 
 - design = Package Design (A, B, C)
 - brand = Brand Name (K2R, Glory, Bissell)

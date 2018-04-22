@@ -16,7 +16,7 @@ If a `filter` is active (e.g., set in the _Data > View_ tab) generate results fo
 
 ## Example
 
-Predictions were derived from a linear regression and an neural network with two nodes in the hidden layer on the `diamonds` data. The variables `price` and `carat` were log-transformed prior to estimation.The data is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load examples`). The predictions shown below were generated in the _Predict_ tab.
+Predictions were derived from a linear regression and an neural network with two nodes in the hidden layer on the `diamonds` data. The variables `price` and `carat` were log-transformed prior to estimation.The data is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load`). The predictions shown below were generated in the _Predict_ tab.
 
 <p align="center"><img src="figures_model/evalreg_nn.png"></p>
 

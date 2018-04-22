@@ -4,7 +4,7 @@ As stated in the documentation for pre-factor analysis (see _Multivariate > Fact
 
 ### Example: Toothpaste
 
-First, go to the _Data > Manage_ tab, select **examples** from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `toothpaste` dataset. The dataset contains information from 60 consumers who were asked to respond to six questions to determine their attitudes towards toothpaste. The scores shown for variables v1-v6 indicate the level of agreement with statements on a 7-point scale where 1 = strongly disagree and 7 = strongly agree.
+First, go to the _Data > Manage_ tab, select **examples** from the `Load data of type` dropdown, and press the `Load` button. Then select the `toothpaste` dataset. The dataset contains information from 60 consumers who were asked to respond to six questions to determine their attitudes towards toothpaste. The scores shown for variables v1-v6 indicate the level of agreement with statements on a 7-point scale where 1 = strongly disagree and 7 = strongly agree.
 
 Once we have determined the number of factors we can extract and rotate them. The factors are rotated to generate a solution where, to the extent possible, a variable has a high loading on only one factor. This is an important benefit because it makes it easier to interpret what the factor represents. While there are numerous algorithms to rotate a factor loadings matrix the most commonly used is Varimax rotation.
 
@@ -12,7 +12,7 @@ To replicate the results shown in the screenshot below make sure you have the `t
 
 <p align="center"><img src="figures_multivariate/full_factor_summary.png"></p>
 
-The numbers in the `Factor loadings` table are the correlations of the six variables with the two factors. For example, variable v1 has a correlation of .96 with Factor 1 and a correlation of -.03 with Factor 2. As such v1 will play a big role in naming Factor 1 but an insignificant role in naming Factor 2.
+The numbers in the `Factor loadings` table are the correlations of the six variables with the two factors. For example, variable `v1` has a correlation of .96 with factor 1 and a correlation of -.03 with factor 2. As such `v1` will play a big role in naming factor 1 but an insignificant role in naming factor 2.
 
 The rotated factor loadings can be used to determine labels or names for the different factors. We need to identify and highlight the highest factor loading, in absolute value, in each row. This is easily done by setting the `Cut-off` value to .4 and checking the `Sort factor loadings` box. The output is shown below.
 
@@ -27,12 +27,12 @@ v4        0.85
 v2        0.85
 ```
 
-Together, the variables shown in each column (i.e., for each factor) help us to understand what the factor represents. Questions 1, 3, and 5 reflect the importance of health issues while questions 2, 4, and 6 reflect aesthetics issues (see the data description in the _Data > Manage_ tab for a description of the variables). Plausible names for the factors might therefor be:
+Together, the variables shown in each column (i.e., for each factor) help us to understand what the factor represents. Questions 1, 3, and 5 reflect the importance of health issues while questions 2, 4, and 6 reflect aesthetics issues (see the data description in the _Data > Manage_ tab for a description of the variables). Plausible names for the factors might therefore be:
 
 * **Factor 1:** Health benefits
 * **Factor 2:** Social benefits
 
-The best way to see what rotation does is to switch between `Varimax` and `None` in the `Rotation` dropdown and inspect what changes in the output after pressing the `Estimate` button. Click on the _Plot_ tab, select `None` from the `Rotation` dropdown, and press the `Estimate` button to see updated results. The image shown below depicts the loadings of the variables on the two factors. Variable v5 falls somewhat in between the axes for factor 1 and factor 2. When we select `Varimax` rotation, however, the label for v5 lines up nicely with the horizontal axis (i.e., factor 2). This change in alignment is also reflected in the factor loadings. The unrotated factor loadings for v5 are -0.87 for factor 1 and -0.35 for factor 2. The rotated factor loadings for v5 are -0.93 for factor 1 and -0.08 for factor 2.
+The best way to see what rotation does is to switch between `Varimax` and `None` in the `Rotation` dropdown and inspect what changes in the output after pressing the `Estimate model` button. Select `None` from the `Rotation` dropdown, switch to the _Plot_ tab, and press the `Estimate model` button to see updated results. The image shown below depicts the loadings of the variables on the two factors. Variable `v5` falls somewhat in between the axes for factor 1 and factor 2. When we select `Varimax` rotation, however, the label for `v5` lines up nicely with the horizontal axis (i.e., factor 2). This change in alignment is also reflected in the factor loadings. The unrotated factor loadings for `v5` are -0.87 for factor 1 and -0.35 for factor 2. The rotated factor loadings for `v5` are -0.93 for factor 1 and -0.08 for factor 2.
 
 <p align="center"><img src="figures_multivariate/full_factor_plot.png"> <img src="figures_multivariate/full_factor_plot_rotation.png"></p>
 

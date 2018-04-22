@@ -4,7 +4,7 @@
 
 To estimate a logistic regression we need a binary response variable and one or more explanatory variables. We also need specify the level of the response variable we will count as as _success_ (i.e., the `Choose level:` dropdown). In the example data file `titanic`, success for the variable `survived` would be the level `Yes`.
 
-To access this dataset go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `titanic` dataset.
+To access this dataset go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load` button. Then select the `titanic` dataset.
 
 In the _Summary_ tab we can test if two or more variables together add significantly to the fit of a model by selecting variables in the `Variables to test` dropdown. This functionality can be very useful to test if the overall influence of a variable of type `factor` is statistically significant.
 

@@ -103,6 +103,6 @@ The Lift and Gains charts below show little evidence of overfitting and suggest 
 <p align="center"><img src="figures_model/evalbin_confusion.png"></p>
 -->
 
-The prediction used in the screen shots above was derived from a logistic regression on the `dvd` data. The data is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load examples`). The model was estimated using _Model > Logistic regression (GLM)_. The predictions shown below were generated in the _Predict_ tab.
+The prediction used in the screen shots above was derived from a logistic regression on the `dvd` data. The data is available through the _Data > Manage_ tab (i.e., choose `Examples` from the `Load data of type` drop-down and press `Load`). The model was estimated using _Model > Logistic regression (GLM)_. The predictions shown below were generated in the _Predict_ tab.
 
 <p align="center"><img src="figures_model/evalbin_logistic.png"></p>

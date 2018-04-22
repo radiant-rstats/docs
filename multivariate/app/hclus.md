@@ -4,7 +4,7 @@ The goal of Cluster Analysis is to group respondents (e.g., consumers) into segm
 
 ### Example: Toothpaste
 
-First, go to the _Data > Manage_ tab, select **examples** from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `toothpaste` dataset. The dataset contains information from 60 consumers who were asked to respond to six questions to determine their attitudes towards toothpaste. The scores shown for variables v1-v6 indicate the level of agreement with statements on a 7-point scale where 1 = strongly disagree and 7 = strongly agree.
+First, go to the _Data > Manage_ tab, select **examples** from the `Load data of type` dropdown, and press the `Load` button. Then select the `toothpaste` dataset. The dataset contains information from 60 consumers who were asked to respond to six questions to determine their attitudes towards toothpaste. The scores shown for variables v1-v6 indicate the level of agreement with statements on a 7-point scale where 1 = strongly disagree and 7 = strongly agree.
 
 We first establish the number of segments/clusters in the data using Hierarchical Cluster Analysis. Ward’s method with Squared Euclidean distance is often used to determine how (dis)similar individuals are. These are the default values in Radiant but they can be changed if desired. The most important information from this analysis is provide by the plots, so we will focus our attention there.
 

@@ -1,6 +1,6 @@
 > (Linear) Regression: The workhorse of empirical research in the social sciences
 
-All example files discussed below can be loaded from the Data > Manage page. Click the `examples` radio button and press `Load examples`.
+All example files discussed below can be loaded from the Data > Manage page. Click the `examples` radio button and press `Load`.
 
 ### Functionality
 
@@ -43,7 +43,7 @@ We have access to data from a company selling men's and women's apparel through 
 
 The catalog company is interested in redesigning their Customer Relationship Management (CRM) strategy. We will proceed in two steps:
 
-1. Estimate a regression model using last year's sales total. Response variable: sales total for each of the 200 households; Explanatory variables: household income (measured in thousands of dollars), size of household, and age of the household head. To access this dataset go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load examples` button. Then select the `catalog` dataset.
+1. Estimate a regression model using last year's sales total. Response variable: sales total for each of the 200 households; Explanatory variables: household income (measured in thousands of dollars), size of household, and age of the household head. To access this dataset go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load` button. Then select the `catalog` dataset.
 2. Interpret each of the estimated coefficients. Also provide a statistical evaluation of the model as a whole.
 3. Which explanatory variables are significant predictors of customer value (use a 95% confidence level)?
 
