@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 Below is the output from Radiant used to evaluate if the average price in a sample of diamonds is greater than \$1000.
 
-```{r fig.width = 7, fig.height = 7, dpi = 200}
+```{r fig.width = 7, fig.height = 7, dpi = 144}
 data("diamonds")
 result <- single_mean(
   diamonds, var = "price", comp_value = 1000, 

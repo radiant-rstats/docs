@@ -292,9 +292,9 @@ $(document).ready(function () {
 
 
 <hr />
-<div id="breaking-changes-in-version-0.9.3" class="section level2">
-<h2>Breaking changes in version 0.9.3</h2>
-<p>The upcoming release of Radiant (0.9.3) has some changes that may break existing code. Code generated for <em>Report &gt; Rmd</em> (and <em>Report &gt; R</em>) will no longer use an <code>r_data</code> list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through <em>Data &gt; Transform</em> will now look like this:</p>
+<div id="breaking-changes-in-version-0.9.3.1" class="section level2">
+<h2>Breaking changes in version 0.9.3.1</h2>
+<p>Radiant (0.9.3) has some changes that may break existing code. Code generated for <em>Report &gt; Rmd</em> (and <em>Report &gt; R</em>) will no longer use an <code>r_data</code> list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through <em>Data &gt; Transform</em> will now look like this:</p>
 <pre class="r"><code>diamonds &lt;- mutate(diamonds, carat_ln = log(carat))</code></pre>
 <p>instead of this:</p>
 <pre class="r"><code>r_data[[&quot;diamonds&quot;]] &lt;- mutate(r_data[[&quot;diamonds&quot;]], carat_ln = log(carat))</code></pre>
@@ -311,20 +311,25 @@ summary(result)
 pred &lt;- predict(result, pred_data = titanic)
 titanic &lt;- store(titanic, pred, name = &quot;pred_logit&quot;)</code></pre>
 <p>If you open an <em>old</em> state file in Radiant and try to knit a report in <em>Report &gt; Rmd</em> you will likely see a pop-up that will ask if you want to <em>clean</em> the code. If you click the <em>Clean report</em> button, Radiant will try to update your existing code to the new format. I expect that this will automatically handle about 90-95% of cases.</p>
-<p>To install the development version of Radiant you can use the code below:</p>
-<pre class="r"><code>packages &lt;- c(
-  &quot;radiant.data&quot;, &quot;radiant.design&quot;, &quot;radiant.basics&quot;, 
-  &quot;radiant.model&quot;, &quot;radiant.multivariate&quot;, &quot;radiant&quot;
+<!--
+To install the development version of Radiant you can use the code below:
+
+```r
+packages <- c(
+  "radiant.data", "radiant.design", "radiant.basics",
+  "radiant.model", "radiant.multivariate", "radiant"
 )
 
-ret &lt;- sapply(
+ret <- sapply(
   packages,
   install.packages,
   repos = c(
-    &quot;https://radiant-rstats.github.io/minicran/dev/&quot;, 
-    &quot;https://radiant-rstats.github.io/minicran/&quot;
+    "https://radiant-rstats.github.io/minicran/dev/",
+    "https://radiant-rstats.github.io/minicran/"
   )
-)</code></pre>
+)
+```
+-->
 <p>In sum, please try out the new version and let me now if you run into any problems. If you see any errors or messages in R(studio) please post an issue on GitHub through the link below.</p>
 <p><a href="https://github.com/radiant-rstats/radiant/issues" class="uri">https://github.com/radiant-rstats/radiant/issues</a></p>
 <hr />
