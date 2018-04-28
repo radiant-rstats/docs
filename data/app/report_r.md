@@ -11,7 +11,7 @@ As an example you can copy-and-paste the code below into the editor and press `K
 ```r
 ## get the active dataset and show the first few observations
 .getdata() %>%
-  head
+  head()
 
 ## access a dataset
 diamonds %>%
@@ -35,7 +35,7 @@ diamonds %>%
 visualize(diamonds, xvar = \"log_price\", custom = TRUE)
 
 ## open help in the R-studio viewer from Radiant
-# help(package = \"radiant.data\")
+help(package = \"radiant.data\")
 
 ## If you are familiar with Shiny you can call reactives when the code
 ## is evaluated inside a Shiny app. For example, if you transformed
@@ -49,17 +49,18 @@ visualize(diamonds, xvar = \"log_price\", custom = TRUE)
 The editor used in _Report > Rmd_ and _Report > R_ has several options that can be set in `.Rprofile`.
 
 <pre>
-options(radiant.vim.keys = FALSE)
+options(radiant.ace_vim.keys = FALSE)
 options(radiant.ace_theme = "cobalt")
 options(radiant.ace_tabSize = 2)
+options(radiant.ace_useSoftTabs = TRUE)
 options(radiant.ace_showInvisibles = TRUE)
-options(radiant.ace_autocomplete = "live")
+options(radiant.ace_autoComplete = "live")
 </pre>
 
 Notes:
 
-* `vim.key` enables a variety of keyboard short-cuts. If you have never used VIM you probably don't want this 
-* For an overview of available themes see: `shinyAce::getAceThemes()`
-* Autocomplete has options "live", "enabled", and "disabled" 
+* `vim.keys` enables a set of special keyboard short-cuts. If you have never used VIM you probably don't want this 
+* For an overview of available editor themes see: `shinyAce::getAceThemes()`
+* Tabs are converted to 2 spaces by default (i.e., 'soft' tabs). You can change the number of spaces used from 2 to, for example, 4
 * `showInvisibles` shows tabs and spaces in the editor
-* Tabs are converted to 2 spaces by default. Change the number of spaces by changing this to, for example, 4
+* Autocomplete has options "live", "enabled", and "disabled" 
