@@ -6,7 +6,7 @@ title: News
 
 ## Breaking changes in version 0.9.3.1
 
-Radiant (0.9.3) has some changes that may break existing code. Code generated for _Report > Rmd_ (and _Report > R_) will no longer use an `r_data` list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through _Data > Transform_ will now look like this:
+Radiant (0.9.3.1) has some changes that may break existing code. Code generated for _Report > Rmd_ (and _Report > R_) will no longer use an `r_data` list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through _Data > Transform_ will now look like this:
  
 ```r
 diamonds <- mutate(diamonds, carat_ln = log(carat))

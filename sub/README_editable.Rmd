@@ -56,18 +56,25 @@ To launch Radiant in Rstudio's viewer pane select `Start radiant (viewer)` from 
 radiant::radiant_viewer()
 ```
 
+The easily update Radiant and the required packages, install the `radiant.update` package using:
 
-To update Radiant select `Update radiant` from the `Addins` menu in Rstudio or use the command below:
+```r
+install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")
+```
+
+Then select `Update radiant` from the `Addins` menu in Rstudio or use the command below:
 
 ```r
 radiant.update::radiant.update()
 ```
 
+<!--
 Alternatively Radiant can be updated using the command:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R")
 ```
+-->
 
 See the [installing radiant](https://radiant-rstats.github.io/docs/install.html) page for details.
 
