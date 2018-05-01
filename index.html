@@ -335,11 +335,13 @@ $(document).ready(function () {
 </ul>
 <p>In Rstudio you can start and update Radiant through the <code>Addins</code> menu at the top of the screen. To install the latest version of Radiant for Windows or Mac, with complete documentation for off-line access, open R(studio) and copy-and-paste the command below:</p>
 <pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;, type = &quot;binary&quot;)</code></pre>
-<p>Once all packages are installed select <code>Start radiant (browser)</code> from the <code>Addins</code> menu in Rstudio or use the command below to launch the app:</p>
+<p>Once all packages are installed, select <code>Start radiant (browser)</code> from the <code>Addins</code> menu in Rstudio or use the command below to launch the app:</p>
 <pre class="r"><code>radiant::radiant()</code></pre>
 <p>To launch Radiant in Rstudio’s viewer pane select <code>Start radiant (viewer)</code> from the <code>Addins</code> menu in Rstudio or use the command below:</p>
 <pre class="r"><code>radiant::radiant_viewer()</code></pre>
-<p>The easily update Radiant and the required packages, install the <code>radiant.update</code> package using:</p>
+<p>To launch Radiant in an Rstudio Window select <code>Start radiant (window)</code> from the <code>Addins</code> menu in Rstudio or use the command below:</p>
+<pre class="r"><code>radiant::radiant_window()</code></pre>
+<p>To easily update Radiant and the required packages, install the <code>radiant.update</code> package using:</p>
 <pre class="r"><code>install.packages(&quot;radiant.update&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)</code></pre>
 <p>Then select <code>Update radiant</code> from the <code>Addins</code> menu in Rstudio or use the command below:</p>
 <pre class="r"><code>radiant.update::radiant.update()</code></pre>
