@@ -4,9 +4,9 @@ title: News
 
 ***
 
-## Breaking changes in version 0.9.3.1
+## Breaking changes in version 0.9.3.3
 
-Radiant (0.9.3.1) has some changes that may break existing code. Code generated for _Report > Rmd_ (and _Report > R_) will no longer use an `r_data` list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through _Data > Transform_ will now look like this:
+Radiant (0.9.3.3) has some changes that may break existing code. Code generated for _Report > Rmd_ (and _Report > R_) will no longer use an `r_data` list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through _Data > Transform_ will now look like this:
  
 ```r
 diamonds <- mutate(diamonds, carat_ln = log(carat))
@@ -74,12 +74,12 @@ Blog posts about Radiant are available at <a href="http://vnijs.github.io/blog/"
 
 For an overview of Radiant updates see:
 
-* https://github.com/radiant-rstats/radiant/blob/master/NEWS.md
-* https://github.com/radiant-rstats/radiant.data/blob/master/NEWS.md
-* https://github.com/radiant-rstats/radiant.design/blob/master/NEWS.md
-* https://github.com/radiant-rstats/radiant.basics/blob/master/NEWS.md
-* https://github.com/radiant-rstats/radiant.model/blob/master/NEWS.md
-* https://github.com/radiant-rstats/radiant.multivariate/blob/master/NEWS.md
+* http://radiant-rstats.github.io/radiant/news/
+* http://radiant-rstats.github.io/radiant.data/news/
+* http://radiant-rstats.github.io/radiant.design/news/
+* http://radiant-rstats.github.io/radiant.basics/news/
+* http://radiant-rstats.github.io/radiant.model/news/
+* http://radiant-rstats.github.io/radiant.multivariate/news/
 
 To get the latest version of all Radiant components run the command below:
 

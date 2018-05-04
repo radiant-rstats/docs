@@ -292,9 +292,9 @@ $(document).ready(function () {
 
 
 <hr />
-<div id="breaking-changes-in-version-0.9.3.1" class="section level2">
-<h2>Breaking changes in version 0.9.3.1</h2>
-<p>Radiant (0.9.3.1) has some changes that may break existing code. Code generated for <em>Report &gt; Rmd</em> (and <em>Report &gt; R</em>) will no longer use an <code>r_data</code> list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through <em>Data &gt; Transform</em> will now look like this:</p>
+<div id="breaking-changes-in-version-0.9.3.3" class="section level2">
+<h2>Breaking changes in version 0.9.3.3</h2>
+<p>Radiant (0.9.3.3) has some changes that may break existing code. Code generated for <em>Report &gt; Rmd</em> (and <em>Report &gt; R</em>) will no longer use an <code>r_data</code> list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through <em>Data &gt; Transform</em> will now look like this:</p>
 <pre class="r"><code>diamonds &lt;- mutate(diamonds, carat_ln = log(carat))</code></pre>
 <p>instead of this:</p>
 <pre class="r"><code>r_data[[&quot;diamonds&quot;]] &lt;- mutate(r_data[[&quot;diamonds&quot;]], carat_ln = log(carat))</code></pre>
@@ -339,12 +339,12 @@ ret <- sapply(
 <h3>Radiant updates</h3>
 <p>For an overview of Radiant updates see:</p>
 <ul>
-<li><a href="https://github.com/radiant-rstats/radiant/blob/master/NEWS.md" class="uri">https://github.com/radiant-rstats/radiant/blob/master/NEWS.md</a></li>
-<li><a href="https://github.com/radiant-rstats/radiant.data/blob/master/NEWS.md" class="uri">https://github.com/radiant-rstats/radiant.data/blob/master/NEWS.md</a></li>
-<li><a href="https://github.com/radiant-rstats/radiant.design/blob/master/NEWS.md" class="uri">https://github.com/radiant-rstats/radiant.design/blob/master/NEWS.md</a></li>
-<li><a href="https://github.com/radiant-rstats/radiant.basics/blob/master/NEWS.md" class="uri">https://github.com/radiant-rstats/radiant.basics/blob/master/NEWS.md</a></li>
-<li><a href="https://github.com/radiant-rstats/radiant.model/blob/master/NEWS.md" class="uri">https://github.com/radiant-rstats/radiant.model/blob/master/NEWS.md</a></li>
-<li><a href="https://github.com/radiant-rstats/radiant.multivariate/blob/master/NEWS.md" class="uri">https://github.com/radiant-rstats/radiant.multivariate/blob/master/NEWS.md</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant/news/" class="uri">http://radiant-rstats.github.io/radiant/news/</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.data/news/" class="uri">http://radiant-rstats.github.io/radiant.data/news/</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.design/news/" class="uri">http://radiant-rstats.github.io/radiant.design/news/</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.basics/news/" class="uri">http://radiant-rstats.github.io/radiant.basics/news/</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.model/news/" class="uri">http://radiant-rstats.github.io/radiant.model/news/</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.multivariate/news/" class="uri">http://radiant-rstats.github.io/radiant.multivariate/news/</a></li>
 </ul>
 <p>To get the latest version of all Radiant components run the command below:</p>
 <pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&quot;)</code></pre>
