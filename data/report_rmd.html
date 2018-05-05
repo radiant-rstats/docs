@@ -311,19 +311,20 @@ $(document).ready(function () {
 <h2>Options</h2>
 <p>The editor used in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> has several options that can be set in <code>.Rprofile</code>.</p>
 <pre>
-options(radiant.vim.keys = FALSE)
+options(radiant.ace_vim.keys = FALSE)
 options(radiant.ace_theme = "cobalt")
 options(radiant.ace_tabSize = 2)
+options(radiant.ace_useSoftTabs = TRUE)
 options(radiant.ace_showInvisibles = TRUE)
-options(radiant.ace_autocomplete = "live")
+options(radiant.ace_autoComplete = "live")
 </pre>
 <p>Notes:</p>
 <ul>
-<li><code>vim.key</code> enables a variety of keyboard short-cuts. If you have never used VIM you probably don’t want this</li>
-<li>For an overview of available themes see: <code>shinyAce::getAceThemes()</code></li>
-<li>Autocomplete has options “live”, “enabled”, and “disabled”</li>
+<li><code>vim.keys</code> enables a set of special keyboard short-cuts. If you have never used VIM you probably don’t want this</li>
+<li>For an overview of available editor themes see: <code>shinyAce::getAceThemes()</code></li>
+<li>Tabs are converted to 2 spaces by default (i.e., ‘soft’ tabs). You can change the number of spaces used from 2 to, for example, 4</li>
 <li><code>showInvisibles</code> shows tabs and spaces in the editor</li>
-<li>Tabs are converted to 2 spaces by default. Change the number of spaces by changing this to, for example, 4</li>
+<li>Autocomplete has options “live”, “enabled”, and “disabled”</li>
 </ul>
 </div>
 

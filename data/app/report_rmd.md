@@ -29,17 +29,18 @@ If you are using Radiant for a class I suggest you use the _Report > Rmd_ featur
 The editor used in _Report > Rmd_ and _Report > R_ has several options that can be set in `.Rprofile`.
 
 <pre>
-options(radiant.vim.keys = FALSE)
+options(radiant.ace_vim.keys = FALSE)
 options(radiant.ace_theme = "cobalt")
 options(radiant.ace_tabSize = 2)
+options(radiant.ace_useSoftTabs = TRUE)
 options(radiant.ace_showInvisibles = TRUE)
-options(radiant.ace_autocomplete = "live")
+options(radiant.ace_autoComplete = "live")
 </pre>
 
 Notes:
 
-* `vim.key` enables a variety of keyboard short-cuts. If you have never used VIM you probably don't want this 
-* For an overview of available themes see: `shinyAce::getAceThemes()`
-* Autocomplete has options "live", "enabled", and "disabled" 
+* `vim.keys` enables a set of special keyboard short-cuts. If you have never used VIM you probably don't want this 
+* For an overview of available editor themes see: `shinyAce::getAceThemes()`
+* Tabs are converted to 2 spaces by default (i.e., 'soft' tabs). You can change the number of spaces used from 2 to, for example, 4
 * `showInvisibles` shows tabs and spaces in the editor
-* Tabs are converted to 2 spaces by default. Change the number of spaces by changing this to, for example, 4
+* Autocomplete has options "live", "enabled", and "disabled" 

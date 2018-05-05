@@ -21,6 +21,21 @@ knit_docs <- function(x) {
 
 sapply(c("data","design","basics","model","multivariate"), knit_docs)
 
+## setup articles for pkgdown
+setwd("~/gh/docs/")
+files <- c(
+  "combine.Rmd", "explore.md", "manage.md", "pivotr.md",
+  "report_r.md", "report_rmd.md", "state.md", "transform.Rmd",
+  "view.Rmd", "visualize.md"
+)
+
+for (file in files) {
+  article <- readLines(file.path("data/app", file))
+  article <- gsub("figures/", "https://radiant-rstats.github.io/docs/data/figures/", article)
+  file <- paste0("_", sub("\\.md$", ".Rmd", file))
+  cat(article, file = file.path("../radiant.data/vignettes/pkgdown/", file), sep = "\n")
+}
+
 ## making the README.md file after clean-up
 setwd("~/gh/docs/")
 knit("README.Rmd")
