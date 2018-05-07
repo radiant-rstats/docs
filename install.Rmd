@@ -27,7 +27,7 @@ For Windows, download and run the all-in-one installer for <a href="https://www.
 
 ## Installing Radiant on Mac
 
-For Mac, first download and install R from <a href="https://cran.r-project.org/bin/macosx/" target="_blank">https://cran.r-project.org/bin/macosx/</a> (e.g., R-3.4.4.pkg). Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
+For Mac, first download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
