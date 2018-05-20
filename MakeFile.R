@@ -10,6 +10,15 @@ options(
   stringsAsFactors = FALSE
 )
 
+knitr::opts_chunk$set(
+  echo = TRUE, 
+  comment = NA, 
+  cache = FALSE, 
+  message = FALSE, 
+  warning = FALSE,
+  dev = "svg"
+)
+
 ## generate (updated) html and md files
 setwd("~/gh/docs/")
 system('make')

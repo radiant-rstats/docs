@@ -4,13 +4,19 @@ title: Programming with Radiant
 
 ```{r setup, include = FALSE}
 library(radiant)
+options(
+  width = 250,
+  scipen = 100,
+  max.print = 5000,
+  stringsAsFactors = FALSE
+)
 knitr::opts_chunk$set(
   echo = TRUE, 
   comment = NA, 
   cache = FALSE, 
   message = FALSE, 
   warning = FALSE,
-  dpi = 144
+  dev = "svg"
 )
 ```
 
@@ -36,7 +42,7 @@ plot(result)
 
 You can also call functions for visualization (see below) and access help from the console using `?visualize`
 
-```{r scatter, fig.height = 4, fig.width = 5}
+```{r scatter, fig.height = 6, fig.width = 5}
 visualize(
   diamonds, 
   xvar = "carat", 
@@ -144,7 +150,7 @@ summary(result)
 plot(result)
 ```
 
-```{r dendro, fig.width = 4, fig.height = 5}
+```{r dendro, fig.width = 4, fig.height = 6}
 ## show the dendrogram with cutoff at 0.05
 plot(result, plots = "dendro", cutoff = 0.05)
 ```
