@@ -64,3 +64,7 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 plot(result, custom = TRUE) %>%
 	gridExtra::grid.arrange(grobs = ., top = "Factor Analysis", ncol = 2)
 ```
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to conduct factor analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-factor" target="_blank">_Multivariate > Factor_</a>

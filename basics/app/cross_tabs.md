@@ -44,3 +44,7 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 ### Technical note
 
 When one or more expected values are small (e.g., 5 or less) the p.value for the Chi-squared test is calculated using simulation methods. If some cells have an expected count below 1 it may be necessary to _collapse_ rows and/or columns.
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to evaluate associations between categorical variables see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank">_Basics > Tables</a>

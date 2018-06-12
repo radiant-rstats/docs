@@ -34,3 +34,7 @@ plot(result, plots = "change", custom = TRUE) +
 ```
 
 To add, for example, a sub-title to a dendrogram plot use `title(sub = "Data used from ...")`. See the <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-commands" target="_blank">R graphics</a> documentation for additional information.
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to conduct cluster analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-cluster" target="_blank">_Multivariate > Cluster_</a>

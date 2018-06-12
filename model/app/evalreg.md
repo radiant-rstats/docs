@@ -37,6 +37,10 @@ plot(result, vars = "Rsq")
 The plot can be further customized using `ggplot2` commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
 
 ```r
-plot(result, vars = "Rsq")
+plot(result, vars = "Rsq") +
   labs(caption = "Based on data from ...")
 ```
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to evaluate regression models see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-evaluate-regression" target="_blank">_Model > Evaluate regression_</a>

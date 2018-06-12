@@ -61,3 +61,7 @@ To download the list of factors you entered click the `Download` button. To uplo
 ### Report > Rmd
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_Report > Rmd_</a> to (re)create the design by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+
+### R-functions
+
+For an overview of related R-functions used by Radiant for experimental design see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-design-of-experiments-doe-" target="_blank">_Design > Design of Experiments_</a>

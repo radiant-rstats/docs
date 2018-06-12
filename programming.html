@@ -137,6 +137,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -536,7 +539,7 @@ result &lt;- hclus(shopping, &quot;v1:v6&quot;)
 summary(result)</code></pre>
 <pre><code>Hierarchical cluster analysis
 Data        : shopping 
-Variables   : v1:v6 
+Variables   : v1, v2, v3, v4, v5, v6 
 Method      : ward.D 
 Distance    : sq.euclidian 
 Observations: 20 </code></pre>
@@ -556,7 +559,7 @@ result &lt;- kclus(shopping, vars = &quot;v1:v6&quot;, nr_clus = 3)
 summary(result)</code></pre>
 <pre><code>K-means cluster analysis
 Data         : shopping 
-Variables    : v1:v6 
+Variables    : v1, v2, v3, v4, v5, v6 
 Clustering by: K-means
 HC method    : ward.D 
 HC distance  : sq.euclidian 

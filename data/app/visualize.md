@@ -2,7 +2,7 @@
 
 ### Filter data
 
-Use the `Filter data` box to select (or omit) specific sets of rows from the data. See the helpfile for <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank">_Data > View_</a> for details.
+Use the `Filter data` box to select (or omit) specific sets of rows from the data. See the help file for <a href="https://radiant-rstats.github.io/docs/data/view.html" target="_blank">_Data > View_</a> for details.
 
 ### Pause plotting
 
@@ -129,3 +129,7 @@ For additional information on the `plotly` library see the links below:
 * Reference: https://plot.ly/r/reference/
 * Book: https://cpsievert.github.io/plotly_book
 * Code: https://github.com/ropensci/plotly
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to visualize data see <a href = " https://radiant-rstats.github.io/radiant.data/reference/index.html#section-data-visualize" target="_blank">_Data > Visualize_</a>

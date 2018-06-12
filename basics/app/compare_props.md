@@ -80,4 +80,6 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" tar
 
 If a plot was created it can be customized using `ggplot2` commands (e.g., `plot(result, plots = "bar", custom = TRUE) + labs(title = "Compare proportions")`). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
 
+### R-functions
 
+For an overview of related R-functions used by Radiant to evaluate proportions see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-proportions" target="_blank">_Basics > Proportions</a>

@@ -137,6 +137,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -384,6 +387,10 @@ $(document).ready(function () {
 <p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
 <pre class="r"><code>plot(result, plots = c(&quot;pw&quot;,&quot;iw&quot;), custom = TRUE) %&gt;%
     gridExtra::grid.arrange(grobs = ., top = &quot;Conjoint Analysis&quot;, ncol = 2)</code></pre>
+</div>
+<div id="r-functions" class="section level3">
+<h3>R-functions</h3>
+<p>For an overview of related R-functions used by Radiant to estimate a conjoint model see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-conjoint" target="_blank"><em>Multivariate &gt; Conjoint</em></a></p>
 </div>
 </div>
 

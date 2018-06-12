@@ -79,3 +79,7 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 plot(result, plots = c("pw","iw"), custom = TRUE) %>%
 	gridExtra::grid.arrange(grobs = ., top = "Conjoint Analysis", ncol = 2)
 ```
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to estimate a conjoint model see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-conjoint" target="_blank">_Multivariate > Conjoint_</a>

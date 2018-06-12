@@ -96,3 +96,7 @@ As an example, suppose we determine that we need to draw a sample of size 217 fr
 $$
   n^* = \frac{ 217 \times 5000 }{ 217 - 1 + 5000 } = 208
 $$
+
+### R-functions
+
+For an overview of related R-functions used by Radiant for sampling and sample size calculations see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-sample" target="_blank">_Design > Sample_</a>

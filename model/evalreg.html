@@ -137,6 +137,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -324,8 +327,12 @@ $(document).ready(function () {
 <p><code>Rsq</code>, <code>RSME</code>, and <code>MAE</code> are plotted by default. It is possible to customize the plotted results through <em>Report &gt; Rmd</em>. To change the plot use, for example:</p>
 <pre class="r"><code>plot(result, vars = &quot;Rsq&quot;)</code></pre>
 <p>The plot can be further customized using <code>ggplot2</code> commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
-<pre class="r"><code>plot(result, vars = &quot;Rsq&quot;)
+<pre class="r"><code>plot(result, vars = &quot;Rsq&quot;) +
   labs(caption = &quot;Based on data from ...&quot;)</code></pre>
+</div>
+<div id="r-functions" class="section level3">
+<h3>R-functions</h3>
+<p>For an overview of related R-functions used by Radiant to evaluate regression models see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-evaluate-regression" target="_blank"><em>Model &gt; Evaluate regression</em></a></p>
 </div>
 </div>
 

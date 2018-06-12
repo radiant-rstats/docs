@@ -137,6 +137,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -488,7 +491,7 @@ diamonds &lt;- mutate_ext(
 </ol>
 <pre class="r"><code>rec_iq = xtile(recency, 5, rev = TRUE)</code></pre>
 <ol start="19" style="list-style-type: decimal">
-<li>To remove text from entries in a character or factor variable use <code>sub</code> to remove only the first instance or <code>gsub</code> to remove all instances. For example, suppose a each row for a variable <code>bk_score</code> has the letters “ltv” before a number (e.g., “ltv150”). We could replace each occurrence of “ltv” by “” as follows:</li>
+<li>To remove text from entries in a character or factor variable use <code>sub</code> to remove only the first instance or <code>gsub</code> to remove all instances. For example, suppose a each row for a variable <code>bk_score</code> has the letters “ltv” before a number (e.g., “ltv150”). We could replace each occurrence of “ltv” by &quot;&quot; as follows:</li>
 </ol>
 <pre class="r"><code>bk_score = sub(&quot;ltv&quot;, &quot;&quot;, bk_score)</code></pre>
 <p>Note: For examples 7, 8, and 15 above you may need to change the new variable to type <code>factor</code> before using it for further analysis (see also <code>Change type</code> above)</p>
@@ -548,6 +551,10 @@ diamonds &lt;- mutate_ext(
 <h4>Spread column</h4>
 <p><em>Spread</em> one column into multiple columns. The opposite of <code>gather</code>. For a detailed discussion about <em>tidy</em> data see the <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html" target = "_blank">tidy-data</a> vignette.</p>
 </div>
+</div>
+<div id="r-functions" class="section level3">
+<h3>R-functions</h3>
+<p>For an overview of related R-functions used by Radiant to transform data see <a href = " https://radiant-rstats.github.io/radiant.data/reference/index.html#section-data-transform" target="_blank"><em>Data &gt; Transform</em></a></p>
 </div>
 
 

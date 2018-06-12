@@ -156,3 +156,7 @@ You can also (un)fold lines using the small triangles next to the line numbers.
 For additional shortcuts see:
 
 <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts</a>
+
+### R-functions
+
+For an overview of related R-functions used by Radiant for decision analysis see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-decision-analysis" target="_blank">_Model > Decision analysis_</a>

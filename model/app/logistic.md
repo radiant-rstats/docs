@@ -120,3 +120,7 @@ If a plot was created it can be customized using `ggplot2` commands or with `gri
 plot(result, plots = "coef", custom = TRUE) +
   labs(title = "Coefficient plot")
 ```
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank">_Model > Logistic regression_</a>

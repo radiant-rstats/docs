@@ -13,3 +13,7 @@ To generate samples select a distribution from the `Distribution` dropdown and a
 ### Khan on the CLT
 
 <div align="center"><iframe width="640" height="375" src="//www.youtube.com/embed/JNm3M9cqWyc" frameborder="0" allowfullscreen></iframe></div>
+
+### R-functions
+
+For an overview of related R-functions used by Radiant for probability calculations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-probability" target="_blank">_Basics > Probability</a>

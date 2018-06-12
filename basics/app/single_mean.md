@@ -60,3 +60,7 @@ The 5% confidence bound is **1897.233**. If repeated samples were taken and the 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
 If a plot was created it can be customized using `ggplot2` commands (e.g., `plot(result, plots = "hist", custom = TRUE) + labs(title = "Histogram")`). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
+### R-functions
+
+For an overview of related R-functions used by Radiant to evaluate means see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-means" target="_blank">_Basics > Means</a>
