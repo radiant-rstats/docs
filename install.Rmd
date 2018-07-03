@@ -10,7 +10,7 @@ Radiant is a platform-independent browser-based interface for business analytics
 
 ## Installing Radiant on Windows
 
-For Windows, download and run the all-in-one installer for <a href="https://www.dropbox.com/s/23b9qblouc2eydm/Rady-Radiant-Installer-R3.4.4.exe?dl=1" target="_blank">R, Rstudio, and Radiant</a>. For a video tutorial see the `Install Radiant on Windows` video below:
+For Windows, download and run the all-in-one installer for <a href="https://www.dropbox.com/s/0l6va4pz3s8wghq/Rady-Radiant-Installer-Latest.exe?dl=1" target="_blank">R, Rstudio, and Radiant</a>. For a video tutorial see the `Install Radiant on Windows` video below:
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/iaB4mTrm2Co" frameborder="0" allowfullscreen></iframe>
 
