@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
   cache = FALSE, 
   message = FALSE, 
   warning = FALSE,
-  dev = "svg"
+  dpi = 144
 )
 
 ## generate (updated) html and md files

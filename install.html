@@ -343,9 +343,10 @@ sudo apt-get update
 
 ## Install R and required linux tools
 sudo apt-get install r-base r-base-dev
-sudo apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev</code></pre>
+sudo apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \
+  unixodbc-dev libpq-dev </code></pre>
 <p>Then open R and run the following command:</p>
-<pre class="r"><code>install.packages(&quot;radiant&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)</code></pre>
+<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R&quot;)</code></pre>
 <!--
 ## Installing the development version of Radiant
 
