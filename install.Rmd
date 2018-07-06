@@ -8,11 +8,11 @@ Radiant is a platform-independent browser-based interface for business analytics
 
 > **Note:** User profiles (or user names or logins) containing non-ASCII characters may cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters and numbers only. For example, c:\\users\\myprofilename
 
-## Installing Radiant on Windows
+## Installing R, Rstudio, and Radiant on Windows
 
 For Windows, download and run the all-in-one installer for <a href="https://www.dropbox.com/s/0l6va4pz3s8wghq/Rady-Radiant-Installer-Latest.exe?dl=1" target="_blank">R, Rstudio, and Radiant</a>. For a video tutorial see the `Install Radiant on Windows` video below:
 
-<iframe width="640" height="375" src="https://www.youtube.com/embed/iaB4mTrm2Co" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="375" src="https://www.youtube.com/embed/16B5SvtW8Ks" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 > Note: You may see the two messages below pop-up when installing `TinyTex`. This is expected and nothing to worry about. Just click "OK" and let the install process continue. 
 
@@ -25,7 +25,7 @@ For Windows, download and run the all-in-one installer for <a href="https://www.
 
 > Credits: Thanks go to Brandon Salas at the Rady School of Management for creating the Windows installer
 
-## Installing Radiant on Mac
+## Installing R, Rstudio, and Radiant on macOS
 
 For Mac, first download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
@@ -33,11 +33,11 @@ For Mac, first download and install R from <a href="https://cloud.r-project.org/
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
 ```
 
-For a video tutorial see the `Install Radiant on Mac` video below:
+For a video tutorial see the `Installing R, Rstudio, and Radiant on macOS` video below:
 
-<iframe width="640" height="375" src="https://www.youtube.com/embed/WheqHpobMZg" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-## Installing Radiant on Linux
+## Installing R, Rstudio, and Radiant on Linux
 
 The first step will be to install R and a couple of additional linux tools. The commands required for Ubuntu are shown below:
 
