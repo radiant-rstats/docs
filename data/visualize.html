@@ -358,6 +358,10 @@ $(document).ready(function () {
     y = &quot;Price in $&quot;,
     x = &quot;Carats&quot;
   )</code></pre>
+<p>The default resolution for plots is 144 dots per inch (dpi). You can change this setting up or down in <em>Report &gt; Rmd</em>. For example, the code-chunk header below ensures the plot will be 7&quot; wide, 3.5&quot; tall, with a resolution of 600 dpi.</p>
+<p><code>```{r fig.width = 7, fig.height = 3.5, dpi = 600}</code></p>
+<p>If you have the <code>svglite</code> package installed, the code-chunk header below will produce graphs in high quality <code>svg</code> format.</p>
+<p><code>```{r fig.width = 7, fig.height = 3.5, dev = &quot;svglite&quot;}</code></p>
 <p><strong>Some common customization commands:</strong></p>
 <ul>
 <li>Add a title: <code>+ labs(title = &quot;my title&quot;)</code></li>

@@ -321,7 +321,8 @@ $(document).ready(function () {
 </div>
 <div id="installing-r-rstudio-and-radiant-on-macos" class="section level2">
 <h2>Installing R, Rstudio, and Radiant on macOS</h2>
-<p>For Mac, first download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:</p>
+<!-- https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg -->
+<p>For Mac, first download and install R from <a href="https://cran.r-project.org/bin/macosx/R-3.5.1.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:</p>
 <pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R&quot;)</code></pre>
 <p>For a video tutorial see the <code>Installing R, Rstudio, and Radiant on macOS</code> video below:</p>
 <iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -375,11 +376,10 @@ sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/min
 ```
 -->
 </div>
-<div id="starting-updating-and-stopping-radiant" class="section level2">
-<h2>Starting, Updating, and Stopping Radiant</h2>
-<p>I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start and update Radiant through the <code>Addins</code> menu at the top of the screen. When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code>. The Radiant process will stop and the browser window will close (Chrome) or gray-out.</p>
-<p>The recommend approach to start Radiant is <code>Start radiant (window)</code> or <code>Start radiant (viewer)</code> from the <code>Addins</code> menu. This will start Radiant in an Rstudio window or the Rstudio viewer. Closing this window or pressing the stop icon in the viewer will (cleanly) stop Radiant. If you are using an Rstudio project, any file opened or saved will default to the project directory. This also makes it possible to use <code>relative</code> paths to load data and images in <code>Report &gt; Rmd</code>.</p>
-<p>To add an option to upgrade Radiant easily, use the commands below to install the <code>radiant.upgrade</code> package. After Radiant has been upgraded you will see a new item in the <code>Addins</code> dropdown that you can use for future upgrades.</p>
+<div id="starting-stopping-and-updating-radiant" class="section level2">
+<h2>Starting, Stopping, and Updating Radiant</h2>
+<p>I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the <code>Addins</code> menu at the top of the screen <code>Start radiant (browser)</code>. If for some reason the <code>Start radiant (browser)</code> is not shown in the dropdown, enter <code>radiant::radiant()</code> in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code>. The Radiant process will stop and the browser window will close or gray-out.</p>
+<p>To add an option to upgrade Radiant easily, use the commands below to install the <code>radiant.upgrade</code> package. You should now see two new item in the <code>Addins</code> dropdown that you can use for future radiant upgrades.</p>
 <pre class="r"><code>install.packages(&quot;radiant.update&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)
 radiant.update::radiant.update()</code></pre>
 </div>
@@ -388,15 +388,25 @@ radiant.update::radiant.update()</code></pre>
 <p>An excellent way to share an Rstudio project hosted online (e.g., on Dropbox) with others is to use the <code>usethis</code> package</p>
 <pre class="r"><code>install.packages(&quot;usethis&quot;)
 ?usethis::use_course</code></pre>
+<p>As an example, run the command below to download and open an Rstudio project. Note the “1” at the end of the URL instead of Dropbox’s default which is “0”.</p>
+<pre class="r"><code>usethis::use_course(&quot;https://www.dropbox.com/sh/0dmcr2xsphtn1ha/AADsrYsi8KBkddWx_B-aQbi1a?dl=1&quot;)</code></pre>
 </div>
 <div id="installing-additional-r-development-tools" class="section level2">
 <h2>Installing additional R-development tools</h2>
-<p>To install additional development tools (i.e., Rtools, git, homebrew) copy-and-paste the command below into R or Rstudio and press return. When installing Rtools, Windows users should add Rstools to the system path.</p>
+<p>To install additional development tools (i.e., Rtools, git, homebrew) copy-and-paste the command below into R or Rstudio and press return. When installing Rtools, Windows users should make sure to check the option to add Rstools to the system path.</p>
 <pre class="r"><code>source(&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install_dev.R&quot;)</code></pre>
 </div>
 <div id="documentation" class="section level2">
 <h2>Documentation</h2>
-<p>Documentation and tutorials for each of the apps are available at <a href="https://radiant-rstats.github.io/docs/" class="uri">https://radiant-rstats.github.io/docs/</a> and in the Radiant web interface (the <i title='Help' class='fa fa-edit'></i> icons on each page and the <i title='Help' class='fa fa-question-circle'></i> icon in the navigation bar).</p>
+<p>Documentation and tutorials for each of the apps are available at <a href="https://radiant-rstats.github.io/docs/" class="uri">https://radiant-rstats.github.io/docs/</a> and in the Radiant web interface (the <i title='Help' class='fa fa-edit'></i> icons on each page and the <i title='Help' class='fa fa-question-circle'></i> icon in the navigation bar). See also the <a href="https://github.com/r-lib/pkgdown">pkgdown</a> documentation sites:</p>
+<ul>
+<li><a href="http://radiant-rstats.github.io/radiant" class="uri">http://radiant-rstats.github.io/radiant</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.data" class="uri">http://radiant-rstats.github.io/radiant.data</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.design" class="uri">http://radiant-rstats.github.io/radiant.design</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.basics" class="uri">http://radiant-rstats.github.io/radiant.basics</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.model" class="uri">http://radiant-rstats.github.io/radiant.model</a></li>
+<li><a href="http://radiant-rstats.github.io/radiant.multivariate" class="uri">http://radiant-rstats.github.io/radiant.multivariate</a></li>
+</ul>
 <p>Want more help getting started? Watch the tutorials on the <a href="https://radiant-rstats.github.io/docs/tutorials.html">documentation site</a>.</p>
 </div>
 <div id="trouble-shooting" class="section level2">

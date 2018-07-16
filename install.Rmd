@@ -27,7 +27,9 @@ For Windows, download and run the all-in-one installer for <a href="https://www.
 
 ## Installing R, Rstudio, and Radiant on macOS
 
-For Mac, first download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
+<!-- https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg -->
+
+For Mac, first download and install R from <a href="https://cran.r-project.org/bin/macosx/R-3.5.1.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
@@ -93,13 +95,11 @@ sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/min
 ```
 -->
 
-## Starting, Updating, and Stopping Radiant
+## Starting, Stopping, and Updating Radiant
 
-I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start and update Radiant through the `Addins` menu at the top of the screen. When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out.
+I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the `Addins` menu at the top of the screen `Start radiant (browser)`. If for some reason the `Start radiant (browser)` is not shown in the dropdown, enter `radiant::radiant()` in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close or gray-out.
 
-The recommend approach to start Radiant is `Start radiant (window)` or `Start radiant (viewer)` from the `Addins` menu. This will start Radiant in an Rstudio window or the Rstudio viewer. Closing this window or pressing the stop icon in the viewer will (cleanly) stop Radiant. If you are using an Rstudio project, any file opened or saved will default to the project directory. This also makes it possible to use `relative` paths to load data and images in `Report > Rmd`.
-
-To add an option to upgrade Radiant easily, use the commands below to install the `radiant.upgrade` package. After Radiant has been upgraded you will see a new item in the `Addins` dropdown that you can use for future upgrades.
+To add an option to upgrade Radiant easily, use the commands below to install the `radiant.upgrade` package. You should now see two new item in the `Addins` dropdown that you can use for future radiant upgrades. 
 
 ```r
 install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")
@@ -115,9 +115,15 @@ install.packages("usethis")
 ?usethis::use_course
 ```
 
+As an example, run the command below to download and open an Rstudio project. Note the "1" at the end of the URL instead of Dropbox's default which is "0". 
+
+```r
+usethis::use_course("https://www.dropbox.com/sh/0dmcr2xsphtn1ha/AADsrYsi8KBkddWx_B-aQbi1a?dl=1")
+```
+
 ## Installing additional R-development tools
 
-To install additional development tools (i.e., Rtools, git, homebrew) copy-and-paste the command below into R or Rstudio and press return. When installing Rtools, Windows users should add Rstools to the system path.
+To install additional development tools (i.e., Rtools, git, homebrew) copy-and-paste the command below into R or Rstudio and press return. When installing Rtools, Windows users should make sure to check the option to add Rstools to the system path.
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install_dev.R")
@@ -125,7 +131,14 @@ source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/insta
 
 ## Documentation
 
-Documentation and tutorials for each of the apps are available at <https://radiant-rstats.github.io/docs/> and in the Radiant web interface (the <i title='Help' class='fa fa-edit'></i> icons on each page and the <i title='Help' class='fa fa-question-circle'></i> icon in the navigation bar).
+Documentation and tutorials for each of the apps are available at <https://radiant-rstats.github.io/docs/> and in the Radiant web interface (the <i title='Help' class='fa fa-edit'></i> icons on each page and the <i title='Help' class='fa fa-question-circle'></i> icon in the navigation bar). See also the [pkgdown](https://github.com/r-lib/pkgdown) documentation sites:
+
+* http://radiant-rstats.github.io/radiant
+* http://radiant-rstats.github.io/radiant.data
+* http://radiant-rstats.github.io/radiant.design
+* http://radiant-rstats.github.io/radiant.basics
+* http://radiant-rstats.github.io/radiant.model
+* http://radiant-rstats.github.io/radiant.multivariate
 
 Want more help getting started? Watch the tutorials on the [documentation site](https://radiant-rstats.github.io/docs/tutorials.html).
 
