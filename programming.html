@@ -306,7 +306,7 @@ $(document).ready(function () {
 </ul>
 <p>You can also use Rstudio to render and edit Rmarkdown documents generated in Radiant. When you install and load Radiant it exports functions that can be called from R-code and/or an Rmarkdown document. For example, you can paste the commands below into the command console to get the same output as in the browser interface.</p>
 <pre class="r"><code>library(radiant)
-data(diamonds)
+data(diamonds, package = &quot;radiant.data&quot;, envir = environment())
 result &lt;- single_mean(diamonds, &quot;price&quot;)
 summary(result)</code></pre>
 <pre><code>Single mean test

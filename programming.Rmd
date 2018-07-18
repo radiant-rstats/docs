@@ -35,7 +35,7 @@ You can also use Rstudio to render and edit Rmarkdown documents generated in Rad
 
 ```{r}
 library(radiant)
-data(diamonds)
+data(diamonds, package = "radiant.data", envir = environment())
 result <- single_mean(diamonds, "price")
 summary(result)
 plot(result)
