@@ -34,11 +34,15 @@ title: R resources
 
 ## Radiant
 
-<https://radiant-rstats.github.io/docs>
+Documentation site: <https://radiant-rstats.github.io/docs>
+
+* Data menu: <http://radiant-rstats.github.io/radiant.data>
+* Design menu: <http://radiant-rstats.github.io/radiant.design>
+* Basics menu: <http://radiant-rstats.github.io/radiant.basics>
+* Model menu: <http://radiant-rstats.github.io/radiant.model>
+* Multivariate menu: <http://radiant-rstats.github.io/radiant.multivariate>
 
 In R(studio) enter: `help(package = "radiant")`
-
-<http://rpackages.ianhowson.com/radiant>
 
 Blog: <http://vnijs.github.io/blog/>
 
