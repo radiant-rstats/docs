@@ -189,7 +189,7 @@ To return a single value from a calculation use functions such as `min`, `max`, 
 Pstdev = sdw(f, g, 1-f-g, Boeing, GM, Exxon)
 ```
 
-For an example of how the simulate tool could be used for portfolio optimization see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/investment-state-3stocks.rda">here</a>
+For an example of how the simulate tool could be used for portfolio optimization see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/investment-3stocks.state.rda">here</a>
 
 ### Running the simulation
 
@@ -235,9 +235,9 @@ If `Show plots` is checked a histogram of annual profits (`sum of profit`) is sh
 
 <p align="center"><img src="figures_model/simulater_repeat_plot.png"></p>
 
-The state-file for the example in the screenshots above is available for download <a href="https://radiant-rstats.github.io/docs/examples/sim-help-state.rda">here</a>
+The state-file for the example in the screenshots above is available for download <a href="https://radiant-rstats.github.io/docs/examples/sim-help.state.rda">here</a>
 
-For a simple example of how the simulate tool could be used to find the price that maximizes profits see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/iceskimo_optimal_price_state.rda">here</a>
+For a simple example of how the simulate tool could be used to find the price that maximizes profits see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/iceskimo-optimal-price.state.rda">here</a>
 
 ### Using Grid Search in the Repeat tab
 

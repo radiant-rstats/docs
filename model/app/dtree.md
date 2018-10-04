@@ -91,7 +91,7 @@ Tutorial videos are available on Youtube:
 * <a href = "https://www.youtube.com/watch?v=Wk5Mhd738_k" target = "_blank">Including multiple decision trees in a report</a>
 * <a href = "https://youtu.be/M1r89QjC89Y" target = "_blank">Evaluate sensitivity</a>
 
-The state file for the sensitivity analysis example is available <a href = " https://github.com/radiant-rstats/docs/raw/gh-pages/examples/decision-analysis-sensitivity-state.rda" target = "_blank">here</a>
+The state file for the sensitivity analysis example is available <a href = " https://github.com/radiant-rstats/docs/raw/gh-pages/examples/decision-analysis-sensitivity.state.rda" target = "_blank">here</a>
 
 ## Buttons
 
