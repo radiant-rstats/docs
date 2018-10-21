@@ -29,7 +29,26 @@ The first two blocks of output show basic information about the test (e.g.,. sel
 
 If we check `Show additional statistics` the following output is added:
 
-<p align="center"><img src="figures_basics/compare_means_summary_additional.png"></p>
+<pre>
+Pairwise mean comparisons (t-test)
+Data      : salary 
+Variables : rank, salary 
+Samples   : independent 
+Confidence: 0.95 
+Adjustment: None 
+
+      rank        mean   n         sd        se        me
+  AsstProf  80,775.985  67  8,174.113   998.627 1,993.823
+ AssocProf  93,876.438  64 13,831.700 1,728.962 3,455.056
+      Prof 126,772.109 266 27,718.675 1,699.541 3,346.322
+
+ Null hyp.              Alt. hyp.              diff      p.value se       t.value df      0%   95%           
+ AsstProf = AssocProf   AsstProf < AssocProf   -13100.45 < .001  1996.639  -6.561 101.286 -Inf  -9785.958 ***
+ AsstProf = Prof        AsstProf < Prof        -45996.12 < .001  1971.217 -23.334 324.340 -Inf -42744.474 ***
+ AssocProf = Prof       AssocProf < Prof       -32895.67 < .001  2424.407 -13.569 199.325 -Inf -28889.256 ***
+
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</pre>
 
 * `se` is the standard error (i.e., the standard deviation of the sampling distribution of `diff`)
 * `t.value` is the _t_ statistic associated with `diff` that we can compare to a t-distribution (i.e., `diff` / `se`)
@@ -82,4 +101,4 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to evaluate means see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-means" target="_blank">_Basics > Means</a>
+For an overview of related R-functions used by Radiant to evaluate means see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-means" target="_blank">_Basics > Means_</a>

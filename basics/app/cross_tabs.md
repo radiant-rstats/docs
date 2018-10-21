@@ -47,4 +47,4 @@ When one or more expected values are small (e.g., 5 or less) the p.value for the
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to evaluate associations between categorical variables see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank">_Basics > Tables</a>
+For an overview of related R-functions used by Radiant to evaluate associations between categorical variables see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank">_Basics > Tables_</a>
