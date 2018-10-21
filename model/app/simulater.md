@@ -134,7 +134,7 @@ z = abs(x)
 optimal_price = find_max(profit, price)
 ```
 
-- To determine the minimum (maximum) value for each pair of values across two variables (e.g., x and y) use the functions `pmin` and `pmax`. In the example below, z will take on the value of x when x is larger than y and take on the value of y otherwise
+- To determine the minimum (maximum) value for each pair of values across multiple variables (e.g., x and y) use the functions `pmin` and `pmax`. In the example below, z will take on the value of x when x is larger than y and take on the value of y otherwise. 
 
 ```r
 z = pmax(x, y)
@@ -178,6 +178,51 @@ See the table below for an example:
   </tr>
 </tbody>
 </table>
+- Similar to `pmin` and `pmax` a number of functions are availble to calculate summary statics across multiple variables. For example, `psum` calculates the sum of elements across different vectors. See <https://radiant-rstats.github.io/radiant.data/reference/pfun.html>{target="_blank"} for more information.
+
+```r
+z = psum(x, y)
+```
+
+See the table below for an example:
+
+<table class='table table-condensed table-hover' style='width:40%;'>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> x </th>
+   <th style="text-align:left;"> y </th>
+   <th style="text-align:left;"> psum(x,y) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:left;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:left;"> 8 </td>
+   <td style="text-align:left;"> 11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:left;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 10 </td>
+   <td style="text-align:left;"> 15 </td>
+  </tr>
+</tbody>
+</table>
+
 
 Other commonly used functions are `ln` for the natural logaritm (e.g., ln(x)), `sqrt` for the square-root of x (e.g., sqrt(x)) and `square` to calculate square of a variable (e.g., square(x)).
 

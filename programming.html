@@ -381,7 +381,7 @@ Samples   : independent
 Confidence: 0.95 
 Adjustment: Bonferroni 
 
- clarity      mean   n        sd      se      ci
+ clarity      mean   n        sd      se      me
       I1 4,194.775  40 2,519.678 398.396 805.832
      SI2 5,100.189 529 4,406.982 191.608 376.407
      SI1 3,998.577 721 3,813.190 142.011 278.804
@@ -438,7 +438,7 @@ Samples   : independent
 Confidence: 0.95 
 Adjustment: None 
 
-      rank        mean   n         sd        se        ci
+      rank        mean   n         sd        se        me
   AsstProf  80,775.985  67  8,174.113   998.627 1,993.823
  AssocProf  93,876.438  64 13,831.700 1,728.962 3,455.056
       Prof 126,772.109 266 27,718.675 1,699.541 3,346.322
@@ -462,7 +462,7 @@ Samples   : independent
 Confidence: 0.95 
 Adjustment: None 
 
-      rank        mean   n         sd        se        ci
+      rank        mean   n         sd        se        me
   AsstProf  80,775.985  67  8,174.113   998.627 1,993.823
  AssocProf  93,876.438  64 13,831.700 1,728.962 3,455.056
       Prof 126,772.109 266 27,718.675 1,699.541 3,346.322
@@ -590,13 +590,15 @@ total heterogeneity in the data (higher is better).</code></pre>
 
 ## was the data really changed?
 head(shopping)</code></pre>
-<pre><code>  id v1 v2 v3 v4 v5 v6 clus
-1  1  6  4  7  3  2  3    1
-2  2  2  3  1  4  5  4    2
-3  3  7  2  6  4  1  3    1
-4  4  4  6  4  5  3  6    3
-5  5  1  3  2  2  6  4    2
-6  6  6  4  6  3  3  4    1</code></pre>
+<pre><code># A tibble: 6 x 8
+     id    v1    v2    v3    v4    v5    v6 clus 
+  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;
+1     1     6     4     7     3     2     3 1    
+2     2     2     3     1     4     5     4 2    
+3     3     7     2     6     4     1     3 1    
+4     4     4     6     4     5     3     6 3    
+5     5     1     3     2     2     6     4 2    
+6     6     6     4     6     3     3     4 1    </code></pre>
 <p>See if you can reproduce this output in the radiant web-interface. Start <code>Radiant</code> from the <code>Addins</code> dropdown in Rstudio. You can also run code inside the Radiant app in the <em>Report &gt; R</em> tab. See <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a> page for details.</p>
 
 

@@ -11,10 +11,10 @@ options(
 )
 
 knitr::opts_chunk$set(
-  echo = TRUE, 
-  comment = NA, 
-  cache = FALSE, 
-  message = FALSE, 
+  echo = TRUE,
+  comment = NA,
+  cache = FALSE,
+  message = FALSE,
   warning = FALSE,
   dpi = 144
 )
@@ -35,7 +35,6 @@ sapply(c("data","design","basics","model","multivariate"), knit_docs)
 setwd("~/GitHub/docs/")
 make_content <- function(files, app) {
   for (file in files) {
-    # print(file)
     article <- readLines(file.path(glue("{app}/app"), file))
     figs <- ifelse(app == "data", "figures", glue("figures_{app}"))
     article <- gsub(figs, glue("https://radiant-rstats.github.io/docs/{app}/{figs}/"), article)

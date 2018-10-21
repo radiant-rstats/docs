@@ -107,7 +107,7 @@ z = abs(x)
 optimal_price = find_max(profit, price)
 ```
 
-- To determine the minimum (maximum) value for each pair of values across two variables (e.g., x and y) use the functions `pmin` and `pmax`. In the example below, z will take on the value of x when x is larger than y and take on the value of y otherwise
+- To determine the minimum (maximum) value for each pair of values across multiple variables (e.g., x and y) use the functions `pmin` and `pmax`. In the example below, z will take on the value of x when x is larger than y and take on the value of y otherwise. 
 
 ```r
 z = pmax(x, y)
@@ -127,6 +127,28 @@ data.frame(
 ) %>%
 knitr::kable(align = 'l', format = 'html', escape = FALSE, table.attr = tab_large)
 ```
+- Similar to `pmin` and `pmax` a number of functions are availble to calculate summary statics across multiple variables. For example, `psum` calculates the sum of elements across different vectors. See <https://radiant-rstats.github.io/radiant.data/reference/pfun.html>{target="_blank"} for more information.
+
+```r
+z = psum(x, y)
+```
+
+See the table below for an example:
+
+```{r results = 'asis', echo = FALSE}
+library(radiant.data)
+x <- c(1,2,3,4,5)
+y <- c(0,3,8,2,10)
+tab_large <- "class='table table-condensed table-hover' style='width:40%;'"
+data.frame(
+  x = x,
+  y = y,
+  `psum(x,y)` = psum(x,y),
+  check.names = FALSE
+) %>%
+knitr::kable(align = 'l', format = 'html', escape = FALSE, table.attr = tab_large)
+```
+
 
 Other commonly used functions are `ln` for the natural logaritm (e.g., ln(x)), `sqrt` for the square-root of x (e.g., sqrt(x)) and `square` to calculate square of a variable (e.g., square(x)).
 
