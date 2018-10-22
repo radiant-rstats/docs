@@ -25,7 +25,26 @@ The first two blocks of output show basic information about the test (e.g.,. sel
 
 If we check `Show additional statistics` the following output is added:
 
-<p align="center"><img src="figures_basics/compare_props_summary_additional.png"></p>
+<pre>
+Pairwise proportion comparisons
+Data      : titanic 
+Variables : pclass, survived 
+Level     : Yes in survived 
+Confidence: 0.95 
+Adjustment: None 
+
+ pclass Yes  No   n     p    se    me
+    1st 179 103 282 0.635 0.029 0.056
+    2nd 115 146 261 0.441 0.031 0.060
+    3rd 131 369 500 0.262 0.020 0.039
+
+ Null hyp.   Alt. hyp.              diff  p.value chisq.value df 2.5%  97.5%    
+ 1st = 2nd   1st not equal to 2nd   0.194 < .001  20.576      1  0.112 0.277 ***
+ 1st = 3rd   1st not equal to 3rd   0.373 < .001  104.704     1  0.305 0.441 ***
+ 2nd = 3rd   2nd not equal to 3rd   0.179 < .001  25.008      1  0.107 0.250 ***
+
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</pre>
 
 * `chisq.value` is the chi-squared statistic associated with `diff` that we can compare to a chi-squared distribution. For additional discussion on how this metric is calculated see the help file in _Basics > Tables > Cross-tabs_. For each combination the equivalent of a 2X2 cross-tab is calculated.
 * `df` is the degrees of freedom associated with each statistical test (1).
