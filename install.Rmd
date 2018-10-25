@@ -39,6 +39,8 @@ For a video tutorial see the `Installing R, Rstudio, and Radiant on macOS` video
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+> Note: It is possible that you will be asked for your password during the install process to correct permission settings for the directory /usr/local/bin
+
 ## Installing R, Rstudio, and Radiant on Linux
 
 The first step will be to install R and a couple of additional linux tools. The commands required for Ubuntu are shown below:
