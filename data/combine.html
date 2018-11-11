@@ -609,7 +609,7 @@ DC
 </p>
 <p>The R(adiant) commands are:</p>
 <pre class="r"><code># Radiant
-combinedata(&quot;superheroes&quot;, &quot;publishers&quot;, by = &quot;publisher&quot;, type = &quot;inner_join&quot;)
+combine_data(superheroes, publishers, by = &quot;publisher&quot;, type = &quot;inner_join&quot;)
 
 # R
 inner_join(superheroes, publishers, by = &quot;publisher&quot;)</code></pre>
@@ -768,7 +768,7 @@ NA
 </p>
 <p>The R(adiant) commands are:</p>
 <pre class="r"><code># Radiant
-combinedata(&quot;superheroes&quot;, &quot;publishers&quot;, by = &quot;publisher&quot;, type = &quot;left_join&quot;)
+combine_data(superheroes, publishers, by = &quot;publisher&quot;, type = &quot;left_join&quot;)
 
 # R
 left_join(superheroes, publishers, by = &quot;publisher&quot;)</code></pre>
@@ -927,7 +927,7 @@ Image
 </p>
 <p>The R(adiant) commands are:</p>
 <pre class="r"><code># Radiant
-combinedata(&quot;superheroes&quot;, &quot;publishers&quot;, by = &quot;publisher&quot;, type = &quot;right_join&quot;)
+combine_data(superheroes, publishers, by = &quot;publisher&quot;, type = &quot;right_join&quot;)
 
 # R
 right_join(superheroes, publishers, by = &quot;publisher&quot;)</code></pre>
@@ -1103,7 +1103,7 @@ Image
 </p>
 <p>The R(adiant) commands are:</p>
 <pre class="r"><code># Radiant
-combinedata(&quot;superheroes&quot;, &quot;publishers&quot;, by = &quot;publisher&quot;, type = &quot;full_join&quot;)
+combine_data(superheroes, publishers, by = &quot;publisher&quot;, type = &quot;full_join&quot;)
 
 # R
 full_join(superheroes, publishers, by = &quot;publisher&quot;)</code></pre>
@@ -1219,7 +1219,7 @@ DC
 </table>
 <p>We get a similar table as with <code>inner_join</code> but it contains only the variables in <code>superheroes</code>. The R(adiant) commands are:</p>
 <pre class="r"><code># Radiant
-combinedata(&quot;superheroes&quot;, &quot;publishers&quot;, by = &quot;publisher&quot;, type = &quot;semi_join&quot;)
+combine_data(superheroes, publishers, by = &quot;publisher&quot;, type = &quot;semi_join&quot;)
 
 # R
 semi_join(superheroes, publishers, by = &quot;publisher&quot;)</code></pre>
@@ -1710,7 +1710,7 @@ Dark Horse Comics
 <p>If the <code>avengers</code> dataset were meant to extend the list of superheroes we could just stack the two datasets, one below the other. The new datasets has 14 rows and 4 columns. Due to a coding error in the <code>avengers</code> dataset (i.e.., <em>Magneto</em> is <em>not</em> an <em>Avenger</em>) there is a duplicate row in the new combined dataset. Something we probably don’t want.</p>
 <p>The R(adiant) commands are:</p>
 <pre class="r"><code># Radiant
-combinedata(&quot;avengers&quot;, &quot;superheroes&quot;, type = &quot;bind_rows&quot;)
+combine_data(avengers, superheroes, type = &quot;bind_rows&quot;)
 
 # R
 bind_rows(avengers, superheroes)</code></pre>
@@ -2296,12 +2296,11 @@ Marvel
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the combined dataset by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<hr />
-<p>For additional discussion see the chapter on relational data in <a href="http://r4ds.had.co.nz/relational-data.html" target="_blank">R for data science</a>.</p>
+<p>For additional discussion see the chapter on relational data in <a href="http://r4ds.had.co.nz/relational-data.html" target="_blank">R for data science</a> and <a href="https://github.com/gadenbuie/tidyexplain/blob/master/README.md" class="uri" target="_blank">https://github.com/gadenbuie/tidyexplain/blob/master/README.md</a>.</p>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to combine datasets see <a href = " https://radiant-rstats.github.io/radiant.data/reference/index.html#section-data-combine" target="_blank"><em>Data &gt; Combine</em></a></p>
+<p>For help with the <code>combine_data</code> function see <a href = " https://radiant-rstats.github.io/radiant.data/reference/combine_data.html" target="_blank"><em>Data &gt; Combine</em></a></p>
 </div>
 
 
