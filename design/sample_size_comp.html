@@ -298,14 +298,13 @@ $(document).ready(function () {
 <blockquote>
 <p>Determine the required sample size for comparisons of means or proportions</p>
 </blockquote>
-<p>Leave one of the inputs blank to determine its value. By default the sample size input is left empty and the required sample size is calculated. Note that only one input can be left blank.</p>
+<p>Leave one of the inputs blank to determine its value. By default the sample size inputs (<em>n1</em> and <em>n2</em>) are left empty and the required sample size for both groups is calculated. If values are provided for both <em>n1</em> and <em>n2</em> the value for any one of the other inputs left blank will be calculated. If only a value for <em>n1</em> (<em>n2</em>) is entered, all other inputs must be provided to determine the required sample size for <em>n2</em> (<em>n1</em>)</p>
 <div id="input" class="section level3">
 <h3>Input</h3>
 <ul>
 <li>Sample size: Number of respondents required</li>
 <li>Confidence level: 1 - significance level (e.g, .95 = 1 - .05).<sup>1, 2</sup></li>
 <li>Power: 1 - <span class="math inline">\(\beta\)</span> (e.g, .8 = 1 - .2).<sup>3</sup></li>
-<li>Ratio: Relative sample size for group 1 (control) and group 2 (test)</li>
 </ul>
 </div>
 <div id="input-for-a-comparison-of-means" class="section level3">
@@ -321,7 +320,7 @@ $(document).ready(function () {
 <li>Proportion 1: Assumed proportion in group 1 (e.g., .1)</li>
 <li>Proportion 2: Proportion 1 plus the difference we hope to detect (e.g., .1 + .05 = .15)</li>
 </ul>
-<p><strong>Note:</strong> The (matching) ratio of the control group sample size (<em>n1</em>) to the test group sample size (<em>n2</em>) is 1 by default (i.e., groups are of the same size). If no value is provided, a value of 1 is assumed.</p>
+<p><strong>Note:</strong> The (match) the control group sample size (<em>n1</em>) to the test group sample size (<em>n2</em>) leave both inputs for sample size blank (i.e., groups are of the same size). If a value for <em>n1</em> or <em>n2</em> is provided group sizes are likely to differ</p>
 <p><sup>1</sup> The <strong>significance level</strong>, often denoted by <span class="math inline">\(\alpha\)</span>, is the highest probability you are willing to accept of rejecting the null hypothesis when it is actually true. A commonly used significance level is 0.05 (or 5%)</p>
 <p><sup>2</sup> <span class="math inline">\(1 - \alpha\)</span> is called the <strong>confidence level</strong>. A commonly used confidence level is 0.95 (or 95%)</p>
 <p><sup>3</sup> Beta (<span class="math inline">\(\beta\)</span>), is the probability of accepting the null hypothesis when it is actually false. The power of a test is calculated as 1 - <span class="math inline">\(\beta\)</span>. A commonly used power level is 0.8 (or 80%)</p>
