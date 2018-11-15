@@ -6,7 +6,7 @@ We would like to start an ISP and need to estimate the average Internet usage of
 
 **Answer:**
 
-Since we are interested in estimating the average (or mean) internet usage in the population we select sample size calculation for `Mean`. In the screen shot below we entered 10 (minutes) as the Acceptable error and 60.95 as the estimate of the Sample standard deviation. The Confidence level is 95% so we choose a z-value of 1.96.
+Since we are interested in estimating the average (or mean) internet usage in the population we select sample size calculation for `Mean`. In the screen shot below we entered 10 (minutes) as the Acceptable error and 60.95 as the estimate of the Sample standard deviation. The Confidence level is 95%.
 
 <p align="center"><img src="figures_design/sample_size_ex1a.png"></p>
 
@@ -26,7 +26,7 @@ Let's say that the population size is 5000 and the initial estimate of the preva
 
 **Answer:**
 
-Because we want to estimate the proportion of people with HIV antibodies in the population of interest we select sample size calculation for a `Proportion`. In the screen shot below we entered 4% as the Acceptable error and 10% as the initial estimate of the proportion (p). The Confidence level is 95% so we choose a z-value of 1.96.
+Because we want to estimate the proportion of people with HIV antibodies in the population of interest we select sample size calculation for a `Proportion`. In the screen shot below we entered 4% as the Acceptable error and 10% as the initial estimate of the proportion (p). The Confidence level is 95%.
 
 <p align="center"><img src="figures_design/sample_size_ex2a.png"></p>
 
