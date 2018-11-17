@@ -22,6 +22,9 @@ To include log normally distributed random variables in the analysis select `Log
 
 To include normally distributed random variables in the analysis select `Normal` from the `Select types` dropdown and use `Normal variables` inputs. For example, enter a `Name` (`demand`), the `Mean` (1000) and the standard deviation (`St.dev.`, 100). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `demand 1000 100`).
 
+### Poisson
+
+The Poisson distribution is useful to simulate the number of times and event occurs in a particular time span, such as the number of patients arriving in an emergency room between 10 and 11pm. To include Poisson distributed random variables in the analysis select `Poisson` from the `Select types` dropdown and use `Poisson variables` inputs. For example, enter a `Name` (`patients`) and a value for the number of occurrences `Lambda` the event of interest (20). Then press the <i title='Add variable' href='#' class='fa fa-plus-circle'></i> icon. Alternatively, enter (or remove) input directly in the text input area (e.g., `patients 20`).
 
 ### Uniform
 
@@ -127,7 +130,7 @@ data.frame(
 ) %>%
 knitr::kable(align = 'l', format = 'html', escape = FALSE, table.attr = tab_large)
 ```
-- Similar to `pmin` and `pmax` a number of functions are availble to calculate summary statics across multiple variables. For example, `psum` calculates the sum of elements across different vectors. See <https://radiant-rstats.github.io/radiant.data/reference/pfun.html>{target="_blank"} for more information.
+- Similar to `pmin` and `pmax` a number of functions are available to calculate summary statics across multiple variables. For example, `psum` calculates the sum of elements across different vectors. See <https://radiant-rstats.github.io/radiant.data/reference/pfun.html>{target="_blank"} for more information.
 
 ```r
 z = psum(x, y)
@@ -150,7 +153,7 @@ knitr::kable(align = 'l', format = 'html', escape = FALSE, table.attr = tab_larg
 ```
 
 
-Other commonly used functions are `ln` for the natural logaritm (e.g., ln(x)), `sqrt` for the square-root of x (e.g., sqrt(x)) and `square` to calculate square of a variable (e.g., square(x)).
+Other commonly used functions are `ln` for the natural logarithm (e.g., ln(x)), `sqrt` for the square-root of x (e.g., sqrt(x)) and `square` to calculate square of a variable (e.g., square(x)).
 
 To return a single value from a calculation use functions such as `min`, `max`, `mean`, `sd`, etc.
 
