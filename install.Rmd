@@ -23,13 +23,13 @@ For Windows, download and run the all-in-one installer for <a href="https://www.
 
 > Note: Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.
 
-> Credits: Thanks go to Brandon Salas at the Rady School of Management for creating the Windows installer
+> Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer
 
 ## Installing R, Rstudio, and Radiant on macOS
 
 <!-- https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg -->
 
-For Mac, first download and install R from <a href="https://cran.r-project.org/bin/macosx/R-3.5.1.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
+For Mac, first download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
