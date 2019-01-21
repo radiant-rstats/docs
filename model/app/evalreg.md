@@ -12,7 +12,7 @@ Select one or more variables that can be used to _predict_ the value of the resp
 
 #### Show results for
 
-If a `filter` is active (e.g., set in the _Data > View_ tab) generate results for `All` data, `Training` data, `Validation` data, or `Both` training and validation data. If no filter is active calculations are applied to all data.
+If a `filter` is active (e.g., set in the _Data > View_ tab) generate results for `All` data, `Training` data, `Test` data, or `Both` training and test data. If no filter is active calculations are applied to all data.
 
 ## Example
 

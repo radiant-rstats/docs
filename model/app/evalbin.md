@@ -22,7 +22,7 @@ To use the `Profit` and `ROME` (Return on Marketing Expenditures) charts, enter 
 
 #### Show results for
 
-If a `filter` is active (e.g., set in the _Data > View_ tab) generate results for `All` data, `Training` data, `Validation` data, or `Both` training and validation data. If no filter is active calculations are applied to all data.
+If a `filter` is active (e.g., set in the _Data > View_ tab) generate results for `All` data, `Training` data, `Test` data, or `Both` training and test data. If no filter is active calculations are applied to all data.
 
 #### Plots
 
@@ -98,7 +98,7 @@ The Lift and Gains charts below show little evidence of overfitting and suggest 
 
 <p align="center"><img src="figures_model/evalbin_lift_gains.png"></p>
 
-<!-- This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and validation sample are 94.0% and 93.4% respectively.
+<!-- This insight is confirmed by looking at the confusion matrix. The True Positive Rate in the training and test sample are 94.0% and 93.4% respectively.
 
 <p align="center"><img src="figures_model/evalbin_confusion.png"></p>
 -->
