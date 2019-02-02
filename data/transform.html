@@ -368,7 +368,7 @@ $(document).ready(function () {
 diamonds &lt;- mutate_ext(
   diamonds, 
   .vars = vars(price, carat), 
-  .funs = funs(log), 
+  .funs = log, 
   .ext = &quot;_ln&quot;
 )</code></pre>
 <p>This is an important feature if you want to re-run a report with new, but similar, data. Even more important is that there is a record of the steps taken to transform the data and to generate results, i.e., your work is now reproducible.</p>
