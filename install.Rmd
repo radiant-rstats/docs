@@ -46,12 +46,8 @@ For a video tutorial see the `Installing R, Rstudio, and Radiant on macOS` video
 The first step will be to install R and a couple of additional linux tools. The commands required for Ubuntu are shown below:
 
 ```sh
-## From: http://thecoatlessprofessor.com/tutorials/downloading-and-installing-r/#linux-ubuntu
-## Extract OS distribution codename
-DISTRIBUTION_CODENAME=`grep DISTRIB_CODENAME /etc/lsb-release | cut -c 18-`
-
 ## Appends the CRAN repository to your sources.list file 
-sudo sh -c 'echo "deb https://cloud.r-project.org/bin/linux/ubuntu $DISTRIBUTION_CODENAME" >> /etc/apt/sources.list'
+sudo sh -c 'echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" >> /etc/apt/sources.list'
 
 ## Add GPG key of Michael Rutter the Ubuntu archives CRAN maintainer 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
@@ -60,11 +56,11 @@ sudo apt-get update
 ## Install R and required linux tools
 sudo apt-get install r-base r-base-dev
 sudo apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \
-  unixodbc-dev libpq-dev libgdal-dev libproj-dev
+  unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo
   
 ## Download and install Rstudio (preview)
 sudo apt-get install gdebi-core
-wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/trusty/amd64/rstudio-1.2.1060-amd64.deb
+wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/trusty/amd64/rstudio-1.2.1256-amd64.deb
 sudo gdebi rstudio-preview-amd64.deb
 rm rstudio-preview-amd64.deb
 ```
