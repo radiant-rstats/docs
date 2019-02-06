@@ -407,7 +407,7 @@ sudo apt-get update
 ## Install R and required linux tools
 sudo apt-get install r-base r-base-dev
 sudo apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \
-  unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo
+  unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo libgsl-dev
   
 ## Download and install Rstudio (preview)
 sudo apt-get install gdebi-core
@@ -418,6 +418,10 @@ rm rstudio-preview-amd64.deb</code></pre>
 <pre class="r"><code>R -e &quot;source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)&quot;</code></pre>
 <p>To make R-packages available to all users on a linux system run the command below instead:</p>
 <pre class="r"><code>sudo su -c &quot;R -e \&quot;source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)\&quot;&quot;</code></pre>
+<p>To ensure that all pacakges are available and up to date use:</p>
+<pre class="r"><code>R -e &quot;radiant.update::radiant.update()&quot;</code></pre>
+<p>or</p>
+<pre class="r"><code>sudo su -c &quot;R -e &#39;radiant.update::radiant.update()&#39;&quot;</code></pre>
 <!--
 ## Installing the development version of Radiant
 
