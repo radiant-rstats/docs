@@ -396,7 +396,7 @@ $(document).ready(function () {
 </div>
 <div id="installing-r-rstudio-and-radiant-on-linux" class="section level2">
 <h2>Installing R, Rstudio, and Radiant on Linux</h2>
-<p>The first step will be to install R and a couple of additional linux tools. The commands required for Ubuntu are shown below:</p>
+<p>The first step will be to install R and a several additional linux tools. The commands required for Ubuntu 18.04 are shown below:</p>
 <pre class="sh"><code>## Appends the CRAN repository to your sources.list file 
 sudo sh -c &#39;echo &quot;deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/&quot; &gt;&gt; /etc/apt/sources.list&#39;
 
@@ -411,14 +411,14 @@ sudo apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \
   
 ## Download and install Rstudio (preview)
 sudo apt-get install gdebi-core
-wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/trusty/amd64/rstudio-1.2.1256-amd64.deb
+wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/trusty/amd64/rstudio-1.2.1280-amd64.deb
 sudo gdebi rstudio-preview-amd64.deb
 rm rstudio-preview-amd64.deb</code></pre>
 <p>Run the following command to install the required R-packages for a user:</p>
 <pre class="r"><code>R -e &quot;source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)&quot;</code></pre>
 <p>To make R-packages available to all users on a linux system run the command below instead:</p>
 <pre class="r"><code>sudo su -c &quot;R -e \&quot;source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)\&quot;&quot;</code></pre>
-<p>To ensure that all pacakges are available and up to date use:</p>
+<p>To ensure that all packages are available and up to date use:</p>
 <pre class="r"><code>R -e &quot;radiant.update::radiant.update()&quot;</code></pre>
 <p>or</p>
 <pre class="r"><code>sudo su -c &quot;R -e &#39;radiant.update::radiant.update()&#39;&quot;</code></pre>
