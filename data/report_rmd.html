@@ -379,7 +379,7 @@ $(document).ready(function () {
 </div>
 <div id="options" class="section level2">
 <h2>Options</h2>
-<p>The editor used in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> has several options that can be set in <code>.Rprofile</code>.</p>
+<p>The editor used in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> has several options that can be set in <code>.Rprofile</code>. You can use <code>usethis::edit_r_profile()</code> to alter the settings in .Rprofile</p>
 <pre>
 options(radiant.ace_vim.keys = FALSE)
 options(radiant.ace_theme = "cobalt")
@@ -387,6 +387,8 @@ options(radiant.ace_tabSize = 2)
 options(radiant.ace_useSoftTabs = TRUE)
 options(radiant.ace_showInvisibles = TRUE)
 options(radiant.ace_autoComplete = "live")
+options(radiant.powerpoint_style = "~/Dropbox/rmd-styles/style.potx")
+options(radiant.word_style = "~/Dropbox/rmd-styles/style.docx")
 </pre>
 <p>Notes:</p>
 <ul>
@@ -395,6 +397,11 @@ options(radiant.ace_autoComplete = "live")
 <li>Tabs are converted to 2 spaces by default (i.e., ‘soft’ tabs). You can change the number of spaces used from 2 to, for example, 4</li>
 <li><code>showInvisibles</code> shows tabs and spaces in the editor</li>
 <li>Autocomplete has options “live”, “enabled”, and “disabled”</li>
+<li>Radiant has default styles for Word and Powerpoint files but these can be replaced with styles files you created. Run the commands below to see the path to the style files in Radiant on your that you can then edit
+<ul>
+<li><a href="https://github.com/radiant-rstats/radiant.data/raw/master/inst/app/www/style.docx" target="_blank">Word style file</a></li>
+<li><a href="https://github.com/radiant-rstats/radiant.data/raw/master/inst/app/www/style.potx" target="_blank">Powerpoint style file</a></li>
+</ul></li>
 </ul>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>

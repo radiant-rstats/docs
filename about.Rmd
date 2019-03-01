@@ -25,7 +25,7 @@ devtools::source_url("https://raw.githubusercontent.com/radiant-rstats/minicran/
 <summary>Citing packages</summary>
 ```{r echo=FALSE, comment=NA}
   suppressMessages(library(dplyr))
-  for (i in c("radiant",pkgs)) citation(i) %>% print
+  for (i in c("radiant",pkgs)) print(citation(i))
 ```
 </details>
 
