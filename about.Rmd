@@ -17,15 +17,10 @@ Built using <a href="https://www.rstudio.com/shiny/" target="_blank">Shiny</a> b
 devtools::source_url("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/pkgs.R")
 ```
 
-`r sprintf("Package dependencies: %s", paste0(pkgs, collapse = ", "))`
-
-
-
 <details>
 <summary>Citing packages</summary>
 ```{r echo=FALSE, comment=NA}
-  suppressMessages(library(dplyr))
-  for (i in c("radiant",pkgs)) print(citation(i))
+  for (i in c("radiant", pkgs)) print(citation(i))
 ```
 </details>
 

@@ -391,7 +391,7 @@ $(document).ready(function () {
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>If we create a set of four charts in the <em>Plots</em> tab we can add a title above the group of plots and impose a two-column layout using <code>gridExtra::grid.arrange</code> as follows:</p>
 <pre class="r"><code>plot(result, plots = c(&quot;lift&quot;, &quot;gains&quot;, &quot;profit&quot;, &quot;rome&quot;), custom = TRUE) %&gt;%
     gridExtra::grid.arrange(grobs = ., top = &quot;Model evaluation&quot;, ncol = 2)</code></pre>
@@ -484,7 +484,7 @@ $(document).ready(function () {
 </div>
 <div id="report-rmd-confusion" class="section level3">
 <h3>Report &gt; Rmd (confusion)</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>Only <code>kappa</code>, <code>index</code>, <code>ROME</code>, and <code>AUC</code> are plotted by default. It is possible to customize the plotted results through <em>Report &gt; Rmd</em>. To change the plot use, for example:</p>
 <pre class="r"><code>plot(result, vars = c(&quot;precision&quot;, &quot;profit&quot;, &quot;AUC&quot;))</code></pre>
 <p>The plot can be further customized using <code>ggplot2</code> commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>

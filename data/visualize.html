@@ -380,7 +380,7 @@ $(document).ready(function () {
 <p align="center">
 <img src="figures/boxplot.png">
 </p>
-<p><a href="http://en.wikipedia.org/wiki/File:Boxplot_vs_PDF.svg">Source</a></p>
+<p><a href="http://en.wikipedia.org/wiki/File:Boxplot_vs_PDF.svg" target="_blank">Source</a></p>
 </div>
 <div id="sub-plots-and-heat-maps" class="section level3">
 <h3>Sub-plots and heat-maps</h3>
@@ -410,7 +410,7 @@ $(document).ready(function () {
 </div>
 <div id="customizing-plots-in-report-rmd" class="section level3">
 <h3>Customizing plots in <em>Report &gt; Rmd</em></h3>
-<p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard. The example below illustrates how to customize a command in the <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank"><em>Report &gt; Rmd</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
+<p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard. The example below illustrates how to customize a command in the <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
 <pre class="r"><code>visualize(diamonds, yvar = &quot;price&quot;, xvar = &quot;carat&quot;, type = &quot;scatter&quot;, custom = TRUE) +
   labs(
     title = &quot;A scatterplot&quot;, 
@@ -441,7 +441,7 @@ $(document).ready(function () {
 <li>Use <code>,</code> as a thousand separator for the y-axis: <code>+ scale_y_continuous(labels = scales::comma)</code></li>
 </ul>
 <p>For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.</p>
-<p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org/" target="_blank">http://docs.ggplot2.org</a>.</p>
+<p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org" target="_blank">http://docs.ggplot2.org</a>.</p>
 <p>Suppose we create a set of three bar charts in <em>Data &gt; Visualize</em> using the <code>Diamond</code> data. To add a title above the group of plots and impose a one-column layout we could use <code>gridExtra::grid.arrange</code> as follows:</p>
 <pre class="r"><code>plot_list &lt;- visualize(
   diamonds, 
@@ -465,10 +465,10 @@ gridExtra::grid.arrange(grobs = plot_list, top = &quot;Three bar plots&quot;, nc
   render()</code></pre>
 <p>For additional information on the <code>plotly</code> library see the links below:</p>
 <ul>
-<li>Getting started: <a href="https://plot.ly/r/getting-started/" class="uri">https://plot.ly/r/getting-started/</a></li>
-<li>Reference: <a href="https://plot.ly/r/reference/" class="uri">https://plot.ly/r/reference/</a></li>
-<li>Book: <a href="https://cpsievert.github.io/plotly_book" class="uri">https://cpsievert.github.io/plotly_book</a></li>
-<li>Code: <a href="https://github.com/ropensci/plotly" class="uri">https://github.com/ropensci/plotly</a></li>
+<li>Getting started: <a href="https://plot.ly/r/getting-started/" target="_blank">https://plot.ly/r/getting-started/</a></li>
+<li>Reference: <a href="https://plot.ly/r/reference/" target="_blank">https://plot.ly/r/reference/</a></li>
+<li>Book: <a href="https://cpsievert.github.io/plotly_book" target="_blank">https://cpsievert.github.io/plotly_book</a></li>
+<li>Code: <a href="https://github.com/ropensci/plotly" target="_blank">https://github.com/ropensci/plotly</a></li>
 </ul>
 </div>
 <div id="r-functions" class="section level3">

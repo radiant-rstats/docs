@@ -1,0 +1,68 @@
+---
+title: R resources
+---
+
+## R(studio) basics
+
+<https://www.datacamp.com/courses/free-introduction-to-r>
+
+<http://tryr.codeschool.com/>
+
+<http://swirlstats.com/students.html>
+
+## tidyverse
+
+<https://www.tidyverse.org/>
+
+<http://r4ds.had.co.nz/>
+
+<http://www.dataschool.io/dplyr-tutorial-part-2/>
+
+<https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf>
+
+<http://rpubs.com/bradleyboehmke/data_wrangling>
+
+## Parsing text data (regular expressions)
+
+<https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html>
+
+## ggplot2
+
+<http://www.cookbook-r.com/Graphs/>
+
+<http://docs.ggplot2.org/>
+
+## Radiant
+
+Documentation site: <https://radiant-rstats.github.io/docs>
+
+* Data menu: <http://radiant-rstats.github.io/radiant.data>
+* Design menu: <http://radiant-rstats.github.io/radiant.design>
+* Basics menu: <http://radiant-rstats.github.io/radiant.basics>
+* Model menu: <http://radiant-rstats.github.io/radiant.model>
+* Multivariate menu: <http://radiant-rstats.github.io/radiant.multivariate>
+
+In R(studio) enter: `help(package = "radiant")`
+
+Blog: <http://vnijs.github.io/blog/>
+
+## News
+
+<http://www.r-bloggers.com/>
+
+## Questions and answers
+
+<http://stackoverflow.com/questions/tagged/r>
+
+## Other
+
+<http://www.cookbook-r.com/>
+
+<http://www.statmethods.net/>
+
+## Official documentation
+
+<http://rpackages.ianhowson.com/>
+
+<http://www.rdocumentation.org/>
+

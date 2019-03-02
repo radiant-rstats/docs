@@ -30,7 +30,7 @@ For our example, the ideal design has 18 trials. However, this implies that the 
 
 ## # trials
 
-This input can be used to control the number of trials to generate. If left blank Radiant will try to find an appropriate number of trials using the `optFederov` function in the [AlgDesign](https://cran.r-project.org/web/packages/AlgDesign/index.html) package.
+This input can be used to control the number of trials to generate. If left blank Radiant will try to find an appropriate number of trials using the `optFederov` function in the [AlgDesign](https://cran.r-project.org/web/packages/AlgDesign/index.html){target="_blank"} package.
 
 Lets review the output in `Design efficiency`. For our example, the goal is to find a design with less than 18 trials that will still allow us to estimate the effects we are interested in (e.g., the main-effects of the different levels of price, sight, and food). Notice that there are several designs that are considered `balanced` (i.e., each level is included in the same number of trials). We are looking for a design that is balanced and has minimal correlation between factors (e.g., a D-efficiency score above 0.8). You can think of the D-efficiency score as a measure of how cleanly we will be able to estimate the effects of interest after running the test/experiment. The ideal D-efficiency score is 1 but a number above 0.8 is considered reasonable.
 
@@ -40,7 +40,7 @@ To generate the desired partial factorial design enter `12` in the `# trials` in
 
 <p align="center"><img src="figures_design/doe_output_partial.png"></p>
 
-The `trial` column in the output shows which profiles have been selected from the full factorial design. Note that the off-diagonal elements of the (polychoric) correlation matrix for a partial factorial design will all be equal to 0 *only* when D-efficiency is equal to 1. The [polycor](https://cran.r-project.org/web/packages/polycor/index.html) package is used to the estimate the correlations between the factors.
+The `trial` column in the output shows which profiles have been selected from the full factorial design. Note that the off-diagonal elements of the (polychoric) correlation matrix for a partial factorial design will all be equal to 0 *only* when D-efficiency is equal to 1. The [polycor](https://cran.r-project.org/web/packages/polycor/index.html){target="_blank"} package is used to the estimate the correlations between the factors.
 
 ## Rnd. seed:
 
@@ -60,7 +60,7 @@ To download the list of factors you entered click the `Download` button. To uplo
 
 ### Report > Rmd
 
-Add code to <a href="https://radiant-rstats.github.io/docs/data/report.html" target="_blank">_Report > Rmd_</a> to (re)create the design by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the design by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
 ### R-functions
 
