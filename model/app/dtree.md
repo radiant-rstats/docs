@@ -1,6 +1,6 @@
 > Create and evaluate a decision tree for decision analysis
 
-To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the _Model > Decide > Decision analysis_ tab you will see an example tree structure. This structure is based on an [example](https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml) by Christoph Glur, the developer of the [data.tree](https://github.com/gluc/data.tree) library.
+To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the _Model > Decide > Decision analysis_ tab you will see an example tree structure. This structure is based on an [example](https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml){target="_blank"} by Christoph Glur, the developer of the [data.tree](https://github.com/gluc/data.tree){target="_blank"} library.
 
 To enter a new structure, start by providing a name for the tree and enter a label in the input box next to the `Calculate` button. In the example below the name for the decision tree is entered as follow: `name: Sign contract`. The next step is to indicate the **type** of the first **node**. Options are `type: decision` or `type: chance`. Note that we are skipping `variables` for now but will return to this section below.
 

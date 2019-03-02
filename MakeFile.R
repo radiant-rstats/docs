@@ -23,16 +23,6 @@ knitr::opts_chunk$set(
 setwd("~/GitHub/docs/")
 system('make')
 
-# knit("about.Rmd")
-#
-# knit_docs <- function() {
-#   setwd(file.path("~/GitHub/docs"))
-#   list.files(pattern = "*.Rmd") %>% sapply(knit)
-#   system("make")
-# }
-#
-# knit_docs()
-
 knit_docs <- function(x) {
   setwd(file.path("~/GitHub/docs",x,"app"))
   list.files(pattern = "*.Rmd") %>% sapply(knit)
