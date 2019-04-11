@@ -58,7 +58,7 @@ sudo apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \
 
 ## Download and install Rstudio (preview)
 sudo apt-get install gdebi-core
-wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.2.1355-amd64.deb
+wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.2.1335-amd64.deb
 sudo gdebi rstudio-preview-amd64.deb
 rm rstudio-preview-amd64.deb
 ```
