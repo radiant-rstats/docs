@@ -20,11 +20,12 @@ knitr::opts_chunk$set(
 )
 
 ## generate (updated) html and md files
-setwd("~/GitHub/docs/")
+docs_path <- rstudioapi::getActiveProject()
+setwd(docs_path)
 system('make')
 
 knit_docs <- function(x) {
-  setwd(file.path("~/GitHub/docs",x,"app"))
+  setwd(file.path(docs_path, x, "app"))
   list.files(pattern = "*.Rmd") %>% sapply(knit)
   setwd(file.path("../..",x)); system("make")
 }
@@ -32,7 +33,7 @@ knit_docs <- function(x) {
 sapply(c("data","design","basics","model","multivariate"), knit_docs)
 
 ## setup articles for pkgdown
-setwd("~/GitHub/docs/")
+setwd(docs_path)
 make_content <- function(files, app) {
   for (file in files) {
     article <- readLines(file.path(glue("{app}/app"), file))
@@ -81,9 +82,9 @@ files <- c(
 make_content(files, "multivariate")
 
 ## making the README.md file after clean-up
-setwd("~/GitHub/docs/")
+setwd(docs_path)
 knit("README.Rmd")
-setwd("~/GitHub/docs/sub")
+setwd(file.path(docs_path, "sub"))
 knit("README_dev.Rmd")
 knit("tutorials_dev.Rmd")
 
@@ -116,32 +117,5 @@ sapply(
 )
 
 ## sync (R)md files to gh/radiant
-setwd("~/GitHub/docs")
+setwd(docs_path)
 system('sh rsync_docs2app.sh')
-
-## create documentation pdfs
-# unlink('radiant.data.pdf')
-# setwd("~")
-# unlink('radiant.data.pdf')
-# system("R CMD Rd2pdf gh/radiant.data --no-preview")
-# system("rm -rf .Rd2pdf*")
-# setwd("~/GitHub/docs/")
-# file.copy("~/radiant.data.pdf","radiant.data.pdf",overwrite = TRUE)
-# system("rm -rf .Rd2pdf*")
-#
-# create_manuals <- function(x) {
-#   app <- paste0("radiant.",x)
-#   man <- paste0(app,".pdf")
-#   unlink(man)
-#   setwd("~")
-#   unlink(man)
-#   system(paste0("R CMD Rd2pdf gh/",app," --no-preview"))
-#   system("rm -rf .Rd2pdf*")
-#   setwd("~/GitHub/docs/")
-#   file.copy(paste0("~/",man), man, overwrite = TRUE)
-#   system("rm -rf .Rd2pdf*")
-# }
-#
-# sapply(c("data","design","basics","model","multivariate"), create_manuals)
-
-# tinytex::uninstall_tinytex()
