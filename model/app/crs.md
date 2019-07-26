@@ -1,6 +1,6 @@
 > Predict product ratings using Collaborative Filtering
 
-To estimate recommendations using Collaborative Filtering select a user id, a product id, one or more products to generate recommendations for, and product ratings. To generate recommendasions press the `Estimate` button or `CTRL-enter` (`CMD-enter` on mac). 
+To estimate recommendations using Collaborative Filtering select a user id, a product id, one or more products to generate recommendations for, and product ratings. To generate recommendations press the `Estimate` button or `CTRL-enter` (`CMD-enter` on mac). 
 
 <p align="center"><img src="figures_model/cf_summary.png"></p>
 
