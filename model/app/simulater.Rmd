@@ -165,6 +165,12 @@ Pstdev = sdw(f, g, 1-f-g, Boeing, GM, Exxon)
 
 For an example of how the simulate tool could be used for portfolio optimization see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/investment-3stocks.state.rda">here</a>
 
+### Functions
+
+It is possible that the standard functions available in R are not sufficiently flexible to conduct the simulation you have in mind. If this is the case, click on the `Add functions` check box on the bottom left of your screen and can create your own custom function in the `Simulation functions` input box in the main panel. Writting R-functions requires some time investment. See <https://www.statmethods.net/management/userfunctions.html>{target="_blank"} for a good place to start.
+
+For an example of how to use custom R-functions in a gambling simulation, see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/gamblers-ruin.state.rda">here</a>. The <a href="https://radiant-rstats.github.io/docs/examples/gamblers-ruin.nb.html" target="_blank">report</a> generated through _Report > Rmd_ provides additional information about the simulation setup and the use of functions.
+
 ### Running the simulation
 
 The value shown in the `# sims` input determines the number of simulation _draws_. To redo a simulation with the same randomly generated values, specify a number in the `Set random seed` input (e.g., 1234).
