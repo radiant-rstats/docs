@@ -13,7 +13,7 @@ We will use a sample from a dataset that describes the survival status of indivi
 
 Suppose we want to test if the proportion of people that survived the sinking of the Titanic differs across passenger classes. To test this hypothesis we select `pclass` as the grouping variable and calculate proportions of `yes` (see `Choose level`) for `survived` (see `Variable (select one)`).
 
-In the `Choose combinations` box select all available entries to conduct pair-wise comparisons across the three passenger class levels. Note that removing all entries will automatically select all combinations. Unless we have an explicit hypothesis for the direction of the effect we should use a two-sided test (i.e., `two.sided`). Our first alternative hypothesis would be 'The proportion of survivors amongst 1st class passengers was different compared to 2nd class passengers'.
+In the `Choose combinations` box select all available entries to conduct pair-wise comparisons across the three passenger class levels. Note that removing all entries will automatically select all combinations. Unless we have an explicit hypothesis for the direction of the effect we should use a two-sided test (i.e., `two.sided`). Our first alternative hypothesis would be 'The proportion of survivors among 1st class passengers was different compared to 2nd class passengers'.
 
 <p align="center"><img src="figures_basics/compare_props_summary.png"></p>
 

@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -204,18 +205,6 @@ summary {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -407,7 +396,7 @@ $(document).ready(function () {
 </div>
 <div id="hypothesis-testing" class="section level2">
 <h2>Hypothesis testing</h2>
-<p>You can also use the probability calculator to determine a <code>p.value</code> or a <code>critical value</code> for a statistical test. See the helpfiles for <code>Single mean</code>, <code>Single proportion</code>, <code>Compare means</code>, <code>Compare proportions</code>, <code>Cross-tabs</code> in the <em>Basics</em> menu and <code>Linear regression (OLS)</code> in the <em>Model</em> menu for details.</p>
+<p>You can also use the probability calculator to determine a <code>p.value</code> or a <code>critical value</code> for a statistical test. See the help files for <code>Single mean</code>, <code>Single proportion</code>, <code>Compare means</code>, <code>Compare proportions</code>, <code>Cross-tabs</code> in the <em>Basics</em> menu and <code>Linear regression (OLS)</code> in the <em>Model</em> menu for details.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
@@ -475,6 +464,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

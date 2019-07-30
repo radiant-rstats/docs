@@ -8,7 +8,7 @@ We can perform either a one-sided test (i.e., `less than` or `greater than`) or 
 
 A car manufacturer conducted a study by randomly sampling and interviewing 1,000 consumers in a new target market. The goal of the study was to determine if consumers would consider purchasing this brand of car.
 
-Management has already determined that the company will enter this segment. However, if brand preference is lower than 10% additional resources will be committed to advertising and sponsorship in an effort to enhance brand awareness amongst the target consumers. In the sample, 93 consumers exhibited what the company the company considered strong brand liking.
+Management has already determined that the company will enter this segment. However, if brand preference is lower than 10% additional resources will be committed to advertising and sponsorship in an effort to enhance brand awareness among the target consumers. In the sample, 93 consumers exhibited what the company the company considered strong brand liking.
 
 You can find information on the responses by survey participants in the **consider.rda** data set. The data set contains two variables, `id` and `consider`.
 
@@ -21,7 +21,7 @@ Choose the `Less than` option from the `Alternative hypothesis` drop-down to det
 The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., the proportion of "yes" responses). The final row of output shows the following:
 
 * `diff` is the difference between the sample proportion (0.093) and the comparison value (0.1)
-* `ns` is the number of _successes_. This is the number we can compare to a binomial-distribution with paramters $n = 1000$ and $p = 0.10$.
+* `ns` is the number of _successes_. This is the number we can compare to a binomial-distribution with parameters $n = 1000$ and $p = 0.10$.
 * `p.value` is the probability of finding a value as extreme or more extreme than `diff` if the null hypothesis is true
 * `0% 95%` show the 95% confidence interval around the sample proportion (0 to 0.11). These numbers provide a range within which the true population mean is likely to fall
 

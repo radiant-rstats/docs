@@ -45,7 +45,7 @@ To get the mean and standard deviation of the discrete probability distribution 
 
 ## Hypothesis testing
 
-You can also use the probability calculator to determine a `p.value` or a `critical value` for a statistical test. See the helpfiles for `Single mean`, `Single proportion`, `Compare means`, `Compare proportions`, `Cross-tabs` in the _Basics_ menu and `Linear regression (OLS)` in the _Model_ menu for details.
+You can also use the probability calculator to determine a `p.value` or a `critical value` for a statistical test. See the help files for `Single mean`, `Single proportion`, `Compare means`, `Compare proportions`, `Cross-tabs` in the _Basics_ menu and `Linear regression (OLS)` in the _Model_ menu for details.
 
 ### Report > Rmd
 
