@@ -51,9 +51,9 @@ visualize(
   type = "scatter", 
   facet_row = "clarity", 
   color = "clarity", 
-  custom = TRUE
-) +
-labs(title = "Diamond Prices ($)")
+  labs = list(title = "Diamond Prices ($)"),
+  custom = FALSE
+)
 ```
 
 As an example, you can render the [`single_mean.Rmd`](https://radiant-rstats.github.io/docs/examples/single_mean.Rmd) file into html (or PDF or Word if you prefer) in Rstudio. Try the code in [`radiant_rcode.R`](https://radiant-rstats.github.io/docs/examples/radiant_rcode.R) for a more extensive example.
