@@ -131,7 +131,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -369,9 +368,7 @@ summary {
 <p align="center">
 <img src="images/mess1.png" style="width: 45%"> <img src="images/mess2.png" style="width: 45%">
 </p>
-<blockquote>
-<p>Note: Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.</p>
-</blockquote>
+<p>If you use Internet Explorer as your default browser please consider switching to <a href="https://www.google.com/chrome">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox">Firefox</a>. Another alternative would be to try out the beta version of <a href="https://www.microsoftedgeinsider.com/en-us/download">Microsoft’s Edge browser</a>.</p>
 <blockquote>
 <p>Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer</p>
 </blockquote>
@@ -384,8 +381,9 @@ summary {
 <iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 <blockquote>
-<p>Note: It is possible that you will be asked for your password during the install process to correct permission settings for the directory /usr/local/bin</p>
+<p>Note: It is possible that you will be asked for your password during the install process to correct permission settings for the directory /usr/local/bin. If there is still an error installing <code>tinytex</code> please run the command below from the “terminal” app in macOS</p>
 </blockquote>
+<pre class="bash"><code>sudo chown -R $(whoami):admin /usr/local/bin; R -e &quot;tinytex::install_tinytex()&quot;</code></pre>
 </div>
 <div id="installing-r-rstudio-and-radiant-on-linux" class="section level2">
 <h2>Installing R, Rstudio, and Radiant on Linux</h2>
@@ -483,6 +481,9 @@ radiant.update::radiant.update()</code></pre>
 <p>or copy-and-paste the commands below into R to check if any required packages have not yet been installed</p>
 <pre class="r"><code>install.packages(&quot;radiant.update&quot;, repos = &quot;https://radiant-rstats.github.io/minicran/&quot;)
 radiant.update::radiant.update()</code></pre>
+<p>Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.</p>
+<p>If there is an error installing <code>tinytex</code> on macOS please run the command below from the “terminal” app:</p>
+<pre class="bash"><code>sudo chown -R $(whoami):admin /usr/local/bin; R -e &quot;tinytex::install_tinytex()&quot;</code></pre>
 </div>
 <div id="reporting-issues" class="section level2">
 <h2>Reporting issues</h2>

@@ -21,7 +21,7 @@ For Windows, download and run the all-in-one installer for [R, Rstudio, and Radi
   <img src="images/mess2.png" style="width: 45%">
 </p>
 
-> Note: Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.
+If you use Internet Explorer as your default browser please consider switching to [Chrome](https://www.google.com/chrome) or [Firefox](https://www.mozilla.org/en-US/firefox). Another alternative would be to try out the beta version of [Microsoft's Edge browser](https://www.microsoftedgeinsider.com/en-us/download). 
 
 > Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer
 
@@ -37,7 +37,11 @@ For a video tutorial see the `Installing R, Rstudio, and Radiant on macOS` video
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-> Note: It is possible that you will be asked for your password during the install process to correct permission settings for the directory /usr/local/bin
+> Note: It is possible that you will be asked for your password during the install process to correct permission settings for the directory /usr/local/bin. If there is still an error installing `tinytex` please run the command below from the "terminal" app in macOS
+
+```bash
+sudo chown -R $(whoami):admin /usr/local/bin; R -e "tinytex::install_tinytex()"
+```
 
 ## Installing R, Rstudio, and Radiant on Linux
 
@@ -126,6 +130,8 @@ install.packages("radiant.update", repos = "https://radiant-rstats.github.io/min
 radiant.update::radiant.update()
 ```
 
+
+
 ## Sharing Rstudio projects with others
 
 An excellent way to share an Rstudio project hosted online (e.g., on Dropbox) with others is to use the `usethis` package
@@ -175,6 +181,14 @@ or copy-and-paste the commands below into R to check if any required packages ha
 ```r
 install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")
 radiant.update::radiant.update()
+```
+
+Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.
+
+If there is an error installing `tinytex` on macOS please run the command below from the "terminal" app:
+
+```bash
+sudo chown -R $(whoami):admin /usr/local/bin; R -e "tinytex::install_tinytex()"
 ```
 
 ## Reporting issues
