@@ -130,7 +130,7 @@ data.frame(
 ) %>%
 knitr::kable(align = 'l', format = 'html', escape = FALSE, table.attr = tab_large)
 ```
-- Similar to `pmin` and `pmax` a number of functions are available to calculate summary statics across multiple variables. For example, `psum` calculates the sum of elements across different vectors. See <https://radiant-rstats.github.io/radiant.data/reference/pfun.html>{target="_blank"} for more information.
+- Similar to `pmin` and `pmax` a number of functions are available to calculate summary statics across multiple variables. For example, `psum` calculates the sum of elements across different vectors. See <a href="https://radiant-rstats.github.io/radiant.data/reference/pfun.html" target="_blank">https://radiant-rstats.github.io/radiant.data/reference/pfun.html</a> for more information.
 
 ```r
 z = psum(x, y)
@@ -167,7 +167,7 @@ For an example of how the simulate tool could be used for portfolio optimization
 
 ### Functions
 
-It is possible that the standard functions available in R are not sufficiently flexible to conduct the simulation you have in mind. If this is the case, click on the `Add functions` check box on the bottom left of your screen and can create your own custom function in the `Simulation functions` input box in the main panel. To learn about writing R-functions see <https://www.statmethods.net/management/userfunctions.html>{target="_blank"} for a good place to start.
+It is possible that the standard functions available in R are not sufficiently flexible to conduct the simulation you have in mind. If this is the case, click on the `Add functions` check box on the bottom left of your screen and can create your own custom function in the `Simulation functions` input box in the main panel. To learn about writing R-functions see <a href="https://www.statmethods.net/management/userfunctions.html" target="_blank">https://www.statmethods.net/management/userfunctions.html</a> for a good place to start.
 
 For an example of how to use custom R-functions in a gambling simulation, see the state-file available for download <a href="https://radiant-rstats.github.io/docs/examples/gamblers-ruin.state.rda">here</a>. The <a href="https://radiant-rstats.github.io/docs/examples/gamblers-ruin.nb.html" target="_blank">report</a> generated through _Report > Rmd_ provides additional information about the simulation setup and the use of functions.
 

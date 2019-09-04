@@ -10,7 +10,7 @@ Radiant is a platform-independent browser-based interface for business analytics
 
 ## Installing R, Rstudio, and Radiant on Windows
 
-For Windows, download and run the all-in-one installer for [R, Rstudio, and Radiant](https://rady.ucsd.edu/faculty/directory/vnijs/Rady-Radiant-Installer-Latest.exe){target="_blank"}. For a video tutorial see the `Install Radiant on Windows` video below:
+For Windows, download and run the all-in-one installer for <a href="https://rady.ucsd.edu/faculty/directory/vnijs/Rady-Radiant-Installer-Latest.exe">R, Rstudio, and Radiant</a>. For a video tutorial see the `Install Radiant on Windows` video below:
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/16B5SvtW8Ks" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
