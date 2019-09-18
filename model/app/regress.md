@@ -11,7 +11,7 @@ In the _Summary_ tab we can test if two or more variables together add significa
 Additional output that requires re-estimation:
 
 * Standardize: Coefficients can be hard to compare if the explanatory variables are measured on different scales. By standardizing the data before estimation we can see which variables move-the-needle most. Note that a one-unit change is now equated to 2 x the standard deviation of the variable
-* Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects
+* Center: Replace the response variable Y by Y - mean(Y) and replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects
 * Stepwise: A data-mining approach to select the best fitting model
 * Robust standard errors: When `robust` is selected the coefficient estimates are the same as OLS. However, standard errors are adjusted to account for (minor) heterogeneity and non-normality concerns. 
 

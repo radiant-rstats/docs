@@ -36,7 +36,7 @@ sapply(c("data","design","basics","model","multivariate"), knit_docs)
 setwd(docs_path)
 make_content <- function(files, app) {
   for (file in files) {
-    article <- readLines(file.path(glue("{app}/app"), file))
+    article <- readLines(file.path(glue("{app}/app"), file), warn = FALSE)
     figs <- ifelse(app == "data", "figures", glue("figures_{app}"))
     article <- gsub(figs, glue("https://radiant-rstats.github.io/docs/{app}/{figs}/"), article)
     file <- paste0("_", sub("\\.md$", ".Rmd", file))
@@ -101,7 +101,7 @@ file.copy(
 )
 
 copy_docs <- function(app) {
-  readLines("README_dev.md") %>% paste0(., collapse = "\n") %>%
+  readLines("README_dev.md", warn = FALSE) %>% paste0(., collapse = "\n") %>%
     sub("radiant.png", paste0(app, ".png"), . ) %>%
     sub("radiant-rstats/radiant)", paste0("radiant-rstats/", app,")"), ., fixed = TRUE) %>%
     sub("badges/version/radiant)", paste0("badges/version/", app,")"), ., fixed = TRUE) %>%
