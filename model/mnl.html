@@ -12,7 +12,7 @@
 
 
 
-<title>Basics &gt; Tables &gt; Goodness-of-fit</title>
+<title>Model &gt; Estimate &gt; Multinomial Logistic regression (MNL)</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -361,52 +361,31 @@ pre, code, pre code {
 
 
 
-<h1 class="title toc-ignore">Basics &gt; Tables &gt; Goodness-of-fit</h1>
+<h1 class="title toc-ignore">Model &gt; Estimate &gt; Multinomial Logistic regression (MNL)</h1>
 
 </div>
 
 
 <hr />
 <blockquote>
-<p>A goodness-of-fit test is used to determine if data from a sample are consistent with a hypothesized distribution</p>
+<p>Estimate a Multinomial Logistic regression for classification</p>
 </blockquote>
-<div id="example" class="section level3">
-<h3>Example</h3>
-<p>The data are from a sample of 580 newspaper readers that indicated (1) which newspaper they read most frequently (USA today or Wall Street Journal) and (2) their level of income (Low income vs. High income). The data has three variables: A respondent identifier (id), respondent income (High or Low), and the primary newspaper the respondent reads (USA today or Wall Street Journal).</p>
-<p>The data were collected to examine if there is a relationship between income level and choice of newspaper. To ensure the results are generalizable it is important that sample is representative of the population of interest. It is known that in this population the relative share of US today readers is higher than the share of Wall Street Journal readers. The shares should be 55% and 45% respectively. We can use a goodness-of-fit test to examine the following null and alternative hypotheses:</p>
-<ul>
-<li>H0: Readership shares for USA today and Wall Street Journal are 55% and 45% respectively</li>
-<li>Ha: Readership shares for USA today and Wall Street Journal are not equal to the stated values</li>
-</ul>
-<p>If we cannot reject the null hypothesis based on the available sample there is a “good fit” between the observed data and the assumed population shares or probabilities. In Radiant (<em>Basics &gt; Tables &gt; Goodness of fit</em>) choose Newspaper as the categorical variable. If we leave the <code>Probabilities</code> input field empty (or enter 1/2) we would be testing if the shares are equal. However, to test H0 and Ha we need to enter <code>0.45 and 0.55</code> and then press <code>Enter</code>. First, compare the observed and expected frequencies. The expected frequencies are calculated assuming H0 is true (i.e., no deviation from the stated shares) as total <span class="math inline">\(\times\)</span> <span class="math inline">\(p\)</span>, where <span class="math inline">\(p\)</span> is the share (or probability) assumed for a cell.</p>
-<p align="center">
-<img src="figures_basics/goodness_summary.png">
-</p>
-<p>The (Pearson) chi-squared test evaluates if we can reject the null-hypothesis that the observed and expected values are the same. It does so by comparing the observed frequencies (i.e., what we actually see in the data) to the expected frequencies (i.e., what we would expect to see if the distribution of shares is as we assumed). If there are big differences between the table of expected and observed frequencies the chi-square value will be <em>large</em>. The chi-square value for each cell is calculated as <code>(o - e)^2 / e</code>, where <code>o</code> is the observed frequency in a cell and <code>e</code> is the expected frequency in that cell if the null hypothesis holds. These values can be shown by clicking the <code>Chi-squared</code> check box. The overall chi-square value is obtained by summing across all cells, i.e., it is the sum of the values shown in the <em>Contribution to chi-square</em> table.</p>
-<p>In order to determine if the chi-square statistic can be considered <em>large</em> we first determine the degrees of freedom (df = # cells - 1). In a table with two cells we have df = (2-1) = 1. The output in the <em>Summary</em> tab shows the value of the chi-square statistic, the df, and the p.value associated with the test. We also see the contribution from each cells to the overall chi-square statistic.</p>
-<p>Remember to check the expected values: All expected frequencies are larger than 5 so the p.value for the chi-square statistic is unlikely to be biased (see also the technical note below). As usual we reject the null-hypothesis when the p.value is smaller 0.05. Since our p.value is very large (&gt; .8) we cannot reject the null-hypothesis (i.e., the distribution of shares in the observed data is consistent with those we assumed).</p>
-<p>We can use the provided p.value associated with the Chi-squared value of 0.028 to evaluate the null hypothesis. However, we can also calculate the critical Chi-squared value using the probability calculator. As we can see from the output below the critical value is 3.841 if we choose a 95% confidence level. Because the calculated Chi-square value is smaller than the critical value (0.028 &lt; 3.841) we cannot reject null hypothesis stated above.</p>
-<p align="center">
-<img src="figures_basics/compare_props_prob_calc.png">
-</p>
-<p>We can also use the probability calculator to determine the p.value associated with the calculated Chi-square value. Consistent with the output from the <em>Summary</em> tab this <code>p.value</code> is <code>&lt; .001</code>.</p>
-<p align="center">
-<img src="figures_basics/goodness_chi_pvalue.png">
-</p>
-<p>In addition to the numerical output provided in the <em>Summary</em> tab we can evaluate the hypothesis visually in the <em>Plot</em>.</p>
+<div id="functionality" class="section level3">
+<h3>Functionality</h3>
+<p>To estimate a Multinomial Logistic regression (MNL) we need a categorical response variable with two or more levels and one or more explanatory variables.</p>
+<p>This document is a work in progress. For a worked example using the <code>multinom</code> function, see the link below.</p>
+<p><a href="https://stats.idre.ucla.edu/r/dae/multinomial-logistic-regression" target="_blank">https://stats.idre.ucla.edu/r/dae/multinomial-logistic-regression</a></p>
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If a plot was created it can be customized using <code>ggplot2</code> commands (e.g., <code>plot(result, check = &quot;observed&quot;, custom = TRUE) + labs(y = &quot;Percentage&quot;)</code>). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
-</div>
-<div id="technical-note" class="section level3">
-<h3>Technical note</h3>
-<p>When one or more expected values are small (e.g., 5 or less) the p.value for the Chi-squared test is calculated using simulation methods. If some cells have an expected count below 1 it may be necessary to combine cells/categories.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<pre class="r"><code>plot(result, plots = &quot;coef&quot;, custom = TRUE) +
+  labs(title = &quot;Coefficient plot&quot;)</code></pre>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to evaluate a discrete probability distribution see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank"><em>Basics &gt; Tables</em></a></p>
+<!-- For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank">_Model > Logistic regression_</a> -->
 </div>
 
 

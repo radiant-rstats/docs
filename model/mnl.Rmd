@@ -1,0 +1,10 @@
+---
+title: Model > Estimate > Multinomial Logistic regression (MNL)
+---
+
+***
+
+
+```{r child='app/mnl.md'}
+```
+
