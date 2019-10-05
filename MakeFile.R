@@ -53,7 +53,7 @@ files <- c(
 make_content(files, "data")
 
 files <- c(
-  "doe.md", "sample_size.Rmd", "sample_size_comp.Rmd", "sampling.md"
+  "doe.md", "sample_size.Rmd", "sample_size_comp.Rmd", "sampling.md", "randomizer.md"
 )
 
 make_content(files, "design")
