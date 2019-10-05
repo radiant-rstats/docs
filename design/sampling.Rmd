@@ -1,5 +1,5 @@
 ---
-title: Design > Sample > Sampling
+title: Design > Sample > Random sampling
 ---
 
 ***

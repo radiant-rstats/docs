@@ -1,0 +1,8 @@
+---
+title: Design > Sample > Random assignment
+---
+
+***
+
+```{r child='app/randomizer.md'}
+```

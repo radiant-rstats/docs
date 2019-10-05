@@ -12,7 +12,7 @@
 
 
 
-<title>Design &gt; Sample &gt; Sampling</title>
+<title>Design &gt; Sample &gt; Random sampling</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -131,7 +131,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -256,6 +255,7 @@ summary {
              <li class="divider"></li>
              <li class="dropdown-header">Sample</li>
              <li><a href="/docs/design/sampling.html">Random sampling</a></li>
+             <li><a href="/docs/design/randomizer.html">Random assignment</a></li>
              <li><a href="/docs/design/sample_size.html">Sample size (single)</a></li>
              <li><a href="/docs/design/sample_size_comp.html">Sample size (compare)</a></li>
           </ul>
@@ -362,23 +362,23 @@ pre, code, pre code {
 
 
 
-<h1 class="title toc-ignore">Design &gt; Sample &gt; Sampling</h1>
+<h1 class="title toc-ignore">Design &gt; Sample &gt; Random sampling</h1>
 
 </div>
 
 
 <hr />
 <blockquote>
-<p>Use simple random sampling to select respondents from a list</p>
+<p>Use simple random sampling to select observations from a sampling frame</p>
 </blockquote>
-<p>To use the sampling tool you will need a data set with a variable of type character. Entries should be unique (i.e., no duplicates). A dataset that fits these requirements is bundled with Radiant and is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load</code>). Select <code>rndnames</code> from the <code>Datasets</code> dropdown.</p>
-<p><code>Names</code> is the relevant column in this dataset and it will automatically be used as the base for sampling. Now simply choose the sample size you want and a list of names of the desired length will be created.</p>
-<p>How does it work? Each person in the data is assigned a random number between 0 and 1 from a uniform distribution. Rows are then sorted on that random number and the <span class="math inline">\(n\)</span> people from the list with the highest score are selected for the sample. By using a random number every respondent has the same probability of being in the sample. For example, if we need a sample of 10 people from the 100 included in the rndnames dataset each individual has a 10% chances of being included in the sample. By default, the random seed is set to <code>1234</code> to ensure the sampling results are reproducible. If there is no input in <code>Rnd. seed</code> the selected rows will change every time we generate a sample.</p>
+<p>To use the sampling tool, select a data set where each row in the data set is unique (i.e., no duplicates). A dataset that fits these requirements is bundled with Radiant and is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load</code>). Select <code>rndnames</code> from the <code>Datasets</code> dropdown.</p>
+<p><code>Names</code> is a unique identifier in this dataset. If we select this variable and choose the desired sample size, e.g., 10, list of names of the desired length will be created.</p>
+<p>How does this work? Each person in the data is assigned a random number between 0 and 1 from a uniform distribution. Rows are then sorted on that random number and the <span class="math inline">\(n\)</span> people from the list with the highest score are selected for the sample. By using a random number, every respondent has the same probability of being in the sample. For example, if we need a sample of 10 people from the 100 included in the <code>rndnames</code> dataset, each individual has a 10% chances of being included in the sample. By default, the random seed is set to <code>1234</code> to ensure the sampling results are reproducible. If there is no input in <code>Rnd. seed</code>, the selected rows will change every time we generate a sample.</p>
 <p align="center">
 <img src="figures_design/sampling.png">
 </p>
-<p>The full list of 100 people is the <code>sampling frame</code>. Ideally, this is a comprehensive list of <em>all</em> sampling units (e.g., customers or companies) in your target market.</p>
-<p>How do you determine the appropriate value for <em>n</em>? Use the sample size tools in the <em>Design</em> menu.</p>
+<p>The full list of 100 people is called the <code>sampling frame</code>. Ideally, this is a comprehensive list of <em>all</em> sampling units (e.g., customers or companies) in your target market. To determine the appropriate value for <em>n</em>, use the sample size tools in the <em>Design</em> menu. To show the full sampling frame, click on the <code>Show sampling frame</code> check box.</p>
+<p>To download data for the generated sample in CSV format, click on the <i title="download" class="fa fa-download"></i> icon in the top-right of your screen. The created sample can also be stored in Radiant by providing a name for the dataset and then clicking on the <code>Store</code> button.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the sample by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
