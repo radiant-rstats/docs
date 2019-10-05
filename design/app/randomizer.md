@@ -24,4 +24,4 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html"
 
 For an overview of related R-functions used by Radiant for sampling and sample size calculations see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-sample" target="_blank">_Design > Sample_</a>
 
-For more information see the <a="https://cran.r-project.org/web/packages/randomizr/vignettes/randomizr_vignette.html target="_blank">vignette</a> for the `randomizr` package that radiant uses for the `Random assignment` tool.
+For more information see the <a href="https://cran.r-project.org/web/packages/randomizr/vignettes/randomizr_vignette.html" target="_blank">vignette</a> for the `randomizr` package that radiant uses for the `Random assignment` tool.
