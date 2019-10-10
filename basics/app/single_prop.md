@@ -69,4 +69,6 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to evaluate proportions see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-proportions" target="_blank">_Basics > Proportions_</a>
+For an overview of related R-functions used by Radiant to evaluate proportions see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-proportions" target="_blank">_Basics > Proportions_</a>.
+
+The key functions from the `stats` package used in the `single_prop` tool are `binom.test` and `prop.test`.

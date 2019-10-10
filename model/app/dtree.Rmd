@@ -160,4 +160,6 @@ For additional shortcuts see:
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant for decision analysis see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-decision-analysis" target="_blank">_Model > Decision analysis_</a>
+For an overview of related R-functions used by Radiant for decision analysis see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-decision-analysis" target="_blank">_Model > Decision analysis_</a>.
+
+The key elements from the `data.tree` package used in the `dtree` tool are the `as.Node` function and the `Get` and `Do` methods.

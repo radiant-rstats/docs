@@ -39,4 +39,6 @@ plot(result, plots = "scree", custom = TRUE) +
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to conduct factor analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-factor" target="_blank">_Multivariate > Factor_</a>
+For an overview of related R-functions used by Radiant to conduct factor analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-factor" target="_blank">_Multivariate > Factor_</a>.
+
+The key functions used in the `pre_factor` tool are `cor` from the `stats` package, `eigen` from `base`, and `cortest.bartlett` and `KMO` from the `psych` package. 

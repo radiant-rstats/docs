@@ -2,7 +2,7 @@
 
 ### Functionality
 
-To estimate a logistic regression we need a binary response variable and one or more explanatory variables. We also need specify the level of the response variable we will count as as _success_ (i.e., the `Choose level:` dropdown). In the example data file `titanic`, success for the variable `survived` would be the level `Yes`.
+To estimate a logistic regression we need a binary response variable and one or more explanatory variables. We also need specify the level of the response variable we will count as _success_ (i.e., the `Choose level:` dropdown). In the example data file `titanic`, success for the variable `survived` would be the level `Yes`.
 
 To access this dataset go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load` button. Then select the `titanic` dataset.
 
@@ -10,7 +10,7 @@ In the _Summary_ tab we can test if two or more variables together add significa
 
 Additional output that requires re-estimation:
 
-* Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the data before estimation we can see which variables move-the-needle most. Note that a one-unit change is now equated to 2 x the standard deviation of the variable.
+* Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Note that a one-unit change is now equated to 2 x the standard deviation of the explanatory variable.
 * Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects.
 * Stepwise: A data-mining approach to select the best fitting model
 * Robust standard errors: When `robust` is selected the coefficient estimates are the same as a normal logistic regression standard errors are adjusted. This adjustment is used by default when probability weights are specified in estimation. 
@@ -27,11 +27,9 @@ We can use the _Predict_ tab to predict probabilities for different values of th
 * To predict the survival probability for passengers aged between 0 and 90 at 10 year intervals type `age = seq(0, 90, 10)` and press enter
 * To predict the survival probability for passengers per class and gender type `pclass = levels(pclass), sex = c("male","female")` and press enter
 
-As an example of how to use data as input for prediction (e.g., predict the survival probabilities for 30 year old men and women in each of the passenger classes) you can use `titanic_pred`. Select `titanic` as the dataset for analysis and specify a model in _Model > Logistic regression (GLM)_ with `pclass`, `sex`, and `age` as explanatory variables. Choose `Data` from the `Prediction input` dropdown and select `titanic_pred` from the `Predict for profiles` dropdown to generate the predictions. Note that the variables in the datafile and in the model must be the same.
-
 To generate predicted values for all cases in, for example, the `titanic` dataset select `Data` from the `Prediction input` dropdown then select the `titanic` dataset. You can also create a dataset for input in _Data > Transform_ using `Expand grid` or in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab. You can also load csv data as input. For example, paste the following link `https://radiant-rstats.github.io/docs/examples/glm_pred.csv` file into Radiant through the _Data > Manage_ tab and try to generate the same predictions. Hint: Use `csv (url)` to load the data link above.
 
-Once the desired predictions have been generated they can be saved to a csv file by clicking the download button button on the top right of the screen. To add predictions to the dataset, click the `Store` button.
+Once the desired predictions have been generated they can be saved to a CSV file by clicking the download button button on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button.
 
 ### Example 1: Titanic Survival
 
@@ -123,4 +121,6 @@ plot(result, plots = "coef", custom = TRUE) +
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank">_Model > Logistic regression_</a>
+For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank">_Model > Logistic regression_</a>.
+
+The key functions used in the `logistic` tool are `glm` from the `stats` package and `vif` and `linearHypothesis` from the `car` package. 

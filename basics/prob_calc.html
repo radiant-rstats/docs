@@ -131,6 +131,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -421,11 +422,23 @@ pre, code, pre code {
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
 <p>For an overview of related R-functions used by Radiant for probability calculations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-probability" target="_blank"><em>Basics &gt; Probability</em></a></p>
+<p>Key functions from the <code>stats</code> package used in the probability calculator:</p>
+<ul>
+<li><code>prob_norm</code> uses <code>pnorm</code>, <code>qnorm</code>, and <code>dnorm</code></li>
+<li><code>prob_lnorm</code> uses <code>plnorm</code>, <code>qlnorm</code>, and <code>dlnorm</code></li>
+<li><code>prob_tdist</code> uses <code>pt</code>, <code>qt</code>, and <code>dt</code></li>
+<li><code>prob_fdist</code> uses <code>pf</code>, <code>qf</code>, and <code>df</code></li>
+<li><code>prob_chisq</code> uses <code>pchisq</code>, <code>qchisq</code>, and <code>dchisq</code></li>
+<li><code>prob_unif</code> uses <code>punif</code>, <code>qunif</code>, and <code>dunif</code></li>
+<li><code>prob_binom</code> uses <code>pbinom</code>, <code>qbinom</code>, and <code>dbinom</code></li>
+<li><code>prob_expo</code> uses <code>pexp</code>, <code>qexp</code>, and <code>dexp</code></li>
+<li><code>prob_pois</code> uses <code>ppios</code>, <code>qpois</code>, and <code>dpois</code></li>
+</ul>
 </div>
 </div>
 
 
-&copy; Vincent Nijs (2018) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0" src="/docs/images/by-nc-sa.png"/></a>
+&copy; Vincent Nijs (2019) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0" src="/docs/images/by-nc-sa.png"/></a>
 
 <!-- some extra javascript for older browsers -->
 <script type="text/javascript" src="libs/polyfill.js"></script>

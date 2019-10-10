@@ -63,4 +63,6 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to evaluate means see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-means" target="_blank">_Basics > Means_</a>
+For an overview of related R-functions used by Radiant to evaluate means see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-means" target="_blank">_Basics > Means_</a>.
+
+The key function from the `stats` package used in the `single_mean` tool is `t.test`.

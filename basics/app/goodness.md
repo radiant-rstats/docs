@@ -1,6 +1,5 @@
 > A goodness-of-fit test is used to determine if data from a sample are consistent with a hypothesized distribution
 
-
 ### Example
 
 The data are from a sample of 580 newspaper readers that indicated (1) which newspaper they read most frequently (USA today or Wall Street Journal) and (2) their level of income (Low income vs. High income). The data has three variables: A respondent identifier (id), respondent income (High or Low), and the primary newspaper the respondent reads (USA today or Wall Street Journal).
@@ -43,3 +42,5 @@ When one or more expected values are small (e.g., 5 or less) the p.value for the
 ### R-functions
 
 For an overview of related R-functions used by Radiant to evaluate a discrete probability distribution see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank">_Basics > Tables_</a>
+
+The key function from the `stats` package used in the `goodness` tool is `chisq.test`.

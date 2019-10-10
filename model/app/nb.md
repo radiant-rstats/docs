@@ -11,3 +11,5 @@ If either a plot was created it can be customized using `ggplot2` commands (e.g.
 ### R-functions
 
 For an overview of related R-functions used by Radiant to estimate a naive Bayes classification model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-naive-bayes" target="_blank">_Model > Naive Bayes_</a>
+
+The key function from the `e1071` package used in the `nb` tool is `naiveBayes`.

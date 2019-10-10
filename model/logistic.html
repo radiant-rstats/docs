@@ -131,6 +131,7 @@ code {
 }
 img {
   max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -373,12 +374,12 @@ pre, code, pre code {
 </blockquote>
 <div id="functionality" class="section level3">
 <h3>Functionality</h3>
-<p>To estimate a logistic regression we need a binary response variable and one or more explanatory variables. We also need specify the level of the response variable we will count as as <em>success</em> (i.e., the <code>Choose level:</code> dropdown). In the example data file <code>titanic</code>, success for the variable <code>survived</code> would be the level <code>Yes</code>.</p>
+<p>To estimate a logistic regression we need a binary response variable and one or more explanatory variables. We also need specify the level of the response variable we will count as <em>success</em> (i.e., the <code>Choose level:</code> dropdown). In the example data file <code>titanic</code>, success for the variable <code>survived</code> would be the level <code>Yes</code>.</p>
 <p>To access this dataset go to <em>Data &gt; Manage</em>, select <code>examples</code> from the <code>Load data of type</code> dropdown, and press the <code>Load</code> button. Then select the <code>titanic</code> dataset.</p>
 <p>In the <em>Summary</em> tab we can test if two or more variables together add significantly to the fit of a model by selecting variables in the <code>Variables to test</code> dropdown. This functionality can be very useful to test if the overall influence of a variable of type <code>factor</code> is statistically significant.</p>
 <p>Additional output that requires re-estimation:</p>
 <ul>
-<li>Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the data before estimation we can see which variables move-the-needle most. Note that a one-unit change is now equated to 2 x the standard deviation of the variable.</li>
+<li>Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Note that a one-unit change is now equated to 2 x the standard deviation of the explanatory variable.</li>
 <li>Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects.</li>
 <li>Stepwise: A data-mining approach to select the best fitting model</li>
 <li>Robust standard errors: When <code>robust</code> is selected the coefficient estimates are the same as a normal logistic regression standard errors are adjusted. This adjustment is used by default when probability weights are specified in estimation.</li>
@@ -395,9 +396,8 @@ pre, code, pre code {
 <li>To predict the survival probability for passengers aged between 0 and 90 at 10 year intervals type <code>age = seq(0, 90, 10)</code> and press enter</li>
 <li>To predict the survival probability for passengers per class and gender type <code>pclass = levels(pclass), sex = c(&quot;male&quot;,&quot;female&quot;)</code> and press enter</li>
 </ul>
-<p>As an example of how to use data as input for prediction (e.g., predict the survival probabilities for 30 year old men and women in each of the passenger classes) you can use <code>titanic_pred</code>. Select <code>titanic</code> as the dataset for analysis and specify a model in <em>Model &gt; Logistic regression (GLM)</em> with <code>pclass</code>, <code>sex</code>, and <code>age</code> as explanatory variables. Choose <code>Data</code> from the <code>Prediction input</code> dropdown and select <code>titanic_pred</code> from the <code>Predict for profiles</code> dropdown to generate the predictions. Note that the variables in the datafile and in the model must be the same.</p>
 <p>To generate predicted values for all cases in, for example, the <code>titanic</code> dataset select <code>Data</code> from the <code>Prediction input</code> dropdown then select the <code>titanic</code> dataset. You can also create a dataset for input in <em>Data &gt; Transform</em> using <code>Expand grid</code> or in a spreadsheet and then paste it into Radiant through the <em>Data &gt; Manage</em> tab. You can also load csv data as input. For example, paste the following link <code>https://radiant-rstats.github.io/docs/examples/glm_pred.csv</code> file into Radiant through the <em>Data &gt; Manage</em> tab and try to generate the same predictions. Hint: Use <code>csv (url)</code> to load the data link above.</p>
-<p>Once the desired predictions have been generated they can be saved to a csv file by clicking the download button button on the top right of the screen. To add predictions to the dataset, click the <code>Store</code> button.</p>
+<p>Once the desired predictions have been generated they can be saved to a CSV file by clicking the download button button on the top right of the screen. To add predictions to the dataset used for estimation, click the <code>Store</code> button.</p>
 </div>
 <div id="example-1-titanic-survival" class="section level3">
 <h3>Example 1: Titanic Survival</h3>
@@ -472,11 +472,12 @@ pre, code, pre code {
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank"><em>Model &gt; Logistic regression</em></a></p>
+<p>For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank"><em>Model &gt; Logistic regression</em></a>.</p>
+<p>The key functions used in the <code>logistic</code> tool are <code>glm</code> from the <code>stats</code> package and <code>vif</code> and <code>linearHypothesis</code> from the <code>car</code> package.</p>
 </div>
 
 
-&copy; Vincent Nijs (2018) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0" src="/docs/images/by-nc-sa.png"/></a>
+&copy; Vincent Nijs (2019) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0" src="/docs/images/by-nc-sa.png"/></a>
 
 <!-- some extra javascript for older browsers -->
 <script type="text/javascript" src="libs/polyfill.js"></script>

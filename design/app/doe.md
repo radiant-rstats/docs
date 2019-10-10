@@ -65,3 +65,5 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html"
 ### R-functions
 
 For an overview of related R-functions used by Radiant for experimental design see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-design-of-experiments-doe-" target="_blank">_Design > Design of Experiments_</a>
+
+The key function from the `AlgDesign` package used in the `doe` tool is `optFederov`.

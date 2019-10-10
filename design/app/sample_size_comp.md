@@ -33,3 +33,5 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html"
 ### R-functions
 
 For an overview of related R-functions used by Radiant for sampling and sample size calculations see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-sample" target="_blank">_Design > Sample_</a>
+
+The key functions from the `pwr` package used in the `sample_size_comp` tool are `pwr.t2n.test`, `pwr.t.test`, `pwr.2p.test`, `pwr.2p2n.test`, and `pwr.2p2n.test`.

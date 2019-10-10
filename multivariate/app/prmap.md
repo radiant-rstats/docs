@@ -38,4 +38,6 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html"
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to generate brand maps see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-maps" target="_blank">_Multivariate > Maps_</a>
+For an overview of related R-functions used by Radiant to generate brand maps see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-maps" target="_blank">_Multivariate > Maps_</a>.
+
+The key functions used in the `prmap` tool are `cor` and `cov` from the `stats` package and `principal` from the `psych` package. 

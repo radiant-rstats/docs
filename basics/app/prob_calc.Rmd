@@ -56,3 +56,15 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 ### R-functions
 
 For an overview of related R-functions used by Radiant for probability calculations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-probability" target="_blank">_Basics > Probability_</a>
+
+Key functions from the `stats` package used in the probability calculator:
+
+* `prob_norm` uses `pnorm`, `qnorm`, and `dnorm`
+* `prob_lnorm` uses `plnorm`, `qlnorm`, and `dlnorm`
+* `prob_tdist` uses `pt`, `qt`, and `dt`
+* `prob_fdist` uses `pf`, `qf`, and `df`
+* `prob_chisq` uses `pchisq`, `qchisq`, and `dchisq`
+* `prob_unif` uses `punif`, `qunif`, and `dunif`
+* `prob_binom` uses `pbinom`, `qbinom`, and `dbinom`
+* `prob_expo` uses `pexp`, `qexp`, and `dexp`
+* `prob_pois` uses `ppios`, `qpois`, and `dpois`

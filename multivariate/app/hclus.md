@@ -38,3 +38,5 @@ To add, for example, a sub-title to a dendrogram plot use `title(sub = "Data use
 ### R-functions
 
 For an overview of related R-functions used by Radiant to conduct cluster analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-cluster" target="_blank">_Multivariate > Cluster_</a>
+
+The key function from the `stats` package used in the `hclus` tool is `hclust`. 

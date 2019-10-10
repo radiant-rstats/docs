@@ -12,4 +12,6 @@ To add, for example, a title to a network plot use `title(main = "Network plot")
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to estimate a neural network model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-neural-network" target="_blank">_Model > Neural network_</a>
+For an overview of related R-functions used by Radiant to estimate a neural network model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-neural-network" target="_blank">_Model > Neural network_</a>.
+
+The key function from the `nnet` package used in the `nn` tool is `nnet`.

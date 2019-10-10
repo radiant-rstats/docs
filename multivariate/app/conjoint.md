@@ -83,3 +83,5 @@ plot(result, plots = c("pw","iw"), custom = TRUE) %>%
 ### R-functions
 
 For an overview of related R-functions used by Radiant to estimate a conjoint model see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-conjoint" target="_blank">_Multivariate > Conjoint_</a>
+
+The key functions used in the `conjoint` tool are `lm` from the `stats` package and `vif` from the `car` package. 

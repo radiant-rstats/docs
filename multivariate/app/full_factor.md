@@ -67,4 +67,6 @@ plot(result, custom = TRUE) %>%
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to conduct factor analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-factor" target="_blank">_Multivariate > Factor_</a>
+For an overview of related R-functions used by Radiant to conduct factor analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-factor" target="_blank">_Multivariate > Factor_</a>.
+
+The key functions from the `psych` packages used in the `full_factor` tool are `principal` and `fa` . 

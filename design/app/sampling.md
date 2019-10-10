@@ -19,3 +19,5 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html"
 ### R-functions
 
 For an overview of related R-functions used by Radiant for sampling and sample size calculations see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-sample" target="_blank">_Design > Sample_</a>
+
+The key function from the `stats` package used in the `sampling` tool is `runif`. This function is used to generate the random numbers assigned to each row in the available data.

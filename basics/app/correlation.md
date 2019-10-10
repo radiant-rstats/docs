@@ -44,4 +44,6 @@ To add, for example, a title to the plot use `title(main = "Correlation plot\n\n
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to evaluate correlations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank">_Basics > Tables_</a>
+For an overview of related R-functions used by Radiant to evaluate correlations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank">_Basics > Tables_</a>.
+
+The key function from the `psych` package used in the `correlation` tool is `corr.test`.

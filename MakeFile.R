@@ -68,7 +68,7 @@ make_content(files, "basics")
 
 files <- c(
   "crs.md", "crtree.md", "dtree.Rmd", "evalbin.md",
-  "evalreg.md", "logistic.Rmd", "nb.md", "nn.md",
+  "evalreg.md", "logistic.Rmd", "mnl.Rmd", "nb.md", "nn.md",
   "regress.Rmd", "simulater.Rmd"
 )
 

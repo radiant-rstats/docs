@@ -318,4 +318,6 @@ So a 1% change in price leads to a $b$% change in sales.
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to estimate a linear regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-linear-regression-ols-" target="_blank">_Model > Linear regression (OLS)_</a>
+For an overview of related R-functions used by Radiant to estimate a linear regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-linear-regression-ols-" target="_blank">_Model > Linear regression (OLS)_</a>.
+
+The key functions used in the `regress` tool are `lm` from the `stats` package and `vif` and `linearHypothesis` from the `car` package. 

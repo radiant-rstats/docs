@@ -58,4 +58,6 @@ plot(result, plots = "bar", custom = TRUE) %>%
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to conduct cluster analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-cluster" target="_blank">_Multivariate > Cluster_</a>
+For an overview of related R-functions used by Radiant to conduct cluster analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-cluster" target="_blank">_Multivariate > Cluster_</a>.
+
+The key function from the `stats` package used in the `kclus` tool is `kmeans`. 
