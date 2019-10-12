@@ -131,7 +131,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -290,7 +289,7 @@ summary {
              <li class="dropdown-header">Estimate</li>
              <li><a href="/docs/model/regress.html">Linear regression (OLS)</a></li>
              <li><a href="/docs/model/logistic.html">Logistic regression (GLM)</a></li>
-             <li><a href="/docs/model/mnl.html">Multinomial Logistic regression (MNL)</a></li>
+             <li><a href="/docs/model/mnl.html">Multinomial logistic regression (MNL)</a></li>
              <li><a href="/docs/model/nn.html">Neural Network</a></li>
              <li><a href="/docs/model/nb.html">Naive Bayes</a></li>
              <li><a href="/docs/model/crtree.html">Classification and regression trees</a></li>
@@ -398,6 +397,7 @@ pre, code, pre code {
 <li>To predict the price of diamonds ranging from .5 to 1 carat at steps of size .05 type <code>carat = seq(.5,.1,.05)</code> and press return</li>
 <li>To predict the price of 1,2, or 3 carat diamonds with an ideal cut type <code>carat = 1:3, cut = &quot;Ideal&quot;</code> and press return</li>
 </ul>
+<p>Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the <code>Store</code> button.</p>
 <p>The <em>Plot</em> tab is used to provide basic visualizations of the data as well as diagnostic plots to validate the regression model.</p>
 </div>
 <div id="example-1-catalog-sales" class="section level3">

@@ -21,7 +21,7 @@ Additional output that does not require re-estimation:
 * Confidence intervals: Coefficient confidence intervals
 * Odds: Odds-ratios with confidence intervals
 
-We can use the _Predict_ tab to predict probabilities for different values of the explanatory variable(s) (i.e., a common use of Logistic regression models). First, select the type of input for prediction using the `Prediction` radio buttons. Choose either an existing dataset for prediction ("Data") or specify a command ("Command") to generate the prediction inputs. If you choose to enter a command you must specify at least one variable and one value to get a prediction. If you do not specify a value for each variable in the model either the mean value or the most frequent level will be used. It is only possible to predict outcomes based on variables used in the model (e.g., `age` must be one of the selected explanatory variables to predict survival probability for a 90 year old passenger).
+We can use the _Predict_ tab to predict probabilities for different values of the explanatory variable(s) (i.e., a common use of Logistic regression models). First, select the type of input for prediction using the `Prediction input type` dropdown. Choose either an existing dataset for prediction ("Data") or specify a command ("Command") to generate the prediction inputs. If you choose to enter a command you must specify at least one variable and one value to get a prediction. If you do not specify a value for each variable in the model either the mean value or the most frequent level will be used. It is only possible to predict outcomes based on variables used in the model (e.g., `age` must be one of the selected explanatory variables to predict survival probability for a 90 year old passenger).
 
 * To predict the survival probability for a passenger in 3rd class use `pclass = "3rd"` and press enter
 * To predict the survival probability for passengers aged between 0 and 90 at 10 year intervals type `age = seq(0, 90, 10)` and press enter
@@ -29,7 +29,7 @@ We can use the _Predict_ tab to predict probabilities for different values of th
 
 To generate predicted values for all cases in, for example, the `titanic` dataset select `Data` from the `Prediction input` dropdown then select the `titanic` dataset. You can also create a dataset for input in _Data > Transform_ using `Expand grid` or in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab. You can also load csv data as input. For example, paste the following link `https://radiant-rstats.github.io/docs/examples/glm_pred.csv` file into Radiant through the _Data > Manage_ tab and try to generate the same predictions. Hint: Use `csv (url)` to load the data link above.
 
-Once the desired predictions have been generated they can be saved to a CSV file by clicking the download button button on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button.
+Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button.
 
 ### Example 1: Titanic Survival
 
@@ -56,11 +56,11 @@ The odds-ratios from the logistic regression can be interpreted as follows:
 
 <p align="center"><img src="figures_model/logistic_summary.png"></p>
 
-In addition to the numerical output provided in the _Summary_ tab we can also evaluate the link between `survival`, `class`, `sex`, and `age` visually (see _Plot_ tab). The settings in the side-panel are the same as before. In the screenshot below we see a coefficient (or rather an odds-ratio) plot with confidence intervals. The relative importance of gender and class compared to age clearly stands out. Note: click the check box for standardized coefficients (i.e., `standardize`) in the _Summary_ tab and see if your conclusion changes.
+In addition to the numerical output provided in the _Summary_ tab we can also evaluate the link between `survival`, `class`, `sex`, and `age` visually (see _Plot_ tab). In the screenshot below we see a coefficient (or rather an odds-ratio) plot with confidence intervals. The relative importance of gender and class compared to age clearly stands out. Note: click the check box for standardized coefficients (i.e., `standardize`) in the _Summary_ tab and see if your conclusion changes.
 
 <p align="center"><img src="figures_model/logistic_plot.png"></p>
 
-Probabilities, are more convenient for interpretation than coefficients or odds from a logistic regression model. To see how survival probabilities change across passenger classes select `Command` from the `Prediction input` dropdown in the _Predict_ tab, type `pclass = levels(pclass)` in the **Prediction command** box, and press return.
+Probabilities, are often more convenient for interpretation than coefficients or odds from a logistic regression model. To see how survival probabilities change across passenger classes select `Command` from the `Prediction input type` dropdown in the _Predict_ tab, type `pclass = levels(pclass)` in the **Prediction command** box, and press return.
 
 <p align="center"><img src="figures_model/logistic_predict.png"></p>
 

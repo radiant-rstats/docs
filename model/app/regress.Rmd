@@ -30,6 +30,8 @@ If you choose `Command` you must specify at least one variable and value to get 
 * To predict the price of diamonds ranging from .5 to 1 carat at steps of size .05 type `carat = seq(.5,.1,.05)` and press return
 * To predict the price of 1,2, or 3 carat diamonds with an ideal cut type `carat = 1:3, cut = "Ideal"` and press return
 
+Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button.
+
 The _Plot_ tab is used to provide basic visualizations of the data as well as diagnostic plots to validate the regression model.
 
 ### Example 1: Catalog sales
