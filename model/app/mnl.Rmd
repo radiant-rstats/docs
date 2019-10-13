@@ -55,8 +55,8 @@ A selected set of relative risk ratios from the multinomial logistic regression 
 ```
 
 - The RRR for a \$1 increase in `price.heinz32` on the relative odds or purchasing `heinz32` rather than `heinz28` is 0.101. If the price for `heinz32` increased by \$1, the odds of purchasing `heinz32` rather than `heinz28` would decrease by a factor of 0.101, or decrease by 89.9%, while holding all other variables in the model constant.
-- The RRR for a \$1 increase in `price.heinz28` on the relative odds or purchasing `huntz32` rather than `heinz28` is 3.602. If the price for `heinz28` increased by \$1, the odds of purchasing `huntz32` rather than `heinz28` would increase by a factor of 3.602, or by 260.2%, while holding all other variables in the model constant.
-- The RRR for a \$1 increase in `price.huntz32` on the relative odds or purchasing `huntz32` rather than `heinz28` is 0.070. If the price for `huntz32` increased by \$1, the odds of purchasing `huntz32` rather than `heinz28` would decrease by a factor of 0.070, or by 93%, while holding all other variables in the model constant.
+- The RRR for a \$1 increase in `price.heinz28` on the relative odds or purchasing `huntz32` rather than `heinz28` is 3.602. If the price for `heinz28` increased by \$1, the odds of purchasing `huntz32` rather than `heinz28` would increase by a factor of 3.602, or increase by 260.2%, while holding all other variables in the model constant.
+- The RRR for a \$1 increase in `price.huntz32` on the relative odds or purchasing `huntz32` rather than `heinz28` is 0.070. If the price for `huntz32` increased by \$1, the odds of purchasing `huntz32` rather than `heinz28` would decrease by a factor of 0.070, or decrease by 93%, while holding all other variables in the model constant.
 
 The other `RRRs` estimated in the model can be interpreted similarly. 
 
