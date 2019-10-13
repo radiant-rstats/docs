@@ -1,5 +1,9 @@
 > Simulation for decision analysis
 
+```{r include = FALSE}
+library(radiant.data)
+```
+
 Start by selecting the types of variables to use in the simulation from the `Select types` dropdown in the _Simulate_ tab. Available types include Binomial, Constant, Discrete, Log normal, Normal, Uniform, Data, Grid search, and Sequence.
 
 ### Binomial
@@ -139,7 +143,6 @@ z = psum(x, y)
 See the table below for an example:
 
 ```{r results = 'asis', echo = FALSE}
-library(radiant.data)
 x <- c(1,2,3,4,5)
 y <- c(0,3,8,2,10)
 tab_large <- "class='table table-condensed table-hover' style='width:40%;'"

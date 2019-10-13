@@ -1,5 +1,7 @@
 > Simulation for decision analysis
 
+
+
 Start by selecting the types of variables to use in the simulation from the `Select types` dropdown in the _Simulate_ tab. Available types include Binomial, Constant, Discrete, Log normal, Normal, Uniform, Data, Grid search, and Sequence.
 
 ### Binomial
