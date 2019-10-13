@@ -1,5 +1,5 @@
 ---
-title: Model > Estimate > Multinomial Logistic regression (MNL)
+title: Model > Estimate > Multinomial logistic regression (MNL)
 ---
 
 ***
