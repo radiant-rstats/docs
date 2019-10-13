@@ -389,14 +389,6 @@ pre, code, pre code {
 <li>Confidence intervals: Coefficient confidence intervals</li>
 <li>Odds: Odds-ratios with confidence intervals</li>
 </ul>
-<p>We can use the <em>Predict</em> tab to predict probabilities for different values of the explanatory variable(s) (i.e., a common use of Logistic regression models). First, select the type of input for prediction using the <code>Prediction input type</code> dropdown. Choose either an existing dataset for prediction (“Data”) or specify a command (“Command”) to generate the prediction inputs. If you choose to enter a command you must specify at least one variable and one value to get a prediction. If you do not specify a value for each variable in the model either the mean value or the most frequent level will be used. It is only possible to predict outcomes based on variables used in the model (e.g., <code>age</code> must be one of the selected explanatory variables to predict survival probability for a 90 year old passenger).</p>
-<ul>
-<li>To predict the survival probability for a passenger in 3rd class use <code>pclass = &quot;3rd&quot;</code> and press enter</li>
-<li>To predict the survival probability for passengers aged between 0 and 90 at 10 year intervals type <code>age = seq(0, 90, 10)</code> and press enter</li>
-<li>To predict the survival probability for passengers per class and gender type <code>pclass = levels(pclass), sex = c(&quot;male&quot;,&quot;female&quot;)</code> and press enter</li>
-</ul>
-<p>To generate predicted values for all cases in, for example, the <code>titanic</code> dataset select <code>Data</code> from the <code>Prediction input</code> dropdown then select the <code>titanic</code> dataset. You can also create a dataset for input in <em>Data &gt; Transform</em> using <code>Expand grid</code> or in a spreadsheet and then paste it into Radiant through the <em>Data &gt; Manage</em> tab. You can also load csv data as input. For example, paste the following link <code>https://radiant-rstats.github.io/docs/examples/glm_pred.csv</code> file into Radiant through the <em>Data &gt; Manage</em> tab and try to generate the same predictions. Hint: Use <code>csv (url)</code> to load the data link above.</p>
-<p>Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the <code>Store</code> button.</p>
 </div>
 <div id="example-1-titanic-survival" class="section level3">
 <h3>Example 1: Titanic Survival</h3>
@@ -427,7 +419,8 @@ pre, code, pre code {
 <p align="center">
 <img src="figures_model/logistic_plot.png">
 </p>
-<p>Probabilities, are often more convenient for interpretation than coefficients or odds from a logistic regression model. To see how survival probabilities change across passenger classes select <code>Command</code> from the <code>Prediction input type</code> dropdown in the <em>Predict</em> tab, type <code>pclass = levels(pclass)</code> in the <strong>Prediction command</strong> box, and press return.</p>
+<p>Probabilities, are often more convenient for interpretation than coefficients or odds from a logistic regression model. We can use the <em>Predict</em> tab to predict probabilities for different values of the explanatory variable(s) (i.e., a common use of Logistic regression models). First, select the type of input for prediction using the <code>Prediction input type</code> dropdown. Choose either an existing dataset for prediction (“Data”) or specify a command (“Command”) to generate the prediction inputs. If you choose to enter a command you must specify at least one variable and one value in the <strong>Prediction command</strong> box to get a prediction. If you do not specify a value for each variable in the model either the mean value or the most frequent level will be used. It is only possible to predict outcomes based on variables used in the model (e.g., <code>age</code> must be one of the selected explanatory variables to predict survival probability for a 90 year old passenger).</p>
+<p>To see how survival probabilities change across passenger classes select <code>Command</code> from the <code>Prediction input type</code> dropdown in the <em>Predict</em> tab, type <code>pclass = levels(pclass)</code>, and press return.</p>
 <p align="center">
 <img src="figures_model/logistic_predict.png">
 </p>
@@ -448,10 +441,12 @@ pre, code, pre code {
     3rd male  60 0.035
     3rd male  80 0.018
     3rd male 100 0.009</code></pre>
-<p>For a more comprehensive overview of the influence of gender, age, and passenger class on the chances of survival we can generate a full table of probabilities by selecting <code>Command</code> from the <code>Prediction input</code> dropdown in the <em>Predict</em> tab and selecting <code>Titanic</code> from the <code>Predict for profiles</code>. There are too many numbers to easily interpret in table form but the figure gives a clear overview of how survival probabilities change with <code>age</code>, <code>gender</code>, and <code>pclass</code>:</p>
+<p>For a more comprehensive overview of the influence of gender, age, and passenger class on the chances of survival we can generate a full table of probabilities by selecting <code>Data</code> from the <code>Prediction input</code> dropdown in the <em>Predict</em> tab and selecting <code>titanic</code> from the <code>Prediction data</code> dropdown. There are too many numbers to easily interpret in table form but the figure gives a clear overview of how survival probabilities change with <code>age</code>, <code>gender</code>, and <code>pclass</code>:</p>
 <p align="center">
 <img src="figures_model/logistic_predict_data.png">
 </p>
+<p>You can also create a dataset for input in <em>Data &gt; Transform</em> using <code>Expand grid</code> or in a spreadsheet and then paste it into Radiant through the <em>Data &gt; Manage</em> tab. You can also load csv data as input. For example, paste the following link <code>https://radiant-rstats.github.io/docs/examples/glm_pred.csv</code> file into Radiant through the <em>Data &gt; Manage</em> tab and try to generate the same predictions. Hint: Use <code>csv (url)</code> to load the data link above.</p>
+<p>Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the <code>Store</code> button.</p>
 </div>
 <div id="example-2-dvd-sales" class="section level3">
 <h3>Example 2: DVD sales</h3>

@@ -2,7 +2,7 @@
 
 ### Functionality
 
-To estimate a Multinomial logistic regression (MNL) we need a categorical response variable with two or more levels and one or more explanatory variables. We also need to specify the level of the response variable to count as the _base_ level for comparison (i.e., use the `Choose level:` dropdown). In the example data file, `ketchup`, we can use `heinz28` as the base for comparison.
+To estimate a Multinomial logistic regression (MNL) we require a categorical response variable with two or more levels and one or more explanatory variables. We also need to specify the level of the response variable to be used as the _base_ level for comparison (i.e., select from the `Choose level` dropdown). In the example data file, `ketchup`, we will use `heinz28` as the base level.
 
 To access this dataset go to _Data > Manage_, select `examples` from the `Load data of type` dropdown, and press the `Load` button. Then select the `ketchup` dataset.
 
@@ -19,16 +19,6 @@ Additional output that does not require re-estimation:
 * Confidence intervals: Coefficient confidence intervals
 * RRRs: Relative Risk Ratios with confidence intervals
 * Confusion: A confusion matrix that shows the (lack) of consistency between (1) the actual classes observed in the data and (2) the classes predicted as most likely by the model.
-
-We can use the _Predict_ tab to predict probabilities of each of the different response variable levels based different values of the explanatory variable(s). First, select the type of input for prediction using the `Prediction input type` dropdown. Choose either an existing dataset for prediction ("Data") or specify a command ("Command") to generate the prediction inputs. If you choose to enter a command you must specify at least one variable and one value to get a prediction. If you do not specify a value for each variable in the model either the mean value or the most frequent level will be used. It is only possible to predict outcomes based on variables used in the model (e.g., `price.heinz32` must be one of the selected explanatory variables to predict the probability of choosing to buy `heinz32` when priced at \$3.80.
-
-* To predict the probability of choosing `hunts32` when a display is available in stores use `disp.hunts32 = "yes"` and press enter
-* To predict the probability of choosing `heinz28` when priced between $3 and \$6 at 10 cent intervals type `price.heinz28 = seq(3, 6, 0.1)` and press enter
-* To predict the probability of choosing `heinz41` when the brand is (not) on display and (not) featured type `disp.heinz41 = c("yes", "no"), feat.heinz41 = c("yes", "no")` and press enter
-
-To generate predicted values for all cases in, for example, the `ketchup` dataset select `Data` from the `Prediction input` dropdown and then select the `ketchup` dataset. You can also create a dataset for input in _Data > Transform_ using `Expand grid` or in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab.
-
-Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button. Note that MNL models generate as many columns of probabilities as there are levels in the categorical response variable. If you want to store only the predictions for the first level (e.g., `heinz28`), provide only one name in the `Store predictions` input. If you want to store predictions for all ketchup brands, enter four variable names, separated by a comma.
 
 ### Example: Choice of ketchup brands
 
@@ -81,13 +71,21 @@ In addition to the numerical output provided in the _Summary_ tab we can also ev
 
 <p align="center"><img src="figures_model/mnl_plot.png"></p>
 
-Probabilities, are often more convenient for interpretation than coefficients or RRRs from a multinomial logistic regression model. To see how choice probabilities change for each of the different brands as `price.heinz28` increases, select `Command` from the `Prediction input type` dropdown in the _Predict_ tab, type `price.heinz28 = seq(3.40, 5.20, 0.1)` in the **Prediction command** box, and press return.
+Probabilities, are often more convenient for interpretation than coefficients or RRRs from a multinomial logistic regression model. We can use the _Predict_ tab to predict probabilities of each of the different response variable levels based different values of the explanatory variable(s). First, select the type of input for prediction using the `Prediction input type` dropdown. Choose either an existing dataset for prediction ("Data") or specify a command ("Command") to generate the prediction inputs. If you choose to enter a command you must specify at least one variable and one value in the **Prediction command** box to get a prediction. If you do not specify a value for each variable in the model either the mean value or the most frequent level will be used. It is only possible to predict outcomes based on variables used in the model. For example, `price.heinz32` must be one of the selected explanatory variables to predict the probability of choosing to buy `heinz32` when priced at \$3.80.
+
+* To predict the probability of choosing any the four products when a display is available in stores use `disp.hunts32 = "yes"` and press enter
+* To predict the probability of choosing any of the four products when the brand is (not) on display and (not) featured type `disp.heinz41 = c("yes", "no"), feat.heinz41 = c("yes", "no")` and press enter
+* To see how choice probabilities change for each of the different brands as `price.heinz28` increases type `price.heinz28 = seq(3.40, 5.20, 0.1)` and press enter.
 
 <p align="center"><img src="figures_model/mnl_predict.png"></p>
 
 The figure above shows that the probability of purchase drops sharply for `heinz28` as `price.heinz28` increases. `heinz32`, the most popular brand in the data, is predicted to see a large increase in purchase probability due to the increase price for `heinz28`. Although the increase in purchase probability for `huntz32` does look as impressive in the graph compared to `heinz32` the relative increase is larger (i.e., 3.2% to 8.4% for `huntz32` and 39.3% to 72.8% for `heinz32`).
 
-For a more comprehensive assessment of the impact of price changes for each of the brands on purchase probabilities we can generate a full table of predictions by selecting `Data` from the `Prediction input type` dropdown in the _Predict_ tab and selecting `ketchup` from the `Predict data` dropdown. 
+For a more comprehensive assessment of the impact of price changes for each of the brands on purchase probabilities we can generate a full table of predictions by selecting `Data` from the `Prediction input type` dropdown in the _Predict_ tab and selecting `ketchup` from the `Predict data` dropdown. You can also create a dataset for input in _Data > Transform_ using `Expand grid` or in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab.
+
+Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button. 
+
+Note that MNL models generate as many columns of probabilities as there are levels in the categorical response variable (i.e., four in the ketchup data). If you want to store only the predictions for the first level (i.e., `heinz28`), provide only one name in the `Store predictions` input. If you want to store predictions for all ketchup brands, enter four variable names, separated by a comma.
 
 ### Report > Rmd
 
@@ -102,12 +100,6 @@ plot(result, plots = "coef", custom = TRUE) +
 
 ### R-functions
 
-For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank">_Model > Multinomial logistic regression_</a>
-
-### R-functions
-
 For an overview of related R-functions used by Radiant to estimate a multinomial logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-multinomial-logistic-regression" target="_blank">_Model > Multinomial logistic regression_</a>.
 
 The key functions used in the `mnl` tool are `multinom` from the `nnet` package and `linearHypothesis` from the `car` package. 
-
-<!-- <a href="https://stats.idre.ucla.edu/r/dae/multinomial-logistic-regression" target="_blank">https://stats.idre.ucla.edu/r/dae/multinomial-logistic-regression</a> -->
