@@ -8,7 +8,7 @@ We can perform either a one-sided test (i.e., `less than` or `greater than`) or 
 
 A car manufacturer conducted a study by randomly sampling and interviewing 1,000 consumers in a new target market. The goal of the study was to determine if consumers would consider purchasing this brand of car.
 
-Management has already determined that the company will enter this segment. However, if brand preference is lower than 10% additional resources will be committed to advertising and sponsorship in an effort to enhance brand awareness among the target consumers. In the sample, 93 consumers exhibited what the company the company considered strong brand liking.
+Management has already determined that the company will enter this segment. However, if brand preference is lower than 10% additional resources will be committed to advertising and sponsorship in an effort to enhance brand awareness among the target consumers. In the sample, 93 consumers exhibited what the company considered strong brand liking.
 
 You can find information on the responses by survey participants in the **consider.rda** data set. The data set contains two variables, `id` and `consider`.
 
