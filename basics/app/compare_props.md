@@ -17,7 +17,7 @@ In the `Choose combinations` box select all available entries to conduct pair-wi
 
 <p align="center"><img src="figures_basics/compare_props_summary.png"></p>
 
-The first two blocks of output show basic information about the test (e.g.,. selected variables and confidence levels) and summary statistics (e.g., proportions, standard errors, etc. per group). The final block of output shows the following:
+The first two blocks of output show basic information about the test (e.g.,. selected variables and confidence levels) and summary statistics (e.g., proportions, standard error, margin or error, etc. per group). The final block of output shows the following:
 
 * `Null hyp.` is the null hypothesis and `Alt. hyp.` the alternative hypothesis
 * `diff` is the difference between the sample proportion for two groups (e.g., 0.635 - 0.441 = 0.194). If the null hypothesis is true we expect this difference to be small (i.e., close to zero)
@@ -33,10 +33,10 @@ Level     : Yes in survived
 Confidence: 0.95 
 Adjustment: None 
 
- pclass Yes  No   n     p    se    me
-    1st 179 103 282 0.635 0.029 0.056
-    2nd 115 146 261 0.441 0.031 0.060
-    3rd 131 369 500 0.262 0.020 0.039
+ pclass Yes  No     p   n n_missing    sd    se    me
+    1st 179 103 0.635 282         0 8.086 0.029 0.056
+    2nd 115 146 0.441 261         0 8.021 0.031 0.060
+    3rd 131 369 0.262 500         0 9.832 0.020 0.039
 
  Null hyp.   Alt. hyp.              diff  p.value chisq.value df 2.5%  97.5%    
  1st = 2nd   1st not equal to 2nd   0.194 < .001  20.576      1  0.112 0.277 ***

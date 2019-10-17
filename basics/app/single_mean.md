@@ -12,7 +12,7 @@ You can find the information on unit sales in each of the sample stores in the *
 
 <p align="center"><img src="figures_basics/single_mean_summary.png"></p>
 
-The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., mean, standard deviation). The final row of output shows the following:
+The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., mean, standard deviation, standard error, margin or error, etc.). The final row of output shows the following:
 
 * `diff` is the difference between the sample mean (1953.393) and the comparison value (1750)
 * `se` is the standard error (i.e., the standard deviation of the sampling distribution of `diff`)

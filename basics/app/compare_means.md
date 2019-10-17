@@ -21,7 +21,7 @@ Suppose we want to test if professors of lower rank earn lower salaries compared
 
 <p align="center"><img src="figures_basics/compare_means_summary.png"></p>
 
-The first two blocks of output show basic information about the test (e.g.,. selected variables and confidence levels) and summary statistics (e.g., mean, standard deviation, etc. per group). The final block of output shows the following:
+The first two blocks of output show basic information about the test (e.g., selected variables and confidence levels) and summary statistics (e.g., mean, standard deviation, margin or error, etc. per group). The final block of output shows the following:
 
 * `Null hyp.` is the null hypothesis and `Alt. hyp.` the alternative hypothesis
 * `diff` is the difference between the sample means for two groups (e.g., 80775.99 - 93876.44 = -13100.45). If the null hypothesis is true we expect this difference to be small (i.e., close to zero)
@@ -37,10 +37,10 @@ Samples   : independent
 Confidence: 0.95 
 Adjustment: None 
 
-      rank        mean   n         sd        se        me
-  AsstProf  80,775.985  67  8,174.113   998.627 1,993.823
- AssocProf  93,876.438  64 13,831.700 1,728.962 3,455.056
-      Prof 126,772.109 266 27,718.675 1,699.541 3,346.322
+      rank        mean   n n_missing         sd        se        me
+  AsstProf  80,775.985  67         0  8,174.113   998.627 1,993.823
+ AssocProf  93,876.438  64         0 13,831.700 1,728.962 3,455.056
+      Prof 126,772.109 266         0 27,718.675 1,699.541 3,346.322
 
  Null hyp.              Alt. hyp.              diff      p.value se       t.value df      0%   95%           
  AsstProf = AssocProf   AsstProf < AssocProf   -13100.45 < .001  1996.639  -6.561 101.286 -Inf  -9785.958 ***

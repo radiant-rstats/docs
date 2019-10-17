@@ -18,7 +18,7 @@ Choose the `Less than` option from the `Alternative hypothesis` drop-down to det
 
 <p align="center"><img src="figures_basics/single_prop_summary.png"></p>
 
-The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., the proportion of "yes" responses). The final row of output shows the following:
+The first two blocks of output show basic information about the test (e.g.,. the null and alternative hypothesis) and summary statistics (e.g., the proportion of "yes" responses, standard error, margin or error, etc.). The final row of output shows the following:
 
 * `diff` is the difference between the sample proportion (0.093) and the comparison value (0.1)
 * `ns` is the number of _successes_. This is the number we can compare to a binomial-distribution with parameters $n = 1000$ and $p = 0.10$.

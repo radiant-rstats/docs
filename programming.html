@@ -389,8 +389,8 @@ Confidence: 0.95
 Null hyp. : the mean of price = 0 
 Alt. hyp. : the mean of price is not equal to 0 
 
-      mean        sd n_obs n_missing
- 3,907.186 3,956.915 3,000         0
+      mean     n n_missing        sd     se      me
+ 3,907.186 3,000         0 3,956.915 72.243 141.651
 
      diff     se t.value p.value   df     2.5%    97.5%    
  3907.186 72.243  54.084  &lt; .001 2999 3765.535 4048.837 ***
@@ -430,8 +430,8 @@ Confidence: 0.95
 Null hyp. : the mean of mpg = 20 
 Alt. hyp. : the mean of mpg is &gt; 20 
 
-   mean    sd n_obs n_missing
- 20.091 6.027    32         0
+   mean  n n_missing    sd    se    me
+ 20.091 32         0 6.027 1.065 2.173
 
   diff    se t.value p.value df     5% 100%  
  0.091 1.065   0.085   0.466 31 18.284  Inf  
@@ -454,15 +454,15 @@ Samples   : independent
 Confidence: 0.95 
 Adjustment: Bonferroni 
 
- clarity      mean   n        sd      se      me
-      I1 4,194.775  40 2,519.678 398.396 805.832
-     SI2 5,100.189 529 4,406.982 191.608 376.407
-     SI1 3,998.577 721 3,813.190 142.011 278.804
-     VS2 3,822.967 661 3,917.484 152.372 299.193
-     VS1 3,789.181 442 3,880.907 184.596 362.797
-    VVS2 3,337.820 284 3,932.706 233.363 459.348
-    VVS1 2,608.460 224 3,201.282 213.895 421.513
-      IF 2,411.697  99 3,330.560 334.734 664.268
+ clarity      mean   n n_missing        sd      se      me
+      I1 4,194.775  40         0 2,519.678 398.396 805.832
+     SI2 5,100.189 529         0 4,406.982 191.608 376.407
+     SI1 3,998.577 721         0 3,813.190 142.011 278.804
+     VS2 3,822.967 661         0 3,917.484 152.372 299.193
+     VS1 3,789.181 442         0 3,880.907 184.596 362.797
+    VVS2 3,337.820 284         0 3,932.706 233.363 459.348
+    VVS1 2,608.460 224         0 3,201.282 213.895 421.513
+      IF 2,411.697  99         0 3,330.560 334.734 664.268
 
  Null hyp.     Alt. hyp.                diff     p.value    
  I1 = SI2      I1 not equal to SI2      -905.414 1          
@@ -511,10 +511,10 @@ Samples   : independent
 Confidence: 0.95 
 Adjustment: None 
 
-      rank        mean   n         sd        se        me
-  AsstProf  80,775.985  67  8,174.113   998.627 1,993.823
- AssocProf  93,876.438  64 13,831.700 1,728.962 3,455.056
-      Prof 126,772.109 266 27,718.675 1,699.541 3,346.322
+      rank        mean   n n_missing         sd        se        me
+  AsstProf  80,775.985  67         0  8,174.113   998.627 1,993.823
+ AssocProf  93,876.438  64         0 13,831.700 1,728.962 3,455.056
+      Prof 126,772.109 266         0 27,718.675 1,699.541 3,346.322
 
  Null hyp.              Alt. hyp.                         diff      p.value    
  AsstProf = AssocProf   AsstProf not equal to AssocProf   -13100.45 &lt; .001  ***
@@ -535,10 +535,10 @@ Samples   : independent
 Confidence: 0.95 
 Adjustment: None 
 
-      rank        mean   n         sd        se        me
-  AsstProf  80,775.985  67  8,174.113   998.627 1,993.823
- AssocProf  93,876.438  64 13,831.700 1,728.962 3,455.056
-      Prof 126,772.109 266 27,718.675 1,699.541 3,346.322
+      rank        mean   n n_missing         sd        se        me
+  AsstProf  80,775.985  67         0  8,174.113   998.627 1,993.823
+ AssocProf  93,876.438  64         0 13,831.700 1,728.962 3,455.056
+      Prof 126,772.109 266         0 27,718.675 1,699.541 3,346.322
 
  Null hyp.              Alt. hyp.                         diff      p.value    
  AsstProf = AssocProf   AsstProf not equal to AssocProf   -13100.45 &lt; .001  ***
