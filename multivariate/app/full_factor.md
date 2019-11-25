@@ -54,6 +54,10 @@ If you want more practice open the `shopping` data set and see if you can reprod
 
 <p align="center"><img src="figures_multivariate/full_factor_summary_shopping.png"></p>
 
+## Including categorical variables
+
+Output shown in _Multivariate > Factor_ is estimated using either Principal Components Analysis (PCA) or Maximum Likelihood (ML). The correlation matrix used as input for estimation can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as either dichotomous (2-levels) or polytomous (> 2-levels). All other variables will be treated as continuous. 
+
 ### Report > Rmd
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

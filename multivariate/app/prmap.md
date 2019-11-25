@@ -32,6 +32,10 @@ In the plot we see that Whole foods and Cub foods are perceived as more comparab
 
 An important limitation of a map without attribute information, e.g., based on (dis)similarity data, is that it is difficult to interpret why brands are located close together or far apart. By adding the attribute arrows to the map, as shown above, our understanding of the brand positions in the maps is significantly enhanced. For example, Jewel and Dominick's are positioned higher in the map because they are perceived to offer consumers higher levels of convenience. Similarly, Cub foods, and particularly Whole foods, offer higher levels of customer service and quality products. We can also infer which available attributes are most strongly linked to consumer preferences. Segment 2 is primarily concerned with Convenience which may explain the higher preference scores for Jewel and Dominick's. Similarly, Segment 2 cares most about Good value and very little for Assortment. This segment prefers to shop at Treasure Island and Wal-Mart.
 
+## Including categorical variables
+
+Attribute-based perceptual maps are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as either dichotomous (2-levels) or polytomous (> 2-levels). All other variables will be treated as continuous. 
+
 ### Report > Rmd
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

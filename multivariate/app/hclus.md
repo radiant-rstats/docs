@@ -22,6 +22,11 @@ Reading the plot from left-to-right we see that within-segment heterogeneity inc
 
 To download the plots click the download button on the top-right of the screen.
 
+## Additional options
+
+* By default, data will be standardized before it is analyzed. To pass data in its raw form to the estimation algorithm, make sure the `Standardize` box is un-checked.
+* Hierarchical cluster-analysis (HC) generates numerous clustering solutions. The highest number of clusters is equal to the number of observations in the data (e.g., ever respondent is treated as a separate cluster). The lowest number of clusters evaluated, is equal to 1 (e.g., all respondent are grouped together in a single cluster). Although, HC analysis is often used as a diagnostic tool before generating a final solution using, e.g., K-mean, we can also store any specific clustering solution generated using HC. To accomplish this, first choose the `Number of clusters`, then provide a name for the variable that will contain cluster assignment information, and finally, press the `Store` button. 
+
 ### Report > Rmd
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

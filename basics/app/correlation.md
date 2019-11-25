@@ -2,7 +2,7 @@
 
 Create a correlation matrix of the selected variables. Correlations and p.values are provided for each variable pair. To show only those correlations above a certain (absolute) level, use the correlation cutoff box.
 
-> Note: Correlations can be calculated for variables of type `numeric`, `integer`, and `date`. Variables of other types with no more than two unique levels are transformed into 0-1 dummies and can also be selected. For these variable types, the first level is converted to a 1 and the second to a 0.
+Note: Correlations can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as either dichotomous (2-levels) or polytomous (> 2-levels). All other variables will be treated as continuous. 
 
 <p align="center"><img src="figures_basics/correlation_summary.png"></p>
 
@@ -30,6 +30,12 @@ To show only correlations above a certain value choose a non-zero value in the n
 ### Covariance matrix
 
 Although we generally use the correlation matrix, you can also show the covariance matrix by checking the `Show covariance matrix` box.
+
+## Store as data.frame
+
+The correlation matrix can be stored as a data.frame by (1) providing a name for the new data set and (2) clicking on the `Store` button. The new data sets will the estimated `correlation` for each variable pair and a `distance` measure that is calculated as follows: `distance = 0.5 * (1 - correlation)`. This measure will be equal to 1 when the correlation between two variable is equal to -1 and equal to 0 when the correlation between two variables is equal to 1. For an example of what such a dataset would look like, see the screenshot below of the _Data > View_ tab. Data sets with this structure can be used as input to create a (dis)similarity based map by using _Multivariate > (Dis)similarity_.
+
+<p align="center"><img src="figures_basics/correlation_store.png"></p>
 
 ### Khan on correlation
 

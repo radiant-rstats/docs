@@ -372,9 +372,7 @@ pre, code, pre code {
 <p>How correlated are the variables in the data?</p>
 </blockquote>
 <p>Create a correlation matrix of the selected variables. Correlations and p.values are provided for each variable pair. To show only those correlations above a certain (absolute) level, use the correlation cutoff box.</p>
-<blockquote>
-<p>Note: Correlations can be calculated for variables of type <code>numeric</code>, <code>integer</code>, and <code>date</code>. Variables of other types with no more than two unique levels are transformed into 0-1 dummies and can also be selected. For these variable types, the first level is converted to a 1 and the second to a 0.</p>
-</blockquote>
+<p>Note: Correlations can be calculated for variables of type <code>numeric</code>, <code>integer</code>, <code>date</code>, and <code>factor</code>. When variables of type factor are included the <code>Adjust for categorical variables</code> box should be checked. When correlations are estimated with adjustment, variables that are of type <code>factor</code> will be treated as either dichotomous (2-levels) or polytomous (&gt; 2-levels). All other variables will be treated as continuous.</p>
 <p align="center">
 <img src="figures_basics/correlation_summary.png">
 </p>
@@ -402,6 +400,12 @@ pre, code, pre code {
 <h3>Covariance matrix</h3>
 <p>Although we generally use the correlation matrix, you can also show the covariance matrix by checking the <code>Show covariance matrix</code> box.</p>
 </div>
+<div id="store-as-data.frame" class="section level2">
+<h2>Store as data.frame</h2>
+<p>The correlation matrix can be stored as a data.frame by (1) providing a name for the new data set and (2) clicking on the <code>Store</code> button. The new data sets will the estimated <code>correlation</code> for each variable pair and a <code>distance</code> measure that is calculated as follows: <code>distance = 0.5 * (1 - correlation)</code>. This measure will be equal to 1 when the correlation between two variable is equal to -1 and equal to 0 when the correlation between two variables is equal to 1. For an example of what such a dataset would look like, see the screenshot below of the <em>Data &gt; View</em> tab. Data sets with this structure can be used as input to create a (dis)similarity based map by using <em>Multivariate &gt; (Dis)similarity</em>.</p>
+<p align="center">
+<img src="figures_basics/correlation_store.png">
+</p>
 <div id="khan-on-correlation" class="section level3">
 <h3>Khan on correlation</h3>
 <p align="center">
@@ -418,6 +422,7 @@ pre, code, pre code {
 <h3>R-functions</h3>
 <p>For an overview of related R-functions used by Radiant to evaluate correlations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank"><em>Basics &gt; Tables</em></a>.</p>
 <p>The key function from the <code>psych</code> package used in the <code>correlation</code> tool is <code>corr.test</code>.</p>
+</div>
 </div>
 
 
