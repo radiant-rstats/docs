@@ -385,14 +385,14 @@ pre, code, pre code {
 <p align="center">
 <img src="figures_multivariate/hclus_scree.png">
 </p>
-<p>Reading the plot from left-to-right we see that within-segment heterogeneity increases sharply when we move from 3 to 2 segments. This is also clear from the <code>Change in within-cluster heterogeneity</code> plot (i.e., <code>Change</code>). To avoid creating a heterogeneous segment we, again, choose 3 segments. Now that we have determined the appropriate number of segments to extract we can use <em>Cluster &gt; K-clustering</em> to generate the final cluster solution.</p>
+<p>Reading the plot from left-to-right we see that within-segment heterogeneity increases sharply when we move from 3 to 2 segments. This is also clear from the <code>Change in within-cluster heterogeneity</code> plot (i.e., <code>Change</code>). To avoid creating a heterogeneous segment we, again, choose 3 segments. Now that we have determined the appropriate number of segments to extract we can use either <em>Cluster &gt; Hierarchical</em> or <em>Cluster &gt; K-clustering</em> to generate the final cluster solution.</p>
 <p>To download the plots click the download button on the top-right of the screen.</p>
 </div>
 <div id="additional-options" class="section level2">
 <h2>Additional options</h2>
 <ul>
 <li>By default, data will be standardized before it is analyzed. To pass data in its raw form to the estimation algorithm, make sure the <code>Standardize</code> box is un-checked.</li>
-<li>Hierarchical cluster-analysis (HC) generates numerous clustering solutions. The highest number of clusters is equal to the number of observations in the data (e.g., ever respondent is treated as a separate cluster). The lowest number of clusters evaluated, is equal to 1 (e.g., all respondent are grouped together in a single cluster). Although, HC analysis is often used as a diagnostic tool before generating a final solution using, e.g., K-mean, we can also store any specific clustering solution generated using HC. To accomplish this, first choose the <code>Number of clusters</code>, then provide a name for the variable that will contain cluster assignment information, and finally, press the <code>Store</code> button.</li>
+<li>Hierarchical cluster-analysis (HC) generates numerous clustering solutions. The highest number of clusters is equal to the number of observations in the data (e.g., ever respondent is treated as a separate cluster). The lowest number of clusters evaluated, is equal to 1 (e.g., all respondent are grouped together in a single cluster). Although, HC analysis is often used as a diagnostic tool before generating a final solution using, e.g., K-means, we can also store any specific clustering solution generated using HC. To accomplish this, first choose the <code>Number of clusters</code>, then provide a name for the variable that will contain cluster assignment information, and finally, press the <code>Store</code> button.</li>
 </ul>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
