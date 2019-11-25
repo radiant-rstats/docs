@@ -28,7 +28,7 @@ The increase in cumulative % explained variance is relatively small going from 2
 
 ## Including categorical variables
 
-The pre-factor analysis diagnostics are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as either dichotomous (2-levels) or polytomous (> 2-levels). All other variables will be treated as continuous. 
+The pre-factor analysis diagnostics are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.
 
 ### Report > Rmd
 

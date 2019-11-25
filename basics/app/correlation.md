@@ -2,7 +2,7 @@
 
 Create a correlation matrix of the selected variables. Correlations and p.values are provided for each variable pair. To show only those correlations above a certain (absolute) level, use the correlation cutoff box.
 
-Note: Correlations can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as either dichotomous (2-levels) or polytomous (> 2-levels). All other variables will be treated as continuous. 
+Note: Correlations can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for {factor} variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as (ordinal) categorical variables and all other variables will be treated as continuous. 
 
 <p align="center"><img src="figures_basics/correlation_summary.png"></p>
 

@@ -392,7 +392,7 @@ pre, code, pre code {
 </div>
 <div id="including-categorical-variables" class="section level2">
 <h2>Including categorical variables</h2>
-<p>The pre-factor analysis diagnostics are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can be calculated for variables of type <code>numeric</code>, <code>integer</code>, <code>date</code>, and <code>factor</code>. When variables of type factor are included the <code>Adjust for categorical variables</code> box should be checked. When correlations are estimated with adjustment, variables that are of type <code>factor</code> will be treated as either dichotomous (2-levels) or polytomous (&gt; 2-levels). All other variables will be treated as continuous.</p>
+<p>The pre-factor analysis diagnostics are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can be calculated for variables of type <code>numeric</code>, <code>integer</code>, <code>date</code>, and <code>factor</code>. When variables of type factor are included the <code>Adjust for categorical variables</code> box should be checked. When correlations are estimated with adjustment, variables that are of type <code>factor</code> will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>

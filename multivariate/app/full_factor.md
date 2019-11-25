@@ -56,7 +56,7 @@ If you want more practice open the `shopping` data set and see if you can reprod
 
 ## Including categorical variables
 
-Output shown in _Multivariate > Factor_ is estimated using either Principal Components Analysis (PCA) or Maximum Likelihood (ML). The correlation matrix used as input for estimation can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as either dichotomous (2-levels) or polytomous (> 2-levels). All other variables will be treated as continuous. 
+Output shown in _Multivariate > Factor_ is estimated using either Principal Components Analysis (PCA) or Maximum Likelihood (ML). The correlation matrix used as input for estimation can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for {factor} variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.
 
 ### Report > Rmd
 
