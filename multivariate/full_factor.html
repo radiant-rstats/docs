@@ -423,6 +423,7 @@ v2        0.85</code></pre>
 <div id="including-categorical-variables" class="section level2">
 <h2>Including categorical variables</h2>
 <p>Output shown in <em>Multivariate &gt; Factor</em> is estimated using either Principal Components Analysis (PCA) or Maximum Likelihood (ML). The correlation matrix used as input for estimation can be calculated for variables of type <code>numeric</code>, <code>integer</code>, <code>date</code>, and <code>factor</code>. When variables of type factor are included the <code>Adjust for {factor} variables</code> box should be checked. When correlations are estimated with adjustment, variables that are of type <code>factor</code> will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.</p>
+<p>It is important to note that estimated factor scores will be biased if a mixed of {factor} and numeric variables are used. If you want to use factor scores as input for further analysis, e.g., clustering, you should use either (1) all {factor} variables or (2) all numeric variables to avoid this bias.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>

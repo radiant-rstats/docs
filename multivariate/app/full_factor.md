@@ -58,6 +58,8 @@ If you want more practice open the `shopping` data set and see if you can reprod
 
 Output shown in _Multivariate > Factor_ is estimated using either Principal Components Analysis (PCA) or Maximum Likelihood (ML). The correlation matrix used as input for estimation can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for {factor} variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.
 
+It is important to note that estimated factor scores will be biased if a mixed of {factor} and numeric variables are used. If you want to use factor scores as input for further analysis, e.g., clustering, you should use either (1) all {factor} variables or (2) all numeric variables to avoid this bias.
+
 ### Report > Rmd
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

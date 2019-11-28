@@ -34,7 +34,9 @@ An important limitation of a map without attribute information, e.g., based on (
 
 ## Including categorical variables
 
-Attribute-based perceptual maps are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.
+<!-- Attribute-based perceptual maps are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can be calculated for variables of type `numeric`, `integer`, `date`, and `factor`. When variables of type factor are included the `Adjust for categorical variables` box should be checked. When correlations are estimated with adjustment, variables that are of type `factor` will be treated as (ordinal) categorical variables and all other variables will be treated as continuous. -->
+
+Attribute-based perceptual maps are calculated using Principal Components Analysis (PCA). The correlation matrix used as input for PCA can currently be calculated only for variables of type `numeric`, `integer`, and `date`. Preference information, however, can be of type `numeric`, `integer`, `date`, and `factor`. When preference variables of type {factor} are included, correlations between the factor scores and preference data will be calculated using `polycor::hetcor`. The {factor} variables will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.
 
 ### Report > Rmd
 
