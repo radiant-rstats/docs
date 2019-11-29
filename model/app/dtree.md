@@ -85,14 +85,81 @@ In the `Sign contract` example it is clear that `Sign with Movie Company` is the
 
 <p align="center"><img src="figures_model/dtree_sensitivity.png"></p>
 
-## Tutorials
+## Video Tutorials
 
-Tutorial videos are available on Youtube:
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the decision tree module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:
 
-* <a href = "https://www.youtube.com/watch?v=Wk5Mhd738_k" target = "_blank">Including multiple decision trees in a report</a>
-* <a href = "https://youtu.be/M1r89QjC89Y" target = "_blank">Evaluate sensitivity</a>
+<pre>usethis::use_course("https://www.dropbox.com/sh/bit4p1ffbkb2dgh/AACm1RVy2BxBDiVbjoLiN5_Ea?dl=1")</pre>
 
-The state file for the sensitivity analysis example is available <a href = " https://github.com/radiant-rstats/docs/raw/gh-pages/examples/decision-analysis-sensitivity.state.rda" target = "_blank">here</a>
+<a href="https://youtu.be/plSeVJ7c-Iw" target="_blank">Introduction to Decision Analysis (#1)</a>
+
+* This video walks you through the required steps to construct and solve a basic decision tree by hand
+* Topics List:
+    - Chance nodes vs. decision nodes
+    - Folding back the tree (i.e., start from the right-most nodes and work backwards to the left-most nodes)
+
+<a href="https://youtu.be/dBySH3z2Paw" target="_blank">Using Radiant to Construct a Decision Tree (#2)</a>
+
+* This video demonstrates how to construct a basic decision tree in Radiant
+* Topics List:
+    - Rename a tree file
+    - Construct a tree (following the rules for decision tree input)
+    - Interpret the results (initial tree vs final tree)
+    - Save the decision tree input .yaml file
+
+<a href="https://youtu.be/NlvWCU8UhTc" target="_blank">How to Write Decision Tree Results into a Report (#3)</a>
+
+* This video demonstrates how to construct a basic decision tree in Radiant and add the generated R-code to a report
+* Topics List:
+    - Construct a decision tree and define variables in the decision tree
+    - Add multiple trees to a report
+    - Demo some useful keyboard shortcuts
+    - Save the Radiant state file and the report
+
+<a href="https://youtu.be/c_pCCCn6FEw" target="_blank">Sensitivity Analysis of Decision Tree (#4)</a>
+
+* This video shows two ways to conduct sensitivity analysis of a decision tree in Radiant
+* Topics List:
+    - Quick review of writing decision tree results to a report
+    - Method 1: manually update the value
+    - Method 2: use "variables"
+
+<a href="https://youtu.be/oiwv15bbjzs" target="_blank">How to Debug Decision Tree Input (#5)</a>
+
+* This video demonstrates how to debug decision tree input if you get an error message
+* Topics List:
+    - Colon missing
+    - Indent issue
+    - Probabilities don't sum to 1
+    - Value missing
+
+<a href="https://youtu.be/xuv9zgAcvCQ" target="_blank">Decision Trees with Imperfect Information (#6)</a>
+
+* This video shows how to determine the appropriate (conditional) probabilities to use in a decision tree when the available information is imperfect
+* Topics List:
+    - Imperfect information
+    - Test
+    - Conditional probabilities
+
+<a href="https://youtu.be/cVrYFFX3xN0" target="_blank">Solving a Decision Tree with Imperfect Information (#7)</a>
+
+* This video shows how to use Radiant to construct and solve a decision tree when the available information is imperfect
+* Topics List:
+    - Specify variables
+    - Build a tree with imperfect information
+    - Check the tree
+    - Interpret the decision tree result
+
+<a href="https://youtu.be/Mi-eZEoU9TE" target="_blank">Building a Decision Tree with Sub-trees in Radiant (#8)</a>
+
+* This video shows how to build a decision tree with sub-trees in radiant
+* Topics List:
+    - Create a main tree that references a sub-tree
+    - Specify a sub-tree that references the main tree in the variables section
+
+For the full "Radiant Tutorial Series" see the link below:
+
+<a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw</a>
 
 ## Buttons
 

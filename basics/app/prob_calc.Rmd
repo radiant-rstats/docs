@@ -68,3 +68,39 @@ Key functions from the `stats` package used in the probability calculator:
 * `prob_binom` uses `pbinom`, `qbinom`, and `dbinom`
 * `prob_expo` uses `pexp`, `qexp`, and `dexp`
 * `prob_pois` uses `ppios`, `qpois`, and `dpois`
+
+### Video Tutorials
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the probability calculator module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:
+
+<pre>usethis::use_course("https://www.dropbox.com/sh/zw1yuiw8hvs47uc/AABPo1BncYv_i2eZfHQ7dgwCa?dl=1")</pre>
+
+<a href="https://youtu.be/UPL_8ujAXpww" target="_blank">Describing the Distribution of a Discrete Random
+	Variable (#1)</a>
+
+* This video shows how to summarize information about a discrete random variable using the probability calculator in Radiant
+* Topics List:
+    - Calculate the mean and variance for a discrete random variable by hand
+    - Calculate the mean, variance, and select probabilities for a discrete random variable in Radiant
+
+<a href="https://youtu.be/30YsxCTbDTc" target="_blank">Describing Normal and Binomial Distributions in Radiant(#2)</a>
+
+* This video shows how to summarize information about Normal and Binomial distributions using the probability calculator in Radiant
+* Topics List:
+    - Calculate probabilities of a random variable following a Normal distribution in Radiant
+    - Calculate probabilities of a random variable following a Binomial distribution by hand
+    - Calculate probabilities of a random variable following a Binomial distribution in Radiant
+
+<a href="https://youtu.be/LbwUpEwTJ_Q" target="_blank">Describing Uniform and Binomial Distributions in Radiant(#3)</a>
+
+* This video shows how to summarize information about Uniform and Binomial distributions using the probability calculator in Radiant
+* Topics List:
+    - Calculate probabilities of a random variable following a Uniform distribution in Radiant
+    - Calculate probabilities of a random variable following a Binomial distribution in Radiant
+
+<a href="https://youtu.be/XC2yN5BY8jg" target="_blank">Providing Probability Bounds(#4)</a>
+
+* This video demonstrates how to provide probability bounds in Radiant 
+* Topics List:
+    - Use probabilities as input type
+    - Round up the cutoff value 

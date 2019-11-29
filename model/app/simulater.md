@@ -315,3 +315,46 @@ plot(result, custom = TRUE) %>%
 For an overview of related R-functions used by Radiant to construct and evaluate (repeated) simulation models see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-simulate" target="_blank">_Model > Simulate_</a>.
 
 Key functions from the `stats` package used in the `simulater` tool are `rbinom`, `rlnorm`, `rnorm`, `rpios`, and `runif`
+
+### Video Tutorials
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the simulation module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:
+
+<pre>usethis::use_course("https://www.dropbox.com/sh/72kpk88ty4p1uh5/AABWcfhrycLzCuCvI6FRu0zia?dl=1")</pre>
+
+<a href="https://youtu.be/kYaRVbStwwI" target="_blank">Setting Up a Simulation in Radiant (#1)</a>
+
+* This video demonstrates how to use Radiant to set up a simulation
+* Topics List:
+    - Brief introduction to the Poisson distribution
+    - Specifying a simulation
+    - Interpretation of the simulation summary
+
+<a href="https://youtu.be/fsP4x5-MLsY" target="_blank">Setting Up a Repeated Simulation in Radiant (#2)</a>
+
+* This video shows how to use Radiant to set up a repeated simulation
+* Topics List:
+    - Specifying a repeated simulation
+    - Interpretation of the repeated simulation summary
+
+<a href="https://youtu.be/eMlQhmN7UUA" target="_blank">Using simulation to solve probability questions (#3)</a>
+
+* This video demonstrates how to use simulation to solve probability questions in Radiant 
+* Topics List:
+    - Review of setting up a (repeated) simulation
+    - Interpretation of the simulation summary
+    - Intuition of how repeated simulations work
+
+<a href="https://youtu.be/gxzrVtAefoo" target="_blank">Simulation Formula Tips (#4)</a>
+
+* This video discusses some helpful functions that are commonly used in simulation formulas 
+* Topics List:
+    - Use `ifelse` to specify a simulation formula
+    - Use `pmax` to specify a simulation formula
+
+<a href="https://youtu.be/vCExcD24ACM" target="_blank">Using Grid Search in Simulation (#5)</a>
+
+* This video demonstrates how to use grid search in simulation 
+* Topics List:
+    - Find an optimal value by sorting simulated data or create a plot
+    - Find an optimal value by using the `find_max` function

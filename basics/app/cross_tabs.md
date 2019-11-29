@@ -50,3 +50,18 @@ When one or more expected values are small (e.g., 5 or less) the p.value for the
 For an overview of related R-functions used by Radiant to evaluate associations between categorical variables see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank">_Basics > Tables_</a>
 
 The key function from the `stats` package used in the `cross_tabs` tool is `chisq.test`.
+
+### Video Tutorials
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the hypothesis testing module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:
+
+<pre>usethis::use_course("https://www.dropbox.com/sh/0xvhyolgcvox685/AADSppNSIocrJS-BqZXhD1Kna?dl=1")</pre>
+
+<a href="https://youtu.be/MEt8vO5FNYQ" target="_blank">Cross-tabs Hypothesis Test</a>
+
+* This video demonstrates how to investigate associations between two categorical variables by a cross-tabs hypothesis test
+* Topics List:
+    - Setup a hypothesis test for cross-tabs in Radiant
+    - Explain how observed, expected and contribution to chi-squared tables are constructed
+    - Use the p.value and critical value to evaluate the hypothesis test
+

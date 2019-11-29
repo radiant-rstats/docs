@@ -104,3 +104,17 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 For an overview of related R-functions used by Radiant to evaluate means see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-means" target="_blank">_Basics > Means_</a>
 
 The key function from the `stats` package used in the `compare_means` tool is `t.test`.
+
+### Video Tutorials
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the hypothesis testing module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:
+
+<pre>usethis::use_course("https://www.dropbox.com/sh/0xvhyolgcvox685/AADSppNSIocrJS-BqZXhD1Kna?dl=1")</pre>
+
+<a href="https://youtu.be/cTWk0JADnVg" target="_blank">Compare Means Hypothesis Test</a>
+
+* This video shows how to conduct a compare means hypothesis test
+* Topics List:
+     - Calculate summary statistics by groups
+     - Setup a hypothesis test for compare means in Radiant
+     - Use the p.value and confidence interval to evaluate the hypothesis test

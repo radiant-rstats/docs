@@ -72,3 +72,16 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 For an overview of related R-functions used by Radiant to evaluate proportions see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-proportions" target="_blank">_Basics > Proportions_</a>.
 
 The key functions from the `stats` package used in the `single_prop` tool are `binom.test` and `prop.test`.
+
+### Video Tutorials
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the hypothesis testing module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:
+
+<pre>usethis::use_course("https://www.dropbox.com/sh/0xvhyolgcvox685/AADSppNSIocrJS-BqZXhD1Kna?dl=1")</pre>
+
+<a href="https://youtu.be/tTYvBUCaR3w" target="_blank">Single Proportion Hypothesis Test</a>
+
+* This video shows how to test a hypothesis about a single sample proportion versus a population proportion
+* Topics List:
+    - Setup a hypothesis test for a single proportion in Radiant
+    - Use the p.value, confidence interval, or critical value to evaluate the hypothesis test

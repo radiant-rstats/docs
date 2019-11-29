@@ -104,3 +104,17 @@ If a plot was created it can be customized using `ggplot2` commands (e.g., `plot
 For an overview of related R-functions used by Radiant to evaluate proportions see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-proportions" target="_blank">_Basics > Proportions_</a>.
 
 The key function from the `stats` package used in the `compare_props` tool is `prop.test`.
+
+### Video Tutorials
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the hypothesis testing module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:
+
+<pre>usethis::use_course("https://www.dropbox.com/sh/0xvhyolgcvox685/AADSppNSIocrJS-BqZXhD1Kna?dl=1")</pre>
+
+<a href="https://youtu.be/ICqSRs4UfLM" target="_blank">Compare Proportions Hypothesis Test</a>
+
+* This video shows how to conduct a compare proportions hypothesis test
+* Topics List:
+    - Setup a hypothesis test for compare means in Radiant
+    - Use the p.value and confidence interval to evaluate the hypothesis test
+
