@@ -32,11 +32,11 @@ Generate Lift, Gains, Profit, and/or ROME charts.
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
-If we create a set of four charts in the _Plots_ tab we can add a title above the group of plots and impose a two-column layout using `gridExtra::grid.arrange` as follows:
+If we create a set of four charts in the _Plots_ tab we can add a title above the group of plots and impose a two-column layout using `patchwork` as follows:
 
 ```r
 plot(result, plots = c("lift", "gains", "profit", "rome"), custom = TRUE) %>%
-	gridExtra::grid.arrange(grobs = ., top = "Model evaluation", ncol = 2)
+  wrap_plots(plot_list, ncol = 2) + plot_annotation(title = "Model evaluation")
 ```
 
 The single plot can be customized using `ggplot2` commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.

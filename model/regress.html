@@ -556,11 +556,11 @@ pre, code, pre code {
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>patchwork</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
 <pre class="r"><code>result &lt;- regress(diamonds, rvar = &quot;price&quot;, evar = c(&quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;))
 summary(result)
 plot(result, plots = &quot;scatter&quot;, custom = TRUE) %&gt;% 
-  gridExtra::grid.arrange(grobs = ., top = &quot;Scatter plots&quot;, ncol = 2)</code></pre>
+  wrap_plots(plot_list, ncol = 2) + plot_annotation(title = &quot;Scatter plots&quot;)</code></pre>
 </div>
 <div id="video-tutorials" class="section level3">
 <h3>Video Tutorials</h3>

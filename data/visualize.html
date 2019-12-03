@@ -452,7 +452,7 @@ pre, code, pre code {
 </ul>
 <p>For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.</p>
 <p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org" target="_blank">http://docs.ggplot2.org</a>.</p>
-<p>Suppose we create a set of three bar charts in <em>Data &gt; Visualize</em> using the <code>Diamond</code> data. To add a title above the group of plots and impose a one-column layout we could use <code>gridExtra::grid.arrange</code> as follows:</p>
+<p>Suppose we create a set of three bar charts in <em>Data &gt; Visualize</em> using the <code>Diamond</code> data. To add a title above the group of plots and impose a one-column layout we could use <code>patchwork</code> as follows:</p>
 <pre class="r"><code>plot_list &lt;- visualize(
   diamonds, 
   xvar = c(&quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), 
@@ -460,8 +460,8 @@ pre, code, pre code {
   type = &quot;bar&quot;, 
   custom = TRUE
 ) 
-gridExtra::grid.arrange(grobs = plot_list, top = &quot;Three bar plots&quot;, ncol = 1)</code></pre>
-<p>See the <a href="https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html">gridExtra vignette</a> for additional information on how to customize groups of plots.</p>
+wrap_plots(plot_list, ncol = 1) + plot_annotation(title = &quot;Three bar plots&quot;)</code></pre>
+<p>See the <a href="https://patchwork.data-imaginist.com">patchwork documentation site</a> for additional information on how to customize groups of plots.</p>
 </div>
 <div id="making-plots-interactive-in-report-rmd" class="section level3">
 <h3>Making plots interactive in <em>Report &gt; Rmd</em></h3>

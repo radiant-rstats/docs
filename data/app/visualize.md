@@ -95,7 +95,7 @@ For more on how to customize plots for communication see <a href="http://r4ds.ha
 
 See also the ggplot2 documentation site <a href="http://docs.ggplot2.org" target="_blank">http://docs.ggplot2.org</a>.
 
-Suppose we create a set of three bar charts in _Data > Visualize_ using the `Diamond` data. To add a title above the group of plots and impose a one-column layout we could use `gridExtra::grid.arrange` as follows:
+Suppose we create a set of three bar charts in _Data > Visualize_ using the `Diamond` data. To add a title above the group of plots and impose a one-column layout we could use `patchwork` as follows:
 
 ```r
 plot_list <- visualize(
@@ -105,10 +105,10 @@ plot_list <- visualize(
   type = "bar", 
   custom = TRUE
 ) 
-gridExtra::grid.arrange(grobs = plot_list, top = "Three bar plots", ncol = 1)
+wrap_plots(plot_list, ncol = 1) + plot_annotation(title = "Three bar plots")
 ```
 
-See the <a href="https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html">gridExtra vignette</a> for additional information on how to customize groups of plots.
+See the <a href="https://patchwork.data-imaginist.com">patchwork documentation site</a> for additional information on how to customize groups of plots.
 
 ### Making plots interactive in _Report > Rmd_
 
