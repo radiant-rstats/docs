@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -192,6 +191,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -398,6 +398,9 @@ Alt. hyp. : the mean of price is not equal to 0
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="programming_files/figure-html/unnamed-chunk-1-1.png" width="1008" /></p>
+<pre><code>TableGrob (1 x 1) &quot;arrange&quot;: 1 grobs
+  z     cells    name           grob
+1 1 (1-1,1-1) arrange gtable[layout]</code></pre>
 <p>You can also call functions for visualization (see below) and access help from the console using <code>?visualize</code></p>
 <pre class="r"><code>visualize(
   diamonds, 
@@ -439,6 +442,10 @@ Alt. hyp. : the mean of mpg is &gt; 20
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result, plots = c(&quot;hist&quot;, &quot;simulate&quot;))</code></pre>
 <p><img src="programming_files/figure-html/single_mean_mpg-1.png" width="720" /></p>
+<pre><code>TableGrob (2 x 1) &quot;arrange&quot;: 2 grobs
+  z     cells    name           grob
+1 1 (1-1,1-1) arrange gtable[layout]
+2 2 (2-2,1-1) arrange gtable[layout]</code></pre>
 <p>To compare the mean price of diamonds across different levels of clarity we can call the <code>compare_means</code> function:</p>
 <pre class="r"><code>result &lt;- compare_means(
   diamonds, 
@@ -497,6 +504,10 @@ Adjustment: Bonferroni
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result, plots = c(&quot;bar&quot;, &quot;density&quot;))</code></pre>
 <p><img src="programming_files/figure-html/compare_means_diamonds-1.png" width="576" /></p>
+<pre><code>TableGrob (2 x 1) &quot;arrange&quot;: 2 grobs
+  z     cells    name           grob
+1 1 (1-1,1-1) arrange gtable[layout]
+2 2 (2-2,1-1) arrange gtable[layout]</code></pre>
 <p>To get help for the <code>single_mean</code> and <code>compare_means</code> functions use <code>?single_mean</code> and <code>?compare_means</code>. These help files also have links to information about the <code>summary</code> and <code>plot</code> methods for each class. See also <code>?summary.single_mean</code> and <code>?plot.compare_means</code></p>
 <p>These datasets are available after loading the radiant library by using the <code>data</code> function. We can also load data through Radiant’s browser interface and then access the data from the console after closing the app. Start radiant using the command below and then click select <code>Examples</code> from the <code>Load data of type</code> dropdown in the <em>Data &gt; Manage</em> tab. Then close the app by clicking the <i title='Power off' class='fa fa-power-off'></i> icon in the navbar and then clicking <code>Stop</code>. The datasets loaded through the web-interface are now available in the <code>r_data</code> environment as well. To use them directly in your code use <code>attach(r_data)</code>.</p>
 <pre class="r"><code>## start radiant in Rstudio, load the example data, then click the power icon and Stop
@@ -524,6 +535,9 @@ Adjustment: None
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="programming_files/figure-html/compare_means_salary-1.png" width="576" /></p>
+<pre><code>TableGrob (1 x 1) &quot;arrange&quot;: 1 grobs
+  z     cells    name           grob
+1 1 (1-1,1-1) arrange gtable[layout]</code></pre>
 <p>An alternative way to write this code is to use <code>piping</code> (see <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">dplyr</a> and <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a> vignettes):</p>
 <pre class="r"><code>salary %&gt;% 
   compare_means(&quot;rank&quot;, &quot;salary&quot;) %&gt;% 
@@ -547,6 +561,9 @@ Adjustment: None
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p><img src="programming_files/figure-html/compare_means_salary_piped-1.png" width="576" /></p>
+<pre><code>TableGrob (1 x 1) &quot;arrange&quot;: 1 grobs
+  z     cells    name           grob
+1 1 (1-1,1-1) arrange gtable[layout]</code></pre>
 <p>We can also run regressions and get output in a format that would require many lines of code to produce from scratch:</p>
 <pre class="r"><code>result &lt;- regress(diamonds, rvar = &quot;price&quot;, evar = c(&quot;carat&quot;, &quot;clarity&quot;))
 summary(result, sum_check = &quot;confint&quot;)</code></pre>
@@ -627,6 +644,10 @@ Observations: 20 </code></pre>
 ## heterogeneity in the step from 3 to 2 segments
 plot(result)</code></pre>
 <p><img src="programming_files/figure-html/hclus-1.png" width="576" /></p>
+<pre><code>TableGrob (2 x 1) &quot;arrange&quot;: 2 grobs
+       z     cells    name           grob
+scree  1 (1-1,1-1) arrange gtable[layout]
+change 2 (2-2,1-1) arrange gtable[layout]</code></pre>
 <pre class="r"><code>## show the dendrogram with cutoff at 0.05
 plot(result, plots = &quot;dendro&quot;, cutoff = 0.05)</code></pre>
 <p><img src="programming_files/figure-html/dendro-1.png" width="576" /></p>
@@ -661,6 +682,20 @@ Between cluster heterogeneity accounts for 73.93% of the
 total heterogeneity in the data (higher is better)</code></pre>
 <pre class="r"><code>plot(result, plots = c(&quot;density&quot;,&quot;bar&quot;))</code></pre>
 <p><img src="programming_files/figure-html/kclus-1.png" width="720" /></p>
+<pre><code>TableGrob (6 x 2) &quot;arrange&quot;: 12 grobs
+         z     cells    name           grob
+dens_v1  1 (1-1,1-1) arrange gtable[layout]
+dens_v2  2 (1-1,2-2) arrange gtable[layout]
+dens_v3  3 (2-2,1-1) arrange gtable[layout]
+dens_v4  4 (2-2,2-2) arrange gtable[layout]
+dens_v5  5 (3-3,1-1) arrange gtable[layout]
+dens_v6  6 (3-3,2-2) arrange gtable[layout]
+bar_v1   7 (4-4,1-1) arrange gtable[layout]
+bar_v2   8 (4-4,2-2) arrange gtable[layout]
+bar_v3   9 (5-5,1-1) arrange gtable[layout]
+bar_v4  10 (5-5,2-2) arrange gtable[layout]
+bar_v5  11 (6-6,1-1) arrange gtable[layout]
+bar_v6  12 (6-6,2-2) arrange gtable[layout]</code></pre>
 <pre class="r"><code>shopping &lt;- store(shopping, result, name = &quot;clus&quot;)
 
 ## was the data really changed?
