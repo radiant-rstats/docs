@@ -309,7 +309,7 @@ If a plot was created it can be customized using `ggplot2` commands or with `pat
 ```r
 plot(result, custom = TRUE) %>%
   wrap_plots(plot_list, ncol = 2) + plot_annotation(title = "Simulation plots")
-``
+```
 
 ### R-functions
 
@@ -359,4 +359,3 @@ Copy-and-paste the full command below into the RStudio console (i.e., the bottom
 * Topics List:
     - Find an optimal value by sorting simulated data or create a plot
     - Find an optimal value by using the `find_max` function
-```

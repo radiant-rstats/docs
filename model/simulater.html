@@ -809,57 +809,64 @@ psum(x,y)
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>patchwork</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">plot</span>(result, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="st">  </span><span class="kw">wrap_plots</span>(plot_list, <span class="dt">ncol =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">plot_annotation</span>(<span class="dt">title =</span> <span class="st">&quot;Simulation plots&quot;</span>)</span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="st">``</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="co">### R-functions</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a></span>
-<span id="cb13-7"><a href="#cb13-7"></a>For an overview of related R<span class="op">-</span>functions used by Radiant to construct and <span class="kw">evaluate</span> (repeated) simulation models see <span class="op">&lt;</span>a href =<span class="st"> &quot;https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-simulate&quot;</span> target=<span class="st">&quot;_blank&quot;</span><span class="op">&gt;</span>_Model <span class="op">&gt;</span><span class="st"> </span>Simulate_<span class="op">&lt;</span><span class="er">/</span>a<span class="op">&gt;</span>.</span>
-<span id="cb13-8"><a href="#cb13-8"></a></span>
-<span id="cb13-9"><a href="#cb13-9"></a>Key functions from the <span class="st">`</span><span class="dt">stats</span><span class="st">`</span> package used <span class="cf">in</span> the <span class="st">`</span><span class="dt">simulater</span><span class="st">`</span> tool are <span class="st">`</span><span class="dt">rbinom</span><span class="st">`</span>, <span class="st">`</span><span class="dt">rlnorm</span><span class="st">`</span>, <span class="st">`</span><span class="dt">rnorm</span><span class="st">`</span>, <span class="st">`</span><span class="dt">rpios</span><span class="st">`</span>, and <span class="st">`</span><span class="dt">runif</span><span class="st">`</span></span>
-<span id="cb13-10"><a href="#cb13-10"></a></span>
-<span id="cb13-11"><a href="#cb13-11"></a><span class="co">### Video Tutorials</span></span>
-<span id="cb13-12"><a href="#cb13-12"></a></span>
-<span id="cb13-13"><a href="#cb13-13"></a>Copy<span class="op">-</span>and<span class="op">-</span>paste the full command below into the RStudio <span class="kw">console</span> (i.e., the bottom<span class="op">-</span>left window) and press return to gain access to all materials used <span class="cf">in</span> the simulation module of the <span class="op">&lt;</span>a href=<span class="st">&quot;https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw&quot;</span> target=<span class="st">&quot;_blank&quot;</span><span class="op">&gt;</span>Radiant Tutorial Series<span class="op">&lt;</span><span class="er">/</span>a<span class="op">&gt;</span><span class="er">:</span></span>
-<span id="cb13-14"><a href="#cb13-14"></a></span>
-<span id="cb13-15"><a href="#cb13-15"></a><span class="er">&lt;</span>pre<span class="op">&gt;</span>usethis<span class="op">::</span><span class="kw">use_course</span>(<span class="st">&quot;https://www.dropbox.com/sh/72kpk88ty4p1uh5/AABWcfhrycLzCuCvI6FRu0zia?dl=1&quot;</span>)<span class="op">&lt;</span><span class="er">/</span>pre<span class="op">&gt;</span></span>
-<span id="cb13-16"><a href="#cb13-16"></a></span>
-<span id="cb13-17"><a href="#cb13-17"></a><span class="er">&lt;</span>a href=<span class="st">&quot;https://youtu.be/kYaRVbStwwI&quot;</span> target=<span class="st">&quot;_blank&quot;</span><span class="op">&gt;</span>Setting Up a Simulation <span class="cf">in</span> <span class="kw">Radiant</span> (<span class="co">#1)&lt;/a&gt;</span></span>
-<span id="cb13-18"><a href="#cb13-18"></a></span>
-<span id="cb13-19"><a href="#cb13-19"></a><span class="op">*</span><span class="st"> </span>This video demonstrates how to use Radiant to set up a simulation</span>
-<span id="cb13-20"><a href="#cb13-20"></a><span class="op">*</span><span class="st"> </span>Topics List<span class="op">:</span></span>
-<span id="cb13-21"><a href="#cb13-21"></a><span class="st">    </span><span class="op">-</span><span class="st"> </span>Brief introduction to the Poisson distribution</span>
-<span id="cb13-22"><a href="#cb13-22"></a>    <span class="op">-</span><span class="st"> </span>Specifying a simulation</span>
-<span id="cb13-23"><a href="#cb13-23"></a>    <span class="op">-</span><span class="st"> </span>Interpretation of the simulation summary</span>
-<span id="cb13-24"><a href="#cb13-24"></a></span>
-<span id="cb13-25"><a href="#cb13-25"></a><span class="op">&lt;</span>a <span class="dt">href=</span><span class="st">&quot;https://youtu.be/fsP4x5-MLsY&quot;</span> <span class="dt">target=</span><span class="st">&quot;_blank&quot;</span><span class="op">&gt;</span>Setting Up a Repeated Simulation <span class="cf">in</span> <span class="kw">Radiant</span> (<span class="co">#2)&lt;/a&gt;</span></span>
-<span id="cb13-26"><a href="#cb13-26"></a></span>
-<span id="cb13-27"><a href="#cb13-27"></a><span class="op">*</span><span class="st"> </span>This video shows how to use Radiant to set up a repeated simulation</span>
-<span id="cb13-28"><a href="#cb13-28"></a><span class="op">*</span><span class="st"> </span>Topics List<span class="op">:</span></span>
-<span id="cb13-29"><a href="#cb13-29"></a><span class="st">    </span><span class="op">-</span><span class="st"> </span>Specifying a repeated simulation</span>
-<span id="cb13-30"><a href="#cb13-30"></a>    <span class="op">-</span><span class="st"> </span>Interpretation of the repeated simulation summary</span>
-<span id="cb13-31"><a href="#cb13-31"></a></span>
-<span id="cb13-32"><a href="#cb13-32"></a><span class="op">&lt;</span>a <span class="dt">href=</span><span class="st">&quot;https://youtu.be/eMlQhmN7UUA&quot;</span> <span class="dt">target=</span><span class="st">&quot;_blank&quot;</span><span class="op">&gt;</span>Using simulation to solve probability <span class="kw">questions</span> (<span class="co">#3)&lt;/a&gt;</span></span>
-<span id="cb13-33"><a href="#cb13-33"></a></span>
-<span id="cb13-34"><a href="#cb13-34"></a><span class="op">*</span><span class="st"> </span>This video demonstrates how to use simulation to solve probability questions <span class="cf">in</span> Radiant </span>
-<span id="cb13-35"><a href="#cb13-35"></a><span class="op">*</span><span class="st"> </span>Topics List<span class="op">:</span></span>
-<span id="cb13-36"><a href="#cb13-36"></a><span class="st">    </span><span class="op">-</span><span class="st"> </span>Review of setting up <span class="kw">a</span> (repeated) simulation</span>
-<span id="cb13-37"><a href="#cb13-37"></a>    <span class="op">-</span><span class="st"> </span>Interpretation of the simulation summary</span>
-<span id="cb13-38"><a href="#cb13-38"></a>    <span class="op">-</span><span class="st"> </span>Intuition of how repeated simulations work</span>
-<span id="cb13-39"><a href="#cb13-39"></a></span>
-<span id="cb13-40"><a href="#cb13-40"></a><span class="op">&lt;</span>a <span class="dt">href=</span><span class="st">&quot;https://youtu.be/gxzrVtAefoo&quot;</span> <span class="dt">target=</span><span class="st">&quot;_blank&quot;</span><span class="op">&gt;</span>Simulation Formula <span class="kw">Tips</span> (<span class="co">#4)&lt;/a&gt;</span></span>
-<span id="cb13-41"><a href="#cb13-41"></a></span>
-<span id="cb13-42"><a href="#cb13-42"></a><span class="op">*</span><span class="st"> </span>This video discusses some helpful functions that are commonly used <span class="cf">in</span> simulation formulas </span>
-<span id="cb13-43"><a href="#cb13-43"></a><span class="op">*</span><span class="st"> </span>Topics List<span class="op">:</span></span>
-<span id="cb13-44"><a href="#cb13-44"></a><span class="st">    </span><span class="op">-</span><span class="st"> </span>Use <span class="st">`</span><span class="dt">ifelse</span><span class="st">`</span> to specify a simulation formula</span>
-<span id="cb13-45"><a href="#cb13-45"></a>    <span class="op">-</span><span class="st"> </span>Use <span class="st">`</span><span class="dt">pmax</span><span class="st">`</span> to specify a simulation formula</span>
-<span id="cb13-46"><a href="#cb13-46"></a></span>
-<span id="cb13-47"><a href="#cb13-47"></a><span class="op">&lt;</span>a <span class="dt">href=</span><span class="st">&quot;https://youtu.be/vCExcD24ACM&quot;</span> <span class="dt">target=</span><span class="st">&quot;_blank&quot;</span><span class="op">&gt;</span>Using Grid Search <span class="cf">in</span> <span class="kw">Simulation</span> (<span class="co">#5)&lt;/a&gt;</span></span>
-<span id="cb13-48"><a href="#cb13-48"></a></span>
-<span id="cb13-49"><a href="#cb13-49"></a><span class="op">*</span><span class="st"> </span>This video demonstrates how to use grid search <span class="cf">in</span> simulation </span>
-<span id="cb13-50"><a href="#cb13-50"></a><span class="op">*</span><span class="st"> </span>Topics List<span class="op">:</span></span>
-<span id="cb13-51"><a href="#cb13-51"></a><span class="st">    </span><span class="op">-</span><span class="st"> </span>Find an optimal value by sorting simulated data or create a plot</span>
-<span id="cb13-52"><a href="#cb13-52"></a>    <span class="op">-</span><span class="st"> </span>Find an optimal value by using the <span class="st">`</span><span class="dt">find_max</span><span class="st">`</span> <span class="cf">function</span></span></code></pre></div>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="st">  </span><span class="kw">wrap_plots</span>(plot_list, <span class="dt">ncol =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">plot_annotation</span>(<span class="dt">title =</span> <span class="st">&quot;Simulation plots&quot;</span>)</span></code></pre></div>
+</div>
+<div id="r-functions" class="section level3">
+<h3>R-functions</h3>
+<p>For an overview of related R-functions used by Radiant to construct and evaluate (repeated) simulation models see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-simulate" target="_blank"><em>Model &gt; Simulate</em></a>.</p>
+<p>Key functions from the <code>stats</code> package used in the <code>simulater</code> tool are <code>rbinom</code>, <code>rlnorm</code>, <code>rnorm</code>, <code>rpios</code>, and <code>runif</code></p>
+</div>
+<div id="video-tutorials" class="section level3">
+<h3>Video Tutorials</h3>
+<p>Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the simulation module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:</p>
+<pre>usethis::use_course("https://www.dropbox.com/sh/72kpk88ty4p1uh5/AABWcfhrycLzCuCvI6FRu0zia?dl=1")</pre>
+<p><a href="https://youtu.be/kYaRVbStwwI" target="_blank">Setting Up a Simulation in Radiant (#1)</a></p>
+<ul>
+<li>This video demonstrates how to use Radiant to set up a simulation</li>
+<li>Topics List:
+<ul>
+<li>Brief introduction to the Poisson distribution</li>
+<li>Specifying a simulation</li>
+<li>Interpretation of the simulation summary</li>
+</ul></li>
+</ul>
+<p><a href="https://youtu.be/fsP4x5-MLsY" target="_blank">Setting Up a Repeated Simulation in Radiant (#2)</a></p>
+<ul>
+<li>This video shows how to use Radiant to set up a repeated simulation</li>
+<li>Topics List:
+<ul>
+<li>Specifying a repeated simulation</li>
+<li>Interpretation of the repeated simulation summary</li>
+</ul></li>
+</ul>
+<p><a href="https://youtu.be/eMlQhmN7UUA" target="_blank">Using simulation to solve probability questions (#3)</a></p>
+<ul>
+<li>This video demonstrates how to use simulation to solve probability questions in Radiant</li>
+<li>Topics List:
+<ul>
+<li>Review of setting up a (repeated) simulation</li>
+<li>Interpretation of the simulation summary</li>
+<li>Intuition of how repeated simulations work</li>
+</ul></li>
+</ul>
+<p><a href="https://youtu.be/gxzrVtAefoo" target="_blank">Simulation Formula Tips (#4)</a></p>
+<ul>
+<li>This video discusses some helpful functions that are commonly used in simulation formulas</li>
+<li>Topics List:
+<ul>
+<li>Use <code>ifelse</code> to specify a simulation formula</li>
+<li>Use <code>pmax</code> to specify a simulation formula</li>
+</ul></li>
+</ul>
+<p><a href="https://youtu.be/vCExcD24ACM" target="_blank">Using Grid Search in Simulation (#5)</a></p>
+<ul>
+<li>This video demonstrates how to use grid search in simulation</li>
+<li>Topics List:
+<ul>
+<li>Find an optimal value by sorting simulated data or create a plot</li>
+<li>Find an optimal value by using the <code>find_max</code> function</li>
+</ul></li>
+</ul>
 </div>
 </div>
 

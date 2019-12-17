@@ -236,7 +236,7 @@ If a plot was created it can be customized using `ggplot2` commands or with `pat
 ```{r echo=TRUE, eval=FALSE}
 plot(result, custom = TRUE) %>%
   wrap_plots(plot_list, ncol = 2) + plot_annotation(title = "Simulation plots")
-``
+```
 
 ### R-functions
 
