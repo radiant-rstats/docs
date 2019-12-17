@@ -14,14 +14,13 @@
 <title>Radiant – Business analytics using R and Shiny</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
 
@@ -70,21 +69,6 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -344,16 +328,25 @@ summary {
 </div><!--/.navbar -->
 
 <style>
+.btn, .form-control, pre, code, pre code {
+  border-radius: 4px;
+}
 .table {
   width: auto;
 }
 ul, ol {
   padding-left: 18px;
 }
-pre, code, pre code {
+code, pre, pre code {
   overflow: auto;
   white-space: pre;
   word-wrap: normal;
+}
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+}
+pre {
   background-color: #ffffff;
 }
 </style>
@@ -446,7 +439,7 @@ A BibTeX entry for LaTeX users is
 To cite the &#39;tinytex&#39; package in publications use:
 
   Yihui Xie (2019). tinytex: Helper Functions to Install and Maintain
-  &#39;TeX Live&#39;, and Compile &#39;LaTeX&#39; Documents. R package version 0.17.
+  &#39;TeX Live&#39;, and Compile &#39;LaTeX&#39; Documents. R package version 0.18.
 
   Yihui Xie (2019) TinyTeX: A lightweight, cross-platform, and
   easy-to-maintain LaTeX distribution based on TeX Live. TUGboat 40
@@ -898,7 +891,7 @@ To cite the &#39;rmarkdown&#39; package in publications, please use:
   JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi
   and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and
   Winston Chang and Richard Iannone (2019). rmarkdown: Dynamic
-  Documents for R. R package version 1.18. URL
+  Documents for R. R package version 2.0. URL
   https://rmarkdown.rstudio.com.
 
   Yihui Xie and J.J. Allaire and Garrett Grolemund (2018). R Markdown:
@@ -1671,7 +1664,7 @@ Model Fitting},
 
 
 Pinheiro J, Bates D, DebRoy S, Sarkar D, R Core Team (2019). _nlme:
-Linear and Nonlinear Mixed Effects Models_. R package version 3.1-142,
+Linear and Nonlinear Mixed Effects Models_. R package version 3.1-143,
 &lt;URL: https://CRAN.R-project.org/package=nlme&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1680,7 +1673,7 @@ A BibTeX entry for LaTeX users is
     title = {{nlme}: Linear and Nonlinear Mixed Effects Models},
     author = {Jose Pinheiro and Douglas Bates and Saikat DebRoy and Deepayan Sarkar and {R Core Team}},
     year = {2019},
-    note = {R package version 3.1-142},
+    note = {R package version 3.1-143},
     url = {https://CRAN.R-project.org/package=nlme},
   }
 
@@ -2008,7 +2001,7 @@ To cite package &#39;visNetwork&#39; in publications use:
 
   Almende B.V., Benoit Thieurmel and Titouan Robert (2019). visNetwork:
   Network Visualization using &#39;vis.js&#39; Library. R package version
-  2.0.8. https://CRAN.R-project.org/package=visNetwork
+  2.0.9. https://CRAN.R-project.org/package=visNetwork
 
 A BibTeX entry for LaTeX users is
 
@@ -2016,7 +2009,7 @@ A BibTeX entry for LaTeX users is
     title = {visNetwork: Network Visualization using &#39;vis.js&#39; Library},
     author = {{Almende B.V.} and Benoit Thieurmel and Titouan Robert},
     year = {2019},
-    note = {R package version 2.0.8},
+    note = {R package version 2.0.9},
     url = {https://CRAN.R-project.org/package=visNetwork},
   }
 
@@ -2385,7 +2378,7 @@ package DESCRIPTION file and may need manual editing, see
 To cite package &#39;data.table&#39; in publications use:
 
   Matt Dowle and Arun Srinivasan (2019). data.table: Extension of
-  `data.frame`. R package version 1.12.6.
+  `data.frame`. R package version 1.12.8.
   https://CRAN.R-project.org/package=data.table
 
 A BibTeX entry for LaTeX users is
@@ -2394,7 +2387,7 @@ A BibTeX entry for LaTeX users is
     title = {data.table: Extension of `data.frame`},
     author = {Matt Dowle and Arun Srinivasan},
     year = {2019},
-    note = {R package version 1.12.6},
+    note = {R package version 1.12.8},
     url = {https://CRAN.R-project.org/package=data.table},
   }
 
@@ -3006,7 +2999,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;openxlsx&#39; in publications use:
 
   Philipp Schauberger and Alexander Walker (2019). openxlsx: Read,
-  Write and Edit xlsx Files. R package version 4.1.3.
+  Write and Edit xlsx Files. R package version 4.1.4.
   https://CRAN.R-project.org/package=openxlsx
 
 A BibTeX entry for LaTeX users is
@@ -3015,7 +3008,7 @@ A BibTeX entry for LaTeX users is
     title = {openxlsx: Read, Write and Edit xlsx Files},
     author = {Philipp Schauberger and Alexander Walker},
     year = {2019},
-    note = {R package version 4.1.3},
+    note = {R package version 4.1.4},
     url = {https://CRAN.R-project.org/package=openxlsx},
   }
 

@@ -14,14 +14,13 @@
 <title>Data &gt; View</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
 
@@ -70,21 +69,6 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -344,16 +328,25 @@ summary {
 </div><!--/.navbar -->
 
 <style>
+.btn, .form-control, pre, code, pre code {
+  border-radius: 4px;
+}
 .table {
   width: auto;
 }
 ul, ol {
   padding-left: 18px;
 }
-pre, code, pre code {
+code, pre, pre code {
   overflow: auto;
   white-space: pre;
   word-wrap: normal;
+}
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+}
+pre {
   background-color: #ffffff;
 }
 </style>
@@ -378,8 +371,8 @@ pre, code, pre code {
 <div id="filter-data" class="section level3">
 <h3>Filter data</h3>
 <p>There are several ways to select a subset of the data to view. The <code>Filter data</code> box on the left (click the check-box) can be used with <code>&gt;</code> and <code>&lt;</code> symbols. You can also combine subset commands, for example, <code>x &gt; 3 &amp; y == 2</code> would show only those rows for which the variable <code>x</code> has values larger than 3 <strong>AND</strong> for which <code>y</code> is equal to 2. Note that in R, and most other programming languages, <code>=</code> is used to <em>assign</em> a value and <code>==</code> to determine if values are equal to each other. In contrast, <code>!=</code> is used to determine if two values are <em>unequal</em>. You can also use expressions that have an <strong>OR</strong> condition. For example, to select rows where <code>Salary</code> is smaller than $100,000 <strong>OR</strong> larger than $20,000 use <code>Salary &gt; 20000 | Salary &lt; 100000</code>. <code>|</code> is the symbol for <strong>OR</strong> and <code>&amp;</code> is the symbol for <strong>AND</strong></p>
-<p>It is also possible to filter using dates. For example, to select rows with dates before June 1st, 2014 enter <code>date &lt; &quot;2014-6-1&quot;</code> into the filter box and press return.</p>
-<p>You can also use string matching to select rows. For example, type <code>grepl('ood', cut)</code> to select rows with <code>Good</code> or <code>Very good</code> cut. This search is case sensitive by default. For case insensitive search use <code>grepl(&quot;GOOD&quot;, cut, ignore.case = TRUE)</code>. Type your statement in the <code>Filter</code> box and press return to see the result on screen or an error below the box if the expression is invalid.</p>
+<p>It is also possible to filter using dates. For example, to select rows with dates before June 1st, 2014 enter <code>date &lt; "2014-6-1"</code> into the filter box and press return.</p>
+<p>You can also use string matching to select rows. For example, type <code>grepl('ood', cut)</code> to select rows with <code>Good</code> or <code>Very good</code> cut. This search is case sensitive by default. For case insensitive search use <code>grepl("GOOD", cut, ignore.case = TRUE)</code>. Type your statement in the <code>Filter</code> box and press return to see the result on screen or an error below the box if the expression is invalid.</p>
 <p>It is important to note that these filters are <em>persistent</em> and will be applied to any analysis conducted through in Radiant. To deactivate a filter un-check the <code>Filter data</code> check-box. To remove a filter simply delete it.</p>
 <table class='table table-condensed table-hover' style='width:60%;'>
 <thead>

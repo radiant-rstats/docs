@@ -14,14 +14,13 @@
 <title>Data &gt; Visualize</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
 
@@ -70,22 +69,98 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
+
 <style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
   }
 </style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
 
 
 <style type="text/css">
@@ -344,16 +419,25 @@ summary {
 </div><!--/.navbar -->
 
 <style>
+.btn, .form-control, pre, code, pre code {
+  border-radius: 4px;
+}
 .table {
   width: auto;
 }
 ul, ol {
   padding-left: 18px;
 }
-pre, code, pre code {
+code, pre, pre code {
   overflow: auto;
   white-space: pre;
   word-wrap: normal;
+}
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+}
+pre {
   background-color: #ffffff;
 }
 </style>
@@ -421,58 +505,58 @@ pre, code, pre code {
 <div id="customizing-plots-in-report-rmd" class="section level3">
 <h3>Customizing plots in <em>Report &gt; Rmd</em></h3>
 <p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard. The example below illustrates how to customize a command in the <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
-<pre class="r"><code>visualize(diamonds, yvar = &quot;price&quot;, xvar = &quot;carat&quot;, type = &quot;scatter&quot;, custom = TRUE) +
-  labs(
-    title = &quot;A scatterplot&quot;, 
-    y = &quot;Price in $&quot;,
-    x = &quot;Carats&quot;
-  )</code></pre>
-<p>The default resolution for plots is 144 dots per inch (dpi). You can change this setting up or down in <em>Report &gt; Rmd</em>. For example, the code-chunk header below ensures the plot will be 7&quot; wide, 3.5&quot; tall, with a resolution of 600 dpi.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">visualize</span>(diamonds, <span class="dt">yvar =</span> <span class="st">&quot;price&quot;</span>, <span class="dt">xvar =</span> <span class="st">&quot;carat&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;scatter&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">labs</span>(</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dt">title =</span> <span class="st">&quot;A scatterplot&quot;</span>, </span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="dt">y =</span> <span class="st">&quot;Price in $&quot;</span>,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="dt">x =</span> <span class="st">&quot;Carats&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  )</span></code></pre></div>
+<p>The default resolution for plots is 144 dots per inch (dpi). You can change this setting up or down in <em>Report &gt; Rmd</em>. For example, the code-chunk header below ensures the plot will be 7" wide, 3.5" tall, with a resolution of 600 dpi.</p>
 <p><code>```{r fig.width = 7, fig.height = 3.5, dpi = 600}</code></p>
 <p>If you have the <code>svglite</code> package installed, the code-chunk header below will produce graphs in high quality <code>svg</code> format.</p>
-<p><code>```{r fig.width = 7, fig.height = 3.5, dev = &quot;svglite&quot;}</code></p>
+<p><code>```{r fig.width = 7, fig.height = 3.5, dev = "svglite"}</code></p>
 <p><strong>Some common customization commands:</strong></p>
 <ul>
-<li>Add a title: <code>+ labs(title = &quot;my title&quot;)</code></li>
-<li>Add a sub-title: <code>+ labs(subtitle = &quot;my sub-title&quot;)</code></li>
-<li>Add a caption below figure: <code>+ labs(caption = &quot;Based on data from ...&quot;)</code></li>
-<li>Change label: <code>+ labs(x = &quot;my X-axis label&quot;)</code> or <code>+ labs(y = &quot;my Y-axis label&quot;)</code></li>
-<li>Remove all legends: <code>+ theme(legend.position = &quot;none&quot;)</code></li>
-<li>Change legend title: <code>+ labs(color = &quot;New legend title&quot;)</code> or <code>+ labs(fill = &quot;New legend title&quot;)</code></li>
-<li>Rotate tick labels: <code>+ theme(axis.text.x = element_text(angle = 90, hjust = 1))</code></li>
-<li>Set plot limits: <code>+ ylim(5000, 8000)</code> or <code>+ xlim(&quot;VS1&quot;,&quot;VS2&quot;)</code></li>
-<li>Remove size legend: <code>+ scale_size(guide = &quot;none&quot;)</code></li>
-<li>Change size range: <code>+ scale_size(range=c(1,6))</code></li>
-<li>Draw a horizontal line: <code>+ geom_hline(yintercept = 0.1)</code></li>
-<li>Draw a vertical line: <code>+ geom_vline(xintercept = 8)</code></li>
-<li>Scale the y-axis as a percentage: <code>+ scale_y_continuous(labels = scales::percent)</code></li>
-<li>Scale the y-axis in millions: <code>+ scale_y_continuous(labels = scales::unit_format(unit = &quot;M&quot;, scale = 1e-6))</code></li>
-<li>Display y-axis in $’s: <code>+ scale_y_continuous(labels = scales::dollar_format())</code></li>
-<li>Use <code>,</code> as a thousand separator for the y-axis: <code>+ scale_y_continuous(labels = scales::comma)</code></li>
+<li>Add a title: `+ labs(title = “my title”)`</li>
+<li>Add a sub-title: `+ labs(subtitle = “my sub-title”)`</li>
+<li>Add a caption below figure: `+ labs(caption = “Based on data from …”)`</li>
+<li>Change label: `+ labs(x = “my X-axis label”)<code>or</code>+ labs(y = “my Y-axis label”)`</li>
+<li>Remove all legends: `+ theme(legend.position = “none”)`</li>
+<li>Change legend title: `+ labs(color = “New legend title”)<code>or</code>+ labs(fill = “New legend title”)`</li>
+<li>Rotate tick labels: `+ theme(axis.text.x = element_text(angle = 90, hjust = 1))`</li>
+<li>Set plot limits: `+ ylim(5000, 8000)<code>or</code>+ xlim(“VS1”,“VS2”)`</li>
+<li>Remove size legend: `+ scale_size(guide = “none”)`</li>
+<li>Change size range: `+ scale_size(range=c(1,6))`</li>
+<li>Draw a horizontal line: `+ geom_hline(yintercept = 0.1)`</li>
+<li>Draw a vertical line: `+ geom_vline(xintercept = 8)`</li>
+<li>Scale the y-axis as a percentage: `+ scale_y_continuous(labels = scales::percent)`</li>
+<li>Scale the y-axis in millions: `+ scale_y_continuous(labels = scales::unit_format(unit = “M”, scale = 1e-6))`</li>
+<li>Display y-axis in $’s: `+ scale_y_continuous(labels = scales::dollar_format())`</li>
+<li>Use <code>,</code> as a thousand separator for the y-axis: `+ scale_y_continuous(labels = scales::comma)`</li>
 </ul>
 <p>For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.</p>
 <p>See also the ggplot2 documentation site <a href="http://docs.ggplot2.org" target="_blank">http://docs.ggplot2.org</a>.</p>
 <p>Suppose we create a set of three bar charts in <em>Data &gt; Visualize</em> using the <code>Diamond</code> data. To add a title above the group of plots and impose a one-column layout we could use <code>patchwork</code> as follows:</p>
-<pre class="r"><code>plot_list &lt;- visualize(
-  diamonds, 
-  xvar = c(&quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), 
-  yvar = &quot;price&quot;, 
-  type = &quot;bar&quot;, 
-  custom = TRUE
-) 
-wrap_plots(plot_list, ncol = 1) + plot_annotation(title = &quot;Three bar plots&quot;)</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>plot_list &lt;-<span class="st"> </span><span class="kw">visualize</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  diamonds, </span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="dt">xvar =</span> <span class="kw">c</span>(<span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="dt">yvar =</span> <span class="st">&quot;price&quot;</span>, </span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="dt">type =</span> <span class="st">&quot;bar&quot;</span>, </span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="dt">custom =</span> <span class="ot">TRUE</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>) </span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">wrap_plots</span>(plot_list, <span class="dt">ncol =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw">plot_annotation</span>(<span class="dt">title =</span> <span class="st">&quot;Three bar plots&quot;</span>)</span></code></pre></div>
 <p>See the <a href="https://patchwork.data-imaginist.com">patchwork documentation site</a> for additional information on how to customize groups of plots.</p>
 </div>
 <div id="making-plots-interactive-in-report-rmd" class="section level3">
 <h3>Making plots interactive in <em>Report &gt; Rmd</em></h3>
 <p>It is possible to transform (most) plots generated in Radiant into interactive graphics using the <code>plotly</code> library. After setting <code>custom = TRUE</code> you can use the <code>ggplotly</code> function to convert a single plot. See example below:</p>
-<pre class="r"><code>visualize(diamonds, xvar = c(&quot;price&quot;, &quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;), custom = TRUE) %&gt;%
-  ggplotly() %&gt;%
-  render()</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">visualize</span>(diamonds, <span class="dt">xvar =</span> <span class="kw">c</span>(<span class="st">&quot;price&quot;</span>, <span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>), <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span><span class="kw">ggplotly</span>() <span class="op">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span><span class="kw">render</span>()</span></code></pre></div>
 <p>If more than one plot is created, you can use the <code>subplot</code> function from the <code>plotly</code> package. Provide a value for the <code>nrows</code> argument to setup the plot layout grid. In the example below four plots are created. Because <code>nrow = 2</code> the plots will be displayed in a 2 X 2 grid.</p>
-<pre class="r"><code>visualize(diamonds, xvar = c(&quot;carat&quot;, &quot;clarity&quot;, &quot;cut&quot;, &quot;color&quot;), custom = TRUE) %&gt;%
-  subplot(nrows = 2) %&gt;%
-  render()</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">visualize</span>(diamonds, <span class="dt">xvar =</span> <span class="kw">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="st">  </span><span class="kw">subplot</span>(<span class="dt">nrows =</span> <span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="st">  </span><span class="kw">render</span>()</span></code></pre></div>
 <p>For additional information on the <code>plotly</code> library see the links below:</p>
 <ul>
 <li>Getting started: <a href="https://plot.ly/r/getting-started/" target="_blank">https://plot.ly/r/getting-started/</a></li>

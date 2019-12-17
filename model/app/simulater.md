@@ -229,7 +229,7 @@ See the table below for an example:
 </table>
 
 
-Other commonly used functions are `ln` for the natural logarithm (e.g., ln(x)), `sqrt` for the square-root of x (e.g., sqrt(x)) and `square` to calculate square of a variable (e.g., square(x)).
+Other commonly used functions are `ln` for the natural logarithm (e.g., `ln(x)`), `sqrt` for the square-root of x (e.g., `sqrt(x)`) and `square` to calculate square of a variable (e.g., `square(x)`).
 
 To return a single value from a calculation use functions such as `min`, `max`, `mean`, `sd`, etc.
 
@@ -271,23 +271,23 @@ Because we specified a name in the `Simulated data` box the data are available a
 
 ## Repeating the simulation
 
-Suppose the simulation discussed above was used to get a better understanding of daily profits. To develop insights into annual profits we could re-run the simulation 365 times. This can be done easily by using the functionality available in the _Repeat_ tab. First, select the `Variables to re-simulate`, here `E` and `price`. Then select the variable(s) of interest in the `Output variables` box (e.g., `profit`). Set `# reps` to 365.
+Suppose the simulation discussed above was used to get a better understanding of daily profits. To develop insights into annual profits we could re-run the simulation 365 times. However, this can be done more conveniently by using the functionality available in the _Repeat_ tab. First, select the `Variables to re-simulate`, here `E` and `price`. Then select the variable(s) of interest in the `Output variables` box (e.g., `profit`). Set `# reps` to 365.
 
-Next, we need to determine how to summarize the data. If we select `Simulation` in `Group by` the data will be summarized for each draw in the simulation **across** 365 repeated simulations resulting in 1,000 values. If we select `Repeat` in `Group by` the data will be summarized for each repetition **across** 1000 simulations resulting in 365 values. If you imagine the full set of repeated simulated data as a table with 1,000 rows and 365 columns, grouping by `Simulation` will create a summary statistic for each row and grouping by `Repeat` will create a summary statistic for each column. In this example we want to determine the `sum` of simulated daily profits across 365 repetitions so we select `Simulation` in the `Group by` box and `sum` in the `Apply function` box.
+Next, we need to determine how to summarize the data. If we select `Simulation` in `Group by` the data will be summarized for each draw in the simulation **across** 365 repeated simulations resulting in 1,000 values. If we select `Repeat` in `Group by` the data will be summarized for each repetition **across** 1,000 simulations resulting in 365 values. If you imagine the full set of repeated simulated data as a table with 1,000 rows and 365 columns, grouping by `Simulation` will create a summary statistic for each row and grouping by `Repeat` will create a summary statistic for each column. In this example we want to determine the `sum` of simulated daily profits across 365 repetitions so we select `Simulation` in the `Group by` box and `sum` in the `Apply function` box.
 
 To determine, the probability that annual profits are below \$36,500 we enter the formula below into the `Repeated simulation formula` text input.
 
 ```r
-profit_365 = profit < 36500
+profit_365 = profit_sum < 36500
 ```
 
-When you are done with the input values click the `Repeat` button. Because we specified a name for `Repeat data` a new data set will be created. `repdat` will contain the summarized data grouped per simulation (i.e., 1,000 rows). To store all 365 x 1,000 simulations/repetitions select `none` from the `Apply function` dropdown.
+Note that `profit_sum` is the `sum` of repeated simulations of the `profit` variable defined in the _Simulate_ tab. When you are done with the input values click the `Repeat` button. Because we specified a name for `Repeat data` a new data set will be created. `repdat` will contain the summarized data grouped per simulation (i.e., 1,000 rows). To store all 365 x 1,000 simulations/repetitions select `none` from the `Apply function` dropdown.
 
-Descriptive statistics for the repeated simulation are shown in the main panel under `Repeated simulation summary`. We see that the annual expected profit (i.e., the mean of `sum of profit`) for the company is 172,311.84 with a standard deviation of 10,772.29. Although we found above that daily profits can be below \$100, the chance that profits are below $365 \times 100$ for the entire year are slim to none (i.e., the proportion of repeated simulations with annual profits below \$36,500 is equal to 0).
+Descriptive statistics for the repeated simulation are shown in the main panel under `Repeated simulation summary`. We see that the annual expected profit (i.e., the mean of `profit_sum`) for the company is 172,311.84 with a standard deviation of 10,772.29. Although we found above that daily profits can be below \$100, the chance that profits are below $365 \times 100$ for the entire year are slim to none (i.e., the proportion of repeated simulations with annual profits below \$36,500 is equal to 0).
 
 <p align="center"><img src="figures_model/simulater_repeat.png"></p>
 
-If `Show plots` is checked a histogram of annual profits (`sum of profit`) is shown under `Repeated simulation plots`. There is no plot for `profit_365` because it has only one value (i.e., FALSE).
+If `Show plots` is checked a histogram of annual profits (`profit_sum`) is shown under `Repeated simulation plots`. There is no plot for `profit_365` because it has only one value (i.e., FALSE).
 
 <p align="center"><img src="figures_model/simulater_repeat_plot.png"></p>
 
@@ -304,6 +304,7 @@ Note that the _Repeat_ tab also has the option to use a `Grid search` input to r
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
 
 If a plot was created it can be customized using `ggplot2` commands or with `patchwork`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
+
 
 ```r
 plot(result, custom = TRUE) %>%
@@ -358,3 +359,4 @@ Copy-and-paste the full command below into the RStudio console (i.e., the bottom
 * Topics List:
     - Find an optimal value by sorting simulated data or create a plot
     - Find an optimal value by using the `find_max` function
+```

@@ -22,6 +22,8 @@ knitr::opts_chunk$set(
 ## generate (updated) html and md files
 docs_path <- rstudioapi::getActiveProject()
 setwd(docs_path)
+# setwd(".")
+# if (basename(getwd()) != "docs") stop("Wrong working directory set")
 system('make')
 
 knit_docs <- function(x) {

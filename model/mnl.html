@@ -14,14 +14,13 @@
 <title>Model &gt; Estimate &gt; Multinomial logistic regression (MNL)</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
 
@@ -70,22 +69,98 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
+
 <style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
   }
 </style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
 
 
 <style type="text/css">
@@ -344,16 +419,25 @@ summary {
 </div><!--/.navbar -->
 
 <style>
+.btn, .form-control, pre, code, pre code {
+  border-radius: 4px;
+}
 .table {
   width: auto;
 }
 ul, ol {
   padding-left: 18px;
 }
-pre, code, pre code {
+code, pre, pre code {
   overflow: auto;
   white-space: pre;
   word-wrap: normal;
+}
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+}
+pre {
   background-color: #ffffff;
 }
 </style>
@@ -414,10 +498,10 @@ pre, code, pre code {
 <li>Ha: The relative risk ratio associated with explanatory variable x is not equal to 1</li>
 </ul>
 <p>A selected set of relative risk ratios from the multinomial logistic regression can be interpreted as follows:</p>
-<pre class="r"><code>                         RRR coefficient std.error z.value p.value    
- heinz32 price.heinz32 0.101      -2.296     0.135 -17.033  &lt; .001 ***
- hunts32 price.heinz28 3.602       1.282     0.126  10.200  &lt; .001 ***
- hunts32 price.hunts32 0.070      -2.655     0.208 -12.789  &lt; .001 ***</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>                         RRR coefficient std.error z.value p.value    </span>
+<span id="cb1-2"><a href="#cb1-2"></a> heinz32 price.heinz32 <span class="fl">0.101</span>      <span class="fl">-2.296</span>     <span class="fl">0.135</span> <span class="fl">-17.033</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="st"> </span>hunts32 price.heinz28 <span class="fl">3.602</span>       <span class="fl">1.282</span>     <span class="fl">0.126</span>  <span class="fl">10.200</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="st"> </span>hunts32 price.hunts32 <span class="fl">0.070</span>      <span class="fl">-2.655</span>     <span class="fl">0.208</span> <span class="fl">-12.789</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></span></code></pre></div>
 <ul>
 <li>The RRR for a $1 increase in <code>price.heinz32</code> on the relative odds or purchasing <code>heinz32</code> rather than <code>heinz28</code> is 0.101. If the price for <code>heinz32</code> increased by $1, the odds of purchasing <code>heinz32</code> rather than <code>heinz28</code> would decrease by a factor of 0.101, or decrease by 89.9%, while holding all other variables in the model constant.</li>
 <li>The RRR for a $1 increase in <code>price.heinz28</code> on the relative odds or purchasing <code>hunts32</code> rather than <code>heinz28</code> is 3.602. If the price for <code>heinz28</code> increased by $1, the odds of purchasing <code>hunts32</code> rather than <code>heinz28</code> would increase by a factor of 3.602, or increase by 260.2%, while holding all other variables in the model constant.</li>
@@ -435,8 +519,8 @@ pre, code, pre code {
 </p>
 <p>Probabilities, are often more convenient for interpretation than coefficients or RRRs from a multinomial logistic regression model. We can use the <em>Predict</em> tab to predict probabilities for each of the different response variable levels given specific values for the selected explanatory variable(s). First, select the type of input for prediction using the <code>Prediction input type</code> dropdown. Choose either an existing dataset for prediction (“Data”) or specify a command (“Command”) to generate the prediction inputs. If you choose to enter a command, you must specify at least one variable and one value in the <strong>Prediction command</strong> box to get a prediction. If you do not specify a value for each of the variables in the model either the mean value or the most frequently observed level will be used. It is only possible to predict probabilities based on variables used in the model. For example, <code>price.heinz32</code> must be one of the selected explanatory variables to predict the probability of choosing to buy <code>heinz32</code> when priced at $3.80.</p>
 <ul>
-<li>To predict the probability of choosing any the four products when a display for <code>hunts32</code> is available in stores type <code>disp.hunts32 = &quot;yes&quot;</code> as the command and press enter</li>
-<li>To predict choice probabilities when <code>heinz41</code> is (not) on display and (not) featured type <code>disp.heinz41 = c(&quot;yes&quot;, &quot;no&quot;), feat.heinz41 = c(&quot;yes&quot;, &quot;no&quot;)</code> and press enter</li>
+<li>To predict the probability of choosing any the four products when a display for <code>hunts32</code> is available in stores type <code>disp.hunts32 = "yes"</code> as the command and press enter</li>
+<li>To predict choice probabilities when <code>heinz41</code> is (not) on display and (not) featured type <code>disp.heinz41 = c("yes", "no"), feat.heinz41 = c("yes", "no")</code> and press enter</li>
 <li>To see how choice probabilities change for each of the products as <code>price.heinz28</code> increases type <code>price.heinz28 = seq(3.40, 5.20, 0.1)</code> and press enter. See screenshot below.</li>
 </ul>
 <p align="center">
@@ -454,8 +538,8 @@ pre, code, pre code {
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>If a plot was created, it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
-<pre class="r"><code>plot(result, plots = &quot;coef&quot;, custom = TRUE) +
-  labs(title = &quot;Coefficient plot&quot;)</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">plot</span>(result, <span class="dt">plots =</span> <span class="st">&quot;coef&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Coefficient plot&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>

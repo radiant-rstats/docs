@@ -1,7 +1,7 @@
 html_document:
   self_contained: false
-  theme: united
-  highlight: textmate
+  theme: cosmo
+  highlight: zenburn
   mathjax: default
   toc_depth: 2
   lib_dir: libs
