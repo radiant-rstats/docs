@@ -24,8 +24,9 @@ To download the plots click the download button on the top-right of the screen.
 
 ## Additional options
 
-* By default, data will be standardized before it is analyzed. To pass data in its raw form to the estimation algorithm, make sure the `Standardize` box is un-checked.
-* Hierarchical cluster-analysis (HC) generates numerous clustering solutions. The highest number of clusters is equal to the number of observations in the data (e.g., ever respondent is treated as a separate cluster). The lowest number of clusters evaluated, is equal to 1 (e.g., all respondent are grouped together in a single cluster). Although, HC analysis is often used as a diagnostic tool before generating a final solution using, e.g., K-means, we can also store any specific clustering solution generated using HC. To accomplish this, first choose the `Number of clusters`, then provide a name for the variable that will contain cluster assignment information, and finally, press the `Store` button. 
+* By default, data will be standardized before it is analyzed. To pass data in its raw form to the estimation algorithm, make sure the `Standardize` box is un-checked
+* Hierarchical cluster-analysis (HC) generates numerous clustering solutions. The highest number of clusters is equal to the number of observations in the data (e.g., ever respondent is treated as a separate cluster). The lowest number of clusters evaluated, is equal to 1 (e.g., all respondent are grouped together in a single cluster). Although, HC analysis is often used as a diagnostic tool before generating a final solution using, e.g., K-means, we can also store any specific clustering solution generated using HC. To accomplish this, first choose the `Number of clusters`, then provide a name for the variable that will contain cluster assignment information, and finally, press the `Store` button
+* If the data to use for clustering includes variables of type "factor", the `gower` distance will automatically be selected. For more information on the gower distance and R-package see the <a href="https://cran.r-project.org/web/packages/gower/vignettes/intro.pdf" target="_blank">package vignette</a>
 
 ### Report > Rmd
 

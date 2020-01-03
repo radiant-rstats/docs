@@ -1,0 +1,8 @@
+---
+title: Model > Trees > Gradient Boosted Trees
+---
+
+***
+
+```{r child='app/gbt.md'}
+```

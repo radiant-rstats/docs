@@ -482,27 +482,26 @@ pre {
 <span id="cb1-21"><a href="#cb1-21"></a><span class="st">    </span><span class="kw">geom_histogram</span>()</span>
 <span id="cb1-22"><a href="#cb1-22"></a></span>
 <span id="cb1-23"><a href="#cb1-23"></a><span class="co">## and a histogram of log-prices using radiant.data::visualize</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="kw">visualize</span>(diamonds, <span class="dt">xvar =</span> \<span class="st">&quot;log_price</span><span class="ch">\&quot;</span><span class="st">, custom = TRUE)</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="kw">visualize</span>(diamonds, <span class="dt">xvar =</span> <span class="st">&quot;log_price&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb1-25"><a href="#cb1-25"></a></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="st">## open help in the R-studio viewer from Radiant</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="st">help(package = </span><span class="ch">\&quot;</span><span class="st">radiant.data</span><span class="ch">\&quot;</span><span class="st">)</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="co">## open help in the R-studio viewer from Radiant</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="kw">help</span>(<span class="dt">package =</span> <span class="st">&quot;radiant.data&quot;</span>)</span>
 <span id="cb1-28"><a href="#cb1-28"></a></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="st">## If you are familiar with Shiny you can call reactives when the code</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="st">## is evaluated inside a Shiny app. For example, if you transformed</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a><span class="st">## some variables in Data &gt; Transform you can call the transform_main</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a><span class="st">## reacive to see the latest result. Very useful for debugging</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a><span class="st"># transform_main() %&gt;% head()</span></span></code></pre></div>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co">## If you are familiar with Shiny you can call reactives when the code</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="co">## is evaluated inside a Shiny app. For example, if you transformed</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="co">## some variables in Data &gt; Transform you can call the transform_main</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co">## reacive to see the latest result. Very useful for debugging</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="co"># transform_main() %&gt;% head()</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="kw">head</span>()</span></code></pre></div>
 <div id="options" class="section level2">
 <h2>Options</h2>
 <p>The editor used in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> has several options that can be set in <code>.Rprofile</code>.</p>
-<pre>
-options(radiant.ace_vim.keys = FALSE)
-options(radiant.ace_theme = "cobalt")
-options(radiant.ace_tabSize = 2)
-options(radiant.ace_useSoftTabs = TRUE)
-options(radiant.ace_showInvisibles = TRUE)
-options(radiant.ace_autoComplete = "live")
-</pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">options</span>(<span class="dt">radiant.ace_vim.keys =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">options</span>(<span class="dt">radiant.ace_theme =</span> <span class="st">&quot;cobalt&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">options</span>(<span class="dt">radiant.ace_tabSize =</span> <span class="dv">2</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">options</span>(<span class="dt">radiant.ace_useSoftTabs =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">options</span>(<span class="dt">radiant.ace_showInvisibles =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="kw">options</span>(<span class="dt">radiant.ace_autoComplete =</span> <span class="st">&quot;live&quot;</span>)</span></code></pre></div>
 <p>Notes:</p>
 <ul>
 <li><code>vim.keys</code> enables a set of special keyboard short-cuts. If you have never used VIM you probably don’t want this</li>

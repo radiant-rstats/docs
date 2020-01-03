@@ -488,6 +488,12 @@ pre {
 <img src="figures_multivariate/kclus_cross_tabs_plot.png">
 </p>
 </div>
+<div id="additional-options" class="section level2">
+<h2>Additional options</h2>
+<ul>
+<li>By default, data will be standardized before it is analyzed. To pass data in its raw form to the estimation algorithm, make sure the <code>Standardize</code> box is un-checked</li>
+<li>If the data to use for clustering includes variables of type “factor”, the <code>K-proto</code> algorithm should be used. If <code>K-means</code> is selected, only numerical variables with be retained for analysis. For more information on the <code>kproto</code> function and the <em>clustMixType</em> R-package see the <a href="https://journal.r-project.org/archive/2018/RJ-2018-048/RJ-2018-048.pdf" target="_blank">R-journal article</a></li>
+</ul>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
@@ -499,6 +505,7 @@ pre {
 <h3>R-functions</h3>
 <p>For an overview of related R-functions used by Radiant to conduct cluster analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-cluster" target="_blank"><em>Multivariate &gt; Cluster</em></a>.</p>
 <p>The key function from the <code>stats</code> package used in the <code>kclus</code> tool is <code>kmeans</code>.</p>
+</div>
 </div>
 
 

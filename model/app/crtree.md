@@ -1,6 +1,6 @@
 > Estimate a classification or regression tree
 
-To estimate a model select the model type (i.e., Classification or Regression), Response variable, and one or more Explanatory variables. Press the `Estimate` button or `CTRL-enter` (`CMD-enter` on mac) to generate results. 
+To create a tree model, first select the type (i.e., Classification or Regression), response variable, and one or more explanatory variables. Press the `Estimate model` button or `CTRL-enter` (`CMD-enter` on mac) to generate results. 
 
 ### Report > Rmd
 

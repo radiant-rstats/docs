@@ -1,0 +1,8 @@
+---
+title: Model > Trees > Random Forest
+---
+
+***
+
+```{r child='app/rforest.md'}
+```

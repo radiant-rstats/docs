@@ -1,5 +1,5 @@
 ---
-title: Model > Estimate > Classification and regression trees
+title: Model > Trees > Classification and regression trees
 ---
 
 ***

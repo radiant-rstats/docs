@@ -45,6 +45,11 @@ For a graphical depiction of the association go to the _Plot_ tab. If we select 
 
 <p align="center"><img src="figures_multivariate/kclus_cross_tabs_plot.png"></p>
 
+## Additional options
+
+* By default, data will be standardized before it is analyzed. To pass data in its raw form to the estimation algorithm, make sure the `Standardize` box is un-checked
+* If the data to use for clustering includes variables of type "factor", the `K-proto` algorithm should be used. If `K-means` is selected, only numerical variables with be retained for analysis. For more information on the `kproto` function and the _clustMixType_ R-package see the <a href="https://journal.r-project.org/archive/2018/RJ-2018-048/RJ-2018-048.pdf" target="_blank">R-journal article</a>
+
 ### Report > Rmd
 
 Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 

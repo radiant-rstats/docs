@@ -20,20 +20,22 @@ knitr::opts_chunk$set(
 )
 
 ## generate (updated) html and md files
-docs_path <- rstudioapi::getActiveProject()
-setwd(docs_path)
-# setwd(".")
-# if (basename(getwd()) != "docs") stop("Wrong working directory set")
+# docs_path <- rstudioapi::getActiveProject()
+# setwd(docs_path)
+docs_path <- setwd(".")
+if (basename(getwd()) != "docs") stop("Wrong working directory set")
+# docs_path <- setwd("~/gh/docs")
 system('make')
 
 knit_docs <- function(x) {
   setwd(file.path(docs_path, x, "app"))
   list.files(pattern = "*.Rmd") %>% sapply(knit)
-  setwd(file.path("../..",x)); system("make")
+  setwd(file.path("../..", x)); system("make")
 }
-
-sapply(c("data","design","basics","model","multivariate"), knit_docs)
-
+sapply(
+  c("data", "design", "basics", "model", "multivariate"),
+  knit_docs
+)
 ## setup articles for pkgdown
 setwd(docs_path)
 make_content <- function(files, app) {
@@ -71,7 +73,7 @@ make_content(files, "basics")
 files <- c(
   "crs.md", "crtree.md", "dtree.Rmd", "evalbin.md",
   "evalreg.md", "logistic.Rmd", "mnl.Rmd", "nb.md", "nn.md",
-  "regress.Rmd", "simulater.Rmd"
+  "gbt.md", "rforest.md", "regress.Rmd", "simulater.Rmd"
 )
 
 make_content(files, "model")

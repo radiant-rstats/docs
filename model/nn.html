@@ -362,7 +362,7 @@ pre {
 
 <hr />
 <blockquote>
-<p>Estimate a Neural Network (ANN)</p>
+<p>Estimate a Neural Network</p>
 </blockquote>
 <p>To estimate a model select the type (i.e., Classification or Regression), response variable, and one or more explanatory variables. Press the <code>Estimate</code> button or <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results. The model can be “tuned” by changing the <code>Size</code> (i.e., the number of nodes in the hidden layer) and by adjusting the <code>Decay</code> rate. The higher the value set for <code>Decay</code>, the higher the penalty on the size of (the sum of squares of) the weights. When <code>Decay</code> is set to 0, the model has the most flexibility to fit the (training) data accurately. However, without <code>Decay</code> the model is also more likely to overfit.</p>
 <p>The best way to determine the optimal values for <code>Size</code> and <code>Decays</code> is to use Cross-Validation. In radiant, you can use the <code>cv.nn</code> function for this purpose. See the <a href="https://radiant-rstats.github.io/radiant.model/reference/cv.nn.html" target="_blank">documentation</a> for more information.</p>
