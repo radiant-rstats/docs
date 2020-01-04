@@ -7,7 +7,7 @@ The model can be "tuned" by changing by adjusting the  parameter inputs availabl
 For more information on parameters that can be set for XGBoost, see the links below
 
 * <a href="https://xgboost.readthedocs.io/en/latest/parameter.html" target="_blank">https://xgboost.readthedocs.io/en/latest/parameter.html</a>
-* <a href="https://xgboost.readthedocs.io/en/latest/tutorials/param_tuning.html", target="_blank">https://xgboost.readthedocs.io/en/latest/tutorials/param_tuning.html</a>
+* <a href="https://xgboost.readthedocs.io/en/latest/tutorials/param_tuning.html" target="_blank">https://xgboost.readthedocs.io/en/latest/tutorials/param_tuning.html</a>
 
 ### Report > Rmd
 
