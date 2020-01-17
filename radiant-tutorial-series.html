@@ -1,0 +1,461 @@
+<h2>Tutorials</h2>
+<p>
+	This page provides an overview of the available videos in the Radiant Tutorial Series. For each of the modules
+	below, it is useful to leverage RStudio Projects to set up the environment to more easily access data and models
+	from Radiant. Open RStudio and cut/paste the given command + URL into the console. This will download the
+	assignment and supporting files and subsequently open a new RStudio project. You will know it is working if
+	you look at the top right-hand corner of RStudio and see the module name (e.g., "decision_tree") and see
+	the relevant module files in the bottom right pane. From here, you will simply need to click on "Addins" on the
+	top menu and then "Start radiant" to follow along with the tutorial.
+</p>
+<p>In additional to the links below, you can access the <a
+		href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">tutorial
+		playlist</a> on Youtube.
+</p>
+<h3>Decision Trees</h3>
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
+access to all materials used in the decision tree module:
+
+<pre><span style="font-size: 12pt;"><strong>usethis::use_course("https://www.dropbox.com/sh/bit4p1ffbkb2dgh/AACm1RVy2BxBDiVbjoLiN5_Ea?dl=1")</strong></span></pre>
+
+<ul>
+	<li><a href="https://youtu.be/plSeVJ7c-Iw" target="_blank">Introduction to Decision Analysis (#1)</a></li>
+	<ul>
+		<li>This video walks you through the required steps to construct and solve a basic decision tree by hand</li>
+		<li>Topics List:
+			<ul>
+				<li>Chance nodes vs. decision nodes</li>
+				<li>Folding back the tree (i.e., start from the right-most nodes and work backwards to the left-most
+					nodes)</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/dBySH3z2Paw" target="_blank">Using Radiant to Construct a Decision Tree (#2)</a></li>
+	<ul>
+		<li>This video demonstrates how to construct a basic decision tree in Radiant</li>
+		<li>Topics List:
+			<ul>
+				<li>Rename a tree file</li>
+				<li>Construct a tree (following the rules for decision tree input)</li>
+				<li>Interpret the results (initial tree vs final tree)</li>
+				<li>Save the decision tree input .yaml file</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/NlvWCU8UhTc" target="_blank">How to Write Decision Tree Results into a Report (#3)</a>
+	</li>
+	<ul>
+		<li>This video demonstrates how to construct a basic decision tree in Radiant and add the generated R-code to a
+			report</li>
+		<li>Topics List:
+			<ul>
+				<li>Construct a decision tree and define variables in the decision tree</li>
+				<li>Add multiple trees to a report</li>
+				<li>Demo some useful keyboard shortcuts</li>
+				<li>Save the Radiant state file and the report</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/c_pCCCn6FEw" target="_blank">Sensitivity Analysis of Decision Tree (#4)</a></li>
+	<ul>
+		<li>This video shows two ways to conduct sensitivity analysis of a decision tree in Radiant</li>
+		<li>Topics List:
+			<ul>
+				<li>Quick review of writing decision tree results to a report</li>
+				<li>Method 1: manually update the value</li>
+				<li>Method 2: use "variables"</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/oiwv15bbjzs" target="_blank">How to Debug Decision Tree Input (#5)</a></li>
+	<ul>
+		<li>This video demonstrates how to debug decision tree input if you see an error message</li>
+		<li>Topics List:
+			<ul>
+				<li>Colon missing</li>
+				<li>Indent issue</li>
+				<li>Probabilities don't sum to 1</li>
+				<li>Value missing</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/xuv9zgAcvCQ" target="_blank">Decision Trees with Imperfect Information (#6)</a></li>
+	<ul>
+		<li>This video shows how to determine the appropriate (conditional) probabilities to use in a decision tree when
+			the available information is imperfect</li>
+		<li>Topics List:
+			<ul>
+				<li>Imperfect information</li>
+				<li>Test</li>
+				<li>Conditional probabilities</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/cVrYFFX3xN0" target="_blank">Solving a Decision Tree with Imperfect Information
+			(#7)</a></li>
+	<ul>
+		<li>This video shows how to use Radiant to construct and solve a decision tree when the available information is
+			imperfect</li>
+		<li>Topics List:
+			<ul>
+				<li>Specify variables</li>
+				<li>Build a tree with imperfect information</li>
+				<li>Check the tree</li>
+				<li>Interpret the decision tree result</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/Mi-eZEoU9TE" target="_blank">Writing Decision Tree with Sub-trees in Radiant (#8)</a>
+	</li>
+	<ul>
+		<li>This video shows how to construct a decision tree with sub-trees in radiant </li>
+		<li>Topics List:
+			<ul>
+				<li>Create a main tree that references a sub-tree</li>
+				<li>Specify a sub-tree that references the main tree in the variables section</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<br />
+<h3>Probability Calculator</h3>
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
+access to all materials used in the probability calculator module:
+
+<pre><span style="font-size: 12pt;"><strong>usethis::use_course("https://www.dropbox.com/sh/zw1yuiw8hvs47uc/AABPo1BncYv_i2eZfHQ7dgwCa?dl=1")</strong></span></pre>
+
+<ul>
+	<li><a href="https://youtu.be/UPL_8ujAXpww" target="_blank">Describing the Distribution of a Discrete Random
+			Variable (#1)</a></li>
+	<ul>
+		<li>This video shows how to summarize information about a discrete random variable using the probability
+			calculator in Radiant</li>
+		<li>Topics List:
+			<ul>
+				<li>Calculate the mean and variance for a discrete random variable by hand</li>
+				<li>Calculate the mean, variance, and select probabilities for a discrete random variable in Radiant
+				</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/30YsxCTbDTc" target="_blank">Describing Normal and Binomial Distributions in
+			Radiant(#2)</a></li>
+	<ul>
+		<li>This video shows how to summarize information about Normal and Binomial distributions using the probability
+			calculator in Radiant</li>
+		<li>Topics List:
+			<ul>
+				<li>Calculate probabilities of a random variable following a Normal distribution in Radiant</li>
+				<li>Calculate probabilities of a random variable following a Binomial distribution by hand</li>
+				<li>Calculate probabilities of a random variable following a Binomial distribution in Radiant</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/LbwUpEwTJ_Q" target="_blank">Describing Uniform and Binomial Distributions in
+			Radiant(#3)</a></li>
+	<ul>
+		<li>This video shows how to summarize information about Uniform and Binomial distributions using the probability
+			calculator in Radiant</li>
+		<li>Topics List:
+			<ul>
+				<li>Calculate probabilities of a random variable following a Uniform distribution in Radiant</li>
+				<li>Calculate probabilities of a random variable following a Binomial distribution in Radiant</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/XC2yN5BY8jg" target="_blank">Providing Probability Bounds(#4)</a></li>
+	<ul>
+		<li>This video demonstrates how to provide probability bounds in Radiant </li>
+		<li>Topics List:
+			<ul>
+				<li>Use probabilities as input type</li>
+				<li>Round up the cutoff value </li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<br />
+<h3>Hypothesis Testing</h3>
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
+access to all materials used in the hypothesis testing module:
+
+<pre><span style="font-size: 12pt;"><strong>usethis::use_course("https://www.dropbox.com/sh/0xvhyolgcvox685/AADSppNSIocrJS-BqZXhD1Kna?dl=1")</strong></span></pre>
+
+<ul>
+	<li><a href="https://youtu.be/QV1qA5RPzlY" target="_blank">Single Mean Hypothesis Test (#1)</a></li>
+	<ul>
+		<li>This video shows how to test a hypothesis about a single sample mean versus a population
+			mean</li>
+		<li>Topics List:
+			<ul>
+				<li>Calculate summary statistics for a sample</li>
+				<li>Setup a hypothesis test for a single mean in Radiant</li>
+				<li>Use the p.value, confidence interval, or critical value to evaluate the hypothesis test</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/tTYvBUCaR3w" target="_blank">Single Proportion Hypothesis Test (#2)</a></li>
+	<ul>
+		<li>This video shows how to test a hypothesis about a single sample proportion versus a population
+			proportion</li>
+		<li>Topics List:
+			<ul>
+				<li>Setup a hypothesis test for a single proportion in Radiant</li>
+				<li>Use the p.value, confidence interval, or critical value to evaluate the hypothesis test</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/cTWk0JADnVg" target="_blank">Compare Means Hypothesis Test (#3)</a></li>
+	<ul>
+		<li>This video shows how to conduct a compare means hypothesis test</li>
+		<li>Topics List:
+			<ul>
+				<li>Calculate summary statistics by groups</li>
+				<li>Setup a hypothesis test for compare means in Radiant</li>
+				<li>Use the p.value and confidence interval to evaluate the hypothesis test</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/ICqSRs4UfLM" target="_blank">Compare Proportions Hypothesis Test (#4)</a></li>
+	<ul>
+		<li>This video shows how to conduct a compare proportions hypothesis test</li>
+		<li>Topics List:
+			<ul>
+				<li>Setup a hypothesis test for compare means in Radiant</li>
+				<li>Use the p.value and confidence interval to evaluate the hypothesis test</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/MEt8vO5FNYQ" target="_blank">Cross-tabs Hypothesis Test (#5)</a></li>
+	<ul>
+		<li>This video demonstrates how to investigate associations between two categorical variables by a cross-tabs
+			hypothesis test</li>
+		<li>Topics List:
+			<ul>
+				<li>Setup a hypothesis test for cross-tabs in Radiant</li>
+				<li>Explain how observed, expected and contribution to chi-squared tables are constructed</li>
+				<li>Use the p.value and critical value to evaluate the hypothesis test</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<br />
+<h3>Linear Regression</h3>
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
+access to all materials used in the linear regression module:
+
+<pre><span style="font-size: 12pt;"><strong>usethis::use_course("https://www.dropbox.com/sh/s70cb6i0fin7qq4/AACje2BAivEKDx7WrLrPr5m9a?dl=1")</strong></span></pre>
+
+<ul>
+	<li><a href="https://youtu.be/xw4pxIcveh4" target="_blank">Data Exploration and Pre-check of Regression (#1)</a>
+	</li>
+	<ul>
+		<li>This video shows how to use Radiant to explore and visualize data before running a linear regression</li>
+		<li>Topics List:
+			<ul>
+				<li>View data</li>
+				<li>Visualize data</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/MepD4N02UO8" target="_blank">Interpretation of Regression Results and Prediction
+			(#2)</a></li>
+	<ul>
+		<li>This video explains how to interpret the regression results and calculate the predicted value from a linear
+			regression model</li>
+		<li>Topics List:
+			<ul>
+				<li>Interpret coefficients (numeric and categorical variables)</li>
+				<li>Interpret R-squared and adjusted R-squared</li>
+				<li>Interpret F-test result</li>
+				<li>Predict from a regression model</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtube.com/watch?v=P7SdRlZkGIM" target="_blank">Dealing with Categorical Variables (#3)</a>
+	</li>
+	<ul>
+		<li>This video shows how to deal with categorical variables in a linear regression model</li>
+		<li>Topics List:
+			<ul>
+				<li>Check the baseline category in Radiant</li>
+				<li>Change the baseline category</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/JymPztY9jrc" target="_blank">Adding New Variables into a Regression Model (#4)</a>
+	</li>
+	<ul>
+		<li>This video demonstrates how to test if adding new variables will lead to a better model with significantly
+			higher explanatory power</li>
+		<li>Topics List:
+			<ul>
+				<li>Set up a hypothesis test for adding new variables in Radiant</li>
+				<li>Interpret the F-test results</li>
+				<li>Compare this F-test to the default F-test in regression summary</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/nLZx84v1PkI" target="_blank">Linear Regression Validation (#5)</a></li>
+	<ul>
+		<li>This video demonstrates how to validate a linear regression model </li>
+		<li>Topics List:
+			<ul>
+				<li>Linearity (scatter plots, same as the one in the pre-check) </li>
+				<li>Normality Check (Normal Q-Q plot) </li>
+				<li>Multicollinearity (VIF) </li>
+				<li>Heteroscedasticity</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/byP2YJNqtRc" target="_blank">Log-log Regression (#6)</a></li>
+	<ul>
+		<li>This video demonstrates when and how to run a log-log regression </li>
+		<li>Topics List:
+			<ul>
+				<li>Transform data with skewed distributions by natural log function </li>
+				<li>Interpret the coefficients in a log-log regression </li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<br />
+<h3>Simulation</h3>
+
+Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
+access to all materials used in the simulation module:
+
+<pre><span style="font-size: 12pt;"><strong>usethis::use_course("https://www.dropbox.com/sh/72kpk88ty4p1uh5/AABWcfhrycLzCuCvI6FRu0zia?dl=1")</strong></span></pre>
+
+<ul>
+	<li><a href="https://youtu.be/kYaRVbStwwI" target="_blank">Setting Up a Simulation in Radiant (#1)</a></li>
+	<ul>
+		<li>This video demonstrates how to use Radiant to set up a simulation</li>
+		<li>Topics List:
+			<ul>
+				<li>Brief introduction to the Poisson distribution</li>
+				<li>Specifying a simulation</li>
+				<li>Interpretation of the simulation summary</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/fsP4x5-MLsY" target="_blank">Setting Up a Repeated Simulation in Radiant (#2)</a></li>
+	<ul>
+		<li>This video shows how to use Radiant to set up a repeated simulation</li>
+		<li>Topics List:
+			<ul>
+				<li>Specifying a repeated simulation</li>
+				<li>Interpretation of the repeated simulation summary</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/eMlQhmN7UUA" target="_blank">Using simulation to solve probability questions (#3)</a>
+	</li>
+	<ul>
+		<li>This video demonstrates how to use simulation to solve probability questions in Radiant </li>
+		<li>Topics List:
+			<ul>
+				<li>Review of setting up a (repeated) simulation</li>
+				<li>Interpretation of the simulation summary</li>
+				<li>Intuition of how repeated simulations work</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/gxzrVtAefoo" target="_blank">Simulation Formula Tips (#4)</a></li>
+	<ul>
+		<li>This video discusses some helpful functions that are commonly used in simulation formulas </li>
+		<li>Topics List:
+			<ul>
+				<li>Use <code>ifelse</code> to specify a simulation formula</li>
+				<li>Use <code>pmax</code> to specify a simulation formula</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
+
+<ul>
+	<li><a href="https://youtu.be/vCExcD24ACM" target="_blank">Using Grid Search in Simulation (#5)</a></li>
+	<ul>
+		<li>This video demonstrates how to use grid search in simulation </li>
+		<li>Topics List:
+			<ul>
+				<li>Find an optimal value by sorting simulated data or creating a plot</li>
+				<li>Find an optimal value by using <code>find_max</code> function</li>
+			</ul>
+		</li>
+	</ul>
+</ul>
