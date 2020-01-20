@@ -1,5 +1,8 @@
 ---
 title: Radiant Tutorial Series
+output:
+  html_document:
+    toc: true
 ---
 
 This page provides an overview of the available videos in the Radiant Tutorial Series. For each of the modules
@@ -12,7 +15,7 @@ top menu and then "Start radiant" to follow along with the tutorial.
 
 In additional to the links below, you can access the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">tutorial playlist</a> on Youtube.
 
-### Decision Trees
+## Decision Analysis
 
 Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
 access to all materials used in the decision tree module:
@@ -142,7 +145,7 @@ access to all materials used in the decision tree module:
 
 <br />
 
-### Probability Calculator
+## Probability Calculator
 
 Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
 access to all materials used in the probability calculator module:
@@ -210,7 +213,8 @@ access to all materials used in the probability calculator module:
 </ul>
 
 <br />
-### Hypothesis Testing
+
+## Hypothesis Testing
 
 Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
 access to all materials used in the hypothesis testing module:
@@ -290,7 +294,7 @@ access to all materials used in the hypothesis testing module:
 
 <br />
 
-### Linear Regression
+## Linear Regression
 
 Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
 access to all materials used in the linear regression module:
@@ -388,7 +392,7 @@ access to all materials used in the linear regression module:
 
 <br />
 
-### Simulation
+## Simulation
 
 Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain
 access to all materials used in the simulation module:
