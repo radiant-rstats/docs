@@ -414,7 +414,7 @@ access to all materials used in the simulation module:
 </ul>
 
 <ul>
-	<li><a href="https://youtu.be/fsP4x5-MLsY" target="_blank">Setting Up a Repeated Simulation in Radiant (#2)</a></li>
+	<li><a href="https://youtu.be/9r61AAks7sc" target="_blank">Setting Up a Repeated Simulation in Radiant (#2)</a></li>
 	<ul>
 		<li>This video shows how to use Radiant to set up a repeated simulation</li>
 		<li>Topics List:
@@ -427,7 +427,7 @@ access to all materials used in the simulation module:
 </ul>
 
 <ul>
-	<li><a href="https://youtu.be/eMlQhmN7UUA" target="_blank">Using simulation to solve probability questions (#3)</a>
+	<li><a href="https://youtu.be/0RDGddKTgtI" target="_blank">Using simulation to solve probability questions (#3)</a>
 	</li>
 	<ul>
 		<li>This video demonstrates how to use simulation to solve probability questions in Radiant </li>
