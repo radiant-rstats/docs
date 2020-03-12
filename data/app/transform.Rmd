@@ -248,7 +248,7 @@ Choose `Create` from the `Transformation type` drop-down. This is the most flexi
   rec_iq = xtile(recency, 5, rev = TRUE)
   ```
 
-19. To remove text from entries in a character or factor variable use `sub` to remove only the first instance or `gsub` to remove all instances. For example, suppose a each row for a variable `bk_score` has the letters "clv" before a number (e.g., "clv150"). We could replace each occurrence of "clv" by "" as follows:
+19. To remove text from entries in a character or factor variable use `sub` to remove only the first instance or `gsub` to remove all instances. For example, suppose each row for a variable `bk_score` has the letters "clv" before a number (e.g., "clv150"). We could replace each occurrence of "clv" by "" as follows:
 
   ```r
   bk_score = sub("clv", "", bk_score)
