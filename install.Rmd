@@ -185,6 +185,14 @@ install.packages("radiant.update", repos = "https://radiant-rstats.github.io/min
 radiant.update::radiant.update()
 ```
 
+If you are having trouble updating Radiant on Windows please (1) Restart Rstudio and (2) run the code below:
+
+```r
+install.packages(c("radiant.update", "fs"), repos = "https://radiant-rstats.github.io/minicran/")
+fs::dir_delete(file.path(.libPaths()[1], "00LOCK"))
+radiant.update::radiant.update(options = "--no-lock")
+```
+
 Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.
 
 If there is an error installing `tinytex` on macOS please run the command below from the "terminal" app:
