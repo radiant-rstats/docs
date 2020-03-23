@@ -4,7 +4,7 @@ title: Radiant -- Business analytics using R and Shiny
 
 Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
 
-> **Note:** R 3.5 or higher is required to use the latest version of Radiant.
+> **Note:** R 3.6 or higher is required to use the latest version of Radiant.
 
 > **Note:** User profiles (or user names or logins) containing non-ASCII characters may cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters and numbers only. For example, c:\\users\\myprofilename
 
@@ -27,9 +27,9 @@ If you use Internet Explorer as your default browser please consider switching t
 
 ## Installing R, Rstudio, and Radiant on macOS
 
-For Mac, first download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Download the .pkg file, double-click, and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
+For users on macOS Catalina, first download R from <a href="https://cran.r-project.org/bin/macosx/R-3.6.3.nn.pkg" target="_blank">https://cran.r-project.org/bin/macosx/R-3.6.3.nn.pkg</a>. To install, right-click on the installer and select "Open". If you are using a version of macOS prior to Catalina, download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.
 
-> Note: To install R 3.6.2 on macOS Catalina, right-click on the installer and select "Open".
+After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
