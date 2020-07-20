@@ -4,7 +4,7 @@ title: Radiant -- Business analytics using R and Shiny
 
 Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://www.rstudio.com/shiny/) package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use radiant@rady.ucsd.edu.
 
-> **Note:** R 3.6 or higher is required to use the latest version of Radiant.
+> **Note:** R 4.0 or higher is required to use the latest version of Radiant.
 
 > **Note:** User profiles (or user names or logins) containing non-ASCII characters may cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters and numbers only. For example, c:\\users\\myprofilename
 
@@ -21,13 +21,13 @@ For Windows, download and run the all-in-one installer for <a href="https://rady
   <img src="images/mess2.png" style="width: 45%">
 </p>
 
-If you use Internet Explorer as your default browser please consider switching to [Chrome](https://www.google.com/chrome) or [Firefox](https://www.mozilla.org/en-US/firefox). Another alternative would be to try out the beta version of [Microsoft's Edge browser](https://www.microsoftedgeinsider.com/en-us/download). 
+If you use Internet Explorer (IE) as your default browser, please switch to [Microsoft's Edge browser](https://www.microsoft.com/en-us/edge). Alternatively, you can use [Chrome](https://www.google.com/chrome) or [Firefox](https://www.mozilla.org/en-US/firefox).
 
 > Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer
 
 ## Installing R, Rstudio, and Radiant on macOS
 
-For users on macOS Catalina, first download R from <a href="https://cran.r-project.org/bin/macosx/R-3.6.3.nn.pkg" target="_blank">https://cran.r-project.org/bin/macosx/R-3.6.3.nn.pkg</a>. To install, right-click on the installer and select "Open". If you are using a version of macOS prior to Catalina, download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.
+To install the latest version or R you need macOS 10.13 (High Sierra) or higher. Download and install R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.
 
 After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
@@ -50,12 +50,14 @@ sudo chown -R $(whoami):admin /usr/local/bin; R -e "tinytex::install_tinytex()"
 The first step will be to install R and a several additional linux tools. The commands required for Ubuntu 18.04 are shown below:
 
 ```sh
-## Appends the CRAN repository to your sources.list file
-sudo sh -c 'echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" >> /etc/apt/sources.list'
-
-## Add GPG key of Michael Rutter the Ubuntu archives CRAN maintainer
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 sudo apt-get update
+sudo apt-get install gpg-agent gdebi-core
+
+## Appends the CRAN repository to your sources.list file
+sudo sh -c "echo 'deb http://cloud.r-project.org/bin/linux/ubuntu focal-cran40/' >> /etc/apt/sources.list" 
+sudo gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 
+sudo gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add -
+sudo apt-get update 
 
 ## Install R and required linux tools
 sudo apt-get install r-base r-base-dev
@@ -63,8 +65,7 @@ sudo apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \
   unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo libgsl-dev
 
 ## Download and install Rstudio (preview)
-sudo apt-get install gdebi-core
-wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.2.1335-amd64.deb
+wget -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.3.1058-amd64.deb
 sudo gdebi rstudio-preview-amd64.deb
 rm rstudio-preview-amd64.deb
 ```

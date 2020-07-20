@@ -484,7 +484,7 @@ summary {
 
 <p>Radiant is a platform-independent browser-based interface for business analytics in <a href="https://www.r-project.org/">R</a>, based on the <a href="https://www.rstudio.com/shiny/">Shiny</a> package. Developed by <a href="http://rady.ucsd.edu/faculty/directory/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use <a href="mailto:radiant@rady.ucsd.edu" class="email">radiant@rady.ucsd.edu</a>.</p>
 <blockquote>
-<p><strong>Note:</strong> R 3.6 or higher is required to use the latest version of Radiant.</p>
+<p><strong>Note:</strong> R 4.0 or higher is required to use the latest version of Radiant.</p>
 </blockquote>
 <blockquote>
 <p><strong>Note:</strong> User profiles (or user names or logins) containing non-ASCII characters may cause problems during installation. To address this issue please use a profile name (login) that contains ASCII (A-Z, a-z) letters and numbers only. For example, c:\users\myprofilename</p>
@@ -500,14 +500,14 @@ summary {
 <p align="center">
 <img src="images/mess1.png" style="width: 45%"> <img src="images/mess2.png" style="width: 45%">
 </p>
-<p>If you use Internet Explorer as your default browser please consider switching to <a href="https://www.google.com/chrome">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox">Firefox</a>. Another alternative would be to try out the beta version of <a href="https://www.microsoftedgeinsider.com/en-us/download">Microsoft’s Edge browser</a>.</p>
+<p>If you use Internet Explorer (IE) as your default browser, please switch to <a href="https://www.microsoft.com/en-us/edge">Microsoft’s Edge browser</a>. Alternatively, you can use <a href="https://www.google.com/chrome">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox">Firefox</a>.</p>
 <blockquote>
 <p>Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer</p>
 </blockquote>
 </div>
 <div id="installing-r-rstudio-and-radiant-on-macos" class="section level2">
 <h2>Installing R, Rstudio, and Radiant on macOS</h2>
-<p>For users on macOS Catalina, first download R from <a href="https://cran.r-project.org/bin/macosx/R-3.6.3.nn.pkg" target="_blank">https://cran.r-project.org/bin/macosx/R-3.6.3.nn.pkg</a>. To install, right-click on the installer and select “Open”. If you are using a version of macOS prior to Catalina, download and install R from <a href="https://cloud.r-project.org/bin/macosx/el-capitan/base/R-latest.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.</p>
+<p>To install the latest version or R you need macOS 10.13 (High Sierra) or higher. Download and install R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.</p>
 <p>After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R&quot;</span>)</span></code></pre></div>
 <p>For a video tutorial see the <code>Installing R, Rstudio, and Radiant on macOS</code> video below:</p>
@@ -521,23 +521,24 @@ summary {
 <div id="installing-r-rstudio-and-radiant-on-linux" class="section level2">
 <h2>Installing R, Rstudio, and Radiant on Linux</h2>
 <p>The first step will be to install R and a several additional linux tools. The commands required for Ubuntu 18.04 are shown below:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">## Appends the CRAN repository to your sources.list file</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sudo</span> sh -c <span class="st">&#39;echo &quot;deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/&quot; &gt;&gt; /etc/apt/sources.list&#39;</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sudo</span> apt-get install gpg-agent gdebi-core</span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co">## Add GPG key of Michael Rutter the Ubuntu archives CRAN maintainer</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co">## Install R and required linux tools</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="fu">sudo</span> apt-get install r-base r-base-dev</span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="fu">sudo</span> apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \</span>
-<span id="cb3-11"><a href="#cb3-11"></a>  unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo libgsl-dev</span>
-<span id="cb3-12"><a href="#cb3-12"></a></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="co">## Download and install Rstudio (preview)</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="fu">sudo</span> apt-get install gdebi-core</span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="fu">wget</span> -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.2.1335-amd64.deb</span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="fu">sudo</span> gdebi rstudio-preview-amd64.deb</span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="fu">rm</span> rstudio-preview-amd64.deb</span></code></pre></div>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">## Appends the CRAN repository to your sources.list file</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">sudo</span> sh -c <span class="st">&quot;echo &#39;deb http://cloud.r-project.org/bin/linux/ubuntu focal-cran40/&#39; &gt;&gt; /etc/apt/sources.list&quot;</span> </span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">sudo</span> gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 </span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">sudo</span> gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 <span class="kw">|</span> <span class="ex">apt-key</span> add -</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="fu">sudo</span> apt-get update </span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">## Install R and required linux tools</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="fu">sudo</span> apt-get install r-base r-base-dev</span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">sudo</span> apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo libgsl-dev</span>
+<span id="cb3-14"><a href="#cb3-14"></a></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">## Download and install Rstudio (preview)</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="fu">wget</span> -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.3.1058-amd64.deb</span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="fu">sudo</span> gdebi rstudio-preview-amd64.deb</span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="fu">rm</span> rstudio-preview-amd64.deb</span></code></pre></div>
 <p>Run the following command to install the required R-packages for a user:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>R <span class="op">-</span>e <span class="st">&quot;source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)&quot;</span></span></code></pre></div>
 <p>To make R-packages available to all users on a linux system run the command below instead:</p>
