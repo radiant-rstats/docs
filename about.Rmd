@@ -9,7 +9,7 @@ title: Radiant -- Business analytics using R and Shiny
 <!-- [![Travis-CI Build Status](https://travis-ci.org/vnijs/radiant.png?branch=master)](https://travis-ci.org/vnijs/radiant) -->
 `r sprintf("Version: %s, Date: %s", packageVersion("radiant"), packageDescription("radiant", fields = "Date"))`
 
-Built using <a href="https://www.rstudio.com/shiny/" target="_blank">Shiny</a> by <a href="https://www.rstudio.com/" target="_blank">Rstudio</a>. The full source code is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>
+Built using <a href="https://shiny.rstudio.com/" target="_blank">Shiny</a> by <a href="https://www.rstudio.com/" target="_blank">Rstudio</a>. The full source code is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>
 
 ## Package dependencies
 

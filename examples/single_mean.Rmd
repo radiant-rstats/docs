@@ -37,4 +37,4 @@ You can even include math:
 
 $$f(\alpha, \beta) \propto x^{\alpha-1}(1-x)^{\beta-1}$$
 
-See Rstudio's [rmarkdown](http://rmarkdown.rstudio.com/) site for more information.
+See Rstudio's [rmarkdown](https://rmarkdown.rstudio.com/) site for more information.
