@@ -30,7 +30,7 @@ As an example we will use a dataset on choice behavior for 300 individuals in a 
 * disp.x: Is there a display for product x (yes or no)?
 * feat.x: Is there a newspaper feature advertisement for product x (yes or no)?
 
-The screenshot of the _Data > Pivot_ tab shown below indicates that `heinz32` is the most popular choice option, followed by `heinz28`. `heinz41` and `hunts32` are much less common choices amongst the household panel members.
+The screenshot of the _Data > Pivot_ tab shown below indicates that `heinz32` is the most popular choice option, followed by `heinz28`. `heinz41` and `hunts32` are much less common choices among the household panel members.
 
 <p align="center"><img src="figures_model/mnl_choice_shares.png"></p>
 

@@ -14,7 +14,7 @@ After providing the name for the decision `Sign with Movie Company`, the next li
 
 A decision can also be assigned a `cost`. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not require legal assistance. Note that using `costs` is optional. In the example we could also subtract \$5,000 from each of the possible box-office payoffs.
 
-If some values in the tree are related or repeated it can be useful to use a `variables` section. Here you can assign labels to values, enter formulas, and even reference other (sub)trees. Note that formulas should only reference entries from the `variables` section and cannot containe any R-commands. In the `Sign contract` example only one variable is created (i.e., `legal fees`). The _Sensitivity_ tab requires that a `variables` section is included in the tree structure. An adapted version of the `Sign contract` example that uses more variables and a formula is shown below.
+If some values in the tree are related or repeated it can be useful to use a `variables` section. Here you can assign labels to values, enter formulas, and even reference other (sub)trees. Note that formulas should only reference entries from the `variables` section and cannot contain any R-commands. In the `Sign contract` example only one variable is created (i.e., `legal fees`). The _Sensitivity_ tab requires that a `variables` section is included in the tree structure. An adapted version of the `Sign contract` example that uses more variables and a formula is shown below.
 
 
 ```yaml
