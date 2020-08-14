@@ -529,7 +529,7 @@ summary {
 <h2>How to install Radiant</h2>
 <ul>
 <li>Required: <a href="https://cran.r-project.org/">R</a> version 3.4.0 or later</li>
-<li>Required: <a href="https://www.rstudio.com/products/rstudio/download/">Rstudio</a> version 1.1.453 or later</li>
+<li>Required: <a href="https://rstudio.com/products/rstudio/download/">Rstudio</a> version 1.1.453 or later</li>
 </ul>
 <p>In Rstudio you can start and update Radiant through the <code>Addins</code> menu at the top of the screen. To install the latest version of Radiant for Windows or Mac, with complete documentation for off-line access, open R(studio) and copy-and-paste the command below:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran/&quot;</span>)</span></code></pre></div>
@@ -577,7 +577,7 @@ summary {
 </div>
 <div id="running-radiant-on-shiny-server" class="section level2">
 <h2>Running Radiant on shiny-server</h2>
-<p>You can also host Radiant using <a href="https://www.rstudio.com/products/rstudio/download-server/">shiny-server</a>. First, install radiant on the server using the command below:</p>
+<p>You can also host Radiant using <a href="https://rstudio.com/products/rstudio/download-server/">shiny-server</a>. First, install radiant on the server using the command below:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran/&quot;</span>)</span></code></pre></div>
 <p>Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and point shiny-server to the <code>inst/app/</code> directory. As a courtesy, please let me know if you intend to use Radiant on a server.</p>
 <p>When running Radiant on a server, by default, file uploads are limited to 10MB and R-code in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> will not be evaluated for security reasons. If you have <code>sudo</code> access to the server and have appropriate security in place you can change these settings by adding the following lines to <code>.Rprofile</code> for the <code>shiny</code> user on the server.</p>
