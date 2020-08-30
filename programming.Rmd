@@ -62,7 +62,8 @@ As an example, you can render the [`single_mean.Rmd`](https://radiant-rstats.git
 To install Radiant with complete documentation for offline access, open R(studio) and copy-and-paste the commands below:
 
 ```r
-install.packages("radiant", repos = "https://radiant-rstats.github.io/minicran/")
+options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
+install.packages("radiant")
 library(radiant)
 ```
 

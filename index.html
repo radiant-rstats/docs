@@ -532,7 +532,8 @@ summary {
 <li>Required: <a href="https://rstudio.com/products/rstudio/download/">Rstudio</a> version 1.1.453 or later</li>
 </ul>
 <p>In Rstudio you can start and update Radiant through the <code>Addins</code> menu at the top of the screen. To install the latest version of Radiant for Windows or Mac, with complete documentation for off-line access, open R(studio) and copy-and-paste the command below:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran/&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span></code></pre></div>
 <p>Once all packages are installed, select <code>Start radiant</code> from the <code>Addins</code> menu in Rstudio or use the command below to launch the app:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>radiant<span class="op">::</span><span class="kw">radiant</span>()</span></code></pre></div>
 <p>To launch Radiant in Rstudio’s viewer pane use the command below:</p>
@@ -540,7 +541,8 @@ summary {
 <p>To launch Radiant in an Rstudio Window use the command below:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>radiant<span class="op">::</span><span class="kw">radiant_window</span>()</span></code></pre></div>
 <p>To easily update Radiant and the required packages, install the <code>radiant.update</code> package using:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran/&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>)</span></code></pre></div>
 <p>Then select <code>Update radiant</code> from the <code>Addins</code> menu in Rstudio or use the command below:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>radiant.update<span class="op">::</span><span class="kw">radiant.update</span>()</span></code></pre></div>
 <p>See the <a href="https://radiant-rstats.github.io/docs/install.html">installing radiant</a> page additional for details.</p>
@@ -578,7 +580,8 @@ summary {
 <div id="running-radiant-on-shiny-server" class="section level2">
 <h2>Running Radiant on shiny-server</h2>
 <p>You can also host Radiant using <a href="https://rstudio.com/products/rstudio/download-server/">shiny-server</a>. First, install radiant on the server using the command below:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran/&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span></code></pre></div>
 <p>Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and point shiny-server to the <code>inst/app/</code> directory. As a courtesy, please let me know if you intend to use Radiant on a server.</p>
 <p>When running Radiant on a server, by default, file uploads are limited to 10MB and R-code in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> will not be evaluated for security reasons. If you have <code>sudo</code> access to the server and have appropriate security in place you can change these settings by adding the following lines to <code>.Rprofile</code> for the <code>shiny</code> user on the server.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">options</span>(radiant.maxRequestSize = -1)  <span class="co">## no file size limit</span></span>

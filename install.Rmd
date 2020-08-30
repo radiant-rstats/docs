@@ -129,7 +129,8 @@ I recommend you use Rstudio to run the Radiant application. When you open Rstudi
 To add an option to upgrade Radiant easily, use the commands below to install the `radiant.upgrade` package. You should now see two new item in the `Addins` dropdown that you can use for future radiant upgrades.
 
 ```r
-install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")
+options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
+install.packages("radiant.update")
 radiant.update::radiant.update()
 ```
 
@@ -182,14 +183,16 @@ install.packages("package-that-is-not-yet-installed", repos = "https://cran.rstu
 or copy-and-paste the commands below into R to check if any required packages have not yet been installed
 
 ```r
-install.packages("radiant.update", repos = "https://radiant-rstats.github.io/minicran/")
+options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
+install.packages("radiant.update")
 radiant.update::radiant.update()
 ```
 
 If you are having trouble updating Radiant on Windows please (1) Restart Rstudio and (2) run the code below:
 
 ```r
-install.packages(c("radiant.update", "fs"), repos = "https://radiant-rstats.github.io/minicran/")
+options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
+install.packages(c("radiant.update", "fs"))
 fs::dir_delete(file.path(.libPaths()[1], "00LOCK"))
 radiant.update::radiant.update(options = "--no-lock")
 ```
