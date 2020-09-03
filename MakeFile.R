@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 # setwd(docs_path)
 docs_path <- setwd(".")
 if (basename(getwd()) != "docs") stop("Wrong working directory set")
-# docs_path <- setwd("~/gh/docs")
+# docs_path <- setwd("~/git/docs")
 system('make')
 
 knit_docs <- function(x) {

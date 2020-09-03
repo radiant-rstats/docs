@@ -13,7 +13,6 @@
 
 <title>Data &gt; View</title>
 
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -21,7 +20,6 @@
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -405,7 +403,7 @@ summary {
 <p>It is also possible to filter using dates. For example, to select rows with dates before June 1st, 2014 enter <code>date &lt; "2014-6-1"</code> into the filter box and press return.</p>
 <p>You can also use string matching to select rows. For example, type <code>grepl('ood', cut)</code> to select rows with <code>Good</code> or <code>Very good</code> cut. This search is case sensitive by default. For case insensitive search use <code>grepl("GOOD", cut, ignore.case = TRUE)</code>. Type your statement in the <code>Filter</code> box and press return to see the result on screen or an error below the box if the expression is invalid.</p>
 <p>It is important to note that these filters are <em>persistent</em> and will be applied to any analysis conducted through in Radiant. To deactivate a filter un-check the <code>Filter data</code> check-box. To remove a filter simply delete it.</p>
-<table class="table table-condensed table-hover" style="width:60%;">
+<table class='table table-condensed table-hover' style='width:60%;'>
 <thead>
 <tr>
 <th style="text-align:left;">

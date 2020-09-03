@@ -13,7 +13,6 @@
 
 <title>Multivariate &gt; Cluster &gt; K-clustering</title>
 
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -21,7 +20,6 @@
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -73,27 +71,26 @@ img.center {
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -103,7 +100,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -502,14 +499,14 @@ summary {
 </p>
 <p>By reviewing the Cluster means table in the <em>Summary</em> tab and the density plots in the <em>Plots</em> tab we can derive the following labels: Segment 3 stands out with higher scores on questions v2, v4, and v6. We could call them the ‘Cosmetic brushers’. Segment 1 stands out with higher scores on questions v1 and v3 and a lower score on v5. They seem to care most about the health benefits of toothpaste so we might call them the ‘Therapeutic brushers’. Segment 2 scores lower in v1 and v3 and higher on v5, i.e., they seem to care little about the health benefits of toothpaste. Since their scores for the cosmetics benefits are middle-of-the-road we could label them the ‘Uninvolved brushers’. To save the table of cluster means to a csv file press the download button on the top-right of your screen.</p>
 <p>Once we categorize the segments we can create a segment (or cluster) membership variable by clicking the <code>Store</code> button. A new variable is added to the toothpaste data showing which respondents were assigned to each cluster (i.e., cluster membership). We can change the created cluster variable to show the descriptive labels above through the <em>Data &gt; Transform</em> menu. Select the <code>kclus</code> variable in the Select column(s) box. Then select <code>Recode</code> from the <code>Transform type</code> dropdown. In the recode box type (or paste) the command below and press return:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">1</span> =<span class="st"> &#39;Therapeutic&#39;</span>; <span class="dv">2</span> =<span class="st"> &#39;Uninvolved&#39;</span>; <span class="dv">3</span> =<span class="st"> &#39;Cosmetic&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="dv">1</span> =<span class="st"> &#39;Therapeutic&#39;</span>; <span class="dv">2</span> =<span class="st"> &#39;Uninvolved&#39;</span>; <span class="dv">3</span> =<span class="st"> &#39;Cosmetic&#39;</span></a></code></pre></div>
 <p>This should produce the output shown below. After verifying the results are as expected, click the <code>Store</code> button to add the recoded variable to the toothpaste dataset.</p>
 <p align="center">
 <img src="figures_multivariate/kclus_transform_recode.png">
 </p>
 <p>We can profile these segments with demographic data using cross-tabs (e.g., gender vs segment membership). Go to <em>Basics &gt; Tables &gt; Cross-tabs</em>. Our null hypothesis and alternative hypothesis are:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>H0<span class="op">:</span><span class="st"> </span>There is no relationship between gender and segment membership</span>
-<span id="cb2-2"><a href="#cb2-2"></a>Ha<span class="op">:</span><span class="st"> </span>There is a relationship between gender and segment membership</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">H0<span class="op">:</span><span class="st"> </span>There is no relationship between gender and segment membership</a>
+<a class="sourceLine" id="cb2-2" title="2">Ha<span class="op">:</span><span class="st"> </span>There is a relationship between gender and segment membership</a></code></pre></div>
 <p>In the <em>Summary</em> tab we see there is a significant association between these two variables. The p.value is .001 and there are no cells with expected values below 5 (see the help file for <em>Basics &gt; Tables &gt; Cross-tabs</em> for a detailed discussion).</p>
 <p align="center">
 <img src="figures_multivariate/kclus_cross_tabs_summary.png">
@@ -529,8 +526,8 @@ summary {
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>patchwork</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">plot</span>(result, <span class="dt">plots =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span><span class="kw">wrap_plots</span>(plot_list, <span class="dt">ncol =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">plot_annotation</span>(<span class="dt">title =</span> <span class="st">&quot;K-means Cluster Analysis&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">plot</span>(result, <span class="dt">plots =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="st">  </span><span class="kw">wrap_plots</span>(plot_list, <span class="dt">ncol =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">plot_annotation</span>(<span class="dt">title =</span> <span class="st">&quot;K-means Cluster Analysis&quot;</span>)</a></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>

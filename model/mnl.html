@@ -13,7 +13,6 @@
 
 <title>Model &gt; Estimate &gt; Multinomial logistic regression (MNL)</title>
 
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -21,7 +20,6 @@
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -73,27 +71,26 @@ img.center {
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -103,7 +100,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -529,10 +526,10 @@ summary {
 <li>Ha: The relative risk ratio associated with explanatory variable x is not equal to 1</li>
 </ul>
 <p>A selected set of relative risk ratios from the multinomial logistic regression can be interpreted as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>                         RRR coefficient std.error z.value p.value    </span>
-<span id="cb1-2"><a href="#cb1-2"></a> heinz32 price.heinz32 <span class="fl">0.101</span>      <span class="fl">-2.296</span>     <span class="fl">0.135</span> <span class="fl">-17.033</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="st"> </span>hunts32 price.heinz28 <span class="fl">3.602</span>       <span class="fl">1.282</span>     <span class="fl">0.126</span>  <span class="fl">10.200</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="st"> </span>hunts32 price.hunts32 <span class="fl">0.070</span>      <span class="fl">-2.655</span>     <span class="fl">0.208</span> <span class="fl">-12.789</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">                         RRR coefficient std.error z.value p.value    </a>
+<a class="sourceLine" id="cb1-2" title="2"> heinz32 price.heinz32 <span class="fl">0.101</span>      <span class="fl">-2.296</span>     <span class="fl">0.135</span> <span class="fl">-17.033</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="st"> </span>hunts32 price.heinz28 <span class="fl">3.602</span>       <span class="fl">1.282</span>     <span class="fl">0.126</span>  <span class="fl">10.200</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="st"> </span>hunts32 price.hunts32 <span class="fl">0.070</span>      <span class="fl">-2.655</span>     <span class="fl">0.208</span> <span class="fl">-12.789</span>  <span class="op">&lt;</span><span class="st"> </span><span class="fl">.001</span> <span class="op">**</span><span class="er">*</span></a></code></pre></div>
 <ul>
 <li>The RRR for a $1 increase in <code>price.heinz32</code> on the relative odds or purchasing <code>heinz32</code> rather than <code>heinz28</code> is 0.101. If the price for <code>heinz32</code> increased by $1, the odds of purchasing <code>heinz32</code> rather than <code>heinz28</code> would decrease by a factor of 0.101, or decrease by 89.9%, while holding all other variables in the model constant.</li>
 <li>The RRR for a $1 increase in <code>price.heinz28</code> on the relative odds or purchasing <code>hunts32</code> rather than <code>heinz28</code> is 3.602. If the price for <code>heinz28</code> increased by $1, the odds of purchasing <code>hunts32</code> rather than <code>heinz28</code> would increase by a factor of 3.602, or increase by 260.2%, while holding all other variables in the model constant.</li>
@@ -569,8 +566,8 @@ summary {
 <h3>Report &gt; Rmd</h3>
 <p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
 <p>If a plot was created, it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">plot</span>(result, <span class="dt">plots =</span> <span class="st">&quot;coef&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Coefficient plot&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">plot</span>(result, <span class="dt">plots =</span> <span class="st">&quot;coef&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Coefficient plot&quot;</span>)</a></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
