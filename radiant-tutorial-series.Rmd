@@ -270,8 +270,7 @@ access to all materials used in the simulation module:
         * Use <code>ifelse</code> to specify a simulation formula
         * Use <code>pmax</code> to specify a simulation formula
 
-
-* <a href="https://youtu.be/vCExcD24ACM" target="_blank">Using Grid Search in Simulation (#5)</a>
+* <a href="https://youtu.be/GSghSOyJ1Ws" target="_blank">Using Grid Search in Simulation (#5)</a>
     * This video demonstrates how to use grid search in simulation 
     * Topics List:
         * Find an optimal value by sorting simulated data or creating a plot

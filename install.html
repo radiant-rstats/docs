@@ -20,6 +20,7 @@
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -71,9 +72,9 @@ img.center {
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -83,14 +84,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -100,7 +103,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -508,44 +511,44 @@ summary {
 <h2>Installing R, Rstudio, and Radiant on macOS</h2>
 <p>To install the latest version or R you need macOS 10.13 (High Sierra) or higher. Download and install R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.</p>
 <p>After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R&quot;</span>)</span></code></pre></div>
 <p>For a video tutorial see the <code>Installing R, Rstudio, and Radiant on macOS</code> video below:</p>
 <iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 <blockquote>
 <p>Note: It is possible that you will be asked for your password during the install process to correct permission settings for the directory /usr/local/bin. If there is still an error installing <code>tinytex</code> please run the command below from the “terminal” app in macOS</p>
 </blockquote>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> chown -R <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>:admin /usr/local/bin<span class="kw">;</span> <span class="ex">R</span> -e <span class="st">&quot;tinytex::install_tinytex()&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">sudo</span> chown -R <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>:admin /usr/local/bin<span class="kw">;</span> <span class="ex">R</span> -e <span class="st">&quot;tinytex::install_tinytex()&quot;</span></span></code></pre></div>
 </div>
 <div id="installing-r-rstudio-and-radiant-on-linux" class="section level2">
 <h2>Installing R, Rstudio, and Radiant on Linux</h2>
 <p>The first step will be to install R and a several additional linux tools. The commands required for Ubuntu 18.04 are shown below:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">sudo</span> apt-get update</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="fu">sudo</span> apt-get install gpg-agent gdebi-core</a>
-<a class="sourceLine" id="cb3-3" title="3"></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co">## Appends the CRAN repository to your sources.list file</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="fu">sudo</span> sh -c <span class="st">&quot;echo &#39;deb http://cloud.r-project.org/bin/linux/ubuntu focal-cran40/&#39; &gt;&gt; /etc/apt/sources.list&quot;</span> </a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="fu">sudo</span> gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 </a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="fu">sudo</span> gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 <span class="kw">|</span> <span class="ex">apt-key</span> add -</a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="fu">sudo</span> apt-get update </a>
-<a class="sourceLine" id="cb3-9" title="9"></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co">## Install R and required linux tools</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="fu">sudo</span> apt-get install r-base r-base-dev</a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="fu">sudo</span> apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \</a>
-<a class="sourceLine" id="cb3-13" title="13">  unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo libgsl-dev</a>
-<a class="sourceLine" id="cb3-14" title="14"></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">## Download and install Rstudio (preview)</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="fu">wget</span> -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.3.1058-amd64.deb</a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="fu">sudo</span> gdebi rstudio-preview-amd64.deb</a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="fu">rm</span> rstudio-preview-amd64.deb</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sudo</span> apt-get install gpg-agent gdebi-core</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">## Appends the CRAN repository to your sources.list file</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">sudo</span> sh -c <span class="st">&quot;echo &#39;deb http://cloud.r-project.org/bin/linux/ubuntu focal-cran40/&#39; &gt;&gt; /etc/apt/sources.list&quot;</span> </span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">sudo</span> gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 </span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">sudo</span> gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 <span class="kw">|</span> <span class="ex">apt-key</span> add -</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="fu">sudo</span> apt-get update </span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">## Install R and required linux tools</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="fu">sudo</span> apt-get install r-base r-base-dev</span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">sudo</span> apt-get install libssl-dev libcurl4-openssl-dev libxml2-dev libicu-dev \</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  unixodbc-dev libpq-dev libgdal-dev libproj-dev libcairo2-dev cargo libgsl-dev</span>
+<span id="cb3-14"><a href="#cb3-14"></a></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">## Download and install Rstudio (preview)</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="fu">wget</span> -O rstudio-preview-amd64.deb https://s3.amazonaws.com/rstudio-ide-build/desktop/bionic/amd64/rstudio-1.3.1058-amd64.deb</span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="fu">sudo</span> gdebi rstudio-preview-amd64.deb</span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="fu">rm</span> rstudio-preview-amd64.deb</span></code></pre></div>
 <p>Run the following command to install the required R-packages for a user:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">R <span class="op">-</span>e <span class="st">&quot;source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>R <span class="op">-</span>e <span class="st">&quot;source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)&quot;</span></span></code></pre></div>
 <p>To make R-packages available to all users on a linux system run the command below instead:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">sudo su <span class="op">-</span>c <span class="st">&quot;R -e </span><span class="ch">\&quot;</span><span class="st">source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)</span><span class="ch">\&quot;</span><span class="st">&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>sudo su <span class="op">-</span>c <span class="st">&quot;R -e </span><span class="ch">\&quot;</span><span class="st">source(&#39;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&#39;)</span><span class="ch">\&quot;</span><span class="st">&quot;</span></span></code></pre></div>
 <p>To ensure that all packages are available and up to date use:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">R <span class="op">-</span>e <span class="st">&quot;radiant.update::radiant.update()&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>R <span class="op">-</span>e <span class="st">&quot;radiant.update::radiant.update()&quot;</span></span></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">sudo su <span class="op">-</span>c <span class="st">&quot;R -e &#39;radiant.update::radiant.update()&#39;&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>sudo su <span class="op">-</span>c <span class="st">&quot;R -e &#39;radiant.update::radiant.update()&#39;&quot;</span></span></code></pre></div>
 <!--
 ## Installing the development version of Radiant
 
@@ -578,22 +581,22 @@ sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/min
 <h2>Starting, Stopping, and Updating Radiant</h2>
 <p>I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the <code>Addins</code> menu at the top of the screen <code>Start radiant (browser)</code>. If for some reason the <code>Start radiant (browser)</code> is not shown in the dropdown, enter <code>radiant::radiant()</code> in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code>. The Radiant process will stop and the browser window will close or gray-out.</p>
 <p>To add an option to upgrade Radiant easily, use the commands below to install the <code>radiant.upgrade</code> package. You should now see two new item in the <code>Addins</code> dropdown that you can use for future radiant upgrades.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>)</a>
-<a class="sourceLine" id="cb8-3" title="3">radiant.update<span class="op">::</span><span class="kw">radiant.update</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>radiant.update<span class="op">::</span><span class="kw">radiant.update</span>()</span></code></pre></div>
 </div>
 <div id="sharing-rstudio-projects-with-others" class="section level2">
 <h2>Sharing Rstudio projects with others</h2>
 <p>An excellent way to share an Rstudio project hosted online (e.g., on Dropbox) with others is to use the <code>usethis</code> package</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;usethis&quot;</span>)</a>
-<a class="sourceLine" id="cb9-2" title="2">?usethis<span class="op">::</span>use_course</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;usethis&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a>?usethis<span class="op">::</span>use_course</span></code></pre></div>
 <p>As an example, run the command below to download and open an Rstudio project. Note the “1” at the end of the URL instead of Dropbox’s default which is “0”.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">usethis<span class="op">::</span><span class="kw">use_course</span>(<span class="st">&quot;https://www.dropbox.com/sh/0dmcr2xsphtn1ha/AADsrYsi8KBkddWx_B-aQbi1a?dl=1&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>usethis<span class="op">::</span><span class="kw">use_course</span>(<span class="st">&quot;https://www.dropbox.com/sh/0dmcr2xsphtn1ha/AADsrYsi8KBkddWx_B-aQbi1a?dl=1&quot;</span>)</span></code></pre></div>
 </div>
 <div id="installing-additional-r-development-tools" class="section level2">
 <h2>Installing additional R-development tools</h2>
 <p>To install additional development tools (i.e., Rtools, git, homebrew) copy-and-paste the command below into R or Rstudio and press return. When installing Rtools, Windows users should make sure to check the option to add Rstools to the system path.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install_dev.R&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install_dev.R&quot;</span>)</span></code></pre></div>
 </div>
 <div id="documentation" class="section level2">
 <h2>Documentation</h2>
@@ -611,19 +614,19 @@ sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/min
 <div id="trouble-shooting" class="section level2">
 <h2>Trouble shooting</h2>
 <p>Windows users may need to start R and Rstudio <code>as administrator</code>. On rare occasions R(studio) may complain that a package is not yet installed when starting Radiant. If so, install the package mentioned using the command below but replace ‘package-that-is-not-yet-installed’ with the package name mentioned in the error message</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;package-that-is-not-yet-installed&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://cran.rstudio.com&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;binary&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;package-that-is-not-yet-installed&quot;</span>, <span class="dt">repos =</span> <span class="st">&quot;https://cran.rstudio.com&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
 <p>or copy-and-paste the commands below into R to check if any required packages have not yet been installed</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>)</a>
-<a class="sourceLine" id="cb13-3" title="3">radiant.update<span class="op">::</span><span class="kw">radiant.update</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3"></a>radiant.update<span class="op">::</span><span class="kw">radiant.update</span>()</span></code></pre></div>
 <p>If you are having trouble updating Radiant on Windows please (1) Restart Rstudio and (2) run the code below:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;radiant.update&quot;</span>, <span class="st">&quot;fs&quot;</span>))</a>
-<a class="sourceLine" id="cb14-3" title="3">fs<span class="op">::</span><span class="kw">dir_delete</span>(<span class="kw">file.path</span>(<span class="kw">.libPaths</span>()[<span class="dv">1</span>], <span class="st">&quot;00LOCK&quot;</span>))</a>
-<a class="sourceLine" id="cb14-4" title="4">radiant.update<span class="op">::</span><span class="kw">radiant.update</span>(<span class="dt">options =</span> <span class="st">&quot;--no-lock&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="dt">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;radiant.update&quot;</span>, <span class="st">&quot;fs&quot;</span>))</span>
+<span id="cb14-3"><a href="#cb14-3"></a>fs<span class="op">::</span><span class="kw">dir_delete</span>(<span class="kw">file.path</span>(<span class="kw">.libPaths</span>()[<span class="dv">1</span>], <span class="st">&quot;00LOCK&quot;</span>))</span>
+<span id="cb14-4"><a href="#cb14-4"></a>radiant.update<span class="op">::</span><span class="kw">radiant.update</span>(<span class="dt">options =</span> <span class="st">&quot;--no-lock&quot;</span>)</span></code></pre></div>
 <p>Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.</p>
 <p>If there is an error installing <code>tinytex</code> on macOS please run the command below from the “terminal” app:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="fu">sudo</span> chown -R <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>:admin /usr/local/bin<span class="kw">;</span> <span class="ex">R</span> -e <span class="st">&quot;tinytex::install_tinytex()&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">sudo</span> chown -R <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>:admin /usr/local/bin<span class="kw">;</span> <span class="ex">R</span> -e <span class="st">&quot;tinytex::install_tinytex()&quot;</span></span></code></pre></div>
 </div>
 <div id="reporting-issues" class="section level2">
 <h2>Reporting issues</h2>
