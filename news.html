@@ -13,14 +13,23 @@
 
 <title>News</title>
 
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -69,22 +78,38 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -103,7 +128,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -157,39 +182,9 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -199,10 +194,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -219,6 +210,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -231,7 +225,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -473,7 +466,7 @@ summary {
   }
 </style>
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -486,21 +479,21 @@ summary {
 <div id="breaking-changes-in-version-0.9.3.3" class="section level2">
 <h2>Breaking changes in version 0.9.3.3</h2>
 <p>Radiant (0.9.3.3) has some changes that may break existing code. Code generated for <em>Report &gt; Rmd</em> (and <em>Report &gt; R</em>) will no longer use an <code>r_data</code> list to store and access data. This means that code generated and used in the Radiant browser interface can now more easily be used without the browser interface as well (e.g., in R or Rmarkdown documents). As an example, code you generate through <em>Data &gt; Transform</em> will now look like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>diamonds &lt;-<span class="st"> </span><span class="kw">mutate</span>(diamonds, <span class="dt">carat_ln =</span> <span class="kw">log</span>(carat))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> <span class="fu">mutate</span>(diamonds, <span class="at">carat_ln =</span> <span class="fu">log</span>(carat))</span></code></pre></div>
 <p>instead of this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>r_data[[<span class="st">&quot;diamonds&quot;</span>]] &lt;-<span class="st"> </span><span class="kw">mutate</span>(r_data[[<span class="st">&quot;diamonds&quot;</span>]], <span class="dt">carat_ln =</span> <span class="kw">log</span>(carat))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>r_data[[<span class="st">&quot;diamonds&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">mutate</span>(r_data[[<span class="st">&quot;diamonds&quot;</span>]], <span class="at">carat_ln =</span> <span class="fu">log</span>(carat))</span></code></pre></div>
 <p>You can add also any data.frame (or tibble) you create in <em>Report &gt; Rmd</em>, e.g., by loading from disk, to the <code>Datasets</code> dropdown by adding a line with:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">register</span>(<span class="st">&quot;my_data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">register</span>(<span class="st">&quot;my_data&quot;</span>)</span></code></pre></div>
 <p>The updates also effect code for adding residuals and predictions to a dataset. The <code>store</code> command below is now similar in structure to dplyr’s mutate (i.e., pass a data.frame and add a column). The advantage of using the <code>store</code> function in the example below is that it will automatically assign values to the correct index in the dataset, even if a filter is used or there are missing values.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>result &lt;-<span class="st"> </span><span class="kw">logistic</span>(</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  titanic,</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="dt">rvar =</span> <span class="st">&quot;survived&quot;</span>,</span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="dt">evar =</span> <span class="kw">c</span>(<span class="st">&quot;pclass&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="st">&quot;sibsp&quot;</span>),</span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="dt">lev =</span> <span class="st">&quot;Yes&quot;</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>)</span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="kw">summary</span>(result)</span>
-<span id="cb4-8"><a href="#cb4-8"></a>pred &lt;-<span class="st"> </span><span class="kw">predict</span>(result, <span class="dt">pred_data =</span> titanic)</span>
-<span id="cb4-9"><a href="#cb4-9"></a>titanic &lt;-<span class="st"> </span><span class="kw">store</span>(titanic, pred, <span class="dt">name =</span> <span class="st">&quot;pred_logit&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">logistic</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  titanic,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rvar =</span> <span class="st">&quot;survived&quot;</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;pclass&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="st">&quot;sibsp&quot;</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">lev =</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">pred_data =</span> titanic)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>titanic <span class="ot">&lt;-</span> <span class="fu">store</span>(titanic, pred, <span class="at">name =</span> <span class="st">&quot;pred_logit&quot;</span>)</span></code></pre></div>
 <p>If you open an <em>old</em> state file in Radiant and try to knit a report in <em>Report &gt; Rmd</em> you will likely see a pop-up that will ask if you want to <em>clean</em> the code. If you click the <em>Clean report</em> button, Radiant will try to update your existing code to the new format. I expect that this will automatically handle about 90-95% of cases.</p>
 <!--
 To install the development version of Radiant you can use the code below:
@@ -538,7 +531,7 @@ ret <- sapply(
 <li><a href="http://radiant-rstats.github.io/radiant.multivariate/news/" class="uri">http://radiant-rstats.github.io/radiant.multivariate/news/</a></li>
 </ul>
 <p>To get the latest version of all Radiant components run the command below:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 
@@ -590,7 +583,7 @@ ret <- sapply(
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -608,7 +601,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

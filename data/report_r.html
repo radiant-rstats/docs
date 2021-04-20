@@ -13,14 +13,23 @@
 
 <title>Report &gt; R</title>
 
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -69,22 +78,38 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -103,7 +128,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -157,39 +182,9 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -199,10 +194,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -219,6 +210,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -231,7 +225,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -473,7 +466,7 @@ summary {
   }
 </style>
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -490,49 +483,49 @@ summary {
 <p>You can load an R-code file into Radiant by clicking the <code>Load report</code> button and selecting an .r or .R file. If you started Radiant from Rstudio you can save a report in HTML, Word, or PDF format by selecting the desired format from the drop-down menu and clicking <code>Save report</code>. To save just the code choose <code>R</code> from the dropdown and press the <code>Save report</code> button.</p>
 <p>If you started Radiant from Rstudio, you can also click the <code>Read files</code> button to browse for files and generate code to read it into Radiant. For example, read rda, rds, xls, yaml, and feather and add them to the <code>Datasets</code> dropdown. If the file type you want to load is not currently supported, the path to the file will be returned. The file path used will be relative to the Rstudio-project root. Paths to files synced to a local Dropbox or Google Drive folder will use the <code>find_dropbox</code> and <code>find_gdrive</code> functions to enhances reproducibility.</p>
 <p>As an example you can copy-and-paste the code below into the editor and press <code>Knit report (R)</code> to generate results.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">## get the active dataset and show the first few observations</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">.get_data</span>() <span class="op">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="st">  </span><span class="kw">head</span>()</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">## access a dataset</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="st">  </span><span class="kw">select</span>(price, clarity) <span class="op">%&gt;%</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  </span><span class="kw">head</span>()</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">## add a variable to the diamonds data</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>diamonds &lt;-<span class="st"> </span><span class="kw">mutate</span>(diamonds, <span class="dt">log_price =</span> <span class="kw">log</span>(price))</span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co">## show the first observations in the price and log_price columns</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="st">  </span><span class="kw">select</span>(price, log_price) <span class="op">%&gt;%</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="st">  </span><span class="kw">head</span>()</span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co">## create a histogram of prices</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> price)) <span class="op">+</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="st">    </span><span class="kw">geom_histogram</span>()</span>
-<span id="cb1-22"><a href="#cb1-22"></a></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="co">## and a histogram of log-prices using radiant.data::visualize</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="kw">visualize</span>(diamonds, <span class="dt">xvar =</span> <span class="st">&quot;log_price&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1-25"><a href="#cb1-25"></a></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="co">## open help in the R-studio viewer from Radiant</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="kw">help</span>(<span class="dt">package =</span> <span class="st">&quot;radiant.data&quot;</span>)</span>
-<span id="cb1-28"><a href="#cb1-28"></a></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="co">## If you are familiar with Shiny you can call reactives when the code</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="co">## is evaluated inside a Shiny app. For example, if you transformed</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a><span class="co">## some variables in Data &gt; Transform you can call the transform_main</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a><span class="co">## reacive to see the latest result. Very useful for debugging</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a><span class="co"># transform_main() %&gt;% head()</span></span>
-<span id="cb1-34"><a href="#cb1-34"></a><span class="kw">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## get the active dataset and show the first few observations</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.get_data</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## access a dataset</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(price, clarity) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## add a variable to the diamonds data</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> <span class="fu">mutate</span>(diamonds, <span class="at">log_price =</span> <span class="fu">log</span>(price))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## show the first observations in the price and log_price columns</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(price, log_price) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## create a histogram of prices</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>()</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="do">## and a histogram of log-prices using radiant.data::visualize</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="st">&quot;log_price&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="do">## open help in the R-studio viewer from Radiant</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="at">package =</span> <span class="st">&quot;radiant.data&quot;</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="do">## If you are familiar with Shiny you can call reactives when the code</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="do">## is evaluated inside a Shiny app. For example, if you transformed</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="do">## some variables in Data &gt; Transform you can call the transform_main</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="do">## reacive to see the latest result. Very useful for debugging</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># transform_main() %&gt;% head()</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>()</span></code></pre></div>
 <div id="options" class="section level2">
 <h2>Options</h2>
 <p>The editor used in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> has several options that can be set in <code>.Rprofile</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">options</span>(<span class="dt">radiant.ace_vim.keys =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">options</span>(<span class="dt">radiant.ace_theme =</span> <span class="st">&quot;cobalt&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">options</span>(<span class="dt">radiant.ace_tabSize =</span> <span class="dv">2</span>)</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">options</span>(<span class="dt">radiant.ace_useSoftTabs =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">options</span>(<span class="dt">radiant.ace_showInvisibles =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="kw">options</span>(<span class="dt">radiant.ace_autoComplete =</span> <span class="st">&quot;live&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_vim.keys =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_theme =</span> <span class="st">&quot;cobalt&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_tabSize =</span> <span class="dv">2</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_useSoftTabs =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_showInvisibles =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_autoComplete =</span> <span class="st">&quot;live&quot;</span>)</span></code></pre></div>
 <p>Notes:</p>
 <ul>
 <li><code>vim.keys</code> enables a set of special keyboard short-cuts. If you have never used VIM you probably don’t want this</li>
@@ -595,7 +588,7 @@ summary {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -613,7 +606,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

@@ -13,14 +13,23 @@
 
 <title>Radiant – Business analytics using R and Shiny</title>
 
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -69,35 +78,19 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
-
-
-
 <style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
 
 
 
@@ -107,10 +100,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -127,6 +116,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -139,7 +131,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -381,7 +372,7 @@ summary {
   }
 </style>
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -400,7 +391,9 @@ summary {
 <div id="package-dependencies" class="section level2">
 <h2>Package dependencies</h2>
 <details>
-<p><summary>Citing packages</summary></p>
+<summary>
+Citing packages
+</summary>
 <pre><code>
 To cite package &#39;radiant&#39; in publications use:
 
@@ -498,7 +491,7 @@ https://radiant-rstats.github.io/docs},
 
 To cite package &#39;radiant.model&#39; in publications use:
 
-  Vincent Nijs (2020). radiant.model: Model Menu for Radiant: Business
+  Vincent Nijs (2021). radiant.model: Model Menu for Radiant: Business
   Analytics using R and Shiny.
   https://github.com/radiant-rstats/radiant.model/,
   https://radiant-rstats.github.io/radiant.model/,
@@ -509,7 +502,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {radiant.model: Model Menu for Radiant: Business Analytics using R and Shiny},
     author = {Vincent Nijs},
-    year = {2020},
+    year = {2021},
     note = {https://github.com/radiant-rstats/radiant.model/,
 https://radiant-rstats.github.io/radiant.model/,
 https://radiant-rstats.github.io/docs/},
@@ -539,39 +532,37 @@ https://radiant-rstats.github.io/docs},
 
 To cite package &#39;shiny&#39; in publications use:
 
-  Winston Chang, Joe Cheng, JJ Allaire, Yihui Xie and Jonathan
-  McPherson (2020). shiny: Web Application Framework for R. R package
-  version 1.5.0. http://shiny.rstudio.com
+  Winston Chang, Joe Cheng, JJ Allaire, Carson Sievert, Barret
+  Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert and
+  Barbara Borges (2021). shiny: Web Application Framework for R. R
+  package version 1.6.0. https://shiny.rstudio.com/
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {shiny: Web Application Framework for R},
-    author = {Winston Chang and Joe Cheng and JJ Allaire and Yihui Xie and Jonathan McPherson},
-    year = {2020},
-    note = {R package version 1.5.0},
-    url = {http://shiny.rstudio.com},
+    author = {Winston Chang and Joe Cheng and JJ Allaire and Carson Sievert and Barret Schloerke and Yihui Xie and Jeff Allen and Jonathan McPherson and Alan Dipert and Barbara Borges},
+    year = {2021},
+    note = {R package version 1.6.0},
+    url = {https://shiny.rstudio.com/},
   }
 
 
 To cite package &#39;import&#39; in publications use:
 
-  Stefan Milton Bache (2015). import: An Import Mechanism for R. R
-  package version 1.1.0. https://github.com/smbache/import
+  Stefan Milton Bache and Magnus Thor Torfason (2020). import: An
+  Import Mechanism for R. R package version 1.2.0.
+  https://github.com/rticulate/import
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {import: An Import Mechanism for R},
-    author = {Stefan Milton Bache},
-    year = {2015},
-    note = {R package version 1.1.0},
-    url = {https://github.com/smbache/import},
+    author = {Stefan Milton Bache and Magnus Thor Torfason},
+    year = {2020},
+    note = {R package version 1.2.0},
+    url = {https://github.com/rticulate/import},
   }
-
-ATTENTION: This citation information has been auto-generated from the
-package DESCRIPTION file and may need manual editing, see
-&#39;help(&quot;citation&quot;)&#39;.
 
 
 To cite ggplot2 in publications, please use:
@@ -610,23 +601,22 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;dplyr&#39; in publications use:
 
   Hadley Wickham, Romain François, Lionel Henry and Kirill Müller
-  (2020). dplyr: A Grammar of Data Manipulation.
+  (2021). dplyr: A Grammar of Data Manipulation.
   https://dplyr.tidyverse.org, https://github.com/tidyverse/dplyr.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {dplyr: A Grammar of Data Manipulation},
-    author = {Hadley Wickham and Romain François and Lionel {
-             Henry} and Kirill Müller},
-    year = {2020},
+    author = {Hadley Wickham and Romain François and Lionel Henry and Kirill Müller},
+    year = {2021},
     note = {https://dplyr.tidyverse.org, https://github.com/tidyverse/dplyr},
   }
 
 
 To cite package &#39;tidyr&#39; in publications use:
 
-  Hadley Wickham (2020). tidyr: Tidy Messy Data.
+  Hadley Wickham (2021). tidyr: Tidy Messy Data.
   https://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr.
 
 A BibTeX entry for LaTeX users is
@@ -634,35 +624,33 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {tidyr: Tidy Messy Data},
     author = {Hadley Wickham},
-    year = {2020},
+    year = {2021},
     note = {https://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr},
   }
 
 
 To cite package &#39;magrittr&#39; in publications use:
 
-  Stefan Milton Bache and Hadley Wickham (2014). magrittr: A
-  Forward-Pipe Operator for R. R package version 1.5.
+  Stefan Milton Bache and Hadley Wickham (2020). magrittr: A
+  Forward-Pipe Operator for R. https://magrittr.tidyverse.org,
+  https://github.com/tidyverse/magrittr.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {magrittr: A Forward-Pipe Operator for R},
     author = {Stefan Milton Bache and Hadley Wickham},
-    year = {2014},
-    note = {R package version 1.5},
+    year = {2020},
+    note = {https://magrittr.tidyverse.org,
+https://github.com/tidyverse/magrittr},
   }
-
-ATTENTION: This citation information has been auto-generated from the
-package DESCRIPTION file and may need manual editing, see
-&#39;help(&quot;citation&quot;)&#39;.
 
 
 To cite the psych package in publications use:
 
   Revelle, W. (2020) psych: Procedures for Personality and
   Psychological Research, Northwestern University, Evanston, Illinois,
-  USA, https://CRAN.R-project.org/package=psych Version = 2.0.8,.
+  USA, https://CRAN.R-project.org/package=psych Version = 2.1.3,.
 
 A BibTeX entry for LaTeX users is
 
@@ -671,8 +659,8 @@ A BibTeX entry for LaTeX users is
     author = {William Revelle},
     organization = { Northwestern University},
     address = { Evanston, Illinois},
-    year = {2020},
-    note = {R package version 2.0.8},
+    year = {2021},
+    note = {R package version 2.1.3},
     url = {https://CRAN.R-project.org/package=psych},
   }
 
@@ -681,7 +669,7 @@ To cite lubridate in publications use:
 
   Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy
   with lubridate. Journal of Statistical Software, 40(3), 1-25. URL
-  http://www.jstatsoft.org/v40/i03/.
+  https://www.jstatsoft.org/v40/i03/.
 
 A BibTeX entry for LaTeX users is
 
@@ -693,7 +681,7 @@ A BibTeX entry for LaTeX users is
     volume = {40},
     number = {3},
     pages = {1--25},
-    url = {http://www.jstatsoft.org/v40/i03/},
+    url = {https://www.jstatsoft.org/v40/i03/},
   }
 
 
@@ -733,7 +721,7 @@ https://github.com/thomasp85/patchwork},
 
 To cite package &#39;tibble&#39; in publications use:
 
-  Kirill Müller and Hadley Wickham (2020). tibble: Simple Data Frames.
+  Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames.
   https://tibble.tidyverse.org/, https://github.com/tidyverse/tibble.
 
 A BibTeX entry for LaTeX users is
@@ -741,7 +729,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {tibble: Simple Data Frames},
     author = {Kirill Müller and Hadley Wickham},
-    year = {2020},
+    year = {2021},
     note = {https://tibble.tidyverse.org/, https://github.com/tidyverse/tibble},
   }
 
@@ -749,7 +737,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;rlang&#39; in publications use:
 
   Lionel Henry and Hadley Wickham (2020). rlang: Functions for Base
-  Types and Core R and &#39;Tidyverse&#39; Features. http://rlang.r-lib.org,
+  Types and Core R and &#39;Tidyverse&#39; Features. https://rlang.r-lib.org,
   https://github.com/r-lib/rlang.
 
 A BibTeX entry for LaTeX users is
@@ -758,23 +746,23 @@ A BibTeX entry for LaTeX users is
     title = {rlang: Functions for Base Types and Core R and &#39;Tidyverse&#39; Features},
     author = {Lionel Henry and Hadley Wickham},
     year = {2020},
-    note = {http://rlang.r-lib.org, https://github.com/r-lib/rlang},
+    note = {https://rlang.r-lib.org, https://github.com/r-lib/rlang},
   }
 
 
 To cite package &#39;broom&#39; in publications use:
 
-  David Robinson, Alex Hayes and Simon Couch (2020). broom: Convert
+  David Robinson, Alex Hayes and Simon Couch (2021). broom: Convert
   Statistical Objects into Tidy Tibbles. https://broom.tidymodels.org/,
-  http://github.com/tidymodels/broom.
+  https://github.com/tidymodels/broom.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {broom: Convert Statistical Objects into Tidy Tibbles},
     author = {David Robinson and Alex Hayes and Simon Couch},
-    year = {2020},
-    note = {https://broom.tidymodels.org/, http://github.com/tidymodels/broom},
+    year = {2021},
+    note = {https://broom.tidymodels.org/, https://github.com/tidymodels/broom},
   }
 
 
@@ -799,8 +787,8 @@ A BibTeX entry for LaTeX users is
 
 To cite the &#39;knitr&#39; package in publications use:
 
-  Yihui Xie (2020). knitr: A General-Purpose Package for Dynamic Report
-  Generation in R. R package version 1.29.
+  Yihui Xie (2021). knitr: A General-Purpose Package for Dynamic Report
+  Generation in R. R package version 1.31.
 
   Yihui Xie (2015) Dynamic Documents with R and knitr. 2nd edition.
   Chapman and Hall/CRC. ISBN 978-1498716963
@@ -836,13 +824,17 @@ To cite the &#39;rmarkdown&#39; package in publications, please use:
 
   JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi
   and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and
-  Winston Chang and Richard Iannone (2020). rmarkdown: Dynamic
-  Documents for R. R package version 2.3. URL
+  Winston Chang and Richard Iannone (2021). rmarkdown: Dynamic
+  Documents for R. R package version 2.7. URL
   https://rmarkdown.rstudio.com.
 
   Yihui Xie and J.J. Allaire and Garrett Grolemund (2018). R Markdown:
   The Definitive Guide. Chapman and Hall/CRC. ISBN 9781138359338. URL
   https://bookdown.org/yihui/rmarkdown.
+
+  Yihui Xie and Christophe Dervieux and Emily Riederer (2020). R
+  Markdown Cookbook. Chapman and Hall/CRC. ISBN 9780367563837. URL
+  https://bookdown.org/yihui/rmarkdown-cookbook.
 
 To see these entries in BibTeX format, use &#39;print(&lt;citation&gt;,
 bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
@@ -870,7 +862,7 @@ To cite package &#39;shinyAce&#39; in publications use:
 
   Vincent Nijs, Forest Fang, Trestle Technology, LLC and Jeff Allen
   (2019). shinyAce: Ace Editor Bindings for Shiny. R package version
-  0.4.1.0.0.0.1597538770.
+  0.4.1.0.0.0.1606106512.
 
 A BibTeX entry for LaTeX users is
 
@@ -878,14 +870,14 @@ A BibTeX entry for LaTeX users is
     title = {shinyAce: Ace Editor Bindings for Shiny},
     author = {Vincent Nijs and Forest Fang and {Trestle Technology, LLC} and Jeff Allen},
     year = {2019},
-    note = {R package version 0.4.1.0.0.0.1597538770},
+    note = {R package version 0.4.1.0.0.0.1606106512},
   }
 
 
 To cite package &#39;DT&#39; in publications use:
 
-  Yihui Xie, Joe Cheng and Xianying Tan (2020). DT: A Wrapper of the
-  JavaScript Library &#39;DataTables&#39;. R package version 0.15.
+  Yihui Xie, Joe Cheng and Xianying Tan (2021). DT: A Wrapper of the
+  JavaScript Library &#39;DataTables&#39;. R package version 0.17.
   https://github.com/rstudio/DT
 
 A BibTeX entry for LaTeX users is
@@ -893,25 +885,25 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {DT: A Wrapper of the JavaScript Library &#39;DataTables&#39;},
     author = {Yihui Xie and Joe Cheng and Xianying Tan},
-    year = {2020},
-    note = {R package version 0.15},
+    year = {2021},
+    note = {R package version 0.17},
     url = {https://github.com/rstudio/DT},
   }
 
 
 To cite package &#39;readr&#39; in publications use:
 
-  Hadley Wickham, Jim Hester and Romain Francois (2018). readr: Read
-  Rectangular Text Data. http://readr.tidyverse.org,
+  Hadley Wickham and Jim Hester (2020). readr: Read Rectangular Text
+  Data. https://readr.tidyverse.org,
   https://github.com/tidyverse/readr.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {readr: Read Rectangular Text Data},
-    author = {Hadley Wickham and Jim Hester and Romain Francois},
-    year = {2018},
-    note = {http://readr.tidyverse.org, https://github.com/tidyverse/readr},
+    author = {Hadley Wickham and Jim Hester},
+    year = {2020},
+    note = {https://readr.tidyverse.org, https://github.com/tidyverse/readr},
   }
 
 
@@ -971,7 +963,7 @@ https://curl.haxx.se/libcurl/ (upstream)},
 To cite package &#39;rstudioapi&#39; in publications use:
 
   Kevin Ushey, JJ Allaire, Hadley Wickham and Gary Ritchie (2020).
-  rstudioapi: Safely Access the RStudio API. R package version 0.11.
+  rstudioapi: Safely Access the RStudio API. R package version 0.13.
   https://github.com/rstudio/rstudioapi
 
 A BibTeX entry for LaTeX users is
@@ -980,7 +972,7 @@ A BibTeX entry for LaTeX users is
     title = {rstudioapi: Safely Access the RStudio API},
     author = {Kevin Ushey and JJ Allaire and Hadley Wickham and Gary Ritchie},
     year = {2020},
-    note = {R package version 0.11},
+    note = {R package version 0.13},
     url = {https://github.com/rstudio/rstudioapi},
   }
 
@@ -1014,23 +1006,24 @@ A BibTeX entry for LaTeX users is
     author = {Jim Hester},
     year = {2020},
     note = {https://github.com/tidyverse/glue, https://glue.tidyverse.org/},
-  }
-
-
+  }</code></pre>
+<pre><code>Warning in citation(i): no date field in DESCRIPTION file of package
+&#39;shinyFiles&#39;</code></pre>
+<pre><code>Warning in citation(i): could not determine year for &#39;shinyFiles&#39; from package
+DESCRIPTION file</code></pre>
+<pre><code>
 To cite package &#39;shinyFiles&#39; in publications use:
 
   Thomas Lin Pedersen, Vincent Nijs, Thomas Schaffner and Eric Nantz
-  (2020). shinyFiles: A Server-Side File System Viewer for Shiny. R
-  package version 0.8.0.9002.0.0.0.1597306512.
-  https://github.com/thomasp85/shinyFiles
+  (NA). shinyFiles: A Server-Side File System Viewer for Shiny. R
+  package version 0.9.0.9000. https://github.com/thomasp85/shinyFiles
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {shinyFiles: A Server-Side File System Viewer for Shiny},
     author = {Thomas Lin Pedersen and Vincent Nijs and Thomas Schaffner and Eric Nantz},
-    year = {2020},
-    note = {R package version 0.8.0.9002.0.0.0.1597306512},
+    note = {R package version 0.9.0.9000},
     url = {https://github.com/thomasp85/shinyFiles},
   }
 
@@ -1084,7 +1077,7 @@ A BibTeX entry for LaTeX users is
     address = {New York},
     year = {2002},
     note = {ISBN 0-387-95457-0},
-    url = {http://www.stats.ox.ac.uk/pub/MASS4/},
+    url = {https://www.stats.ox.ac.uk/pub/MASS4/},
   }
 
 
@@ -1175,7 +1168,7 @@ A BibTeX entry for LaTeX users is
     address = {New York},
     year = {2002},
     note = {ISBN 0-387-95457-0},
-    url = {http://www.stats.ox.ac.uk/pub/MASS4},
+    url = {https://www.stats.ox.ac.uk/pub/MASS4/},
   }
 
 
@@ -1202,6 +1195,13 @@ A BibTeX entry for LaTeX users is
 
 To cite sandwich in publications use:
 
+Zeileis A, Köll S, Graham N (2020). &quot;Various Versatile Variances: An
+Object-Oriented Implementation of Clustered Covariances in R.&quot; _Journal
+of Statistical Software_, *95*(1), 1-36. doi: 10.18637/jss.v095.i01
+(URL: https://doi.org/10.18637/jss.v095.i01).
+
+If sandwich is applied to lm() models, please also cite:
+
 Zeileis A (2004). &quot;Econometric Computing with HC and HAC Covariance
 Matrix Estimators.&quot; _Journal of Statistical Software_, *11*(10), 1-17.
 doi: 10.18637/jss.v011.i10 (URL:
@@ -1212,14 +1212,6 @@ If sandwich is applied to models other than lm(), please also cite:
 Zeileis A (2006). &quot;Object-Oriented Computation of Sandwich Estimators.&quot;
 _Journal of Statistical Software_, *16*(9), 1-16. doi:
 10.18637/jss.v016.i09 (URL: https://doi.org/10.18637/jss.v016.i09).
-
-If clustered covariances are used, please also cite:
-
-Berger S, Graham N, Zeileis A (2017). &quot;Various Versatile Variances: An
-Object-Oriented Implementation of Clustered Covariances in R.&quot; Working
-Paper 2017-12, Working Papers in Economics and Statistics, Research
-Platform Empirical and Experimental Economics, Universität Innsbruck.
-&lt;URL: http://EconPapers.RePEc.org/RePEc:inn:wpaper:2017-12&gt;.
 
 To see these entries in BibTeX format, use &#39;print(&lt;citation&gt;,
 bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
@@ -1255,13 +1247,14 @@ A BibTeX entry for LaTeX users is
     author = {Hadley Wickham},
     year = {2019},
     note = {http://stringr.tidyverse.org, https://github.com/tidyverse/stringr},
-  }
-
-
+  }</code></pre>
+<pre><code>Warning in citation(i): no date field in DESCRIPTION file of package
+&#39;DiagrammeR&#39;</code></pre>
+<pre><code>
 To cite package &#39;DiagrammeR&#39; in publications use:
 
-  Richard Iannone (2020). DiagrammeR: Graph/Network Visualization. R
-  package version 1.0.6.9000.0.0.0.1589504820.
+  Richard Iannone (2021). DiagrammeR: Graph/Network Visualization. R
+  package version 1.0.6.1.9000.
   https://github.com/rich-iannone/DiagrammeR
 
 A BibTeX entry for LaTeX users is
@@ -1269,8 +1262,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {DiagrammeR: Graph/Network Visualization},
     author = {Richard Iannone},
-    year = {2020},
-    note = {R package version 1.0.6.9000.0.0.0.1589504820},
+    year = {2021},
+    note = {R package version 1.0.6.1.9000},
     url = {https://github.com/rich-iannone/DiagrammeR},
   }
 
@@ -1278,9 +1271,9 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;e1071&#39; in publications use:
 
   David Meyer, Evgenia Dimitriadou, Kurt Hornik, Andreas Weingessel and
-  Friedrich Leisch (2019). e1071: Misc Functions of the Department of
+  Friedrich Leisch (2021). e1071: Misc Functions of the Department of
   Statistics, Probability Theory Group (Formerly: E1071), TU Wien. R
-  package version 1.7-3.
+  package version 1.7-6.
 
 A BibTeX entry for LaTeX users is
 
@@ -1288,8 +1281,8 @@ A BibTeX entry for LaTeX users is
     title = {e1071: Misc Functions of the Department of Statistics, Probability
 Theory Group (Formerly: E1071), TU Wien},
     author = {David Meyer and Evgenia Dimitriadou and Kurt Hornik and Andreas Weingessel and Friedrich Leisch},
-    year = {2019},
-    note = {R package version 1.7-3},
+    year = {2021},
+    note = {R package version 1.7-6},
   }
 
 
@@ -1313,9 +1306,9 @@ https://cran.r-project.org/package=rpart},
 
 To cite package &#39;ggrepel&#39; in publications use:
 
-  Kamil Slowikowski (2020). ggrepel: Automatically Position
-  Non-Overlapping Text Labels with &#39;ggplot2&#39;. R package version 0.8.2.
-  http://github.com/slowkow/ggrepel
+  Kamil Slowikowski (2021). ggrepel: Automatically Position
+  Non-Overlapping Text Labels with &#39;ggplot2&#39;. R package version 0.9.1.
+  https://github.com/slowkow/ggrepel
 
 A BibTeX entry for LaTeX users is
 
@@ -1323,9 +1316,9 @@ A BibTeX entry for LaTeX users is
     title = {ggrepel: Automatically Position Non-Overlapping Text Labels with
 &#39;ggplot2&#39;},
     author = {Kamil Slowikowski},
-    year = {2020},
-    note = {R package version 0.8.2},
-    url = {http://github.com/slowkow/ggrepel},
+    year = {2021},
+    note = {R package version 0.9.1},
+    url = {https://github.com/slowkow/ggrepel},
   }
 
 
@@ -1354,8 +1347,8 @@ To cite package &#39;xgboost&#39; in publications use:
 
   Tianqi Chen, Tong He, Michael Benesty, Vadim Khotilovich, Yuan Tang,
   Hyunsu Cho, Kailong Chen, Rory Mitchell, Ignacio Cano, Tianyi Zhou,
-  Mu Li, Junyuan Xie, Min Lin, Yifeng Geng and Yutian Li (2020).
-  xgboost: Extreme Gradient Boosting. R package version 1.2.0.1.
+  Mu Li, Junyuan Xie, Min Lin, Yifeng Geng and Yutian Li (2021).
+  xgboost: Extreme Gradient Boosting. R package version 1.3.2.1.
   https://github.com/dmlc/xgboost
 
 A BibTeX entry for LaTeX users is
@@ -1363,8 +1356,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {xgboost: Extreme Gradient Boosting},
     author = {Tianqi Chen and Tong He and Michael Benesty and Vadim Khotilovich and Yuan Tang and Hyunsu Cho and Kailong Chen and Rory Mitchell and Ignacio Cano and Tianyi Zhou and Mu Li and Junyuan Xie and Min Lin and Yifeng Geng and Yutian Li},
-    year = {2020},
-    note = {R package version 1.2.0.1},
+    year = {2021},
+    note = {R package version 1.3.2.1},
     url = {https://github.com/dmlc/xgboost},
   }
 
@@ -1467,32 +1460,32 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;httpuv&#39; in publications use:
 
-  Joe Cheng and Winston Chang (2020). httpuv: HTTP and WebSocket Server
-  Library. R package version 1.5.4. https://github.com/rstudio/httpuv
+  Joe Cheng and Winston Chang (2021). httpuv: HTTP and WebSocket Server
+  Library. R package version 1.5.5. https://github.com/rstudio/httpuv
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {httpuv: HTTP and WebSocket Server Library},
     author = {Joe Cheng and Winston Chang},
-    year = {2020},
-    note = {R package version 1.5.4},
+    year = {2021},
+    note = {R package version 1.5.5},
     url = {https://github.com/rstudio/httpuv},
   }
 
 
 To cite package &#39;mime&#39; in publications use:
 
-  Yihui Xie (2020). mime: Map Filenames to MIME Types. R package
-  version 0.9. https://github.com/yihui/mime
+  Yihui Xie (2021). mime: Map Filenames to MIME Types. R package
+  version 0.10. https://github.com/yihui/mime
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {mime: Map Filenames to MIME Types},
     author = {Yihui Xie},
-    year = {2020},
-    note = {R package version 0.9},
+    year = {2021},
+    note = {R package version 0.10},
     url = {https://github.com/yihui/mime},
   }
 
@@ -1520,18 +1513,18 @@ To cite package &#39;digest&#39; in publications use:
   Tuszynski, Henrik Bengtsson, Simon Urbanek, Mario Frasca, Bryan
   Lewis, Murray Stokely, Hannes Muehleisen, Duncan Murdoch, Jim Hester,
   Wush Wu, Qiang Kou, Thierry Onkelinx, Michel Lang, Viliam Simko, Kurt
-  Hornik, Radford Neal, Kendon Bell, Matthew de Queljoe, Ion Suruceanu
-  and Bill Denney. (2020). digest: Create Compact Hash Digests of R
-  Objects. R package version 0.6.25.
+  Hornik, Radford Neal, Kendon Bell, Matthew de Queljoe, Ion Suruceanu,
+  Bill Denney, Dirk Schumacher and and Winston Chang. (2020). digest:
+  Create Compact Hash Digests of R Objects. R package version 0.6.27.
   http://dirk.eddelbuettel.com/code/digest.html
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {digest: Create Compact Hash Digests of R Objects},
-    author = {Dirk Eddelbuettel with contributions by Antoine Lucas and Jarek Tuszynski and Henrik Bengtsson and Simon Urbanek and Mario Frasca and Bryan Lewis and Murray Stokely and Hannes Muehleisen and Duncan Murdoch and Jim Hester and Wush Wu and Qiang Kou and Thierry Onkelinx and Michel Lang and Viliam Simko and Kurt Hornik and Radford Neal and Kendon Bell and Matthew {de Queljoe} and Ion Suruceanu and Bill Denney.},
+    author = {Dirk Eddelbuettel with contributions by Antoine Lucas and Jarek Tuszynski and Henrik Bengtsson and Simon Urbanek and Mario Frasca and Bryan Lewis and Murray Stokely and Hannes Muehleisen and Duncan Murdoch and Jim Hester and Wush Wu and Qiang Kou and Thierry Onkelinx and Michel Lang and Viliam Simko and Kurt Hornik and Radford Neal and Kendon Bell and Matthew {de Queljoe} and Ion Suruceanu and Bill Denney and Dirk Schumacher and and Winston Chang.},
     year = {2020},
-    note = {R package version 0.6.25},
+    note = {R package version 0.6.27},
     url = {http://dirk.eddelbuettel.com/code/digest.html},
   }
 
@@ -1543,7 +1536,7 @@ package DESCRIPTION file and may need manual editing, see
 To cite package &#39;htmltools&#39; in publications use:
 
   Joe Cheng, Carson Sievert, Winston Chang, Yihui Xie and Jeff Allen
-  (2020). htmltools: Tools for HTML. R package version 0.5.0.
+  (2021). htmltools: Tools for HTML. R package version 0.5.1.1.
   https://github.com/rstudio/htmltools
 
 A BibTeX entry for LaTeX users is
@@ -1551,15 +1544,15 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {htmltools: Tools for HTML},
     author = {Joe Cheng and Carson Sievert and Winston Chang and Yihui Xie and Jeff Allen},
-    year = {2020},
-    note = {R package version 0.5.0},
+    year = {2021},
+    note = {R package version 0.5.1.1},
     url = {https://github.com/rstudio/htmltools},
   }
 
 
 To cite package &#39;R6&#39; in publications use:
 
-  Winston Chang (2019). R6: Encapsulated Classes with Reference
+  Winston Chang (2020). R6: Encapsulated Classes with Reference
   Semantics. https://r6.r-lib.org, https://github.com/r-lib/R6/.
 
 A BibTeX entry for LaTeX users is
@@ -1567,7 +1560,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {R6: Encapsulated Classes with Reference Semantics},
     author = {Winston Chang},
-    year = {2019},
+    year = {2020},
     note = {https://r6.r-lib.org, https://github.com/r-lib/R6/},
   }
 
@@ -1611,8 +1604,8 @@ Loops},
 
 To cite package &#39;promises&#39; in publications use:
 
-  Joe Cheng (2020). promises: Abstractions for Promise-Based
-  Asynchronous Programming. https://rstudio.github.io/promises,
+  Joe Cheng (2021). promises: Abstractions for Promise-Based
+  Asynchronous Programming. https://rstudio.github.io/promises/,
   https://github.com/rstudio/promises.
 
 A BibTeX entry for LaTeX users is
@@ -1620,40 +1613,39 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {promises: Abstractions for Promise-Based Asynchronous Programming},
     author = {Joe Cheng},
-    year = {2020},
-    note = {https://rstudio.github.io/promises,
+    year = {2021},
+    note = {https://rstudio.github.io/promises/,
 https://github.com/rstudio/promises},
   }
 
 
 To cite package &#39;crayon&#39; in publications use:
 
-  Gábor Csárdi (2017). crayon: Colored Terminal Output. R package
-  version 1.3.4. https://github.com/r-lib/crayon#readme
+  Gábor Csárdi (2021). crayon: Colored Terminal Output. R package
+  version 1.4.1. https://github.com/r-lib/crayon#readme
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {crayon: Colored Terminal Output},
     author = {Gábor Csárdi},
-    year = {2017},
-    note = {R package version 1.3.4},
+    year = {2021},
+    note = {R package version 1.4.1},
     url = {https://github.com/r-lib/crayon#readme},
   }
 
 
 To cite package &#39;fastmap&#39; in publications use:
 
-  Winston Chang (2019). fastmap: Fast Implementation of a Key-Value
-  Store. https://r-lib.github.io/fastmap/,
-  https://github.com/r-lib/fastmap.
+  Winston Chang (2021). fastmap: Fast Data Structures.
+  https://r-lib.github.io/fastmap/, https://github.com/r-lib/fastmap.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {fastmap: Fast Implementation of a Key-Value Store},
+    title = {fastmap: Fast Data Structures},
     author = {Winston Chang},
-    year = {2019},
+    year = {2021},
     note = {https://r-lib.github.io/fastmap/, https://github.com/r-lib/fastmap},
   }
 
@@ -1661,16 +1653,17 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;withr&#39; in publications use:
 
   Jim Hester, Kirill Müller, Kevin Ushey, Hadley Wickham and Winston
-  Chang (2020). withr: Run Code &#39;With&#39; Temporarily Modified Global
-  State. http://withr.r-lib.org, http://github.com/r-lib/withr#readme.
+  Chang (2021). withr: Run Code &#39;With&#39; Temporarily Modified Global
+  State. https://withr.r-lib.org,
+  https://github.com/r-lib/withr#readme.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {withr: Run Code &#39;With&#39; Temporarily Modified Global State},
     author = {Jim Hester and Kirill Müller and Kevin Ushey and Hadley Wickham and Winston Chang},
-    year = {2020},
-    note = {http://withr.r-lib.org, http://github.com/r-lib/withr#readme},
+    year = {2021},
+    note = {https://withr.r-lib.org, https://github.com/r-lib/withr#readme},
   }
 
 
@@ -1691,20 +1684,34 @@ https://github.github.com/gfm/ (spec)},
   }
 
 
-To cite package &#39;backports&#39; in publications use:
+To cite package &#39;bslib&#39; in publications use:
 
-  Michel Lang and R Core Team (2020). backports: Reimplementations of
-  Functions Introduced Since R-3.0.0. R package version 1.1.9.
-  https://github.com/r-lib/backports
+  Carson Sievert and Joe Cheng (2021). bslib: Custom &#39;Bootstrap&#39; &#39;Sass&#39;
+  Themes for &#39;shiny&#39; and &#39;rmarkdown&#39;. https://rstudio.github.io/bslib/,
+  https://github.com/rstudio/bslib.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {backports: Reimplementations of Functions Introduced Since R-3.0.0},
-    author = {Michel Lang and {R Core Team}},
-    year = {2020},
-    note = {R package version 1.1.9},
-    url = {https://github.com/r-lib/backports},
+    title = {bslib: Custom &#39;Bootstrap&#39; &#39;Sass&#39; Themes for &#39;shiny&#39; and &#39;rmarkdown&#39;},
+    author = {Carson Sievert and Joe Cheng},
+    year = {2021},
+    note = {https://rstudio.github.io/bslib/, https://github.com/rstudio/bslib},
+  }
+
+
+To cite package &#39;cachem&#39; in publications use:
+
+  Winston Chang (2021). cachem: Cache R Objects with Automatic Pruning.
+  https://cachem.r-lib.org/, https://github.com/r-lib/cachem.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {cachem: Cache R Objects with Automatic Pruning},
+    author = {Winston Chang},
+    year = {2021},
+    note = {https://cachem.r-lib.org/, https://github.com/r-lib/cachem},
   }
 
 
@@ -1723,21 +1730,53 @@ A BibTeX entry for LaTeX users is
   }
 
 
+To cite package &#39;lifecycle&#39; in publications use:
+
+  Lionel Henry and Hadley Wickham (2021). lifecycle: Manage the Life
+  Cycle of your Package Functions. https://lifecycle.r-lib.org/,
+  https://github.com/r-lib/lifecycle.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {lifecycle: Manage the Life Cycle of your Package Functions},
+    author = {Lionel Henry and Hadley Wickham},
+    year = {2021},
+    note = {https://lifecycle.r-lib.org/, https://github.com/r-lib/lifecycle},
+  }
+
+
+To cite package &#39;backports&#39; in publications use:
+
+  Michel Lang and R Core Team (2020). backports: Reimplementations of
+  Functions Introduced Since R-3.0.0. R package version 1.2.1.
+  https://github.com/r-lib/backports
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {backports: Reimplementations of Functions Introduced Since R-3.0.0},
+    author = {Michel Lang and {R Core Team}},
+    year = {2020},
+    note = {R package version 1.2.1},
+    url = {https://github.com/r-lib/backports},
+  }
+
+
 To cite package &#39;generics&#39; in publications use:
 
-  Max Kuhn, Hadley Wickham and Davis Vaughan (2018). generics: Common
+  Hadley Wickham, Max Kuhn and Davis Vaughan (2020). generics: Common
   S3 Generics not Provided by Base R Methods Related to Model Fitting.
-  R package version 0.0.2. https://github.com/r-lib/generics
+  https://generics.r-lib.org, https://github.com/r-lib/generics.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {generics: Common S3 Generics not Provided by Base R Methods Related to
 Model Fitting},
-    author = {Max Kuhn and Hadley Wickham and Davis Vaughan},
-    year = {2018},
-    note = {R package version 0.0.2},
-    url = {https://github.com/r-lib/generics},
+    author = {Hadley Wickham and Max Kuhn and Davis Vaughan},
+    year = {2020},
+    note = {https://generics.r-lib.org, https://github.com/r-lib/generics},
   }
 
 
@@ -1754,6 +1793,38 @@ A BibTeX entry for LaTeX users is
     author = {Lionel Henry and Hadley Wickham},
     year = {2020},
     note = {http://purrr.tidyverse.org, https://github.com/tidyverse/purrr},
+  }
+
+
+To cite package &#39;sass&#39; in publications use:
+
+  Joe Cheng, Timothy Mastny, Richard Iannone, Barret Schloerke and
+  Carson Sievert (2021). sass: Syntactically Awesome Style Sheets
+  (&#39;Sass&#39;). R package version 0.3.1. https://github.com/rstudio/sass
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {sass: Syntactically Awesome Style Sheets (&#39;Sass&#39;)},
+    author = {Joe Cheng and Timothy Mastny and Richard Iannone and Barret Schloerke and Carson Sievert},
+    year = {2021},
+    note = {R package version 0.3.1},
+    url = {https://github.com/rstudio/sass},
+  }
+
+
+To cite package &#39;jquerylib&#39; in publications use:
+
+  Carson Sievert and Joe Cheng (2020). jquerylib: Obtain &#39;jQuery&#39; as an
+  HTML Dependency Object. R package version 0.1.3.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {jquerylib: Obtain &#39;jQuery&#39; as an HTML Dependency Object},
+    author = {Carson Sievert and Joe Cheng},
+    year = {2020},
+    note = {R package version 0.1.3},
   }
 
 
@@ -1828,7 +1899,7 @@ To cite pbkrtest in publications use:
   Ulrich Halekoh, Søren Højsgaard (2014). A Kenward-Roger Approximation
   and Parametric Bootstrap Methods for Tests in Linear Mixed Models -
   The R Package pbkrtest. Journal of Statistical Software, 59(9), 1-30.
-  URL http://www.jstatsoft.org/v59/i09/.
+  URL https://www.jstatsoft.org/v59/i09/.
 
 A BibTeX entry for LaTeX users is
 
@@ -1840,29 +1911,29 @@ A BibTeX entry for LaTeX users is
     volume = {59},
     number = {9},
     pages = {1--30},
-    url = {http://www.jstatsoft.org/v59/i09/},
+    url = {https://www.jstatsoft.org/v59/i09/},
   }
 
 
 To cite package &#39;quantreg&#39; in publications use:
 
-  Roger Koenker (2020). quantreg: Quantile Regression. R package
-  version 5.67. https://www.r-project.org
+  Roger Koenker (2021). quantreg: Quantile Regression. R package
+  version 5.85. https://www.r-project.org
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {quantreg: Quantile Regression},
     author = {Roger Koenker},
-    year = {2020},
-    note = {R package version 5.67},
+    year = {2021},
+    note = {R package version 5.85},
     url = {https://www.r-project.org},
   }
 
 
 To cite package &#39;maptools&#39; in publications use:
 
-  Roger Bivand and Nicholas Lewin-Koh (2020). maptools: Tools for
+  Roger Bivand and Nicholas Lewin-Koh (2021). maptools: Tools for
   Handling Spatial Objects. http://maptools.r-forge.r-project.org/,
   http://r-forge.r-project.org/projects/maptools/.
 
@@ -1871,7 +1942,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {maptools: Tools for Handling Spatial Objects},
     author = {Roger Bivand and Nicholas Lewin-Koh},
-    year = {2020},
+    year = {2021},
     note = {http://maptools.r-forge.r-project.org/,
 http://r-forge.r-project.org/projects/maptools/},
   }
@@ -1880,16 +1951,16 @@ http://r-forge.r-project.org/projects/maptools/},
 To cite package &#39;rio&#39; in publications use:
 
   Chung-hong Chan, Geoffrey CH Chan, Thomas J. Leeper, and Jason Becker
-  (2018). rio: A Swiss-army knife for data file I/O. R package version
-  0.5.16.
+  (2021). rio: A Swiss-army knife for data file I/O. R package version
+  0.5.26.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {rio: A Swiss-army knife for data file I/O},
     author = {Chung-hong Chan and Geoffrey CH Chan and Thomas J. Leeper and Jason Becker},
-    year = {2018},
-    note = {R package version 0.5.16},
+    year = {2021},
+    note = {R package version 0.5.26},
   }
 
 
@@ -1913,8 +1984,8 @@ A BibTeX entry for LaTeX users is
   }
 
 
-Pinheiro J, Bates D, DebRoy S, Sarkar D, R Core Team (2020). _nlme:
-Linear and Nonlinear Mixed Effects Models_. R package version 3.1-149,
+Pinheiro J, Bates D, DebRoy S, Sarkar D, R Core Team (2021). _nlme:
+Linear and Nonlinear Mixed Effects Models_. R package version 3.1-152,
 &lt;URL: https://CRAN.R-project.org/package=nlme&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1922,8 +1993,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {{nlme}: Linear and Nonlinear Mixed Effects Models},
     author = {Jose Pinheiro and Douglas Bates and Saikat DebRoy and Deepayan Sarkar and {R Core Team}},
-    year = {2020},
-    note = {R package version 3.1-149},
+    year = {2021},
+    note = {R package version 3.1-152},
     url = {https://CRAN.R-project.org/package=nlme},
   }
 
@@ -1965,17 +2036,17 @@ package DESCRIPTION file and may need manual editing, see
 
 To cite package &#39;htmlwidgets&#39; in publications use:
 
-  Ramnath Vaidyanathan, Yihui Xie, JJ Allaire, Joe Cheng and Kenton
-  Russell (2019). htmlwidgets: HTML Widgets for R. R package version
-  1.5.1. https://github.com/ramnathv/htmlwidgets
+  Ramnath Vaidyanathan, Yihui Xie, JJ Allaire, Joe Cheng, Carson
+  Sievert and Kenton Russell (2020). htmlwidgets: HTML Widgets for R. R
+  package version 1.5.3. https://github.com/ramnathv/htmlwidgets
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {htmlwidgets: HTML Widgets for R},
-    author = {Ramnath Vaidyanathan and Yihui Xie and JJ Allaire and Joe Cheng and Kenton Russell},
-    year = {2019},
-    note = {R package version 1.5.1},
+    author = {Ramnath Vaidyanathan and Yihui Xie and JJ Allaire and Joe Cheng and Carson Sievert and Kenton Russell},
+    year = {2020},
+    note = {R package version 1.5.3},
     url = {https://github.com/ramnathv/htmlwidgets},
   }
 
@@ -1983,7 +2054,8 @@ A BibTeX entry for LaTeX users is
 To cite &#39;igraph&#39; in publications use:
 
   Csardi G, Nepusz T: The igraph software package for complex network
-  research, InterJournal, Complex Systems 1695. 2006. http://igraph.org
+  research, InterJournal, Complex Systems 1695. 2006.
+  https://igraph.org
 
 A BibTeX entry for LaTeX users is
 
@@ -1994,7 +2066,7 @@ A BibTeX entry for LaTeX users is
     volume = {Complex Systems},
     pages = {1695},
     year = {2006},
-    url = {http://igraph.org},
+    url = {https://igraph.org},
   }
 
 
@@ -2049,22 +2121,6 @@ A BibTeX entry for LaTeX users is
   }
 
 
-To cite package &#39;lifecycle&#39; in publications use:
-
-  Lionel Henry (2020). lifecycle: Manage the Life Cycle of your Package
-  Functions. https://lifecycle.r-lib.org/,
-  https://github.com/r-lib/lifecycle.
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {lifecycle: Manage the Life Cycle of your Package Functions},
-    author = {Lionel Henry},
-    year = {2020},
-    note = {https://lifecycle.r-lib.org/, https://github.com/r-lib/lifecycle},
-  }
-
-
 To cite package &#39;tidyselect&#39; in publications use:
 
   Lionel Henry and Hadley Wickham (2020). tidyselect: Select from a Set
@@ -2083,33 +2139,33 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;vctrs&#39; in publications use:
 
-  Hadley Wickham, Lionel Henry and Davis Vaughan (2020). vctrs: Vector
-  Helpers. R package version 0.3.4. https://vctrs.r-lib.org/
+  Hadley Wickham, Lionel Henry and Davis Vaughan (2021). vctrs: Vector
+  Helpers. R package version 0.3.7. https://vctrs.r-lib.org/
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {vctrs: Vector Helpers},
     author = {Hadley Wickham and Lionel Henry and Davis Vaughan},
-    year = {2020},
-    note = {R package version 0.3.4},
+    year = {2021},
+    note = {R package version 0.3.7},
     url = {https://vctrs.r-lib.org/},
   }
 
 
 To cite package &#39;crosstalk&#39; in publications use:
 
-  Joe Cheng (2020). crosstalk: Inter-Widget Interactivity for HTML
-  Widgets. R package version 1.1.0.1.
+  Joe Cheng and Carson Sievert (2021). crosstalk: Inter-Widget
+  Interactivity for HTML Widgets. R package version 1.1.1.
   https://rstudio.github.io/crosstalk/
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {crosstalk: Inter-Widget Interactivity for HTML Widgets},
-    author = {Joe Cheng},
-    year = {2020},
-    note = {R package version 1.1.0.1},
+    author = {Joe Cheng and Carson Sievert},
+    year = {2021},
+    note = {R package version 1.1.1},
     url = {https://rstudio.github.io/crosstalk/},
   }
 
@@ -2129,7 +2185,22 @@ A BibTeX entry for LaTeX users is
     address = {New York},
     year = {2002},
     note = {ISBN 0-387-95457-0},
-    url = {http://www.stats.ox.ac.uk/pub/MASS4},
+    url = {https://www.stats.ox.ac.uk/pub/MASS4/},
+  }
+
+
+To cite package &#39;proxy&#39; in publications use:
+
+  David Meyer and Christian Buchta (2021). proxy: Distance and
+  Similarity Measures. R package version 0.4-25.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {proxy: Distance and Similarity Measures},
+    author = {David Meyer and Christian Buchta},
+    year = {2021},
+    note = {R package version 0.4-25},
   }
 
 
@@ -2152,9 +2223,9 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;isoband&#39; in publications use:
 
-  Claus O. Wilke and Thomas Lin Pedersen (2020). isoband: Generate
+  Claus O. Wilke and Thomas Lin Pedersen (2021). isoband: Generate
   Isolines and Isobands from Regularly Spaced Elevation Grids. R
-  package version 0.2.2. https://github.com/wilkelab/isoband
+  package version 0.2.4. https://github.com/wilkelab/isoband
 
 A BibTeX entry for LaTeX users is
 
@@ -2162,8 +2233,8 @@ A BibTeX entry for LaTeX users is
     title = {isoband: Generate Isolines and Isobands from Regularly Spaced Elevation
 Grids},
     author = {Claus O. Wilke and Thomas Lin Pedersen},
-    year = {2020},
-    note = {R package version 0.2.2},
+    year = {2021},
+    note = {R package version 0.2.4},
     url = {https://github.com/wilkelab/isoband},
   }
 
@@ -2172,14 +2243,14 @@ To cite Rcpp in publications use:
 
   Dirk Eddelbuettel and Romain Francois (2011). Rcpp: Seamless R and
   C++ Integration. Journal of Statistical Software, 40(8), 1-18. URL
-  http://www.jstatsoft.org/v40/i08/.
+  https://www.jstatsoft.org/v40/i08/.
 
   Eddelbuettel, Dirk (2013) Seamless R and C++ Integration with Rcpp.
   Springer, New York. ISBN 978-1-4614-6867-7.
 
-  Dirk Eddelbuettel and James Joseph Balamuta (2017). Extending R with
-  C++: A Brief Introduction to Rcpp. PeerJ Preprints 5:e3188v1. URL
-  https://doi.org/10.7287/peerj.preprints.3188v1.
+  Dirk Eddelbuettel and James Joseph Balamuta (2018). Extending R with
+  C++: A Brief Introduction to Rcpp. The American Statistician. 72(1).
+  URL https://doi.org/10.1080/00031305.2017.1375990.
 
 To see these entries in BibTeX format, use &#39;print(&lt;citation&gt;,
 bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
@@ -2188,8 +2259,8 @@ bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
 
 To cite package &#39;BH&#39; in publications use:
 
-  Dirk Eddelbuettel, John W. Emerson and Michael J. Kane (2020). BH:
-  Boost C++ Header Files. R package version 1.72.0-3.
+  Dirk Eddelbuettel, John W. Emerson and Michael J. Kane (2021). BH:
+  Boost C++ Header Files. R package version 1.75.0-0.
   https://github.com/eddelbuettel/bh
 
 A BibTeX entry for LaTeX users is
@@ -2197,8 +2268,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {BH: Boost C++ Header Files},
     author = {Dirk Eddelbuettel and John W. Emerson and Michael J. Kane},
-    year = {2020},
-    note = {R package version 1.72.0-3},
+    year = {2021},
+    note = {R package version 1.75.0-0},
     url = {https://github.com/eddelbuettel/bh},
   }
 
@@ -2243,16 +2314,18 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;xfun&#39; in publications use:
 
-  Yihui Xie (2020). xfun: Miscellaneous Functions by &#39;Yihui Xie&#39;. R
-  package version 0.17. https://github.com/yihui/xfun
+  Yihui Xie (2021). xfun: Miscellaneous Functions to Support Packages
+  Maintained by &#39;Yihui Xie&#39;. R package version 0.22.
+  https://github.com/yihui/xfun
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {xfun: Miscellaneous Functions by &#39;Yihui Xie&#39;},
+    title = {xfun: Miscellaneous Functions to Support Packages Maintained by &#39;Yihui
+Xie&#39;},
     author = {Yihui Xie},
-    year = {2020},
-    note = {R package version 0.17},
+    year = {2021},
+    note = {R package version 0.22},
     url = {https://github.com/yihui/xfun},
   }
 
@@ -2362,28 +2435,6 @@ A BibTeX entry for LaTeX users is
   }
 
 
-To cite package &#39;hexbin&#39; in publications use:
-
-  Dan Carr, ported by Nicholas Lewin-Koh, Martin Maechler and contains
-  copies of lattice functions written by Deepayan Sarkar (2020).
-  hexbin: Hexagonal Binning Routines. R package version 1.28.1.
-  http://github.com/edzer/hexbin
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {hexbin: Hexagonal Binning Routines},
-    author = {Dan Carr and ported by Nicholas Lewin-Koh and Martin Maechler and contains copies of lattice functions written by Deepayan Sarkar},
-    year = {2020},
-    note = {R package version 1.28.1},
-    url = {http://github.com/edzer/hexbin},
-  }
-
-ATTENTION: This citation information has been auto-generated from the
-package DESCRIPTION file and may need manual editing, see
-&#39;help(&quot;citation&quot;)&#39;.
-
-
 To cite package &#39;lazyeval&#39; in publications use:
 
   Hadley Wickham (2019). lazyeval: Lazy (Non-Standard) Evaluation. R
@@ -2401,8 +2452,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;data.table&#39; in publications use:
 
-  Matt Dowle and Arun Srinivasan (2020). data.table: Extension of
-  `data.frame`. http://r-datatable.com,
+  Matt Dowle and Arun Srinivasan (2021). data.table: Extension of
+  `data.frame`. https://r-datatable.com,
   https://Rdatatable.gitlab.io/data.table,
   https://github.com/Rdatatable/data.table.
 
@@ -2411,16 +2462,16 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {data.table: Extension of `data.frame`},
     author = {Matt Dowle and Arun Srinivasan},
-    year = {2020},
-    note = {http://r-datatable.com, https://Rdatatable.gitlab.io/data.table,
+    year = {2021},
+    note = {https://r-datatable.com, https://Rdatatable.gitlab.io/data.table,
 https://github.com/Rdatatable/data.table},
   }
 
 
 To cite package &#39;Matrix&#39; in publications use:
 
-  Douglas Bates and Martin Maechler (2019). Matrix: Sparse and Dense
-  Matrix Classes and Methods. R package version 1.2-18.
+  Douglas Bates and Martin Maechler (2021). Matrix: Sparse and Dense
+  Matrix Classes and Methods. R package version 1.3-2.
   http://Matrix.R-forge.R-project.org/
 
 A BibTeX entry for LaTeX users is
@@ -2428,8 +2479,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {Matrix: Sparse and Dense Matrix Classes and Methods},
     author = {Douglas Bates and Martin Maechler},
-    year = {2019},
-    note = {R package version 1.2-18},
+    year = {2021},
+    note = {R package version 1.3-2},
     url = {http://Matrix.R-forge.R-project.org/},
   }
 
@@ -2454,7 +2505,7 @@ To cite RcppEigen in publications use:
 
   Douglas Bates, Dirk Eddelbuettel (2013). Fast and Elegant Numerical
   Linear Algebra Using the RcppEigen Package. Journal of Statistical
-  Software, 52(5), 1-24. URL http://www.jstatsoft.org/v52/i05/.
+  Software, 52(5), 1-24. URL https://www.jstatsoft.org/v52/i05/.
 
 A BibTeX entry for LaTeX users is
 
@@ -2466,14 +2517,14 @@ A BibTeX entry for LaTeX users is
     volume = {52},
     number = {5},
     pages = {1--24},
-    url = {http://www.jstatsoft.org/v52/i05/},
+    url = {https://www.jstatsoft.org/v52/i05/},
   }
 
 
 To cite package &#39;cli&#39; in publications use:
 
-  Gábor Csárdi (2020). cli: Helpers for Developing Command Line
-  Interfaces. R package version 2.0.2.
+  Gábor Csárdi (2021). cli: Helpers for Developing Command Line
+  Interfaces. R package version 2.4.0.
   https://github.com/r-lib/cli#readme
 
 A BibTeX entry for LaTeX users is
@@ -2481,16 +2532,16 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {cli: Helpers for Developing Command Line Interfaces},
     author = {Gábor Csárdi},
-    year = {2020},
-    note = {R package version 2.0.2},
+    year = {2021},
+    note = {R package version 2.4.0},
     url = {https://github.com/r-lib/cli#readme},
   }
 
 
 To cite package &#39;clipr&#39; in publications use:
 
-  Matthew Lincoln (2019). clipr: Read and Write from the System
-  Clipboard. R package version 0.7.0.
+  Matthew Lincoln (2020). clipr: Read and Write from the System
+  Clipboard. R package version 0.7.1.
   https://github.com/mdlincoln/clipr
 
 A BibTeX entry for LaTeX users is
@@ -2498,15 +2549,15 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {clipr: Read and Write from the System Clipboard},
     author = {Matthew Lincoln},
-    year = {2019},
-    note = {R package version 0.7.0},
+    year = {2020},
+    note = {R package version 0.7.1},
     url = {https://github.com/mdlincoln/clipr},
   }
 
 
 To cite package &#39;hms&#39; in publications use:
 
-  Kirill Müller (2020). hms: Pretty Time of Day.
+  Kirill Müller (2021). hms: Pretty Time of Day.
   https://hms.tidyverse.org/, https://github.com/tidyverse/hms.
 
 A BibTeX entry for LaTeX users is
@@ -2514,23 +2565,23 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {hms: Pretty Time of Day},
     author = {Kirill Müller},
-    year = {2020},
+    year = {2021},
     note = {https://hms.tidyverse.org/, https://github.com/tidyverse/hms},
   }
 
 
 To cite package &#39;cpp11&#39; in publications use:
 
-  Jim Hester (2020). cpp11: A C++11 Interface for R&#39;s C Interface. R
-  package version 0.2.1. https://github.com/r-lib/cpp11
+  Jim Hester (2021). cpp11: A C++11 Interface for R&#39;s C Interface. R
+  package version 0.2.7. https://github.com/r-lib/cpp11
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {cpp11: A C++11 Interface for R&#39;s C Interface},
     author = {Jim Hester},
-    year = {2020},
-    note = {R package version 0.2.1},
+    year = {2021},
+    note = {R package version 0.2.7},
     url = {https://github.com/r-lib/cpp11},
   }
 
@@ -2575,8 +2626,8 @@ package DESCRIPTION file and may need manual editing, see
 
 To cite the &#39;tinytex&#39; package in publications use:
 
-  Yihui Xie (2020). tinytex: Helper Functions to Install and Maintain
-  TeX Live, and Compile LaTeX Documents. R package version 0.25.
+  Yihui Xie (2021). tinytex: Helper Functions to Install and Maintain
+  TeX Live, and Compile LaTeX Documents. R package version 0.31.
 
   Yihui Xie (2019) TinyTeX: A lightweight, cross-platform, and
   easy-to-maintain LaTeX distribution based on TeX Live. TUGboat 40
@@ -2609,7 +2660,7 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;farver&#39; in publications use:
 
-  Thomas Lin Pedersen, Berendea Nicolae and Romain François (2020).
+  Thomas Lin Pedersen, Berendea Nicolae and Romain François (2021).
   farver: High Performance Colour Space Manipulation.
   https://farver.data-imaginist.com,
   https://github.com/thomasp85/farver.
@@ -2619,7 +2670,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {farver: High Performance Colour Space Manipulation},
     author = {Thomas Lin Pedersen and Berendea Nicolae and Romain François},
-    year = {2020},
+    year = {2021},
     note = {https://farver.data-imaginist.com,
 https://github.com/thomasp85/farver},
   }
@@ -2627,15 +2678,16 @@ https://github.com/thomasp85/farver},
 
 To cite package &#39;labeling&#39; in publications use:
 
-  Justin Talbot (2014). labeling: Axis Labeling. R package version 0.3.
+  Justin Talbot, (2020). labeling: Axis Labeling. R package version
+  0.4.2.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {labeling: Axis Labeling},
-    author = {Justin Talbot},
-    year = {2014},
-    note = {R package version 0.3},
+    author = {Justin Talbot,},
+    year = {2020},
+    note = {R package version 0.4.2},
   }
 
 ATTENTION: This citation information has been auto-generated from the
@@ -2682,33 +2734,33 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;fansi&#39; in publications use:
 
-  Brodie Gaslam (2020). fansi: ANSI Control Sequence Aware String
-  Functions. R package version 0.4.1. https://github.com/brodieG/fansi
+  Brodie Gaslam (2021). fansi: ANSI Control Sequence Aware String
+  Functions. R package version 0.4.2. https://github.com/brodieG/fansi
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {fansi: ANSI Control Sequence Aware String Functions},
     author = {Brodie Gaslam},
-    year = {2020},
-    note = {R package version 0.4.1},
+    year = {2021},
+    note = {R package version 0.4.2},
     url = {https://github.com/brodieG/fansi},
   }
 
 
 To cite package &#39;pillar&#39; in publications use:
 
-  Kirill Müller and Hadley Wickham (2020). pillar: Coloured Formatting
-  for Columns. R package version 1.4.6. https://github.com/r-lib/pillar
+  Kirill Müller and Hadley Wickham (2021). pillar: Coloured Formatting
+  for Columns. https://pillar.r-lib.org/,
+  https://github.com/r-lib/pillar.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {pillar: Coloured Formatting for Columns},
     author = {Kirill Müller and Hadley Wickham},
-    year = {2020},
-    note = {R package version 1.4.6},
-    url = {https://github.com/r-lib/pillar},
+    year = {2021},
+    note = {https://pillar.r-lib.org/, https://github.com/r-lib/pillar},
   }
 
 
@@ -2772,7 +2824,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;openssl&#39; in publications use:
 
   Jeroen Ooms (2020). openssl: Toolkit for Encryption, Signatures and
-  Certificates Based on OpenSSL. R package version 1.4.2.
+  Certificates Based on OpenSSL. R package version 1.4.3.
   https://github.com/jeroen/openssl#readme
 
 A BibTeX entry for LaTeX users is
@@ -2782,36 +2834,15 @@ A BibTeX entry for LaTeX users is
 OpenSSL},
     author = {Jeroen Ooms},
     year = {2020},
-    note = {R package version 1.4.2},
+    note = {R package version 1.4.3},
     url = {https://github.com/jeroen/openssl#readme},
   }
 
 
-To cite the testthat package in publications, use:
-
-  Hadley Wickham. testthat: Get Started with Testing. The R Journal,
-  vol. 3, no. 1, pp. 5--10, 2011
-
-A BibTeX entry for LaTeX users is
-
-  @Article{,
-    author = {Hadley Wickham},
-    title = {testthat: Get Started with Testing},
-    journal = {The R Journal},
-    year = {2011},
-    volume = {3},
-    pages = {5--10},
-    url = {https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf},
-  }
-
-As testthat is continually evolving, you may want to cite its version
-number. Find it with &#39;help(package=testthat)&#39;.
-
-
 To cite the &#39;boot&#39; package in publications use:
 
-  Angelo Canty and Brian Ripley (2020). boot: Bootstrap R (S-Plus)
-  Functions. R package version 1.3-25.
+  Angelo Canty and Brian Ripley (2021). boot: Bootstrap R (S-Plus)
+  Functions. R package version 1.3-27.
 
   Davison, A. C. &amp; Hinkley, D. V. (1997) Bootstrap Methods and Their
   Applications. Cambridge University Press, Cambridge. ISBN
@@ -2927,7 +2958,7 @@ To cite package &#39;foreign&#39; in publications use:
 
   R Core Team (2020). foreign: Read Data Stored by &#39;Minitab&#39;, &#39;S&#39;,
   &#39;SAS&#39;, &#39;SPSS&#39;, &#39;Stata&#39;, &#39;Systat&#39;, &#39;Weka&#39;, &#39;dBase&#39;, .... R package
-  version 0.8-80. https://svn.r-project.org/R-packages/trunk/foreign
+  version 0.8-81. https://svn.r-project.org/R-packages/trunk/foreign/
 
 A BibTeX entry for LaTeX users is
 
@@ -2936,8 +2967,8 @@ A BibTeX entry for LaTeX users is
 &#39;Systat&#39;, &#39;Weka&#39;, &#39;dBase&#39;, ...},
     author = {{R Core Team}},
     year = {2020},
-    note = {R package version 0.8-80},
-    url = {https://svn.r-project.org/R-packages/trunk/foreign},
+    note = {R package version 0.8-81},
+    url = {https://svn.r-project.org/R-packages/trunk/foreign/},
   }
 
 
@@ -2961,12 +2992,13 @@ package DESCRIPTION file and may need manual editing, see
 &#39;help(&quot;citation&quot;)&#39;.
 
 
-To cite colorspace in publications use
+To cite colorspace in publications use:
 
 Zeileis A, Fisher JC, Hornik K, Ihaka R, McWhite CD, Murrell P,
-Stauffer R, Wilke CO (2019). &quot;colorspace: A Toolbox for Manipulating
-and Assessing Colors and Palettes.&quot; arXiv 1903.06490, arXiv.org E-Print
-Archive. &lt;URL: http://arxiv.org/abs/1903.06490&gt;.
+Stauffer R, Wilke CO (2020). &quot;colorspace: A Toolbox for Manipulating
+and Assessing Colors and Palettes.&quot; _Journal of Statistical Software_,
+*96*(1), 1-49. doi: 10.18637/jss.v096.i01 (URL:
+https://doi.org/10.18637/jss.v096.i01).
 
 If you use HCL-based color palettes, please cite:
 
@@ -2989,19 +3021,39 @@ bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
 &#39;options(citation.bibtex.max=999)&#39;.
 
 
+To cite package &#39;numDeriv&#39; in publications use:
+
+  Paul Gilbert and Ravi Varadhan (2019). numDeriv: Accurate Numerical
+  Derivatives. R package version 2016.8-1.1.
+  http://optimizer.r-forge.r-project.org/
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {numDeriv: Accurate Numerical Derivatives},
+    author = {Paul Gilbert and Ravi Varadhan},
+    year = {2019},
+    note = {R package version 2016.8-1.1},
+    url = {http://optimizer.r-forge.r-project.org/},
+  }
+
+ATTENTION: This citation information has been auto-generated from the
+package DESCRIPTION file and may need manual editing, see
+&#39;help(&quot;citation&quot;)&#39;.
+
+
 To cite package &#39;utf8&#39; in publications use:
 
-  Patrick O. Perry (2018). utf8: Unicode Text Processing. R package
-  version 1.1.4. https://github.com/patperry/r-utf8
+  Patrick O. Perry (2021). utf8: Unicode Text Processing.
+  https://ptrckprry.com/r-utf8/, https://github.com/patperry/r-utf8.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {utf8: Unicode Text Processing},
     author = {Patrick O. Perry},
-    year = {2018},
-    note = {R package version 1.1.4},
-    url = {https://github.com/patperry/r-utf8},
+    year = {2021},
+    note = {https://ptrckprry.com/r-utf8/, https://github.com/patperry/r-utf8},
   }
 
 
@@ -3028,38 +3080,34 @@ package DESCRIPTION file and may need manual editing, see
 
 To cite package &#39;SparseM&#39; in publications use:
 
-  Roger Koenker and Pin Ng (2019). SparseM: Sparse Linear Algebra. R
-  package version 1.78.
+  Roger Koenker (2021). SparseM: Sparse Linear Algebra. R package
+  version 1.81.
   http://www.econ.uiuc.edu/~roger/research/sparse/sparse.html
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {SparseM: Sparse Linear Algebra},
-    author = {Roger Koenker and Pin Ng},
-    year = {2019},
-    note = {R package version 1.78},
+    author = {Roger Koenker},
+    year = {2021},
+    note = {R package version 1.81},
     url = {http://www.econ.uiuc.edu/~roger/research/sparse/sparse.html},
   }
-
-ATTENTION: This citation information has been auto-generated from the
-package DESCRIPTION file and may need manual editing, see
-&#39;help(&quot;citation&quot;)&#39;.
 
 
 To cite package &#39;MatrixModels&#39; in publications use:
 
-  Douglas Bates and Martin Maechler (2015). MatrixModels: Modelling
-  with Sparse And Dense Matrices. R package version 0.4-1.
+  Douglas Bates and Martin Maechler (2021). MatrixModels: Modelling
+  with Sparse and Dense Matrices. R package version 0.5-0.
   http://Matrix.R-forge.R-project.org/
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {MatrixModels: Modelling with Sparse And Dense Matrices},
+    title = {MatrixModels: Modelling with Sparse and Dense Matrices},
     author = {Douglas Bates and Martin Maechler},
-    year = {2015},
-    note = {R package version 0.4-1},
+    year = {2021},
+    note = {R package version 0.5-0},
     url = {http://Matrix.R-forge.R-project.org/},
   }
 
@@ -3121,10 +3169,27 @@ https://github.com/ycphs/openxlsx},
   }
 
 
+To cite package &#39;rappdirs&#39; in publications use:
+
+  Sridhar Ratnakumar, Trent Mick and Trevor Davis (2021). rappdirs:
+  Application Directories: Determine Where to Save Data, Caches, and
+  Logs. https://rappdirs.r-lib.org, https://github.com/r-lib/rappdirs.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {rappdirs: Application Directories: Determine Where to Save Data, Caches,
+and Logs},
+    author = {Sridhar Ratnakumar and Trent Mick and Trevor Davis},
+    year = {2021},
+    note = {https://rappdirs.r-lib.org, https://github.com/r-lib/rappdirs},
+  }
+
+
 To cite package &#39;matrixStats&#39; in publications use:
 
-  Henrik Bengtsson (2020). matrixStats: Functions that Apply to Rows
-  and Columns of Matrices (and to Vectors). R package version 0.56.0.
+  Henrik Bengtsson (2021). matrixStats: Functions that Apply to Rows
+  and Columns of Matrices (and to Vectors). R package version 0.58.0.
   https://github.com/HenrikBengtsson/matrixStats
 
 A BibTeX entry for LaTeX users is
@@ -3133,8 +3198,8 @@ A BibTeX entry for LaTeX users is
     title = {matrixStats: Functions that Apply to Rows and Columns of Matrices (and to
 Vectors)},
     author = {Henrik Bengtsson},
-    year = {2020},
-    note = {R package version 0.56.0},
+    year = {2021},
+    note = {R package version 0.58.0},
     url = {https://github.com/HenrikBengtsson/matrixStats},
   }
 
@@ -3162,8 +3227,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;forcats&#39; in publications use:
 
-  Hadley Wickham (2020). forcats: Tools for Working with Categorical
-  Variables (Factors). http://forcats.tidyverse.org,
+  Hadley Wickham (2021). forcats: Tools for Working with Categorical
+  Variables (Factors). https://forcats.tidyverse.org,
   https://github.com/tidyverse/forcats.
 
 A BibTeX entry for LaTeX users is
@@ -3171,8 +3236,9 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {forcats: Tools for Working with Categorical Variables (Factors)},
     author = {Hadley Wickham},
-    year = {2020},
-    note = {http://forcats.tidyverse.org, https://github.com/tidyverse/forcats},
+    year = {2021},
+    note = {https://forcats.tidyverse.org,
+https://github.com/tidyverse/forcats},
   }
 
 
@@ -3213,43 +3279,6 @@ package DESCRIPTION file and may need manual editing, see
 &#39;help(&quot;citation&quot;)&#39;.
 
 
-To cite package &#39;pkgload&#39; in publications use:
-
-  Hadley Wickham, Jim Hester and Winston Chang (2020). pkgload:
-  Simulate Package Installation and Attach. R package version 1.1.0.
-  https://github.com/r-lib/pkgload
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {pkgload: Simulate Package Installation and Attach},
-    author = {Hadley Wickham and Jim Hester and Winston Chang},
-    year = {2020},
-    note = {R package version 1.1.0},
-    url = {https://github.com/r-lib/pkgload},
-  }
-
-
-To cite package &#39;praise&#39; in publications use:
-
-  Gabor Csardi and Sindre Sorhus (2015). praise: Praise Users. R
-  package version 1.0.0. https://github.com/gaborcsardi/praise
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {praise: Praise Users},
-    author = {Gabor Csardi and Sindre Sorhus},
-    year = {2015},
-    note = {R package version 1.0.0},
-    url = {https://github.com/gaborcsardi/praise},
-  }
-
-ATTENTION: This citation information has been auto-generated from the
-package DESCRIPTION file and may need manual editing, see
-&#39;help(&quot;citation&quot;)&#39;.
-
-
 To cite package &#39;sys&#39; in publications use:
 
   Jeroen Ooms (2020). sys: Powerful and Reliable Tools for Running
@@ -3264,107 +3293,6 @@ A BibTeX entry for LaTeX users is
     year = {2020},
     note = {R package version 3.4},
     url = {https://github.com/jeroen/sys},
-  }
-
-
-To cite package &#39;desc&#39; in publications use:
-
-  Gábor Csárdi, Kirill Müller and Jim Hester (2018). desc: Manipulate
-  DESCRIPTION Files. R package version 1.2.0.
-  https://github.com/r-lib/desc#readme
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {desc: Manipulate DESCRIPTION Files},
-    author = {Gábor Csárdi and Kirill Müller and Jim Hester},
-    year = {2018},
-    note = {R package version 1.2.0},
-    url = {https://github.com/r-lib/desc#readme},
-  }
-
-
-To cite package &#39;pkgbuild&#39; in publications use:
-
-  Hadley Wickham and Jim Hester (2020). pkgbuild: Find Tools Needed to
-  Build R Packages. R package version 1.1.0.
-  https://github.com/r-lib/pkgbuild
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {pkgbuild: Find Tools Needed to Build R Packages},
-    author = {Hadley Wickham and Jim Hester},
-    year = {2020},
-    note = {R package version 1.1.0},
-    url = {https://github.com/r-lib/pkgbuild},
-  }
-
-
-To cite package &#39;rprojroot&#39; in publications use:
-
-  Kirill Müller (2018). rprojroot: Finding Files in Project
-  Subdirectories. https://github.com/krlmlr/rprojroot,
-  https://krlmlr.github.io/rprojroot.
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {rprojroot: Finding Files in Project Subdirectories},
-    author = {Kirill Müller},
-    year = {2018},
-    note = {https://github.com/krlmlr/rprojroot,
-https://krlmlr.github.io/rprojroot},
-  }
-
-
-To cite package &#39;callr&#39; in publications use:
-
-  Gábor Csárdi and Winston Chang (2020). callr: Call R from R. R
-  package version 3.4.4. https://github.com/r-lib/callr#readme
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {callr: Call R from R},
-    author = {Gábor Csárdi and Winston Chang},
-    year = {2020},
-    note = {R package version 3.4.4},
-    url = {https://github.com/r-lib/callr#readme},
-  }
-
-
-To cite package &#39;processx&#39; in publications use:
-
-  Gábor Csárdi and Winston Chang (2020). processx: Execute and Control
-  System Processes. https://processx.r-lib.org,
-  https://github.com/r-lib/processx#readme.
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {processx: Execute and Control System Processes},
-    author = {Gábor Csárdi and Winston Chang},
-    year = {2020},
-    note = {https://processx.r-lib.org,
-https://github.com/r-lib/processx#readme},
-  }
-
-
-To cite package &#39;ps&#39; in publications use:
-
-  Jay Loden, Dave Daeschler, Giampaolo Rodola&#39; and Gábor Csárdi (2020).
-  ps: List, Query, Manipulate System Processes. R package version
-  1.3.4. https://github.com/r-lib/ps#readme
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {ps: List, Query, Manipulate System Processes},
-    author = {Jay Loden and Dave Daeschler and Giampaolo Rodola&#39; and Gábor Csárdi},
-    year = {2020},
-    note = {R package version 1.3.4},
-    url = {https://github.com/r-lib/ps#readme},
   }</code></pre>
 </details>
 </div>
@@ -3427,7 +3355,7 @@ A BibTeX entry for LaTeX users is
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -3445,7 +3373,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

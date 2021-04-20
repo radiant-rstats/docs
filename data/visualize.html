@@ -13,14 +13,23 @@
 
 <title>Data &gt; Visualize</title>
 
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
 
@@ -69,22 +78,38 @@ img.center {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -103,7 +128,7 @@ pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   { color: #cccccc; background-color: #303030; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ffcfaf; } /* Alert */
 code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
@@ -157,39 +182,9 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -199,10 +194,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -219,6 +210,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -231,7 +225,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -473,7 +466,7 @@ summary {
   }
 </style>
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -536,12 +529,12 @@ summary {
 <div id="customizing-plots-in-report-rmd" class="section level3">
 <h3>Customizing plots in <em>Report &gt; Rmd</em></h3>
 <p>To customize a plot first generate the <code>visualize</code> command by clicking the report (<i title='Report results' class='fa fa-edit'></i>) icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard. The example below illustrates how to customize a command in the <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> tab. Notice that <code>custom</code> is set to <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">visualize</span>(diamonds, <span class="dt">yvar =</span> <span class="st">&quot;price&quot;</span>, <span class="dt">xvar =</span> <span class="st">&quot;carat&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;scatter&quot;</span>, <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">labs</span>(</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dt">title =</span> <span class="st">&quot;A scatterplot&quot;</span>, </span>
-<span id="cb1-4"><a href="#cb1-4"></a>    <span class="dt">y =</span> <span class="st">&quot;Price in $&quot;</span>,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>    <span class="dt">x =</span> <span class="st">&quot;Carats&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">xvar =</span> <span class="st">&quot;carat&quot;</span>, <span class="at">type =</span> <span class="st">&quot;scatter&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;A scatterplot&quot;</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Price in $&quot;</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Carats&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>The default resolution for plots is 144 dots per inch (dpi). You can change this setting up or down in <em>Report &gt; Rmd</em>. For example, the code-chunk header below ensures the plot will be 7" wide, 3.5" tall, with a resolution of 600 dpi.</p>
 <p><code>```{r fig.width = 7, fig.height = 3.5, dpi = 600}</code></p>
 <p>If you have the <code>svglite</code> package installed, the code-chunk header below will produce graphs in high quality <code>svg</code> format.</p>
@@ -568,26 +561,26 @@ summary {
 <p>For more on how to customize plots for communication see <a href="http://r4ds.had.co.nz/graphics-for-communication.html" target="_blank">http://r4ds.had.co.nz/graphics-for-communication.html</a>.</p>
 <p>See also the ggplot2 documentation site <a href="https://ggplot2.tidyverse.org" target="_blank">https://ggplot2.tidyverse.org</a>.</p>
 <p>Suppose we create a set of three bar charts in <em>Data &gt; Visualize</em> using the <code>Diamond</code> data. To add a title above the group of plots and impose a one-column layout we could use <code>patchwork</code> as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>plot_list &lt;-<span class="st"> </span><span class="kw">visualize</span>(</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  diamonds, </span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="dt">xvar =</span> <span class="kw">c</span>(<span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), </span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="dt">yvar =</span> <span class="st">&quot;price&quot;</span>, </span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="dt">type =</span> <span class="st">&quot;bar&quot;</span>, </span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="dt">custom =</span> <span class="ot">TRUE</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>) </span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">wrap_plots</span>(plot_list, <span class="dt">ncol =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw">plot_annotation</span>(<span class="dt">title =</span> <span class="st">&quot;Three bar plots&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">visualize</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  diamonds, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;bar&quot;</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Three bar plots&quot;</span>)</span></code></pre></div>
 <p>See the <a href="https://patchwork.data-imaginist.com">patchwork documentation site</a> for additional information on how to customize groups of plots.</p>
 </div>
 <div id="making-plots-interactive-in-report-rmd" class="section level3">
 <h3>Making plots interactive in <em>Report &gt; Rmd</em></h3>
 <p>It is possible to transform (most) plots generated in Radiant into interactive graphics using the <code>plotly</code> library. After setting <code>custom = TRUE</code> you can use the <code>ggplotly</code> function to convert a single plot. See example below:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">visualize</span>(diamonds, <span class="dt">xvar =</span> <span class="kw">c</span>(<span class="st">&quot;price&quot;</span>, <span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>), <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span><span class="kw">ggplotly</span>() <span class="op">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span><span class="kw">render</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;price&quot;</span>, <span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplotly</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">render</span>()</span></code></pre></div>
 <p>If more than one plot is created, you can use the <code>subplot</code> function from the <code>plotly</code> package. Provide a value for the <code>nrows</code> argument to setup the plot layout grid. In the example below four plots are created. Because <code>nrow = 2</code> the plots will be displayed in a 2 X 2 grid.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">visualize</span>(diamonds, <span class="dt">xvar =</span> <span class="kw">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), <span class="dt">custom =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="st">  </span><span class="kw">subplot</span>(<span class="dt">nrows =</span> <span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="st">  </span><span class="kw">render</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subplot</span>(<span class="at">nrows =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">render</span>()</span></code></pre></div>
 <p>For additional information on the <code>plotly</code> library see the links below:</p>
 <ul>
 <li>Getting started: <a href="https://plot.ly/r/getting-started/" target="_blank">https://plot.ly/r/getting-started/</a></li>
@@ -649,7 +642,7 @@ summary {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -667,7 +660,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
