@@ -31,9 +31,10 @@ If you use Internet Explorer (IE) as your default browser, please switch to [Mic
 
 ## Installing R, Rstudio, and Radiant on macOS
 
-To install the latest version or R you need macOS 10.13 (High Sierra) or higher. Download and install R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.
+* If you have a mac with an Intel Chip (models prior to late 2020), download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>
+* If you have a mac with an ARM chip (models launched after 2020), download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/big-sur-arm64/</a> 
 
-After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
+Double click on the .pkg file to install and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
 
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
@@ -98,34 +99,6 @@ or
 sudo su -c "R -e 'radiant.update::radiant.update()'"
 ```
 
-<!--
-## Installing the development version of Radiant
-
-To get the development version of Radiant, restart your Rstudio session and use the code below
-
-```r
-packages <- c(
-  "radiant.data", "radiant.design", "radiant.basics",
-  "radiant.model", "radiant.multivariate", "radiant"
-)
-ret <- sapply(
-  packages,
-  install.packages,
-  repos = c(
-    "https://radiant-rstats.github.io/minicran/dev/",
-    "https://radiant-rstats.github.io/minicran/"
-  )
-)
-```
-
-If you want to revert to the current release version of Radiant, restart your Rstudio session and use the code below
-
-```r
-packages <- c("radiant.data", "radiant.design", "radiant.basics", "radiant.model", "radiant.multivariate", "radiant")
-sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/minicran/")
-```
--->
-
 ## Starting, Stopping, and Updating Radiant
 
 I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the `Addins` menu at the top of the screen `Start radiant (browser)`. If for some reason the `Start radiant (browser)` is not shown in the dropdown, enter `radiant::radiant()` in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close or gray-out.
@@ -134,10 +107,10 @@ To add an option to upgrade Radiant easily, use the commands below to install th
 
 ```r
 options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
-install.packages("radiant.update")
+install.packages("remotes")
+remotes::install_github("radiant-rstats/radiant.update")
 radiant.update::radiant.update()
 ```
-
 
 
 ## Sharing Rstudio projects with others
@@ -188,7 +161,8 @@ or copy-and-paste the commands below into R to check if any required packages ha
 
 ```r
 options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
-install.packages("radiant.update")
+install.packages("remotes")
+remotes::install_github("radiant-rstats/radiant.update")
 radiant.update::radiant.update()
 ```
 
@@ -196,7 +170,8 @@ If you are having trouble updating Radiant on Windows please (1) Restart Rstudio
 
 ```r
 options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
-install.packages(c("radiant.update", "fs"))
+install.packages(c("fs", "remotes"))
+remotes::install_github("radiant-rstats/radiant.update")
 fs::dir_delete(file.path(.libPaths()[1], "00LOCK"))
 radiant.update::radiant.update(options = "--no-lock")
 ```

@@ -502,8 +502,11 @@ pre code {
 </div>
 <div id="installing-r-rstudio-and-radiant-on-macos" class="section level2">
 <h2>Installing R, Rstudio, and Radiant on macOS</h2>
-<p>To install the latest version or R you need macOS 10.13 (High Sierra) or higher. Download and install R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>. Double click on the .pkg file to install and follow the prompts.</p>
-<p>After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:</p>
+<ul>
+<li>If you have a mac with an Intel Chip (models prior to late 2020), download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a></li>
+<li>If you have a mac with an ARM chip (models launched after 2020), download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/big-sur-arm64/</a></li>
+</ul>
+<p>Double click on the .pkg file to install and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R&quot;</span>)</span></code></pre></div>
 <p>For a video tutorial see the <code>Installing R, Rstudio, and Radiant on macOS</code> video below:</p>
 <iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -542,41 +545,15 @@ pre code {
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>R <span class="sc">-</span>e <span class="st">&quot;radiant.update::radiant.update()&quot;</span></span></code></pre></div>
 <p>or</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sudo su <span class="sc">-</span>c <span class="st">&quot;R -e &#39;radiant.update::radiant.update()&#39;&quot;</span></span></code></pre></div>
-<!--
-## Installing the development version of Radiant
-
-To get the development version of Radiant, restart your Rstudio session and use the code below
-
-```r
-packages <- c(
-  "radiant.data", "radiant.design", "radiant.basics",
-  "radiant.model", "radiant.multivariate", "radiant"
-)
-ret <- sapply(
-  packages,
-  install.packages,
-  repos = c(
-    "https://radiant-rstats.github.io/minicran/dev/",
-    "https://radiant-rstats.github.io/minicran/"
-  )
-)
-```
-
-If you want to revert to the current release version of Radiant, restart your Rstudio session and use the code below
-
-```r
-packages <- c("radiant.data", "radiant.design", "radiant.basics", "radiant.model", "radiant.multivariate", "radiant")
-sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/minicran/")
-```
--->
 </div>
 <div id="starting-stopping-and-updating-radiant" class="section level2">
 <h2>Starting, Stopping, and Updating Radiant</h2>
 <p>I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the <code>Addins</code> menu at the top of the screen <code>Start radiant (browser)</code>. If for some reason the <code>Start radiant (browser)</code> is not shown in the dropdown, enter <code>radiant::radiant()</code> in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click <code>Stop</code>. The Radiant process will stop and the browser window will close or gray-out.</p>
 <p>To add an option to upgrade Radiant easily, use the commands below to install the <code>radiant.upgrade</code> package. You should now see two new item in the <code>Addins</code> dropdown that you can use for future radiant upgrades.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>()</span></code></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;radiant-rstats/radiant.update&quot;</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>()</span></code></pre></div>
 </div>
 <div id="sharing-rstudio-projects-with-others" class="section level2">
 <h2>Sharing Rstudio projects with others</h2>
@@ -610,13 +587,15 @@ sapply(packages, install.packages, repos = "https://radiant-rstats.github.io/min
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;package-that-is-not-yet-installed&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cran.rstudio.com&quot;</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
 <p>or copy-and-paste the commands below into R to check if any required packages have not yet been installed</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant.update&quot;</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>()</span></code></pre></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;radiant-rstats/radiant.update&quot;</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>()</span></code></pre></div>
 <p>If you are having trouble updating Radiant on Windows please (1) Restart Rstudio and (2) run the code below:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;radiant.update&quot;</span>, <span class="st">&quot;fs&quot;</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_delete</span>(<span class="fu">file.path</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>], <span class="st">&quot;00LOCK&quot;</span>))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>(<span class="at">options =</span> <span class="st">&quot;--no-lock&quot;</span>)</span></code></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;fs&quot;</span>, <span class="st">&quot;remotes&quot;</span>))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;radiant-rstats/radiant.update&quot;</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_delete</span>(<span class="fu">file.path</span>(<span class="fu">.libPaths</span>()[<span class="dv">1</span>], <span class="st">&quot;00LOCK&quot;</span>))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>(<span class="at">options =</span> <span class="st">&quot;--no-lock&quot;</span>)</span></code></pre></div>
 <p>Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.</p>
 <p>If there is an error installing <code>tinytex</code> on macOS please run the command below from the “terminal” app:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>:admin /usr/local/bin<span class="kw">;</span> <span class="ex">R</span> <span class="at">-e</span> <span class="st">&quot;tinytex::install_tinytex()&quot;</span></span></code></pre></div>
