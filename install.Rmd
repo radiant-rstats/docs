@@ -18,14 +18,14 @@ For a video tutorial see the `Install Radiant on Windows` video below:
 
 <iframe width="640" height="375" src="https://www.youtube.com/embed/16B5SvtW8Ks" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-> Note: You may see the two messages below pop-up when installing `TinyTex`. This is expected and nothing to worry about. Just click "OK" and let the install process continue.
+<!-- > Note: You may see the two messages below pop-up when installing `TinyTex`. This is expected and nothing to worry about. Just click "OK" and let the install process continue. -->
 
-<p align="center">
-  <img src="images/mess1.png" style="width: 45%">
-  <img src="images/mess2.png" style="width: 45%">
-</p>
+<!-- <p align="center"> -->
+<!--   <img src="images/mess1.png" style="width: 45%"> -->
+<!--   <img src="images/mess2.png" style="width: 45%"> -->
+<!-- </p> -->
 
-If you use Internet Explorer (IE) as your default browser, please switch to [Microsoft's Edge browser](https://www.microsoft.com/en-us/edge). Alternatively, you can use [Chrome](https://www.google.com/chrome) or [Firefox](https://www.mozilla.org/en-US/firefox).
+If you still use Internet Explorer (IE) as your default browser, please switch to [Microsoft's Edge browser](https://www.microsoft.com/en-us/edge) or [Chrome](https://www.google.com/chrome) or [Firefox](https://www.mozilla.org/en-US/firefox).
 
 > Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer
 
