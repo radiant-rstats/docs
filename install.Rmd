@@ -16,7 +16,7 @@ For Windows, download and run the all-in-one installer for <a href="https://rady
 
 For a video tutorial see the `Install Radiant on Windows` video below:
 
-<iframe width="640" height="375" src="https://www.youtube.com/embed/16B5SvtW8Ks" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="640" height="375" src="https://www.youtube.com/embed/ZNgwgosdNhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer and Greg Aujero (Rady School of Management @ UCSD) for update the installer
 
@@ -32,10 +32,9 @@ Double click on the .pkg file to install and follow the prompts. After R has bee
 ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
 ```
-
 For a video tutorial see the `Installing R, Rstudio, and Radiant on macOS` video below:
 
-<iframe width="640" height="375" src="https://www.youtube.com/embed/CpjL8aa1dg4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="640" height="375" src="https://www.youtube.com/embed/f5h2oDBsnJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > Note: It is possible that you will be asked for your password during the install process to correct permission settings for the directory /usr/local/bin. If there is still an error installing `tinytex` please run the command below from the "terminal" app in macOS
 
