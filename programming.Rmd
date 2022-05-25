@@ -11,10 +11,10 @@ options(
   stringsAsFactors = FALSE
 )
 knitr::opts_chunk$set(
-  echo = TRUE, 
-  comment = NA, 
-  cache = FALSE, 
-  message = FALSE, 
+  echo = TRUE,
+  comment = NA,
+  cache = FALSE,
+  message = FALSE,
   warning = FALSE,
   dpi = 96
 )
@@ -46,12 +46,12 @@ You can also call functions for visualization (see below) and access help from t
 
 ```{r scatter, fig.height = 6, fig.width = 5}
 visualize(
-  diamonds, 
-  xvar = "carat", 
-  yvar = "price", 
-  type = "scatter", 
-  facet_row = "clarity", 
-  color = "clarity", 
+  diamonds,
+  xvar = "carat",
+  yvar = "price",
+  type = "scatter",
+  facet_row = "clarity",
+  color = "clarity",
   labs = list(title = "Diamond Prices ($)"),
   custom = FALSE
 )
@@ -73,9 +73,9 @@ Lets start by comparing the mean of a variable to a (population) value using R's
 
 ```{r single_mean_mpg, fig.height = 6, fig.width = 5}
 result <- single_mean(
-  mtcars, 
-  var = "mpg", 
-  comp_value = 20, 
+  mtcars,
+  var = "mpg",
+  comp_value = 20,
   alternative = "greater"
 )
 summary(result)
@@ -86,9 +86,9 @@ To compare the mean price of diamonds across different levels of clarity we can 
 
 ```{r compare_means_diamonds, fig.height = 5, fig.width = 4}
 result <- compare_means(
-  diamonds, 
-  var1 = "clarity", 
-  var2 = "price", 
+  diamonds,
+  var1 = "clarity",
+  var2 = "price",
   adjust = "bonf"
 )
 summary(result)
@@ -115,9 +115,12 @@ plot(result)
 An alternative way to write this code is to use `piping` (see [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html) and [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) vignettes):
 
 ```{r compare_means_salary_piped, fig.height = 3, fig.width = 4}
-salary %>% 
-  compare_means("rank", "salary") %>% 
-  {summary(.); plot(.)}
+salary %>%
+  compare_means("rank", "salary") %>%
+  {
+    summary(.)
+    plot(.)
+  }
 ```
 
 We can also run regressions and get output in a format that would require many lines of code to produce from scratch:
@@ -164,11 +167,13 @@ plot(result, plots = "dendro", cutoff = 0.05)
 ## generate output and store cluster membership
 result <- kclus(shopping, vars = "v1:v6", nr_clus = 3)
 summary(result)
-plot(result, plots = c("density","bar"))
+plot(result, plots = c("density", "bar"))
+```
+```{r}
 shopping <- store(shopping, result, name = "clus")
 
 ## was the data really changed?
-head(shopping)
+shopping
 ```
 
 See if you can reproduce this output in the radiant web-interface. Start `Radiant` from the `Addins` dropdown in Rstudio. You can also run code inside the Radiant app in the _Report > R_ tab. See <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a> page for details.
