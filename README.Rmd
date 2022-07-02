@@ -7,4 +7,4 @@ Interactive business analytics using [R](https://www.r-project.org/) and [Shiny]
 ```{r child = 'sub/license.md'}
 ```
 
-&copy; Vincent Nijs (2019) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://github.com/radiant-rstats/radiant.data/blob/master/inst/app/www/imgs/by-sa.png" /></a>
+&copy; Vincent Nijs (2022) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://github.com/radiant-rstats/radiant.data/blob/master/inst/app/www/imgs/by-sa.png" /></a>
