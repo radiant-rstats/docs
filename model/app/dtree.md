@@ -182,7 +182,7 @@ In the _Plot_ tab:
 * Click the `Calculate` button or press `CTRL-enter` (`CMD-enter` on mac) to generate or update results
 * Enter the number of decimal places to show in the plot (default is 2 for payoffs and 4 for probabilities)
 * Provide a symbol to use for the payoffs (e.g., $ or RMB)
-* Click the download icon in the top right of your browser to _print_ either the initial or final plot to a pdf-file
+* Click the download icon in the top right of your browser to download either the initial or final plot to png file
 
 It is not currently possible to add a title or caption directly to the `Decision Tree` plot.
 
@@ -194,7 +194,7 @@ In the _Sensitivity_ tab:
 * Select variables in `Sensitivity to changes in`. These variables must be defined in the `variables` section of the decision tree structure in the _Model_ tab
 * Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon
 * Press `Evaluate sensitivity` or press `CTRL-enter` (`CMD-enter` on mac) to generate results and the plot
-* Click the download icon in the top right of your browser to _print_ either the initial or final plot to a pdf-file
+* Click the download icon in the top right of your browser to download the plot to a png file
 
 If a sensitivity plot was created it can be customized using `ggplot2` commands (see example below). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
 
