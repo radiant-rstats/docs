@@ -25,12 +25,13 @@ knitr::opts_chunk$set(
 docs_path <- setwd(".")
 if (basename(getwd()) != "docs") stop("Wrong working directory set")
 # docs_path <- setwd("~/gh/docs")
-system('make')
+system("make")
 
 knit_docs <- function(x) {
   setwd(file.path(docs_path, x, "app"))
   list.files(pattern = "*.Rmd") %>% sapply(knit)
-  setwd(file.path("../..", x)); system("make")
+  setwd(file.path("../..", x))
+  system("make")
 }
 sapply(
   c("data", "design", "basics", "model", "multivariate"),
@@ -105,7 +106,8 @@ file.copy(
 )
 
 copy_docs <- function(app) {
-  readLines("README_dev.md", warn = FALSE) %>% paste0(., collapse = "\n") %>%
+  readLines("README_dev.md", warn = FALSE) %>%
+    paste0(., collapse = "\n") %>%
     sub("radiant.png", paste0(app, ".png"), .) %>%
     sub("radiant-rstats/radiant)", paste0("radiant-rstats/", app, ")"), ., fixed = TRUE) %>%
     sub("badges/version/radiant)", paste0("badges/version/", app, ")"), ., fixed = TRUE) %>%
@@ -115,11 +117,13 @@ copy_docs <- function(app) {
 }
 
 sapply(
-  c("radiant", "radiant.data", "radiant.design",
-    "radiant.basics", "radiant.model", "radiant.multivariate"),
+  c(
+    "radiant", "radiant.data", "radiant.design",
+    "radiant.basics", "radiant.model", "radiant.multivariate"
+  ),
   copy_docs
 )
 
 ## sync (R)md files to gh/radiant
 setwd(docs_path)
-system('sh rsync_docs2app.sh')
+system("sh rsync_docs2app.sh")

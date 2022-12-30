@@ -1,6 +1,6 @@
 ## Radiant: Business analytics using R and Shiny
 
-Interactive business analytics using [R](https://www.r-project.org/) and [Shiny](https://shiny.rstudio.com/). Developed by <a href="http://rady.ucsd.edu/people/faculty/nijs/" target="_blank">Vincent Nijs</a>. You can reach me at radiant@rady.ucsd.edu. Full source code for Radiant is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>.
+Interactive business analytics using [R](https://www.r-project.org/) and [Shiny](https://shiny.rstudio.com/). Developed by <a href="https://rady.ucsd.edu/faculty-research/faculty/vincent-nijs.html" target="_blank">Vincent Nijs</a>. You can reach me at radiant@rady.ucsd.edu. Full source code for Radiant is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>.
 
 ## License
 

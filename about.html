@@ -13,7 +13,7 @@
 
 <title>Radiant – Business analytics using R and Shiny</title>
 
-<script src="libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="libs/header-attrs-2.19/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -139,8 +139,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -148,16 +148,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -389,7 +382,7 @@ pre code {
 <div id="radiant-code" class="section level2">
 <h2>Radiant code</h2>
 <!-- [![Travis-CI Build Status](https://travis-ci.org/vnijs/radiant.png?branch=master)](https://travis-ci.org/vnijs/radiant) -->
-<p>Version: 1.4.2, Date: 2022-5-24</p>
+<p>Version: 1.4.4, Date: 2022-8-8</p>
 <p>Built using <a href="https://shiny.rstudio.com/" target="_blank">Shiny</a> by <a href="https://rstudio.com/" target="_blank">Rstudio</a>. The full source code is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a></p>
 </div>
 <div id="package-dependencies" class="section level2">
@@ -402,7 +395,7 @@ Citing packages
 To cite package &#39;radiant&#39; in publications use:
 
   Nijs V (2022). _radiant: Business Analytics using R and Shiny_. R
-  package version 1.4.2, &lt;https://github.com/radiant-rstats/radiant&gt;.
+  package version 1.4.4, &lt;https://CRAN.R-project.org/package=radiant&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -410,8 +403,8 @@ A BibTeX entry for LaTeX users is
     title = {radiant: Business Analytics using R and Shiny},
     author = {Vincent Nijs},
     year = {2022},
-    note = {R package version 1.4.2},
-    url = {https://github.com/radiant-rstats/radiant},
+    note = {R package version 1.4.4},
+    url = {https://CRAN.R-project.org/package=radiant},
   }
 
 
@@ -420,7 +413,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;radiant&#39; in publications use:
 
   Nijs V (2022). _radiant: Business Analytics using R and Shiny_. R
-  package version 1.4.2, &lt;https://github.com/radiant-rstats/radiant&gt;.
+  package version 1.4.4, &lt;https://CRAN.R-project.org/package=radiant&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -428,8 +421,8 @@ A BibTeX entry for LaTeX users is
     title = {radiant: Business Analytics using R and Shiny},
     author = {Vincent Nijs},
     year = {2022},
-    note = {R package version 1.4.2},
-    url = {https://github.com/radiant-rstats/radiant},
+    note = {R package version 1.4.4},
+    url = {https://CRAN.R-project.org/package=radiant},
   }
 
 
@@ -459,21 +452,18 @@ https://radiant-rstats.github.io/docs/},
 
 To cite package &#39;radiant.design&#39; in publications use:
 
-  Nijs V (2021). _radiant.design: Design Menu for Radiant: Business
-  Analytics using R and Shiny_.
-  https://github.com/radiant-rstats/radiant.design/,
-  https://radiant-rstats.github.io/radiant.design/,
-  https://radiant-rstats.github.io/docs/.
+  Nijs V (2022). _radiant.design: Design Menu for Radiant: Business
+  Analytics using R and Shiny_. R package version 1.4.4,
+  &lt;https://CRAN.R-project.org/package=radiant.design&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {radiant.design: Design Menu for Radiant: Business Analytics using R and Shiny},
     author = {Vincent Nijs},
-    year = {2021},
-    note = {https://github.com/radiant-rstats/radiant.design/,
-https://radiant-rstats.github.io/radiant.design/,
-https://radiant-rstats.github.io/docs/},
+    year = {2022},
+    note = {R package version 1.4.4},
+    url = {https://CRAN.R-project.org/package=radiant.design},
   }
 
 
@@ -481,21 +471,18 @@ https://radiant-rstats.github.io/docs/},
 
 To cite package &#39;radiant.basics&#39; in publications use:
 
-  Nijs V (2021). _radiant.basics: Basics Menu for Radiant: Business
-  Analytics using R and Shiny_.
-  https://github.com/radiant-rstats/radiant.basics/,
-  https://radiant-rstats.github.io/radiant.basics/,
-  https://radiant-rstats.github.io/docs/.
+  Nijs V (2022). _radiant.basics: Basics Menu for Radiant: Business
+  Analytics using R and Shiny_. R package version 1.4.4,
+  &lt;https://CRAN.R-project.org/package=radiant.basics&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {radiant.basics: Basics Menu for Radiant: Business Analytics using R and Shiny},
     author = {Vincent Nijs},
-    year = {2021},
-    note = {https://github.com/radiant-rstats/radiant.basics/,
-https://radiant-rstats.github.io/radiant.basics/,
-https://radiant-rstats.github.io/docs/},
+    year = {2022},
+    note = {R package version 1.4.4},
+    url = {https://CRAN.R-project.org/package=radiant.basics},
   }
 
 
@@ -525,8 +512,8 @@ https://radiant-rstats.github.io/docs/},
 
 To cite package &#39;radiant.multivariate&#39; in publications use:
 
-  Nijs V (2021). _radiant.multivariate: Multivariate Menu for Radiant:
-  Business Analytics using R and Shiny_. R package version 1.4.1,
+  Nijs V (2022). _radiant.multivariate: Multivariate Menu for Radiant:
+  Business Analytics using R and Shiny_. R package version 1.4.4,
   &lt;https://CRAN.R-project.org/package=radiant.multivariate&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -535,8 +522,8 @@ A BibTeX entry for LaTeX users is
     title = {radiant.multivariate: Multivariate Menu for Radiant: Business Analytics using R and
 Shiny},
     author = {Vincent Nijs},
-    year = {2021},
-    note = {R package version 1.4.1},
+    year = {2022},
+    note = {R package version 1.4.4},
     url = {https://CRAN.R-project.org/package=radiant.multivariate},
   }
 
@@ -546,8 +533,8 @@ Shiny},
 To cite package &#39;shiny&#39; in publications use:
 
   Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J,
-  McPherson J, Dipert A, Borges B (2021). _shiny: Web Application
-  Framework for R_. R package version 1.7.1,
+  McPherson J, Dipert A, Borges B (2022). _shiny: Web Application
+  Framework for R_. R package version 1.7.2,
   &lt;https://CRAN.R-project.org/package=shiny&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -555,8 +542,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {shiny: Web Application Framework for R},
     author = {Winston Chang and Joe Cheng and JJ Allaire and Carson Sievert and Barret Schloerke and Yihui Xie and Jeff Allen and Jonathan McPherson and Alan Dipert and Barbara Borges},
-    year = {2021},
-    note = {R package version 1.7.1},
+    year = {2022},
+    note = {R package version 1.7.2},
     url = {https://CRAN.R-project.org/package=shiny},
   }
 
@@ -565,16 +552,16 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;import&#39; in publications use:
 
-  Bache S, Torfason M (2020). _import: An Import Mechanism for R_. R
-  package version 1.2.0, &lt;https://CRAN.R-project.org/package=import&gt;.
+  Bache S, Torfason M (2022). _import: An Import Mechanism for R_. R
+  package version 1.3.0, &lt;https://CRAN.R-project.org/package=import&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {import: An Import Mechanism for R},
     author = {Stefan Milton Bache and Magnus Thor Torfason},
-    year = {2020},
-    note = {R package version 1.2.0},
+    year = {2022},
+    note = {R package version 1.3.0},
     url = {https://CRAN.R-project.org/package=import},
   }
 
@@ -601,7 +588,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;scales&#39; in publications use:
 
   Wickham H, Seidel D (2022). _scales: Scale Functions for
-  Visualization_. R package version 1.2.0,
+  Visualization_. R package version 1.2.1,
   &lt;https://CRAN.R-project.org/package=scales&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -610,7 +597,7 @@ A BibTeX entry for LaTeX users is
     title = {scales: Scale Functions for Visualization},
     author = {Hadley Wickham and Dana Seidel},
     year = {2022},
-    note = {R package version 1.2.0},
+    note = {R package version 1.2.1},
     url = {https://CRAN.R-project.org/package=scales},
   }
 
@@ -620,7 +607,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;dplyr&#39; in publications use:
 
   Wickham H, François R, Henry L, Müller K (2022). _dplyr: A Grammar of
-  Data Manipulation_. R package version 1.0.8,
+  Data Manipulation_. R package version 1.0.10,
   &lt;https://CRAN.R-project.org/package=dplyr&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -629,7 +616,7 @@ A BibTeX entry for LaTeX users is
     title = {dplyr: A Grammar of Data Manipulation},
     author = {Hadley Wickham and Romain François and Lionel Henry and Kirill Müller},
     year = {2022},
-    note = {R package version 1.0.8},
+    note = {R package version 1.0.10},
     url = {https://CRAN.R-project.org/package=dplyr},
   }
 
@@ -639,7 +626,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;tidyr&#39; in publications use:
 
   Wickham H, Girlich M (2022). _tidyr: Tidy Messy Data_. R package
-  version 1.2.0, &lt;https://CRAN.R-project.org/package=tidyr&gt;.
+  version 1.2.1, &lt;https://CRAN.R-project.org/package=tidyr&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -647,7 +634,7 @@ A BibTeX entry for LaTeX users is
     title = {tidyr: Tidy Messy Data},
     author = {Hadley Wickham and Maximilian Girlich},
     year = {2022},
-    note = {R package version 1.2.0},
+    note = {R package version 1.2.1},
     url = {https://CRAN.R-project.org/package=tidyr},
   }
 
@@ -677,7 +664,7 @@ To cite the psych package in publications use:
 
   Revelle, W. (2022) psych: Procedures for Personality and
   Psychological Research, Northwestern University, Evanston, Illinois,
-  USA, https://CRAN.R-project.org/package=psych Version = 2.2.3,.
+  USA, https://CRAN.R-project.org/package=psych Version = 2.2.5.
 
 A BibTeX entry for LaTeX users is
 
@@ -687,7 +674,7 @@ A BibTeX entry for LaTeX users is
     organization = { Northwestern University},
     address = { Evanston, Illinois},
     year = {2022},
-    note = {R package version 2.2.3},
+    note = {R package version 2.2.5},
     url = {https://CRAN.R-project.org/package=psych},
   }
 
@@ -732,16 +719,16 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;patchwork&#39; in publications use:
 
-  Pedersen T (2020). _patchwork: The Composer of Plots_. R package
-  version 1.1.1, &lt;https://CRAN.R-project.org/package=patchwork&gt;.
+  Pedersen T (2022). _patchwork: The Composer of Plots_. R package
+  version 1.1.2, &lt;https://CRAN.R-project.org/package=patchwork&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {patchwork: The Composer of Plots},
     author = {Thomas Lin Pedersen},
-    year = {2020},
-    note = {R package version 1.1.1},
+    year = {2022},
+    note = {R package version 1.1.2},
     url = {https://CRAN.R-project.org/package=patchwork},
   }
 
@@ -750,16 +737,16 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;tibble&#39; in publications use:
 
-  Müller K, Wickham H (2021). _tibble: Simple Data Frames_. R package
-  version 3.1.6, &lt;https://CRAN.R-project.org/package=tibble&gt;.
+  Müller K, Wickham H (2022). _tibble: Simple Data Frames_. R package
+  version 3.1.8, &lt;https://CRAN.R-project.org/package=tibble&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {tibble: Simple Data Frames},
     author = {Kirill Müller and Hadley Wickham},
-    year = {2021},
-    note = {R package version 3.1.6},
+    year = {2022},
+    note = {R package version 3.1.8},
     url = {https://CRAN.R-project.org/package=tibble},
   }
 
@@ -769,7 +756,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;rlang&#39; in publications use:
 
   Henry L, Wickham H (2022). _rlang: Functions for Base Types and Core
-  R and &#39;Tidyverse&#39; Features_. R package version 1.0.2,
+  R and &#39;Tidyverse&#39; Features_. R package version 1.0.6,
   &lt;https://CRAN.R-project.org/package=rlang&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -778,7 +765,7 @@ A BibTeX entry for LaTeX users is
     title = {rlang: Functions for Base Types and Core R and &#39;Tidyverse&#39; Features},
     author = {Lionel Henry and Hadley Wickham},
     year = {2022},
-    note = {R package version 1.0.2},
+    note = {R package version 1.0.6},
     url = {https://CRAN.R-project.org/package=rlang},
   }
 
@@ -788,7 +775,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;broom&#39; in publications use:
 
   Robinson D, Hayes A, Couch S (2022). _broom: Convert Statistical
-  Objects into Tidy Tibbles_. R package version 0.8.0,
+  Objects into Tidy Tibbles_. R package version 1.0.2,
   &lt;https://CRAN.R-project.org/package=broom&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -797,7 +784,7 @@ A BibTeX entry for LaTeX users is
     title = {broom: Convert Statistical Objects into Tidy Tibbles},
     author = {David Robinson and Alex Hayes and Simon Couch},
     year = {2022},
-    note = {R package version 0.8.0},
+    note = {R package version 1.0.2},
     url = {https://CRAN.R-project.org/package=broom},
   }
 
@@ -826,7 +813,7 @@ A BibTeX entry for LaTeX users is
 To cite the &#39;knitr&#39; package in publications use:
 
   Yihui Xie (2022). knitr: A General-Purpose Package for Dynamic Report
-  Generation in R. R package version 1.38.
+  Generation in R. R package version 1.41.
 
   Yihui Xie (2015) Dynamic Documents with R and knitr. 2nd edition.
   Chapman and Hall/CRC. ISBN 978-1498716963
@@ -843,17 +830,17 @@ bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
 
 To cite package &#39;markdown&#39; in publications use:
 
-  Allaire J, Horner J, Xie Y, Marti V, Porte N (2019). _markdown:
-  Render Markdown with the C Library &#39;Sundown&#39;_. R package version 1.1,
+  Allaire J, Horner J, Xie Y (2022). _markdown: Render Markdown with
+  &#39;commonmark&#39;_. R package version 1.4,
   &lt;https://CRAN.R-project.org/package=markdown&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {markdown: Render Markdown with the C Library &#39;Sundown&#39;},
-    author = {JJ Allaire and Jeffrey Horner and Yihui Xie and Vicent Marti and Natacha Porte},
-    year = {2019},
-    note = {R package version 1.1},
+    title = {markdown: Render Markdown with &#39;commonmark&#39;},
+    author = {JJ Allaire and Jeffrey Horner and Yihui Xie},
+    year = {2022},
+    note = {R package version 1.4},
     url = {https://CRAN.R-project.org/package=markdown},
   }
 
@@ -865,7 +852,7 @@ To cite the &#39;rmarkdown&#39; package in publications, please use:
   JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi
   and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and
   Winston Chang and Richard Iannone (2022). rmarkdown: Dynamic
-  Documents for R. R package version 2.14. URL
+  Documents for R. R package version 2.19. URL
   https://rmarkdown.rstudio.com.
 
   Yihui Xie and J.J. Allaire and Garrett Grolemund (2018). R Markdown:
@@ -901,7 +888,8 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;shinyAce&#39; in publications use:
 
   Nijs V, Fang F, Trestle Technology, LLC, Allen J (2022). _shinyAce:
-  Ace Editor Bindings for Shiny_. R package version 0.4.2.
+  Ace Editor Bindings for Shiny_. R package version 0.4.2,
+  &lt;https://CRAN.R-project.org/package=shinyAce&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -910,6 +898,7 @@ A BibTeX entry for LaTeX users is
     author = {Vincent Nijs and Forest Fang and {Trestle Technology, LLC} and Jeff Allen},
     year = {2022},
     note = {R package version 0.4.2},
+    url = {https://CRAN.R-project.org/package=shinyAce},
   }
 
 
@@ -918,7 +907,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;DT&#39; in publications use:
 
   Xie Y, Cheng J, Tan X (2022). _DT: A Wrapper of the JavaScript
-  Library &#39;DataTables&#39;_. R package version 0.22,
+  Library &#39;DataTables&#39;_. R package version 0.25,
   &lt;https://CRAN.R-project.org/package=DT&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -927,7 +916,7 @@ A BibTeX entry for LaTeX users is
     title = {DT: A Wrapper of the JavaScript Library &#39;DataTables&#39;},
     author = {Yihui Xie and Joe Cheng and Xianying Tan},
     year = {2022},
-    note = {R package version 0.22},
+    note = {R package version 0.25},
     url = {https://CRAN.R-project.org/package=DT},
   }
 
@@ -937,7 +926,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;readr&#39; in publications use:
 
   Wickham H, Hester J, Bryan J (2022). _readr: Read Rectangular Text
-  Data_. R package version 2.1.2,
+  Data_. R package version 2.1.3,
   &lt;https://CRAN.R-project.org/package=readr&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -946,7 +935,7 @@ A BibTeX entry for LaTeX users is
     title = {readr: Read Rectangular Text Data},
     author = {Hadley Wickham and Jim Hester and Jennifer Bryan},
     year = {2022},
-    note = {R package version 2.1.2},
+    note = {R package version 2.1.3},
     url = {https://CRAN.R-project.org/package=readr},
   }
 
@@ -956,7 +945,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;readxl&#39; in publications use:
 
   Wickham H, Bryan J (2022). _readxl: Read Excel Files_. R package
-  version 1.4.0, &lt;https://CRAN.R-project.org/package=readxl&gt;.
+  version 1.4.1, &lt;https://CRAN.R-project.org/package=readxl&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -964,7 +953,7 @@ A BibTeX entry for LaTeX users is
     title = {readxl: Read Excel Files},
     author = {Hadley Wickham and Jennifer Bryan},
     year = {2022},
-    note = {R package version 1.4.0},
+    note = {R package version 1.4.1},
     url = {https://CRAN.R-project.org/package=readxl},
   }
 
@@ -992,16 +981,16 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;curl&#39; in publications use:
 
-  Ooms J (2021). _curl: A Modern and Flexible Web Client for R_. R
-  package version 4.3.2, &lt;https://CRAN.R-project.org/package=curl&gt;.
+  Ooms J (2022). _curl: A Modern and Flexible Web Client for R_. R
+  package version 4.3.3, &lt;https://CRAN.R-project.org/package=curl&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {curl: A Modern and Flexible Web Client for R},
     author = {Jeroen Ooms},
-    year = {2021},
-    note = {R package version 4.3.2},
+    year = {2022},
+    note = {R package version 4.3.3},
     url = {https://CRAN.R-project.org/package=curl},
   }
 
@@ -1010,8 +999,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;rstudioapi&#39; in publications use:
 
-  Ushey K, Allaire J, Wickham H, Ritchie G (2020). _rstudioapi: Safely
-  Access the RStudio API_. R package version 0.13,
+  Ushey K, Allaire J, Wickham H, Ritchie G (2022). _rstudioapi: Safely
+  Access the RStudio API_. R package version 0.14,
   &lt;https://CRAN.R-project.org/package=rstudioapi&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1019,8 +1008,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {rstudioapi: Safely Access the RStudio API},
     author = {Kevin Ushey and JJ Allaire and Hadley Wickham and Gary Ritchie},
-    year = {2020},
-    note = {R package version 0.13},
+    year = {2022},
+    note = {R package version 0.14},
     url = {https://CRAN.R-project.org/package=rstudioapi},
   }
 
@@ -1057,42 +1046,50 @@ A BibTeX entry for LaTeX users is
     year = {2022},
     note = {R package version 1.6.2},
     url = {https://CRAN.R-project.org/package=glue},
-  }</code></pre>
-<pre><code>Warning in citation(i): no date field in DESCRIPTION file of package
-&#39;shinyFiles&#39;</code></pre>
-<pre><code>Warning in citation(i): could not determine year for &#39;shinyFiles&#39; from package
-DESCRIPTION file</code></pre>
-<pre><code>
+  }
+
+
+
+
 To cite package &#39;shinyFiles&#39; in publications use:
 
-  Pedersen T, Nijs V, Schaffner T, Nantz E (????). _shinyFiles: A
-  Server-Side File System Viewer for Shiny_. R package version
-  0.9.1.9000, &lt;https://github.com/thomasp85/shinyFiles&gt;.
+  Pedersen T, Nijs V, Schaffner T, Nantz E (2022). _shinyFiles: A
+  Server-Side File System Viewer for Shiny_. R package version 0.9.3,
+  &lt;https://CRAN.R-project.org/package=shinyFiles&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {shinyFiles: A Server-Side File System Viewer for Shiny},
     author = {Thomas Lin Pedersen and Vincent Nijs and Thomas Schaffner and Eric Nantz},
-    note = {R package version 0.9.1.9000},
-    url = {https://github.com/thomasp85/shinyFiles},
+    year = {2022},
+    note = {R package version 0.9.3},
+    url = {https://CRAN.R-project.org/package=shinyFiles},
   }
 
 
 
 
-To cite package &#39;stringi&#39; in publications use:
+To cite stringi in publications, use:
 
-  Gagolewski M (2021). &quot;stringi: Fast and portable character string
-  processing in R.&quot; _Journal of Statistical Software_. to appear.
+  Gagolewski M (2022). &quot;stringi: Fast and portable character string
+  processing in R.&quot; _Journal of Statistical Software_, *103*(2), 1-59.
+  doi:10.18637/jss.v103.i02 &lt;https://doi.org/10.18637/jss.v103.i02&gt;.
 
-  Gagolewski M (2021). _stringi: Fast and portable character string
-  processing in R_. R package version 1.7.6,
-  &lt;https://stringi.gagolewski.com/&gt;.
+A BibTeX entry for LaTeX users is
 
-To see these entries in BibTeX format, use &#39;print(&lt;citation&gt;,
-bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
-&#39;options(citation.bibtex.max=999)&#39;.
+  @Article{,
+    title = {{stringi}: {F}ast and portable character string processing in {R}},
+    author = {Marek Gagolewski},
+    journal = {Journal of Statistical Software},
+    year = {2022},
+    volume = {103},
+    number = {2},
+    pages = {1--59},
+    doi = {10.18637/jss.v103.i02},
+  }
+
+
 
 
 To cite package &#39;randomizr&#39; in publications use:
@@ -1174,8 +1171,8 @@ bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
 
 To cite package &#39;AlgDesign&#39; in publications use:
 
-  Wheeler B (2019). _AlgDesign: Algorithmic Experimental Design_. R
-  package version 1.2.0,
+  Wheeler B (2022). _AlgDesign: Algorithmic Experimental Design_. R
+  package version 1.2.1,
   &lt;https://CRAN.R-project.org/package=AlgDesign&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1183,8 +1180,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {AlgDesign: Algorithmic Experimental Design},
     author = {Bob Wheeler},
-    year = {2019},
-    note = {R package version 1.2.0},
+    year = {2022},
+    note = {R package version 1.2.1},
     url = {https://CRAN.R-project.org/package=AlgDesign},
   }
 
@@ -1300,8 +1297,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;stringr&#39; in publications use:
 
-  Wickham H (2019). _stringr: Simple, Consistent Wrappers for Common
-  String Operations_. R package version 1.4.0,
+  Wickham H (2022). _stringr: Simple, Consistent Wrappers for Common
+  String Operations_. R package version 1.5.0,
   &lt;https://CRAN.R-project.org/package=stringr&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1309,8 +1306,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {stringr: Simple, Consistent Wrappers for Common String Operations},
     author = {Hadley Wickham},
-    year = {2019},
-    note = {R package version 1.4.0},
+    year = {2022},
+    note = {R package version 1.5.0},
     url = {https://CRAN.R-project.org/package=stringr},
   }
 
@@ -1338,9 +1335,9 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;e1071&#39; in publications use:
 
-  Meyer D, Dimitriadou E, Hornik K, Weingessel A, Leisch F (2021).
+  Meyer D, Dimitriadou E, Hornik K, Weingessel A, Leisch F (2022).
   _e1071: Misc Functions of the Department of Statistics, Probability
-  Theory Group (Formerly: E1071), TU Wien_. R package version 1.7-9,
+  Theory Group (Formerly: E1071), TU Wien_. R package version 1.7-11,
   &lt;https://CRAN.R-project.org/package=e1071&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1349,8 +1346,8 @@ A BibTeX entry for LaTeX users is
     title = {e1071: Misc Functions of the Department of Statistics, Probability
 Theory Group (Formerly: E1071), TU Wien},
     author = {David Meyer and Evgenia Dimitriadou and Kurt Hornik and Andreas Weingessel and Friedrich Leisch},
-    year = {2021},
-    note = {R package version 1.7-9},
+    year = {2022},
+    note = {R package version 1.7-11},
     url = {https://CRAN.R-project.org/package=e1071},
   }
 
@@ -1464,7 +1461,7 @@ To cite package &#39;yaml&#39; in publications use:
   Garbett SP, Stephens J, Simonov K, Xie Y, Dong Z, Wickham H, Horner
   J, reikoch, Beasley W, O&#39;Connor B, Warnes GR, Quinn M, Kamvar ZN
   (2022). _yaml: Methods to Convert R Data to YAML and Back_. R package
-  version 2.3.5, &lt;https://CRAN.R-project.org/package=yaml&gt;.
+  version 2.3.6, &lt;https://CRAN.R-project.org/package=yaml&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -1472,7 +1469,7 @@ A BibTeX entry for LaTeX users is
     title = {yaml: Methods to Convert R Data to YAML and Back},
     author = {Shawn P Garbett and Jeremy Stephens and Kirill Simonov and Yihui Xie and Zhuoer Dong and Hadley Wickham and Jeffrey Horner and {reikoch} and Will Beasley and Brendan O&#39;Connor and Gregory R. Warnes and Michael Quinn and Zhian N. Kamvar},
     year = {2022},
-    note = {R package version 2.3.5},
+    note = {R package version 2.3.6},
     url = {https://CRAN.R-project.org/package=yaml},
   }
 
@@ -1544,7 +1541,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;httpuv&#39; in publications use:
 
   Cheng J, Chang W (2022). _httpuv: HTTP and WebSocket Server Library_.
-  R package version 1.6.5, &lt;https://CRAN.R-project.org/package=httpuv&gt;.
+  R package version 1.6.6, &lt;https://CRAN.R-project.org/package=httpuv&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -1552,7 +1549,7 @@ A BibTeX entry for LaTeX users is
     title = {httpuv: HTTP and WebSocket Server Library},
     author = {Joe Cheng and Winston Chang},
     year = {2022},
-    note = {R package version 1.6.5},
+    note = {R package version 1.6.6},
     url = {https://CRAN.R-project.org/package=httpuv},
   }
 
@@ -1601,8 +1598,8 @@ To cite package &#39;digest&#39; in publications use:
   Lucas DEwcbA, Tuszynski J, Bengtsson H, Urbanek S, Frasca M, Lewis B,
   Stokely M, Muehleisen H, Murdoch D, Hester J, Wu W, Kou Q, Onkelinx
   T, Lang M, Simko V, Hornik K, Neal R, Bell K, de Queljoe M, Suruceanu
-  I, Denney B, Schumacher D, Chang. aW (2021). _digest: Create Compact
-  Hash Digests of R Objects_. R package version 0.6.29,
+  I, Denney B, Schumacher D, Chang. aW (2022). _digest: Create Compact
+  Hash Digests of R Objects_. R package version 0.6.31,
   &lt;https://CRAN.R-project.org/package=digest&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1610,8 +1607,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {digest: Create Compact Hash Digests of R Objects},
     author = {Dirk Eddelbuettel with contributions by Antoine Lucas and Jarek Tuszynski and Henrik Bengtsson and Simon Urbanek and Mario Frasca and Bryan Lewis and Murray Stokely and Hannes Muehleisen and Duncan Murdoch and Jim Hester and Wush Wu and Qiang Kou and Thierry Onkelinx and Michel Lang and Viliam Simko and Kurt Hornik and Radford Neal and Kendon Bell and Matthew {de Queljoe} and Ion Suruceanu and Bill Denney and Dirk Schumacher and and Winston Chang.},
-    year = {2021},
-    note = {R package version 0.6.29},
+    year = {2022},
+    note = {R package version 0.6.31},
     url = {https://CRAN.R-project.org/package=digest},
   }
 
@@ -1624,8 +1621,8 @@ package DESCRIPTION file and may need manual editing, see
 
 To cite package &#39;htmltools&#39; in publications use:
 
-  Cheng J, Sievert C, Schloerke B, Chang W, Xie Y, Allen J (2021).
-  _htmltools: Tools for HTML_. R package version 0.5.2,
+  Cheng J, Sievert C, Schloerke B, Chang W, Xie Y, Allen J (2022).
+  _htmltools: Tools for HTML_. R package version 0.5.4,
   &lt;https://CRAN.R-project.org/package=htmltools&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1633,8 +1630,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {htmltools: Tools for HTML},
     author = {Joe Cheng and Carson Sievert and Barret Schloerke and Winston Chang and Yihui Xie and Jeff Allen},
-    year = {2021},
-    note = {R package version 0.5.2},
+    year = {2022},
+    note = {R package version 0.5.4},
     url = {https://CRAN.R-project.org/package=htmltools},
   }
 
@@ -1724,7 +1721,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;crayon&#39; in publications use:
 
   Csárdi G (2022). _crayon: Colored Terminal Output_. R package version
-  1.5.1, &lt;https://CRAN.R-project.org/package=crayon&gt;.
+  1.5.2, &lt;https://CRAN.R-project.org/package=crayon&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -1732,7 +1729,7 @@ A BibTeX entry for LaTeX users is
     title = {crayon: Colored Terminal Output},
     author = {Gábor Csárdi},
     year = {2022},
-    note = {R package version 1.5.1},
+    note = {R package version 1.5.2},
     url = {https://CRAN.R-project.org/package=crayon},
   }
 
@@ -1797,8 +1794,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;bslib&#39; in publications use:
 
-  Sievert C, Cheng J (2021). _bslib: Custom &#39;Bootstrap&#39; &#39;Sass&#39; Themes
-  for &#39;shiny&#39; and &#39;rmarkdown&#39;_. R package version 0.3.1,
+  Sievert C, Cheng J (2022). _bslib: Custom &#39;Bootstrap&#39; &#39;Sass&#39; Themes
+  for &#39;shiny&#39; and &#39;rmarkdown&#39;_. R package version 0.4.2,
   &lt;https://CRAN.R-project.org/package=bslib&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1806,8 +1803,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {bslib: Custom &#39;Bootstrap&#39; &#39;Sass&#39; Themes for &#39;shiny&#39; and &#39;rmarkdown&#39;},
     author = {Carson Sievert and Joe Cheng},
-    year = {2021},
-    note = {R package version 0.3.1},
+    year = {2022},
+    note = {R package version 0.4.2},
     url = {https://CRAN.R-project.org/package=bslib},
   }
 
@@ -1852,8 +1849,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;lifecycle&#39; in publications use:
 
-  Henry L, Wickham H (2021). _lifecycle: Manage the Life Cycle of your
-  Package Functions_. R package version 1.0.1,
+  Henry L, Wickham H (2022). _lifecycle: Manage the Life Cycle of your
+  Package Functions_. R package version 1.0.3,
   &lt;https://CRAN.R-project.org/package=lifecycle&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -1861,8 +1858,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {lifecycle: Manage the Life Cycle of your Package Functions},
     author = {Lionel Henry and Hadley Wickham},
-    year = {2021},
-    note = {R package version 1.0.1},
+    year = {2022},
+    note = {R package version 1.0.3},
     url = {https://CRAN.R-project.org/package=lifecycle},
   }
 
@@ -1892,7 +1889,7 @@ To cite package &#39;generics&#39; in publications use:
 
   Wickham H, Kuhn M, Vaughan D (2022). _generics: Common S3 Generics
   not Provided by Base R Methods Related to Model Fitting_. R package
-  version 0.1.2, &lt;https://CRAN.R-project.org/package=generics&gt;.
+  version 0.1.3, &lt;https://CRAN.R-project.org/package=generics&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -1901,7 +1898,7 @@ A BibTeX entry for LaTeX users is
 Model Fitting},
     author = {Hadley Wickham and Max Kuhn and Davis Vaughan},
     year = {2022},
-    note = {R package version 0.1.2},
+    note = {R package version 0.1.3},
     url = {https://CRAN.R-project.org/package=generics},
   }
 
@@ -1910,16 +1907,16 @@ Model Fitting},
 
 To cite package &#39;purrr&#39; in publications use:
 
-  Henry L, Wickham H (2020). _purrr: Functional Programming Tools_. R
-  package version 0.3.4, &lt;https://CRAN.R-project.org/package=purrr&gt;.
+  Henry L, Wickham H (2022). _purrr: Functional Programming Tools_. R
+  package version 0.3.5, &lt;https://CRAN.R-project.org/package=purrr&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {purrr: Functional Programming Tools},
     author = {Lionel Henry and Hadley Wickham},
-    year = {2020},
-    note = {R package version 0.3.4},
+    year = {2022},
+    note = {R package version 0.3.5},
     url = {https://CRAN.R-project.org/package=purrr},
   }
 
@@ -1930,7 +1927,7 @@ To cite package &#39;sass&#39; in publications use:
 
   Cheng J, Mastny T, Iannone R, Schloerke B, Sievert C (2022). _sass:
   Syntactically Awesome Style Sheets (&#39;Sass&#39;)_. R package version
-  0.4.1, &lt;https://CRAN.R-project.org/package=sass&gt;.
+  0.4.4, &lt;https://CRAN.R-project.org/package=sass&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -1938,7 +1935,7 @@ A BibTeX entry for LaTeX users is
     title = {sass: Syntactically Awesome Style Sheets (&#39;Sass&#39;)},
     author = {Joe Cheng and Timothy Mastny and Richard Iannone and Barret Schloerke and Carson Sievert},
     year = {2022},
-    note = {R package version 0.4.1},
+    note = {R package version 0.4.4},
     url = {https://CRAN.R-project.org/package=sass},
   }
 
@@ -2057,7 +2054,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;quantreg&#39; in publications use:
 
   Koenker R (2022). _quantreg: Quantile Regression_. R package version
-  5.88, &lt;https://CRAN.R-project.org/package=quantreg&gt;.
+  5.94, &lt;https://CRAN.R-project.org/package=quantreg&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -2065,7 +2062,7 @@ A BibTeX entry for LaTeX users is
     title = {quantreg: Quantile Regression},
     author = {Roger Koenker},
     year = {2022},
-    note = {R package version 5.88},
+    note = {R package version 5.94},
     url = {https://CRAN.R-project.org/package=quantreg},
   }
 
@@ -2132,7 +2129,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;nlme&#39; in publications use:
 
   Pinheiro J, Bates D, R Core Team (2022). _nlme: Linear and Nonlinear
-  Mixed Effects Models_. R package version 3.1-157,
+  Mixed Effects Models_. R package version 3.1-159,
   &lt;https://CRAN.R-project.org/package=nlme&gt;.
 
   Pinheiro JC, Bates DM (2000). _Mixed-Effects Models in S and S-PLUS_.
@@ -2283,7 +2280,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;tidyselect&#39; in publications use:
 
   Henry L, Wickham H (2022). _tidyselect: Select from a Set of
-  Strings_. R package version 1.1.2,
+  Strings_. R package version 1.2.0,
   &lt;https://CRAN.R-project.org/package=tidyselect&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2292,7 +2289,7 @@ A BibTeX entry for LaTeX users is
     title = {tidyselect: Select from a Set of Strings},
     author = {Lionel Henry and Hadley Wickham},
     year = {2022},
-    note = {R package version 1.1.2},
+    note = {R package version 1.2.0},
     url = {https://CRAN.R-project.org/package=tidyselect},
   }
 
@@ -2302,7 +2299,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;vctrs&#39; in publications use:
 
   Wickham H, Henry L, Vaughan D (2022). _vctrs: Vector Helpers_. R
-  package version 0.4.1, &lt;https://CRAN.R-project.org/package=vctrs&gt;.
+  package version 0.5.1, &lt;https://CRAN.R-project.org/package=vctrs&gt;.
 
 A BibTeX entry for LaTeX users is
 
@@ -2310,7 +2307,7 @@ A BibTeX entry for LaTeX users is
     title = {vctrs: Vector Helpers},
     author = {Hadley Wickham and Lionel Henry and Davis Vaughan},
     year = {2022},
-    note = {R package version 0.4.1},
+    note = {R package version 0.5.1},
     url = {https://CRAN.R-project.org/package=vctrs},
   }
 
@@ -2357,16 +2354,16 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;proxy&#39; in publications use:
 
-  Meyer D, Buchta C (2021). _proxy: Distance and Similarity Measures_.
-  R package version 0.4-26, &lt;https://CRAN.R-project.org/package=proxy&gt;.
+  Meyer D, Buchta C (2022). _proxy: Distance and Similarity Measures_.
+  R package version 0.4-27, &lt;https://CRAN.R-project.org/package=proxy&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {proxy: Distance and Similarity Measures},
     author = {David Meyer and Christian Buchta},
-    year = {2021},
-    note = {R package version 0.4-26},
+    year = {2022},
+    note = {R package version 0.4-27},
     url = {https://CRAN.R-project.org/package=proxy},
   }
 
@@ -2375,16 +2372,16 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;gtable&#39; in publications use:
 
-  Wickham H, Pedersen T (2019). _gtable: Arrange &#39;Grobs&#39; in Tables_. R
-  package version 0.3.0, &lt;https://CRAN.R-project.org/package=gtable&gt;.
+  Wickham H, Pedersen T (2022). _gtable: Arrange &#39;Grobs&#39; in Tables_. R
+  package version 0.3.1, &lt;https://CRAN.R-project.org/package=gtable&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {gtable: Arrange &#39;Grobs&#39; in Tables},
     author = {Hadley Wickham and Thomas Lin Pedersen},
-    year = {2019},
-    note = {R package version 0.3.0},
+    year = {2022},
+    note = {R package version 0.3.1},
     url = {https://CRAN.R-project.org/package=gtable},
   }
 
@@ -2393,8 +2390,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;isoband&#39; in publications use:
 
-  Wilke C, Pedersen T (2021). _isoband: Generate Isolines and Isobands
-  from Regularly Spaced Elevation Grids_. R package version 0.2.5,
+  Wilke C, Pedersen T (2022). _isoband: Generate Isolines and Isobands
+  from Regularly Spaced Elevation Grids_. R package version 0.2.6,
   &lt;https://CRAN.R-project.org/package=isoband&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2403,8 +2400,8 @@ A BibTeX entry for LaTeX users is
     title = {isoband: Generate Isolines and Isobands from Regularly Spaced Elevation
 Grids},
     author = {Claus O. Wilke and Thomas Lin Pedersen},
-    year = {2021},
-    note = {R package version 0.2.5},
+    year = {2022},
+    note = {R package version 0.2.6},
     url = {https://CRAN.R-project.org/package=isoband},
   }
 
@@ -2456,7 +2453,7 @@ package DESCRIPTION file and may need manual editing, see
 To cite package &#39;evaluate&#39; in publications use:
 
   Wickham H, Xie Y (2022). _evaluate: Parsing and Evaluation Tools that
-  Provide More Details than the Default_. R package version 0.15,
+  Provide More Details than the Default_. R package version 0.19,
   &lt;https://CRAN.R-project.org/package=evaluate&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2466,7 +2463,7 @@ A BibTeX entry for LaTeX users is
 Default},
     author = {Hadley Wickham and Yihui Xie},
     year = {2022},
-    note = {R package version 0.15},
+    note = {R package version 0.19},
     url = {https://CRAN.R-project.org/package=evaluate},
   }
 
@@ -2494,7 +2491,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;xfun&#39; in publications use:
 
   Xie Y (2022). _xfun: Supporting Functions for Packages Maintained by
-  &#39;Yihui Xie&#39;_. R package version 0.30,
+  &#39;Yihui Xie&#39;_. R package version 0.35,
   &lt;https://CRAN.R-project.org/package=xfun&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2503,7 +2500,7 @@ A BibTeX entry for LaTeX users is
     title = {xfun: Supporting Functions for Packages Maintained by &#39;Yihui Xie&#39;},
     author = {Yihui Xie},
     year = {2022},
-    note = {R package version 0.30},
+    note = {R package version 0.35},
     url = {https://CRAN.R-project.org/package=xfun},
   }
 
@@ -2589,16 +2586,16 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;httr&#39; in publications use:
 
-  Wickham H (2020). _httr: Tools for Working with URLs and HTTP_. R
-  package version 1.4.2, &lt;https://CRAN.R-project.org/package=httr&gt;.
+  Wickham H (2022). _httr: Tools for Working with URLs and HTTP_. R
+  package version 1.4.4, &lt;https://CRAN.R-project.org/package=httr&gt;.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {httr: Tools for Working with URLs and HTTP},
     author = {Hadley Wickham},
-    year = {2020},
-    note = {R package version 1.4.2},
+    year = {2022},
+    note = {R package version 1.4.4},
     url = {https://CRAN.R-project.org/package=httr},
   }
 
@@ -2608,16 +2605,16 @@ A BibTeX entry for LaTeX users is
 To cite viridis/viridisLite in publications use:
 
   Simon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco
-  Sciaini, and Cédric Scherer (2021). Rvision - Colorblind-Friendly
-  Color Maps for R. R package version 0.4.0.
+  Sciaini, and Cédric Scherer (2022). Rvision - Colorblind-Friendly
+  Color Maps for R. R package version 0.4.1.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {{viridis} - Colorblind-Friendly Color Maps for R},
     author = {{Garnier} and {Simon} and {Ross} and {Noam} and {Rudis} and {Robert} and {Camargo} and Antônio Pedro and {Sciaini} and {Marco} and {Scherer} and {Cédric}},
-    year = {2021},
-    note = {R package version 0.4.0},
+    year = {2022},
+    note = {R package version 0.4.1},
     url = {https://sjmgarnier.github.io/viridis/},
     doi = {10.5281/zenodo.4679424},
     doi = {10.5281/zenodo.4679424},
@@ -2644,8 +2641,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;data.table&#39; in publications use:
 
-  Dowle M, Srinivasan A (2021). _data.table: Extension of
-  `data.frame`_. R package version 1.14.2,
+  Dowle M, Srinivasan A (2022). _data.table: Extension of
+  `data.frame`_. R package version 1.14.6,
   &lt;https://CRAN.R-project.org/package=data.table&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2653,8 +2650,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {data.table: Extension of `data.frame`},
     author = {Matt Dowle and Arun Srinivasan},
-    year = {2021},
-    note = {R package version 1.14.2},
+    year = {2022},
+    note = {R package version 1.14.6},
     url = {https://CRAN.R-project.org/package=data.table},
   }
 
@@ -2664,7 +2661,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;Matrix&#39; in publications use:
 
   Bates D, Maechler M, Jagan M (2022). _Matrix: Sparse and Dense Matrix
-  Classes and Methods_. R package version 1.4-1,
+  Classes and Methods_. R package version 1.5-1,
   &lt;https://CRAN.R-project.org/package=Matrix&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2673,7 +2670,7 @@ A BibTeX entry for LaTeX users is
     title = {Matrix: Sparse and Dense Matrix Classes and Methods},
     author = {Douglas Bates and Martin Maechler and Mikael Jagan},
     year = {2022},
-    note = {R package version 1.4-1},
+    note = {R package version 1.5-1},
     url = {https://CRAN.R-project.org/package=Matrix},
   }
 
@@ -2682,16 +2679,16 @@ A BibTeX entry for LaTeX users is
 
 To cite the &#39;mnormt&#39; package in publications use:
 
-  Azzalini, A. and Genz, A. (2020). The R package &#39;mnormt&#39;: The
-  multivariate normal and &#39;t&#39; distributions (version 2.0.2). URL
+  Azzalini, A. and Genz, A. (2022). The R package &#39;mnormt&#39;: The
+  multivariate normal and &#39;t&#39; distributions (version 2.1.0). URL
   http://azzalini.stat.unipd.it/SW/Pkg-mnormt/
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {The {R} package \texttt{mnormt}: The multivariate normal and $t$ distributions (version 2.0.2)},
+    title = {The {R} package \texttt{mnormt}: The multivariate normal and $t$ distributions (version 2.1.0)},
     author = {Adelchi Azzalini and Alan Genz},
-    year = {2020},
+    year = {2022},
     url = {http://azzalini.stat.unipd.it/SW/Pkg-mnormt/},
   }
 
@@ -2719,7 +2716,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;cli&#39; in publications use:
 
   Csárdi G (2022). _cli: Helpers for Developing Command Line
-  Interfaces_. R package version 3.3.0,
+  Interfaces_. R package version 3.4.1,
   &lt;https://CRAN.R-project.org/package=cli&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2728,7 +2725,7 @@ A BibTeX entry for LaTeX users is
     title = {cli: Helpers for Developing Command Line Interfaces},
     author = {Gábor Csárdi},
     year = {2022},
-    note = {R package version 3.3.0},
+    note = {R package version 3.4.1},
     url = {https://CRAN.R-project.org/package=cli},
   }
 
@@ -2755,7 +2752,7 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;hms&#39; in publications use:
 
-  Müller K (2021). _hms: Pretty Time of Day_. R package version 1.1.1,
+  Müller K (2022). _hms: Pretty Time of Day_. R package version 1.1.2,
   &lt;https://CRAN.R-project.org/package=hms&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2763,8 +2760,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {hms: Pretty Time of Day},
     author = {Kirill Müller},
-    year = {2021},
-    note = {R package version 1.1.1},
+    year = {2022},
+    note = {R package version 1.1.2},
     url = {https://CRAN.R-project.org/package=hms},
   }
 
@@ -2773,8 +2770,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;cpp11&#39; in publications use:
 
-  Hester J, François R (2021). _cpp11: A C++11 Interface for R&#39;s C
-  Interface_. R package version 0.4.2,
+  Hester J, François R (2022). _cpp11: A C++11 Interface for R&#39;s C
+  Interface_. R package version 0.4.3,
   &lt;https://CRAN.R-project.org/package=cpp11&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2782,8 +2779,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {cpp11: A C++11 Interface for R&#39;s C Interface},
     author = {Jim Hester and Romain François},
-    year = {2021},
-    note = {R package version 0.4.2},
+    year = {2022},
+    note = {R package version 0.4.3},
     url = {https://CRAN.R-project.org/package=cpp11},
   }
 
@@ -2834,7 +2831,7 @@ package DESCRIPTION file and may need manual editing, see
 To cite the &#39;tinytex&#39; package in publications use:
 
   Yihui Xie (2022). tinytex: Helper Functions to Install and Maintain
-  TeX Live, and Compile LaTeX Documents. R package version 0.38.
+  TeX Live, and Compile LaTeX Documents. R package version 0.43.
 
   Yihui Xie (2019) TinyTeX: A lightweight, cross-platform, and
   easy-to-maintain LaTeX distribution based on TeX Live. TUGboat 40
@@ -2867,8 +2864,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;farver&#39; in publications use:
 
-  Pedersen T, Nicolae B, François R (2021). _farver: High Performance
-  Colour Space Manipulation_. R package version 2.1.0,
+  Pedersen T, Nicolae B, François R (2022). _farver: High Performance
+  Colour Space Manipulation_. R package version 2.1.1,
   &lt;https://CRAN.R-project.org/package=farver&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2876,8 +2873,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {farver: High Performance Colour Space Manipulation},
     author = {Thomas Lin Pedersen and Berendea Nicolae and Romain François},
-    year = {2021},
-    note = {R package version 2.1.0},
+    year = {2022},
+    note = {R package version 2.1.1},
     url = {https://CRAN.R-project.org/package=farver},
   }
 
@@ -2969,7 +2966,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;pillar&#39; in publications use:
 
   Müller K, Wickham H (2022). _pillar: Coloured Formatting for
-  Columns_. R package version 1.7.0,
+  Columns_. R package version 1.8.1,
   &lt;https://CRAN.R-project.org/package=pillar&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -2978,7 +2975,7 @@ A BibTeX entry for LaTeX users is
     title = {pillar: Coloured Formatting for Columns},
     author = {Kirill Müller and Hadley Wickham},
     year = {2022},
-    note = {R package version 1.7.0},
+    note = {R package version 1.8.1},
     url = {https://CRAN.R-project.org/package=pillar},
   }
 
@@ -3053,7 +3050,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;openssl&#39; in publications use:
 
   Ooms J (2022). _openssl: Toolkit for Encryption, Signatures and
-  Certificates Based on OpenSSL_. R package version 2.0.0,
+  Certificates Based on OpenSSL_. R package version 2.0.5,
   &lt;https://CRAN.R-project.org/package=openssl&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -3063,7 +3060,7 @@ A BibTeX entry for LaTeX users is
 OpenSSL},
     author = {Jeroen Ooms},
     year = {2022},
-    note = {R package version 2.0.0},
+    note = {R package version 2.0.5},
     url = {https://CRAN.R-project.org/package=openssl},
   }
 
@@ -3342,8 +3339,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;MatrixModels&#39; in publications use:
 
-  Bates D, Maechler M (2021). _MatrixModels: Modelling with Sparse and
-  Dense Matrices_. R package version 0.5-0,
+  Bates D, Maechler M (2022). _MatrixModels: Modelling with Sparse and
+  Dense Matrices_. R package version 0.5-1,
   &lt;https://CRAN.R-project.org/package=MatrixModels&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -3351,8 +3348,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {MatrixModels: Modelling with Sparse and Dense Matrices},
     author = {Douglas Bates and Martin Maechler},
-    year = {2021},
-    note = {R package version 0.5-0},
+    year = {2022},
+    note = {R package version 0.5-1},
     url = {https://CRAN.R-project.org/package=MatrixModels},
   }
 
@@ -3385,7 +3382,7 @@ A BibTeX entry for LaTeX users is
 To cite package &#39;haven&#39; in publications use:
 
   Wickham H, Miller E, Smith D (2022). _haven: Import and Export
-  &#39;SPSS&#39;, &#39;Stata&#39; and &#39;SAS&#39; Files_. R package version 2.5.0,
+  &#39;SPSS&#39;, &#39;Stata&#39; and &#39;SAS&#39; Files_. R package version 2.5.1,
   &lt;https://CRAN.R-project.org/package=haven&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -3394,7 +3391,7 @@ A BibTeX entry for LaTeX users is
     title = {haven: Import and Export &#39;SPSS&#39;, &#39;Stata&#39; and &#39;SAS&#39; Files},
     author = {Hadley Wickham and Evan Miller and Danny Smith},
     year = {2022},
-    note = {R package version 2.5.0},
+    note = {R package version 2.5.1},
     url = {https://CRAN.R-project.org/package=haven},
   }
 
@@ -3483,8 +3480,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;forcats&#39; in publications use:
 
-  Wickham H (2021). _forcats: Tools for Working with Categorical
-  Variables (Factors)_. R package version 0.5.1,
+  Wickham H (2022). _forcats: Tools for Working with Categorical
+  Variables (Factors)_. R package version 0.5.2,
   &lt;https://CRAN.R-project.org/package=forcats&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -3492,8 +3489,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {forcats: Tools for Working with Categorical Variables (Factors)},
     author = {Hadley Wickham},
-    year = {2021},
-    note = {R package version 0.5.1},
+    year = {2022},
+    note = {R package version 0.5.2},
     url = {https://CRAN.R-project.org/package=forcats},
   }
 
@@ -3520,8 +3517,8 @@ A BibTeX entry for LaTeX users is
 
 To cite package &#39;zip&#39; in publications use:
 
-  Csárdi G, Podgórski K, Geldreich R (2021). _zip: Cross-Platform &#39;zip&#39;
-  Compression_. R package version 2.2.0,
+  Csárdi G, Podgórski K, Geldreich R (2022). _zip: Cross-Platform &#39;zip&#39;
+  Compression_. R package version 2.2.1,
   &lt;https://CRAN.R-project.org/package=zip&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -3529,8 +3526,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {zip: Cross-Platform &#39;zip&#39; Compression},
     author = {Gábor Csárdi and Kuba Podgórski and Rich Geldreich},
-    year = {2021},
-    note = {R package version 2.2.0},
+    year = {2022},
+    note = {R package version 2.2.1},
     url = {https://CRAN.R-project.org/package=zip},
   }
 
@@ -3543,8 +3540,8 @@ package DESCRIPTION file and may need manual editing, see
 
 To cite package &#39;sys&#39; in publications use:
 
-  Ooms J (2020). _sys: Powerful and Reliable Tools for Running System
-  Commands in R_. R package version 3.4,
+  Ooms J (2022). _sys: Powerful and Reliable Tools for Running System
+  Commands in R_. R package version 3.4.1,
   &lt;https://CRAN.R-project.org/package=sys&gt;.
 
 A BibTeX entry for LaTeX users is
@@ -3552,8 +3549,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {sys: Powerful and Reliable Tools for Running System Commands in R},
     author = {Jeroen Ooms},
-    year = {2020},
-    note = {R package version 3.4},
+    year = {2022},
+    note = {R package version 3.4.1},
     url = {https://CRAN.R-project.org/package=sys},
   }
 

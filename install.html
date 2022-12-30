@@ -13,7 +13,7 @@
 
 <title>Radiant – Business analytics using R and Shiny</title>
 
-<script src="libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="libs/header-attrs-2.19/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -169,13 +169,20 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -233,8 +240,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -242,16 +249,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -479,7 +479,7 @@ pre code {
 </div>
 
 
-<p>Radiant is a platform-independent browser-based interface for business analytics in <a href="https://www.r-project.org/">R</a>, based on the <a href="https://shiny.rstudio.com/">Shiny</a> package. Developed by <a href="http://rady.ucsd.edu/people/faculty/nijs/" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use <a href="mailto:radiant@rady.ucsd.edu" class="email">radiant@rady.ucsd.edu</a>.</p>
+<p>Radiant is a platform-independent browser-based interface for business analytics in <a href="https://www.r-project.org/">R</a>, based on the <a href="https://shiny.rstudio.com/">Shiny</a> package. Developed by <a href="https://rady.ucsd.edu/faculty-research/faculty/vincent-nijs.html" target="_blank">Vincent Nijs</a>. Please use the issue tracker on GitHub to suggest enhancements or report problems: <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">https://github.com/radiant-rstats/radiant/issues</a>. For other questions and comments please use <a href="mailto:radiant@rady.ucsd.edu" class="email">radiant@rady.ucsd.edu</a>.</p>
 <blockquote>
 <p><strong>Note:</strong> R 4.2 or higher is required to use the latest version of Radiant.</p>
 </blockquote>
