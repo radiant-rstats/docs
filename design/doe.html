@@ -373,7 +373,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Design &gt; DOE &gt; Design of Experiments (DOE)</h1>
+<h1 class="title toc-ignore">Design &gt; DOE &gt; Design of Experiments
+(DOE)</h1>
 
 </div>
 
@@ -384,67 +385,140 @@ pre code {
 </blockquote>
 <div id="example" class="section level2">
 <h2>Example</h2>
-<p>Suppose we want to test alternative movie theater designs using three factors.</p>
+<p>Suppose we want to test alternative movie theater designs using three
+factors.</p>
 <ul>
 <li><strong>Price</strong> at $10, $13, or $16</li>
-<li><strong>Sight</strong> to determine if theater setting should be staggered or not staggered</li>
-<li><strong>Food</strong> to determine if we should offer hot dogs and popcorn, gourmet food, or no food at all</li>
+<li><strong>Sight</strong> to determine if theater setting should be
+staggered or not staggered</li>
+<li><strong>Food</strong> to determine if we should offer hot dogs and
+popcorn, gourmet food, or no food at all</li>
 </ul>
 </div>
 <div id="max-levels" class="section level2">
 <h2>Max levels</h2>
-<p>The factors to include in the analysis have 3, 2, and 3 levels so we enter <code>3</code> in the <code>Max levels</code> input.</p>
+<p>The factors to include in the analysis have 3, 2, and 3 levels so we
+enter <code>3</code> in the <code>Max levels</code> input.</p>
 </div>
 <div id="variable-name-and-level" class="section level2">
 <h2>Variable name and level</h2>
-<p>Here we enter the factors of interest. For example, enter <code>price</code> as the variable name, $10 as level 1, $13, as level 2, and $16 as level 3. Then click the <i title='Add factor' class='fa fa-plus-circle'></i> icon. This will add the provided information about the factor to the <code>Design factors</code> window in the format Radiant needs for analysis. To remove the last line in the <code>Design factors</code> window click the <i title='Add factor' class='fa fa-minus-circle'></i> icon.</p>
-<p>After entering the required information for each of the three factors your screen should look as follows:</p>
+<p>Here we enter the factors of interest. For example, enter
+<code>price</code> as the variable name, $10 as level 1, $13, as level
+2, and $16 as level 3. Then click the
+<i title='Add factor' class='fa fa-plus-circle'></i> icon. This will add
+the provided information about the factor to the
+<code>Design factors</code> window in the format Radiant needs for
+analysis. To remove the last line in the <code>Design factors</code>
+window click the <i title='Add factor' class='fa fa-minus-circle'></i>
+icon.</p>
+<p>After entering the required information for each of the three factors
+your screen should look as follows:</p>
 <p align="center">
 <img src="figures_design/doe_factors.png">
 </p>
 </div>
 <div id="create-design" class="section level2">
 <h2>Create design</h2>
-<p>You are now ready to create an experimental design by clicking on the <code>Create design</code> button. This will generate the following output.</p>
+<p>You are now ready to create an experimental design by clicking on the
+<code>Create design</code> button. This will generate the following
+output.</p>
 <p align="center">
 <img src="figures_design/doe_output.png">
 </p>
-<p>For our example, the ideal design has 18 trials. However, this implies that the partial and the full factorial are the same size. We’d like to find out if it is possible to reduce the number of trials. See <code># trials</code> below.</p>
+<p>For our example, the ideal design has 18 trials. However, this
+implies that the partial and the full factorial are the same size. We’d
+like to find out if it is possible to reduce the number of trials. See
+<code># trials</code> below.</p>
 </div>
 <div id="trials" class="section level2">
 <h2># trials</h2>
-<p>This input can be used to control the number of trials to generate. If left blank Radiant will try to find an appropriate number of trials using the <code>optFederov</code> function in the <a href="https://cran.r-project.org/web/packages/AlgDesign/index.html" target="_blank">AlgDesign</a> package.</p>
-<p>Lets review the output in <code>Design efficiency</code>. For our example, the goal is to find a design with less than 18 trials that will still allow us to estimate the effects we are interested in (e.g., the main-effects of the different levels of price, sight, and food). Notice that there are several designs that are considered <code>balanced</code> (i.e., each level is included in the same number of trials). We are looking for a design that is balanced and has minimal correlation between factors (e.g., a D-efficiency score above 0.8). You can think of the D-efficiency score as a measure of how cleanly we will be able to estimate the effects of interest after running the test/experiment. The ideal D-efficiency score is 1 but a number above 0.8 is considered reasonable.</p>
-<p>The smallest number of trials with a balanced design is 6. This design is balanced simply because 6 is divisible by 3 and 2 (i.e., the number of levels in our factors). However, the D-efficiency score is rather low (.513). The next smallest balanced design has 12 trials and has a much higher D-efficiency. This design is a reasonable choice if we want to estimate the main-effects of each factor level on movie-theater choice or preference.</p>
-<p>To generate the desired partial factorial design enter <code>12</code> in the <code># trials</code> input and press <code>Create design</code>. This will generate the following output.</p>
+<p>This input can be used to control the number of trials to generate.
+If left blank Radiant will try to find an appropriate number of trials
+using the <code>optFederov</code> function in the
+<a href="https://cran.r-project.org/web/packages/AlgDesign/index.html" target="_blank">AlgDesign</a>
+package.</p>
+<p>Lets review the output in <code>Design efficiency</code>. For our
+example, the goal is to find a design with less than 18 trials that will
+still allow us to estimate the effects we are interested in (e.g., the
+main-effects of the different levels of price, sight, and food). Notice
+that there are several designs that are considered <code>balanced</code>
+(i.e., each level is included in the same number of trials). We are
+looking for a design that is balanced and has minimal correlation
+between factors (e.g., a D-efficiency score above 0.8). You can think of
+the D-efficiency score as a measure of how cleanly we will be able to
+estimate the effects of interest after running the test/experiment. The
+ideal D-efficiency score is 1 but a number above 0.8 is considered
+reasonable.</p>
+<p>The smallest number of trials with a balanced design is 6. This
+design is balanced simply because 6 is divisible by 3 and 2 (i.e., the
+number of levels in our factors). However, the D-efficiency score is
+rather low (.513). The next smallest balanced design has 12 trials and
+has a much higher D-efficiency. This design is a reasonable choice if we
+want to estimate the main-effects of each factor level on movie-theater
+choice or preference.</p>
+<p>To generate the desired partial factorial design enter
+<code>12</code> in the <code># trials</code> input and press
+<code>Create design</code>. This will generate the following output.</p>
 <p align="center">
 <img src="figures_design/doe_output_partial.png">
 </p>
-<p>The <code>trial</code> column in the output shows which profiles have been selected from the full factorial design. Note that the off-diagonal elements of the (polychoric) correlation matrix for a partial factorial design will all be equal to 0 <em>only</em> when D-efficiency is equal to 1. The <a href="https://cran.r-project.org/web/packages/polycor/index.html" target="_blank">polycor</a> package is used to the estimate the correlations between the factors.</p>
+<p>The <code>trial</code> column in the output shows which profiles have
+been selected from the full factorial design. Note that the off-diagonal
+elements of the (polychoric) correlation matrix for a partial factorial
+design will all be equal to 0 <em>only</em> when D-efficiency is equal
+to 1. The
+<a href="https://cran.r-project.org/web/packages/polycor/index.html" target="_blank">polycor</a>
+package is used to the estimate the correlations between the
+factors.</p>
 </div>
 <div id="rnd.-seed" class="section level2">
 <h2>Rnd. seed:</h2>
-<p>A partial factorial design may not be unique (i.e., there might be multiple combinations of trials or profiles that are equally good). By setting a random seed you ensure the same set of trials will be generated each time you press <code>Create design</code>. However, to see alternative partials factorial designs empty the <code>Rnd. seed</code> box and press <code>Create design</code> a few times to see how the set of selected trials changes.</p>
+<p>A partial factorial design may not be unique (i.e., there might be
+multiple combinations of trials or profiles that are equally good). By
+setting a random seed you ensure the same set of trials will be
+generated each time you press <code>Create design</code>. However, to
+see alternative partials factorial designs empty the
+<code>Rnd. seed</code> box and press <code>Create design</code> a few
+times to see how the set of selected trials changes.</p>
 </div>
 <div id="interactions" class="section level2">
 <h2>Interactions</h2>
-<p>Note that we will not be able to estimate all possible interactions between <code>price</code>, <code>sight</code>, and <code>food</code> if we use a design with 12 trials. This is the trade-off inherent in partial factorial designs! In fact, if we do want to estimate even one interaction (e.g., select <code>price:sight</code>) the appropriate design has 18 trials (i.e., the number in the full factorial design that includes all possible combinations of factor levels).</p>
+<p>Note that we will not be able to estimate all possible interactions
+between <code>price</code>, <code>sight</code>, and <code>food</code> if
+we use a design with 12 trials. This is the trade-off inherent in
+partial factorial designs! In fact, if we do want to estimate even one
+interaction (e.g., select <code>price:sight</code>) the appropriate
+design has 18 trials (i.e., the number in the full factorial design that
+includes all possible combinations of factor levels).</p>
 </div>
 <div id="partial-and-full-factorial-design" class="section level2">
 <h2>Partial and Full factorial design</h2>
-<p>Click on the <code>Partial</code> or the <code>Full</code> button to download the Partial or Full factorial design in csv format .</p>
+<p>Click on the <code>Partial</code> or the <code>Full</code> button to
+download the Partial or Full factorial design in csv format .</p>
 </div>
 <div id="upload-and-download" class="section level2">
 <h2>Upload and Download</h2>
-<p>To download the list of factors you entered click the <code>Download</code> button. To upload a previously created set of factors click the <code>Upload</code> button and browse to find the desired file.</p>
+<p>To download the list of factors you entered click the
+<code>Download</code> button. To upload a previously created set of
+factors click the <code>Upload</code> button and browse to find the
+desired file.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the design by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the design by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant for experimental design see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-design-of-experiments-doe-" target="_blank"><em>Design &gt; Design of Experiments</em></a></p>
-<p>The key function from the <code>AlgDesign</code> package used in the <code>doe</code> tool is <code>optFederov</code>.</p>
+<p>For an overview of related R-functions used by Radiant for
+experimental design see
+<a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-design-of-experiments-doe-" target="_blank"><em>Design
+&gt; Design of Experiments</em></a></p>
+<p>The key function from the <code>AlgDesign</code> package used in the
+<code>doe</code> tool is <code>optFederov</code>.</p>
 </div>
 </div>
 

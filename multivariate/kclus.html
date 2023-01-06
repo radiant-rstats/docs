@@ -474,7 +474,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Multivariate &gt; Cluster &gt; K-clustering</h1>
+<h1 class="title toc-ignore">Multivariate &gt; Cluster &gt;
+K-clustering</h1>
 
 </div>
 
@@ -483,35 +484,117 @@ pre code {
 <blockquote>
 <p>Create segments using K-clustering</p>
 </blockquote>
-<p>The goal of Cluster Analysis is to group respondents (e.g., consumers) into segments based on needs, benefits, and/or behaviors. The tool tries to achieve this goal by looking for respondents that are similar, putting them together in a cluster or segment, and separating them from other, dissimilar, respondents. The researcher compares the segments and provides a descriptive label for each.</p>
+<p>The goal of Cluster Analysis is to group respondents (e.g.,
+consumers) into segments based on needs, benefits, and/or behaviors. The
+tool tries to achieve this goal by looking for respondents that are
+similar, putting them together in a cluster or segment, and separating
+them from other, dissimilar, respondents. The researcher compares the
+segments and provides a descriptive label for each.</p>
 <div id="example-toothpaste" class="section level3">
 <h3>Example: Toothpaste</h3>
-<p>First, go to the <em>Data &gt; Manage</em> tab, select <strong>examples</strong> from the <code>Load data of type</code> dropdown, and press the <code>Load</code> button. Then select the <code>toothpaste</code> dataset. The dataset contains information from 60 consumers who were asked to respond to six questions to determine their attitudes towards toothpaste. The scores shown for variables v1-v6 indicate the level of agreement with statements on a 7-point scale where 1 = strongly disagree and 7 = strongly agree.</p>
-<p>After determining the appropriate number of clusters to extract using Hierarchical cluster analysis we use K-clustering to create the final segments. The main advantage of this algorithm is it’s flexibility and robustness in finding the most appropriate grouping of respondents. For marketing and business data we often use Hierarchical cluster analysis to select the number of segments and K-clustering to create the final segments.</p>
-<p>To apply K-clustering to the toothpaste data select <code>K-means</code> as the algorithm and variables v1 through v6 in the <code>Variables</code> box. Select 3 as the number of clusters. Because the data has relatively few observations we can use Hierarchical Cluster Analysis (HC) to provide the initial cluster centers. After the settings have been changed click the <code>Estimate</code> button or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results.</p>
-<p>In the <em>Summary</em> tab we use the <code>Cluster means</code> table to describe the individuals assigned to a segment. Each number in the table shows the average score on a variable for people in that segment. For example, segment 3 has an average score of 5.750 out of 7 on question v2. We are looking for either very high or very low mean values to help distinguish segments because we want to establish how one segment differs from the others. If there are no substantial differences in the mean value of a variable across different segments that variable is not very useful for interpretation. By highlighting the variables that most clearly distinguish the different segments we can generate a name or label that describes consumers in each segment and illustrates how the segments differ from one another.</p>
+<p>First, go to the <em>Data &gt; Manage</em> tab, select
+<strong>examples</strong> from the <code>Load data of type</code>
+dropdown, and press the <code>Load</code> button. Then select the
+<code>toothpaste</code> dataset. The dataset contains information from
+60 consumers who were asked to respond to six questions to determine
+their attitudes towards toothpaste. The scores shown for variables v1-v6
+indicate the level of agreement with statements on a 7-point scale where
+1 = strongly disagree and 7 = strongly agree.</p>
+<p>After determining the appropriate number of clusters to extract using
+Hierarchical cluster analysis we use K-clustering to create the final
+segments. The main advantage of this algorithm is it’s flexibility and
+robustness in finding the most appropriate grouping of respondents. For
+marketing and business data we often use Hierarchical cluster analysis
+to select the number of segments and K-clustering to create the final
+segments.</p>
+<p>To apply K-clustering to the toothpaste data select
+<code>K-means</code> as the algorithm and variables v1 through v6 in the
+<code>Variables</code> box. Select 3 as the number of clusters. Because
+the data has relatively few observations we can use Hierarchical Cluster
+Analysis (HC) to provide the initial cluster centers. After the settings
+have been changed click the <code>Estimate</code> button or press
+<code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate
+results.</p>
+<p>In the <em>Summary</em> tab we use the <code>Cluster means</code>
+table to describe the individuals assigned to a segment. Each number in
+the table shows the average score on a variable for people in that
+segment. For example, segment 3 has an average score of 5.750 out of 7
+on question v2. We are looking for either very high or very low mean
+values to help distinguish segments because we want to establish how one
+segment differs from the others. If there are no substantial differences
+in the mean value of a variable across different segments that variable
+is not very useful for interpretation. By highlighting the variables
+that most clearly distinguish the different segments we can generate a
+name or label that describes consumers in each segment and illustrates
+how the segments differ from one another.</p>
 <p align="center">
 <img src="figures_multivariate/kclus_summary.png">
 </p>
-<p>It can be useful to visualize how well the segments are separated by plotting the data for each segment and variable. The figures shown below are density plots. For variable v1 the clusters are nicely separated. The average response to the question ‘It is important to buy a toothpaste that prevents cavities’ for segment 2 (green) seems lower than for both segment 3 (blue) and segment 1 (pink). Segment 1, in turn stands out with a higher score on this question compared to the other two segments. For question v4 we see a different pattern. The average response to the question ‘I prefer a toothpaste that freshens breath’ for segments 1 (green) and 2 (pink) is very similar and the plots overlap. Segment 3 (blue), in turn, stands out with a higher score on this question compared to the other two segments.</p>
+<p>It can be useful to visualize how well the segments are separated by
+plotting the data for each segment and variable. The figures shown below
+are density plots. For variable v1 the clusters are nicely separated.
+The average response to the question ‘It is important to buy a
+toothpaste that prevents cavities’ for segment 2 (green) seems lower
+than for both segment 3 (blue) and segment 1 (pink). Segment 1, in turn
+stands out with a higher score on this question compared to the other
+two segments. For question v4 we see a different pattern. The average
+response to the question ‘I prefer a toothpaste that freshens breath’
+for segments 1 (green) and 2 (pink) is very similar and the plots
+overlap. Segment 3 (blue), in turn, stands out with a higher score on
+this question compared to the other two segments.</p>
 <p align="center">
 <img src="figures_multivariate/kclus_plot.png">
 </p>
-<p>By reviewing the Cluster means table in the <em>Summary</em> tab and the density plots in the <em>Plots</em> tab we can derive the following labels: Segment 3 stands out with higher scores on questions v2, v4, and v6. We could call them the ‘Cosmetic brushers’. Segment 1 stands out with higher scores on questions v1 and v3 and a lower score on v5. They seem to care most about the health benefits of toothpaste so we might call them the ‘Therapeutic brushers’. Segment 2 scores lower in v1 and v3 and higher on v5, i.e., they seem to care little about the health benefits of toothpaste. Since their scores for the cosmetics benefits are middle-of-the-road we could label them the ‘Uninvolved brushers’. To save the table of cluster means to a csv file press the download button on the top-right of your screen.</p>
-<p>Once we categorize the segments we can create a segment (or cluster) membership variable by clicking the <code>Store</code> button. A new variable is added to the toothpaste data showing which respondents were assigned to each cluster (i.e., cluster membership). We can change the created cluster variable to show the descriptive labels above through the <em>Data &gt; Transform</em> menu. Select the <code>kclus</code> variable in the Select column(s) box. Then select <code>Recode</code> from the <code>Transform type</code> dropdown. In the recode box type (or paste) the command below and press return:</p>
+<p>By reviewing the Cluster means table in the <em>Summary</em> tab and
+the density plots in the <em>Plots</em> tab we can derive the following
+labels: Segment 3 stands out with higher scores on questions v2, v4, and
+v6. We could call them the ‘Cosmetic brushers’. Segment 1 stands out
+with higher scores on questions v1 and v3 and a lower score on v5. They
+seem to care most about the health benefits of toothpaste so we might
+call them the ‘Therapeutic brushers’. Segment 2 scores lower in v1 and
+v3 and higher on v5, i.e., they seem to care little about the health
+benefits of toothpaste. Since their scores for the cosmetics benefits
+are middle-of-the-road we could label them the ‘Uninvolved brushers’. To
+save the table of cluster means to a csv file press the download button
+on the top-right of your screen.</p>
+<p>Once we categorize the segments we can create a segment (or cluster)
+membership variable by clicking the <code>Store</code> button. A new
+variable is added to the toothpaste data showing which respondents were
+assigned to each cluster (i.e., cluster membership). We can change the
+created cluster variable to show the descriptive labels above through
+the <em>Data &gt; Transform</em> menu. Select the <code>kclus</code>
+variable in the Select column(s) box. Then select <code>Recode</code>
+from the <code>Transform type</code> dropdown. In the recode box type
+(or paste) the command below and press return:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="ot">=</span> <span class="st">&#39;Therapeutic&#39;</span>; <span class="dv">2</span> <span class="ot">=</span> <span class="st">&#39;Uninvolved&#39;</span>; <span class="dv">3</span> <span class="ot">=</span> <span class="st">&#39;Cosmetic&#39;</span></span></code></pre></div>
-<p>This should produce the output shown below. After verifying the results are as expected, click the <code>Store</code> button to add the recoded variable to the toothpaste dataset.</p>
+<p>This should produce the output shown below. After verifying the
+results are as expected, click the <code>Store</code> button to add the
+recoded variable to the toothpaste dataset.</p>
 <p align="center">
 <img src="figures_multivariate/kclus_transform_recode.png">
 </p>
-<p>We can profile these segments with demographic data using cross-tabs (e.g., gender vs segment membership). Go to <em>Basics &gt; Tables &gt; Cross-tabs</em>. Our null hypothesis and alternative hypothesis are:</p>
+<p>We can profile these segments with demographic data using cross-tabs
+(e.g., gender vs segment membership). Go to <em>Basics &gt; Tables &gt;
+Cross-tabs</em>. Our null hypothesis and alternative hypothesis are:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>H0<span class="sc">:</span> There is no relationship between gender and segment membership</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Ha<span class="sc">:</span> There is a relationship between gender and segment membership</span></code></pre></div>
-<p>In the <em>Summary</em> tab we see there is a significant association between these two variables. The p.value is .001 and there are no cells with expected values below 5 (see the help file for <em>Basics &gt; Tables &gt; Cross-tabs</em> for a detailed discussion).</p>
+<p>In the <em>Summary</em> tab we see there is a significant association
+between these two variables. The p.value is .001 and there are no cells
+with expected values below 5 (see the help file for <em>Basics &gt;
+Tables &gt; Cross-tabs</em> for a detailed discussion).</p>
 <p align="center">
 <img src="figures_multivariate/kclus_cross_tabs_summary.png">
 </p>
-<p>For a graphical depiction of the association go to the <em>Plot</em> tab. If we select <code>Deviation std.</code> we see that the <code>Uninvolved</code> segment has significantly more men than we would expect under the null of no-association. We could also argue that there are more women in the <code>Cosmetic</code> segment than we would expect under the null of no-association, although the significance level is marginal (i.e., &lt; .1 but not &lt; .05). In sum, in these data men seem more likely to belong to the <code>Uninvolved brushers</code> segment and women seem (marginally) more likely to be in the <code>Cosmetic brushers</code> segment.</p>
+<p>For a graphical depiction of the association go to the <em>Plot</em>
+tab. If we select <code>Deviation std.</code> we see that the
+<code>Uninvolved</code> segment has significantly more men than we would
+expect under the null of no-association. We could also argue that there
+are more women in the <code>Cosmetic</code> segment than we would expect
+under the null of no-association, although the significance level is
+marginal (i.e., &lt; .1 but not &lt; .05). In sum, in these data men
+seem more likely to belong to the <code>Uninvolved brushers</code>
+segment and women seem (marginally) more likely to be in the
+<code>Cosmetic brushers</code> segment.</p>
 <p align="center">
 <img src="figures_multivariate/kclus_cross_tabs_plot.png">
 </p>
@@ -519,20 +602,40 @@ pre code {
 <div id="additional-options" class="section level2">
 <h2>Additional options</h2>
 <ul>
-<li>By default, data will be standardized before it is analyzed. To pass data in its raw form to the estimation algorithm, make sure the <code>Standardize</code> box is un-checked</li>
-<li>If the data to use for clustering includes variables of type “factor”, the <code>K-proto</code> algorithm should be used. If <code>K-means</code> is selected, only numerical variables with be retained for analysis. For more information on the <code>kproto</code> function and the <em>clustMixType</em> R-package see the <a href="https://journal.r-project.org/archive/2018/RJ-2018-048/RJ-2018-048.pdf" target="_blank">R-journal article</a></li>
+<li>By default, data will be standardized before it is analyzed. To pass
+data in its raw form to the estimation algorithm, make sure the
+<code>Standardize</code> box is un-checked</li>
+<li>If the data to use for clustering includes variables of type
+“factor”, the <code>K-proto</code> algorithm should be used. If
+<code>K-means</code> is selected, only numerical variables with be
+retained for analysis. For more information on the <code>kproto</code>
+function and the <em>clustMixType</em> R-package see the
+<a href="https://journal.r-project.org/archive/2018/RJ-2018-048/RJ-2018-048.pdf" target="_blank">R-journal
+article</a></li>
 </ul>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>patchwork</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code>
+commands or with <code>patchwork</code>. See example below and
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;bar&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;K-means Cluster Analysis&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to conduct cluster analysis see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-cluster" target="_blank"><em>Multivariate &gt; Cluster</em></a>.</p>
-<p>The key function from the <code>stats</code> package used in the <code>kclus</code> tool is <code>kmeans</code>.</p>
+<p>For an overview of related R-functions used by Radiant to conduct
+cluster analysis see
+<a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-cluster" target="_blank"><em>Multivariate
+&gt; Cluster</em></a>.</p>
+<p>The key function from the <code>stats</code> package used in the
+<code>kclus</code> tool is <code>kmeans</code>.</p>
 </div>
 </div>
 

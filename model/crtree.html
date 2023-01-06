@@ -373,7 +373,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Model &gt; Trees &gt; Classification and regression trees</h1>
+<h1 class="title toc-ignore">Model &gt; Trees &gt; Classification and
+regression trees</h1>
 
 </div>
 
@@ -382,17 +383,36 @@ pre code {
 <blockquote>
 <p>Estimate a classification or regression tree</p>
 </blockquote>
-<p>To create a tree model, first select the type (i.e., Classification or Regression), response variable, and one or more explanatory variables. Press the <code>Estimate model</code> button or <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results.</p>
+<p>To create a tree model, first select the type (i.e., Classification
+or Regression), response variable, and one or more explanatory
+variables. Press the <code>Estimate model</code> button or
+<code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate
+results.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If either a <code>Prune</code> or <code>Importance</code> plot was created it can be customized using <code>ggplot2</code> commands (e.g., <code>plot(result, plots = "prune", custom = TRUE) + labs(x = "# nodes")</code>). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
-<p>It is not currently possible to add a title or caption directly to a <code>Tree</code> plot.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If either a <code>Prune</code> or <code>Importance</code> plot was
+created it can be customized using <code>ggplot2</code> commands (e.g.,
+<code>plot(result, plots = "prune", custom = TRUE) + labs(x = "# nodes")</code>).
+See
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
+<p>It is not currently possible to add a title or caption directly to a
+<code>Tree</code> plot.</p>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to estimate classification and regression trees see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-classification-and-regression-trees" target="_blank"><em>Model &gt; Classification and regression trees</em></a></p>
-<p>The key function from the <code>rpart</code> package used in the <code>crtree</code> tool is <code>rpart</code>.</p>
+<p>For an overview of related R-functions used by Radiant to estimate
+classification and regression trees see
+<a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-classification-and-regression-trees" target="_blank"><em>Model
+&gt; Classification and regression trees</em></a></p>
+<p>The key function from the <code>rpart</code> package used in the
+<code>crtree</code> tool is <code>rpart</code>.</p>
 </div>
 
 

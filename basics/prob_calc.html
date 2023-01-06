@@ -373,7 +373,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Basics &gt; Probability &gt; Probability calculator</h1>
+<h1 class="title toc-ignore">Basics &gt; Probability &gt; Probability
+calculator</h1>
 
 </div>
 
@@ -382,104 +383,187 @@ pre code {
 <blockquote>
 <p>Probability calculator</p>
 </blockquote>
-<p>Calculate probabilities or values based on the <em>Binomial</em>, <em>Chi-squared</em>, <em>Discrete</em>, <em>F</em>, <em>Exponential</em>, <em>Normal</em>, <em>Poisson</em>, <em>t</em>, or <em>Uniform</em> distribution.</p>
+<p>Calculate probabilities or values based on the <em>Binomial</em>,
+<em>Chi-squared</em>, <em>Discrete</em>, <em>F</em>,
+<em>Exponential</em>, <em>Normal</em>, <em>Poisson</em>, <em>t</em>, or
+<em>Uniform</em> distribution.</p>
 <div id="testing-batteries" class="section level2">
 <h2>Testing batteries</h2>
-<p>Suppose Consumer Reports (CR) wants to test manufacturer claims about battery life. The manufacturer claims that more than 90% of their batteries will power a laptop for at least 12 hours of continuous use. CR sets up 20 identical laptops with the manufacturer’s batteries. If the manufacturer’s claims are accurate, what is the probability that 15 or more laptops are still running after 12 hours?</p>
-<p>The description of the problem suggests we should select <code>Binomial</code> from the <code>Distribution</code> dropdown. To find the probability, select <code>Values</code> as the <code>Input type</code> and enter <code>15</code> as the <code>Upper bound</code>. In the output below we can see that the probability is 0.989. The probability that exactly 15 laptops are still running after 12 hours is 0.032.</p>
+<p>Suppose Consumer Reports (CR) wants to test manufacturer claims about
+battery life. The manufacturer claims that more than 90% of their
+batteries will power a laptop for at least 12 hours of continuous use.
+CR sets up 20 identical laptops with the manufacturer’s batteries. If
+the manufacturer’s claims are accurate, what is the probability that 15
+or more laptops are still running after 12 hours?</p>
+<p>The description of the problem suggests we should select
+<code>Binomial</code> from the <code>Distribution</code> dropdown. To
+find the probability, select <code>Values</code> as the
+<code>Input type</code> and enter <code>15</code> as the
+<code>Upper bound</code>. In the output below we can see that the
+probability is 0.989. The probability that exactly 15 laptops are still
+running after 12 hours is 0.032.</p>
 <p align="center">
 <img src="figures_basics/prob_calc_batteries.png">
 </p>
 </div>
 <div id="demand-for-headphones" class="section level2">
 <h2>Demand for headphones</h2>
-<p>A manufacturer wants to determine the appropriate inventory level for headphones required to achieve a 95% <a href="https://en.wikipedia.org/wiki/Service_level" target="_blank">service level</a>. Demand for the headphones obeys a normal distribution with a mean of 3000 and a standard deviation of 800.</p>
-<p>To find the required number of headphones to hold in inventory choose <code>Normal</code> from the <code>Distribution</code> dropdown and then select <code>Probability</code> as the <code>Input type</code>. Enter <code>.95</code> as the <code>Upper bound</code>. In the output below we see the number of units to stock is 4316.</p>
+<p>A manufacturer wants to determine the appropriate inventory level for
+headphones required to achieve a 95%
+<a href="https://en.wikipedia.org/wiki/Service_level" target="_blank">service
+level</a>. Demand for the headphones obeys a normal distribution with a
+mean of 3000 and a standard deviation of 800.</p>
+<p>To find the required number of headphones to hold in inventory choose
+<code>Normal</code> from the <code>Distribution</code> dropdown and then
+select <code>Probability</code> as the <code>Input type</code>. Enter
+<code>.95</code> as the <code>Upper bound</code>. In the output below we
+see the number of units to stock is 4316.</p>
 <p align="center">
 <img src="figures_basics/prob_calc_headphones.png">
 </p>
 </div>
 <div id="cups-of-ice-cream" class="section level2">
 <h2>Cups of ice cream</h2>
-<p>A <strong>discrete</strong> random variable can take on a limited (finite) number of possible values. The <strong>probability distribution</strong> of a discrete random variable lists these values and their probabilities. For example, probability distribution of the number of cups of ice cream a customer buys could be described as follows:</p>
+<p>A <strong>discrete</strong> random variable can take on a limited
+(finite) number of possible values. The <strong>probability
+distribution</strong> of a discrete random variable lists these values
+and their probabilities. For example, probability distribution of the
+number of cups of ice cream a customer buys could be described as
+follows:</p>
 <ul>
 <li>40% of customers buy 1 cup;</li>
 <li>30% of customers buy 2 cups;</li>
 <li>20% of customers buy 3 cups;</li>
 <li>10% of customers buy 4 cups.</li>
 </ul>
-<p>We can use the probability distribution of a random variable to calculate its <strong>mean</strong> (or <strong>expected value</strong>) as follows;</p>
+<p>We can use the probability distribution of a random variable to
+calculate its <strong>mean</strong> (or <strong>expected value</strong>)
+as follows;</p>
 <p><span class="math display">\[
-  E(C) = \mu_C = 1 \times 0.40 + 2 \times 0.30 + 3 \times 0.20 + 4 \times 0.10 = 2\,,
+  E(C) = \mu_C = 1 \times 0.40 + 2 \times 0.30 + 3 \times 0.20 + 4
+\times 0.10 = 2\,,
 \]</span></p>
-<p>where <span class="math inline">\(\mu_C\)</span> is the mean number of cups purchased. We can <em>expect</em> a randomly selected customer to buy 2 cups. The variance is calculated as follow:</p>
+<p>where <span class="math inline">\(\mu_C\)</span> is the mean number
+of cups purchased. We can <em>expect</em> a randomly selected customer
+to buy 2 cups. The variance is calculated as follow:</p>
 <p><span class="math display">\[
-  Var(C) = (1 - 2)^2 \times 0.4 + (2 - 2)^2 \times 0.3 + (3 - 2)^2 \times 0.2 + (4 - 2)^2 \times 0.1 = 1\,.
+  Var(C) = (1 - 2)^2 \times 0.4 + (2 - 2)^2 \times 0.3 + (3 - 2)^2
+\times 0.2 + (4 - 2)^2 \times 0.1 = 1\,.
 \]</span></p>
-<p>To get the mean and standard deviation of the discrete probability distribution above, as well as the probability a customer will buy 2 or more cups (0.6), specify the following in the probability calculator.</p>
+<p>To get the mean and standard deviation of the discrete probability
+distribution above, as well as the probability a customer will buy 2 or
+more cups (0.6), specify the following in the probability
+calculator.</p>
 <p align="center">
 <img src="figures_basics/prob_calc_icecream.png">
 </p>
 </div>
 <div id="hypothesis-testing" class="section level2">
 <h2>Hypothesis testing</h2>
-<p>You can also use the probability calculator to determine a <code>p.value</code> or a <code>critical value</code> for a statistical test. See the help files for <code>Single mean</code>, <code>Single proportion</code>, <code>Compare means</code>, <code>Compare proportions</code>, <code>Cross-tabs</code> in the <em>Basics</em> menu and <code>Linear regression (OLS)</code> in the <em>Model</em> menu for details.</p>
+<p>You can also use the probability calculator to determine a
+<code>p.value</code> or a <code>critical value</code> for a statistical
+test. See the help files for <code>Single mean</code>,
+<code>Single proportion</code>, <code>Compare means</code>,
+<code>Compare proportions</code>, <code>Cross-tabs</code> in the
+<em>Basics</em> menu and <code>Linear regression (OLS)</code> in the
+<em>Model</em> menu for details.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If a plot was created it can be customized using <code>ggplot2</code> commands (e.g., <code>plot(result) + labs(title = "Normal distribution")</code>). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code>
+commands (e.g.,
+<code>plot(result) + labs(title = "Normal distribution")</code>). See
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant for probability calculations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-probability" target="_blank"><em>Basics &gt; Probability</em></a></p>
-<p>Key functions from the <code>stats</code> package used in the probability calculator:</p>
+<p>For an overview of related R-functions used by Radiant for
+probability calculations see
+<a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-probability" target="_blank"><em>Basics
+&gt; Probability</em></a></p>
+<p>Key functions from the <code>stats</code> package used in the
+probability calculator:</p>
 <ul>
-<li><code>prob_norm</code> uses <code>pnorm</code>, <code>qnorm</code>, and <code>dnorm</code></li>
-<li><code>prob_lnorm</code> uses <code>plnorm</code>, <code>qlnorm</code>, and <code>dlnorm</code></li>
-<li><code>prob_tdist</code> uses <code>pt</code>, <code>qt</code>, and <code>dt</code></li>
-<li><code>prob_fdist</code> uses <code>pf</code>, <code>qf</code>, and <code>df</code></li>
-<li><code>prob_chisq</code> uses <code>pchisq</code>, <code>qchisq</code>, and <code>dchisq</code></li>
-<li><code>prob_unif</code> uses <code>punif</code>, <code>qunif</code>, and <code>dunif</code></li>
-<li><code>prob_binom</code> uses <code>pbinom</code>, <code>qbinom</code>, and <code>dbinom</code></li>
-<li><code>prob_expo</code> uses <code>pexp</code>, <code>qexp</code>, and <code>dexp</code></li>
-<li><code>prob_pois</code> uses <code>ppios</code>, <code>qpois</code>, and <code>dpois</code></li>
+<li><code>prob_norm</code> uses <code>pnorm</code>, <code>qnorm</code>,
+and <code>dnorm</code></li>
+<li><code>prob_lnorm</code> uses <code>plnorm</code>,
+<code>qlnorm</code>, and <code>dlnorm</code></li>
+<li><code>prob_tdist</code> uses <code>pt</code>, <code>qt</code>, and
+<code>dt</code></li>
+<li><code>prob_fdist</code> uses <code>pf</code>, <code>qf</code>, and
+<code>df</code></li>
+<li><code>prob_chisq</code> uses <code>pchisq</code>,
+<code>qchisq</code>, and <code>dchisq</code></li>
+<li><code>prob_unif</code> uses <code>punif</code>, <code>qunif</code>,
+and <code>dunif</code></li>
+<li><code>prob_binom</code> uses <code>pbinom</code>,
+<code>qbinom</code>, and <code>dbinom</code></li>
+<li><code>prob_expo</code> uses <code>pexp</code>, <code>qexp</code>,
+and <code>dexp</code></li>
+<li><code>prob_pois</code> uses <code>ppios</code>, <code>qpois</code>,
+and <code>dpois</code></li>
 </ul>
 </div>
 <div id="video-tutorials" class="section level3">
 <h3>Video Tutorials</h3>
-<p>Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the probability calculator module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:</p>
+<p>Copy-and-paste the full command below into the RStudio console (i.e.,
+the bottom-left window) and press return to gain access to all materials
+used in the probability calculator module of the
+<a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant
+Tutorial Series</a>:</p>
 <pre>usethis::use_course("https://www.dropbox.com/sh/zw1yuiw8hvs47uc/AABPo1BncYv_i2eZfHQ7dgwCa?dl=1")</pre>
-<p><a href="https://youtu.be/UPL_8ujAXpww" target="_blank">Describing the Distribution of a Discrete Random Variable (#1)</a></p>
+<p><a href="https://youtu.be/UPL_8ujAXpww" target="_blank">Describing
+the Distribution of a Discrete Random Variable (#1)</a></p>
 <ul>
-<li>This video shows how to summarize information about a discrete random variable using the probability calculator in Radiant</li>
+<li>This video shows how to summarize information about a discrete
+random variable using the probability calculator in Radiant</li>
 <li>Topics List:
 <ul>
-<li>Calculate the mean and variance for a discrete random variable by hand</li>
-<li>Calculate the mean, variance, and select probabilities for a discrete random variable in Radiant</li>
+<li>Calculate the mean and variance for a discrete random variable by
+hand</li>
+<li>Calculate the mean, variance, and select probabilities for a
+discrete random variable in Radiant</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/30YsxCTbDTc" target="_blank">Describing Normal and Binomial Distributions in Radiant(#2)</a></p>
+<p><a href="https://youtu.be/30YsxCTbDTc" target="_blank">Describing
+Normal and Binomial Distributions in Radiant(#2)</a></p>
 <ul>
-<li>This video shows how to summarize information about Normal and Binomial distributions using the probability calculator in Radiant</li>
+<li>This video shows how to summarize information about Normal and
+Binomial distributions using the probability calculator in Radiant</li>
 <li>Topics List:
 <ul>
-<li>Calculate probabilities of a random variable following a Normal distribution in Radiant</li>
-<li>Calculate probabilities of a random variable following a Binomial distribution by hand</li>
-<li>Calculate probabilities of a random variable following a Binomial distribution in Radiant</li>
+<li>Calculate probabilities of a random variable following a Normal
+distribution in Radiant</li>
+<li>Calculate probabilities of a random variable following a Binomial
+distribution by hand</li>
+<li>Calculate probabilities of a random variable following a Binomial
+distribution in Radiant</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/LbwUpEwTJ_Q" target="_blank">Describing Uniform and Binomial Distributions in Radiant(#3)</a></p>
+<p><a href="https://youtu.be/LbwUpEwTJ_Q" target="_blank">Describing
+Uniform and Binomial Distributions in Radiant(#3)</a></p>
 <ul>
-<li>This video shows how to summarize information about Uniform and Binomial distributions using the probability calculator in Radiant</li>
+<li>This video shows how to summarize information about Uniform and
+Binomial distributions using the probability calculator in Radiant</li>
 <li>Topics List:
 <ul>
-<li>Calculate probabilities of a random variable following a Uniform distribution in Radiant</li>
-<li>Calculate probabilities of a random variable following a Binomial distribution in Radiant</li>
+<li>Calculate probabilities of a random variable following a Uniform
+distribution in Radiant</li>
+<li>Calculate probabilities of a random variable following a Binomial
+distribution in Radiant</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/XC2yN5BY8jg" target="_blank">Providing Probability Bounds(#4)</a></p>
+<p><a href="https://youtu.be/XC2yN5BY8jg" target="_blank">Providing
+Probability Bounds(#4)</a></p>
 <ul>
-<li>This video demonstrates how to provide probability bounds in Radiant</li>
+<li>This video demonstrates how to provide probability bounds in
+Radiant</li>
 <li>Topics List:
 <ul>
 <li>Use probabilities as input type</li>

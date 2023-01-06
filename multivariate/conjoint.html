@@ -474,7 +474,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Multivariate &gt; Conjoint &gt; Conjoint</h1>
+<h1 class="title toc-ignore">Multivariate &gt; Conjoint &gt;
+Conjoint</h1>
 
 </div>
 
@@ -483,12 +484,29 @@ pre code {
 <blockquote>
 <p>Analyze responses from a conjoint survey</p>
 </blockquote>
-<p>To setup a conjoint study from scratch we need to determine the attributes and attributes levels that should be included. Once that has been done we would typically need to generate a fractional factorial design of conjoint profiles. This is a subset of all possible profiles that could be generated for the set of attributes and levels that were selected (see <a href="https://radiant-rstats.github.io/docs/design/doe.html" target="_blank"><em>Design &gt; DOE &gt; Design of Experiments</em></a>).</p>
-<p>Once data is available from respondents their evaluations are analyzed to determine Part Worths (PW) and Importance Weights (IW).</p>
-<p>To estimate a model select respondents ratings (or rankings) as the <code>Profile evaluations</code> and select the profile <code>Attributes</code>. Press the <code>Estimate</code> button or <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results.</p>
+<p>To setup a conjoint study from scratch we need to determine the
+attributes and attributes levels that should be included. Once that has
+been done we would typically need to generate a fractional factorial
+design of conjoint profiles. This is a subset of all possible profiles
+that could be generated for the set of attributes and levels that were
+selected (see
+<a href="https://radiant-rstats.github.io/docs/design/doe.html" target="_blank"><em>Design
+&gt; DOE &gt; Design of Experiments</em></a>).</p>
+<p>Once data is available from respondents their evaluations are
+analyzed to determine Part Worths (PW) and Importance Weights (IW).</p>
+<p>To estimate a model select respondents ratings (or rankings) as the
+<code>Profile evaluations</code> and select the profile
+<code>Attributes</code>. Press the <code>Estimate</code> button or
+<code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate
+results.</p>
 <div id="example-carpet-cleaner" class="section level3">
 <h3>Example: Carpet cleaner</h3>
-<p>A respondent was presented with 18 product profiles for a carpet cleaning product described on five attributes in a conjoint study. To access the <code>carpet</code> dataset go to <em>Data &gt; Manage</em>, select <code>Examples</code> from the <code>Load data of type</code> dropdown, and press the <code>Load</code> button. Then select the <code>carpet</code> dataset.</p>
+<p>A respondent was presented with 18 product profiles for a carpet
+cleaning product described on five attributes in a conjoint study. To
+access the <code>carpet</code> dataset go to <em>Data &gt; Manage</em>,
+select <code>Examples</code> from the <code>Load data of type</code>
+dropdown, and press the <code>Load</code> button. Then select the
+<code>carpet</code> dataset.</p>
 <ul>
 <li>design = Package Design (A, B, C)</li>
 <li>brand = Brand Name (K2R, Glory, Bissell)</li>
@@ -501,17 +519,27 @@ pre code {
 <p align="center">
 <img src="figures_multivariate/conjoint_carpet_design.png">
 </p>
-<p>Based on the attributes, 108 possible profiles could be created (i.e., 3x3x3x2x2 = 108). The respondent was given a set of 18 and was asked to rank the profiles from most preferred (rank 1) to least preferred (rank 18). The first five columns represent the five attributes and the last column is the respondent’s ranking.</p>
+<p>Based on the attributes, 108 possible profiles could be created
+(i.e., 3x3x3x2x2 = 108). The respondent was given a set of 18 and was
+asked to rank the profiles from most preferred (rank 1) to least
+preferred (rank 18). The first five columns represent the five
+attributes and the last column is the respondent’s ranking.</p>
 <ol style="list-style-type: lower-alpha">
-<li>Compute the Variance Inflation Factors (VIF) for the attribute variables. What do you notice? What does this say about the particular set of 18 profiles that was presented to the respondent?</li>
+<li>Compute the Variance Inflation Factors (VIF) for the attribute
+variables. What do you notice? What does this say about the particular
+set of 18 profiles that was presented to the respondent?</li>
 </ol>
-<p>The VIF scores displayed below indicate that the attributes are perfectly orthogonal. In the fractional factorial design profiles were deliberately selected such that all attributes are uncorrelated.</p>
+<p>The VIF scores displayed below indicate that the attributes are
+perfectly orthogonal. In the fractional factorial design profiles were
+deliberately selected such that all attributes are uncorrelated.</p>
 <pre><code>    Multicollinearity diagnostics:
         design brand price seal money_back
     VIF      1     1     1    1          1
     Rsq      0     0     0    0          0</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Estimate a conjoint model using the respondent’s evaluations as the dependent variable and the attributes as the predictors. Show the complete list of part-worths and importance weights.</li>
+<li>Estimate a conjoint model using the respondent’s evaluations as the
+dependent variable and the attributes as the predictors. Show the
+complete list of part-worths and importance weights.</li>
 </ol>
 <p align="center">
 <img src="figures_multivariate/conjoint_summary.png">
@@ -533,17 +561,28 @@ pre code {
 </ul></li>
 <li>Package B, Bissell, $1.59, with GHKS, with MBG
 <ul>
-<li>Predicted Utility based on PWs: 6.5 + 8.0 + 1.5 - 7.67 + 1.5 + 4.5 = 14.33</li>
+<li>Predicted Utility based on PWs: 6.5 + 8.0 + 1.5 - 7.67 + 1.5 + 4.5 =
+14.33</li>
 </ul></li>
 </ul>
 <ol start="4" style="list-style-type: lower-alpha">
-<li>What is the highest predicted utility that can be obtained? What are the characteristics of that option?</li>
+<li>What is the highest predicted utility that can be obtained? What are
+the characteristics of that option?</li>
 </ol>
 <ul>
-<li>The option with the highest (predicted) utility is: Package B, Bissell, $1.19, with GHKS, with MBG</li>
-<li>Predicted Utility based on PWs: 6.5 + 8.0 + 1.5 + 0 + 1.5 + 4.5 = 22</li>
+<li>The option with the highest (predicted) utility is: Package B,
+Bissell, $1.19, with GHKS, with MBG</li>
+<li>Predicted Utility based on PWs: 6.5 + 8.0 + 1.5 + 0 + 1.5 + 4.5 =
+22</li>
 </ul>
-<p>We can confirm this results in three steps: (1) Create a new dataset with all 36 profiles in <em>Data &gt; Transform</em> using <code>Expand grid</code>, (2) Predict the utility for each of the profiles by selecting the newly created dataset in the <em>Multivariate &gt; Conjoint &gt; Predict</em> tab and storing the prediction in a new variable <code>predict_ca</code>, (3) Sort the new dataset on <code>predict_ca</code> in the <em>Data &gt; View</em> tab. These three steps are shown in the screen shots below</p>
+<p>We can confirm this results in three steps: (1) Create a new dataset
+with all 36 profiles in <em>Data &gt; Transform</em> using
+<code>Expand grid</code>, (2) Predict the utility for each of the
+profiles by selecting the newly created dataset in the <em>Multivariate
+&gt; Conjoint &gt; Predict</em> tab and storing the prediction in a new
+variable <code>predict_ca</code>, (3) Sort the new dataset on
+<code>predict_ca</code> in the <em>Data &gt; View</em> tab. These three
+steps are shown in the screen shots below</p>
 <div id="step-1-create-dataset" class="section level4">
 <h4>Step 1: Create dataset</h4>
 <p align="center">
@@ -565,18 +604,37 @@ pre code {
 </div>
 <div id="multiple-respondents" class="section level2">
 <h2>Multiple respondents</h2>
-<p>If profile evaluations are available for multiple respondents and a respondent id variable is included in the dataset we can estimate conjoint results at the individual level by selecting the respondent id from the <code>By</code> dropdown. We can then save the Partworths and/or Importance weights for all respondents to a new dataset in Radiant and use that for segmentation using <em>Multivariate &gt; K-clustering</em>.</p>
+<p>If profile evaluations are available for multiple respondents and a
+respondent id variable is included in the dataset we can estimate
+conjoint results at the individual level by selecting the respondent id
+from the <code>By</code> dropdown. We can then save the Partworths
+and/or Importance weights for all respondents to a new dataset in
+Radiant and use that for segmentation using <em>Multivariate &gt;
+K-clustering</em>.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>patchwork</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code>
+commands or with <code>patchwork</code>. See example below and
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;pw&quot;</span>, <span class="st">&quot;iw&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Conjoint Analysis&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to estimate a conjoint model see <a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-conjoint" target="_blank"><em>Multivariate &gt; Conjoint</em></a></p>
-<p>The key functions used in the <code>conjoint</code> tool are <code>lm</code> from the <code>stats</code> package and <code>vif</code> from the <code>car</code> package.</p>
+<p>For an overview of related R-functions used by Radiant to estimate a
+conjoint model see
+<a href = "https://radiant-rstats.github.io/radiant.multivariate/reference/index.html#section-multivariate-conjoint" target="_blank"><em>Multivariate
+&gt; Conjoint</em></a></p>
+<p>The key functions used in the <code>conjoint</code> tool are
+<code>lm</code> from the <code>stats</code> package and <code>vif</code>
+from the <code>car</code> package.</p>
 </div>
 </div>
 

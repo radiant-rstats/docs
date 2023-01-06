@@ -483,10 +483,30 @@ pre code {
 <blockquote>
 <p>Create a (reproducible) report using R</p>
 </blockquote>
-<p>The <em>Report &gt; R</em> tab allows you to run R-code with access to all functions and data in Radiant. By clicking the <code>Knit report (R)</code> button, the code will be evaluated and the output will be shown on the right of the <em>Report &gt; R</em> page. To evaluate only a part of the code use the cursor to select a section and press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac).</p>
-<p>You can load an R-code file into Radiant by clicking the <code>Load report</code> button and selecting an .r or .R file. If you started Radiant from Rstudio you can save a report in HTML, Word, or PDF format by selecting the desired format from the drop-down menu and clicking <code>Save report</code>. To save just the code choose <code>R</code> from the dropdown and press the <code>Save report</code> button.</p>
-<p>If you started Radiant from Rstudio, you can also click the <code>Read files</code> button to browse for files and generate code to read it into Radiant. For example, read rda, rds, xls, yaml, and feather and add them to the <code>Datasets</code> dropdown. If the file type you want to load is not currently supported, the path to the file will be returned. The file path used will be relative to the Rstudio-project root. Paths to files synced to a local Dropbox or Google Drive folder will use the <code>find_dropbox</code> and <code>find_gdrive</code> functions to enhances reproducibility.</p>
-<p>As an example you can copy-and-paste the code below into the editor and press <code>Knit report (R)</code> to generate results.</p>
+<p>The <em>Report &gt; R</em> tab allows you to run R-code with access
+to all functions and data in Radiant. By clicking the
+<code>Knit report (R)</code> button, the code will be evaluated and the
+output will be shown on the right of the <em>Report &gt; R</em> page. To
+evaluate only a part of the code use the cursor to select a section and
+press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac).</p>
+<p>You can load an R-code file into Radiant by clicking the
+<code>Load report</code> button and selecting an .r or .R file. If you
+started Radiant from Rstudio you can save a report in HTML, Word, or PDF
+format by selecting the desired format from the drop-down menu and
+clicking <code>Save report</code>. To save just the code choose
+<code>R</code> from the dropdown and press the <code>Save report</code>
+button.</p>
+<p>If you started Radiant from Rstudio, you can also click the
+<code>Read files</code> button to browse for files and generate code to
+read it into Radiant. For example, read rda, rds, xls, yaml, and feather
+and add them to the <code>Datasets</code> dropdown. If the file type you
+want to load is not currently supported, the path to the file will be
+returned. The file path used will be relative to the Rstudio-project
+root. Paths to files synced to a local Dropbox or Google Drive folder
+will use the <code>find_dropbox</code> and <code>find_gdrive</code>
+functions to enhances reproducibility.</p>
+<p>As an example you can copy-and-paste the code below into the editor
+and press <code>Knit report (R)</code> to generate results.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## get the active dataset and show the first few observations</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.get_data</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span>
@@ -523,7 +543,9 @@ pre code {
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>()</span></code></pre></div>
 <div id="options" class="section level2">
 <h2>Options</h2>
-<p>The editor used in <em>Report &gt; Rmd</em> and <em>Report &gt; R</em> has several options that can be set in <code>.Rprofile</code>.</p>
+<p>The editor used in <em>Report &gt; Rmd</em> and <em>Report &gt;
+R</em> has several options that can be set in
+<code>.Rprofile</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_vim.keys =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_theme =</span> <span class="st">&quot;cobalt&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_tabSize =</span> <span class="dv">2</span>)</span>
@@ -532,15 +554,20 @@ pre code {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">radiant.ace_autoComplete =</span> <span class="st">&quot;live&quot;</span>)</span></code></pre></div>
 <p>Notes:</p>
 <ul>
-<li><code>vim.keys</code> enables a set of special keyboard short-cuts. If you have never used VIM you probably don’t want this</li>
-<li>For an overview of available editor themes see: <code>shinyAce::getAceThemes()</code></li>
-<li>Tabs are converted to 2 spaces by default (i.e., ‘soft’ tabs). You can change the number of spaces used from 2 to, for example, 4</li>
+<li><code>vim.keys</code> enables a set of special keyboard short-cuts.
+If you have never used VIM you probably don’t want this</li>
+<li>For an overview of available editor themes see:
+<code>shinyAce::getAceThemes()</code></li>
+<li>Tabs are converted to 2 spaces by default (i.e., ‘soft’ tabs). You
+can change the number of spaces used from 2 to, for example, 4</li>
 <li><code>showInvisibles</code> shows tabs and spaces in the editor</li>
 <li>Autocomplete has options “live”, “enabled”, and “disabled”</li>
 </ul>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to generate reproducible reports see <a href = " https://radiant-rstats.github.io/radiant.data/reference/index.html#section-data-report" target="_blank"><em>Report</em></a></p>
+<p>For an overview of related R-functions used by Radiant to generate
+reproducible reports see
+<a href = " https://radiant-rstats.github.io/radiant.data/reference/index.html#section-data-report" target="_blank"><em>Report</em></a></p>
 </div>
 </div>
 

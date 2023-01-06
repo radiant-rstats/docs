@@ -474,7 +474,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Model &gt; Evaluate &gt; Evaluate classification</h1>
+<h1 class="title toc-ignore">Model &gt; Evaluate &gt; Evaluate
+classification</h1>
 
 </div>
 
@@ -485,15 +486,24 @@ pre code {
 </blockquote>
 <div id="response-variable" class="section level4">
 <h4>Response variable</h4>
-<p>Select the outcome, or response, variable of interest. This should be a binary variable, either a factor or an integer with two value (i.e., 0 and 1).</p>
+<p>Select the outcome, or response, variable of interest. This should be
+a binary variable, either a factor or an integer with two value (i.e., 0
+and 1).</p>
 </div>
 <div id="choose-level" class="section level4">
 <h4>Choose level</h4>
-<p>The level in the response variable that is considered a <em>success</em>. For example, a purchase or buyer is equal to “yes”.</p>
+<p>The level in the response variable that is considered a
+<em>success</em>. For example, a purchase or buyer is equal to
+“yes”.</p>
 </div>
 <div id="predictor" class="section level4">
 <h4>Predictor</h4>
-<p>Select one or more variables that can be used to <em>predict</em> the chosen level in the response variable. This could be a variable, an RFM index, or predicted values from a model (e.g., from a logistic regression estimated using <em>Model &gt; Logistic regression (GLM)</em> or a Neural Network estimated using <em>Model &gt; Neural Network</em>).</p>
+<p>Select one or more variables that can be used to <em>predict</em> the
+chosen level in the response variable. This could be a variable, an RFM
+index, or predicted values from a model (e.g., from a logistic
+regression estimated using <em>Model &gt; Logistic regression (GLM)</em>
+or a Neural Network estimated using <em>Model &gt; Neural
+Network</em>).</p>
 </div>
 <div id="quantiles" class="section level4">
 <h4># quantiles</h4>
@@ -501,11 +511,21 @@ pre code {
 </div>
 <div id="margin-cost" class="section level4">
 <h4>Margin &amp; Cost</h4>
-<p>To use the <code>Profit</code> and <code>ROME</code> (Return on Marketing Expenditures) charts, enter the <code>Margin</code> for each sale and the estimated <code>Cost</code> per contact (e.g., mailing costs or opportunity cost of email or text message). For example, if the margin on a sale is $10 (excluding the contact cost) and the contact cost is $1 enter 10 and 1 in the <code>Margin</code> and <code>Cost</code> input windows.</p>
+<p>To use the <code>Profit</code> and <code>ROME</code> (Return on
+Marketing Expenditures) charts, enter the <code>Margin</code> for each
+sale and the estimated <code>Cost</code> per contact (e.g., mailing
+costs or opportunity cost of email or text message). For example, if the
+margin on a sale is $10 (excluding the contact cost) and the contact
+cost is $1 enter 10 and 1 in the <code>Margin</code> and
+<code>Cost</code> input windows.</p>
 </div>
 <div id="show-results-for" class="section level4">
 <h4>Show results for</h4>
-<p>If a <code>filter</code> is active (e.g., set in the <em>Data &gt; View</em> tab) generate results for <code>All</code> data, <code>Training</code> data, <code>Test</code> data, or <code>Both</code> training and test data. If no filter is active calculations are applied to all data.</p>
+<p>If a <code>filter</code> is active (e.g., set in the <em>Data &gt;
+View</em> tab) generate results for <code>All</code> data,
+<code>Training</code> data, <code>Test</code> data, or <code>Both</code>
+training and test data. If no filter is active calculations are applied
+to all data.</p>
 </div>
 <div id="plots" class="section level4">
 <h4>Plots</h4>
@@ -513,17 +533,39 @@ pre code {
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If we create a set of four charts in the <em>Plots</em> tab we can add a title above the group of plots and impose a two-column layout using <code>patchwork</code> as follows:</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If we create a set of four charts in the <em>Plots</em> tab we can
+add a title above the group of plots and impose a two-column layout
+using <code>patchwork</code> as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;lift&quot;</span>, <span class="st">&quot;gains&quot;</span>, <span class="st">&quot;profit&quot;</span>, <span class="st">&quot;rome&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Model evaluation&quot;</span>)</span></code></pre></div>
-<p>The single plot can be customized using <code>ggplot2</code> commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>The single plot can be customized using <code>ggplot2</code> commands
+(see example below)). See
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;lift&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">&quot;Based on data from ...&quot;</span>)</span></code></pre></div>
 <div id="confusion-matrix" class="section level4">
 <h4>Confusion matrix</h4>
-<p>Predicted probabilities probabilities selected through <code>Predictor</code> are first converted to a class (e.g., a positive or negative outcome) using the values entered in <code>Margin</code> and <code>Cost</code>. It will be profitable to contact a customer if the predicted probability of response exceeds <code>Cost / Margin</code>. For example, if the break-even response rate is 0.1 and the predicted probability of response is 0.25 that customer will be assigned the label <em>Positive</em>. If, on the other hand, the predicted probability does not exceed the break-even response rate a customer will be assigned a <em>Negative</em> label.</p>
-<p>Once each prediction has been converted to a class label (i.e., Positive or Negative) the result is compared to the values of the response variable. The following key measures are shown in the generated table for each predictor.</p>
+<p>Predicted probabilities probabilities selected through
+<code>Predictor</code> are first converted to a class (e.g., a positive
+or negative outcome) using the values entered in <code>Margin</code> and
+<code>Cost</code>. It will be profitable to contact a customer if the
+predicted probability of response exceeds <code>Cost / Margin</code>.
+For example, if the break-even response rate is 0.1 and the predicted
+probability of response is 0.25 that customer will be assigned the label
+<em>Positive</em>. If, on the other hand, the predicted probability does
+not exceed the break-even response rate a customer will be assigned a
+<em>Negative</em> label.</p>
+<p>Once each prediction has been converted to a class label (i.e.,
+Positive or Negative) the result is compared to the values of the
+response variable. The following key measures are shown in the generated
+table for each predictor.</p>
 <table>
 <colgroup>
 <col width="26%" />
@@ -538,19 +580,23 @@ pre code {
 <tbody>
 <tr class="odd">
 <td>TP (True Positive)</td>
-<td>Number of cases where the positive prediction matches the positive outcome in the data</td>
+<td>Number of cases where the positive prediction matches the positive
+outcome in the data</td>
 </tr>
 <tr class="even">
 <td>FP (False Positive)</td>
-<td>Number of cases with a positive prediction but a negative outcome in the data</td>
+<td>Number of cases with a positive prediction but a negative outcome in
+the data</td>
 </tr>
 <tr class="odd">
 <td>TN (True Negative)</td>
-<td>Number of cases where the negative prediction matches the negative outcome in the data</td>
+<td>Number of cases where the negative prediction matches the negative
+outcome in the data</td>
 </tr>
 <tr class="even">
 <td>FN (False Negative)</td>
-<td>Number of cases with a negative prediction but a positive outcome in the data</td>
+<td>Number of cases with a negative prediction but a positive outcome in
+the data</td>
 </tr>
 <tr class="odd">
 <td>total</td>
@@ -558,39 +604,51 @@ pre code {
 </tr>
 <tr class="even">
 <td>TPR (True Positive Rate)</td>
-<td>Proportion of positive outcomes in the data that received a positive prediction (i.e., TP / (TP + FN)). Also known as <em>sensitivity</em> or <em>recall</em></td>
+<td>Proportion of positive outcomes in the data that received a positive
+prediction (i.e., TP / (TP + FN)). Also known as <em>sensitivity</em> or
+<em>recall</em></td>
 </tr>
 <tr class="odd">
 <td>TNR (True Negative Rate)</td>
-<td>Proportion of negative outcomes in the data that received a negative prediction (i.e., TN / (TN + FP)). Also known as <em>specificity</em></td>
+<td>Proportion of negative outcomes in the data that received a negative
+prediction (i.e., TN / (TN + FP)). Also known as
+<em>specificity</em></td>
 </tr>
 <tr class="even">
 <td>precision</td>
-<td>Proportion of positive predictions with a positive outcome in the data (i.e., TP / (TP + FP))</td>
+<td>Proportion of positive predictions with a positive outcome in the
+data (i.e., TP / (TP + FP))</td>
 </tr>
 <tr class="odd">
 <td>F-score</td>
-<td>The harmonic mean of <em>precision</em> and TPR (<em>sensitivity</em>)</td>
+<td>The harmonic mean of <em>precision</em> and TPR
+(<em>sensitivity</em>)</td>
 </tr>
 <tr class="even">
 <td>accuracy</td>
-<td>Proportion of all outcomes that was correctly predicted as either positive or negative (i.e., (TP + TN) / total)</td>
+<td>Proportion of all outcomes that was correctly predicted as either
+positive or negative (i.e., (TP + TN) / total)</td>
 </tr>
 <tr class="odd">
 <td>kappa</td>
-<td>Corrects the accuracy measure for the probability of generating a correct prediction purely by chance</td>
+<td>Corrects the accuracy measure for the probability of generating a
+correct prediction purely by chance</td>
 </tr>
 <tr class="even">
 <td>profit</td>
-<td>Total profitability achieved by targeting all customers with a predicted probability above the break-even response rate</td>
+<td>Total profitability achieved by targeting all customers with a
+predicted probability above the break-even response rate</td>
 </tr>
 <tr class="odd">
 <td>index</td>
-<td>Index of relative profitability achieved across the selected <code>Predictor</code> variables (maximum is 1)</td>
+<td>Index of relative profitability achieved across the selected
+<code>Predictor</code> variables (maximum is 1)</td>
 </tr>
 <tr class="even">
 <td>ROME</td>
-<td>Return on Marketing Expenditures (ROME) achieved by targeting all customers with a predicted probability above the break-even response rate</td>
+<td>Return on Marketing Expenditures (ROME) achieved by targeting all
+customers with a predicted probability above the break-even response
+rate</td>
 </tr>
 <tr class="odd">
 <td>contact</td>
@@ -598,7 +656,8 @@ pre code {
 </tr>
 <tr class="even">
 <td>AUC</td>
-<td>Area Under the ROC Curve (AUC). ROC stands for Receiver Operating Characteristic.</td>
+<td>Area Under the ROC Curve (AUC). ROC stands for Receiver Operating
+Characteristic.</td>
 </tr>
 </tbody>
 </table>
@@ -606,20 +665,35 @@ pre code {
 </div>
 <div id="report-rmd-confusion" class="section level3">
 <h3>Report &gt; Rmd (confusion)</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>Only <code>kappa</code>, <code>index</code>, <code>ROME</code>, and <code>AUC</code> are plotted by default. It is possible to customize the plotted results through <em>Report &gt; Rmd</em>. To change the plot use, for example:</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>Only <code>kappa</code>, <code>index</code>, <code>ROME</code>, and
+<code>AUC</code> are plotted by default. It is possible to customize the
+plotted results through <em>Report &gt; Rmd</em>. To change the plot
+use, for example:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">&quot;precision&quot;</span>, <span class="st">&quot;profit&quot;</span>, <span class="st">&quot;AUC&quot;</span>))</span></code></pre></div>
-<p>The plot can be further customized using <code>ggplot2</code> commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>The plot can be further customized using <code>ggplot2</code>
+commands (see example below)). See
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">&quot;precision&quot;</span>, <span class="st">&quot;profit&quot;</span>, <span class="st">&quot;AUC&quot;</span>)) <span class="sc">+</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">&quot;Based on data from ...&quot;</span>)</span></code></pre></div>
 <div id="download-options" class="section level4">
 <h4>Download options</h4>
-<p>To download a table as a csv-files click the download button on the top-right of your screen. To download plots as png files click the download icon on the middle-right of your screen.</p>
+<p>To download a table as a csv-files click the download button on the
+top-right of your screen. To download plots as png files click the
+download icon on the middle-right of your screen.</p>
 </div>
 </div>
 <div id="example" class="section level2">
 <h2>Example</h2>
-<p>The Lift and Gains charts below show little evidence of overfitting and suggest that targeting approximately 65% of customers would maximize profits.</p>
+<p>The Lift and Gains charts below show little evidence of overfitting
+and suggest that targeting approximately 65% of customers would maximize
+profits.</p>
 <p align="center">
 <img src="figures_model/evalbin_lift_gains.png">
 </p>
@@ -627,13 +701,22 @@ pre code {
 
 <p align="center"><img src="figures_model/evalbin_confusion.png"></p>
 -->
-<p>The prediction used in the screen shots above was derived from a logistic regression on the <code>dvd</code> data. The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load</code>). The model was estimated using <em>Model &gt; Logistic regression (GLM)</em>. The predictions shown below were generated in the <em>Predict</em> tab.</p>
+<p>The prediction used in the screen shots above was derived from a
+logistic regression on the <code>dvd</code> data. The data is available
+through the <em>Data &gt; Manage</em> tab (i.e., choose
+<code>Examples</code> from the <code>Load data of type</code> drop-down
+and press <code>Load</code>). The model was estimated using <em>Model
+&gt; Logistic regression (GLM)</em>. The predictions shown below were
+generated in the <em>Predict</em> tab.</p>
 <p align="center">
 <img src="figures_model/evalbin_logistic.png">
 </p>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to evaluate (binary) classification models see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-evaluate-classification" target="_blank"><em>Model &gt; Evaluate classification</em></a></p>
+<p>For an overview of related R-functions used by Radiant to evaluate
+(binary) classification models see
+<a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-evaluate-classification" target="_blank"><em>Model
+&gt; Evaluate classification</em></a></p>
 </div>
 </div>
 

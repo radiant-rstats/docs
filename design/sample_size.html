@@ -373,50 +373,98 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Design &gt; Sample &gt; Sample size (single)</h1>
+<h1 class="title toc-ignore">Design &gt; Sample &gt; Sample size
+(single)</h1>
 
 </div>
 
 
 <hr />
 <blockquote>
-<p>Determine the required sample size to test a mean or proportion calculated from sample data</p>
+<p>Determine the required sample size to test a mean or proportion
+calculated from sample data</p>
 </blockquote>
 <div id="example-1" class="section level3">
 <h3>Example 1</h3>
-<p>We would like to start an ISP and need to estimate the average Internet usage of households in one week for our business plan and model. How many households must we randomly select to be 95% sure that the sample mean is within 10 minute of the population mean? Assume that a previous survey of household usage has shown a standard deviation of 60.95 minutes.</p>
+<p>We would like to start an ISP and need to estimate the average
+Internet usage of households in one week for our business plan and
+model. How many households must we randomly select to be 95% sure that
+the sample mean is within 10 minute of the population mean? Assume that
+a previous survey of household usage has shown a standard deviation of
+60.95 minutes.</p>
 <p><strong>Answer:</strong></p>
-<p>Since we are interested in estimating the average (or mean) internet usage in the population we select sample size calculation for <code>Mean</code>. In the screen shot below we entered 10 (minutes) as the Acceptable error and 60.95 as the estimate of the Sample standard deviation. The Confidence level is 95%.</p>
+<p>Since we are interested in estimating the average (or mean) internet
+usage in the population we select sample size calculation for
+<code>Mean</code>. In the screen shot below we entered 10 (minutes) as
+the Acceptable error and 60.95 as the estimate of the Sample standard
+deviation. The Confidence level is 95%.</p>
 <p align="center">
 <img src="figures_design/sample_size_ex1a.png">
 </p>
-<p>As you can see the required sample size is equal to 143, i.e., we need 143 valid responses from our target population to make an inference of the population average with the required Acceptable Error, Confidence level, and Sample standard deviation. This number assumes an Incidence and Response rate of 1 (or 100%). Suppose that only 75% of the household in our market have access to internet at home. In addition, suppose that the anticipated response rate is 20%. What would be the required number of households to contact?</p>
+<p>As you can see the required sample size is equal to 143, i.e., we
+need 143 valid responses from our target population to make an inference
+of the population average with the required Acceptable Error, Confidence
+level, and Sample standard deviation. This number assumes an Incidence
+and Response rate of 1 (or 100%). Suppose that only 75% of the household
+in our market have access to internet at home. In addition, suppose that
+the anticipated response rate is 20%. What would be the required number
+of households to contact?</p>
 <p align="center">
 <img src="figures_design/sample_size_ex1b.png">
 </p>
-<p>In the screen shot above the incidence rate is set to 75% and the response rate to 20%. The required number of valid responses is the same as before (143), however the number of contact requests is now equal to 143 / .75 / .2 = 954.</p>
+<p>In the screen shot above the incidence rate is set to 75% and the
+response rate to 20%. The required number of valid responses is the same
+as before (143), however the number of contact requests is now equal to
+143 / .75 / .2 = 954.</p>
 <p><a href="http://www.isixsigma.com/tools-templates/sampling-data/how-determine-sample-size-determining-sample-size/" target="_blank">Source</a></p>
 </div>
 <div id="example-2" class="section level3">
 <h3>Example 2</h3>
-<p>Suppose that you want to investigate if the true prevalence of HIV antibodies in a population is 10%. You plan to take a random sample of the population to estimate the prevalence. You would like 95% confidence that the true proportion in the population will fall within the error bounds calculated from your sample.</p>
-<p>Let’s say that the population size is 5000 and the initial estimate of the prevalence is 10% with an acceptable error of 4%.</p>
+<p>Suppose that you want to investigate if the true prevalence of HIV
+antibodies in a population is 10%. You plan to take a random sample of
+the population to estimate the prevalence. You would like 95% confidence
+that the true proportion in the population will fall within the error
+bounds calculated from your sample.</p>
+<p>Let’s say that the population size is 5000 and the initial estimate
+of the prevalence is 10% with an acceptable error of 4%.</p>
 <p><strong>Answer:</strong></p>
-<p>Because we want to estimate the proportion of people with HIV antibodies in the population of interest we select sample size calculation for a <code>Proportion</code>. In the screen shot below we entered 4% as the Acceptable error and 10% as the initial estimate of the proportion (p). The Confidence level is 95%.</p>
+<p>Because we want to estimate the proportion of people with HIV
+antibodies in the population of interest we select sample size
+calculation for a <code>Proportion</code>. In the screen shot below we
+entered 4% as the Acceptable error and 10% as the initial estimate of
+the proportion (p). The Confidence level is 95%.</p>
 <p align="center">
 <img src="figures_design/sample_size_ex2a.png">
 </p>
-<p>As you can see the required sample size is equal to 217, i.e., we need 217 valid responses to make an inference of the population proportion with the required Acceptable error and Confidence level. This number again assumes an Incidence and Response rate of 100%. The example suggests the population of interest has only 5000 people so it may be worthwhile to apply a correction for population size.</p>
+<p>As you can see the required sample size is equal to 217, i.e., we
+need 217 valid responses to make an inference of the population
+proportion with the required Acceptable error and Confidence level. This
+number again assumes an Incidence and Response rate of 100%. The example
+suggests the population of interest has only 5000 people so it may be
+worthwhile to apply a correction for population size.</p>
 <p align="center">
 <img src="figures_design/sample_size_ex2b.png">
 </p>
-<p>In the screen shot above we clicked <code>Yes</code> to apply the population correction and then entered 5000 as the population size. The required number of valid responses drops only slightly from 217 to 208.</p>
-<p>In general, the size of the population can be influential when the sample size we need (<span class="math inline">\(n\)</span>) is large compared to the size of the total population (<span class="math inline">\(N\)</span>). For example, if the population was only 250 people the adjusted sample size would have been 117 rather than 217.</p>
+<p>In the screen shot above we clicked <code>Yes</code> to apply the
+population correction and then entered 5000 as the population size. The
+required number of valid responses drops only slightly from 217 to
+208.</p>
+<p>In general, the size of the population can be influential when the
+sample size we need (<span class="math inline">\(n\)</span>) is large
+compared to the size of the total population (<span
+class="math inline">\(N\)</span>). For example, if the population was
+only 250 people the adjusted sample size would have been 117 rather than
+217.</p>
 <p><a href="http://bphc.hrsa.gov/policiesregulations/performancemeasures/patientsurvey/calculating.html" target="_blank">Source</a></p>
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the sample size calculations by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the sample size calculations by clicking
+the <i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
 </div>
 <div id="technical-notes" class="section level3">
 <h3>Technical notes</h3>
@@ -425,13 +473,23 @@ pre code {
 <p><span class="math display">\[
   n = \frac{ z^2 \times s^2 }{ E^2 }
 \]</span></p>
-<p>where <span class="math inline">\(n\)</span> is the sample size, <span class="math inline">\(z\)</span> is the z-value associated with the desired level of confidence (e.g., 1.96 for 95% confidence), <span class="math inline">\(s\)</span> is the sample standard deviation, and <span class="math inline">\(E\)</span> is the acceptable error. Even if you have not seen the equation above before you may recall the formula for a confidence interval:</p>
+<p>where <span class="math inline">\(n\)</span> is the sample size,
+<span class="math inline">\(z\)</span> is the z-value associated with
+the desired level of confidence (e.g., 1.96 for 95% confidence), <span
+class="math inline">\(s\)</span> is the sample standard deviation, and
+<span class="math inline">\(E\)</span> is the acceptable error. Even if
+you have not seen the equation above before you may recall the formula
+for a confidence interval:</p>
 <p><span class="math display">\[
   x \pm z \frac{s}{\sqrt{n}}
 \]</span></p>
-<p>The boundaries around <span class="math inline">\(x\)</span> are equal to <span class="math inline">\(E\)</span>, i.e., the acceptable error. Squaring both sides and rearranging terms gives the formula for sample size:</p>
+<p>The boundaries around <span class="math inline">\(x\)</span> are
+equal to <span class="math inline">\(E\)</span>, i.e., the acceptable
+error. Squaring both sides and rearranging terms gives the formula for
+sample size:</p>
 <p><span class="math display">\[
-  E = z \frac{s}{\sqrt{n}} \; \Rightarrow \; n = \frac{ z^2 \times s^2 }{ E^2 }
+  E = z \frac{s}{\sqrt{n}} \; \Rightarrow \; n = \frac{ z^2 \times s^2
+}{ E^2 }
 \]</span></p>
 </div>
 <div id="sample-size-for-a-proportion" class="section level4">
@@ -439,22 +497,39 @@ pre code {
 <p><span class="math display">\[
   n = \frac{ z^2 \times p(1-p) }{ E^2 }
 \]</span></p>
-<p>where <span class="math inline">\(n\)</span> is the sample size, <span class="math inline">\(z\)</span> is the z-value associated with the desired level of confidence (e.g., 1.96 for 95% confidence), <span class="math inline">\(p\)</span> is the sample proportion, and <span class="math inline">\(E\)</span> is the acceptable error. Even if you have not seen the equation above before you may recall the formula for a confidence interval:</p>
+<p>where <span class="math inline">\(n\)</span> is the sample size,
+<span class="math inline">\(z\)</span> is the z-value associated with
+the desired level of confidence (e.g., 1.96 for 95% confidence), <span
+class="math inline">\(p\)</span> is the sample proportion, and <span
+class="math inline">\(E\)</span> is the acceptable error. Even if you
+have not seen the equation above before you may recall the formula for a
+confidence interval:</p>
 <p><span class="math display">\[
   p \pm z \sqrt{ \frac{p(1-p)}{n} }
 \]</span></p>
-<p>The boundaries around <span class="math inline">\(p\)</span> are equal to <span class="math inline">\(E\)</span>, i.e., the acceptable error. Squaring both sides and rearranging terms gives the formula for sample size:</p>
+<p>The boundaries around <span class="math inline">\(p\)</span> are
+equal to <span class="math inline">\(E\)</span>, i.e., the acceptable
+error. Squaring both sides and rearranging terms gives the formula for
+sample size:</p>
 <p><span class="math display">\[
-  E = z \sqrt{ \frac{p(1-p)}{n} } \; \Rightarrow \; n = \frac{ z^2 p(1-p) }{ E^2 }
+  E = z \sqrt{ \frac{p(1-p)}{n} } \; \Rightarrow \; n = \frac{ z^2
+p(1-p) }{ E^2 }
 \]</span></p>
 </div>
 <div id="population-correction" class="section level4">
 <h4>Population correction</h4>
-<p>While we can always apply a population correction, the size of the population can have a substantial impact on the required sample size when (<span class="math inline">\(n\)</span>) is large compared to the size of the total population (<span class="math inline">\(N\)</span>).</p>
+<p>While we can always apply a population correction, the size of the
+population can have a substantial impact on the required sample size
+when (<span class="math inline">\(n\)</span>) is large compared to the
+size of the total population (<span
+class="math inline">\(N\)</span>).</p>
 <p><span class="math display">\[
   n^* = \frac{ nN }{ n - 1 + N }
 \]</span></p>
-<p>As an example, suppose we determine that we need to draw a sample of size 217 from a population of 5000. The the sample size adjusted for population size (<span class="math inline">\(n^*\)</span>) would be calculated as follows:</p>
+<p>As an example, suppose we determine that we need to draw a sample of
+size 217 from a population of 5000. The the sample size adjusted for
+population size (<span class="math inline">\(n^*\)</span>) would be
+calculated as follows:</p>
 <p><span class="math display">\[
   n^* = \frac{ 217 \times 5000 }{ 217 - 1 + 5000 } = 208
 \]</span></p>
@@ -462,7 +537,10 @@ pre code {
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant for sampling and sample size calculations see <a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-sample" target="_blank"><em>Design &gt; Sample</em></a></p>
+<p>For an overview of related R-functions used by Radiant for sampling
+and sample size calculations see
+<a href = "https://radiant-rstats.github.io/radiant.design/reference/index.html#section-design-sample" target="_blank"><em>Design
+&gt; Sample</em></a></p>
 </div>
 
 

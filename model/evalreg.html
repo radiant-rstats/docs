@@ -474,7 +474,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Model &gt; Evaluate &gt; Evaluate regression</h1>
+<h1 class="title toc-ignore">Model &gt; Evaluate &gt; Evaluate
+regression</h1>
 
 </div>
 
@@ -483,41 +484,72 @@ pre code {
 <blockquote>
 <p>Evaluate regression model performance</p>
 </blockquote>
-<p>To download the table as a csv-files click the top download button on the right of your screen. To download the plots at a png file click the lower download icon on the right of your screen.</p>
+<p>To download the table as a csv-files click the top download button on
+the right of your screen. To download the plots at a png file click the
+lower download icon on the right of your screen.</p>
 <div id="response-variable" class="section level4">
 <h4>Response variable</h4>
 <p>The numeric outcome, or response, variable of interest.</p>
 </div>
 <div id="predictor" class="section level4">
 <h4>Predictor</h4>
-<p>Select one or more variables that can be used to <em>predict</em> the value of the response variable. This could be a variable or predicted values from a model (e.g., from a regression estimated using <em>Model &gt; Linear regression (OLS)</em> or a Neural Network estimated using <em>Model &gt; Neural Network</em>).</p>
+<p>Select one or more variables that can be used to <em>predict</em> the
+value of the response variable. This could be a variable or predicted
+values from a model (e.g., from a regression estimated using <em>Model
+&gt; Linear regression (OLS)</em> or a Neural Network estimated using
+<em>Model &gt; Neural Network</em>).</p>
 </div>
 <div id="show-results-for" class="section level4">
 <h4>Show results for</h4>
-<p>If a <code>filter</code> is active (e.g., set in the <em>Data &gt; View</em> tab) generate results for <code>All</code> data, <code>Training</code> data, <code>Test</code> data, or <code>Both</code> training and test data. If no filter is active calculations are applied to all data.</p>
+<p>If a <code>filter</code> is active (e.g., set in the <em>Data &gt;
+View</em> tab) generate results for <code>All</code> data,
+<code>Training</code> data, <code>Test</code> data, or <code>Both</code>
+training and test data. If no filter is active calculations are applied
+to all data.</p>
 </div>
 <div id="example" class="section level2">
 <h2>Example</h2>
-<p>Predictions were derived from a linear regression and an neural network with two nodes in the hidden layer on the <code>diamonds</code> data. The variables <code>price</code> and <code>carat</code> were log-transformed prior to estimation.The data is available through the <em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from the <code>Load data of type</code> drop-down and press <code>Load</code>). The predictions shown below were generated in the <em>Predict</em> tab.</p>
+<p>Predictions were derived from a linear regression and an neural
+network with two nodes in the hidden layer on the <code>diamonds</code>
+data. The variables <code>price</code> and <code>carat</code> were
+log-transformed prior to estimation.The data is available through the
+<em>Data &gt; Manage</em> tab (i.e., choose <code>Examples</code> from
+the <code>Load data of type</code> drop-down and press
+<code>Load</code>). The predictions shown below were generated in the
+<em>Predict</em> tab.</p>
 <p align="center">
 <img src="figures_model/evalreg_nn.png">
 </p>
-<p>The test statistics show a small, but consistent, advantage for the NN.</p>
+<p>The test statistics show a small, but consistent, advantage for the
+NN.</p>
 <p align="center">
 <img src="figures_model/evalreg_summary_plot.png">
 </p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p><code>Rsq</code>, <code>RSME</code>, and <code>MAE</code> are plotted by default. It is possible to customize the plotted results through <em>Report &gt; Rmd</em>. To change the plot use, for example:</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p><code>Rsq</code>, <code>RSME</code>, and <code>MAE</code> are plotted
+by default. It is possible to customize the plotted results through
+<em>Report &gt; Rmd</em>. To change the plot use, for example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">vars =</span> <span class="st">&quot;Rsq&quot;</span>)</span></code></pre></div>
-<p>The plot can be further customized using <code>ggplot2</code> commands (see example below)). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>The plot can be further customized using <code>ggplot2</code>
+commands (see example below)). See
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">vars =</span> <span class="st">&quot;Rsq&quot;</span>) <span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">&quot;Based on data from ...&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to evaluate regression models see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-evaluate-regression" target="_blank"><em>Model &gt; Evaluate regression</em></a></p>
+<p>For an overview of related R-functions used by Radiant to evaluate
+regression models see
+<a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-evaluate-regression" target="_blank"><em>Model
+&gt; Evaluate regression</em></a></p>
 </div>
 </div>
 

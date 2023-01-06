@@ -373,7 +373,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Model &gt; Estimate &gt; Neural Network</h1>
+<h1 class="title toc-ignore">Model &gt; Estimate &gt; Neural
+Network</h1>
 
 </div>
 
@@ -382,18 +383,49 @@ pre code {
 <blockquote>
 <p>Estimate a Neural Network</p>
 </blockquote>
-<p>To estimate a model select the type (i.e., Classification or Regression), response variable, and one or more explanatory variables. Press the <code>Estimate</code> button or <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results. The model can be “tuned” by changing the <code>Size</code> (i.e., the number of nodes in the hidden layer) and by adjusting the <code>Decay</code> rate. The higher the value set for <code>Decay</code>, the higher the penalty on the size of (the sum of squares of) the weights. When <code>Decay</code> is set to 0, the model has the most flexibility to fit the (training) data accurately. However, without <code>Decay</code> the model is also more likely to overfit.</p>
-<p>The best way to determine the optimal values for <code>Size</code> and <code>Decays</code> is to use Cross-Validation. In radiant, you can use the <code>cv.nn</code> function for this purpose. See the <a href="https://radiant-rstats.github.io/radiant.model/reference/cv.nn.html" target="_blank">documentation</a> for more information.</p>
+<p>To estimate a model select the type (i.e., Classification or
+Regression), response variable, and one or more explanatory variables.
+Press the <code>Estimate</code> button or <code>CTRL-enter</code>
+(<code>CMD-enter</code> on mac) to generate results. The model can be
+“tuned” by changing the <code>Size</code> (i.e., the number of nodes in
+the hidden layer) and by adjusting the <code>Decay</code> rate. The
+higher the value set for <code>Decay</code>, the higher the penalty on
+the size of (the sum of squares of) the weights. When <code>Decay</code>
+is set to 0, the model has the most flexibility to fit the (training)
+data accurately. However, without <code>Decay</code> the model is also
+more likely to overfit.</p>
+<p>The best way to determine the optimal values for <code>Size</code>
+and <code>Decays</code> is to use Cross-Validation. In radiant, you can
+use the <code>cv.nn</code> function for this purpose. See the
+<a href="https://radiant-rstats.github.io/radiant.model/reference/cv.nn.html" target="_blank">documentation</a>
+for more information.</p>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If either a <code>Olden</code> or <code>Garson</code> plot was created it can be customized using <code>ggplot2</code> commands (e.g., <code>plot(result, plots = "garson", custom = TRUE) + labs(title = "Garson plot")</code>). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
-<p>To add, for example, a title to a network plot use <code>title(main = "Network plot")</code>. See the <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-commands" target="_blank">R graphics</a> documentation for additional information.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If either a <code>Olden</code> or <code>Garson</code> plot was
+created it can be customized using <code>ggplot2</code> commands (e.g.,
+<code>plot(result, plots = "garson", custom = TRUE) + labs(title = "Garson plot")</code>).
+See
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
+<p>To add, for example, a title to a network plot use
+<code>title(main = "Network plot")</code>. See the
+<a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-commands" target="_blank">R
+graphics</a> documentation for additional information.</p>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to estimate a neural network model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-neural-network" target="_blank"><em>Model &gt; Neural network</em></a>.</p>
-<p>The key function from the <code>nnet</code> package used in the <code>nn</code> tool is <code>nnet</code>.</p>
+<p>For an overview of related R-functions used by Radiant to estimate a
+neural network model see
+<a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-neural-network" target="_blank"><em>Model
+&gt; Neural network</em></a>.</p>
+<p>The key function from the <code>nnet</code> package used in the
+<code>nn</code> tool is <code>nnet</code>.</p>
 </div>
 
 

@@ -382,12 +382,25 @@ pre code {
 <blockquote>
 <p>How correlated are the variables in the data?</p>
 </blockquote>
-<p>Create a correlation matrix of the selected variables. Correlations and p.values are provided for each variable pair. To show only those correlations above a certain (absolute) level, use the correlation cutoff box.</p>
-<p>Note: Correlations can be calculated for variables of type <code>numeric</code>, <code>integer</code>, <code>date</code>, and <code>factor</code>. When variables of type factor are included the <code>Adjust for {factor} variables</code> box should be checked. When correlations are estimated with adjustment, variables that are of type <code>factor</code> will be treated as (ordinal) categorical variables and all other variables will be treated as continuous.</p>
+<p>Create a correlation matrix of the selected variables. Correlations
+and p.values are provided for each variable pair. To show only those
+correlations above a certain (absolute) level, use the correlation
+cutoff box.</p>
+<p>Note: Correlations can be calculated for variables of type
+<code>numeric</code>, <code>integer</code>, <code>date</code>, and
+<code>factor</code>. When variables of type factor are included the
+<code>Adjust for {factor} variables</code> box should be checked. When
+correlations are estimated with adjustment, variables that are of type
+<code>factor</code> will be treated as (ordinal) categorical variables
+and all other variables will be treated as continuous.</p>
 <p align="center">
 <img src="figures_basics/correlation_summary.png">
 </p>
-<p>A visual representation of the correlation matrix is provided in the <em>Plot</em> tab. Note that scatter plots in the graph at most 1,000 data points by default. To generate scatter plots that use all observations use <code>plot(result, n = -1)</code> in <em>Report &gt; Rmd</em>.</p>
+<p>A visual representation of the correlation matrix is provided in the
+<em>Plot</em> tab. Note that scatter plots in the graph at most 1,000
+data points by default. To generate scatter plots that use all
+observations use <code>plot(result, n = -1)</code> in <em>Report &gt;
+Rmd</em>.</p>
 <p>Stars shown in the <em>Plot</em> tab are interpreted as:</p>
 <ul>
 <li>p.value between 0 and 0.001: ***</li>
@@ -398,22 +411,40 @@ pre code {
 <p align="center">
 <img src="figures_basics/correlation_plot.png">
 </p>
-<p>The font-size used in the plot is proportional to the size and significance of the correlation between two variables.</p>
+<p>The font-size used in the plot is proportional to the size and
+significance of the correlation between two variables.</p>
 <div id="method" class="section level3">
 <h3>Method</h3>
-<p>Select the method to use to calculate correlations. The most common method is <code>Pearson</code>. See <a href="https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient" target = "_blank">Wikipedia</a> for details.</p>
+<p>Select the method to use to calculate correlations. The most common
+method is <code>Pearson</code>. See
+<a href="https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient" target = "_blank">Wikipedia</a>
+for details.</p>
 </div>
 <div id="correlation-cutoff" class="section level3">
 <h3>Correlation cutoff</h3>
-<p>To show only correlations above a certain value choose a non-zero value in the numeric input between 0 and 1 (e.g., 0.15).</p>
+<p>To show only correlations above a certain value choose a non-zero
+value in the numeric input between 0 and 1 (e.g., 0.15).</p>
 </div>
 <div id="covariance-matrix" class="section level3">
 <h3>Covariance matrix</h3>
-<p>Although we generally use the correlation matrix, you can also show the covariance matrix by checking the <code>Show covariance matrix</code> box.</p>
+<p>Although we generally use the correlation matrix, you can also show
+the covariance matrix by checking the
+<code>Show covariance matrix</code> box.</p>
 </div>
 <div id="store-as-data.frame" class="section level2">
 <h2>Store as data.frame</h2>
-<p>The correlation matrix can be stored as a data.frame by (1) providing a name for the new data set and (2) clicking on the <code>Store</code> button. The new data sets will the estimated <code>correlation</code> for each variable pair and a <code>distance</code> measure that is calculated as follows: <code>distance = 0.5 * (1 - correlation)</code>. This measure will be equal to 1 when the correlation between two variable is equal to -1 and equal to 0 when the correlation between two variables is equal to 1. For an example of what such a dataset would look like, see the screenshot below of the <em>Data &gt; View</em> tab. Data sets with this structure can be used as input to create a (dis)similarity based map by using <em>Multivariate &gt; (Dis)similarity</em>.</p>
+<p>The correlation matrix can be stored as a data.frame by (1) providing
+a name for the new data set and (2) clicking on the <code>Store</code>
+button. The new data sets will the estimated <code>correlation</code>
+for each variable pair and a <code>distance</code> measure that is
+calculated as follows: <code>distance = 0.5 * (1 - correlation)</code>.
+This measure will be equal to 1 when the correlation between two
+variable is equal to -1 and equal to 0 when the correlation between two
+variables is equal to 1. For an example of what such a dataset would
+look like, see the screenshot below of the <em>Data &gt; View</em> tab.
+Data sets with this structure can be used as input to create a
+(dis)similarity based map by using <em>Multivariate &gt;
+(Dis)similarity</em>.</p>
 <p align="center">
 <img src="figures_basics/correlation_store.png">
 </p>
@@ -426,13 +457,27 @@ pre code {
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>By default the correlation plot samples 1,000 data points. To include all data points use <code>plot(result, n = -1)</code> To add, for example, a title to the plot use <code>title(main = "Correlation plot\n\n")</code>. See the <a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-commands" target="_blank">R graphics</a> documentation for additional information.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>By default the correlation plot samples 1,000 data points. To include
+all data points use <code>plot(result, n = -1)</code> To add, for
+example, a title to the plot use
+<code>title(main = "Correlation plot\n\n")</code>. See the
+<a href="https://cran.r-project.org/doc/manuals/R-intro.html#Low_002dlevel-plotting-commands" target="_blank">R
+graphics</a> documentation for additional information.</p>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to evaluate correlations see <a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank"><em>Basics &gt; Tables</em></a>.</p>
-<p>The key function from the <code>psych</code> package used in the <code>correlation</code> tool is <code>corr.test</code>.</p>
+<p>For an overview of related R-functions used by Radiant to evaluate
+correlations see
+<a href = "https://radiant-rstats.github.io/radiant.basics/reference/index.html#section-basics-tables" target="_blank"><em>Basics
+&gt; Tables</em></a>.</p>
+<p>The key function from the <code>psych</code> package used in the
+<code>correlation</code> tool is <code>corr.test</code>.</p>
 </div>
 </div>
 

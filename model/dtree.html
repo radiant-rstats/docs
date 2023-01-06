@@ -474,7 +474,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Model &gt; Decide &gt; Decision analysis</h1>
+<h1 class="title toc-ignore">Model &gt; Decide &gt; Decision
+analysis</h1>
 
 </div>
 
@@ -483,19 +484,68 @@ pre code {
 <blockquote>
 <p>Create and evaluate a decision tree for decision analysis</p>
 </blockquote>
-<p>To create and evaluate a decision tree first (1) enter the structure of the tree in the input editor or (2) load a tree structure from a file. When you first navigate to the <em>Model &gt; Decide &gt; Decision analysis</em> tab you will see an example tree structure. This structure is based on an <a href="https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml" target="_blank">example</a> by Christoph Glur, the developer of the <a href="https://github.com/gluc/data.tree" target="_blank">data.tree</a> library.</p>
-<p>To enter a new structure, start by providing a name for the tree and enter a label in the input box next to the <code>Calculate</code> button. In the example below the name for the decision tree is entered as follow: <code>name: Sign contract</code>. The next step is to indicate the <strong>type</strong> of the first <strong>node</strong>. Options are <code>type: decision</code> or <code>type: chance</code>. Note that we are skipping <code>variables</code> for now but will return to this section below.</p>
-<p>In the provided example, the first node is a <strong>decision node</strong>. The decision maker has to decide to <code>Sign with Movie Company</code> or <code>Sign with TV Network</code>. The first option leads to a <strong>chance</strong> node with probabilities and payoffs. The second has a fixed payoff.</p>
+<p>To create and evaluate a decision tree first (1) enter the structure
+of the tree in the input editor or (2) load a tree structure from a
+file. When you first navigate to the <em>Model &gt; Decide &gt; Decision
+analysis</em> tab you will see an example tree structure. This structure
+is based on an
+<a href="https://github.com/gluc/useR15/blob/master/00_data/jennylind.yaml" target="_blank">example</a>
+by Christoph Glur, the developer of the
+<a href="https://github.com/gluc/data.tree" target="_blank">data.tree</a>
+library.</p>
+<p>To enter a new structure, start by providing a name for the tree and
+enter a label in the input box next to the <code>Calculate</code>
+button. In the example below the name for the decision tree is entered
+as follow: <code>name: Sign contract</code>. The next step is to
+indicate the <strong>type</strong> of the first <strong>node</strong>.
+Options are <code>type: decision</code> or <code>type: chance</code>.
+Note that we are skipping <code>variables</code> for now but will return
+to this section below.</p>
+<p>In the provided example, the first node is a <strong>decision
+node</strong>. The decision maker has to decide to
+<code>Sign with Movie Company</code> or
+<code>Sign with TV Network</code>. The first option leads to a
+<strong>chance</strong> node with probabilities and payoffs. The second
+has a fixed payoff.</p>
 <blockquote>
-<p><strong>Note:</strong> Indentation is critically important when defining a tree structure. Use tabs to create branches as shown in the example. Names for branches <strong>must</strong> be followed by a <code>:</code> and information about the branch <strong>must</strong> be indented using the <code>tab</code> key.</p>
+<p><strong>Note:</strong> Indentation is critically important when
+defining a tree structure. Use tabs to create branches as shown in the
+example. Names for branches <strong>must</strong> be followed by a
+<code>:</code> and information about the branch <strong>must</strong> be
+indented using the <code>tab</code> key.</p>
 </blockquote>
-<p>After providing the name for the decision <code>Sign with Movie Company</code>, the next line <strong>must</strong> be indented using the <code>tab</code> key. In the example, the next line starts the description of a chance node (<code>type: chance</code>). There are 3 possibilities in the example: (1) <code>Small Box Office</code>, (2) <code>Medium Box Office</code>, and (3) <code>Large Box Office</code>, each with a probability and a payoff. These are end-points for one branch of the tree and are often referred to as <code>terminal nodes</code> or <code>leaves</code>. All endpoints must have a <code>payoff</code> value.</p>
+<p>After providing the name for the decision
+<code>Sign with Movie Company</code>, the next line
+<strong>must</strong> be indented using the <code>tab</code> key. In the
+example, the next line starts the description of a chance node
+(<code>type: chance</code>). There are 3 possibilities in the example:
+(1) <code>Small Box Office</code>, (2) <code>Medium Box Office</code>,
+and (3) <code>Large Box Office</code>, each with a probability and a
+payoff. These are end-points for one branch of the tree and are often
+referred to as <code>terminal nodes</code> or <code>leaves</code>. All
+endpoints must have a <code>payoff</code> value.</p>
 <blockquote>
-<p><strong>Note:</strong> Probabilities for a chance node should sum to 1 and all probabilities must be between 0 and 1.</p>
+<p><strong>Note:</strong> Probabilities for a chance node should sum to
+1 and all probabilities must be between 0 and 1.</p>
 </blockquote>
-<p>A decision can also be assigned a <code>cost</code>. For example, if we decide to sign with the movie studio we may incur a cost of $5,000 for legal support. Assume the contract with the TV network is simpler and does not require legal assistance. Note that using <code>costs</code> is optional. In the example we could also subtract $5,000 from each of the possible box-office payoffs.</p>
-<p>If some values in the tree are related or repeated it can be useful to use a <code>variables</code> section. Here you can assign labels to values, enter formulas, and even reference other (sub)trees. Note that formulas should only reference entries from the <code>variables</code> section and cannot contain any R-commands. In the <code>Sign contract</code> example only one variable is created (i.e., <code>legal fees</code>). The <em>Sensitivity</em> tab requires that a <code>variables</code> section is included in the tree structure. An adapted version of the <code>Sign contract</code> example that uses more variables and a formula is shown below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Sign contract</span></span>
+<p>A decision can also be assigned a <code>cost</code>. For example, if
+we decide to sign with the movie studio we may incur a cost of $5,000
+for legal support. Assume the contract with the TV network is simpler
+and does not require legal assistance. Note that using
+<code>costs</code> is optional. In the example we could also subtract
+$5,000 from each of the possible box-office payoffs.</p>
+<p>If some values in the tree are related or repeated it can be useful
+to use a <code>variables</code> section. Here you can assign labels to
+values, enter formulas, and even reference other (sub)trees. Note that
+formulas should only reference entries from the <code>variables</code>
+section and cannot contain any R-commands. In the
+<code>Sign contract</code> example only one variable is created (i.e.,
+<code>legal fees</code>). The <em>Sensitivity</em> tab requires that a
+<code>variables</code> section is included in the tree structure. An
+adapted version of the <code>Sign contract</code> example that uses more
+variables and a formula is shown below.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Sign contract</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">legal fees</span><span class="kw">:</span><span class="at"> </span><span class="dv">5000</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">P(small)</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.3</span></span>
@@ -516,60 +566,129 @@ pre code {
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">3000000</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">Sign with TV Network</span><span class="kw">:</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">900000</span></span></code></pre></div>
-<p>To reference another (sub)tree use the <code>dtree</code> function in the <code>variables</code> section and the name of the (sub)tree. For example, suppose you want to include a tree (“tuesday_tree”) that evaluates a pricing decision on Tuesday into a tree that evaluates a pricing decision on Monday. The start of the <code>variables</code> section might look as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
+<p>To reference another (sub)tree use the <code>dtree</code> function in
+the <code>variables</code> section and the name of the (sub)tree. For
+example, suppose you want to include a tree (“tuesday_tree”) that
+evaluates a pricing decision on Tuesday into a tree that evaluates a
+pricing decision on Monday. The start of the <code>variables</code>
+section might look as follows:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tuesday_emv</span><span class="kw">:</span><span class="at"> dtree(&quot;tuesday_tree&quot;)</span></span></code></pre></div>
-<p>Then in the Monday tree you would refer to <code>tuesday_emv</code> in spots where you need the EMV from Tuesday’s pricing decision.</p>
+<p>Then in the Monday tree you would refer to <code>tuesday_emv</code>
+in spots where you need the EMV from Tuesday’s pricing decision.</p>
 <div id="rules-for-decision-tree-input" class="section level2">
 <h2>Rules for decision tree input</h2>
 <ol style="list-style-type: decimal">
-<li>Always start with a tree name (e.g., <code>name: My tree</code>)</li>
-<li>The second line should start a <code>variables</code> section or a node definition (i.e., type: chance or type: decision)</li>
-<li>All lines must have a <code>:</code>. For node names the <code>:</code> ends the line. For all other lines it assigns a value. Specifically, it assigns a name (e.g., <code>name: My tree</code>), a node type (e.g., <code>type: decision</code>), a variable (e.g., <code>legal fees: 5000</code>), or a number (e.g., <code>payoff: 100</code>, <code>p: 0.1</code>, <code>cost: 10</code>)</li>
-<li>A node type must be followed on the next line by a node name (e.g., <code>Cancel orders:</code>)</li>
+<li>Always start with a tree name (e.g.,
+<code>name: My tree</code>)</li>
+<li>The second line should start a <code>variables</code> section or a
+node definition (i.e., type: chance or type: decision)</li>
+<li>All lines must have a <code>:</code>. For node names the
+<code>:</code> ends the line. For all other lines it assigns a value.
+Specifically, it assigns a name (e.g., <code>name: My tree</code>), a
+node type (e.g., <code>type: decision</code>), a variable (e.g.,
+<code>legal fees: 5000</code>), or a number (e.g.,
+<code>payoff: 100</code>, <code>p: 0.1</code>,
+<code>cost: 10</code>)</li>
+<li>A node type must be followed on the next line by a node name (e.g.,
+<code>Cancel orders:</code>)</li>
 <li>Use only letters and spaces in node names (i.e., no symbols)</li>
-<li>The line after a node name must <strong>always</strong> be indented</li>
-<li>End (or terminal or leave) nodes must have a payoff (e.g., <code>payoff: 100</code>)</li>
-<li>If linked to a chance node, terminal nodes must have a probability (e.g, <code>p: 0.4</code>) and a payoff</li>
+<li>The line after a node name must <strong>always</strong> be
+indented</li>
+<li>End (or terminal or leave) nodes must have a payoff (e.g.,
+<code>payoff: 100</code>)</li>
+<li>If linked to a chance node, terminal nodes must have a probability
+(e.g, <code>p: 0.4</code>) and a payoff</li>
 </ol>
-<p>After specifying the tree structure in the editor, press the <code>Calculate</code> button to see the <code>Initial</code> and <code>Final</code> decision tree in text format on the right side of the screen (see screen shot below). The initial tree simply shows the tree structure that was specified, together with the node types, probabilities, costs, and payoffs. The final tree shows the optimal decision strategy determined by <code>folding-back</code> the tree. In this case, the optimal decision is to <code>Sign with Movie Company</code> because this decision has a higher <strong>Expected Monetary Value (EMV)</strong>.</p>
+<p>After specifying the tree structure in the editor, press the
+<code>Calculate</code> button to see the <code>Initial</code> and
+<code>Final</code> decision tree in text format on the right side of the
+screen (see screen shot below). The initial tree simply shows the tree
+structure that was specified, together with the node types,
+probabilities, costs, and payoffs. The final tree shows the optimal
+decision strategy determined by <code>folding-back</code> the tree. In
+this case, the optimal decision is to
+<code>Sign with Movie Company</code> because this decision has a higher
+<strong>Expected Monetary Value (EMV)</strong>.</p>
 <p align="center">
 <img src="figures_model/dtree_model.png">
 </p>
-<p>For a visual representation of the decision tree open the <em>Plot</em> tab. If you already clicked the <code>Calculate</code> button in the <em>Model</em> tab you will see a graph of the <code>Initial</code> decision tree (see screen shot below). Decision nodes are shown in green and chance nodes in orange. If the tree does not look as you intended/expected, return to the <em>Model</em> tab and edit the tree structure.</p>
+<p>For a visual representation of the decision tree open the
+<em>Plot</em> tab. If you already clicked the <code>Calculate</code>
+button in the <em>Model</em> tab you will see a graph of the
+<code>Initial</code> decision tree (see screen shot below). Decision
+nodes are shown in green and chance nodes in orange. If the tree does
+not look as you intended/expected, return to the <em>Model</em> tab and
+edit the tree structure.</p>
 <p align="center">
 <img src="figures_model/dtree_plot_initial.png">
 </p>
-<p>The <code>Final</code> graph shows the optimal decision determined by <code>folding-back</code> the tree. The optimal decision is to <code>Sign with Movie Company</code> because this decision has a higher <strong>Expected Monetary Value</strong>. Note that the optimal decision at each decision node is shown by a thicker line connecting to the nodes.</p>
+<p>The <code>Final</code> graph shows the optimal decision determined by
+<code>folding-back</code> the tree. The optimal decision is to
+<code>Sign with Movie Company</code> because this decision has a higher
+<strong>Expected Monetary Value</strong>. Note that the optimal decision
+at each decision node is shown by a thicker line connecting to the
+nodes.</p>
 <p align="center">
 <img src="figures_model/dtree_plot_final.png">
 </p>
-<p>The EMV for <code>Sign with TV Network</code> is $900,000. If we ignore costs the expected payoff from <code>Sign with Movie Company</code> is:</p>
+<p>The EMV for <code>Sign with TV Network</code> is $900,000. If we
+ignore costs the expected payoff from
+<code>Sign with Movie Company</code> is:</p>
 <p><span class="math display">\[
-  0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 = 960,000
+  0.3 \times 200,000 + 0.6 \times 1,000,000 + 0.1 \times 3000,000 =
+960,000
 \]</span></p>
-<p>The EMV from signing with the movie company is however <span class="math inline">\(960,000 - 5,000 = 955,000\)</span> because we do incur a cost of $5,000 in legal fees. Hover the cursor over the chance node shown on screen to see a <code>tooltip</code> that shows the calculation. To highlight that a <code>cost</code> was specified the chance node in the figure has a dashed outer line.</p>
-<p>In the <code>Sign contract</code> example it is clear that <code>Sign with Movie Company</code> is the preferred option. However, suppose the legal fees associated with this option were $10,000, or $30,000, would we still choose the same option? This is where the <em>Sensitivity</em> tab is useful. Here we can evaluate how decisions (e.g., <code>Sign with Movie Company</code> and <code>Sign with TV Network</code>) would change if the legal fee changes. Enter 0 as the <code>Min</code> value, 80000 as the <code>Max value</code>, 10000 as the <code>Step</code> size, and then press the <i class="fa fa-plus"></i> icon. After pressing <code>Evaluate sensitivity</code> a graph will be shown that illustrates how payoffs for the decisions change. Notice that for legal fees higher than $60,000 <code>Sign with TV Network</code> produces the highest EMV.</p>
+<p>The EMV from signing with the movie company is however <span
+class="math inline">\(960,000 - 5,000 = 955,000\)</span> because we do
+incur a cost of $5,000 in legal fees. Hover the cursor over the chance
+node shown on screen to see a <code>tooltip</code> that shows the
+calculation. To highlight that a <code>cost</code> was specified the
+chance node in the figure has a dashed outer line.</p>
+<p>In the <code>Sign contract</code> example it is clear that
+<code>Sign with Movie Company</code> is the preferred option. However,
+suppose the legal fees associated with this option were $10,000, or
+$30,000, would we still choose the same option? This is where the
+<em>Sensitivity</em> tab is useful. Here we can evaluate how decisions
+(e.g., <code>Sign with Movie Company</code> and
+<code>Sign with TV Network</code>) would change if the legal fee
+changes. Enter 0 as the <code>Min</code> value, 80000 as the
+<code>Max value</code>, 10000 as the <code>Step</code> size, and then
+press the <i class="fa fa-plus"></i> icon. After pressing
+<code>Evaluate sensitivity</code> a graph will be shown that illustrates
+how payoffs for the decisions change. Notice that for legal fees higher
+than $60,000 <code>Sign with TV Network</code> produces the highest
+EMV.</p>
 <p align="center">
 <img src="figures_model/dtree_sensitivity.png">
 </p>
 </div>
 <div id="video-tutorials" class="section level2">
 <h2>Video Tutorials</h2>
-<p>Copy-and-paste the full command below into the RStudio console (i.e., the bottom-left window) and press return to gain access to all materials used in the decision tree module of the <a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant Tutorial Series</a>:</p>
+<p>Copy-and-paste the full command below into the RStudio console (i.e.,
+the bottom-left window) and press return to gain access to all materials
+used in the decision tree module of the
+<a href="https://www.youtube.com/playlist?list=PLNhtaetb48EdKRIY7MewCyvb_1x7dV3xw" target="_blank">Radiant
+Tutorial Series</a>:</p>
 <pre>usethis::use_course("https://www.dropbox.com/sh/bit4p1ffbkb2dgh/AACm1RVy2BxBDiVbjoLiN5_Ea?dl=1")</pre>
-<p><a href="https://youtu.be/plSeVJ7c-Iw" target="_blank">Introduction to Decision Analysis (#1)</a></p>
+<p><a href="https://youtu.be/plSeVJ7c-Iw" target="_blank">Introduction
+to Decision Analysis (#1)</a></p>
 <ul>
-<li>This video walks you through the required steps to construct and solve a basic decision tree by hand</li>
+<li>This video walks you through the required steps to construct and
+solve a basic decision tree by hand</li>
 <li>Topics List:
 <ul>
 <li>Chance nodes vs. decision nodes</li>
-<li>Folding back the tree (i.e., start from the right-most nodes and work backwards to the left-most nodes)</li>
+<li>Folding back the tree (i.e., start from the right-most nodes and
+work backwards to the left-most nodes)</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/dBySH3z2Paw" target="_blank">Using Radiant to Construct a Decision Tree (#2)</a></p>
+<p><a href="https://youtu.be/dBySH3z2Paw" target="_blank">Using Radiant
+to Construct a Decision Tree (#2)</a></p>
 <ul>
-<li>This video demonstrates how to construct a basic decision tree in Radiant</li>
+<li>This video demonstrates how to construct a basic decision tree in
+Radiant</li>
 <li>Topics List:
 <ul>
 <li>Rename a tree file</li>
@@ -578,20 +697,25 @@ pre code {
 <li>Save the decision tree input .yaml file</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/NlvWCU8UhTc" target="_blank">How to Write Decision Tree Results into a Report (#3)</a></p>
+<p><a href="https://youtu.be/NlvWCU8UhTc" target="_blank">How to Write
+Decision Tree Results into a Report (#3)</a></p>
 <ul>
-<li>This video demonstrates how to construct a basic decision tree in Radiant and add the generated R-code to a report</li>
+<li>This video demonstrates how to construct a basic decision tree in
+Radiant and add the generated R-code to a report</li>
 <li>Topics List:
 <ul>
-<li>Construct a decision tree and define variables in the decision tree</li>
+<li>Construct a decision tree and define variables in the decision
+tree</li>
 <li>Add multiple trees to a report</li>
 <li>Demo some useful keyboard shortcuts</li>
 <li>Save the Radiant state file and the report</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/c_pCCCn6FEw" target="_blank">Sensitivity Analysis of Decision Tree (#4)</a></p>
+<p><a href="https://youtu.be/c_pCCCn6FEw" target="_blank">Sensitivity
+Analysis of Decision Tree (#4)</a></p>
 <ul>
-<li>This video shows two ways to conduct sensitivity analysis of a decision tree in Radiant</li>
+<li>This video shows two ways to conduct sensitivity analysis of a
+decision tree in Radiant</li>
 <li>Topics List:
 <ul>
 <li>Quick review of writing decision tree results to a report</li>
@@ -599,9 +723,11 @@ pre code {
 <li>Method 2: use “variables”</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/oiwv15bbjzs" target="_blank">How to Debug Decision Tree Input (#5)</a></p>
+<p><a href="https://youtu.be/oiwv15bbjzs" target="_blank">How to Debug
+Decision Tree Input (#5)</a></p>
 <ul>
-<li>This video demonstrates how to debug decision tree input if you get an error message</li>
+<li>This video demonstrates how to debug decision tree input if you get
+an error message</li>
 <li>Topics List:
 <ul>
 <li>Colon missing</li>
@@ -610,9 +736,12 @@ pre code {
 <li>Value missing</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/xuv9zgAcvCQ" target="_blank">Decision Trees with Imperfect Information (#6)</a></p>
+<p><a href="https://youtu.be/xuv9zgAcvCQ" target="_blank">Decision Trees
+with Imperfect Information (#6)</a></p>
 <ul>
-<li>This video shows how to determine the appropriate (conditional) probabilities to use in a decision tree when the available information is imperfect</li>
+<li>This video shows how to determine the appropriate (conditional)
+probabilities to use in a decision tree when the available information
+is imperfect</li>
 <li>Topics List:
 <ul>
 <li>Imperfect information</li>
@@ -620,9 +749,11 @@ pre code {
 <li>Conditional probabilities</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/cVrYFFX3xN0" target="_blank">Solving a Decision Tree with Imperfect Information (#7)</a></p>
+<p><a href="https://youtu.be/cVrYFFX3xN0" target="_blank">Solving a
+Decision Tree with Imperfect Information (#7)</a></p>
 <ul>
-<li>This video shows how to use Radiant to construct and solve a decision tree when the available information is imperfect</li>
+<li>This video shows how to use Radiant to construct and solve a
+decision tree when the available information is imperfect</li>
 <li>Topics List:
 <ul>
 <li>Specify variables</li>
@@ -631,13 +762,16 @@ pre code {
 <li>Interpret the decision tree result</li>
 </ul></li>
 </ul>
-<p><a href="https://youtu.be/Mi-eZEoU9TE" target="_blank">Building a Decision Tree with Sub-trees in Radiant (#8)</a></p>
+<p><a href="https://youtu.be/Mi-eZEoU9TE" target="_blank">Building a
+Decision Tree with Sub-trees in Radiant (#8)</a></p>
 <ul>
-<li>This video shows how to build a decision tree with sub-trees in radiant</li>
+<li>This video shows how to build a decision tree with sub-trees in
+radiant</li>
 <li>Topics List:
 <ul>
 <li>Create a main tree that references a sub-tree</li>
-<li>Specify a sub-tree that references the main tree in the variables section</li>
+<li>Specify a sub-tree that references the main tree in the variables
+section</li>
 </ul></li>
 </ul>
 <p>For the full “Radiant Tutorial Series” see the link below:</p>
@@ -647,37 +781,72 @@ pre code {
 <h2>Buttons</h2>
 <p>In the <em>Model</em> tab:</p>
 <ul>
-<li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
-<li>To generate a report about the decision tree in the <em>Report &gt; Rmd</em> tab click the <i class="fa fa-edit" ></i> icon or press <code>ALT-enter</code> on your keyboard</li>
-<li>Choose to maximize (<code>Max</code>) or minimize (<code>Min</code>) payoffs. Note that payoffs can be negative</li>
-<li>Click the <code>Calculate</code> button or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate or update results</li>
-<li>Specify a name for your decision tree in the text input next to the <code>Calculate</code> button. Clicking on the <code>Calculate</code> button will store your settings. If multiple tree structures are available there will also be a dropdown where you can select which structure to use and a <code>Remove</code> button to delete tree structures</li>
-<li>To save the tree structure entered into the editor window to disk press the <code>Save input</code> button</li>
-<li>To save the text representation of the initial and final tree to a file click the <code>Save output</code> button</li>
-<li>To load a tree structure from a file in <code>yaml</code> format click the <code>Choose File</code> button</li>
+<li>To see this help file click the <i class="fa fa-question" ></i>
+icon</li>
+<li>To generate a report about the decision tree in the <em>Report &gt;
+Rmd</em> tab click the <i class="fa fa-edit" ></i> icon or press
+<code>ALT-enter</code> on your keyboard</li>
+<li>Choose to maximize (<code>Max</code>) or minimize (<code>Min</code>)
+payoffs. Note that payoffs can be negative</li>
+<li>Click the <code>Calculate</code> button or press
+<code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate or
+update results</li>
+<li>Specify a name for your decision tree in the text input next to the
+<code>Calculate</code> button. Clicking on the <code>Calculate</code>
+button will store your settings. If multiple tree structures are
+available there will also be a dropdown where you can select which
+structure to use and a <code>Remove</code> button to delete tree
+structures</li>
+<li>To save the tree structure entered into the editor window to disk
+press the <code>Save input</code> button</li>
+<li>To save the text representation of the initial and final tree to a
+file click the <code>Save output</code> button</li>
+<li>To load a tree structure from a file in <code>yaml</code> format
+click the <code>Choose File</code> button</li>
 </ul>
 <p>In the <em>Plot</em> tab:</p>
 <ul>
-<li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
-<li>To generate a report about the decision tree in the <em>Report &gt; Rmd</em> tab click the <i class="fa fa-edit" ></i> icon or press <code>ALT-enter</code> on your keyboard</li>
-<li>Show either the <code>Initial</code> or <code>Final</code> decision tree</li>
-<li>Click the <code>Calculate</code> button or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate or update results</li>
-<li>Enter the number of decimal places to show in the plot (default is 2 for payoffs and 4 for probabilities)</li>
+<li>To see this help file click the <i class="fa fa-question" ></i>
+icon</li>
+<li>To generate a report about the decision tree in the <em>Report &gt;
+Rmd</em> tab click the <i class="fa fa-edit" ></i> icon or press
+<code>ALT-enter</code> on your keyboard</li>
+<li>Show either the <code>Initial</code> or <code>Final</code> decision
+tree</li>
+<li>Click the <code>Calculate</code> button or press
+<code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate or
+update results</li>
+<li>Enter the number of decimal places to show in the plot (default is 2
+for payoffs and 4 for probabilities)</li>
 <li>Provide a symbol to use for the payoffs (e.g., $ or RMB)</li>
-<li>Click the download icon in the top right of your browser to download either the initial or final plot to png file</li>
+<li>Click the download icon in the top right of your browser to download
+either the initial or final plot to png file</li>
 </ul>
-<p>It is not currently possible to add a title or caption directly to the <code>Decision Tree</code> plot.</p>
+<p>It is not currently possible to add a title or caption directly to
+the <code>Decision Tree</code> plot.</p>
 <p>In the <em>Sensitivity</em> tab:</p>
 <ul>
-<li>To see this help file click the <i class="fa fa-question" ></i> icon</li>
-<li>To generate a report about the decision tree in the <em>Report &gt; Rmd</em> tab click the <i class="fa fa-edit" ></i> icon or press <code>ALT-enter</code> on your keyboard</li>
+<li>To see this help file click the <i class="fa fa-question" ></i>
+icon</li>
+<li>To generate a report about the decision tree in the <em>Report &gt;
+Rmd</em> tab click the <i class="fa fa-edit" ></i> icon or press
+<code>ALT-enter</code> on your keyboard</li>
 <li>Select one or more <code>Decisions to evaluate</code></li>
-<li>Select variables in <code>Sensitivity to changes in</code>. These variables must be defined in the <code>variables</code> section of the decision tree structure in the <em>Model</em> tab</li>
-<li>Enter the minimum, maximum, and step size for the selected variable and press the <i class="fa fa-plus"></i> icon</li>
-<li>Press <code>Evaluate sensitivity</code> or press <code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate results and the plot</li>
-<li>Click the download icon in the top right of your browser to download the plot to a png file</li>
+<li>Select variables in <code>Sensitivity to changes in</code>. These
+variables must be defined in the <code>variables</code> section of the
+decision tree structure in the <em>Model</em> tab</li>
+<li>Enter the minimum, maximum, and step size for the selected variable
+and press the <i class="fa fa-plus"></i> icon</li>
+<li>Press <code>Evaluate sensitivity</code> or press
+<code>CTRL-enter</code> (<code>CMD-enter</code> on mac) to generate
+results and the plot</li>
+<li>Click the download icon in the top right of your browser to download
+the plot to a png file</li>
 </ul>
-<p>If a sensitivity plot was created it can be customized using <code>ggplot2</code> commands (see example below). See <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>If a sensitivity plot was created it can be customized using
+<code>ggplot2</code> commands (see example below). See
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sensitivity</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  result, </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">vars =</span> <span class="st">&quot;legal fees 0 100000 1000;&quot;</span>, </span>
@@ -697,13 +866,19 @@ pre code {
 <li>Undo edit (Win: Ctrl-z, Mac: Cmd-z)</li>
 <li>Redo edit (Win: Shift-Ctrl-z, Mac: Shift-Cmd-z)</li>
 </ul>
-<p>You can also (un)fold lines using the small triangles next to the line numbers.</p>
+<p>You can also (un)fold lines using the small triangles next to the
+line numbers.</p>
 <p>For additional shortcuts see:</p>
 <p><a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts</a></p>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant for decision analysis see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-decision-analysis" target="_blank"><em>Model &gt; Decision analysis</em></a>.</p>
-<p>The key elements from the <code>data.tree</code> package used in the <code>dtree</code> tool are the <code>as.Node</code> function and the <code>Get</code> and <code>Do</code> methods.</p>
+<p>For an overview of related R-functions used by Radiant for decision
+analysis see
+<a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-decision-analysis" target="_blank"><em>Model
+&gt; Decision analysis</em></a>.</p>
+<p>The key elements from the <code>data.tree</code> package used in the
+<code>dtree</code> tool are the <code>as.Node</code> function and the
+<code>Get</code> and <code>Do</code> methods.</p>
 </div>
 </div>
 

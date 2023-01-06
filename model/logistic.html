@@ -474,7 +474,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Model &gt; Estimate &gt; Logistic regression (GLM)</h1>
+<h1 class="title toc-ignore">Model &gt; Estimate &gt; Logistic
+regression (GLM)</h1>
 
 </div>
 
@@ -485,67 +486,166 @@ pre code {
 </blockquote>
 <div id="functionality" class="section level3">
 <h3>Functionality</h3>
-<p>To estimate a logistic regression we need a binary response variable and one or more explanatory variables. We also need specify the level of the response variable we will count as <em>success</em> (i.e., the <code>Choose level:</code> dropdown). In the example data file <code>titanic</code>, success for the variable <code>survived</code> would be the level <code>Yes</code>.</p>
-<p>To access this dataset go to <em>Data &gt; Manage</em>, select <code>examples</code> from the <code>Load data of type</code> dropdown, and press the <code>Load</code> button. Then select the <code>titanic</code> dataset.</p>
-<p>In the <em>Summary</em> tab we can test if two or more variables together add significantly to the fit of a model by selecting variables in the <code>Variables to test</code> dropdown. This functionality can be very useful to test if the overall influence of a variable of type <code>factor</code> is statistically significant.</p>
+<p>To estimate a logistic regression we need a binary response variable
+and one or more explanatory variables. We also need specify the level of
+the response variable we will count as <em>success</em> (i.e., the
+<code>Choose level:</code> dropdown). In the example data file
+<code>titanic</code>, success for the variable <code>survived</code>
+would be the level <code>Yes</code>.</p>
+<p>To access this dataset go to <em>Data &gt; Manage</em>, select
+<code>examples</code> from the <code>Load data of type</code> dropdown,
+and press the <code>Load</code> button. Then select the
+<code>titanic</code> dataset.</p>
+<p>In the <em>Summary</em> tab we can test if two or more variables
+together add significantly to the fit of a model by selecting variables
+in the <code>Variables to test</code> dropdown. This functionality can
+be very useful to test if the overall influence of a variable of type
+<code>factor</code> is statistically significant.</p>
 <p>Additional output that requires re-estimation:</p>
 <ul>
-<li>Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data for logistic regression by replacing all explanatory variables <span class="math inline">\(X\)</span> by <span class="math inline">\((X - mean(X))/(2 \times sd(X))\)</span>. See <a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion.</li>
-<li>Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects</li>
-<li>Stepwise: A data-mining approach to select the best fitting model. Use with caution!</li>
-<li>Robust standard errors: When <code>robust</code> is selected the coefficient estimates are the same as a normal logistic regression standard errors are adjusted. This adjustment is used by default when probability weights are specified in estimation.</li>
+<li>Standardize: Odds-ratios can be hard to compare if the explanatory
+variables are measured on different scales. By standardizing the
+explanatory variables before estimation we can see which variables
+move-the-needle most. Radiant standardizes data for logistic regression
+by replacing all explanatory variables <span
+class="math inline">\(X\)</span> by <span class="math inline">\((X -
+mean(X))/(2 \times sd(X))\)</span>. See
+<a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf" target="_blank">Gelman
+2008</a> for discussion.</li>
+<li>Center: Replace all explanatory variables X by X - mean(X). This can
+be useful when trying to interpret interaction effects</li>
+<li>Stepwise: A data-mining approach to select the best fitting model.
+Use with caution!</li>
+<li>Robust standard errors: When <code>robust</code> is selected the
+coefficient estimates are the same as a normal logistic regression
+standard errors are adjusted. This adjustment is used by default when
+probability weights are specified in estimation.</li>
 </ul>
 <p>Additional output that does not require re-estimation:</p>
 <ul>
-<li>VIF: Variance Inflation Factors and Rsq. These are measures of multi-collinearity among the explanatory variables</li>
+<li>VIF: Variance Inflation Factors and Rsq. These are measures of
+multi-collinearity among the explanatory variables</li>
 <li>Confidence intervals: Coefficient confidence intervals</li>
 <li>Odds: Odds-ratios with confidence intervals</li>
 </ul>
 </div>
 <div id="example-1-titanic-survival" class="section level3">
 <h3>Example 1: Titanic Survival</h3>
-<p>As an example we will use a dataset that describes the survival status of individual passengers on the Titanic. The principal source for data about Titanic passengers is the Encyclopedia Titanic. One of the original sources is Eaton &amp; Haas (1994) Titanic: Triumph and Tragedy, Patrick Stephens Ltd, which includes a passenger list created by many researchers and edited by Michael A. Findlay. Suppose we want to investigate which factors are most strongly associated with the chance of surviving the sinking of the Titanic. Lets focus on four variables in the database:</p>
+<p>As an example we will use a dataset that describes the survival
+status of individual passengers on the Titanic. The principal source for
+data about Titanic passengers is the Encyclopedia Titanic. One of the
+original sources is Eaton &amp; Haas (1994) Titanic: Triumph and
+Tragedy, Patrick Stephens Ltd, which includes a passenger list created
+by many researchers and edited by Michael A. Findlay. Suppose we want to
+investigate which factors are most strongly associated with the chance
+of surviving the sinking of the Titanic. Lets focus on four variables in
+the database:</p>
 <ul>
-<li>survived = a factor with levels <code>Yes</code> and <code>No</code></li>
-<li>pclass = Passenger Class (1st, 2nd, 3rd). This is a proxy for socio-economic status (SES) 1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower</li>
+<li>survived = a factor with levels <code>Yes</code> and
+<code>No</code></li>
+<li>pclass = Passenger Class (1st, 2nd, 3rd). This is a proxy for
+socio-economic status (SES) 1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower</li>
 <li>sex = Sex (female, male)</li>
 <li>age = Age in years</li>
 </ul>
-<p>Select <code>survived</code> as the response variable and <code>Yes</code> in <strong>Choose level</strong>. Select <code>pclass</code>, <code>sex</code> and <code>age</code> as the explanatory variables. In the screenshot below we see that each of the coefficients is statistically significant (p.value &lt; .05) and that the model has some predictive power (Chi-squared statistic &lt; .05). Unfortunately the coefficients from a logistic regression model are difficult to interpret. The <code>OR</code> column provides estimated odds-ratios. We see that the odds of survival were significantly lower for 2nd and 3rd class passengers compared to 1st class passenger. The odds of survival for males were also lower than for females. While the effect of age is statically significant, for each extra year in age the odds of survival are not as strongly affected (see also the standardized coefficient).</p>
-<p>For each of the explanatory variables the following null and alternate hypotheses can be formulated for the odds ratios:</p>
+<p>Select <code>survived</code> as the response variable and
+<code>Yes</code> in <strong>Choose level</strong>. Select
+<code>pclass</code>, <code>sex</code> and <code>age</code> as the
+explanatory variables. In the screenshot below we see that each of the
+coefficients is statistically significant (p.value &lt; .05) and that
+the model has some predictive power (Chi-squared statistic &lt; .05).
+Unfortunately the coefficients from a logistic regression model are
+difficult to interpret. The <code>OR</code> column provides estimated
+odds-ratios. We see that the odds of survival were significantly lower
+for 2nd and 3rd class passengers compared to 1st class passenger. The
+odds of survival for males were also lower than for females. While the
+effect of age is statically significant, for each extra year in age the
+odds of survival are not as strongly affected (see also the standardized
+coefficient).</p>
+<p>For each of the explanatory variables the following null and
+alternate hypotheses can be formulated for the odds ratios:</p>
 <ul>
-<li>H0: The odds-ratio associated with explanatory variable x is equal to 1</li>
-<li>Ha: The odds-ratio associated with explanatory variable x is not equal to 1</li>
+<li>H0: The odds-ratio associated with explanatory variable x is equal
+to 1</li>
+<li>Ha: The odds-ratio associated with explanatory variable x is not
+equal to 1</li>
 </ul>
-<p>The odds-ratios from the logistic regression can be interpreted as follows:</p>
+<p>The odds-ratios from the logistic regression can be interpreted as
+follows:</p>
 <ul>
-<li>Compared to 1st class passengers, the odds of survival for 2nd class passengers was 72% lower, keeping all other variables in the model constant.</li>
-<li>Compared to 1st class passengers, the odds of survival for 3rd class passengers was 89.8% lower, keeping all other variables in the model constant.</li>
-<li>Compared to female passengers, the odds of survival for male passengers was 91.7% lower, keeping all other variables in the model constant.</li>
-<li>For an increase in passenger age of 1 year the odds of survival decreased by 3.4%, keeping all other variables in the model constant.</li>
+<li>Compared to 1st class passengers, the odds of survival for 2nd class
+passengers was 72% lower, keeping all other variables in the model
+constant.</li>
+<li>Compared to 1st class passengers, the odds of survival for 3rd class
+passengers was 89.8% lower, keeping all other variables in the model
+constant.</li>
+<li>Compared to female passengers, the odds of survival for male
+passengers was 91.7% lower, keeping all other variables in the model
+constant.</li>
+<li>For an increase in passenger age of 1 year the odds of survival
+decreased by 3.4%, keeping all other variables in the model
+constant.</li>
 </ul>
 <p align="center">
 <img src="figures_model/logistic_summary.png">
 </p>
-<p>In addition to the numerical output provided in the <em>Summary</em> tab we can also evaluate the link between <code>survival</code>, <code>class</code>, <code>sex</code>, and <code>age</code> visually (see <em>Plot</em> tab). In the screenshot below we see a coefficient (or rather an odds-ratio) plot with confidence intervals. The relative importance of gender and class compared to age clearly stands out. Note: click the check box for standardized coefficients (i.e., <code>standardize</code>) in the <em>Summary</em> tab and see if your conclusion changes.</p>
+<p>In addition to the numerical output provided in the <em>Summary</em>
+tab we can also evaluate the link between <code>survival</code>,
+<code>class</code>, <code>sex</code>, and <code>age</code> visually (see
+<em>Plot</em> tab). In the screenshot below we see a coefficient (or
+rather an odds-ratio) plot with confidence intervals. The relative
+importance of gender and class compared to age clearly stands out. Note:
+click the check box for standardized coefficients (i.e.,
+<code>standardize</code>) in the <em>Summary</em> tab and see if your
+conclusion changes.</p>
 <p align="center">
 <img src="figures_model/logistic_plot.png">
 </p>
-<p>Probabilities, are often more convenient for interpretation than coefficients or odds from a logistic regression model. We can use the <em>Predict</em> tab to predict probabilities for different values of the explanatory variable(s) (i.e., a common use of Logistic regression models). First, select the type of input for prediction using the <code>Prediction input type</code> dropdown. Choose either an existing dataset for prediction (“Data”) or specify a command (“Command”) to generate the prediction inputs. If you choose to enter a command you must specify at least one variable and one value in the <strong>Prediction command</strong> box to get a prediction. If you do not specify a value for each variable in the model either the mean value or the most frequent level will be used. It is only possible to predict outcomes based on variables used in the model (e.g., <code>age</code> must be one of the selected explanatory variables to predict survival probability for a 90 year old passenger).</p>
-<p>To see how survival probabilities change across passenger classes select <code>Command</code> from the <code>Prediction input type</code> dropdown in the <em>Predict</em> tab, type <code>pclass = levels(pclass)</code>, and press return.</p>
+<p>Probabilities, are often more convenient for interpretation than
+coefficients or odds from a logistic regression model. We can use the
+<em>Predict</em> tab to predict probabilities for different values of
+the explanatory variable(s) (i.e., a common use of Logistic regression
+models). First, select the type of input for prediction using the
+<code>Prediction input type</code> dropdown. Choose either an existing
+dataset for prediction (“Data”) or specify a command (“Command”) to
+generate the prediction inputs. If you choose to enter a command you
+must specify at least one variable and one value in the
+<strong>Prediction command</strong> box to get a prediction. If you do
+not specify a value for each variable in the model either the mean value
+or the most frequent level will be used. It is only possible to predict
+outcomes based on variables used in the model (e.g., <code>age</code>
+must be one of the selected explanatory variables to predict survival
+probability for a 90 year old passenger).</p>
+<p>To see how survival probabilities change across passenger classes
+select <code>Command</code> from the <code>Prediction input type</code>
+dropdown in the <em>Predict</em> tab, type
+<code>pclass = levels(pclass)</code>, and press return.</p>
 <p align="center">
 <img src="figures_model/logistic_predict.png">
 </p>
-<p>The figure above shows that the probabilities drop sharply for 2nd and 3rd class passengers compared to 1st class passengers. For males of average age (approx. 30 yo in the sample) the survival probability was close to 50%. For 30 yo, male, 3rd class passengers this probability was closer to 9%.</p>
+<p>The figure above shows that the probabilities drop sharply for 2nd
+and 3rd class passengers compared to 1st class passengers. For males of
+average age (approx. 30 yo in the sample) the survival probability was
+close to 50%. For 30 yo, male, 3rd class passengers this probability was
+closer to 9%.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    age  sex pclass  pred</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="fl">29.881</span> male    1st <span class="fl">0.499</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="fl">29.881</span> male    2nd <span class="fl">0.217</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> <span class="fl">29.881</span> male    3rd <span class="fl">0.092</span></span></code></pre></div>
-<p>To see the effects of gender type <code>sex = levels(sex)</code> in the <strong>Prediction command</strong> box and press return. For average age females in 3rd class the survival probability was around 50%. For males with the same age and class characteristics the chance of survival was closer to 9%.</p>
+<p>To see the effects of gender type <code>sex = levels(sex)</code> in
+the <strong>Prediction command</strong> box and press return. For
+average age females in 3rd class the survival probability was around
+50%. For males with the same age and class characteristics the chance of
+survival was closer to 9%.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    age pclass    sex  pred</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="fl">29.881</span>    3rd female <span class="fl">0.551</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="fl">29.881</span>    3rd   male <span class="fl">0.092</span></span></code></pre></div>
-<p>To see the effects for age type <code>age = seq(0, 100, 20)</code> in the <strong>Prediction command</strong> box and press return. For male infants in 3rd class the survival probability was around 22%. For 60 year old males in 3rd class the probability drops to around 3.5%. For the oldest males on board, the model predicts a survival probability close to 1%.</p>
+<p>To see the effects for age type <code>age = seq(0, 100, 20)</code> in
+the <strong>Prediction command</strong> box and press return. For male
+infants in 3rd class the survival probability was around 22%. For 60
+year old males in 3rd class the probability drops to around 3.5%. For
+the oldest males on board, the model predicts a survival probability
+close to 1%.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a> pclass  sex age  pred</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    3rd male   <span class="dv">0</span> <span class="fl">0.220</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    3rd male  <span class="dv">20</span> <span class="fl">0.124</span></span>
@@ -553,33 +653,94 @@ pre code {
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    3rd male  <span class="dv">60</span> <span class="fl">0.035</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    3rd male  <span class="dv">80</span> <span class="fl">0.018</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    3rd male <span class="dv">100</span> <span class="fl">0.009</span></span></code></pre></div>
-<p>For a more comprehensive overview of the influence of gender, age, and passenger class on the chances of survival we can generate a full table of probabilities by selecting <code>Data</code> from the <code>Prediction input</code> dropdown in the <em>Predict</em> tab and selecting <code>titanic</code> from the <code>Prediction data</code> dropdown. There are too many numbers to easily interpret in table form but the figure gives a clear overview of how survival probabilities change with <code>age</code>, <code>gender</code>, and <code>pclass</code>:</p>
+<p>For a more comprehensive overview of the influence of gender, age,
+and passenger class on the chances of survival we can generate a full
+table of probabilities by selecting <code>Data</code> from the
+<code>Prediction input</code> dropdown in the <em>Predict</em> tab and
+selecting <code>titanic</code> from the <code>Prediction data</code>
+dropdown. There are too many numbers to easily interpret in table form
+but the figure gives a clear overview of how survival probabilities
+change with <code>age</code>, <code>gender</code>, and
+<code>pclass</code>:</p>
 <p align="center">
 <img src="figures_model/logistic_predict_data.png">
 </p>
-<p>You can also create a dataset for input in <em>Data &gt; Transform</em> using <code>Expand grid</code> or in a spreadsheet and then paste it into Radiant through the <em>Data &gt; Manage</em> tab. You can also load csv data as input. For example, paste the following link <code>https://radiant-rstats.github.io/docs/examples/glm_pred.csv</code> file into Radiant through the <em>Data &gt; Manage</em> tab and try to generate the same predictions. Hint: Use <code>csv (url)</code> to load the data link above.</p>
-<p>Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the <code>Store</code> button.</p>
+<p>You can also create a dataset for input in <em>Data &gt;
+Transform</em> using <code>Expand grid</code> or in a spreadsheet and
+then paste it into Radiant through the <em>Data &gt; Manage</em> tab.
+You can also load csv data as input. For example, paste the following
+link
+<code>https://radiant-rstats.github.io/docs/examples/glm_pred.csv</code>
+file into Radiant through the <em>Data &gt; Manage</em> tab and try to
+generate the same predictions. Hint: Use <code>csv (url)</code> to load
+the data link above.</p>
+<p>Once the desired predictions have been generated they can be saved to
+a CSV file by clicking the download icon on the top right of the screen.
+To add predictions to the dataset used for estimation, click the
+<code>Store</code> button.</p>
 </div>
 <div id="example-2-dvd-sales" class="section level3">
 <h3>Example 2: DVD sales</h3>
-<p>We will use the dataset <code>dvd.rds</code>, available for download from <a href="https://radiant-rstats.github.io/docs/examples/dvd.rds" target="_blank">GitHub</a>. The data contain information on a sample of 20,000 customers who received an “instant coupon.” The value of the coupon was varied between $1 and $5 and randomly assigned to the selected customers. We can use logistic regression to estimate the effect of the coupon on purchase of a newly released DVD. Customers who received the coupon and purchased the DVD are identified in the data by the variable <code>buy</code>. Because the variable we want to predict is binary (<code>buy</code> = <code>yes</code> if the customer purchased the DVD and <code>buy</code> = <code>no</code> if she did not), logistic regression is appropriate.</p>
-<p>To keep the example simple, we use only information on the value of the coupon customers received. Hence, <code>buy</code> is our response variable and <code>coupon</code> is our explanatory (or predictor) variable.</p>
+<p>We will use the dataset <code>dvd.rds</code>, available for download
+from
+<a href="https://radiant-rstats.github.io/docs/examples/dvd.rds" target="_blank">GitHub</a>.
+The data contain information on a sample of 20,000 customers who
+received an “instant coupon.” The value of the coupon was varied between
+$1 and $5 and randomly assigned to the selected customers. We can use
+logistic regression to estimate the effect of the coupon on purchase of
+a newly released DVD. Customers who received the coupon and purchased
+the DVD are identified in the data by the variable <code>buy</code>.
+Because the variable we want to predict is binary (<code>buy</code> =
+<code>yes</code> if the customer purchased the DVD and <code>buy</code>
+= <code>no</code> if she did not), logistic regression is
+appropriate.</p>
+<p>To keep the example simple, we use only information on the value of
+the coupon customers received. Hence, <code>buy</code> is our response
+variable and <code>coupon</code> is our explanatory (or predictor)
+variable.</p>
 <p align="center">
 <img src="figures_model/logistic_dvd.png">
 </p>
-<p>The regression output shows that coupon value is a statistically significant predictor of customer purchase. The coefficient from the logistic regression is 0.701 and the odds ratio is equal to 2.015 (i.e., <span class="math inline">\(e^{0.701}\)</span>). Because the odds ratio is larger than 1, a higher coupon value is associated with higher odds of purchase. Also, because the p.value for the coefficient is smaller than 0.05 we conclude that (1) the coefficient is statistically significantly different from 0 and (2) the odds ratio is statistically significantly different from 1. An odds ratio of 1 is equivalent to a coefficient estimate of 0 in a linear regression and implies that the explanatory (or predictor) variable has no effect on the response variable. The estimated odds ratio of 2.015 suggests that the odds of purchase increase by 101.6% for each dollar increase in coupon value.</p>
+<p>The regression output shows that coupon value is a statistically
+significant predictor of customer purchase. The coefficient from the
+logistic regression is 0.701 and the odds ratio is equal to 2.015 (i.e.,
+<span class="math inline">\(e^{0.701}\)</span>). Because the odds ratio
+is larger than 1, a higher coupon value is associated with higher odds
+of purchase. Also, because the p.value for the coefficient is smaller
+than 0.05 we conclude that (1) the coefficient is statistically
+significantly different from 0 and (2) the odds ratio is statistically
+significantly different from 1. An odds ratio of 1 is equivalent to a
+coefficient estimate of 0 in a linear regression and implies that the
+explanatory (or predictor) variable has no effect on the response
+variable. The estimated odds ratio of 2.015 suggests that the odds of
+purchase increase by 101.6% for each dollar increase in coupon
+value.</p>
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If a plot was created it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If a plot was created it can be customized using <code>ggplot2</code>
+commands or with <code>gridExtra</code>. See example below and
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;coef&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Coefficient plot&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank"><em>Model &gt; Logistic regression</em></a>.</p>
-<p>The key functions used in the <code>logistic</code> tool are <code>glm</code> from the <code>stats</code> package and <code>vif</code> and <code>linearHypothesis</code> from the <code>car</code> package.</p>
+<p>For an overview of related R-functions used by Radiant to estimate a
+logistic regression model see
+<a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank"><em>Model
+&gt; Logistic regression</em></a>.</p>
+<p>The key functions used in the <code>logistic</code> tool are
+<code>glm</code> from the <code>stats</code> package and
+<code>vif</code> and <code>linearHypothesis</code> from the
+<code>car</code> package.</p>
 </div>
 
 

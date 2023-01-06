@@ -474,105 +474,265 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Model &gt; Estimate &gt; Multinomial logistic regression (MNL)</h1>
+<h1 class="title toc-ignore">Model &gt; Estimate &gt; Multinomial
+logistic regression (MNL)</h1>
 
 </div>
 
 
 <hr />
 <blockquote>
-<p>Estimate a Multinomial logistic regression (MNL) for classification</p>
+<p>Estimate a Multinomial logistic regression (MNL) for
+classification</p>
 </blockquote>
 <div id="functionality" class="section level3">
 <h3>Functionality</h3>
-<p>To estimate a Multinomial logistic regression (MNL) we require a categorical response variable with two or more levels and one or more explanatory variables. We also need to specify the level of the response variable to be used as the <em>base</em> for comparison. In the example data file, <code>ketchup</code>, we could assign <code>heinz28</code> as the base level by selecting it from the <code>Choose level</code> dropdown in the <em>Summary</em> tab.</p>
-<p>To access the <code>ketchup</code> dataset go to <em>Data &gt; Manage</em>, select <code>examples</code> from the <code>Load data of type</code> dropdown, and press the <code>Load</code> button. Then select the <code>ketchup</code> dataset.</p>
-<p>In the <em>Summary</em> tab we can test if two or more variables together improve the fit of a model by selecting them in the <code>Variables to test</code> dropdown. This functionality can be very useful to evaluate the overall influence of a variable of type <code>factor</code> with three or more levels.</p>
+<p>To estimate a Multinomial logistic regression (MNL) we require a
+categorical response variable with two or more levels and one or more
+explanatory variables. We also need to specify the level of the response
+variable to be used as the <em>base</em> for comparison. In the example
+data file, <code>ketchup</code>, we could assign <code>heinz28</code> as
+the base level by selecting it from the <code>Choose level</code>
+dropdown in the <em>Summary</em> tab.</p>
+<p>To access the <code>ketchup</code> dataset go to <em>Data &gt;
+Manage</em>, select <code>examples</code> from the
+<code>Load data of type</code> dropdown, and press the <code>Load</code>
+button. Then select the <code>ketchup</code> dataset.</p>
+<p>In the <em>Summary</em> tab we can test if two or more variables
+together improve the fit of a model by selecting them in the
+<code>Variables to test</code> dropdown. This functionality can be very
+useful to evaluate the overall influence of a variable of type
+<code>factor</code> with three or more levels.</p>
 <p>Additional output that requires re-estimation:</p>
 <ul>
-<li>Standardize: Relative risk ratios (RRRs) can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data for multinomial logistic regression by replacing all explanatory variables <span class="math inline">\(X\)</span> by <span class="math inline">\((X - mean(X))/(2 \times sd(X))\)</span>. See <a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion.</li>
-<li>Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects</li>
-<li>Stepwise: A data-mining approach to select the best fitting model. Use with caution!</li>
+<li>Standardize: Relative risk ratios (RRRs) can be hard to compare if
+the explanatory variables are measured on different scales. By
+standardizing the explanatory variables before estimation we can see
+which variables move-the-needle most. Radiant standardizes data for
+multinomial logistic regression by replacing all explanatory variables
+<span class="math inline">\(X\)</span> by <span class="math inline">\((X
+- mean(X))/(2 \times sd(X))\)</span>. See
+<a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf" target="_blank">Gelman
+2008</a> for discussion.</li>
+<li>Center: Replace all explanatory variables X by X - mean(X). This can
+be useful when trying to interpret interaction effects</li>
+<li>Stepwise: A data-mining approach to select the best fitting model.
+Use with caution!</li>
 </ul>
 <p>Additional output that does not require re-estimation:</p>
 <ul>
 <li>Confidence intervals: Coefficient confidence intervals</li>
 <li>RRRs: Relative Risk Ratios with confidence intervals</li>
-<li>Confusion: A confusion matrix that shows the (lack) of consistency between (1) the actual classes observed in the data and (2) the classes predicted as most likely by the model</li>
+<li>Confusion: A confusion matrix that shows the (lack) of consistency
+between (1) the actual classes observed in the data and (2) the classes
+predicted as most likely by the model</li>
 </ul>
 </div>
 <div id="example-choice-of-ketchup" class="section level3">
 <h3>Example: Choice of ketchup</h3>
-<p>As an example we will use a dataset on choice behavior for 300 individuals in a panel of households in Springfield, Missouri (USA). The data captures information on 2,798 purchase occasions over a period of approximately 2 years and includes the follow variables:</p>
+<p>As an example we will use a dataset on choice behavior for 300
+individuals in a panel of households in Springfield, Missouri (USA). The
+data captures information on 2,798 purchase occasions over a period of
+approximately 2 years and includes the follow variables:</p>
 <ul>
 <li>id: Individual identifier</li>
 <li>choice: One of heinz41, heinz32, heinz28, hunts32</li>
 <li>price.x: Price of product x</li>
 <li>disp.x: Is there a display for product x (yes or no)?</li>
-<li>feat.x: Is there a newspaper feature advertisement for product x (yes or no)?</li>
+<li>feat.x: Is there a newspaper feature advertisement for product x
+(yes or no)?</li>
 </ul>
-<p>The screenshot of the <em>Data &gt; Pivot</em> tab shown below indicates that <code>heinz32</code> is the most popular choice option, followed by <code>heinz28</code>. <code>heinz41</code> and <code>hunts32</code> are much less common choices among the household panel members.</p>
+<p>The screenshot of the <em>Data &gt; Pivot</em> tab shown below
+indicates that <code>heinz32</code> is the most popular choice option,
+followed by <code>heinz28</code>. <code>heinz41</code> and
+<code>hunts32</code> are much less common choices among the household
+panel members.</p>
 <p align="center">
 <img src="figures_model/mnl_choice_shares.png">
 </p>
-<p>Suppose we want to investigate how prices of the different products influence the choice of ketchup brand and package size. In the <em>Model &gt; Multinomial logistic regression (MNL) &gt; Summary</em> tab select <code>choice</code> as the response variable and <code>heinz28</code> from the <strong>Choose base level</strong> dropdown menu. Select <code>price.heinz28</code> through <code>price.hunts32</code> as the explanatory variables. In the screenshot below we see that most, but not all, of the coefficients have very small p.values and that the model has some predictive power (p.value for the chi-squared statistic &lt; .001). The left-most output column shows which product a coefficient applies to. For example, the 2nd row of coefficients and statistics captures the effect of changes in <code>price.heinz28</code> on the choice of <code>heinz32</code> relative to the base product (i.e., <code>heinz28</code>). If consumers see <code>heinz28</code> and <code>heinz32</code> as substitutes, which seems likely, we would expect that an increase in <code>price.heinz28</code> would lead to an increase in the odds that a consumer chooses <code>heinz32</code> rather than <code>heinz28</code>.</p>
-<p>Unfortunately the coefficients from a multinomial logistic regression model are difficult to interpret directly. The <code>RRR</code> column, however, provides estimates of Relative-Risk-Ratios (or odds) that are easier to work with. The <code>RRR</code> values are the exponentiated coefficients from the regression (i.e., $exp(1.099) = 3.000). We see that the <code>risk</code> (or odds) of buying <code>heinz32</code> rather than <code>heinz28</code> is 3 times higher after a $1 increase in <code>price.heinz28</code>, keeping all other variables in the model constant.</p>
+<p>Suppose we want to investigate how prices of the different products
+influence the choice of ketchup brand and package size. In the <em>Model
+&gt; Multinomial logistic regression (MNL) &gt; Summary</em> tab select
+<code>choice</code> as the response variable and <code>heinz28</code>
+from the <strong>Choose base level</strong> dropdown menu. Select
+<code>price.heinz28</code> through <code>price.hunts32</code> as the
+explanatory variables. In the screenshot below we see that most, but not
+all, of the coefficients have very small p.values and that the model has
+some predictive power (p.value for the chi-squared statistic &lt; .001).
+The left-most output column shows which product a coefficient applies
+to. For example, the 2nd row of coefficients and statistics captures the
+effect of changes in <code>price.heinz28</code> on the choice of
+<code>heinz32</code> relative to the base product (i.e.,
+<code>heinz28</code>). If consumers see <code>heinz28</code> and
+<code>heinz32</code> as substitutes, which seems likely, we would expect
+that an increase in <code>price.heinz28</code> would lead to an increase
+in the odds that a consumer chooses <code>heinz32</code> rather than
+<code>heinz28</code>.</p>
+<p>Unfortunately the coefficients from a multinomial logistic regression
+model are difficult to interpret directly. The <code>RRR</code> column,
+however, provides estimates of Relative-Risk-Ratios (or odds) that are
+easier to work with. The <code>RRR</code> values are the exponentiated
+coefficients from the regression (i.e., $exp(1.099) = 3.000). We see
+that the <code>risk</code> (or odds) of buying <code>heinz32</code>
+rather than <code>heinz28</code> is 3 times higher after a $1 increase
+in <code>price.heinz28</code>, keeping all other variables in the model
+constant.</p>
 <p align="center">
 <img src="figures_model/mnl_summary.png">
 </p>
-<p>For each of the explanatory variables the following null and alternate hypotheses can be formulated:</p>
+<p>For each of the explanatory variables the following null and
+alternate hypotheses can be formulated:</p>
 <ul>
-<li>H0: The relative risk ratio associated with explanatory variable x is equal to 1</li>
-<li>Ha: The relative risk ratio associated with explanatory variable x is not equal to 1</li>
+<li>H0: The relative risk ratio associated with explanatory variable x
+is equal to 1</li>
+<li>Ha: The relative risk ratio associated with explanatory variable x
+is not equal to 1</li>
 </ul>
-<p>A selected set of relative risk ratios from the multinomial logistic regression can be interpreted as follows:</p>
+<p>A selected set of relative risk ratios from the multinomial logistic
+regression can be interpreted as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>                         RRR coefficient std.error z.value p.value    </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> heinz32 price.heinz32 <span class="fl">0.101</span>      <span class="sc">-</span><span class="fl">2.296</span>     <span class="fl">0.135</span> <span class="sc">-</span><span class="fl">17.033</span>  <span class="sc">&lt;</span> .<span class="dv">001</span> <span class="sc">**</span><span class="er">*</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> hunts32 price.heinz28 <span class="fl">3.602</span>       <span class="fl">1.282</span>     <span class="fl">0.126</span>  <span class="fl">10.200</span>  <span class="sc">&lt;</span> .<span class="dv">001</span> <span class="sc">**</span><span class="er">*</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> hunts32 price.hunts32 <span class="fl">0.070</span>      <span class="sc">-</span><span class="fl">2.655</span>     <span class="fl">0.208</span> <span class="sc">-</span><span class="fl">12.789</span>  <span class="sc">&lt;</span> .<span class="dv">001</span> <span class="sc">**</span><span class="er">*</span></span></code></pre></div>
 <ul>
-<li>The RRR for a $1 increase in <code>price.heinz32</code> on the relative odds or purchasing <code>heinz32</code> rather than <code>heinz28</code> is 0.101. If the price for <code>heinz32</code> increased by $1, the odds of purchasing <code>heinz32</code> rather than <code>heinz28</code> would decrease by a factor of 0.101, or decrease by 89.9%, while holding all other variables in the model constant.</li>
-<li>The RRR for a $1 increase in <code>price.heinz28</code> on the relative odds or purchasing <code>hunts32</code> rather than <code>heinz28</code> is 3.602. If the price for <code>heinz28</code> increased by $1, the odds of purchasing <code>hunts32</code> rather than <code>heinz28</code> would increase by a factor of 3.602, or increase by 260.2%, while holding all other variables in the model constant.</li>
-<li>The RRR for a $1 increase in <code>price.hunts32</code> on the relative odds or purchasing <code>hunts32</code> rather than <code>heinz28</code> is 0.070. If the price for <code>hunts32</code> increased by $1, the odds of purchasing <code>hunts32</code> rather than <code>heinz28</code> would decrease by a factor of 0.070, or decrease by 93%, while holding all other variables in the model constant.</li>
+<li>The RRR for a $1 increase in <code>price.heinz32</code> on the
+relative odds or purchasing <code>heinz32</code> rather than
+<code>heinz28</code> is 0.101. If the price for <code>heinz32</code>
+increased by $1, the odds of purchasing <code>heinz32</code> rather than
+<code>heinz28</code> would decrease by a factor of 0.101, or decrease by
+89.9%, while holding all other variables in the model constant.</li>
+<li>The RRR for a $1 increase in <code>price.heinz28</code> on the
+relative odds or purchasing <code>hunts32</code> rather than
+<code>heinz28</code> is 3.602. If the price for <code>heinz28</code>
+increased by $1, the odds of purchasing <code>hunts32</code> rather than
+<code>heinz28</code> would increase by a factor of 3.602, or increase by
+260.2%, while holding all other variables in the model constant.</li>
+<li>The RRR for a $1 increase in <code>price.hunts32</code> on the
+relative odds or purchasing <code>hunts32</code> rather than
+<code>heinz28</code> is 0.070. If the price for <code>hunts32</code>
+increased by $1, the odds of purchasing <code>hunts32</code> rather than
+<code>heinz28</code> would decrease by a factor of 0.070, or decrease by
+93%, while holding all other variables in the model constant.</li>
 </ul>
-<p>The other <code>RRRs</code> estimated in the model can be interpreted similarly.</p>
-<p>In addition to the numerical output provided in the <em>Summary</em> tab we can also evaluate the link between <code>choice</code> and the prices of each of the four products visually (see <em>Plot</em> tab). In the screenshot below we see a coefficient (or rather an RRR) plot with confidence intervals. We see the following patterns:</p>
+<p>The other <code>RRRs</code> estimated in the model can be interpreted
+similarly.</p>
+<p>In addition to the numerical output provided in the <em>Summary</em>
+tab we can also evaluate the link between <code>choice</code> and the
+prices of each of the four products visually (see <em>Plot</em> tab). In
+the screenshot below we see a coefficient (or rather an RRR) plot with
+confidence intervals. We see the following patterns:</p>
 <ul>
-<li>When <code>price.heinz28</code> increases by $1 the relative purchase odds for <code>heinz32</code>, <code>heinz41</code>, and <code>hunts32</code> increase significantly</li>
-<li>When <code>price.heinz32</code> increases, the odds of purchase for <code>heinz32</code> compared to <code>heinz28</code> decrease significantly. We see the same pattern for <code>heinz41</code> and <code>hunts32</code> when their prices increase</li>
-<li><code>hunts32</code> is the only product to see a significant improvement in purchase odds relative to <code>heinz28</code> from an increase in <code>price.heinz32</code></li>
+<li>When <code>price.heinz28</code> increases by $1 the relative
+purchase odds for <code>heinz32</code>, <code>heinz41</code>, and
+<code>hunts32</code> increase significantly</li>
+<li>When <code>price.heinz32</code> increases, the odds of purchase for
+<code>heinz32</code> compared to <code>heinz28</code> decrease
+significantly. We see the same pattern for <code>heinz41</code> and
+<code>hunts32</code> when their prices increase</li>
+<li><code>hunts32</code> is the only product to see a significant
+improvement in purchase odds relative to <code>heinz28</code> from an
+increase in <code>price.heinz32</code></li>
 </ul>
 <p align="center">
 <img src="figures_model/mnl_plot.png">
 </p>
-<p>Probabilities, are often more convenient for interpretation than coefficients or RRRs from a multinomial logistic regression model. We can use the <em>Predict</em> tab to predict probabilities for each of the different response variable levels given specific values for the selected explanatory variable(s). First, select the type of input for prediction using the <code>Prediction input type</code> dropdown. Choose either an existing dataset for prediction (“Data”) or specify a command (“Command”) to generate the prediction inputs. If you choose to enter a command, you must specify at least one variable and one value in the <strong>Prediction command</strong> box to get a prediction. If you do not specify a value for each of the variables in the model either the mean value or the most frequently observed level will be used. It is only possible to predict probabilities based on variables used in the model. For example, <code>price.heinz32</code> must be one of the selected explanatory variables to predict the probability of choosing to buy <code>heinz32</code> when priced at $3.80.</p>
+<p>Probabilities, are often more convenient for interpretation than
+coefficients or RRRs from a multinomial logistic regression model. We
+can use the <em>Predict</em> tab to predict probabilities for each of
+the different response variable levels given specific values for the
+selected explanatory variable(s). First, select the type of input for
+prediction using the <code>Prediction input type</code> dropdown. Choose
+either an existing dataset for prediction (“Data”) or specify a command
+(“Command”) to generate the prediction inputs. If you choose to enter a
+command, you must specify at least one variable and one value in the
+<strong>Prediction command</strong> box to get a prediction. If you do
+not specify a value for each of the variables in the model either the
+mean value or the most frequently observed level will be used. It is
+only possible to predict probabilities based on variables used in the
+model. For example, <code>price.heinz32</code> must be one of the
+selected explanatory variables to predict the probability of choosing to
+buy <code>heinz32</code> when priced at $3.80.</p>
 <ul>
-<li>To predict the probability of choosing any the four products when a display for <code>hunts32</code> is available in stores type <code>disp.hunts32 = "yes"</code> as the command and press enter</li>
-<li>To predict choice probabilities when <code>heinz41</code> is (not) on display and (not) featured type <code>disp.heinz41 = c("yes", "no"), feat.heinz41 = c("yes", "no")</code> and press enter</li>
-<li>To see how choice probabilities change for each of the products as <code>price.heinz28</code> increases type <code>price.heinz28 = seq(3.40, 5.20, 0.1)</code> and press enter. See screenshot below.</li>
+<li>To predict the probability of choosing any the four products when a
+display for <code>hunts32</code> is available in stores type
+<code>disp.hunts32 = "yes"</code> as the command and press enter</li>
+<li>To predict choice probabilities when <code>heinz41</code> is (not)
+on display and (not) featured type
+<code>disp.heinz41 = c("yes", "no"), feat.heinz41 = c("yes", "no")</code>
+and press enter</li>
+<li>To see how choice probabilities change for each of the products as
+<code>price.heinz28</code> increases type
+<code>price.heinz28 = seq(3.40, 5.20, 0.1)</code> and press enter. See
+screenshot below.</li>
 </ul>
 <p align="center">
 <img src="figures_model/mnl_predict.png">
 </p>
-<p>The figure above shows that the probability of purchase drops sharply for <code>heinz28</code> as <code>price.heinz28</code> increases. <code>heinz32</code>, the most popular option in the data, is predicted to see a large increase in purchase probability following an increase in <code>price.heinz28</code>. Although the predicted increase in purchase probability for <code>hunts32</code> does not look as impressive in the graph compared to the effect on <code>heinz32</code>, the relative predicted increase is larger (i.e., 3.2% to 8.4% for <code>hunts32</code> versus 39.3% to 72.8% for <code>heinz32</code>).</p>
-<p>For a more comprehensive assessment of the impact of price changes for each of the four products on purchase probabilities we can generate a full table of predictions by selecting <code>Data</code> from the <code>Prediction input type</code> dropdown in the <em>Predict</em> tab and selecting <code>ketchup</code> from the <code>Predict data</code> dropdown. You can also create a dataset for input in <em>Data &gt; Transform</em> using <code>Expand grid</code> or in a spreadsheet and then paste it into Radiant using the <em>Data &gt; Manage</em> tab.</p>
-<p>Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the prediction table. To add predictions to the dataset used for estimation, click the <code>Store</code> button.</p>
-<p>Note that MNL models generate as many columns of probabilities as there are levels in the categorical response variable (i.e., four in the ketchup data). If you want to add only the predictions for the first level (i.e., <code>heinz28</code>) to the dataset used for estimation, provide only one name in the <code>Store predictions</code> input. If you want to store predictions for all ketchup products, enter four variable names, separated by a comma.</p>
+<p>The figure above shows that the probability of purchase drops sharply
+for <code>heinz28</code> as <code>price.heinz28</code> increases.
+<code>heinz32</code>, the most popular option in the data, is predicted
+to see a large increase in purchase probability following an increase in
+<code>price.heinz28</code>. Although the predicted increase in purchase
+probability for <code>hunts32</code> does not look as impressive in the
+graph compared to the effect on <code>heinz32</code>, the relative
+predicted increase is larger (i.e., 3.2% to 8.4% for
+<code>hunts32</code> versus 39.3% to 72.8% for
+<code>heinz32</code>).</p>
+<p>For a more comprehensive assessment of the impact of price changes
+for each of the four products on purchase probabilities we can generate
+a full table of predictions by selecting <code>Data</code> from the
+<code>Prediction input type</code> dropdown in the <em>Predict</em> tab
+and selecting <code>ketchup</code> from the <code>Predict data</code>
+dropdown. You can also create a dataset for input in <em>Data &gt;
+Transform</em> using <code>Expand grid</code> or in a spreadsheet and
+then paste it into Radiant using the <em>Data &gt; Manage</em> tab.</p>
+<p>Once the desired predictions have been generated they can be saved to
+a CSV file by clicking the download icon on the top right of the
+prediction table. To add predictions to the dataset used for estimation,
+click the <code>Store</code> button.</p>
+<p>Note that MNL models generate as many columns of probabilities as
+there are levels in the categorical response variable (i.e., four in the
+ketchup data). If you want to add only the predictions for the first
+level (i.e., <code>heinz28</code>) to the dataset used for estimation,
+provide only one name in the <code>Store predictions</code> input. If
+you want to store predictions for all ketchup products, enter four
+variable names, separated by a comma.</p>
 <blockquote>
-<p>Note: We ignored <a href="https://en.wikipedia.org/wiki/Endogeneity_(econometrics)" target="blank">endogeneity concerns</a> in the above discussion. Suppose, for example, that <code>price.heinz28</code> changes due to changes in the quality of <code>heinz28</code>. Changes in quality effect the price and, likely, also demand for the product. Unless we control in some way for these changes in quality, the estimated effects of price changes are likely to be incorrect (i.e., biased).</p>
+<p>Note: We ignored
+<a href="https://en.wikipedia.org/wiki/Endogeneity_(econometrics)" target="blank">endogeneity
+concerns</a> in the above discussion. Suppose, for example, that
+<code>price.heinz28</code> changes due to changes in the quality of
+<code>heinz28</code>. Changes in quality effect the price and, likely,
+also demand for the product. Unless we control in some way for these
+changes in quality, the estimated effects of price changes are likely to
+be incorrect (i.e., biased).</p>
 </blockquote>
 </div>
 <div id="report-rmd" class="section level3">
 <h3>Report &gt; Rmd</h3>
-<p>Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report &gt; Rmd</em></a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing <code>ALT-enter</code> on your keyboard.</p>
-<p>If a plot was created, it can be customized using <code>ggplot2</code> commands or with <code>gridExtra</code>. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data &gt; Visualize</em></a> for details.</p>
+<p>Add code to
+<a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
+&gt; Rmd</em></a> to (re)create the analysis by clicking the
+<i title="report results" class="fa fa-edit"></i> icon on the bottom
+left of your screen or by pressing <code>ALT-enter</code> on your
+keyboard.</p>
+<p>If a plot was created, it can be customized using
+<code>ggplot2</code> commands or with <code>gridExtra</code>. See
+example below and
+<a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
+&gt; Visualize</em></a> for details.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;coef&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Coefficient plot&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>
-<p>For an overview of related R-functions used by Radiant to estimate a multinomial logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-multinomial-logistic-regression" target="_blank"><em>Model &gt; Multinomial logistic regression</em></a>.</p>
-<p>The key functions used in the <code>mnl</code> tool are <code>multinom</code> from the <code>nnet</code> package and <code>linearHypothesis</code> from the <code>car</code> package.</p>
+<p>For an overview of related R-functions used by Radiant to estimate a
+multinomial logistic regression model see
+<a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-multinomial-logistic-regression" target="_blank"><em>Model
+&gt; Multinomial logistic regression</em></a>.</p>
+<p>The key functions used in the <code>mnl</code> tool are
+<code>multinom</code> from the <code>nnet</code> package and
+<code>linearHypothesis</code> from the <code>car</code> package.</p>
 </div>
 
 
