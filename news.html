@@ -13,7 +13,7 @@
 
 <title>News</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -489,13 +489,13 @@ means that code generated and used in the Radiant browser interface can
 now more easily be used without the browser interface as well (e.g., in
 R or Rmarkdown documents). As an example, code you generate through
 <em>Data &gt; Transform</em> will now look like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> <span class="fu">mutate</span>(diamonds, <span class="at">carat_ln =</span> <span class="fu">log</span>(carat))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> <span class="fu">mutate</span>(diamonds, <span class="at">carat_ln =</span> <span class="fu">log</span>(carat))</span></code></pre></div>
 <p>instead of this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>r_data[[<span class="st">&quot;diamonds&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">mutate</span>(r_data[[<span class="st">&quot;diamonds&quot;</span>]], <span class="at">carat_ln =</span> <span class="fu">log</span>(carat))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>r_data[[<span class="st">&quot;diamonds&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">mutate</span>(r_data[[<span class="st">&quot;diamonds&quot;</span>]], <span class="at">carat_ln =</span> <span class="fu">log</span>(carat))</span></code></pre></div>
 <p>You can add also any data.frame (or tibble) you create in <em>Report
 &gt; Rmd</em>, e.g., by loading from disk, to the <code>Datasets</code>
 dropdown by adding a line with:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">register</span>(<span class="st">&quot;my_data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">register</span>(<span class="st">&quot;my_data&quot;</span>)</span></code></pre></div>
 <p>The updates also effect code for adding residuals and predictions to
 a dataset. The <code>store</code> command below is now similar in
 structure to dplyr’s mutate (i.e., pass a data.frame and add a column).
@@ -503,15 +503,15 @@ The advantage of using the <code>store</code> function in the example
 below is that it will automatically assign values to the correct index
 in the dataset, even if a filter is used or there are missing
 values.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">logistic</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  titanic,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rvar =</span> <span class="st">&quot;survived&quot;</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;pclass&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="st">&quot;sibsp&quot;</span>),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">lev =</span> <span class="st">&quot;Yes&quot;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">pred_data =</span> titanic)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>titanic <span class="ot">&lt;-</span> <span class="fu">store</span>(titanic, pred, <span class="at">name =</span> <span class="st">&quot;pred_logit&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">logistic</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  titanic,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="at">rvar =</span> <span class="st">&quot;survived&quot;</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;pclass&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="st">&quot;sibsp&quot;</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  <span class="at">lev =</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="fu">summary</span>(result)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">pred_data =</span> titanic)</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>titanic <span class="ot">&lt;-</span> <span class="fu">store</span>(titanic, pred, <span class="at">name =</span> <span class="st">&quot;pred_logit&quot;</span>)</span></code></pre></div>
 <p>If you open an <em>old</em> state file in Radiant and try to knit a
 report in <em>Report &gt; Rmd</em> you will likely see a pop-up that
 will ask if you want to <em>clean</em> the code. If you click the
@@ -567,7 +567,7 @@ class="uri">http://radiant-rstats.github.io/radiant.multivariate/news/</a></li>
 </ul>
 <p>To get the latest version of all Radiant components run the command
 below:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/update.R&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 

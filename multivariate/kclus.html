@@ -13,7 +13,7 @@
 
 <title>Multivariate &gt; Cluster &gt; K-clustering</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -566,7 +566,7 @@ the <em>Data &gt; Transform</em> menu. Select the <code>kclus</code>
 variable in the Select column(s) box. Then select <code>Recode</code>
 from the <code>Transform type</code> dropdown. In the recode box type
 (or paste) the command below and press return:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="ot">=</span> <span class="st">&#39;Therapeutic&#39;</span>; <span class="dv">2</span> <span class="ot">=</span> <span class="st">&#39;Uninvolved&#39;</span>; <span class="dv">3</span> <span class="ot">=</span> <span class="st">&#39;Cosmetic&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="dv">1</span> <span class="ot">=</span> <span class="st">&#39;Therapeutic&#39;</span>; <span class="dv">2</span> <span class="ot">=</span> <span class="st">&#39;Uninvolved&#39;</span>; <span class="dv">3</span> <span class="ot">=</span> <span class="st">&#39;Cosmetic&#39;</span></span></code></pre></div>
 <p>This should produce the output shown below. After verifying the
 results are as expected, click the <code>Store</code> button to add the
 recoded variable to the toothpaste dataset.</p>
@@ -576,8 +576,8 @@ recoded variable to the toothpaste dataset.</p>
 <p>We can profile these segments with demographic data using cross-tabs
 (e.g., gender vs segment membership). Go to <em>Basics &gt; Tables &gt;
 Cross-tabs</em>. Our null hypothesis and alternative hypothesis are:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>H0<span class="sc">:</span> There is no relationship between gender and segment membership</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Ha<span class="sc">:</span> There is a relationship between gender and segment membership</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>H0<span class="sc">:</span> There is no relationship between gender and segment membership</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>Ha<span class="sc">:</span> There is a relationship between gender and segment membership</span></code></pre></div>
 <p>In the <em>Summary</em> tab we see there is a significant association
 between these two variables. The p.value is .001 and there are no cells
 with expected values below 5 (see the help file for <em>Basics &gt;
@@ -625,8 +625,8 @@ keyboard.</p>
 commands or with <code>patchwork</code>. See example below and
 <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
 &gt; Visualize</em></a> for details.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;bar&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;K-means Cluster Analysis&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;bar&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;K-means Cluster Analysis&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>

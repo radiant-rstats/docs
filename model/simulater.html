@@ -13,7 +13,7 @@
 
 <title>Model &gt; Decide &gt; Simulate</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -706,23 +706,23 @@ help file for <em>Data &gt; View</em>).</p>
 <li>Create a new variable z that is the difference between variables x
 and y</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">-</span> y</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">-</span> y</span></code></pre></div>
 <ul>
 <li>Create a new <code>logical</code> variable z that takes on the value
 TRUE when x &gt; y and FALSE otherwise</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">&gt;</span> y</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">&gt;</span> y</span></code></pre></div>
 <ul>
 <li>Create a new <code>logical</code> z that takes on the value TRUE
 when x is equal to y and FALSE otherwise</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">==</span> y</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">==</span> y</span></code></pre></div>
 <ul>
 <li>The command above is equivalent to the one below using
 <code>ifelse</code>. Note the similarity to <code>if</code> statements
 in Excel</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">ifelse</span>(x <span class="sc">&lt;</span> y, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">ifelse</span>(x <span class="sc">&lt;</span> y, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span></code></pre></div>
 <ul>
 <li><code>ifelse</code> statements can be used to create more complex
 (numeric) variables as well. In the example below, z will take on the
@@ -731,16 +731,16 @@ to 1. Finally, when x is 60, 100, or between 60 and 100, z is set to 2.
 <strong>Note:</strong> make sure to include the appropriate number of
 opening <code>(</code> and closing <code>)</code> brackets!</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">ifelse</span>(x <span class="sc">&lt;</span> <span class="dv">60</span>, <span class="dv">0</span>, <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> <span class="dv">100</span>, <span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">ifelse</span>(x <span class="sc">&lt;</span> <span class="dv">60</span>, <span class="dv">0</span>, <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> <span class="dv">100</span>, <span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
 <ul>
 <li>To create a new variable z that is a transformation of variable x
 but with mean equal to zero:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">-</span> <span class="fu">mean</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">-</span> <span class="fu">mean</span>(x)</span></code></pre></div>
 <ul>
 <li>To create a new variable z that shows the absolute values of x:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">abs</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">abs</span>(x)</span></code></pre></div>
 <ul>
 <li>To find the value for <code>price</code> that maximizes
 <code>profit</code> use the <code>find_max</code> command. In this
@@ -748,7 +748,7 @@ example <code>price</code> could be a random or
 <code>Sequence variable</code>. There is also a <code>find_min</code>
 command.</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>optimal_price <span class="ot">=</span> <span class="fu">find_max</span>(profit, price)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>optimal_price <span class="ot">=</span> <span class="fu">find_max</span>(profit, price)</span></code></pre></div>
 <ul>
 <li>To determine the minimum (maximum) value for each pair of values
 across multiple variables (e.g., x and y) use the functions
@@ -756,7 +756,7 @@ across multiple variables (e.g., x and y) use the functions
 take on the value of x when x is larger than y and take on the value of
 y otherwise.</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">pmax</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">pmax</span>(x, y)</span></code></pre></div>
 <p>See the table below for an example:</p>
 <table class="table table-condensed table-hover" style="width:40%;">
 <thead>
@@ -838,7 +838,7 @@ across different vectors. See
 <a href="https://radiant-rstats.github.io/radiant.data/reference/pfun.html" target="_blank">https://radiant-rstats.github.io/radiant.data/reference/pfun.html</a>
 for more information.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">psum</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">psum</span>(x, y)</span></code></pre></div>
 <p>See the table below for an example:</p>
 <table class="table table-condensed table-hover" style="width:40%;">
 <thead>
@@ -932,7 +932,7 @@ above). <code>Boeing</code>, <code>GM</code>, and <code>Exxon</code> are
 names of variables in a data-set included in the simulation using a
 <code>Data</code> input (see above).</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Pstdev <span class="ot">=</span> <span class="fu">sdw</span>(f, g, <span class="dv">1</span><span class="sc">-</span>f<span class="sc">-</span>g, Boeing, GM, Exxon)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>Pstdev <span class="ot">=</span> <span class="fu">sdw</span>(f, g, <span class="dv">1</span><span class="sc">-</span>f<span class="sc">-</span>g, Boeing, GM, Exxon)</span></code></pre></div>
 <p>For an example of how the simulate tool could be used for portfolio
 optimization see the state-file available for download
 <a href="https://radiant-rstats.github.io/docs/examples/investment-3stocks.state.rda">here</a></p>
@@ -1038,7 +1038,7 @@ simulated daily profits across 365 repetitions so we select
 <p>To determine, the probability that annual profits are below $36,500
 we enter the formula below into the
 <code>Repeated simulation formula</code> text input.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>profit_365 <span class="ot">=</span> profit_sum <span class="sc">&lt;</span> <span class="dv">36500</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>profit_365 <span class="ot">=</span> profit_sum <span class="sc">&lt;</span> <span class="dv">36500</span></span></code></pre></div>
 <p>Note that <code>profit_sum</code> is the <code>sum</code> of repeated
 simulations of the <code>profit</code> variable defined in the
 <em>Simulate</em> tab. When you are done with the input values click the
@@ -1106,8 +1106,8 @@ keyboard.</p>
 commands or with <code>patchwork</code>. See example below and
 <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
 &gt; Visualize</em></a> for details.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Simulation plots&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Simulation plots&quot;</span>)</span></code></pre></div>
 </div>
 <div id="r-functions" class="section level3">
 <h3>R-functions</h3>

@@ -13,7 +13,7 @@
 
 <title>Data &gt; Visualize</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -617,12 +617,12 @@ the
 <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank"><em>Report
 &gt; Rmd</em></a> tab. Notice that <code>custom</code> is set to
 <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">xvar =</span> <span class="st">&quot;carat&quot;</span>, <span class="at">type =</span> <span class="st">&quot;scatter&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;A scatterplot&quot;</span>, </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Price in $&quot;</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Carats&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">xvar =</span> <span class="st">&quot;carat&quot;</span>, <span class="at">type =</span> <span class="st">&quot;scatter&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;A scatterplot&quot;</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Price in $&quot;</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Carats&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  )</span></code></pre></div>
 <p>The default resolution for plots is 144 dots per inch (dpi). You can
 change this setting up or down in <em>Report &gt; Rmd</em>. For example,
 the code-chunk header below ensures the plot will be 7” wide, 3.5” tall,
@@ -670,14 +670,14 @@ or <code>+ labs(fill = "New legend title")</code></li>
 Visualize</em> using the <code>Diamond</code> data. To add a title above
 the group of plots and impose a one-column layout we could use
 <code>patchwork</code> as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">visualize</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  diamonds, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>, </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;bar&quot;</span>, </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>) </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Three bar plots&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">visualize</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  diamonds, </span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), </span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;bar&quot;</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>) </span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Three bar plots&quot;</span>)</span></code></pre></div>
 <p>See the <a href="https://patchwork.data-imaginist.com">patchwork
 documentation site</a> for additional information on how to customize
 groups of plots.</p>
@@ -688,17 +688,17 @@ groups of plots.</p>
 interactive graphics using the <code>plotly</code> library. After
 setting <code>custom = TRUE</code> you can use the <code>ggplotly</code>
 function to convert a single plot. See example below:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;price&quot;</span>, <span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplotly</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">render</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;price&quot;</span>, <span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="fu">ggplotly</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="fu">render</span>()</span></code></pre></div>
 <p>If more than one plot is created, you can use the
 <code>subplot</code> function from the <code>plotly</code> package.
 Provide a value for the <code>nrows</code> argument to setup the plot
 layout grid. In the example below four plots are created. Because
 <code>nrow = 2</code> the plots will be displayed in a 2 X 2 grid.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subplot</span>(<span class="at">nrows =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">render</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="fu">subplot</span>(<span class="at">nrows =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="fu">render</span>()</span></code></pre></div>
 <p>For additional information on the <code>plotly</code> library see the
 links below:</p>
 <ul>

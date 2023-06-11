@@ -13,7 +13,7 @@
 
 <title>Data &gt; Combine</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -816,11 +816,11 @@ inner join with the venn-diagram below:</p>
 <img src="figures/inner_join.png">
 </p>
 <p>The R(adiant) commands are:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Radiant</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;inner_join&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Radiant</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;inner_join&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">inner_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="left-join-superheroes-publishers" class="section level3">
@@ -981,11 +981,11 @@ with the venn-diagram below:</p>
 <img src="figures/left_join.png">
 </p>
 <p>The R(adiant) commands are:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Radiant</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;left_join&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Radiant</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;left_join&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">left_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="right-join-superheroes-publishers" class="section level3">
@@ -1150,11 +1150,11 @@ with the venn-diagram below:</p>
 <img src="figures/right_join.png">
 </p>
 <p>The R(adiant) commands are:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Radiant</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;right_join&quot;</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Radiant</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;right_join&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">right_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="full-join-superheroes-publishers" class="section level3">
@@ -1332,11 +1332,11 @@ visualize a full join with the venn-diagram below:</p>
 <img src="figures/full_join.png">
 </p>
 <p>The R(adiant) commands are:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Radiant</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;full_join&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Radiant</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;full_join&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="fu">full_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
 </div>
 <div id="semi-join-superheroes-publishers" class="section level3">
 <h3>Semi join (superheroes, publishers)</h3>
@@ -1452,11 +1452,11 @@ DC
 <p>We get a similar table as with <code>inner_join</code> but it
 contains only the variables in <code>superheroes</code>. The R(adiant)
 commands are:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Radiant</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;semi_join&quot;</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">semi_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Radiant</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">combine_data</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>, <span class="at">type =</span> <span class="st">&quot;semi_join&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="fu">semi_join</span>(superheroes, publishers, <span class="at">by =</span> <span class="st">&quot;publisher&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="anti-join-superheroes-publishers" class="section level3">
@@ -1982,11 +1982,11 @@ The new datasets has 14 rows and 4 columns. Due to a coding error in the
 an <em>Avenger</em>) there is a duplicate row in the new combined
 dataset. Something we probably don’t want.</p>
 <p>The R(adiant) commands are:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Radiant</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">combine_data</span>(avengers, superheroes, <span class="at">type =</span> <span class="st">&quot;bind_rows&quot;</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(avengers, superheroes)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Radiant</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">combine_data</span>(avengers, superheroes, <span class="at">type =</span> <span class="st">&quot;bind_rows&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">bind_rows</span>(avengers, superheroes)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="bind-columns" class="section level3">

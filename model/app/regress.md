@@ -334,7 +334,7 @@ $$
   \end{aligned}
 $$
 
-For the semi-log model $100 \times\:(exp(c)-1)$ is the percentage change in sales when the product is on display. Similarly, for a \$10 increase in price we would expect a $100 \times\:(exp(b \times 10)-1)$ increase in sales, keeping other variables constant.
+For the semi-log model $100 \times \: (exp(c)-1)$ is the percentage change in sales when the product is on display. Similarly, for a \$10 increase in price we would expect a $100 \times \: (exp(b \times 10)-1)$ increase in sales, keeping other variables constant.
 
 #### Coefficient interpretation for a log-log model
 

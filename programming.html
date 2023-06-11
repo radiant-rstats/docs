@@ -13,7 +13,7 @@
 
 <title>Programming with Radiant</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -517,10 +517,10 @@ generated in Radiant. When you install and load Radiant it exports
 functions that can be called from R-code and/or an Rmarkdown document.
 For example, you can paste the commands below into the command console
 to get the same output as in the browser interface.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(radiant)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds, <span class="at">package =</span> <span class="st">&quot;radiant.data&quot;</span>, <span class="at">envir =</span> <span class="fu">environment</span>())</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">single_mean</span>(diamonds, <span class="st">&quot;price&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(radiant)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">data</span>(diamonds, <span class="at">package =</span> <span class="st">&quot;radiant.data&quot;</span>, <span class="at">envir =</span> <span class="fu">environment</span>())</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">single_mean</span>(diamonds, <span class="st">&quot;price&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
 <pre><code>Single mean test
 Data      : diamonds 
 Variable  : price 
@@ -535,20 +535,20 @@ Alt. hyp. : the mean of price is not equal to 0
  3907.186 72.243  54.084  &lt; .001 2999 3765.535 4048.837 ***
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
 <p><img src="programming_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>You can also call functions for visualization (see below) and access
 help from the console using <code>?visualize</code></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  diamonds,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">xvar =</span> <span class="st">&quot;carat&quot;</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;scatter&quot;</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">facet_row =</span> <span class="st">&quot;clarity&quot;</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;clarity&quot;</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">labs =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Diamond Prices ($)&quot;</span>),</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">FALSE</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">visualize</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  diamonds,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="at">xvar =</span> <span class="st">&quot;carat&quot;</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;scatter&quot;</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>  <span class="at">facet_row =</span> <span class="st">&quot;clarity&quot;</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;clarity&quot;</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  <span class="at">labs =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Diamond Prices ($)&quot;</span>),</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="programming_files/figure-html/scatter-1.png" width="480" /></p>
 <p>As an example, you can render the <a
 href="https://radiant-rstats.github.io/docs/examples/single_mean.Rmd"><code>single_mean.Rmd</code></a>
@@ -558,9 +558,9 @@ href="https://radiant-rstats.github.io/docs/examples/radiant_rcode.R"><code>radi
 for a more extensive example.</p>
 <p>To install Radiant with complete documentation for offline access,
 open R(studio) and copy-and-paste the commands below:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(radiant)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">library</span>(radiant)</span></code></pre></div>
 <p>This will install and load the library and the required packages. To
 see the index of functions currently available in, for example,
 Radiant’s Model menu use the
@@ -572,13 +572,13 @@ analysis is conducted in function <code>single_mean</code>. Calling the
 <code>summary</code> method on the result object will show tabular
 output. Calling <code>plot</code> on the same result object will produce
 relevant plots.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">single_mean</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  mtcars,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">var =</span> <span class="st">&quot;mpg&quot;</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">comp_value =</span> <span class="dv">20</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">single_mean</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  mtcars,</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="at">var =</span> <span class="st">&quot;mpg&quot;</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="at">comp_value =</span> <span class="dv">20</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
 <pre><code>Single mean test
 Data      : mtcars 
 Variable  : mpg 
@@ -593,17 +593,17 @@ Alt. hyp. : the mean of mpg is &gt; 20
  0.091 1.065   0.085   0.466 31 18.284  Inf  
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;hist&quot;</span>, <span class="st">&quot;simulate&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;hist&quot;</span>, <span class="st">&quot;simulate&quot;</span>))</span></code></pre></div>
 <p><img src="programming_files/figure-html/single_mean_mpg-1.png" width="480" /></p>
 <p>To compare the mean price of diamonds across different levels of
 clarity we can call the <code>compare_means</code> function:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">compare_means</span>(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  diamonds,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">var1 =</span> <span class="st">&quot;clarity&quot;</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">var2 =</span> <span class="st">&quot;price&quot;</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">adjust =</span> <span class="st">&quot;bonf&quot;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">compare_means</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  diamonds,</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="at">var1 =</span> <span class="st">&quot;clarity&quot;</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="at">var2 =</span> <span class="st">&quot;price&quot;</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="at">adjust =</span> <span class="st">&quot;bonf&quot;</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>)</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
 <pre><code>Pairwise mean comparisons (t-test)
 Data      : diamonds 
 Variables : clarity, price 
@@ -652,7 +652,7 @@ Adjustment: Bonferroni
  VVS1 = IF     VVS1 not equal to IF      196.763 1          
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;bar&quot;</span>, <span class="st">&quot;density&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;bar&quot;</span>, <span class="st">&quot;density&quot;</span>))</span></code></pre></div>
 <p><img src="programming_files/figure-html/compare_means_diamonds-1.png" width="384" /></p>
 <p>To get help for the <code>single_mean</code> and
 <code>compare_means</code> functions use <code>?single_mean</code> and
@@ -672,14 +672,14 @@ then clicking <code>Stop</code>. The datasets loaded through the
 web-interface are now available in the <code>r_data</code> environment
 as well. To use them directly in your code use
 <code>attach(r_data)</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## start radiant in Rstudio, load the example data, then click the power icon and Stop</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="do">## start radiant in Rstudio, load the example data, then click the power icon and Stop</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant</span>()</span></code></pre></div>
 <p>Because we already loaded the radiant library we already have access
 to all the data we need here. Lets use the <code>compare_means</code>
 function to evaluate salary data for professors of different ranks
 using:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">compare_means</span>(salary, <span class="at">var1 =</span> <span class="st">&quot;rank&quot;</span>, <span class="at">var2 =</span> <span class="st">&quot;salary&quot;</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">compare_means</span>(salary, <span class="at">var1 =</span> <span class="st">&quot;rank&quot;</span>, <span class="at">var2 =</span> <span class="st">&quot;salary&quot;</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
 <pre><code>Pairwise mean comparisons (t-test)
 Data      : salary 
 Variables : rank, salary 
@@ -698,7 +698,7 @@ Adjustment: None
  AssocProf = Prof       AssocProf not equal to Prof       -32895.67 &lt; .001  ***
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
 <p><img src="programming_files/figure-html/compare_means_salary-1.png" width="384" /></p>
 <p>An alternative way to write this code is to use <code>piping</code>
 (see <a
@@ -706,12 +706,12 @@ href="https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html"
 and <a
 href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a>
 vignettes):</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>salary <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">compare_means</span>(<span class="st">&quot;rank&quot;</span>, <span class="st">&quot;salary&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(.)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(.)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>salary <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">compare_means</span>(<span class="st">&quot;rank&quot;</span>, <span class="st">&quot;salary&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  {</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>    <span class="fu">summary</span>(.)</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>    <span class="fu">plot</span>(.)</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  }</span></code></pre></div>
 <pre><code>Pairwise mean comparisons (t-test)
 Data      : . 
 Variables : rank, salary 
@@ -733,8 +733,8 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <p><img src="programming_files/figure-html/compare_means_salary_piped-1.png" width="384" /></p>
 <p>We can also run regressions and get output in a format that would
 require many lines of code to produce from scratch:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">regress</span>(diamonds, <span class="at">rvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result, <span class="at">sum_check =</span> <span class="st">&quot;confint&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">regress</span>(diamonds, <span class="at">rvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>))</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="fu">summary</span>(result, <span class="at">sum_check =</span> <span class="st">&quot;confint&quot;</span>)</span></code></pre></div>
 <pre><code>Linear regression (OLS)
 Data     : diamonds 
 Response variable    : price 
@@ -769,8 +769,8 @@ clarity|VS1     4461.956  4060.801  4863.111 401.155
 clarity|VVS2    5109.476  4697.311  5521.640 412.165
 clarity|VVS1    5027.669  4607.574  5447.764 420.095
 clarity|IF      5265.170  4807.024  5723.317 458.147</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">pred_cmd =</span> <span class="st">&quot;carat = 1:10&quot;</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pred, <span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">pred_cmd =</span> <span class="st">&quot;carat = 1:10&quot;</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">print</span>(pred, <span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>Linear regression (OLS)
 Data                 : diamonds 
 Response variable    : price 
@@ -789,9 +789,9 @@ Prediction command   : carat = 1:10
      SI1     8  64331.781 63609.787 65053.775 721.994
      SI1     9  72769.811 71948.301 73591.322 821.511
      SI1    10  81207.842 80286.667 82129.017 921.175</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;coef&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;coef&quot;</span>)</span></code></pre></div>
 <p><img src="programming_files/figure-html/regress_coeff-1.png" width="576" /></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;dashboard&quot;</span>, <span class="at">lines =</span> <span class="st">&quot;line&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;dashboard&quot;</span>, <span class="at">lines =</span> <span class="st">&quot;line&quot;</span>)</span></code></pre></div>
 <p><img src="programming_files/figure-html/regress_dashboard-1.png" width="480" /></p>
 <p>As another example, imagine that you want to segment a sample of
 respondents based on their toothpaste attitudes. Below is the required
@@ -799,11 +799,11 @@ code to produce results using functions from the Radiant package. For
 help on the commands and options for cluster analysis use
 <code>?hclus</code>, <code>?plot.hclus</code>, and <code>?klus</code>.
 See also the Radiant function manuals linked above.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## run hierarchical cluster analysis on the shopping data, variables v1 through v6</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">hclus</span>(shopping, <span class="st">&quot;v1:v6&quot;</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="do">## summary - not much here - plots are more important</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="do">## run hierarchical cluster analysis on the shopping data, variables v1 through v6</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">hclus</span>(shopping, <span class="st">&quot;v1:v6&quot;</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="do">## summary - not much here - plots are more important</span></span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
 <pre><code>Hierarchical cluster analysis
 Data        : shopping 
 Variables   : v1, v2, v3, v4, v5, v6 
@@ -811,20 +811,20 @@ Method      : ward.D
 Distance    : sq.euclidian 
 Standardize : TRUE 
 Observations: 20 </code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">## check the help file on how to plot results from hierarchical cluster</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="do">## analysis default plots</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="do">## it looks like there is a big jump in overall within-cluster</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="do">## heterogeneity in the step from 3 to 2 segments</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="do">## check the help file on how to plot results from hierarchical cluster</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="do">## analysis default plots</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="do">## it looks like there is a big jump in overall within-cluster</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="do">## heterogeneity in the step from 3 to 2 segments</span></span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
 <p><img src="programming_files/figure-html/hclus-1.png" width="384" /></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## show the dendrogram with cutoff at 0.05</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;dendro&quot;</span>, <span class="at">cutoff =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="do">## show the dendrogram with cutoff at 0.05</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;dendro&quot;</span>, <span class="at">cutoff =</span> <span class="fl">0.05</span>)</span></code></pre></div>
 <p><img src="programming_files/figure-html/dendro-1.png" width="384" /></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">## plots created above suggest 3 clusters may be  most appropriate</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="do">## use kclus to create the clusters</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="do">## generate output and store cluster membership</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">kclus</span>(shopping, <span class="at">vars =</span> <span class="st">&quot;v1:v6&quot;</span>, <span class="at">nr_clus =</span> <span class="dv">3</span>)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="do">## plots created above suggest 3 clusters may be  most appropriate</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="do">## use kclus to create the clusters</span></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="do">## generate output and store cluster membership</span></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">kclus</span>(shopping, <span class="at">vars =</span> <span class="st">&quot;v1:v6&quot;</span>, <span class="at">nr_clus =</span> <span class="dv">3</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="fu">summary</span>(result)</span></code></pre></div>
 <pre><code>K-means cluster analysis
 Data         : shopping 
 Variables    : v1, v2, v3, v4, v5, v6 
@@ -849,12 +849,12 @@ Cluster 3 33.71%
 
 Between cluster heterogeneity accounts for 73.93% of the
 total heterogeneity in the data (higher is better)</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;density&quot;</span>, <span class="st">&quot;bar&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;density&quot;</span>, <span class="st">&quot;bar&quot;</span>))</span></code></pre></div>
 <p><img src="programming_files/figure-html/kclus-1.png" width="480" /></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>shopping <span class="ot">&lt;-</span> <span class="fu">store</span>(shopping, result, <span class="at">name =</span> <span class="st">&quot;clus&quot;</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="do">## was the data really changed?</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>shopping</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>shopping <span class="ot">&lt;-</span> <span class="fu">store</span>(shopping, result, <span class="at">name =</span> <span class="st">&quot;clus&quot;</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="do">## was the data really changed?</span></span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>shopping</span></code></pre></div>
 <pre><code># A tibble: 20 × 8
       id    v1    v2    v3    v4    v5    v6 clus 
    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;

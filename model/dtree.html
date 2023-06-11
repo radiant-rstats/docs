@@ -13,7 +13,7 @@
 
 <title>Model &gt; Decide &gt; Decision analysis</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -545,27 +545,27 @@ section and cannot contain any R-commands. In the
 adapted version of the <code>Sign contract</code> example that uses more
 variables and a formula is shown below.</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Sign contract</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">legal fees</span><span class="kw">:</span><span class="at"> </span><span class="dv">5000</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">P(small)</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.3</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">P(medium)</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.6</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">P(large)</span><span class="kw">:</span><span class="at"> 1 - P(small) - P(medium)</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> decision</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Sign with Movie Company</span><span class="kw">:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cost</span><span class="kw">:</span><span class="at"> legal fees</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> chance</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Small Box Office</span><span class="kw">:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">p</span><span class="kw">:</span><span class="at"> P(small)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">200000</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Medium Box Office</span><span class="kw">:</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">p</span><span class="kw">:</span><span class="at"> P(medium)</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">1000000</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Large Box Office</span><span class="kw">:</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">p</span><span class="kw">:</span><span class="at"> P(large)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">3000000</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">Sign with TV Network</span><span class="kw">:</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">900000</span></span></code></pre></div>
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Sign contract</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="at">    </span><span class="fu">legal fees</span><span class="kw">:</span><span class="at"> </span><span class="dv">5000</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="at">    </span><span class="fu">P(small)</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.3</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="at">    </span><span class="fu">P(medium)</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.6</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="at">    </span><span class="fu">P(large)</span><span class="kw">:</span><span class="at"> 1 - P(small) - P(medium)</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">type</span><span class="kw">:</span><span class="at"> decision</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">Sign with Movie Company</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="at">    </span><span class="fu">cost</span><span class="kw">:</span><span class="at"> legal fees</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> chance</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="at">    </span><span class="fu">Small Box Office</span><span class="kw">:</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="at">        </span><span class="fu">p</span><span class="kw">:</span><span class="at"> P(small)</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="at">        </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">200000</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="at">    </span><span class="fu">Medium Box Office</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="at">        </span><span class="fu">p</span><span class="kw">:</span><span class="at"> P(medium)</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="at">        </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">1000000</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="at">    </span><span class="fu">Large Box Office</span><span class="kw">:</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="at">        </span><span class="fu">p</span><span class="kw">:</span><span class="at"> P(large)</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="at">        </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">3000000</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="fu">Sign with TV Network</span><span class="kw">:</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="at">    </span><span class="fu">payoff</span><span class="kw">:</span><span class="at"> </span><span class="dv">900000</span></span></code></pre></div>
 <p>To reference another (sub)tree use the <code>dtree</code> function in
 the <code>variables</code> section and the name of the (sub)tree. For
 example, suppose you want to include a tree (“tuesday_tree”) that
@@ -573,8 +573,8 @@ evaluates a pricing decision on Tuesday into a tree that evaluates a
 pricing decision on Monday. The start of the <code>variables</code>
 section might look as follows:</p>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tuesday_emv</span><span class="kw">:</span><span class="at"> dtree(&quot;tuesday_tree&quot;)</span></span></code></pre></div>
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="at">  </span><span class="fu">tuesday_emv</span><span class="kw">:</span><span class="at"> dtree(&quot;tuesday_tree&quot;)</span></span></code></pre></div>
 <p>Then in the Monday tree you would refer to <code>tuesday_emv</code>
 in spots where you need the EMV from Tuesday’s pricing decision.</p>
 <div id="rules-for-decision-tree-input" class="section level2">
@@ -847,12 +847,12 @@ the plot to a png file</li>
 <code>ggplot2</code> commands (see example below). See
 <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
 &gt; Visualize</em></a> for details.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sensitivity</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  result, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">vars =</span> <span class="st">&quot;legal fees 0 100000 1000;&quot;</span>, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">decs =</span> <span class="fu">c</span>(<span class="st">&quot;Sign with Movie Company&quot;</span>, <span class="st">&quot;Sign with TV Network&quot;</span>), </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">&quot;Based on example created by ...&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">sensitivity</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  result, </span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="at">vars =</span> <span class="st">&quot;legal fees 0 100000 1000;&quot;</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="at">decs =</span> <span class="fu">c</span>(<span class="st">&quot;Sign with Movie Company&quot;</span>, <span class="st">&quot;Sign with TV Network&quot;</span>), </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">&quot;Based on example created by ...&quot;</span>)</span></code></pre></div>
 </div>
 <div id="the-decision-tree-editor" class="section level2">
 <h2>The decision tree editor</h2>

@@ -13,7 +13,7 @@
 
 <title>Model &gt; Estimate &gt; Linear regression (OLS)</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -1015,10 +1015,10 @@ keyboard.</p>
 commands or with <code>patchwork</code>. See example below and
 <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank"><em>Data
 &gt; Visualize</em></a> for details.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">regress</span>(diamonds, <span class="at">rvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(result)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;scatter&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Scatter plots&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">regress</span>(diamonds, <span class="at">rvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">summary</span>(result)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;scatter&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Scatter plots&quot;</span>)</span></code></pre></div>
 </div>
 <div id="video-tutorials" class="section level3">
 <h3>Video Tutorials</h3>
@@ -1196,11 +1196,11 @@ by:</p>
   &amp;= e^c - 1
   \end{aligned}
 \]</span></p>
-<p>For the semi-log model <span class="math inline">\(100
-\times\:(exp(c)-1)\)</span> is the percentage change in sales when the
-product is on display. Similarly, for a $10 increase in price we would
-expect a <span class="math inline">\(100 \times\:(exp(b \times
-10)-1)\)</span> increase in sales, keeping other variables constant.</p>
+<p>For the semi-log model <span class="math inline">\(100 \times \:
+(exp(c)-1)\)</span> is the percentage change in sales when the product
+is on display. Similarly, for a $10 increase in price we would expect a
+<span class="math inline">\(100 \times \: (exp(b \times 10)-1)\)</span>
+increase in sales, keeping other variables constant.</p>
 </div>
 <div id="coefficient-interpretation-for-a-log-log-model"
 class="section level4">

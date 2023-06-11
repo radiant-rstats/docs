@@ -13,7 +13,7 @@
 
 <title>Radiant – Business analytics using R and Shiny</title>
 
-<script src="libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -583,24 +583,24 @@ href="https://posit.co/download/rstudio-server/">Rstudio</a></li>
 version of Radiant for Windows or Mac, with complete documentation for
 off-line access, open R(studio) and copy-and-paste the command
 below:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span></code></pre></div>
 <p>Once all packages are installed, select <code>Start radiant</code>
 from the <code>Addins</code> menu in Rstudio or use the command below to
 launch the app:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant</span>()</span></code></pre></div>
 <p>To launch Radiant in Rstudio’s viewer pane use the command below:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant_viewer</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant_viewer</span>()</span></code></pre></div>
 <p>To launch Radiant in an Rstudio Window use the command below:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant_window</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>radiant<span class="sc">::</span><span class="fu">radiant_window</span>()</span></code></pre></div>
 <p>To easily update Radiant and the required packages, install the
 <code>radiant.update</code> package using:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;radiant-rstats/radiant.update&quot;</span>, <span class="at">upgrade =</span> <span class="st">&quot;never&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;radiant-rstats/radiant.update&quot;</span>, <span class="at">upgrade =</span> <span class="st">&quot;never&quot;</span>)</span></code></pre></div>
 <p>Then select <code>Update radiant</code> from the <code>Addins</code>
 menu in Rstudio or use the command below:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>()</span></code></pre></div>
 <p>See the <a
 href="https://radiant-rstats.github.io/docs/install.html">installing
 radiant</a> page additional for details.</p>
@@ -680,8 +680,8 @@ application.</p>
 <p>You can also host Radiant using <a
 href="https://posit.co/download/shiny-server/">shiny-server</a>. First,
 install radiant on the server using the command below:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span></code></pre></div>
 <p>Then clone the
 <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a>
 repo and point shiny-server to the <code>inst/app/</code> directory. As
@@ -695,8 +695,8 @@ place you can change these settings by adding the following lines to
 <code>.Rprofile</code> for the <code>shiny</code> user on the
 server.</p>
 <div class="sourceCode" id="cb8"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span><span class="er">(</span><span class="ex">radiant.maxRequestSize</span> = <span class="at">-1</span><span class="kw">)</span>  <span class="co">## no file size limit</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span><span class="er">(</span><span class="ex">radiant.report</span> = TRUE<span class="kw">)</span></span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">options</span><span class="er">(</span><span class="ex">radiant.maxRequestSize</span> = <span class="at">-1</span><span class="kw">)</span>  <span class="co">## no file size limit</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">options</span><span class="er">(</span><span class="ex">radiant.report</span> = TRUE<span class="kw">)</span></span></code></pre></div>
 </div>
 <div id="running-radiant-in-the-cloud-e.g.-aws" class="section level2">
 <h2>Running Radiant in the cloud (e.g., AWS)</h2>
@@ -748,7 +748,7 @@ if there is a value for an input of that name in a list called
 <code>numericInput</code> is given below where the
 <code>state_init</code> function from <code>radiant.R</code> is used to
 check if a value from <code>r_state</code> can be used.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">numericInput</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="st">&quot;Comparison value:&quot;</span>, <span class="fu">state_init</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">numericInput</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="st">&quot;Comparison value:&quot;</span>, <span class="fu">state_init</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="dv">0</span>))</span></code></pre></div>
 </div>
 <div id="source-code" class="section level2">
 <h2>Source code</h2>
