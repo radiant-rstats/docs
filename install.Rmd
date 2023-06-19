@@ -26,7 +26,7 @@ We recommend you use or [Chrome](https://www.google.com/chrome) or [Microsoft's 
 
 ## Installing R, Rstudio, and Radiant on macOS
 
-* If you have a mac with an Intel Chip (models prior to late 2020), download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/</a>
+* If you have a mac with an Intel Chip (models prior to late 2020), download and install R 4.2.3, which is the final release supported for Intel Macs, from <a href="https://cloud.r-project.org/bin/macosx/base/R-4.2.3.pkg" target="_blank">https://cloud.r-project.org/bin/macosx/base/R-4.2.3.pkg</a>
 * If you have a mac with an ARM chip (models launched after 2020), download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/big-sur-arm64/</a> 
 
 Double click on the .pkg file to install and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
