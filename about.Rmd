@@ -9,7 +9,7 @@ title: Radiant -- Business analytics using R and Shiny
 <!-- [![Travis-CI Build Status](https://travis-ci.org/vnijs/radiant.png?branch=master)](https://travis-ci.org/vnijs/radiant) -->
 `r sprintf("Version: %s, Date: %s", packageVersion("radiant"), packageDescription("radiant", fields = "Date"))`
 
-Built using <a href="https://shiny.rstudio.com/" target="_blank">Shiny</a> by <a href="https://rstudio.com/" target="_blank">Rstudio</a>. The full source code is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>
+Built using <a href="https://shiny.posit.co/" target="_blank">Shiny</a> by <a href="https://posit.co/" target="_blank">Rstudio</a>. The full source code is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>
 
 ## Package dependencies
 
@@ -20,7 +20,7 @@ devtools::source_url("https://raw.githubusercontent.com/radiant-rstats/minicran/
 <details>
 <summary>Citing packages</summary>
 ```{r echo=FALSE, comment=NA}
-  for (i in c("radiant", pkgs)) print(citation(i))
+for (i in c("radiant", pkgs)) print(citation(i))
 ```
 </details>
 

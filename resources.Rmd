@@ -18,7 +18,7 @@ title: R resources
 
 <http://www.dataschool.io/dplyr-tutorial-part-2/>
 
-<https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf>
+<https://posit.co/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf>
 
 <http://rpubs.com/bradleyboehmke/data_wrangling>
 

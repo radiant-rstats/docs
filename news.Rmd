@@ -66,7 +66,7 @@ https://github.com/radiant-rstats/radiant/issues
  
 ***
 
-Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://shiny.rstudio.com/) package.
+Radiant is a platform-independent browser-based interface for business analytics in [R](https://www.r-project.org/), based on the [Shiny](https://shiny.posit.co/) package.
 
 Blog posts about Radiant are available at <a href="http://vnijs.github.io/blog/" target = "_blank">http://vnijs.github.io/blog/</a>
 

@@ -1,6 +1,6 @@
 ## Radiant: Business analytics using R and Shiny
 
-Interactive business analytics using [R](https://www.r-project.org/) and [Shiny](https://shiny.rstudio.com/). Developed by <a href="https://rady.ucsd.edu/faculty-research/faculty/vincent-nijs.html" target="_blank">Vincent Nijs</a>. You can reach me at radiant@rady.ucsd.edu. Full source code for Radiant is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>.
+Interactive business analytics using [R](https://www.r-project.org/) and [Shiny](https://shiny.posit.co/). Developed by <a href="https://rady.ucsd.edu/faculty-research/faculty/vincent-nijs.html" target="_blank">Vincent Nijs</a>. You can reach me at radiant@rady.ucsd.edu. Full source code for Radiant is available on <a href="https://github.com/radiant-rstats" target="_blank">GitHub</a>.
 
 ## License
 
@@ -11,4 +11,4 @@ The documentation, images, and videos for the `radiant.data` package are license
 
 If you are interested in using any of the radiant packages please email me at radiant@rady.ucsd.edu
 
-&copy; Vincent Nijs (2022) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://github.com/radiant-rstats/radiant.data/blob/master/inst/app/www/imgs/by-sa.png" /></a>
+&copy; Vincent Nijs (2023) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://github.com/radiant-rstats/radiant.data/blob/master/inst/app/www/imgs/by-sa.png" /></a>
