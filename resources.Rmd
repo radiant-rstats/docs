@@ -18,8 +18,6 @@ title: R resources
 
 <http://www.dataschool.io/dplyr-tutorial-part-2/>
 
-<https://posit.co/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf>
-
 <http://rpubs.com/bradleyboehmke/data_wrangling>
 
 ## Parsing text data (regular expressions)
