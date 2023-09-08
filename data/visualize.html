@@ -13,7 +13,7 @@
 
 <title>Data &gt; Visualize</title>
 
-<script src="libs/header-attrs-2.22/header-attrs.js"></script>
+<script src="libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -670,14 +670,15 @@ or <code>+ labs(fill = "New legend title")</code></li>
 Visualize</em> using the <code>Diamond</code> data. To add a title above
 the group of plots and impose a one-column layout we could use
 <code>patchwork</code> as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">visualize</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  diamonds, </span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>), </span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>, </span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;bar&quot;</span>, </span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>) </span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Three bar plots&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">visualize</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  diamonds,</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>, <span class="st">&quot;color&quot;</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="at">yvar =</span> <span class="st">&quot;price&quot;</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;bar&quot;</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">wrap_plots</span>(plot_list, <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Three bar plots&quot;</span>)</span></code></pre></div>
 <p>See the <a href="https://patchwork.data-imaginist.com">patchwork
 documentation site</a> for additional information on how to customize
 groups of plots.</p>
@@ -688,7 +689,7 @@ groups of plots.</p>
 interactive graphics using the <code>plotly</code> library. After
 setting <code>custom = TRUE</code> you can use the <code>ggplotly</code>
 function to convert a single plot. See example below:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="fu">c</span>(<span class="st">&quot;price&quot;</span>, <span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>, <span class="st">&quot;cut&quot;</span>), <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">visualize</span>(diamonds, <span class="at">xvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">custom =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="fu">ggplotly</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="fu">render</span>()</span></code></pre></div>
 <p>If more than one plot is created, you can use the
