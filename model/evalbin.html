@@ -13,7 +13,7 @@
 
 <title>Model &gt; Evaluate &gt; Evaluate classification</title>
 
-<script src="libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -99,7 +99,7 @@ img.center {
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -720,8 +720,9 @@ generated in the <em>Predict</em> tab.</p>
 </div>
 </div>
 
-
-&copy; Vincent Nijs (2019) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0" src="/docs/images/by-nc-sa.png"/></a>
+&copy; Vincent Nijs (2024) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+  <im2024t="Creative Commons License" style="border-width: 0" src="/docs/images/by-nc-sa.png" />
+</a>
 
 <!-- some extra javascript for older browsers -->
 <script type="text/javascript" src="libs/polyfill.js"></script>
@@ -734,26 +735,28 @@ generated in the <em>Predict</em> tab.</p>
   // manage active state of menu based on current page
   $(document).ready(function () {
 
-      // active menu
-      href = window.location.pathname
-      href = href.substr(href.lastIndexOf('/') + 1)
-      $('a[href="' + href + '"]').parent().addClass('active');
+    // active menu
+    href = window.location.pathname
+    href = href.substr(href.lastIndexOf('/') + 1)
+    $('a[href="' + href + '"]').parent().addClass('active');
 
-      // manage active menu header
-      if (href.startsWith('authoring_'))
-        $('a[href="' + 'authoring' + '"]').parent().addClass('active');
-      else if (href.endsWith('_format.html'))
-        $('a[href="' + 'formats' + '"]').parent().addClass('active');
-      else if (href.startsWith('developer_'))
-        $('a[href="' + 'developer' + '"]').parent().addClass('active');
+    // manage active menu header
+    if (href.startsWith('authoring_'))
+      $('a[href="' + 'authoring' + '"]').parent().addClass('active');
+    else if (href.endsWith('_format.html'))
+      $('a[href="' + 'formats' + '"]').parent().addClass('active');
+    else if (href.startsWith('developer_'))
+      $('a[href="' + 'developer' + '"]').parent().addClass('active');
 
   });
 
   // Google analytics
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-61296577-2', 'auto');
   ga('send', 'pageview');

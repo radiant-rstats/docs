@@ -306,7 +306,7 @@ Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html"
 If a plot was created it can be customized using `ggplot2` commands or with `patchwork`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
 
 
-```r
+``` r
 plot(result, custom = TRUE) %>%
   wrap_plots(plot_list, ncol = 2) + plot_annotation(title = "Simulation plots")
 ```
