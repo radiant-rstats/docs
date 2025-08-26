@@ -49,13 +49,9 @@ Radiant focuses on business data and decisions. It offers tools, examples, and d
 
 ## How to install Radiant
 
-- Required: [R](https://cran.r-project.org/) version 4.0.0 or later
-- Required: [Rstudio](https://posit.co/download/rstudio-server/)
-
-In Rstudio you can start and update Radiant through the `Addins` menu at the top of the screen. To install the latest version of Radiant for Windows or Mac, with complete documentation for off-line access, open R(studio) and copy-and-paste the command below:
+See [installing radiant](https://radiant-rstats.github.io/docs/install.html) scripts to install R, Rstudio, and Radiant in Windows and macOS. This is the recommended approach. If you have used R and Rstudio before and already have them installed you can can use the command below to install radiant.
 
 ```r
-options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
 install.packages("radiant")
 ```
 
@@ -65,20 +61,7 @@ Once all packages are installed, select `Start radiant` from the `Addins` menu i
 radiant::radiant()
 ```
 
-To launch Radiant in Rstudio's viewer pane use the command below:
-
-```r
-radiant::radiant_viewer()
-```
-
-To launch Radiant in an Rstudio Window use the command below:
-
-```r
-radiant::radiant_window()
-```
-
-To easily update Radiant and the required packages, install the `radiant.update` package using:
-
+<!-- To easily update Radiant and the required packages, install the `radiant.update` package using:
 ```r
 options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
 install.packages("remotes")
@@ -93,7 +76,7 @@ radiant.update::radiant.update()
 
 See the [installing radiant](https://radiant-rstats.github.io/docs/install.html) page additional for details.
 
-**Optional:** You can also create a launcher on your Desktop to start Radiant by typing `radiant::launcher()` in the R(studio) console and pressing return. A file called `radiant.bat` (windows) or `radiant.command` (mac) will be created that you can double-click to start Radiant in your default browser. The `launcher` command will also create a file called `update_radiant.bat` (windows) or `update_radiant.command` (mac) that you can double-click to update Radiant to the latest release.
+**Optional:** You can also create a launcher on your Desktop to start Radiant by typing `radiant::launcher()` in the R(studio) console and pressing return. A file called `radiant.bat` (windows) or `radiant.command` (mac) will be created that you can double-click to start Radiant in your default browser. The `launcher` command will also create a file called `update_radiant.bat` (windows) or `update_radiant.command` (mac) that you can double-click to update Radiant to the latest release. -->
 
 When Radiant starts you will see data on diamond prices. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close (Chrome) or gray-out.
 
@@ -140,7 +123,7 @@ install.packages("radiant")
 
 Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and point shiny-server to the `inst/app/` directory. As a courtesy, please let me know if you intend to use Radiant on a server.
 
-When running Radiant on a server, by default, file uploads are limited to 10MB and R-code in _Report > Rmd_ and _Report > R_ will not be evaluated for security reasons. If you have `sudo` access to the server and have appropriate security in place you can change these settings by adding the following lines to `.Rprofile` for the `shiny` user on the server. 
+When running Radiant on a server, by default, file uploads are limited to 10MB and R-code in _Report > Rmd_ and _Report > R_ will not be evaluated for security reasons. If you have `sudo` access to the server and have appropriate security in place you can change these settings by adding the following lines to `.Rprofile` for the `shiny` user on the server.
 
 ```bash
 options(radiant.maxRequestSize = -1)  ## no file size limit
@@ -174,7 +157,6 @@ These tools are used in the _Business Analytics_, _Quantitative Analysis_, _Rese
 ## Credits
 
 Radiant would not be possible without [R](https://cran.r-project.org/) and [Shiny](https://shiny.posit.co/). I would like to thank [Joe Cheng](https://github.com/jcheng5), [Winston Chang](https://github.com/wch), and [Yihui Xie](https://github.com/yihui) for answering questions, providing suggestions, and creating amazing tools for the R community. Other key components used in Radiant are ggplot2, dplyr, tidyr, magrittr, broom, shinyAce, shinyFiles, rmarkdown, and DT. For an overview of other packages that Radiant relies on please see the <a href="https://radiant-rstats.github.io/docs/about.html" target="_blank">about</a> page.
-
 
 ## License
 

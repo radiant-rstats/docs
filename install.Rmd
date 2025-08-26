@@ -10,8 +10,6 @@ Radiant is a platform-independent browser-based interface for business analytics
 
 ## Installing R, Rstudio, and Radiant on Windows
 
-<!-- For Windows, download and run the all-in-one installer for <a href="https://rady.ucsd.edu/faculty/directory/vnijs/Rady-Radiant-Installer-Latest.exe">R, Rstudio, and Radiant</a>. If you see a warning message like the image shown below when you run the installer click on "More info" and then on "Run anyway". -->
-
 For Windows, download and run the all-in-one installer for <a href="https://download.rady.ucsd.edu/Rady-Radiant-Installer-Latest.exe">R, Rstudio, and Radiant</a>. If you see a warning message like the image shown below when you run the installer click on "More info" and then on "Run anyway".
 
 <img src="images/win-protected.png" width="300px">
@@ -26,13 +24,21 @@ We recommend you use or [Chrome](https://www.google.com/chrome) or [Microsoft's 
 
 ## Installing R, Rstudio, and Radiant on macOS
 
-* If you have a mac with an Intel Chip (models prior to late 2020), that can still run macOS Big Sur (11.7.10) or newer, download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/big-sur-x86_64/base/R-release.pkg" target="_blank">https://cloud.r-project.org/bin/macosx/big-sur-x86_64/</a>
+<!-- * If you have a mac with an Intel Chip (models prior to late 2020), that can still run macOS Big Sur (11.7.10) or newer, download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/big-sur-x86_64/base/R-release.pkg" target="_blank">https://cloud.r-project.org/bin/macosx/big-sur-x86_64/</a>
 * If you have a mac with an Intel Chip (models prior to late 2020), that cannot be upgraded to macOS Big Sur or newer, you may still be able to run Radiant if you can download and install R 4.2.3, from <a href="https://cloud.r-project.org/bin/macosx/base/R-4.2.3.pkg" target="_blank">https://cloud.r-project.org/bin/macosx/base/R-4.2.3.pkg</a>
 * If you have a mac with an ARM chip (models launched after 2020), with macOS Big Sur (11.7.10) or newer, download and install the latest version of R from <a href="https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-release.pkg" target="_blank">https://cran.r-project.org/bin/macosx/big-sur-arm64/</a>
 
-Double click on the .pkg file to install and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process:
+Double click on the .pkg file to install and follow the prompts. After R has been installed, open R, copy-and-paste the command below into R, and press return. Accept all default settings during the install process: -->
 
-```r
+To install R, Rstudio, and Radiant on macOS copy-and-paste the command below into the Terminal application and press the return key.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/vnijs/radiant_install/refs/heads/main/macos-install-radiant.sh | bash;
+```
+
+This script should install the latest versions of R, Rstudio, and Radiant. To run Radiant, open Rstudio and select "Start radiant (browser)" from the _Addins_ menu. If you don't see "Start radiant (browser)" in Rstudio you can try restarting Rstudio or running "radiant::radiant()" in the console in Rstudio (i.e., the window on the bottom-left in Rstudio).
+
+<!-- ```r
 source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/install.R")
 ```
 For a video tutorial see the `Installing R, Rstudio, and Radiant on macOS` video below:
@@ -43,9 +49,10 @@ For a video tutorial see the `Installing R, Rstudio, and Radiant on macOS` video
 
 ```bash
 sudo chown -R $(whoami):admin /usr/local/bin; R -e "tinytex::install_tinytex()"
-```
+``` -->
 
-## Installing R, Rstudio, and Radiant on Linux
+
+<!-- ## Installing R, Rstudio, and Radiant on Linux
 
 The first step will be to install R and a several additional linux tools. The commands required for Ubuntu 18.04 are shown below:
 
@@ -54,10 +61,10 @@ sudo apt-get update
 sudo apt-get install gpg-agent gdebi-core
 
 ## Appends the CRAN repository to your sources.list file
-sudo sh -c "echo 'deb http://cloud.r-project.org/bin/linux/ubuntu focal-cran40/' >> /etc/apt/sources.list" 
-sudo gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 
+sudo sh -c "echo 'deb http://cloud.r-project.org/bin/linux/ubuntu focal-cran40/' >> /etc/apt/sources.list"
+sudo gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add -
-sudo apt-get update 
+sudo apt-get update
 
 ## Install R and required linux tools
 sudo apt-get install r-base r-base-dev
@@ -92,7 +99,7 @@ or
 
 ```r
 sudo su -c "R -e 'radiant.update::radiant.update()'"
-```
+``` -->
 
 ## Starting, Stopping, and Updating Radiant
 
