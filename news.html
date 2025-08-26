@@ -109,6 +109,24 @@ img.center {
 
 pre {
   position: relative;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+  max-width: 100%;
+}
+
+pre code {
+  white-space: pre;
+  word-wrap: normal;
+  overflow-wrap: normal;
+  display: block;
+  padding-right: 60px; /* Leave space for copy button */
+}
+
+/* Ensure container doesn't exceed viewport */
+.code-container {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 </style>
