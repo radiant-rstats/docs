@@ -33,7 +33,7 @@ Double click on the .pkg file to install and follow the prompts. After R has bee
 To install R, Rstudio, and Radiant on macOS copy-and-paste the command below into the Terminal application and press the return key.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/vnijs/radiant_install/refs/heads/main/macos-install-radiant.sh | bash;
+curl -fsSL https://raw.githubusercontent.com/vnijs/radiant_install/refs/heads/main/macos-install-radiant.sh | bash
 ```
 
 This script should install the latest versions of R, Rstudio, and Radiant. To run Radiant, open Rstudio and select "Start radiant (browser)" from the _Addins_ menu. If you don't see "Start radiant (browser)" in Rstudio you can try restarting Rstudio or running "radiant::radiant()" in the console in Rstudio (i.e., the window on the bottom-left in Rstudio).

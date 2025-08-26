@@ -25,7 +25,8 @@ knitr::opts_chunk$set(
 docs_path <- setwd(".")
 if (basename(getwd()) != "docs") stop("Wrong working directory set")
 # docs_path <- setwd("~/gh/docs")
-system("make")
+res <- system("make")
+if (res != 0) stop("System call to 'make' failed with exit code ", res)
 
 knit_docs <- function(x) {
   setwd(file.path(docs_path, x, "app"))

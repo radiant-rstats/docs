@@ -73,10 +73,109 @@ img.center {
 }
 */
 
+/* Copy button styles */
+.code-container {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.code-container:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.copy-btn.copied {
+  background: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+pre {
+  position: relative;
+}
+
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 <link rel="shortcut icon" type="image/png" href="/docs/images/icon.png"/>
+
+<script>
+// Copy to clipboard functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Add copy buttons to all pre code blocks
+  const preElements = document.querySelectorAll('pre');
+
+  preElements.forEach(function(pre) {
+    // Create container
+    const container = document.createElement('div');
+    container.className = 'code-container';
+
+    // Insert container before pre element
+    pre.parentNode.insertBefore(container, pre);
+
+    // Move pre element into container
+    container.appendChild(pre);
+
+    // Create copy button
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn';
+    copyBtn.innerHTML = '<i class="fa fa-copy"></i> Copy';
+
+    // Add click event
+    copyBtn.addEventListener('click', function() {
+      const code = pre.querySelector('code') || pre;
+      const text = code.textContent;
+
+      navigator.clipboard.writeText(text).then(function() {
+        copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
+        copyBtn.classList.add('copied');
+
+        setTimeout(function() {
+          copyBtn.innerHTML = '<i class="fa fa-copy"></i> Copy';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
+        copyBtn.classList.add('copied');
+
+        setTimeout(function() {
+          copyBtn.innerHTML = '<i class="fa fa-copy"></i> Copy';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+
+    // Add button to container
+    container.appendChild(copyBtn);
+  });
+});
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -538,7 +637,7 @@ Double click on the .pkg file to install and follow the prompts. After R has bee
 command below into the Terminal application and press the return
 key.</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/vnijs/radiant_install/refs/heads/main/macos-install-radiant.sh <span class="kw">|</span> <span class="fu">bash</span><span class="kw">;</span></span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/vnijs/radiant_install/refs/heads/main/macos-install-radiant.sh <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
 <p>This script should install the latest versions of R, Rstudio, and
 Radiant. To run Radiant, open Rstudio and select “Start radiant
 (browser)” from the <em>Addins</em> menu. If you don’t see “Start
