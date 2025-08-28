@@ -10,7 +10,7 @@ Radiant is a platform-independent browser-based interface for business analytics
 
 ## Installing R, Rstudio, and Radiant on Windows
 
-For Windows, download and run the all-in-one installer for <a href="https://download.rady.ucsd.edu/Rady-Radiant-Installer-Latest.exe">R, Rstudio, and Radiant</a>. If you see a warning message like the image shown below when you run the installer click on "More info" and then on "Run anyway".
+<!-- For Windows, download and run the all-in-one installer for <a href="https://download.rady.ucsd.edu/Rady-Radiant-Installer-Latest.exe">R, Rstudio, and Radiant</a>. If you see a warning message like the image shown below when you run the installer click on "More info" and then on "Run anyway".
 
 <img src="images/win-protected.png" width="300px">
 
@@ -19,8 +19,15 @@ For a video tutorial see the `Install Radiant on Windows` video below:
 <iframe width="640" height="375" src="https://www.youtube.com/embed/ZNgwgosdNhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer and Greg Aujero (Rady School of Management @ UCSD) for updating the installer.
+ -->
 
-We recommend you use or [Chrome](https://www.google.com/chrome) or [Microsoft's Edge browser](https://www.microsoft.com/en-us/edge) or [Firefox](https://www.mozilla.org/en-US/firefox) as your default browser.
+To install R, Rstudio, and Radiant on Windows copy-and-paste the command below into Powershell and press the return key.
+
+```bash
+iwr -useb https://raw.githubusercontent.com/vnijs/radiant_install/main/windows-install -radiant.ps1 | iex
+```
+
+This script will install the latest versions of R, Rstudio, and Radiant-for-R. To run Radiant, open Rstudio and select "Start radiant (browser)" from the _Addins_ menu. If you don't see "Start radiant (browser)" in Rstudio you can try restarting Rstudio or running "radiant::radiant()" in the console in Rstudio (i.e., the window on the bottom-left in Rstudio).
 
 ## Installing R, Rstudio, and Radiant on macOS
 
@@ -101,10 +108,11 @@ or
 sudo su -c "R -e 'radiant.update::radiant.update()'"
 ``` -->
 
-## Starting, Stopping, and Updating Radiant
+## Starting and Stopping
 
-I recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the `Addins` menu at the top of the screen `Start radiant (browser)`. If for some reason the `Start radiant (browser)` is not shown in the dropdown, enter `radiant::radiant()` in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close or gray-out.
+We recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the `Addins` menu at the top of the screen `Start radiant (browser)`. If for some reason the `Start radiant (browser)` is not shown in the dropdown, enter `radiant::radiant()` in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close or gray-out.
 
+<!--
 To add an option to upgrade Radiant easily, use the commands below to install the `radiant.upgrade` package. You should now see two new item in the `Addins` dropdown that you can use for future radiant upgrades.
 
 ```r
@@ -113,7 +121,7 @@ install.packages("remotes")
 remotes::install_github("radiant-rstats/radiant.update", upgrade = "never")
 radiant.update::radiant.update()
 ```
-
+-->
 
 ## Sharing Rstudio projects with others
 
@@ -129,7 +137,6 @@ As an example, run the command below to download and open an Rstudio project. No
 ```r
 usethis::use_course("https://www.dropbox.com/sh/0dmcr2xsphtn1ha/AADsrYsi8KBkddWx_B-aQbi1a?dl=1")
 ```
-
 
 ## Documentation
 
@@ -151,8 +158,6 @@ Windows users may need to start R and Rstudio `as administrator`. On rare occasi
 ```r
 install.packages("package-that-is-not-yet-installed", repos = "https://cran.rstudio.com", type = "binary")
 ```
-
-
 
 Some users have reported that the Malwarebytes software can inappropriately block R-packages from being installed or updated. If you use Malwarebytes and are experiencing problems you can try (temporarily) turning it off during the install process or when upgrading.
 

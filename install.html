@@ -622,26 +622,26 @@ c:\users\myprofilename</p>
 <div id="installing-r-rstudio-and-radiant-on-windows"
 class="section level2">
 <h2>Installing R, Rstudio, and Radiant on Windows</h2>
-<p>For Windows, download and run the all-in-one installer for
-<a href="https://download.rady.ucsd.edu/Rady-Radiant-Installer-Latest.exe">R,
-Rstudio, and Radiant</a>. If you see a warning message like the image
-shown below when you run the installer click on “More info” and then on
-“Run anyway”.</p>
-<p><img src="images/win-protected.png" width="300px"></p>
-<p>For a video tutorial see the <code>Install Radiant on Windows</code>
-video below:</p>
-<iframe width="640" height="375" src="https://www.youtube.com/embed/ZNgwgosdNhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<blockquote>
-<p>Credits: Thanks go to Brandon Salas (Rady School of Management @
-UCSD) for creating the Windows installer and Greg Aujero (Rady School of
-Management @ UCSD) for updating the installer.</p>
-</blockquote>
-<p>We recommend you use or <a
-href="https://www.google.com/chrome">Chrome</a> or <a
-href="https://www.microsoft.com/en-us/edge">Microsoft’s Edge browser</a>
-or <a href="https://www.mozilla.org/en-US/firefox">Firefox</a> as your
-default browser.</p>
+<!-- For Windows, download and run the all-in-one installer for <a href="https://download.rady.ucsd.edu/Rady-Radiant-Installer-Latest.exe">R, Rstudio, and Radiant</a>. If you see a warning message like the image shown below when you run the installer click on "More info" and then on "Run anyway".
+
+<img src="images/win-protected.png" width="300px">
+
+For a video tutorial see the `Install Radiant on Windows` video below:
+
+<iframe width="640" height="375" src="https://www.youtube.com/embed/ZNgwgosdNhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> Credits: Thanks go to Brandon Salas (Rady School of Management @ UCSD) for creating the Windows installer and Greg Aujero (Rady School of Management @ UCSD) for updating the installer.
+ -->
+<p>To install R, Rstudio, and Radiant on Windows copy-and-paste the
+command below into Powershell and press the return key.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">iwr</span> <span class="at">-useb</span> https://raw.githubusercontent.com/vnijs/radiant_install/main/windows-install <span class="at">-radiant.ps1</span> <span class="kw">|</span> <span class="ex">iex</span></span></code></pre></div>
+<p>This script will install the latest versions of R, Rstudio, and
+Radiant-for-R. To run Radiant, open Rstudio and select “Start radiant
+(browser)” from the <em>Addins</em> menu. If you don’t see “Start
+radiant (browser)” in Rstudio you can try restarting Rstudio or running
+“radiant::radiant()” in the console in Rstudio (i.e., the window on the
+bottom-left in Rstudio).</p>
 </div>
 <div id="installing-r-rstudio-and-radiant-on-macos"
 class="section level2">
@@ -654,8 +654,8 @@ Double click on the .pkg file to install and follow the prompts. After R has bee
 <p>To install R, Rstudio, and Radiant on macOS copy-and-paste the
 command below into the Terminal application and press the return
 key.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/vnijs/radiant_install/refs/heads/main/macos-install-radiant.sh <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/vnijs/radiant_install/refs/heads/main/macos-install-radiant.sh <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
 <p>This script will install the latest versions of R, Rstudio, and
 Radiant-for-R. To run Radiant, open Rstudio and select “Start radiant
 (browser)” from the <em>Addins</em> menu. If you don’t see “Start
@@ -723,9 +723,9 @@ or
 sudo su -c "R -e 'radiant.update::radiant.update()'"
 ``` -->
 </div>
-<div id="starting-stopping-and-updating-radiant" class="section level2">
-<h2>Starting, Stopping, and Updating Radiant</h2>
-<p>I recommend you use Rstudio to run the Radiant application. When you
+<div id="starting-and-stopping" class="section level2">
+<h2>Starting and Stopping</h2>
+<p>We recommend you use Rstudio to run the Radiant application. When you
 open Rstudio you can start Radiant through the <code>Addins</code> menu
 at the top of the screen <code>Start radiant (browser)</code>. If for
 some reason the <code>Start radiant (browser)</code> is not shown in the
@@ -734,14 +734,16 @@ To close the application click the
 <i title='Power off' class='fa fa-power-off'></i> icon in the navigation
 bar and then click <code>Stop</code>. The Radiant process will stop and
 the browser window will close or gray-out.</p>
-<p>To add an option to upgrade Radiant easily, use the commands below to
-install the <code>radiant.upgrade</code> package. You should now see two
-new item in the <code>Addins</code> dropdown that you can use for future
-radiant upgrades.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;radiant-rstats/radiant.update&quot;</span>, <span class="at">upgrade =</span> <span class="st">&quot;never&quot;</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>radiant.update<span class="sc">::</span><span class="fu">radiant.update</span>()</span></code></pre></div>
+<!--
+To add an option to upgrade Radiant easily, use the commands below to install the `radiant.upgrade` package. You should now see two new item in the `Addins` dropdown that you can use for future radiant upgrades.
+
+```r
+options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
+install.packages("remotes")
+remotes::install_github("radiant-rstats/radiant.update", upgrade = "never")
+radiant.update::radiant.update()
+```
+-->
 </div>
 <div id="sharing-rstudio-projects-with-others" class="section level2">
 <h2>Sharing Rstudio projects with others</h2>
