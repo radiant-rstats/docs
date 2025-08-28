@@ -42,13 +42,7 @@ Radiant focuses on business data and decisions. It offers tools, examples, and d
 
 ## How to install Radiant
 
-See [installing radiant](https://radiant-rstats.github.io/docs/install.html) scripts to install R, Rstudio, and Radiant in Windows and macOS. This is the recommended approach. If you have used R and Rstudio before and already have them installed you can can use the command below to install radiant.
-
-```r
-install.packages("radiant")
-```
-
-Once all packages are installed, select `Start radiant` from the `Addins` menu in Rstudio or use the command below to launch the app:
+See the [installing radiant](https://radiant-rstats.github.io/docs/install.html) page for all-in-one scripts to install R, Rstudio, and Radiant on Windows and macOS. Once all R-packages are installed, select `Start radiant (browser)` from the `Addins` menu in Rstudio or use the command below from the console in Rstudio to launch the app:
 
 ```r
 radiant::radiant()
