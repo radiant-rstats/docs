@@ -24,7 +24,7 @@ For a video tutorial see the `Install Radiant on Windows` video below:
 To install R, Rstudio, and Radiant on Windows copy-and-paste the command below into Powershell and press the return key.
 
 ```bash
-iwr -useb https://raw.githubusercontent.com/vnijs/radiant_install/main/windows-install -radiant.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/vnijs/radiant_install/main/windows-install-radiant.ps1 | iex
 ```
 
 This script will install the latest versions of R, Rstudio, and Radiant-for-R. To run Radiant, open Rstudio and select "Start radiant (browser)" from the _Addins_ menu. If you don't see "Start radiant (browser)" in Rstudio you can try restarting Rstudio or running "radiant::radiant()" in the console in Rstudio (i.e., the window on the bottom-left in Rstudio).
