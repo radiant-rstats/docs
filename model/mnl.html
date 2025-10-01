@@ -630,7 +630,7 @@ which variables move-the-needle most. Radiant standardizes data for
 multinomial logistic regression by replacing all explanatory variables
 <span class="math inline">\(X\)</span> by <span class="math inline">\((X
 - mean(X))/(2 \times sd(X))\)</span>. See
-<a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf" target="_blank">Gelman
+<a href="https://sites.stat.columbia.edu/gelman/research/published/standardizing7.pdf" target="_blank">Gelman
 2008</a> for discussion.</li>
 <li>Center: Replace all explanatory variables X by X - mean(X). This can
 be useful when trying to interpret interaction effects</li>
@@ -708,7 +708,7 @@ is not equal to 1</li>
 </ul>
 <p>A selected set of relative risk ratios from the multinomial logistic
 regression can be interpreted as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>                         RRR coefficient std.error z.value p.value    </span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>                         RRR coefficient std.error z.value p.value</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a> heinz32 price.heinz32 <span class="fl">0.101</span>      <span class="sc">-</span><span class="fl">2.296</span>     <span class="fl">0.135</span> <span class="sc">-</span><span class="fl">17.033</span>  <span class="sc">&lt;</span> .<span class="dv">001</span> <span class="sc">**</span><span class="er">*</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a> hunts32 price.heinz28 <span class="fl">3.602</span>       <span class="fl">1.282</span>     <span class="fl">0.126</span>  <span class="fl">10.200</span>  <span class="sc">&lt;</span> .<span class="dv">001</span> <span class="sc">**</span><span class="er">*</span></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a> hunts32 price.hunts32 <span class="fl">0.070</span>      <span class="sc">-</span><span class="fl">2.655</span>     <span class="fl">0.208</span> <span class="sc">-</span><span class="fl">12.789</span>  <span class="sc">&lt;</span> .<span class="dv">001</span> <span class="sc">**</span><span class="er">*</span></span></code></pre></div>

@@ -10,10 +10,10 @@ In the _Summary_ tab we can test if two or more variables together add significa
 
 Additional output that requires re-estimation:
 
-* Standardize: Coefficients can be hard to compare if the explanatory variables are measured on different scales. By standardizing the response variable and the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data by replacing the response variable $Y$ by $(Y - mean(Y))/(2 \times sd(Y))$ and replacing all explanatory variables $X$ by $(X - mean(X))/(2 \times sd(X))$. See <a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion
+* Standardize: Coefficients can be hard to compare if the explanatory variables are measured on different scales. By standardizing the response variable and the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data by replacing the response variable $Y$ by $(Y - mean(Y))/(2 \times sd(Y))$ and replacing all explanatory variables $X$ by $(X - mean(X))/(2 \times sd(X))$. See <a href="https://sites.stat.columbia.edu/gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion
 * Center: Replace the response variable Y by Y - mean(Y) and replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects
 * Stepwise: A data-mining approach to select the best fitting model. Use with caution!
-* Robust standard errors: When `robust` is selected the coefficient estimates are the same as OLS. However, standard errors are adjusted to account for (minor) heterogeneity and non-normality concerns. 
+* Robust standard errors: When `robust` is selected the coefficient estimates are the same as OLS. However, standard errors are adjusted to account for (minor) heterogeneity and non-normality concerns.
 
 Additional output that does not require re-estimation:
 
@@ -206,14 +206,14 @@ All coefficients in this regression are highly significant.
 
 ### Report > Rmd
 
-Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard.
 
 If a plot was created it can be customized using `ggplot2` commands or with `patchwork`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
 
 ```r
 result <- regress(diamonds, rvar = "price", evar = c("carat", "clarity", "cut", "color"))
 summary(result)
-plot(result, plots = "scatter", custom = TRUE) %>% 
+plot(result, plots = "scatter", custom = TRUE) %>%
   wrap_plots(plot_list, ncol = 2) + plot_annotation(title = "Scatter plots")
 ```
 
@@ -256,19 +256,19 @@ Copy-and-paste the full command below into the RStudio console (i.e., the bottom
 
 <a href="https://youtu.be/nLZx84v1PkI" target="_blank">Linear Regression Validation (#5)</a>
 
-* This video demonstrates how to validate a linear regression model 
+* This video demonstrates how to validate a linear regression model
 * Topics List:
-    - Linearity (scatter plots, same as the one in the pre-check) 
-    - Normality Check (Normal Q-Q plot) 
-    - Multicollinearity (VIF) 
-    - Heteroscedasticity 
+    - Linearity (scatter plots, same as the one in the pre-check)
+    - Normality Check (Normal Q-Q plot)
+    - Multicollinearity (VIF)
+    - Heteroscedasticity
 
 <a href="https://youtu.be/byP2YJNqtRc" target="_blank">Log-log Regression (#6)</a>
 
-* This video demonstrates when and how to run a log-log regression 
+* This video demonstrates when and how to run a log-log regression
 * Topics List:
-    - Transform data with skewed distributions by natural log function 
-    - Interpret the coefficients in a log-log regression 
+    - Transform data with skewed distributions by natural log function
+    - Interpret the coefficients in a log-log regression
 
 ### Technical notes
 
@@ -375,4 +375,4 @@ So a 1% change in price leads to a $b$% change in sales.
 
 For an overview of related R-functions used by Radiant to estimate a linear regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-linear-regression-ols-" target="_blank">_Model > Linear regression (OLS)_</a>.
 
-The key functions used in the `regress` tool are `lm` from the `stats` package and `vif` and `linearHypothesis` from the `car` package. 
+The key functions used in the `regress` tool are `lm` from the `stats` package and `vif` and `linearHypothesis` from the `car` package.

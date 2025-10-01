@@ -10,10 +10,10 @@ In the _Summary_ tab we can test if two or more variables together add significa
 
 Additional output that requires re-estimation:
 
-* Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data for logistic regression by replacing all explanatory variables $X$ by $(X - mean(X))/(2 \times sd(X))$. See <a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion.
+* Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data for logistic regression by replacing all explanatory variables $X$ by $(X - mean(X))/(2 \times sd(X))$. See <a href="https://sites.stat.columbia.edu/gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion.
 * Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects
 * Stepwise: A data-mining approach to select the best fitting model. Use with caution!
-* Robust standard errors: When `robust` is selected the coefficient estimates are the same as a normal logistic regression standard errors are adjusted. This adjustment is used by default when probability weights are specified in estimation. 
+* Robust standard errors: When `robust` is selected the coefficient estimates are the same as a normal logistic regression standard errors are adjusted. This adjustment is used by default when probability weights are specified in estimation.
 
 Additional output that does not require re-estimation:
 
@@ -106,7 +106,7 @@ The regression output shows that coupon value is a statistically significant pre
 
 ### Report > Rmd
 
-Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard. 
+Add code to <a href="https://radiant-rstats.github.io/docs/data/report_rmd.html" target="_blank">_Report > Rmd_</a> to (re)create the analysis by clicking the <i title="report results" class="fa fa-edit"></i> icon on the bottom left of your screen or by pressing `ALT-enter` on your keyboard.
 
 If a plot was created it can be customized using `ggplot2` commands or with `gridExtra`. See example below and <a href="https://radiant-rstats.github.io/docs/data/visualize.html" target="_blank">_Data > Visualize_</a> for details.
 
@@ -119,4 +119,4 @@ plot(result, plots = "coef", custom = TRUE) +
 
 For an overview of related R-functions used by Radiant to estimate a logistic regression model see <a href = "https://radiant-rstats.github.io/radiant.model/reference/index.html#section-model-logistic-regression" target="_blank">_Model > Logistic regression_</a>.
 
-The key functions used in the `logistic` tool are `glm` from the `stats` package and `vif` and `linearHypothesis` from the `car` package. 
+The key functions used in the `logistic` tool are `glm` from the `stats` package and `vif` and `linearHypothesis` from the `car` package.
