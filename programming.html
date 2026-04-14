@@ -13,7 +13,7 @@
 
 <title>Programming with Radiant</title>
 
-<script src="libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -654,7 +654,7 @@ Alt. hyp. : the mean of price is not equal to 0
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
-<p><img src="programming_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="programming_files/figure-html/unnamed-chunk-1-1.png" alt="" width="672" /></p>
 <p>You can also call functions for visualization (see below) and access
 help from the console using <code>?visualize</code></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">visualize</span>(</span>
@@ -667,7 +667,7 @@ help from the console using <code>?visualize</code></p>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  <span class="at">labs =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">&quot;Diamond Prices ($)&quot;</span>),</span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  <span class="at">custom =</span> <span class="cn">FALSE</span></span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>)</span></code></pre></div>
-<p><img src="programming_files/figure-html/scatter-1.png" width="480" /></p>
+<p><img src="programming_files/figure-html/scatter-1.png" alt="" width="480" /></p>
 <p>As an example, you can render the <a
 href="https://radiant-rstats.github.io/docs/examples/single_mean.Rmd"><code>single_mean.Rmd</code></a>
 file into html (or PDF or Word if you prefer) in Rstudio. Try the code
@@ -712,7 +712,7 @@ Alt. hyp. : the mean of mpg is &gt; 20
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;hist&quot;</span>, <span class="st">&quot;simulate&quot;</span>))</span></code></pre></div>
-<p><img src="programming_files/figure-html/single_mean_mpg-1.png" width="480" /></p>
+<p><img src="programming_files/figure-html/single_mean_mpg-1.png" alt="" width="480" /></p>
 <p>To compare the mean price of diamonds across different levels of
 clarity we can call the <code>compare_means</code> function:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">compare_means</span>(</span>
@@ -771,7 +771,7 @@ Adjustment: Bonferroni
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;bar&quot;</span>, <span class="st">&quot;density&quot;</span>))</span></code></pre></div>
-<p><img src="programming_files/figure-html/compare_means_diamonds-1.png" width="384" /></p>
+<p><img src="programming_files/figure-html/compare_means_diamonds-1.png" alt="" width="384" /></p>
 <p>To get help for the <code>single_mean</code> and
 <code>compare_means</code> functions use <code>?single_mean</code> and
 <code>?compare_means</code>. These help files also have links to
@@ -817,7 +817,7 @@ Adjustment: None
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
-<p><img src="programming_files/figure-html/compare_means_salary-1.png" width="384" /></p>
+<p><img src="programming_files/figure-html/compare_means_salary-1.png" alt="" width="384" /></p>
 <p>An alternative way to write this code is to use <code>piping</code>
 (see <a
 href="https://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">dplyr</a>
@@ -848,7 +848,7 @@ Adjustment: None
  AssocProf = Prof       AssocProf not equal to Prof       -32895.67 &lt; .001  ***
 
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p><img src="programming_files/figure-html/compare_means_salary_piped-1.png" width="384" /></p>
+<p><img src="programming_files/figure-html/compare_means_salary_piped-1.png" alt="" width="384" /></p>
 <p>We can also run regressions and get output in a format that would
 require many lines of code to produce from scratch:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">regress</span>(diamonds, <span class="at">rvar =</span> <span class="st">&quot;price&quot;</span>, <span class="at">evar =</span> <span class="fu">c</span>(<span class="st">&quot;carat&quot;</span>, <span class="st">&quot;clarity&quot;</span>))</span>
@@ -908,9 +908,9 @@ Prediction command   : carat = 1:10
      SI1     9  72769.811 71948.301 73591.322 821.511
      SI1    10  81207.842 80286.667 82129.017 921.175</code></pre>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;coef&quot;</span>)</span></code></pre></div>
-<p><img src="programming_files/figure-html/regress_coeff-1.png" width="576" /></p>
+<p><img src="programming_files/figure-html/regress_coeff-1.png" alt="" width="576" /></p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;dashboard&quot;</span>, <span class="at">lines =</span> <span class="st">&quot;line&quot;</span>)</span></code></pre></div>
-<p><img src="programming_files/figure-html/regress_dashboard-1.png" width="480" /></p>
+<p><img src="programming_files/figure-html/regress_dashboard-1.png" alt="" width="480" /></p>
 <p>As another example, imagine that you want to segment a sample of
 respondents based on their toothpaste attitudes. Below is the required
 code to produce results using functions from the Radiant package. For
@@ -934,10 +934,10 @@ Observations: 20 </code></pre>
 <span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="do">## it looks like there is a big jump in overall within-cluster</span></span>
 <span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="do">## heterogeneity in the step from 3 to 2 segments</span></span>
 <span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="fu">plot</span>(result)</span></code></pre></div>
-<p><img src="programming_files/figure-html/hclus-1.png" width="384" /></p>
+<p><img src="programming_files/figure-html/hclus-1.png" alt="" width="384" /></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="do">## show the dendrogram with cutoff at 0.05</span></span>
 <span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="st">&quot;dendro&quot;</span>, <span class="at">cutoff =</span> <span class="fl">0.05</span>)</span></code></pre></div>
-<p><img src="programming_files/figure-html/dendro-1.png" width="384" /></p>
+<p><img src="programming_files/figure-html/dendro-1.png" alt="" width="384" /></p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="do">## plots created above suggest 3 clusters may be  most appropriate</span></span>
 <span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="do">## use kclus to create the clusters</span></span>
 <span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="do">## generate output and store cluster membership</span></span>
@@ -968,7 +968,7 @@ Cluster 3 33.71%
 Between cluster heterogeneity accounts for 73.93% of the
 total heterogeneity in the data (higher is better)</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">plot</span>(result, <span class="at">plots =</span> <span class="fu">c</span>(<span class="st">&quot;density&quot;</span>, <span class="st">&quot;bar&quot;</span>))</span></code></pre></div>
-<p><img src="programming_files/figure-html/kclus-1.png" width="480" /></p>
+<p><img src="programming_files/figure-html/kclus-1.png" alt="" width="480" /></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>shopping <span class="ot">&lt;-</span> <span class="fu">store</span>(shopping, result, <span class="at">name =</span> <span class="st">&quot;clus&quot;</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="do">## was the data really changed?</span></span>
@@ -1003,7 +1003,7 @@ Rstudio. You can also run code inside the Radiant app in the <em>Report
 <a href="https://radiant-rstats.github.io/docs/data/code.html" target="_blank">Code</a>
 page for details.</p>
 
-&copy; Vincent Nijs (2024) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+&copy; Vincent Nijs (2026) <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
   <im2024t="Creative Commons License" style="border-width: 0" src="/docs/images/by-nc-sa.png" />
 </a>
 

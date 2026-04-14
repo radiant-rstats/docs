@@ -14,7 +14,7 @@ Built using <a href="https://shiny.posit.co/" target="_blank">Shiny</a> by <a hr
 ## Package dependencies
 
 ```{r setup, include = FALSE}
-devtools::source_url("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/pkgs.R")
+source("https://raw.githubusercontent.com/radiant-rstats/minicran/gh-pages/pkgs.R")
 ```
 
 <details>
