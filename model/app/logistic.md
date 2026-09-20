@@ -10,7 +10,7 @@ In the _Summary_ tab we can test if two or more variables together add significa
 
 Additional output that requires re-estimation:
 
-* Standardize: Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data for logistic regression by replacing all explanatory variables $X$ by $(X - mean(X))/(2 \times sd(X))$. See <a href="https://sites.stat.columbia.edu/gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion.
+* Standardize (1 SD) or Standardize (2 SD): Odds-ratios can be hard to compare if the explanatory variables are measured on different scales. By standardizing the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data for logistic regression by replacing all explanatory variables $X$ by $(X - mean(X))/(k \times sd(X))$, where $k$ is 1 or 2 depending on the option selected. Scaling by 2 standard deviations, rather than 1, makes the coefficients for numeric explanatory variables easier to compare to the coefficients for dummy (0/1) variables. See <a href="https://sites.stat.columbia.edu/gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion. Note that because the response variable is binary it is not rescaled. As a consequence, the coefficients (and odds-ratios) for numeric explanatory variables based on 1 standard deviation are half the size of those based on 2 standard deviations.
 * Center: Replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects
 * Stepwise: A data-mining approach to select the best fitting model. Use with caution!
 * Robust standard errors: When `robust` is selected the coefficient estimates are the same as a normal logistic regression standard errors are adjusted. This adjustment is used by default when probability weights are specified in estimation.
@@ -47,7 +47,7 @@ The odds-ratios from the logistic regression can be interpreted as follows:
 
 <p align="center"><img src="figures_model/logistic_summary.png"></p>
 
-In addition to the numerical output provided in the _Summary_ tab we can also evaluate the link between `survival`, `class`, `sex`, and `age` visually (see _Plot_ tab). In the screenshot below we see a coefficient (or rather an odds-ratio) plot with confidence intervals. The relative importance of gender and class compared to age clearly stands out. Note: click the check box for standardized coefficients (i.e., `standardize`) in the _Summary_ tab and see if your conclusion changes.
+In addition to the numerical output provided in the _Summary_ tab we can also evaluate the link between `survival`, `class`, `sex`, and `age` visually (see _Plot_ tab). In the screenshot below we see a coefficient (or rather an odds-ratio) plot with confidence intervals. The relative importance of gender and class compared to age clearly stands out. Note: click the check box for standardized coefficients (i.e., `Standardize (2 SD)`) in the _Summary_ tab and see if your conclusion changes.
 
 <p align="center"><img src="figures_model/logistic_plot.png"></p>
 

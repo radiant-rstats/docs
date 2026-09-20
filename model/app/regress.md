@@ -10,7 +10,7 @@ In the _Summary_ tab we can test if two or more variables together add significa
 
 Additional output that requires re-estimation:
 
-* Standardize: Coefficients can be hard to compare if the explanatory variables are measured on different scales. By standardizing the response variable and the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data by replacing the response variable $Y$ by $(Y - mean(Y))/(2 \times sd(Y))$ and replacing all explanatory variables $X$ by $(X - mean(X))/(2 \times sd(X))$. See <a href="https://sites.stat.columbia.edu/gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion
+* Standardize (1 SD) or Standardize (2 SD): Coefficients can be hard to compare if the explanatory variables are measured on different scales. By standardizing the response variable and the explanatory variables before estimation we can see which variables move-the-needle most. Radiant standardizes data by replacing the response variable $Y$ by $(Y - mean(Y))/(k \times sd(Y))$ and replacing all explanatory variables $X$ by $(X - mean(X))/(k \times sd(X))$, where $k$ is 1 or 2 depending on the option selected. Scaling by 2 standard deviations, rather than 1, makes the coefficients for numeric explanatory variables easier to compare to the coefficients for dummy (0/1) variables. See <a href="https://sites.stat.columbia.edu/gelman/research/published/standardizing7.pdf" target="_blank">Gelman 2008</a> for discussion. Note that the coefficients for numeric explanatory variables are the same for both options because $Y$ and $X$ are scaled by the same factor. The coefficients for dummy variables, however, are twice as large when standardizing by 1 rather than 2 standard deviations
 * Center: Replace the response variable Y by Y - mean(Y) and replace all explanatory variables X by X - mean(X). This can be useful when trying to interpret interaction effects
 * Stepwise: A data-mining approach to select the best fitting model. Use with caution!
 * Robust standard errors: When `robust` is selected the coefficient estimates are the same as OLS. However, standard errors are adjusted to account for (minor) heterogeneity and non-normality concerns.
@@ -64,7 +64,7 @@ The F-statistic suggests that the regression model as a whole explains a signifi
 
 We can replicate the standard F-test that is reported as part of all regression output by selecting `income`, `HH.size`, and `Age` in the `Variables to test` box. The relevant output is shown below.
 
-<img src="figures_model/regress_catalog_F_test.png" alt="Regression 1 - F-test" width="400" />
+<img src="figures_model/regress_catalog_F_test.png" alt="Regression 1 - F-test" width="400">
 
 Note that in this example, "model 1" is a regression without explanatory variables. As you might expect, the explained variance for model 1 is equal to zero. The F-test compares the _fit_ of model 1 and model 2, adjusted for the difference in the number of coefficients estimated in each model. The test statistic to use is described below. $R^2_2$ is the explained variance for model 2 and $R^2_1$ is the explained variance for model 1. $n$ is equal to the number of rows in the data, and $k_2$ ($k_1$) is equal to the number of estimated coefficients in model 2 (model 1).
 
