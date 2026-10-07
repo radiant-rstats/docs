@@ -13,7 +13,7 @@
 
 <title>Radiant – Business analytics using R and Shiny</title>
 
-<script src="libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="libs/header-attrs-2.32/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -712,6 +712,20 @@ or
 sudo su -c "R -e 'radiant.update::radiant.update()'"
 ``` -->
 </div>
+<div id="optional-working-with-parquet-files" class="section level2">
+<h2>Optional: working with parquet files</h2>
+<p>Radiant can load and save data in <a
+href="https://parquet.apache.org/">parquet</a> format but this requires
+the <code>arrow</code> package. <code>arrow</code> is not installed
+together with Radiant because it is a large package that is not needed
+for the most common data formats (e.g., CSV and RDS). If you want to use
+parquet files, install <code>arrow</code> separately from the R(studio)
+console:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>)</span></code></pre></div>
+<p>If <code>arrow</code> is not available, Radiant will show a message
+asking you to install it when you try to load or save a parquet file in
+<em>Data &gt; Manage</em>.</p>
+</div>
 <div id="starting-and-stopping" class="section level2">
 <h2>Starting and Stopping</h2>
 <p>We recommend you use Rstudio to run the Radiant application. When you
@@ -738,12 +752,12 @@ radiant.update::radiant.update()
 <h2>Sharing Rstudio projects with others</h2>
 <p>An excellent way to share an Rstudio project hosted online (e.g., on
 Dropbox) with others is to use the <code>usethis</code> package</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;usethis&quot;</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>?usethis<span class="sc">::</span>use_course</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;usethis&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>?usethis<span class="sc">::</span>use_course</span></code></pre></div>
 <p>As an example, run the command below to download and open an Rstudio
 project. Note the “1” at the end of the URL instead of Dropbox’s default
 which is “0”.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_course</span>(<span class="st">&quot;https://www.dropbox.com/sh/0dmcr2xsphtn1ha/AADsrYsi8KBkddWx_B-aQbi1a?dl=1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_course</span>(<span class="st">&quot;https://www.dropbox.com/sh/0dmcr2xsphtn1ha/AADsrYsi8KBkddWx_B-aQbi1a?dl=1&quot;</span>)</span></code></pre></div>
 </div>
 <div id="documentation" class="section level2">
 <h2>Documentation</h2>
@@ -781,15 +795,15 @@ that a package is not yet installed when starting Radiant. If so,
 install the package mentioned using the command below but replace
 ‘package-that-is-not-yet-installed’ with the package name mentioned in
 the error message</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;package-that-is-not-yet-installed&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cran.rstudio.com&quot;</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;package-that-is-not-yet-installed&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cran.rstudio.com&quot;</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
 <p>Some users have reported that the Malwarebytes software can
 inappropriately block R-packages from being installed or updated. If you
 use Malwarebytes and are experiencing problems you can try (temporarily)
 turning it off during the install process or when upgrading.</p>
 <p>If there is an error installing <code>tinytex</code> on macOS please
 run the command below from the “terminal” app:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>:admin /usr/local/bin<span class="kw">;</span> <span class="ex">R</span> <span class="at">-e</span> <span class="st">&quot;tinytex::install_tinytex()&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>:admin /usr/local/bin<span class="kw">;</span> <span class="ex">R</span> <span class="at">-e</span> <span class="st">&quot;tinytex::install_tinytex()&quot;</span></span></code></pre></div>
 </div>
 <div id="reporting-issues" class="section level2">
 <h2>Reporting issues</h2>

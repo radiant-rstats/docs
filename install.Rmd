@@ -92,6 +92,16 @@ or
 sudo su -c "R -e 'radiant.update::radiant.update()'"
 ``` -->
 
+## Optional: working with parquet files
+
+Radiant can load and save data in [parquet](https://parquet.apache.org/) format but this requires the `arrow` package. `arrow` is not installed together with Radiant because it is a large package that is not needed for the most common data formats (e.g., CSV and RDS). If you want to use parquet files, install `arrow` separately from the R(studio) console:
+
+```r
+install.packages("arrow")
+```
+
+If `arrow` is not available, Radiant will show a message asking you to install it when you try to load or save a parquet file in _Data > Manage_.
+
 ## Starting and Stopping
 
 We recommend you use Rstudio to run the Radiant application. When you open Rstudio you can start Radiant through the `Addins` menu at the top of the screen `Start radiant (browser)`. If for some reason the `Start radiant (browser)` is not shown in the dropdown, enter `radiant::radiant()` in the Rstudio console. To close the application click the <i title='Power off' class='fa fa-power-off'></i> icon in the navigation bar and then click `Stop`. The Radiant process will stop and the browser window will close or gray-out.
