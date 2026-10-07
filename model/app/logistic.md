@@ -92,6 +92,12 @@ For a more comprehensive overview of the influence of gender, age, and passenger
 
 You can also create a dataset for input in _Data > Transform_ using `Expand grid` or in a spreadsheet and then paste it into Radiant through the _Data > Manage_ tab. You can also load csv data as input. For example, paste the following link `https://radiant-rstats.github.io/docs/examples/glm_pred.csv` file into Radiant through the _Data > Manage_ tab and try to generate the same predictions. Hint: Use `csv (url)` to load the data link above.
 
+Use the `Interval` dropdown to choose whether to report an interval around each predicted probability. `Confidence interval` is the default and gives a confidence interval for the predicted probability, calculated on the log-odds scale and then converted back to a probability. `None` reports only the point prediction.
+
+Unlike linear regression, logistic regression does not offer a *prediction interval* for a single new value of the response. In a linear model the prediction interval adds the residual variance on top of the uncertainty about the regression line. For a binary response there is no separate residual variance to add: the variance of the response is `p * (1 - p)`, which is already fully determined by the predicted probability. A 95% interval for a single 0/1 outcome would be the entire 0-1 range unless the predicted probability is very close to 0 or 1, so it would tell you nothing. This is also why `predict` in R has no `interval` argument for a `glm` object. If the question is how many of a group of `n` new observations will respond, rather than what a single observation will do, the confidence interval for the probability is the relevant starting point.
+
+Note that intervals are **not** available if `Standardize (1 SD)`, `Standardize (2 SD)`, or `Center` was used to estimate the model. In that case the _Predict_ tab will show `Interval: none (not available when coefficients are standardized or centered)` and only the point predictions are reported.
+
 Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button.
 
 ### Example 2: DVD sales

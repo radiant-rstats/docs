@@ -686,6 +686,33 @@ return</li>
 <li>To predict the price of 1,2, or 3 carat diamonds with an ideal cut
 type <code>carat = 1:3, cut = "Ideal"</code> and press return</li>
 </ul>
+<p>Use the <code>Interval</code> dropdown to choose what the reported
+lower and upper bounds refer to:</p>
+<ul>
+<li><code>Confidence interval</code> is the default. It gives an
+interval around the <em>average</em> value of the response for all
+observations with the specified values of the explanatory variables.
+This is the interval reported by
+<code>predict(model, newdata, interval = "confidence")</code> in R.</li>
+<li><code>Prediction interval</code> gives an interval around a
+<em>single new</em> value of the response. This is usually the more
+relevant interval in a business setting, where the question is what a
+specific new observation is likely to be rather than what the average
+is. It is the interval reported by
+<code>predict(model, newdata, interval = "prediction")</code> in R. A
+prediction interval is always wider than a confidence interval because
+it accounts for the variation of individual observations around the
+regression line in addition to the uncertainty about the line
+itself.</li>
+<li><code>None</code> reports only the point prediction.</li>
+</ul>
+<p>Note that intervals are <strong>not</strong> available if
+<code>Standardize (1 SD)</code>, <code>Standardize (2 SD)</code>, or
+<code>Center</code> was used to estimate the model. In that case the
+<em>Predict</em> tab will show
+<code>Interval: none (not available when coefficients are standardized or centered)</code>
+and only the point predictions are reported. Re-estimate the model
+without standardizing or centering if you need intervals.</p>
 <p>Once the desired predictions have been generated they can be saved to
 a CSV file by clicking the download icon on the top right of the screen.
 To add predictions to the dataset used for estimation, click the

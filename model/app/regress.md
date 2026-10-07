@@ -30,6 +30,14 @@ If you choose `Command` you must specify at least one variable and value to get 
 * To predict the price of diamonds ranging from .5 to 1 carat at steps of size .05 type `carat = seq(.5,.1,.05)` and press return
 * To predict the price of 1,2, or 3 carat diamonds with an ideal cut type `carat = 1:3, cut = "Ideal"` and press return
 
+Use the `Interval` dropdown to choose what the reported lower and upper bounds refer to:
+
+* `Confidence interval` is the default. It gives an interval around the *average* value of the response for all observations with the specified values of the explanatory variables. This is the interval reported by `predict(model, newdata, interval = "confidence")` in R.
+* `Prediction interval` gives an interval around a *single new* value of the response. This is usually the more relevant interval in a business setting, where the question is what a specific new observation is likely to be rather than what the average is. It is the interval reported by `predict(model, newdata, interval = "prediction")` in R. A prediction interval is always wider than a confidence interval because it accounts for the variation of individual observations around the regression line in addition to the uncertainty about the line itself.
+* `None` reports only the point prediction.
+
+Note that intervals are **not** available if `Standardize (1 SD)`, `Standardize (2 SD)`, or `Center` was used to estimate the model. In that case the _Predict_ tab will show `Interval: none (not available when coefficients are standardized or centered)` and only the point predictions are reported. Re-estimate the model without standardizing or centering if you need intervals.
+
 Once the desired predictions have been generated they can be saved to a CSV file by clicking the download icon on the top right of the screen. To add predictions to the dataset used for estimation, click the `Store` button.
 
 The _Plot_ tab is used to provide basic visualizations of the data as well as diagnostic plots to validate the regression model.

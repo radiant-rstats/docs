@@ -800,6 +800,32 @@ link
 file into Radiant through the <em>Data &gt; Manage</em> tab and try to
 generate the same predictions. Hint: Use <code>csv (url)</code> to load
 the data link above.</p>
+<p>Use the <code>Interval</code> dropdown to choose whether to report an
+interval around each predicted probability.
+<code>Confidence interval</code> is the default and gives a confidence
+interval for the predicted probability, calculated on the log-odds scale
+and then converted back to a probability. <code>None</code> reports only
+the point prediction.</p>
+<p>Unlike linear regression, logistic regression does not offer a
+<em>prediction interval</em> for a single new value of the response. In
+a linear model the prediction interval adds the residual variance on top
+of the uncertainty about the regression line. For a binary response
+there is no separate residual variance to add: the variance of the
+response is <code>p * (1 - p)</code>, which is already fully determined
+by the predicted probability. A 95% interval for a single 0/1 outcome
+would be the entire 0-1 range unless the predicted probability is very
+close to 0 or 1, so it would tell you nothing. This is also why
+<code>predict</code> in R has no <code>interval</code> argument for a
+<code>glm</code> object. If the question is how many of a group of
+<code>n</code> new observations will respond, rather than what a single
+observation will do, the confidence interval for the probability is the
+relevant starting point.</p>
+<p>Note that intervals are <strong>not</strong> available if
+<code>Standardize (1 SD)</code>, <code>Standardize (2 SD)</code>, or
+<code>Center</code> was used to estimate the model. In that case the
+<em>Predict</em> tab will show
+<code>Interval: none (not available when coefficients are standardized or centered)</code>
+and only the point predictions are reported.</p>
 <p>Once the desired predictions have been generated they can be saved to
 a CSV file by clicking the download icon on the top right of the screen.
 To add predictions to the dataset used for estimation, click the
