@@ -755,57 +755,6 @@ site</a>.</p>
 <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">github.com/radiant-rstats/radiant/issues</a>
 if you have any problems using Radiant.</p>
 </div>
-<div id="try-radiant-online" class="section level2">
-<h2>Try Radiant online</h2>
-<p>Not ready to install Radiant on your computer? Try it online at the
-link below:</p>
-<p><a href="https://vnijs.shinyapps.io/radiant" target="_blank">https://vnijs.shinyapps.io/radiant</a></p>
-<p>Do <strong>not</strong> upload sensitive data to this public server.
-The size of data upload has been restricted to 10MB for security
-reasons.</p>
-</div>
-<div id="running-radiant-on-shinyapps.io" class="section level2">
-<h2>Running Radiant on shinyapps.io</h2>
-<p>To run your own instance of Radiant on shinyapps.io first
-<a href = "https://radiant-rstats.github.io/docs/install.html" target = "_blank">install
-Radiant and its dependencies</a>. Then clone the
-<a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a>
-repo and ensure you have the latest version of the Radiant packages
-installed by running <code>radiant/inst/app/for.shinyapps.io.R</code>.
-Finally, open <code>radiant/inst/app/ui.R</code> and <a
-href="https://shiny.posit.co/articles/shinyapps.html">deploy</a> the
-application.</p>
-</div>
-<div id="running-radiant-on-shiny-server" class="section level2">
-<h2>Running Radiant on shiny-server</h2>
-<p>You can also host Radiant using <a
-href="https://posit.co/download/shiny-server/">shiny-server</a>. First,
-install radiant on the server using the command below:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">RSM =</span> <span class="st">&quot;https://radiant-rstats.github.io/minicran&quot;</span>, <span class="at">CRAN =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;radiant&quot;</span>)</span></code></pre></div>
-<p>Then clone the
-<a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a>
-repo and point shiny-server to the <code>inst/app/</code> directory. As
-a courtesy, please let me know if you intend to use Radiant on a
-server.</p>
-<p>When running Radiant on a server, by default, file uploads are
-limited to 10MB and R-code in <em>Report &gt; Rmd</em> and <em>Report
-&gt; R</em> will not be evaluated for security reasons. If you have
-<code>sudo</code> access to the server and have appropriate security in
-place you can change these settings by adding the following lines to
-<code>.Rprofile</code> for the <code>shiny</code> user on the
-server.</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">options</span><span class="er">(</span><span class="ex">radiant.maxRequestSize</span> = <span class="at">-1</span><span class="kw">)</span>  <span class="co">## no file size limit</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">options</span><span class="er">(</span><span class="ex">radiant.report</span> = TRUE<span class="kw">)</span></span></code></pre></div>
-</div>
-<div id="running-radiant-in-the-cloud-e.g.-aws" class="section level2">
-<h2>Running Radiant in the cloud (e.g., AWS)</h2>
-<p>To run radiant in the cloud you can use the customized Docker
-container. See
-<a href = "https://github.com/radiant-rstats/docker" target="_blank">https://github.com/radiant-rstats/docker</a>
-for details</p>
-</div>
 <div id="saving-and-loading-state" class="section level2">
 <h2>Saving and loading state</h2>
 <p>To save your analyses save the state of the app to a file by clicking
@@ -849,7 +798,7 @@ if there is a value for an input of that name in a list called
 <code>numericInput</code> is given below where the
 <code>state_init</code> function from <code>radiant.R</code> is used to
 check if a value from <code>r_state</code> can be used.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">numericInput</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="st">&quot;Comparison value:&quot;</span>, <span class="fu">state_init</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">numericInput</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="st">&quot;Comparison value:&quot;</span>, <span class="fu">state_init</span>(<span class="st">&quot;sm_comp_value&quot;</span>, <span class="dv">0</span>))</span></code></pre></div>
 </div>
 <div id="source-code" class="section level2">
 <h2>Source code</h2>

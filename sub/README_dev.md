@@ -89,44 +89,9 @@ Individual Radiant packages also each have their own [pkgdown](https://github.co
 
 Want some help getting started? Watch the tutorials on the [documentation site](https://radiant-rstats.github.io/docs/tutorials.html).
 
-
 ## Reporting issues
 
 Please use the GitHub issue tracker at <a href="https://github.com/radiant-rstats/radiant/issues" target="_blank">github.com/radiant-rstats/radiant/issues</a> if you have any problems using Radiant.
-
-## Try Radiant online
-
-Not ready to install Radiant on your computer? Try it online at the link below:
-
-<a href="https://vnijs.shinyapps.io/radiant" target="_blank">https://vnijs.shinyapps.io/radiant</a>
-
-Do **not** upload sensitive data to this public server. The size of data upload has been restricted to 10MB for security reasons.
-
-## Running Radiant on shinyapps.io
-
-To run your own instance of Radiant on shinyapps.io first <a href = "https://radiant-rstats.github.io/docs/install.html" target = "_blank">install Radiant and its dependencies</a>. Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and ensure you have the latest version of the Radiant packages installed by running `radiant/inst/app/for.shinyapps.io.R`. Finally, open `radiant/inst/app/ui.R` and [deploy](https://shiny.posit.co/articles/shinyapps.html) the application.
-
-## Running Radiant on shiny-server
-
-You can also host Radiant using [shiny-server](https://posit.co/download/shiny-server/). First, install radiant on the server using the command below:
-
-```r
-options(repos = c(RSM = "https://radiant-rstats.github.io/minicran", CRAN = "https://cloud.r-project.org"))
-install.packages("radiant")
-```
-
-Then clone the <a href="https://github.com/radiant-rstats/radiant" target="_blank">radiant</a> repo and point shiny-server to the `inst/app/` directory. As a courtesy, please let me know if you intend to use Radiant on a server.
-
-When running Radiant on a server, by default, file uploads are limited to 10MB and R-code in _Report > Rmd_ and _Report > R_ will not be evaluated for security reasons. If you have `sudo` access to the server and have appropriate security in place you can change these settings by adding the following lines to `.Rprofile` for the `shiny` user on the server.
-
-```bash
-options(radiant.maxRequestSize = -1)  ## no file size limit
-options(radiant.report = TRUE)
-```
-
-## Running Radiant in the cloud (e.g., AWS)
-
-To run radiant in the cloud you can use the customized Docker container. See  <a href = "https://github.com/radiant-rstats/docker" target="_blank">https://github.com/radiant-rstats/docker</a> for details
 
 ## Saving and loading state
 
@@ -153,7 +118,6 @@ These tools are used in the _Business Analytics_, _Quantitative Analysis_, _Rese
 Radiant would not be possible without [R](https://cran.r-project.org/) and [Shiny](https://shiny.posit.co/). I would like to thank [Joe Cheng](https://github.com/jcheng5), [Winston Chang](https://github.com/wch), and [Yihui Xie](https://github.com/yihui) for answering questions, providing suggestions, and creating amazing tools for the R community. Other key components used in Radiant are ggplot2, dplyr, tidyr, magrittr, broom, shinyAce, shinyFiles, rmarkdown, and DT. For an overview of other packages that Radiant relies on please see the <a href="https://radiant-rstats.github.io/docs/about.html" target="_blank">about</a> page.
 
 ## License
-
 
 Radiant is licensed under the <a href="https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)" target="\_blank">AGPLv3</a>. As a summary, the AGPLv3 license requires, attribution, including copyright and license information in copies of the software, stating changes if the code is modified, and disclosure of all source code. Details are in the COPYING file.
 
